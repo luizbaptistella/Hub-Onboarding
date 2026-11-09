@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM-15 · Código do contato do familiar · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela FAM-15 (proposta, ainda não validada), variante "Padrão".
+     Marcação isolada, montada a partir do padrão de CAD-04. Comportamento, regras e ligações: spec.md nesta pasta.
+     Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}
+/* Local (fora do DS): rótulo de etapa do contato do familiar. */
+.fam-otp-step{margin:0 0 8px;font-size:14px;line-height:20px;font-weight:500;color:var(--text-subtle,#5f6368)}
+</style>
+</head>
+<body>
+<div class="device">
+<section class="screen screen-page" id="otp-contato-familiar" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-cadastro"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><span class="po-header-title">Cadastro do familiar</span></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds otp-page">
+        <div class="po-heading po-heading-spaced">
+          <p class="fam-otp-step">Confirmação 1 de 2 · E-mail do familiar</p>
+          <h1 class="po-heading-title po-heading-neutral">Insira o código</h1>
+          <p class="po-heading-sub">Enviamos um código de 6 dígitos para o e-mail do familiar.</p>
+          <div class="po-contact po-contact-email">
+            <span class="po-contact-value"><span class="po-icon s20" aria-hidden="true">mail</span><span data-bind="email-familiar">ma****@email.com</span></span>
+          </div>
+        </div>
+        <div class="otp-block" data-otp="email-familiar"><div class="po-otp po-otp-default"><div class="po-otp-row" role="group" aria-label="Código de verificação"><input class="po-otp-cell" inputmode="numeric" autocomplete="one-time-code" maxlength="1" aria-label="Dígito 1 de 6"><input class="po-otp-cell" inputmode="numeric" autocomplete="off" maxlength="1" aria-label="Dígito 2 de 6"><input class="po-otp-cell" inputmode="numeric" autocomplete="off" maxlength="1" aria-label="Dígito 3 de 6"><span class="po-otp-sep" aria-hidden="true"></span><input class="po-otp-cell" inputmode="numeric" autocomplete="off" maxlength="1" aria-label="Dígito 4 de 6"><input class="po-otp-cell" inputmode="numeric" autocomplete="off" maxlength="1" aria-label="Dígito 5 de 6"><input class="po-otp-cell" inputmode="numeric" autocomplete="off" maxlength="1" aria-label="Dígito 6 de 6"></div><p class="po-otp-msg" hidden=""></p></div><div class="otp-feedback"></div></div>
+      </div>
+      <p class="po-resend"><span>Não recebeu o código?</span><button type="button" class="po-resend-action" data-resend="email-familiar">Reenviar código</button></p>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+<script>
+/* Comportamento do OTPInput do DS: um dígito por célula, avança sozinho, Backspace volta, colar distribui os dígitos. */
+(function () {
+  var cells = Array.prototype.slice.call(document.querySelectorAll('[data-otp="email-familiar"] .po-otp-cell'));
+  function digits(s) { return (s || "").replace(/\D/g, ""); }
+  function fillFrom(start, text) {
+    for (var k = 0; k < text.length && start + k < cells.length; k++) cells[start + k].value = text[k];
+    cells[Math.min(start + text.length, cells.length - 1)].focus();
+  }
+  cells.forEach(function (cell, i) {
+    cell.addEventListener("focus", function () { cell.select(); });
+    cell.addEventListener("input", function () {
+      var d = digits(cell.value);
+      cell.value = d ? d.slice(-1) : "";
+      if (d && i < cells.length - 1) cells[i + 1].focus();
+    });
+    cell.addEventListener("keydown", function (e) {
+      if (e.key !== "Backspace") return;
+      e.preventDefault();
+      if (cell.value) { cell.value = ""; }
+      else if (i > 0) { cells[i - 1].value = ""; cells[i - 1].focus(); }
+    });
+    cell.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var text = digits((e.clipboardData || window.clipboardData).getData("text"));
+      if (text) fillFrom(i, text);
+    });
+  });
+})();
+</script>
+</body>
+</html>

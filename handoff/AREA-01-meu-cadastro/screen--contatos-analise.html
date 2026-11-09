@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AREA-01 · Meu cadastro · Contatos · em análise</title>
+<!-- Handoff Palmeiras · Onboarding. Tela AREA-01 (area-cadastro-detalhe), variante "Contatos · em análise".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen area-screen" id="area-cadastro-detalhe" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="area-top">
+        <div class="area-profile">
+          <div class="area-user">
+            <button type="button" class="area-avatar-btn" data-photo-open="" aria-label="Alterar foto de perfil"><span class="area-avatar"><span class="po-icon s26" aria-hidden="true">person</span></span><span class="area-avatar-badge" aria-hidden="true"><span class="po-icon s16">photo_camera</span></span></button>
+            <div class="area-user-info">
+              <p class="area-name">Roberto Silva</p>
+              <span class="po-badge po-badge-info">Cadastro em análise</span>
+            </div>
+          </div>
+          <button type="button" class="area-help-btn" data-go="ajuda-form" aria-label="Ajuda e atendimento" title="Ajuda e atendimento"><span class="area-help-ring"><span class="po-icon" aria-hidden="true">help_outline</span></span></button>
+          <button type="button" class="area-notif-btn" data-go="notificacoes" aria-label="Notificações, 2 não lidas"><span class="po-icon s24" aria-hidden="true">notifications</span><span class="area-notif-dot" aria-hidden="true"></span></button>
+          <div class="po-profile" data-profile="">
+            <button type="button" class="po-profile-btn" id="pf-1" aria-haspopup="menu" aria-expanded="false" aria-controls="pf-1-menu"><span class="po-icon s24" aria-hidden="true">menu</span><span class="po-sr-only">Abrir menu do perfil</span></button>
+            <ul class="po-profile-menu" id="pf-1-menu" role="menu" aria-label="Meu perfil" hidden="">
+              <li role="none" class="po-profile-lang">
+                <span class="po-icon s20 po-profile-icon" aria-hidden="true">translate</span>
+                <span class="po-profile-label">Idioma</span>
+                <button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="../../design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button>
+              </li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitemcheckbox" aria-checked="false" tabindex="-1" data-theme-toggle=""><span class="po-icon s20 po-profile-icon" aria-hidden="true">dark_mode</span><span class="po-profile-label">Modo escuro</span><span class="po-theme-switch" aria-hidden="true"><span></span></span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">lock</span><span class="po-profile-label">Privacidade</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1" data-go="seguranca"><span class="po-icon s20 po-profile-icon" aria-hidden="true">shield</span><span class="po-profile-label">Segurança</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">password</span><span class="po-profile-label">Senha</span></button></li>
+              <li role="separator" class="po-profile-divider"></li>
+              <li role="none"><button type="button" class="po-profile-item po-profile-item-danger" role="menuitem" tabindex="-1" data-go="login"><span class="po-icon s20 po-profile-icon" aria-hidden="true">logout</span><span class="po-profile-label">Sair</span></button></li>
+            </ul>
+          </div>
+        </div>
+        <button type="button" class="area-promo" hidden="">
+          <img class="area-promo-watermark" src="../../assets/avanti-shield.png" alt="">
+          <span class="area-promo-head">
+            <span class="area-promo-text"><span class="area-promo-title">Torne-se Sócio Torcedor</span><span class="area-promo-sub">Programa Avanti</span></span>
+            <span class="area-promo-badge">Avanti</span>
+          </span>
+          <span class="area-promo-cta">Acesse benefícios exclusivos <span aria-hidden="true">→</span></span>
+        </button>
+        <div class="po-tabs area-tabs" role="tablist">
+          <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true" data-go="area-cadastro-detalhe">Meus cadastro</button>
+          <button type="button" role="tab" class="po-tab" aria-selected="false" data-go="area-familiares-vazio">Meus familiares</button>
+        </div>
+      </header>
+      <div class="area-body">
+        <div class="area-detalhe" data-detalhe="titular" data-recolhido="" data-nome="Roberto Silva Santos" data-cpf="123.456.789-00" data-email="roberto.santos@email.com" data-telefone="(11) 98765-4321"><div class="area-acc" data-state="analise"><div class="tl-eyebrow">Em análise</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">Novo e-mail em verificação</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden=""><div class="tl-detail"><p class="tl-detail-title">Estamos verificando seu e-mail</p><p class="tl-detail-text">Enviamos um link para o novo endereço. Assim que for confirmado, ele entra no seu cadastro. Você não precisa fazer nada agora.</p></div></div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Roberto Silva Santos</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">123.456.789-00</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+        <section class="area-atalhos" aria-labelledby="area-atalhos-title">
+          <p class="area-atalhos-title" id="area-atalhos-title">Atalhos</p>
+          <div class="area-atalhos-grid">
+            <button type="button" class="area-atalho"><span class="po-icon s28 area-atalho-icon" aria-hidden="true">confirmation_number</span><span class="area-atalho-name">Comprar ingresso</span></button>
+            <button type="button" class="area-atalho"><span class="po-icon s28 area-atalho-icon" aria-hidden="true">shopping_cart</span><span class="area-atalho-name">Produtos do clube</span></button>
+            <button type="button" class="area-atalho"><img class="area-atalho-logo" src="../../assets/avanti.svg" alt="" width="84" height="26"><span class="area-atalho-name">Sócio Avanti Palmeiras</span></button>
+          </div>
+        </section>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+</div>
+</body>
+</html>

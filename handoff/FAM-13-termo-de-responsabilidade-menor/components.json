@@ -1,0 +1,280 @@
+{
+ "screen": "FAM-13",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-13-termo-de-responsabilidade-menor/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-termo > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Cadastrar familiar",
+    "language": false,
+    "help": false
+   },
+   "behavior": {
+    "navega para": "familiar-cadastro"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Cadastrar familiar\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Cadastrar familiar",
+      "language": false,
+      "help": false
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-termo > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Termo de responsabilidade",
+    "subtitle": "Como responsável, você responde pelo cadastro de quem tem menos de 18 anos. Leia o termo antes de confirmar.",
+    "tone": "neutral"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Termo de responsabilidade\" subtitle=\"Como responsável, você responde pelo cadastro de quem tem menos de 18 anos. Leia o termo antes de confirmar.\" tone=\"neutral\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Termo de responsabilidade",
+      "subtitle": "Como responsável, você responde pelo cadastro de quem tem menos de 18 anos. Leia o termo antes de confirmar.",
+      "tone": "neutral"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "Checkbox",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-termo > div:nth-of-type(2) > label:nth-of-type(1)",
+   "dsProps": {
+    "children": "Li e concordo com o termo de responsabilidade.",
+    "name": "aceite"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Checkbox/README.md",
+   "jsx": "<Checkbox name=\"aceite\">Li e concordo com o termo de responsabilidade.</Checkbox>",
+   "states": [
+    "desmarcado",
+    "marcado"
+   ],
+   "propOptions": {
+    "checked": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "defaultChecked": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "indeterminate": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "Li e concordo com o termo de responsabilidade.",
+      "name": "aceite"
+     }
+    },
+    {
+     "label": "Marcado",
+     "props": {
+      "children": "Li e concordo com o termo de responsabilidade.",
+      "name": "aceite",
+      "defaultChecked": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 4,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-termo > div:nth-of-type(3) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "children": "Aceitar e continuar",
+    "iconEnd": "arrow_forward"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth iconEnd=\"arrow_forward\">Aceitar e continuar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Aceitar e continuar",
+      "iconEnd": "arrow_forward"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 5,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-termo > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": null
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "palmeiras-hub-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Servidor MCP que expõe o handoff do Palmeiras · Onboarding (telas, specs, componentes e fluxo) para o time.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/stdio.mjs",
+    "start:http": "node src/http.mjs",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  }
+}

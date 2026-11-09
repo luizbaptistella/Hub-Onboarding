@@ -1,0 +1,1751 @@
+{
+ "screen": "FAM-17",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "Cabeçalho do perfil (avatar + nome + badge)",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "note": "Fora do DS (area-user, area-avatar).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Mariana Costa",
+    "avatar": "foto de perfil editável"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 2,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 1,
+   "dsProps": {
+    "tone": "success",
+    "children": "Cadastro completo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Cadastro completo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Cadastro completo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Ajuda e atendimento"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 4,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Notificações, 1 não lida"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 5,
+   "component": "ProfileMenu",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "id": "modo-escuro",
+      "label": "Modo escuro",
+      "icon": "dark_mode"
+     },
+     {
+      "id": "privacidade",
+      "label": "Privacidade",
+      "icon": "lock"
+     },
+     {
+      "id": "seguran-a",
+      "label": "Segurança",
+      "icon": "shield"
+     },
+     {
+      "id": "senha",
+      "label": "Senha",
+      "icon": "password"
+     },
+     {
+      "id": "sair",
+      "label": "Sair",
+      "icon": "logout",
+      "tone": "danger"
+     }
+    ],
+    "language": true,
+    "divider": true
+   },
+   "behavior": {
+    "navega para (itens)": "Sair → login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ProfileMenu/README.md",
+   "jsx": "<ProfileMenu items={[{ id: \"modo-escuro\", label: \"Modo escuro\", icon: \"dark_mode\" }, { id: \"privacidade\", label: \"Privacidade\", icon: \"lock\" }, { id: \"seguran-a\", label: \"Segurança\", icon: \"shield\" }, { id: \"senha\", label: \"Senha\", icon: \"password\" }, { id: \"sair\", label: \"Sair\", icon: \"logout\", tone: \"danger\" }]} language divider />",
+   "states": [
+    "fechado",
+    "aberto",
+    "Modo escuro ligado ou desligado"
+   ],
+   "propOptions": {
+    "divider": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "defaultOpen": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "id": "modo-escuro",
+        "label": "Modo escuro",
+        "icon": "dark_mode"
+       },
+       {
+        "id": "privacidade",
+        "label": "Privacidade",
+        "icon": "lock"
+       },
+       {
+        "id": "seguran-a",
+        "label": "Segurança",
+        "icon": "shield"
+       },
+       {
+        "id": "senha",
+        "label": "Senha",
+        "icon": "password"
+       },
+       {
+        "id": "sair",
+        "label": "Sair",
+        "icon": "logout",
+        "tone": "danger"
+       }
+      ],
+      "language": true,
+      "divider": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 6,
+   "component": "Tabs",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > header:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "value": "Meus cadastro",
+      "label": "Meus cadastro"
+     },
+     {
+      "value": "Meus familiares",
+      "label": "Meus familiares"
+     }
+    ],
+    "value": "Meus familiares"
+   },
+   "behavior": {
+    "navega para (itens)": "Meus familiares → familiar-recebidos"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tabs/README.md",
+   "jsx": "<Tabs items={[{ value: \"Meus cadastro\", label: \"Meus cadastro\" }, { value: \"Meus familiares\", label: \"Meus familiares\" }]} value=\"Meus familiares\" />",
+   "states": [
+    "aba ativa: Meus familiares"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "value": "Meus cadastro",
+        "label": "Meus cadastro"
+       },
+       {
+        "value": "Meus familiares",
+        "label": "Meus familiares"
+       }
+      ],
+      "value": "Meus familiares"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 7,
+   "component": "Toast",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(2) > div:nth-of-type(1)",
+   "hidden": true,
+   "note": "Vai dentro da ToastRegion, logo depois do AppHeader.",
+   "dsProps": {
+    "tone": "success",
+    "title": "Convite aceito."
+   },
+   "behavior": {
+    "fecha": "(fecha)"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Toast/README.md",
+   "jsx": "<Toast tone=\"success\" title=\"Convite aceito.\" />",
+   "states": [
+    "oculto",
+    "visível por 4 s depois de trocar o e-mail"
+   ],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "title": "Convite aceito."
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 8,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)",
+   "hidden": true,
+   "dsProps": {
+    "tone": "info",
+    "children": "Pendente"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"info\">Pendente</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "info"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "info",
+      "children": "Pendente"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 9,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": false,
+    "children": "Copiar link"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth={false}>Copiar link</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": false,
+      "children": "Copiar link"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 10,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(2)",
+   "hidden": true,
+   "dsProps": {
+    "tone": "warning",
+    "children": "Expirado"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"warning\">Expirado</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "warning"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "warning",
+      "children": "Expirado"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 11,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": false,
+    "children": "Reenviar convite"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth={false}>Reenviar convite</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": false,
+      "children": "Reenviar convite"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 12,
+   "component": "Card de familiar",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2)",
+   "note": "Fora do DS (classes area-family-*).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Leandro Costa",
+    "meta": "Filho"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 13,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3)",
+   "parent": 12,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 14,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 12,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 15,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": 12,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 16,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": 12,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 17,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": 12,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 18,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 17,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 19,
+   "component": "Ação destrutiva em texto",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": 12,
+   "hidden": true,
+   "note": "Fora do DS; no DS o mais próximo é Button variant=\"tertiary\" com cor danger.",
+   "dsProps": {},
+   "behavior": {
+    "children": "Desvincular familiar",
+    "abre": "Modal Desvincular familiar"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 20,
+   "component": "Card de familiar",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3)",
+   "note": "Fora do DS (classes area-family-*).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Márcia Costa",
+    "meta": "Mãe"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 21,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(3)",
+   "parent": 20,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 22,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 20,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 23,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": 20,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 24,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": 20,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 25,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": 20,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 26,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 25,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 27,
+   "component": "Ação destrutiva em texto",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": 20,
+   "hidden": true,
+   "note": "Fora do DS; no DS o mais próximo é Button variant=\"tertiary\" com cor danger.",
+   "dsProps": {},
+   "behavior": {
+    "children": "Desvincular familiar",
+    "abre": "Modal Desvincular familiar"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 28,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": false,
+    "children": "Incluir novo familiar",
+    "iconEnd": "add"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth={false} iconEnd=\"add\">Incluir novo familiar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": false,
+      "children": "Incluir novo familiar",
+      "iconEnd": "add"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 29,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)",
+   "hidden": true,
+   "dsProps": {
+    "tone": "info",
+    "children": "Pendente"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"info\">Pendente</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "info"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "info",
+      "children": "Pendente"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 30,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": false,
+    "children": "Aceitar"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth={false}>Aceitar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": false,
+      "children": "Aceitar"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 31,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": false,
+    "children": "Recusar"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth={false}>Recusar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": false,
+      "children": "Recusar"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 32,
+   "component": "Card de familiar",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2)",
+   "hidden": true,
+   "note": "Fora do DS (classes area-family-*).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Carlos Silva",
+    "meta": "Você como Cônjuge"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 33,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1) > span:nth-of-type(3)",
+   "parent": 32,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 34,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 32,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 35,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": 32,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 36,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": 32,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 37,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": 32,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 38,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 37,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 39,
+   "component": "Card de familiar",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3)",
+   "hidden": true,
+   "note": "Fora do DS (classes area-family-*).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Ana Paula Costa",
+    "meta": "Você como Filha"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 40,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > button:nth-of-type(1) > span:nth-of-type(3)",
+   "parent": 39,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 41,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 39,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 42,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": 39,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 43,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": 39,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 44,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": 39,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 45,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 44,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 46,
+   "component": "Card de familiar",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4)",
+   "hidden": true,
+   "note": "Fora do DS (classes area-family-*).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Roberto Silva",
+    "meta": "Você como Filha"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 47,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > button:nth-of-type(1) > span:nth-of-type(3)",
+   "parent": 46,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 48,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 46,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 49,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": 46,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 50,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": 46,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 51,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": 46,
+   "hidden": true,
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto"
+   ],
+   "ficha": null
+  },
+  {
+   "id": 52,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > div:nth-of-type(3) > div:nth-of-type(2) > section:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 51,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 53,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-recebidos > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": null
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [
+  {
+   "component": "Modal Desvincular familiar",
+   "props": "alertdialog com Button variant=\"danger\" \"Desvincular\" e Button variant=\"secondary\" \"Cancelar\"",
+   "when": "Toque em Desvincular familiar. Fora do DS (desv-*): candidato a componente Dialog.",
+   "inDs": false
+  },
+  {
+   "component": "Folha de foto de perfil",
+   "props": "Tirar foto · Escolher da galeria · Remover foto · Cancelar",
+   "when": "Toque no avatar. Fora do DS (photo-sheet).",
+   "inDs": false
+  }
+ ],
+ "localClasses": {
+  "area-top": 1,
+  "area-profile": 1,
+  "area-user": 2,
+  "area-name": 1,
+  "area-help": 2,
+  "area-notif": 2,
+  "area-tabs": 1,
+  "area-chev": 37,
+  "area-family": 30,
+  "area-detalhe": 5,
+  "area-acc": 175,
+  "tl-eyebrow": 20,
+  "area-fields": 15,
+  "area-contact": 20,
+  "area-section": 30,
+  "area-field": 165,
+  "area-row": 15,
+  "area-check": 40,
+  "area-doc": 35,
+  "area-benefit": 25,
+  "area-link": 2,
+  "area-add": 2
+ }
+}

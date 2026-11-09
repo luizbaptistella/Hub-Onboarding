@@ -1,0 +1,32 @@
+/* Foto de perfil (protótipo): avatar editável, folha de ações e editor com prévia circular.
+   Só tokens do DS. */
+
+.area-avatar-btn { position: relative; flex: none; width: 48px; height: 48px; padding: 0; border: 0; background: none; border-radius: var(--radius-full); cursor: pointer; }
+.area-profile .area-avatar-btn { width: 40px; height: 40px; }
+.area-avatar-btn:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.area-avatar-btn .area-avatar { width: 100%; height: 100%; }
+.area-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.area-avatar-badge { position: absolute; right: -2px; bottom: -2px; width: 24px; height: 24px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-full); background: var(--bg-brand-bold); color: var(--text-on-brand); border: 2px solid var(--bg-surface); }
+.area-avatar-badge .po-icon { font-size: 14px; }
+
+.photo-sheet { position: fixed; inset: 0; z-index: 50; display: flex; align-items: flex-end; justify-content: center; }
+.photo-sheet[hidden] { display: none; }
+.photo-scrim { position: absolute; inset: 0; background: var(--bg-scrim); }
+.photo-panel { position: relative; width: 100%; max-width: 480px; max-height: 100%; overflow-y: auto; box-sizing: border-box; padding: var(--space-inset-md) var(--space-page-inline) var(--space-page-block-end); background: var(--bg-surface); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.photo-title { margin: 0 0 var(--space-stack-related); font-family: var(--font-heading); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+.photo-item { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; min-height: var(--size-touch-target); padding: 0 var(--space-inset-sm); box-sizing: border-box; border: 0; border-radius: var(--radius-md); background: none; font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); font-weight: var(--type-body-lg-weight); color: var(--text-default); text-align: left; cursor: pointer; }
+.photo-item[hidden] { display: none; }
+.photo-item:hover { background: var(--bg-neutral-subtle-hovered); }
+.photo-item:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.photo-item .po-icon { color: var(--icon-default); }
+.photo-item-danger { color: var(--text-danger); }
+.photo-item-danger .po-icon { color: var(--icon-danger); }
+.photo-panel > .po-btn { margin-top: var(--space-stack-group); }
+.photo-preview { display: flex; justify-content: center; margin-bottom: var(--space-stack-group); }
+.photo-preview canvas { width: 240px; max-width: 100%; height: auto; aspect-ratio: 1; border-radius: var(--radius-full); background: var(--bg-neutral); }
+.photo-zoom { display: flex; align-items: center; gap: var(--space-inline-group); font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.photo-zoom input { flex: 1 1 auto; min-width: 0; min-height: var(--size-touch-target); accent-color: var(--bg-brand-bold); }
+.photo-actions { display: flex; gap: var(--space-inline-group); margin-top: var(--space-stack-group); }
+.photo-actions .po-btn { flex: 1 1 0; }
+.photo-error { margin: var(--space-stack-related) 0 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-danger); }
+.photo-error[hidden] { display: none; }

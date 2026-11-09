@@ -1,0 +1,1340 @@
+{
+ "screen": "CAD-04",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/CAD-04-codigo-por-e-mail/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Verificação (classe po-header-module).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Cadastro",
+    "progress": {
+     "current": 1,
+     "total": 4
+    },
+    "language": false,
+    "help": true
+   },
+   "behavior": {
+    "navega para": "otp-sms"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Cadastro\" progress={{ current: 1, total: 4 }} language={false} help />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Cadastro",
+      "progress": {
+       "current": 1,
+       "total": 4
+      },
+      "language": false,
+      "help": {}
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×56",
+      "DS": "375×40"
+     },
+     {
+      "parte": "header-slot",
+      "protótipo": "48×48",
+      "DS": "—"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "header-center",
+      "protótipo": "247×24",
+      "DS": "—"
+     },
+     {
+      "parte": "progress",
+      "protótipo": "247×24",
+      "DS": "263×24"
+     },
+     {
+      "parte": "progress-label",
+      "protótipo": "247×16",
+      "DS": "52×16"
+     },
+     {
+      "parte": "progress-track",
+      "protótipo": "247×4",
+      "DS": "263×4"
+     },
+     {
+      "parte": "progress-seg",
+      "protótipo": "59×4",
+      "DS": "63×4"
+     },
+     {
+      "parte": "ícone (help)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "0px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "width",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "header-center",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-size",
+      "token": "--type-label-sm-size",
+      "cadeia": "--type-label-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "line-height",
+      "token": "--type-label-sm-line-height",
+      "cadeia": "--type-label-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-sm-weight",
+      "cadeia": "--type-label-sm-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "progress-track",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-top",
+      "token": "--size-progress",
+      "cadeia": "--size-progress",
+      "valor": "4px solid rgb(0, 82, 46)"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-radius",
+      "token": "--radius-sm",
+      "cadeia": "--radius-sm",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-top-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "ícone (help)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "56px",
+      "DS": "40px"
+     },
+     {
+      "onde": "progress",
+      "prop": "tamanho",
+      "protótipo": "247×24",
+      "DS": "263×24"
+     },
+     {
+      "onde": "progress-label",
+      "prop": "tamanho",
+      "protótipo": "247×16",
+      "DS": "52×16"
+     },
+     {
+      "onde": "progress-track",
+      "prop": "tamanho",
+      "protótipo": "247×4",
+      "DS": "263×4"
+     },
+     {
+      "onde": "progress-seg",
+      "prop": "tamanho",
+      "protótipo": "59×4",
+      "DS": "63×4"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 56,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "Toast",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > div:nth-of-type(2) > div:nth-of-type(1)",
+   "hidden": true,
+   "note": "Vai dentro da ToastRegion, logo depois do AppHeader.",
+   "dsProps": {
+    "tone": "success",
+    "title": "E-mail alterado com sucesso"
+   },
+   "behavior": {
+    "fecha": "(fecha)"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Toast/README.md",
+   "jsx": "<Toast tone=\"success\" title=\"E-mail alterado com sucesso\" />",
+   "states": [
+    "oculto",
+    "visível por 4 s depois de trocar o e-mail"
+   ],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "title": "E-mail alterado com sucesso"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > div:nth-of-type(3) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Insira o seu código",
+    "subtitle": "Enviamos um código de 6 dígitos para o seu e-mail.",
+    "tone": "neutral",
+    "spaced": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Insira o seu código\" subtitle=\"Enviamos um código de 6 dígitos para o seu e-mail.\" tone=\"neutral\" spaced />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Insira o seu código",
+      "subtitle": "Enviamos um código de 6 dígitos para o seu e-mail.",
+      "tone": "neutral",
+      "spaced": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×148",
+      "DS": "327×80"
+     },
+     {
+      "parte": "heading-title",
+      "protótipo": "327×32",
+      "DS": "327×32"
+     },
+     {
+      "parte": "heading-sub",
+      "protótipo": "327×40",
+      "DS": "327×40"
+     },
+     {
+      "parte": "contact",
+      "protótipo": "327×44",
+      "DS": "—"
+     },
+     {
+      "parte": "contact-value",
+      "protótipo": "167×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (mail)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "contact-edit",
+      "protótipo": "101×44",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (edit_square)",
+      "protótipo": "18×18",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-loose",
+      "cadeia": "--space-stack-loose",
+      "valor": "16px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-size",
+      "token": "--type-heading-xl-size",
+      "cadeia": "--type-heading-xl-size",
+      "valor": "24px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "line-height",
+      "token": "--type-heading-xl-line-height",
+      "cadeia": "--type-heading-xl-line-height",
+      "valor": "32px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-weight",
+      "token": "--type-heading-xl-weight",
+      "cadeia": "--type-heading-xl-weight",
+      "valor": "700"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "contact",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contact",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contact",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "contact",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "contact",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-strong-weight",
+      "cadeia": "--type-label-md-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (mail)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-size",
+      "token": "--type-label-md-strong-size",
+      "cadeia": "--type-label-md-strong-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "line-height",
+      "token": "--type-label-md-strong-line-height",
+      "cadeia": "--type-label-md-strong-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-strong-weight",
+      "cadeia": "--type-label-md-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "min-height",
+      "token": "--size-touch-target",
+      "cadeia": "--size-touch-target",
+      "valor": "44px"
+     },
+     {
+      "parte": "ícone (edit_square)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "148px",
+      "DS": "80px"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 148,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 4,
+   "component": "ContactRow",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 3,
+   "dsProps": {
+    "channel": "email",
+    "value": "=maskEmail(email)",
+    "editLabel": "Editar Email"
+   },
+   "behavior": {
+    "navega para": "editar-email"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ContactRow/README.md",
+   "jsx": "<ContactRow channel=\"email\" value={maskEmail(email)} editLabel=\"Editar Email\" />",
+   "states": [],
+   "propOptions": {
+    "channel": {
+     "options": [
+      "sms",
+      "email"
+     ],
+     "used": "email"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "channel": "email",
+      "value": "joao****@email.com",
+      "editLabel": "Editar Email"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×44",
+      "DS": "327×20"
+     },
+     {
+      "parte": "contact-value",
+      "protótipo": "167×20",
+      "DS": "167×20"
+     },
+     {
+      "parte": "ícone (mail)",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "contact-edit",
+      "protótipo": "101×44",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (edit_square)",
+      "protótipo": "18×18",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-strong-weight",
+      "cadeia": "--type-label-md-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "contact-value",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (mail)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-size",
+      "token": "--type-label-md-strong-size",
+      "cadeia": "--type-label-md-strong-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "line-height",
+      "token": "--type-label-md-strong-line-height",
+      "cadeia": "--type-label-md-strong-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-strong-weight",
+      "cadeia": "--type-label-md-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contact-edit",
+      "propriedade": "min-height",
+      "token": "--size-touch-target",
+      "cadeia": "--size-touch-target",
+      "valor": "44px"
+     },
+     {
+      "parte": "ícone (edit_square)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "44px",
+      "DS": "20px"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 44,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 5,
+   "component": "OTPInput",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "length": 6,
+    "state": "default"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/OTPInput/README.md",
+   "jsx": "<OTPInput length={6} state=\"default\" />",
+   "states": [
+    "padrão",
+    "erro (\"Tentativas restantes: n/3\")",
+    "sucesso",
+    "bloqueado (`disabled`, 3 erros)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "default",
+      "success",
+      "error"
+     ],
+     "used": "default"
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "length": 6,
+      "state": "default"
+     }
+    },
+    {
+     "label": "Erro",
+     "props": {
+      "length": 6,
+      "state": "error",
+      "error": "Tentativas restantes: 2/3"
+     }
+    },
+    {
+     "label": "Sucesso",
+     "props": {
+      "length": 6,
+      "state": "success"
+     }
+    },
+    {
+     "label": "Bloqueado",
+     "props": {
+      "length": 6,
+      "state": "default",
+      "disabled": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×48",
+      "DS": "327×48"
+     },
+     {
+      "parte": "otp-cell",
+      "protótipo": "45×48",
+      "DS": "45×48"
+     },
+     {
+      "parte": "otp-sep",
+      "protótipo": "12×2",
+      "DS": "12×2"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-loose",
+      "cadeia": "--space-stack-loose",
+      "valor": "16px"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "height",
+      "token": "--size-control",
+      "cadeia": "--size-control",
+      "valor": "48px"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "border",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "1px solid rgb(97, 102, 116)"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "background",
+      "token": "--bg-input",
+      "cadeia": "--bg-input → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "font-size",
+      "token": "--type-title-lg-size",
+      "cadeia": "--type-title-lg-size",
+      "valor": "20px"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "line-height",
+      "token": "--type-title-lg-line-height",
+      "cadeia": "--type-title-lg-line-height",
+      "valor": "28px"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "font-weight",
+      "token": "--type-title-lg-weight",
+      "cadeia": "--type-title-lg-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "otp-cell",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "otp-sep",
+      "propriedade": "background",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116) none repeat scroll 0% 0% / auto padding-box border-box"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 6,
+   "component": "ResendPrompt",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > p:nth-of-type(1)",
+   "dsProps": {
+    "question": "Não recebeu o código?",
+    "actionLabel": "Reenviar código",
+    "cooldown": 30
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResendPrompt/README.md",
+   "jsx": "<ResendPrompt question=\"Não recebeu o código?\" actionLabel=\"Reenviar código\" cooldown={30} />",
+   "states": [
+    "padrão",
+    "em espera (\"Reenviar código em 0:ss\", 30 s)",
+    "desativado (código bloqueado)"
+   ],
+   "propOptions": {
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "question": "Não recebeu o código?",
+      "actionLabel": "Reenviar código",
+      "cooldown": 30
+     }
+    },
+    {
+     "label": "Desativado",
+     "props": {
+      "question": "Não recebeu o código?",
+      "actionLabel": "Reenviar código",
+      "cooldown": 30,
+      "disabled": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×20",
+      "DS": "375×20"
+     },
+     {
+      "parte": "resend-action",
+      "protótipo": "108×20",
+      "DS": "118×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "column-gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "resend-action",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "resend-action",
+      "prop": "tamanho",
+      "protótipo": "108×20",
+      "DS": "118×20"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 20,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 7,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#otp-email > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×77"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "8px 16px 24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-sm-size",
+      "cadeia": "--type-body-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-sm-line-height",
+      "cadeia": "--type-body-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-sm-weight",
+      "cadeia": "--type-body-sm-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "77px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [
+  {
+   "component": "Alert",
+   "props": "tone=\"danger\" title=\"Código incorreto\"",
+   "when": "Código errado com tentativas restantes.",
+   "inDs": true
+  },
+  {
+   "component": "Alert",
+   "props": "tone=\"danger\" title=\"Excesso de tentativas.\"",
+   "when": "No 3º código errado.",
+   "inDs": true
+  },
+  {
+   "component": "Alert",
+   "props": "tone=\"success\" title=\"E-mail verificado\"",
+   "when": "Código certo, por 1,8 s antes de abrir CAD-06.",
+   "inDs": true
+  }
+ ],
+ "localClasses": {
+  "otp-block": 1,
+  "otp-feedback": 1
+ }
+}

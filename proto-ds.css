@@ -1,0 +1,119 @@
+/* ── Ajustes do protótipo para as regras atuais do DS Palmeiras · Onboarding ──
+   O components.css do protótipo é uma cópia anterior às revisões 04 (Feedback), 06 (Conteúdo), 10 (Idioma).
+   Este arquivo aplica o que mudou nelas, sem trocar a cópia inteira. Só tokens. */
+
+/* Campos: valor em 16px (evita zoom no iOS), altura 44px de size-input */
+.po-input-sm, .po-input-md, .po-input-lg, .po-select select {
+  font-size: var(--type-body-lg-size);
+  line-height: var(--type-body-lg-line-height);
+}
+
+/* FormMessage: ícone de erro no lugar do ponto */
+.po-msg { align-items: flex-start; }
+.po-msg-icon { flex: none; color: var(--icon-danger); margin-top: 2px; }
+
+/* Alert: texto em text-default (revisão 04) e tom info */
+.po-alert-text { color: var(--text-default); }
+.po-alert-info { border-color: var(--border-info); background: var(--bg-info-subtlest); }
+.po-alert-info .po-alert-icon { color: var(--icon-info); }
+.po-alert .po-alert-icon .po-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* Ações de texto (Editar, Alterar, Conectar, Desvincular…): um só estilo, alvo de 44px */
+.po-contact-edit, .seg-action, .area-link-danger, .seg-link-danger {
+  display: inline-flex; align-items: center; gap: var(--space-inline-tight);
+  min-height: var(--size-touch-target); padding: 0; background: none; border: 0; cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--type-label-md-strong-size);
+  line-height: var(--type-label-md-strong-line-height);
+  font-weight: var(--type-label-md-strong-weight);
+  color: var(--text-brand);
+}
+.seg-action-danger, .area-link-danger, .seg-link-danger { color: var(--text-danger); }
+.po-contact-edit:hover, .seg-action:hover, .area-link-danger:hover, .seg-link-danger:hover { text-decoration: underline; }
+
+/* TextLink dentro de texto (Termos de Uso) e links ainda sem tela */
+.po-link { background: none; border: 0; padding: 0; cursor: pointer; align-self: flex-start; }
+.po-link-inline { font: inherit; color: var(--text-link); text-decoration: underline; }
+.proto-soon-toast { position: absolute; left: var(--space-inset-md); right: var(--space-inset-md); bottom: var(--space-600); z-index: 30; padding: var(--space-inset-sm) var(--space-inset-md); border-radius: var(--radius-lg); background: var(--text-default); color: var(--bg-surface); font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); text-align: center; }
+
+/* Botão de incluir familiar com a altura padrão de botão */
+.area-add { height: var(--size-button); }
+
+/* Seletor de idioma (DS v50): pílula com bandeira, código e chevron; menu com itens de 48px */
+.po-lang { gap: var(--space-inline-tight); height: var(--size-touch-target); padding: 0 var(--space-100) 0 var(--space-100); color: var(--text-default); font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); cursor: pointer; }
+.po-lang img { width: 20px; height: 20px; }
+.po-lang .po-icon { color: var(--icon-subtle); }
+.po-lang:hover { background: var(--bg-neutral-subtle-hovered); }
+.lang-menu { min-width: 200px; }
+.lang-menu [role="menuitemradio"] { display: flex; align-items: center; gap: var(--space-inline-group); min-height: var(--size-menu-item); padding: 0 var(--space-inset-md); font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); color: var(--text-default); cursor: pointer; }
+.lang-menu [role="menuitemradio"]:hover, .lang-menu [role="menuitemradio"]:focus-visible { background: var(--bg-neutral-subtle-hovered); outline: none; }
+.lang-menu [role="menuitemradio"][aria-checked="true"] { font-weight: var(--type-label-md-strong-weight); }
+.lang-menu [role="menuitemradio"] img { flex: none; width: 20px; height: 20px; border-radius: var(--radius-full); }
+
+/* Botão do tutorial (decisão da validação facial): barra verde enche em 3 s e então libera */
+.lv-fill { position: relative; overflow: hidden; }
+.lv-fill::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 0; background: var(--bg-brand-bold); }
+.lv-fill.is-filling::before { width: 100%; transition: width 3s linear; }
+.lv-fill .po-btn-content { position: relative; }
+.lv-fill.is-filling[aria-disabled="true"] { color: var(--text-on-brand); }
+@media (prefers-reduced-motion: reduce) { .lv-fill.is-filling::before { transition: none; width: 0; } }
+
+/* ── List e ListItem (DS revisão 12): cópia de bundle.css ── */
+/* Lista agrupada: rótulo de seção em label-xs caixa-alta, cartão bg-surface com borda border-default e linhas de no mínimo 48px (size-menu-item). */
+.po-list-section { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+.po-list-label { margin: 0; font-family: var(--font-body); font-size: var(--type-label-xs-size); line-height: var(--type-label-xs-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-subtle); text-transform: uppercase; }
+.po-list { margin: 0; padding: 0; list-style: none; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+.po-list-li + .po-list-li { border-top: 1px solid var(--border-default); }
+.po-list-item { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; min-height: var(--size-menu-item); box-sizing: border-box; padding: var(--space-150) var(--space-inset-md); margin: 0; border: 0; background: transparent; font: inherit; text-align: left; text-decoration: none; color: var(--text-default); }
+.po-list-icon { flex: none; display: inline-flex; color: var(--icon-subtle); }
+.po-list-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-025); }
+.po-list-title { font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-list-desc { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-list-trailing { flex: none; display: inline-flex; align-items: center; }
+.po-list-chevron { flex: none; display: inline-flex; color: var(--icon-subtle); }
+.po-list-item-link { cursor: pointer; }
+.po-list-item-link:not([aria-disabled="true"]):hover { background: var(--bg-neutral-subtle-hovered); }
+.po-list-item-link:not([aria-disabled="true"]):active { background: var(--bg-neutral-subtle-pressed); }
+.po-list-item-link:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.po-list-item-link[aria-disabled="true"] { cursor: not-allowed; }
+.po-list-item-link[aria-disabled="true"] .po-list-title, .po-list-item-link[aria-disabled="true"] .po-list-desc { color: var(--text-disabled); }
+.po-list-item-link[aria-disabled="true"] .po-list-icon, .po-list-item-link[aria-disabled="true"] .po-list-chevron { color: var(--icon-disabled); }
+.po-list-item-danger .po-list-title { color: var(--text-danger); }
+.po-list-item-danger .po-list-icon { color: var(--icon-danger); }
+.po-list-item-danger.po-list-item-link:not([aria-disabled="true"]):hover { background: var(--bg-danger-subtlest); }
+.po-list-action { position: relative; flex: none; padding: var(--space-050) 0; border: 0; background: transparent; font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-brand); cursor: pointer; white-space: nowrap; }
+.po-list-action::after { content: ""; position: absolute; left: 50%; top: 50%; width: max(100%, var(--size-touch-target)); height: var(--size-touch-target); transform: translate(-50%, -50%); }
+.po-list-action:hover { text-decoration: underline; }
+.po-list-action:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; border-radius: var(--radius-sm); }
+.po-list-action-danger { color: var(--text-danger); }
+
+/* Campo de senha com Mostrar/Ocultar (TextField preset password do DS): botão subtle de 40px dentro do campo */
+.proto-pass { position: relative; }
+.proto-pass .po-input { width: 100%; padding-right: var(--space-600); box-sizing: border-box; }
+.proto-pass-toggle { position: absolute; right: var(--space-050); top: 50%; transform: translateY(-50%); }
+
+/* Encerrar conta (Figma 3142:61697) */
+.enc-body { gap: var(--space-stack-group); padding-top: var(--space-inset-lg); }
+.enc-body .po-heading { margin-bottom: var(--space-stack-tight); }
+.enc-body .po-list-section { margin-bottom: var(--space-stack-tight); }
+.enc-actions { display: flex; flex-direction: column; gap: var(--space-stack-group); padding-top: var(--space-stack-group); }
+
+/* Rodapé da tela de status (Tela de status e Dados recebidos): contagem numa linha, ações empilhadas.
+   Botão "Continuar agora" em largura total (48px, sem quebrar). */
+.po-status-screen-foot { flex-direction: column; align-items: stretch; gap: var(--space-stack-loose); padding: 0 var(--space-page-inline) var(--space-page-block-end); box-sizing: border-box; }
+.po-status-screen-foot .po-countdown { justify-content: flex-start; gap: var(--space-inline-group); padding: 0; }
+.po-status-screen-foot .po-countdown-text { max-width: none; }
+.po-status-screen-foot .lv-done-actions { display: flex; flex-direction: column; align-items: stretch; gap: var(--space-stack-tight); }
+.po-status-screen-foot .lv-done-now { width: 100%; height: var(--size-button); white-space: nowrap; }
+
+/* Correções de contraste WCAG 2.2 (mesmas do DS v59, 04/11/2026): número do passo futuro em branco,
+   borda de cartão selecionável 3:1 e descrição pressionada com contraste 4,5:1. */
+:root { --border-selectable: var(--neutral-500); --text-subtle-pressed: var(--neutral-600); }
+.po-journey-upcoming .po-journey-circle { color: var(--text-on-brand); }
+.po-optcard { border-color: var(--border-selectable); }
+.po-optcard:not([aria-disabled="true"]):active .po-optcard-desc,
+.po-list-item-link:not([aria-disabled="true"]):active .po-list-desc { color: var(--text-subtle-pressed); }
+
+/* Linha Idioma do menu de perfil: o li recebia padding 0 de ".po-profile-menu li" e ficava colado à esquerda.
+   Mesmo recuo das outras opções (ícone a 16px da borda). */
+.po-profile-menu .po-profile-lang { padding: 0 var(--space-150) 0 var(--space-200); }

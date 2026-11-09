@@ -1,0 +1,1137 @@
+{
+ "screen": "FAM-01",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-01-meus-familiares-vazio/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "Cabeçalho do perfil (avatar + nome + badge)",
+   "ds": false,
+   "local": true,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "note": "Fora do DS (area-user, area-avatar).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Roberto Silva",
+    "avatar": "foto de perfil editável"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "191×48",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (person)",
+      "protótipo": "26×26",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (photo_camera)",
+      "protótipo": "16×16",
+      "DS": "—"
+     },
+     {
+      "parte": "badge",
+      "protótipo": "116×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "ícone (person)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (photo_camera)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "badge",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "background",
+      "token": "--bg-success-subtle",
+      "cadeia": "--bg-success-subtle → --green-100",
+      "valor": "rgb(209, 240, 218) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "color",
+      "token": "--text-success",
+      "cadeia": "--text-success → --green-700",
+      "valor": "rgb(0, 100, 55)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 191,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 1,
+   "dsProps": {
+    "tone": "success",
+    "children": "Cadastro completo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Cadastro completo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Cadastro completo"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "116×20",
+      "DS": "116×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-success-subtle",
+      "cadeia": "--bg-success-subtle → --green-100",
+      "valor": "rgb(209, 240, 218) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-success",
+      "cadeia": "--text-success → --green-700",
+      "valor": "rgb(0, 100, 55)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Ajuda e atendimento",
+    "navega para": "ajuda-form"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (help_outline)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "ícone (help_outline)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 4,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Notificações, 2 não lidas",
+    "navega para": "notificacoes"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (notifications)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "ícone (notifications)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 5,
+   "component": "ProfileMenu",
+   "ds": true,
+   "local": false,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "id": "modo-escuro",
+      "label": "Modo escuro",
+      "icon": "dark_mode"
+     },
+     {
+      "id": "privacidade",
+      "label": "Privacidade",
+      "icon": "lock"
+     },
+     {
+      "id": "seguran-a",
+      "label": "Segurança",
+      "icon": "shield"
+     },
+     {
+      "id": "senha",
+      "label": "Senha",
+      "icon": "password"
+     },
+     {
+      "id": "sair",
+      "label": "Sair",
+      "icon": "logout",
+      "tone": "danger"
+     }
+    ],
+    "language": true,
+    "divider": true
+   },
+   "behavior": {
+    "navega para (itens)": "Segurança → seguranca, Sair → login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ProfileMenu/README.md",
+   "jsx": "<ProfileMenu items={[{ id: \"modo-escuro\", label: \"Modo escuro\", icon: \"dark_mode\" }, { id: \"privacidade\", label: \"Privacidade\", icon: \"lock\" }, { id: \"seguran-a\", label: \"Segurança\", icon: \"shield\" }, { id: \"senha\", label: \"Senha\", icon: \"password\" }, { id: \"sair\", label: \"Sair\", icon: \"logout\", tone: \"danger\" }]} language divider />",
+   "states": [
+    "fechado",
+    "aberto",
+    "Modo escuro ligado ou desligado"
+   ],
+   "propOptions": {
+    "divider": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "defaultOpen": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "id": "modo-escuro",
+        "label": "Modo escuro",
+        "icon": "dark_mode"
+       },
+       {
+        "id": "privacidade",
+        "label": "Privacidade",
+        "icon": "lock"
+       },
+       {
+        "id": "seguran-a",
+        "label": "Segurança",
+        "icon": "shield"
+       },
+       {
+        "id": "senha",
+        "label": "Senha",
+        "icon": "password"
+       },
+       {
+        "id": "sair",
+        "label": "Sair",
+        "icon": "logout",
+        "tone": "danger"
+       }
+      ],
+      "language": true,
+      "divider": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "140×44"
+     },
+     {
+      "parte": "ícone (menu)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "ícone (menu)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (menu)",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "width",
+      "protótipo": "40px",
+      "DS": "140px"
+     },
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "40px",
+      "DS": "44px"
+     }
+    ],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 6,
+   "component": "Tabs",
+   "ds": true,
+   "local": false,
+   "selector": "#area-familiares-vazio > header:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "value": "Meus cadastro",
+      "label": "Meus cadastro"
+     },
+     {
+      "value": "Meus familiares",
+      "label": "Meus familiares"
+     }
+    ],
+    "value": "Meus familiares"
+   },
+   "behavior": {
+    "navega para (itens)": "Meus cadastro → area-cadastro-detalhe, Meus familiares → area-familiares-vazio"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tabs/README.md",
+   "jsx": "<Tabs items={[{ value: \"Meus cadastro\", label: \"Meus cadastro\" }, { value: \"Meus familiares\", label: \"Meus familiares\" }]} value=\"Meus familiares\" />",
+   "states": [
+    "aba ativa: Meus familiares"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "value": "Meus cadastro",
+        "label": "Meus cadastro"
+       },
+       {
+        "value": "Meus familiares",
+        "label": "Meus familiares"
+       }
+      ],
+      "value": "Meus familiares"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×48"
+     },
+     {
+      "parte": "tab",
+      "protótipo": "164×48",
+      "DS": "188×48"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-bottom",
+      "token": "--border-default",
+      "cadeia": "--border-default → --neutral-200 → --gray-200",
+      "valor": "1px solid rgb(226, 227, 232)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-page-inline",
+      "cadeia": "--space-page-inline",
+      "valor": "0px 24px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "height",
+      "token": "--size-control",
+      "cadeia": "--size-control",
+      "valor": "48px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-strong-size",
+      "cadeia": "--type-label-lg-strong-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-strong-line-height",
+      "cadeia": "--type-label-lg-strong-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-strong-weight",
+      "cadeia": "--type-label-lg-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "tab",
+      "prop": "tamanho",
+      "protótipo": "164×48",
+      "DS": "188×48"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 7,
+   "component": "Estado vazio",
+   "ds": false,
+   "local": true,
+   "selector": "#area-familiares-vazio > div:nth-of-type(2) > div:nth-of-type(1)",
+   "note": "Fora do DS (area-empty-*): candidato a componente EmptyState.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Nenhum familiar cadastrado",
+    "description": "Você pode cadastrar seu cônjuge ou companheiro(a), seus filhos menores de 18 anos e seus pais aposentados ou com mais de 60 anos."
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×192",
+      "DS": "—"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "327×48",
+      "DS": "—"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "176×24",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (add)",
+      "protótipo": "18×18",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding-top",
+      "token": "--space-stack-section",
+      "cadeia": "--space-stack-section",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "ícone (add)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 192,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 8,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#area-familiares-vazio > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": 7,
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": false,
+    "children": "Incluir novo familiar",
+    "iconEnd": "add"
+   },
+   "behavior": {
+    "navega para": "familiar-intro"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth={false} iconEnd=\"add\">Incluir novo familiar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": false,
+      "children": "Incluir novo familiar",
+      "iconEnd": "add"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×48",
+      "DS": "220×50"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "176×24",
+      "DS": "178×24"
+     },
+     {
+      "parte": "ícone (add)",
+      "protótipo": "18×18",
+      "DS": "20×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "ícone (add)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "width",
+      "protótipo": "327px",
+      "DS": "220px"
+     },
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "50px"
+     },
+     {
+      "onde": "btn-content",
+      "prop": "tamanho",
+      "protótipo": "176×24",
+      "DS": "178×24"
+     },
+     {
+      "onde": "ícone (add)",
+      "prop": "tamanho",
+      "protótipo": "18×18",
+      "DS": "20×20"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 9,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#area-familiares-vazio > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×77"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "8px 16px 24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-sm-size",
+      "cadeia": "--type-body-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-sm-line-height",
+      "cadeia": "--type-body-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-sm-weight",
+      "cadeia": "--type-body-sm-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "77px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [
+  {
+   "component": "Folha de foto de perfil",
+   "props": "Tirar foto · Escolher da galeria · Remover foto · Cancelar",
+   "when": "Toque no avatar. Fora do DS (photo-sheet).",
+   "inDs": false
+  }
+ ],
+ "localClasses": {
+  "area-top": 1,
+  "area-profile": 1,
+  "area-user": 2,
+  "area-avatar": 3,
+  "area-name": 1,
+  "area-help": 2,
+  "area-notif": 2,
+  "area-promo": 8,
+  "area-tabs": 1,
+  "area-empty": 3,
+  "area-add": 1
+ }
+}

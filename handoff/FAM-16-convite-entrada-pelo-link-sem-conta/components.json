@@ -1,0 +1,401 @@
+{
+ "screen": "FAM-16",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-16-convite-entrada-pelo-link-sem-conta/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Convite de familiar",
+    "language": false,
+    "help": false
+   },
+   "behavior": {
+    "navega para": "login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Convite de familiar\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Convite de familiar",
+      "language": false,
+      "help": false
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Roberto Silva convidou você",
+    "tone": "neutral",
+    "spaced": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Roberto Silva convidou você\" tone=\"neutral\" spaced />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Roberto Silva convidou você",
+      "tone": "neutral",
+      "spaced": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1)",
+   "dsProps": {
+    "label": "CPF",
+    "name": "cpf",
+    "placeholder": "000.000.000-00",
+    "autoComplete": "off"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"CPF\" name=\"cpf\" placeholder=\"000.000.000-00\" autoComplete=\"off\" />",
+   "states": [
+    "padrão",
+    "preenchido"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "CPF",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "off"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "CPF",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "off",
+      "defaultValue": "Texto de exemplo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 4,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "type": "submit",
+    "children": "Continuar"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth type=\"submit\">Continuar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Continuar"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 5,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2)",
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": true,
+    "children": "Já tenho conta"
+   },
+   "behavior": {
+    "navega para": "login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth>Já tenho conta</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": true,
+      "children": "Já tenho conta"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 6,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#convite-link > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": null
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {
+  "area-form": 2,
+  "convite-form": 1,
+  "convite-dica": 1,
+  "convite-alert": 1
+ }
+}

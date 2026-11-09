@@ -1,0 +1,696 @@
+{
+ "screen": "BIO-07",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/BIO-07-status-identidade-enviada/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "StatusScreen",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-done > div:nth-of-type(2)",
+   "dsProps": {
+    "title": "Recebemos seus dados cadastrais!",
+    "tone": "success",
+    "badge": "success"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/StatusScreen/README.md",
+   "jsx": "<StatusScreen title=\"Recebemos seus dados cadastrais!\" tone=\"success\" badge=\"success\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "pending"
+     ],
+     "used": "success"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Recebemos seus dados cadastrais!",
+      "tone": "success",
+      "badge": "success"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×768",
+      "DS": "375×224"
+     },
+     {
+      "parte": "status-screen-head",
+      "protótipo": "327×160",
+      "DS": "327×160"
+     },
+     {
+      "parte": "imagem",
+      "protótipo": "80×80",
+      "DS": "—"
+     },
+     {
+      "parte": "status-screen-title",
+      "protótipo": "327×64",
+      "DS": "327×64"
+     },
+     {
+      "parte": "status-screen-body",
+      "protótipo": "327×316",
+      "DS": "—"
+     },
+     {
+      "parte": "journey",
+      "protótipo": "327×316",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-step",
+      "protótipo": "311×68",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-row",
+      "protótipo": "302×44",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-circle",
+      "protótipo": "44×44",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (check)",
+      "protótipo": "26×26",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-label",
+      "protótipo": "88×28",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-connector",
+      "protótipo": "2×24",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (assignment_turned_in)",
+      "protótipo": "28×28",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-section",
+      "cadeia": "--space-stack-section",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-inset-lg",
+      "cadeia": "--space-inset-lg",
+      "valor": "24px 24px 40px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "status-screen-head",
+      "propriedade": "gap",
+      "token": "--space-stack-loose",
+      "cadeia": "--space-stack-loose",
+      "valor": "16px"
+     },
+     {
+      "parte": "status-screen-title",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "status-screen-title",
+      "propriedade": "font-size",
+      "token": "--type-heading-xl-size",
+      "cadeia": "--type-heading-xl-size",
+      "valor": "24px"
+     },
+     {
+      "parte": "status-screen-title",
+      "propriedade": "line-height",
+      "token": "--type-heading-xl-line-height",
+      "cadeia": "--type-heading-xl-line-height",
+      "valor": "32px"
+     },
+     {
+      "parte": "status-screen-title",
+      "propriedade": "font-weight",
+      "token": "--type-heading-xl-weight",
+      "cadeia": "--type-heading-xl-weight",
+      "valor": "700"
+     },
+     {
+      "parte": "status-screen-title",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "journey",
+      "propriedade": "padding",
+      "token": "--space-inset-md",
+      "cadeia": "--space-inset-md",
+      "valor": "36px 0px 16px 16px"
+     },
+     {
+      "parte": "journey",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "journey-row",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "background",
+      "token": "--journey-step-current",
+      "cadeia": "--journey-step-current → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "ícone (check)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-size",
+      "token": "--type-title-lg-size",
+      "cadeia": "--type-title-lg-size",
+      "valor": "20px"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "line-height",
+      "token": "--type-title-lg-line-height",
+      "cadeia": "--type-title-lg-line-height",
+      "valor": "28px"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-weight",
+      "token": "--type-title-lg-weight",
+      "cadeia": "--type-title-lg-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "journey-connector",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "journey-connector",
+      "propriedade": "background",
+      "token": "--journey-step-done",
+      "cadeia": "--journey-step-done → --brand-400 → --green-400",
+      "valor": "rgb(70, 183, 128) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "ícone (assignment_turned_in)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "768px",
+      "DS": "224px"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 768,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "JourneyStepper",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-done > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1)",
+   "parent": 1,
+   "dsProps": {
+    "steps": [
+     {
+      "label": "Cadastro",
+      "state": "done"
+     },
+     {
+      "label": "Captura de documentos",
+      "state": "done"
+     },
+     {
+      "label": "Biometria facial",
+      "state": "done"
+     },
+     {
+      "label": "Validação de benefícios",
+      "state": "current"
+     }
+    ]
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/JourneyStepper/README.md",
+   "jsx": "<JourneyStepper steps={[{ label: \"Cadastro\", state: \"done\" }, { label: \"Captura de documentos\", state: \"done\" }, { label: \"Biometria facial\", state: \"done\" }, { label: \"Validação de benefícios\", state: \"current\" }]} />",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "steps": [
+       {
+        "label": "Cadastro",
+        "state": "done"
+       },
+       {
+        "label": "Captura de documentos",
+        "state": "done"
+       },
+       {
+        "label": "Biometria facial",
+        "state": "done"
+       },
+       {
+        "label": "Validação de benefícios",
+        "state": "current"
+       }
+      ]
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×316",
+      "DS": "327×316"
+     },
+     {
+      "parte": "journey-step",
+      "protótipo": "311×68",
+      "DS": "311×68"
+     },
+     {
+      "parte": "journey-row",
+      "protótipo": "302×44",
+      "DS": "302×44"
+     },
+     {
+      "parte": "journey-circle",
+      "protótipo": "44×44",
+      "DS": "44×44"
+     },
+     {
+      "parte": "ícone (check)",
+      "protótipo": "26×26",
+      "DS": "24×24"
+     },
+     {
+      "parte": "journey-label",
+      "protótipo": "88×28",
+      "DS": "88×28"
+     },
+     {
+      "parte": "journey-connector",
+      "protótipo": "2×24",
+      "DS": "2×24"
+     },
+     {
+      "parte": "ícone (assignment_turned_in)",
+      "protótipo": "28×28",
+      "DS": "—"
+     },
+     {
+      "parte": "journey-pill",
+      "protótipo": "257×40",
+      "DS": "257×40"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-inset-md",
+      "cadeia": "--space-inset-md",
+      "valor": "36px 0px 16px 16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "journey-row",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "background",
+      "token": "--journey-step-current",
+      "cadeia": "--journey-step-current → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "journey-circle",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "ícone (check)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-size",
+      "token": "--type-title-lg-size",
+      "cadeia": "--type-title-lg-size",
+      "valor": "20px"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "line-height",
+      "token": "--type-title-lg-line-height",
+      "cadeia": "--type-title-lg-line-height",
+      "valor": "28px"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "font-weight",
+      "token": "--type-title-lg-weight",
+      "cadeia": "--type-title-lg-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "journey-label",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "journey-connector",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "journey-connector",
+      "propriedade": "background",
+      "token": "--journey-step-done",
+      "cadeia": "--journey-step-done → --brand-400 → --green-400",
+      "valor": "rgb(70, 183, 128) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "ícone (assignment_turned_in)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "journey-pill",
+      "propriedade": "padding",
+      "token": "--space-050",
+      "cadeia": "--space-050",
+      "valor": "4px 8px 4px 18px"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "ícone (check)",
+      "prop": "tamanho",
+      "protótipo": "26×26",
+      "DS": "24×24"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "RedirectCountdown",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-done > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "parent": 1,
+   "note": "O botão \"Continuar agora\" faz parte do RedirectCountdown (prop continueLabel).",
+   "dsProps": {
+    "seconds": 10,
+    "continueLabel": "Continuar agora"
+   },
+   "behavior": {
+    "texto": "Redirecionando para a próxima etapa..."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RedirectCountdown/README.md",
+   "jsx": "<RedirectCountdown seconds={10} continueLabel=\"Continuar agora\" />",
+   "states": [
+    "contando 10 → 0",
+    "pausado com a aba oculta"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "seconds": 10,
+      "continueLabel": "Continuar agora"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "279×100",
+      "DS": "279×40"
+     },
+     {
+      "parte": "countdown-number",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "countdown-text",
+      "protótipo": "279×48",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "background",
+      "token": "--bg-brand-bold",
+      "cadeia": "--bg-brand-bold → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "font-size",
+      "token": "--type-heading-xl-size",
+      "cadeia": "--type-heading-xl-size",
+      "valor": "24px"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "line-height",
+      "token": "--type-heading-xl-line-height",
+      "cadeia": "--type-heading-xl-line-height",
+      "valor": "32px"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "font-weight",
+      "token": "--type-heading-xl-weight",
+      "cadeia": "--type-heading-xl-weight",
+      "valor": "700"
+     },
+     {
+      "parte": "countdown-number",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "countdown-text",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "countdown-text",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-strong-size",
+      "cadeia": "--type-label-lg-strong-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "countdown-text",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-strong-line-height",
+      "cadeia": "--type-label-lg-strong-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "countdown-text",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-strong-weight",
+      "cadeia": "--type-label-lg-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "countdown-text",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "100px",
+      "DS": "40px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {
+  "lv-done": 2
+ }
+}

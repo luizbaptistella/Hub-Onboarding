@@ -1,0 +1,2266 @@
+{
+ "screen": "AREA-01",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/AREA-01-meu-cadastro/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "Cabeçalho do perfil (avatar + nome + badge)",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "note": "Fora do DS (area-user, area-avatar).",
+   "dsProps": {},
+   "behavior": {
+    "name": "Roberto Silva",
+    "avatar": "foto de perfil editável"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "191×48",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (person)",
+      "protótipo": "26×26",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (photo_camera)",
+      "protótipo": "16×16",
+      "DS": "—"
+     },
+     {
+      "parte": "badge",
+      "protótipo": "116×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "ícone (person)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (photo_camera)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "badge",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "background",
+      "token": "--bg-success-subtle",
+      "cadeia": "--bg-success-subtle → --green-100",
+      "valor": "rgb(209, 240, 218) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "badge",
+      "propriedade": "color",
+      "token": "--text-success",
+      "cadeia": "--text-success → --green-700",
+      "valor": "rgb(0, 100, 55)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 191,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 1,
+   "dsProps": {
+    "tone": "success",
+    "children": "Cadastro completo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Cadastro completo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Cadastro completo"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "116×20",
+      "DS": "116×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-success-subtle",
+      "cadeia": "--bg-success-subtle → --green-100",
+      "valor": "rgb(209, 240, 218) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-success",
+      "cadeia": "--text-success → --green-700",
+      "valor": "rgb(0, 100, 55)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Ajuda e atendimento",
+    "navega para": "ajuda-form"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (help_outline)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "ícone (help_outline)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 4,
+   "component": "Botão de ícone do topo",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "note": "Fora do DS; equivalente: IconButton variant=\"subtle\".",
+   "dsProps": {},
+   "behavior": {
+    "label": "Notificações, 2 não lidas",
+    "navega para": "notificacoes"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (notifications)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-full",
+      "cadeia": "--radius-full",
+      "valor": "9999px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "ícone (notifications)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 5,
+   "component": "ProfileMenu",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "id": "modo-escuro",
+      "label": "Modo escuro",
+      "icon": "dark_mode"
+     },
+     {
+      "id": "privacidade",
+      "label": "Privacidade",
+      "icon": "lock"
+     },
+     {
+      "id": "seguran-a",
+      "label": "Segurança",
+      "icon": "shield"
+     },
+     {
+      "id": "senha",
+      "label": "Senha",
+      "icon": "password"
+     },
+     {
+      "id": "sair",
+      "label": "Sair",
+      "icon": "logout",
+      "tone": "danger"
+     }
+    ],
+    "language": true,
+    "divider": true
+   },
+   "behavior": {
+    "navega para (itens)": "Segurança → seguranca, Sair → login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ProfileMenu/README.md",
+   "jsx": "<ProfileMenu items={[{ id: \"modo-escuro\", label: \"Modo escuro\", icon: \"dark_mode\" }, { id: \"privacidade\", label: \"Privacidade\", icon: \"lock\" }, { id: \"seguran-a\", label: \"Segurança\", icon: \"shield\" }, { id: \"senha\", label: \"Senha\", icon: \"password\" }, { id: \"sair\", label: \"Sair\", icon: \"logout\", tone: \"danger\" }]} language divider />",
+   "states": [
+    "fechado",
+    "aberto",
+    "Modo escuro ligado ou desligado"
+   ],
+   "propOptions": {
+    "divider": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "defaultOpen": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "id": "modo-escuro",
+        "label": "Modo escuro",
+        "icon": "dark_mode"
+       },
+       {
+        "id": "privacidade",
+        "label": "Privacidade",
+        "icon": "lock"
+       },
+       {
+        "id": "seguran-a",
+        "label": "Segurança",
+        "icon": "shield"
+       },
+       {
+        "id": "senha",
+        "label": "Senha",
+        "icon": "password"
+       },
+       {
+        "id": "sair",
+        "label": "Sair",
+        "icon": "logout",
+        "tone": "danger"
+       }
+      ],
+      "language": true,
+      "divider": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "40×40",
+      "DS": "140×44"
+     },
+     {
+      "parte": "ícone (menu)",
+      "protótipo": "24×24",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "ícone (menu)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (menu)",
+      "propriedade": "color",
+      "token": "--icon-default",
+      "cadeia": "--icon-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "width",
+      "protótipo": "40px",
+      "DS": "140px"
+     },
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "40px",
+      "DS": "44px"
+     }
+    ],
+    "toque": {
+     "w": 40,
+     "h": 40,
+     "ok": false
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 6,
+   "component": "Tabs",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "items": [
+     {
+      "value": "Meus cadastro",
+      "label": "Meus cadastro"
+     },
+     {
+      "value": "Meus familiares",
+      "label": "Meus familiares"
+     }
+    ],
+    "value": "Meus cadastro"
+   },
+   "behavior": {
+    "navega para (itens)": "Meus cadastro → area-cadastro-detalhe, Meus familiares → area-familiares-vazio"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tabs/README.md",
+   "jsx": "<Tabs items={[{ value: \"Meus cadastro\", label: \"Meus cadastro\" }, { value: \"Meus familiares\", label: \"Meus familiares\" }]} value=\"Meus cadastro\" />",
+   "states": [
+    "aba ativa: Meus cadastro"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "items": [
+       {
+        "value": "Meus cadastro",
+        "label": "Meus cadastro"
+       },
+       {
+        "value": "Meus familiares",
+        "label": "Meus familiares"
+       }
+      ],
+      "value": "Meus cadastro"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×48"
+     },
+     {
+      "parte": "tab",
+      "protótipo": "164×48",
+      "DS": "188×48"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border-bottom",
+      "token": "--border-default",
+      "cadeia": "--border-default → --neutral-200 → --gray-200",
+      "valor": "1px solid rgb(226, 227, 232)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-page-inline",
+      "cadeia": "--space-page-inline",
+      "valor": "0px 24px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "height",
+      "token": "--size-control",
+      "cadeia": "--size-control",
+      "valor": "48px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-strong-size",
+      "cadeia": "--type-label-lg-strong-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-strong-line-height",
+      "cadeia": "--type-label-lg-strong-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-strong-weight",
+      "cadeia": "--type-label-lg-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "tab",
+      "propriedade": "border-bottom-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "tab",
+      "prop": "tamanho",
+      "protótipo": "164×48",
+      "DS": "188×48"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 48,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 7,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Contatos",
+    "description": "E-mail e telefone",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (contact_mail)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--green-300",
+      "cadeia": "--green-300",
+      "valor": "1px solid rgb(122, 207, 162)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (contact_mail)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 8,
+   "component": "Botão Editar (de ContactRow)",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": 7,
+   "hidden": true,
+   "note": "Mesmo visual do botão Editar do ContactRow, usado fora dele.",
+   "dsProps": {},
+   "behavior": {
+    "children": "Editar"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 9,
+   "component": "Botão Editar (de ContactRow)",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": 7,
+   "hidden": true,
+   "note": "Mesmo visual do botão Editar do ContactRow, usado fora dele.",
+   "dsProps": {},
+   "behavior": {
+    "children": "Editar"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 10,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Dados pessoais",
+    "description": "Nome, CPF e endereço",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (badge)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--green-300",
+      "cadeia": "--green-300",
+      "valor": "1px solid rgb(122, 207, 162)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (badge)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 11,
+   "component": "Botão Editar (de ContactRow)",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": 10,
+   "hidden": true,
+   "note": "Mesmo visual do botão Editar do ContactRow, usado fora dele.",
+   "dsProps": {},
+   "behavior": {
+    "children": "Editar"
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": null
+  },
+  {
+   "id": 12,
+   "component": "Checkbox",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(3) > label:nth-of-type(1)",
+   "parent": 10,
+   "hidden": true,
+   "dsProps": {
+    "children": "Não possuo complemento",
+    "disabled": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Checkbox/README.md",
+   "jsx": "<Checkbox disabled>Não possuo complemento</Checkbox>",
+   "states": [
+    "desmarcado",
+    "marcado",
+    "desativado (só leitura)"
+   ],
+   "propOptions": {
+    "checked": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "defaultChecked": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "indeterminate": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "Não possuo complemento",
+      "disabled": true
+     }
+    },
+    {
+     "label": "Marcado",
+     "props": {
+      "children": "Não possuo complemento",
+      "disabled": true,
+      "defaultChecked": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 13,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e biometria facial",
+    "status": "Concluído"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--green-300",
+      "cadeia": "--green-300",
+      "valor": "1px solid rgb(122, 207, 162)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 14,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Meia-entrada para estudantes",
+    "status": "Validado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--green-300",
+      "cadeia": "--green-300",
+      "valor": "1px solid rgb(122, 207, 162)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 15,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "parent": 14,
+   "hidden": true,
+   "dsProps": {
+    "tone": "success",
+    "children": "Ativo"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"success\">Ativo</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "children": "Ativo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 16,
+   "component": "Grade de atalhos",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > section:nth-of-type(1)",
+   "note": "Fora do DS (area-atalho-*).",
+   "dsProps": {},
+   "behavior": {
+    "items": [
+     "Comprar ingresso",
+     "Produtos do clube",
+     "Sócio Avanti Palmeiras"
+    ]
+   },
+   "inDs": false,
+   "states": [],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×118",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "protótipo": "28×28",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (shopping_cart)",
+      "protótipo": "28×28",
+      "DS": "—"
+     },
+     {
+      "parte": "area-atalho-logo",
+      "protótipo": "84×26",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "propriedade": "color",
+      "token": "--icon-success",
+      "cadeia": "--icon-success → --green-500",
+      "valor": "rgb(16, 160, 102)"
+     },
+     {
+      "parte": "ícone (shopping_cart)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (shopping_cart)",
+      "propriedade": "color",
+      "token": "--icon-success",
+      "cadeia": "--icon-success → --green-500",
+      "valor": "rgb(16, 160, 102)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 118,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 17,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×77"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "8px 16px 24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-sm-size",
+      "cadeia": "--type-body-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-sm-line-height",
+      "cadeia": "--type-body-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-sm-weight",
+      "cadeia": "--type-body-sm-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "77px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "id": 101,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "dsProps": {
+    "tone": "warning",
+    "children": "Cadastro pendente"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"warning\">Cadastro pendente</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "warning"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "warning",
+      "children": "Cadastro pendente"
+     }
+    }
+   ],
+   "variant": "Pendente",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "117×20",
+      "DS": "117×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-warning-subtle",
+      "cadeia": "--bg-warning-subtle → --amber-100",
+      "valor": "rgb(254, 243, 199) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-warning",
+      "cadeia": "--text-warning → --amber-800",
+      "valor": "rgb(146, 64, 14)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 102,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Falta validar documento e foto",
+    "status": "Ação necessária"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "variant": "Pendente",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--amber-400",
+      "cadeia": "--amber-400",
+      "valor": "1px solid rgb(251, 191, 36)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "valor": "rgb(255, 253, 245)",
+      "aviso": "valor fixo, sem token"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "box-shadow",
+      "valor": "rgba(12, 12, 13, 0.06) 0px 1px 4px 0px",
+      "aviso": "valor fixo, sem token"
+     }
+    ],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 103,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "children": "Concluir validação",
+    "iconEnd": "arrow_forward"
+   },
+   "behavior": {
+    "navega para": "documento"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth iconEnd=\"arrow_forward\">Concluir validação</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Concluir validação",
+      "iconEnd": "arrow_forward"
+     }
+    }
+   ],
+   "variant": "Pendente",
+   "ficha": null
+  },
+  {
+   "id": 104,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Benefício Meia-Entrada",
+    "description": "Liberado após validar sua identidade",
+    "status": "Ação necessária"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "variant": "Pendente",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--amber-400",
+      "cadeia": "--amber-400",
+      "valor": "1px solid rgb(251, 191, 36)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (confirmation_number)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "valor": "rgb(255, 253, 245)",
+      "aviso": "valor fixo, sem token"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "box-shadow",
+      "valor": "rgba(12, 12, 13, 0.06) 0px 1px 4px 0px",
+      "aviso": "valor fixo, sem token"
+     }
+    ],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 105,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "dsProps": {
+    "tone": "danger",
+    "children": "Cadastro reprovado"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"danger\">Cadastro reprovado</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "danger"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "danger",
+      "children": "Cadastro reprovado"
+     }
+    }
+   ],
+   "variant": "Reprovado",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "120×20",
+      "DS": "120×36"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-danger-subtle",
+      "cadeia": "--bg-danger-subtle → --red-100",
+      "valor": "rgb(254, 226, 226) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-danger",
+      "cadeia": "--text-danger → --red-700",
+      "valor": "rgb(185, 28, 28)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "20px",
+      "DS": "36px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 106,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Não conseguimos aprovar sua foto",
+    "status": "Reprovado"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "variant": "Reprovado",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--red-400",
+      "cadeia": "--red-400",
+      "valor": "1px solid rgb(248, 113, 113)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "valor": "rgb(255, 250, 250)",
+      "aviso": "valor fixo, sem token"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "box-shadow",
+      "valor": "rgba(12, 12, 13, 0.06) 0px 1px 4px 0px",
+      "aviso": "valor fixo, sem token"
+     }
+    ],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 107,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "hidden": true,
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "children": "Tentar novamente",
+    "iconEnd": "arrow_forward"
+   },
+   "behavior": {
+    "navega para": "documento"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth iconEnd=\"arrow_forward\">Tentar novamente</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Tentar novamente",
+      "iconEnd": "arrow_forward"
+     }
+    }
+   ],
+   "variant": "Reprovado",
+   "ficha": null
+  },
+  {
+   "id": 108,
+   "component": "Badge",
+   "ds": true,
+   "local": false,
+   "selector": "#area-cadastro-detalhe > header:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+   "dsProps": {
+    "tone": "info",
+    "children": "Cadastro em análise"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Badge/README.md",
+   "jsx": "<Badge tone=\"info\">Cadastro em análise</Badge>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "neutral",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "info"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "info",
+      "children": "Cadastro em análise"
+     }
+    }
+   ],
+   "variant": "Em análise",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "123×20",
+      "DS": "123×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-md",
+      "cadeia": "--radius-md",
+      "valor": "6px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-xs-weight",
+      "cadeia": "--type-label-xs-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-info-subtle",
+      "cadeia": "--bg-info-subtle → --blue-100",
+      "valor": "rgb(219, 234, 254) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-info",
+      "cadeia": "--text-info → --blue-700",
+      "valor": "rgb(29, 78, 216)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 109,
+   "component": "Acordeão de seção",
+   "ds": false,
+   "local": true,
+   "selector": "#area-cadastro-detalhe > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "note": "Fora do DS (classes area-acc-*): candidato a componente Accordion.",
+   "dsProps": {},
+   "behavior": {
+    "title": "Validação de identidade",
+    "description": "Documento e selfie em análise",
+    "status": "Em análise"
+   },
+   "inDs": false,
+   "states": [
+    "fechado",
+    "aberto",
+    "status por cenário: Concluído, Ação necessária, Reprovado, Em análise"
+   ],
+   "variant": "Em análise",
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×91",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "border",
+      "token": "--blue-400",
+      "cadeia": "--blue-400",
+      "valor": "1px solid rgb(96, 165, 250)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "ícone (verified_user)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (expand_more)",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "valor": "rgb(248, 251, 255)",
+      "aviso": "valor fixo, sem token"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "box-shadow",
+      "valor": "rgba(12, 12, 13, 0.06) 0px 1px 4px 0px",
+      "aviso": "valor fixo, sem token"
+     }
+    ],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 91,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "conditional": [
+  {
+   "component": "Folha de foto de perfil",
+   "props": "Tirar foto · Escolher da galeria · Remover foto · Cancelar",
+   "when": "Toque no avatar. Fora do DS (photo-sheet).",
+   "inDs": false
+  },
+  {
+   "component": "Recorte da foto",
+   "props": "prévia quadrada + zoom 1–3× + Salvar foto",
+   "when": "Depois de escolher a imagem. Fora do DS (photo-edit).",
+   "inDs": false
+  }
+ ],
+ "localClasses": {
+  "area-top": 1,
+  "area-profile": 1,
+  "area-user": 2,
+  "area-avatar": 3,
+  "area-name": 1,
+  "area-help": 2,
+  "area-notif": 2,
+  "area-promo": 8,
+  "area-tabs": 1,
+  "area-detalhe": 1,
+  "area-acc": 35,
+  "tl-eyebrow": 4,
+  "area-chev": 6,
+  "area-fields": 3,
+  "area-contact": 4,
+  "area-section": 6,
+  "area-field": 33,
+  "area-row": 3,
+  "area-check": 8,
+  "area-doc": 7,
+  "area-benefit": 5,
+  "area-atalhos": 3,
+  "area-atalho": 9
+ }
+}

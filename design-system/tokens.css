@@ -1,0 +1,94 @@
+/* Palmeiras Benefício — design tokens
+ * Fonte: Figma "MVP Palmeiras - Benefício" (apbNVzymCikALAJtrz0Zjp)
+ * Telas incorporadas: login-01 (1620:26870), Cadastro / Mobile (1619:11919)
+ */
+:root {
+  /* ── Cores: marca ───────────────────────────── */
+  --color-brand-primary: #01532f;        /* var "Palmeiras / Color-Primary" — única variável de verde nomeada */
+  --color-brand-primary-alt: #00522e;    /* hardcoded em botões, títulos, checkbox — candidato a virar primary */
+  --color-brand-progress: #006437;       /* progress step ativo (hardcoded) */
+  --color-brand-secondary: #9d8743;      /* dourado — var "Secondary" */
+  --color-brand-link: #0b5136;           /* var "status/success/800" — link "Esqueceu sua senha?" */
+
+  /* ── Cores: neutros ─────────────────────────── */
+  --color-white: #ffffff;
+  --color-surface-statusbar: #fcfcfe;    /* Light/background */
+  --color-gray-50: #f8f9fa;              /* fundo da tela, fundo do input (cadastro) */
+  --color-gray-100: #f2f4f7;             /* borda do botão social */
+  --color-gray-200: #e2e3e8;             /* divisores */
+  --color-gray-300: #cccfd6;             /* borda do input e checkbox (cadastro) */
+  --color-gray-400: #9399a5;
+  --color-gray-500: #616674;             /* texto secundário, helper, footer, label de checkbox */
+  --color-gray-800: #1f2530;
+  --color-text-primary: #1c1b1f;         /* Light/text — status bar */
+  --color-progress-track: #eaeaeb;       /* progress step inativo (hardcoded) */
+  --color-tab-inactive: #6b7280;         /* aba inativa (hardcoded) */
+
+  /* Cores de input (kit tipo shadcn/slate, fora da escala gray) */
+  --color-input-label: #020817;          /* label e valor digitado */
+  --color-input-border: #e2e8f0;         /* login */
+  --color-input-placeholder: #64748b;
+
+  /* ── Cores: status ──────────────────────────── */
+  --color-destructive: #ef4444;          /* status/destructive — borda e texto de erro */
+  --color-destructive-subtle: #fef2f2;   /* status/destructive-subtle — fundo do input com erro */
+
+  /* ── Tipografia ─────────────────────────────── */
+  --font-family-base: "Inter", system-ui, sans-serif;
+  --font-family-system: "Roboto", system-ui, sans-serif; /* status bar / seletor de idioma */
+
+  --font-size-2xs: 11px;   /* footer */
+  --font-size-xs: 12px;    /* label do progresso, checkbox, mensagem de erro */
+  --font-size-input-sm: 13px; /* valor do input (cadastro) */
+  --font-size-sm: 14px;
+  --font-size-base: 16px;  /* botão, abas */
+  --font-size-2xl: 24px;   /* heading */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+
+  /* ── Espaçamento (escala base 4) ────────────── */
+  --space-0: 0;
+  --space-0-5: 2px;   /* Spacing/Positive/4xs */
+  --space-1: 4px;     /* erro → próximo campo */
+  --space-1-5: 6px;   /* label → input; ponto → texto do erro */
+  --space-2: 8px;     /* Spacing/Positive/2xs, spacing/sm */
+  --space-2-5: 10px;  /* padding-x do input (cadastro) */
+  --space-3: 12px;
+  --space-3-5: 14px;  /* entre inputs (cadastro); padding-x do input (login) */
+  --space-4: 16px;    /* Spacing/Positive/sm */
+  --space-5: 20px;    /* Spacing/Positive/md */
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* ── Bordas ─────────────────────────────────── */
+  --border-width-hairline: 0.5px; /* checkbox */
+  --border-width-thin: 1px;
+  --border-width-regular: 2px;    /* Border/Weight/Regular — aba ativa */
+
+  /* ── Raio ───────────────────────────────────── */
+  --radius-xs: 3px;      /* segmentos do progresso */
+  --radius-sm: 4px;      /* checkbox */
+  --radius-md: 6px;      /* input (cadastro) */
+  --radius-lg: 8px;      /* input (login), botões, cards sociais */
+  --radius-xl: 24px;     /* moldura da tela */
+  --radius-full: 9999px; /* seletor de idioma */
+
+  /* ── Sombra ─────────────────────────────────── */
+  --shadow-100: 0 1px 4px 0 rgba(12, 12, 13, 0.05); /* Drop Shadow/100 */
+
+  /* ── Tamanhos de componente ─────────────────── */
+  --size-input-height-sm: 32px;  /* cadastro */
+  --size-input-height-md: 40px;  /* login */
+  --size-button-height: 48px;
+  --size-tab-height: 48px;
+  --size-social-button: 64px;
+  --size-checkbox: 16px;
+  --size-progress-height: 4px;
+  --size-icon: 24px;
+}

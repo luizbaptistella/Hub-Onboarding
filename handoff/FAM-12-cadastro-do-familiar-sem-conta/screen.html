@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM-12 · Cadastro do familiar (sem conta) · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela FAM-12 (familiar-cadastro), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen area-screen" id="familiar-cadastro" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-busca"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Cadastrar familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Dados do familiar</h1>
+          <p class="area-form-note">Preencha os dados de quem ainda não tem conta. Confirmaremos o CPF na Receita Federal.</p>
+        </div>
+        <form class="area-form busca-form" id="fam-cad-form" novalidate="">
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="po-sel-4-btn">Tipo de vínculo</label>
+            <div class="po-select po-select-empty">
+              <button type="button" id="po-sel-4-btn" class="po-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="po-sel-4-menu"><span class="po-select-value">Selecione o tipo de vínculo</span></button><select id="cad-fam-vinculo" name="relation" required="" data-enhanced="1" class="po-select-native" tabindex="-1" aria-hidden="true">
+                <option value="" disabled="" selected="">Selecione o tipo de vínculo</option>
+                <option value="FILHO">Filho(a)</option>
+                <option value="PAI_MAE">Pai ou mãe</option>
+                <option value="IRMAO">Irmão ou irmã</option>
+                <option value="CONJUGE">Cônjuge ou companheiro(a)</option>
+                <option value="SOBRINHO">Sobrinho(a)</option>
+                <option value="OUTROS">Outros</option>
+              </select>
+              <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+            <ul id="po-sel-4-menu" class="po-select-menu" role="listbox" aria-labelledby="po-sel-4-btn" hidden=""></ul></div>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-cpf">CPF</label>
+            <input class="po-input po-input-md" id="cad-fam-cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" required="">
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-nome">Nome completo</label>
+            <input class="po-input po-input-md" id="cad-fam-nome" name="nome" autocomplete="off" placeholder="Nome e sobrenome" required="">
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-email">E-mail</label>
+            <input class="po-input po-input-md" id="cad-fam-email" name="email" type="email" autocomplete="off" placeholder="nome@email.com" required="">
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-cel">Celular</label>
+            <input class="po-input po-input-md" id="cad-fam-cel" name="celular" inputmode="tel" autocomplete="off" placeholder="(00) 00000-0000" required="">
+          </div>
+          <div class="busca-alert" id="fam-cad-alert" aria-live="polite"></div>
+          <div class="foot busca-foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="fam-cad-submit" disabled=""><span class="po-btn-content"><span>Continuar</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+</body>
+</html>

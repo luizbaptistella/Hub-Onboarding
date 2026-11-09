@@ -1,0 +1,1513 @@
+{
+ "screen": "DOC-32",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-32-cedula-formulario/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Captura de documentos",
+    "progress": {
+     "current": 2,
+     "total": 4
+    },
+    "language": false,
+    "help": {
+     "label": "Ajuda"
+    }
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Captura de documentos\" progress={{ current: 2, total: 4 }} language={false} help={{ label: \"Ajuda\" }} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Captura de documentos",
+      "progress": {
+       "current": 2,
+       "total": 4
+      },
+      "language": false,
+      "help": {
+       "label": "Ajuda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "neutral",
+    "title": "Cédula de identidade",
+    "subtitle": "Informe o país e o documento que você vai enviar. Vamos conferir esses dados com as fotos do documento."
+   },
+   "behavior": null,
+   "jsx": "<PageHeading tone=\"neutral\" title=\"Cédula de identidade\" subtitle=\"Informe o país e o documento que você vai enviar. Vamos conferir esses dados com as fotos do documento.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "neutral",
+      "title": "Cédula de identidade",
+      "subtitle": "Informe o país e o documento que você vai enviar. Vamos conferir esses dados com as fotos do documento."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 3
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Vazio",
+   "dsProps": {
+    "label": "País",
+    "options": [
+     "Argentina",
+     "Colômbia",
+     "Paraguai",
+     "Peru",
+     "Uruguai",
+     "Venezuela"
+    ],
+    "placeholder": "Selecione",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"País\" options={[\"Argentina\", \"Colômbia\", \"Paraguai\", \"Peru\", \"Uruguai\", \"Venezuela\"]} placeholder=\"Selecione\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: país sem suporte (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Argentina",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: país sem suporte (sem Figma)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Venezuela",
+      "error": "Não aceitamos este país para a Cédula de identidade.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Preenchido (Argentina)",
+   "dsProps": {
+    "label": "País",
+    "options": [
+     "Argentina",
+     "Colômbia",
+     "Paraguai",
+     "Peru",
+     "Uruguai",
+     "Venezuela"
+    ],
+    "placeholder": "Selecione",
+    "value": "Argentina"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"País\" options={[\"Argentina\", \"Colômbia\", \"Paraguai\", \"Peru\", \"Uruguai\", \"Venezuela\"]} placeholder=\"Selecione\" value=\"Argentina\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: país sem suporte (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Argentina",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: país sem suporte (sem Figma)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Venezuela",
+      "error": "Não aceitamos este país para a Cédula de identidade.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Erro: número inválido (sem Figma)",
+   "dsProps": {
+    "label": "País",
+    "options": [
+     "Argentina",
+     "Colômbia",
+     "Paraguai",
+     "Peru",
+     "Uruguai",
+     "Venezuela"
+    ],
+    "placeholder": "Selecione",
+    "value": "Argentina"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"País\" options={[\"Argentina\", \"Colômbia\", \"Paraguai\", \"Peru\", \"Uruguai\", \"Venezuela\"]} placeholder=\"Selecione\" value=\"Argentina\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: país sem suporte (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Argentina",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: país sem suporte (sem Figma)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Venezuela",
+      "error": "Não aceitamos este país para a Cédula de identidade.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "Erro: país sem suporte (sem Figma)",
+   "dsProps": {
+    "label": "País",
+    "options": [
+     "Argentina",
+     "Colômbia",
+     "Paraguai",
+     "Peru",
+     "Uruguai",
+     "Venezuela"
+    ],
+    "placeholder": "Selecione",
+    "value": "Venezuela",
+    "error": "Não aceitamos este país para a Cédula de identidade."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"País\" options={[\"Argentina\", \"Colômbia\", \"Paraguai\", \"Peru\", \"Uruguai\", \"Venezuela\"]} placeholder=\"Selecione\" value=\"Venezuela\" error=\"Não aceitamos este país para a Cédula de identidade.\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: país sem suporte (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Argentina",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: país sem suporte (sem Figma)",
+     "props": {
+      "label": "País",
+      "options": [
+       "Argentina",
+       "Colômbia",
+       "Paraguai",
+       "Peru",
+       "Uruguai",
+       "Venezuela"
+      ],
+      "placeholder": "Selecione",
+      "value": "Venezuela",
+      "error": "Não aceitamos este país para a Cédula de identidade.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Vazio",
+   "dsProps": {
+    "label": "Número do documento",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Número do documento\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: número inválido (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "Número do documento",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "Número do documento",
+      "value": "12345678",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: número inválido (sem Figma)",
+     "props": {
+      "label": "Número do documento",
+      "value": "123",
+      "error": "Número inválido. Confira o número impresso no documento.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Preenchido (Argentina)",
+   "dsProps": {
+    "label": "Número do documento",
+    "value": "12345678"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Número do documento\" value=\"12345678\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: número inválido (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "Número do documento",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "Número do documento",
+      "value": "12345678",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: número inválido (sem Figma)",
+     "props": {
+      "label": "Número do documento",
+      "value": "123",
+      "error": "Número inválido. Confira o número impresso no documento.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1007,
+   "variant": "Erro: número inválido (sem Figma)",
+   "dsProps": {
+    "label": "Número do documento",
+    "value": "123",
+    "error": "Número inválido. Confira o número impresso no documento."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Número do documento\" value=\"123\" error=\"Número inválido. Confira o número impresso no documento.\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: número inválido (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "Número do documento",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "Número do documento",
+      "value": "12345678",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: número inválido (sem Figma)",
+     "props": {
+      "label": "Número do documento",
+      "value": "123",
+      "error": "Número inválido. Confira o número impresso no documento.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1008,
+   "variant": "Erro: país sem suporte (sem Figma)",
+   "dsProps": {
+    "label": "Número do documento",
+    "value": "12345678"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Número do documento\" value=\"12345678\" onChange={() => {}} />",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)",
+    "Erro: número inválido (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "label": "Número do documento",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "label": "Número do documento",
+      "value": "12345678",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: número inválido (sem Figma)",
+     "props": {
+      "label": "Número do documento",
+      "value": "123",
+      "error": "Número inválido. Confira o número impresso no documento.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1009,
+   "variant": "Vazio",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": true,
+    "children": "Continuar"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled onClick={() => {}}>Continuar</Button>",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1010,
+   "variant": "Preenchido (Argentina)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Continuar"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Continuar</Button>",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1011,
+   "variant": "Erro: número inválido (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Continuar"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Continuar</Button>",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1012,
+   "variant": "Erro: país sem suporte (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Continuar"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Continuar</Button>",
+   "states": [
+    "Vazio",
+    "Preenchido (Argentina)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (Argentina)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -1,0 +1,146 @@
+{
+ "screen": "DOC-46",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-46-passaporte-mrz-nao-encontrado/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "state": "aligning",
+    "frame": "card",
+    "instruction": "Não encontramos o código. Enquadre a faixa de letras e números.",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"aligning\" frame=\"card\" instruction=\"Não encontramos o código. Enquadre a faixa de letras e números.\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "aligning"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Não encontramos o código. Enquadre a faixa de letras e números.",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": true,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  },
+  {
+   "component": "Vídeo da câmera (simulado)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-camera-feed",
+   "parent": null,
+   "hidden": false,
+   "note": "No app é o <video> da câmera (getUserMedia), passado como children do CameraCapture. Aqui é uma foto.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 3
+  },
+  {
+   "component": "Faixa do código (moldura horizontal)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-code-strip",
+   "parent": null,
+   "hidden": false,
+   "note": "Moldura de 335×93 desenhada sobre o visor; o CameraCapture do DS só tem molduras verticais. Proposta para o DS: ratio livre.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 4
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar",
+  "est-camera-feed",
+  "est-code-strip"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

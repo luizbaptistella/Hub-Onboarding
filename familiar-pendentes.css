@@ -1,0 +1,153 @@
+/* Vínculo de familiares · Meus familiares: convites pendentes do titular (seção 7) e convites recebidos do convidado (seção 8.1) */
+/* Lista única em dois grupos. Os itens usam o card em acordeão de Meus familiares (.area-family). */
+
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .area-body { gap: var(--space-stack-section); }
+
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-group { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-group[hidden] { display: none; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-group-title { margin: 0; display: flex; align-items: baseline; gap: var(--space-inline-tight); font-family: var(--font-body); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-group-title:focus { outline: none; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-count { font-size: var(--type-body-md-size); font-weight: var(--type-label-md-weight); color: var(--text-subtle); }
+
+/* Cards no padrão dos atalhos da área logada (.area-atalho): fundo de superfície, borda padrão, raio lg */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .area-family { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .area-family:has(> .area-family-head:hover) { background: var(--bg-neutral-subtle-hovered); }
+
+/* Sem avatar. Linha 1: nome e badge de status. Linha 2: vínculo */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-name-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-stack-tight) var(--space-inline-tight); min-width: 0; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-name-row .area-family-name { min-width: 0; overflow-wrap: anywhere; font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-name-row .po-badge { flex: none; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-meta-warn { color: var(--text-warning); }
+
+/* Corpo do convite: só o prazo e, se houver, a falha de envio */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-prazo,
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-falha { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-default); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-prazo-warn,
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-falha { color: var(--text-warning); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-falha[hidden] { display: none; }
+
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-wait { margin: 0; text-align: center; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-wait[hidden] { display: none; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) [data-act="reenviar"][hidden] { display: none; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) [data-act="reenviar"]:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Destaque breve do convite recém-enviado */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-item { transition: box-shadow 0.6s ease; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-item.pend-novo { box-shadow: 0 0 0 2px var(--border-brand); }
+@media (prefers-reduced-motion: reduce) { :is(#familiar-pendentes, #familiar-recebidos, .fam-var) .pend-item { transition: none; } }
+
+/* Convidado (seção 8.1): avatar com iniciais, fora do photo.js, que troca todos os .area-avatar */
+:is(#familiar-recebidos, .fam-var) .rec-avatar { flex: none; width: 40px; height: 40px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--text-brand); font-family: var(--font-body); font-size: var(--type-label-md-size); font-weight: var(--font-weight-semibold); }
+/* Familiar de quem: card sem acordeão, só leitura (desvinculação está fora do escopo) */
+:is(#familiar-recebidos, .fam-var) .rec-head { display: flex; align-items: center; gap: var(--space-inline-related); color: var(--text-default); }
+:is(#familiar-recebidos, .fam-var) .rec-item.pend-novo, :is(#familiar-recebidos, .fam-var) .rec-static.pend-novo { box-shadow: 0 0 0 2px var(--border-brand); }
+:is(#familiar-recebidos, .fam-var) .rec-static { transition: box-shadow 0.6s ease; }
+@media (prefers-reduced-motion: reduce) { :is(#familiar-recebidos, .fam-var) .rec-static { transition: none; } }
+
+/* Toast nas telas da área logada: no fluxo, abaixo do cabeçalho (o .toast-slot do app é absoluto a 54px do topo, pensado para as telas de cadastro) */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .toast-slot { position: relative; top: auto; left: auto; right: auto; z-index: 2; padding: var(--space-stack-related) max(16px, env(safe-area-inset-left, 0px)) 0; box-sizing: border-box; }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .toast-slot[hidden] { display: none; }
+/* Toast da área logada: linha única (ícone, texto, fechar) com superfície do DS */
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .toast-slot .po-toast { display: flex; align-items: flex-start; gap: var(--space-inline-related); width: 100%; max-width: none; box-sizing: border-box; padding: var(--space-inset-sm) var(--space-inset-md); background: var(--bg-surface); border: 1px solid var(--border-success); border-radius: var(--radius-lg); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .toast-slot .po-toast-title { font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-default); }
+:is(#familiar-pendentes, #familiar-recebidos, .fam-var) .toast-slot .po-toast-icon { color: var(--icon-success); }
+
+/* Convidado (seção 8.1): banner de convite recebido, no topo, só enquanto houver convite */
+:is(#familiar-recebidos, .fam-var) .rec-banner { display: flex; flex-direction: column; gap: var(--space-stack-related); padding: var(--space-inset-md); background: var(--bg-brand-subtlest); border: 1px solid var(--border-brand-subtle, var(--border-default)); border-radius: var(--radius-lg); }
+:is(#familiar-recebidos, .fam-var) .rec-banner[hidden] { display: none; }
+:is(#familiar-recebidos, .fam-var) .rec-banner-head { display: flex; align-items: flex-start; gap: var(--space-inline-related); }
+:is(#familiar-recebidos, .fam-var) .rec-banner-icon { flex: none; width: 32px; height: 32px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--icon-brand); }
+:is(#familiar-recebidos, .fam-var) .rec-banner-text { display: flex; flex-direction: column; gap: var(--space-stack-tight); min-width: 0; }
+:is(#familiar-recebidos, .fam-var) .rec-banner-title { margin: 0; font-family: var(--font-body); font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-default); }
+:is(#familiar-recebidos, .fam-var) .rec-banner-meta,
+:is(#familiar-recebidos, .fam-var) .rec-banner-desc { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+:is(#familiar-recebidos, .fam-var) .rec-banner-desc { color: var(--text-default); }
+:is(#familiar-recebidos, .fam-var) .rec-banner-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-inline-related); }
+
+/* Seletor: SegmentedControl do DS em largura total */
+:is(#familiar-recebidos, .fam-var) .rec-seg { max-width: none; }
+:is(#familiar-recebidos, .fam-var) .rec-seg[hidden] { display: none; }
+:is(#familiar-recebidos, .fam-var) .rec-vista { display: flex; flex-direction: column; gap: var(--space-stack-section); }
+:is(#familiar-recebidos, .fam-var) .rec-vista[hidden] { display: none; }
+:is(#familiar-recebidos, .fam-var) .rec-sou-note { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+
+/* Versão B (comparação): hub com entradas. Convite em destaque que leva à tela de convites */
+.fam-var .hub-chev { flex: none; color: var(--icon-subtle); }
+
+/* Versão C (comparação): contador de convites no segmento "Sou familiar de" */
+.fam-var .po-seg-label { white-space: nowrap; }
+
+/* Versão B (v3): cards grandes com contagem, ponto de notificação e dropdown de convites */
+.fam-var .hub-card { position: relative; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+.fam-var .hub-card-head { position: relative; width: 100%; display: flex; align-items: center; gap: var(--space-inline-related); min-height: 76px; padding: var(--space-inset-md); background: none; border: 0; text-align: left; cursor: pointer; font-family: var(--font-body); color: var(--text-default); }
+.fam-var .hub-card-head:hover { background: var(--bg-neutral-subtle-hovered); }
+.fam-var .hub-card-head:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.fam-var .hub-card-icon { flex: none; width: 40px; height: 40px; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--icon-brand); }
+.fam-var .hub-card-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.fam-var .hub-card-title { font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+.fam-var .hub-card-count { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+/* Ponto de notificação: vermelho do DS, com a borda da superfície, como o sino da área logada */
+.fam-var .hub-dot { position: absolute; top: var(--space-inset-sm); right: calc(var(--space-inset-sm) + 26px); width: 10px; height: 10px; border-radius: var(--radius-full); background: var(--bg-danger-bold); box-shadow: 0 0 0 2px var(--bg-surface); }
+.fam-var .hub-dot[hidden] { display: none; }
+.fam-var .hub-chev { flex: none; color: var(--icon-subtle); transition: transform 0.15s ease; }
+.fam-var .hub-card-head[aria-expanded="true"] .hub-chev { transform: rotate(180deg); }
+.fam-var .hub-panel { display: flex; flex-direction: column; gap: var(--space-stack-related); padding: var(--space-stack-related) var(--space-inset-md) var(--space-inset-md); border-top: 1px solid var(--border-subtle); }
+.fam-var .hub-panel[hidden] { display: none; }
+.fam-var .hub-panel-label { margin: 0; font-size: var(--type-label-xs-size); line-height: var(--type-label-xs-line-height); font-weight: var(--type-label-sm-strong-weight); text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-subtle); }
+/* Linha de convite: nome à esquerda, badge e ação na mesma faixa */
+/* Chevron do card não encolhe nem é cortado; ação da linha mais compacta */
+.fam-var .hub-chev { width: 24px; height: 24px; font-size: 24px; line-height: 24px; overflow: visible; }
+
+/* Chevron do card: troca de ícone em vez de girar (evita o corte do glifo) */
+.fam-var .hub-card-head[aria-expanded="true"] .hub-chev { transform: none; }
+
+/* Versão C (v2): cartões de convite com ações embaixo */
+
+/* Versão com abas (v4): convites dentro das seções colapsáveis e cards de convite */
+#familiar-recebidos .rec-v4 { gap: var(--space-stack-section); }
+#familiar-recebidos .rec-v4 .rec-vista { display: flex; flex-direction: column; gap: var(--space-stack-section); }
+#familiar-recebidos .rec-v4 .rec-vista[hidden] { display: none; }
+#familiar-recebidos .rec-invite { display: flex; flex-direction: column; gap: var(--space-stack-related); padding: var(--space-inset-sm) 0; border-bottom: 1px solid var(--border-subtle); }
+#familiar-recebidos .rec-invite:last-child { border-bottom: 0; }
+#familiar-recebidos .rec-invite[hidden] { display: none; }
+#familiar-recebidos .rec-invite-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-inline-related); }
+#familiar-recebidos .rec-invite-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+#familiar-recebidos .rec-invite-name { font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-default); }
+#familiar-recebidos .rec-invite-meta,
+#familiar-recebidos .rec-invite-note { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+#familiar-recebidos .rec-invite-note { color: var(--text-warning); }
+#familiar-recebidos .rec-invite-note[hidden] { display: none; }
+#familiar-recebidos .rec-invite-actions { display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+#familiar-recebidos .rec-invite-par { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-inline-related); }
+#familiar-recebidos .rec-v4 .rec-sou-note { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+#familiar-recebidos .rec-v4 #rec-panel-sou .rec-invite { border-bottom: 0; }
+#familiar-recebidos .area-family.pend-novo { box-shadow: 0 0 0 2px var(--border-brand); }
+/* Chevron dos familiares na versão com abas: tamanho fixo, sem corte */
+#familiar-recebidos .area-family-head .area-chev { flex: none; width: 24px; height: 24px; font-size: 24px; line-height: 24px; overflow: visible; }
+
+/* Familiares: chevron sem rotação (o ícone troca) */
+#familiar-recebidos .area-family-head[aria-expanded="true"] .area-chev { transform: none; }
+
+/* Espaçamentos padronizados (duas abas, Meus familiares e Sou familiar de):
+   seções 24px · título até o conteúdo 12px · itens e textos de apoio 8px */
+#familiar-recebidos .rec-v4,
+#familiar-recebidos .rec-vista { gap: var(--space-stack-section); }
+#familiar-recebidos .pend-group { gap: var(--space-stack-related); }
+#familiar-recebidos .pend-group-title { margin: 0 0 var(--space-stack-tight); }
+#familiar-recebidos .rec-sou-note { margin: 0; }
+
+/* Cabeçalho das seções (título + descrição), igual nas duas abas: descrição colada no título, 12px até os cards */
+#familiar-recebidos .rec-sec-head { display: flex; flex-direction: column; gap: var(--space-stack-tight); margin-bottom: var(--space-stack-tight); }
+#familiar-recebidos .rec-sec-head .pend-group-title { margin: 0; }
+#familiar-recebidos .rec-sec-desc { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+
+/* Convidado sem conta: entrada pelo link do convite (spec seção 8.2) */
+#convite-link .convite-dica { margin: var(--space-stack-tight) 0 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+#convite-link .convite-alert { display: flex; flex-direction: column; }
+#convite-link .convite-alert:empty { display: none; }
+#convite-link .convite-alert .po-alert { max-width: none; }
+#convite-link .convite-alert-head { display: flex; align-items: center; gap: var(--space-inline-related); }
+#convite-link .convite-alert-head .po-alert-title { margin: 0; }
+#convite-link .foot { display: flex; flex-direction: column; gap: var(--space-stack-related); margin-top: auto; padding-bottom: var(--space-page-block-end); }
+#convite-link .convite-form { display: flex; flex-direction: column; gap: var(--space-stack-section); flex: 1 1 auto; min-height: 0; }
+#convite-link .po-msg[hidden] { display: none; }

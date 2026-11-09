@@ -1,0 +1,169 @@
+/* Vincular familiar · Busca de usuário (spec Vínculo de familiares, seção 4) */
+/* Campo único (CPF ou e-mail). O botão primário fica no .foot, ancorado no fim da tela, acima do rodapé legal. */
+#familiar-busca .busca-form { flex: 1 1 auto; min-height: 0; }
+#familiar-busca .busca-form .foot { margin-top: auto; padding-bottom: var(--space-page-block-end); }
+#familiar-busca .busca-alert { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-busca .busca-alert:empty { display: none; }
+#familiar-busca .busca-alert .po-alert { max-width: none; }
+#familiar-busca .busca-alert .po-btn { width: 100%; }
+#familiar-busca .busca-input-disabled { opacity: 1; background: var(--bg-neutral); color: var(--text-disabled); }
+/* Ação dentro do alerta: mesma caixa da mensagem, largura total do bloco de texto */
+#familiar-busca .busca-alert .po-alert { flex-wrap: wrap; }
+#familiar-busca .busca-alert .po-alert-text { gap: var(--space-stack-related); }
+#familiar-busca .po-alert-action { margin-top: var(--space-stack-tight); }
+#familiar-busca .po-alert-action .po-btn { width: 100%; background: var(--bg-surface); }
+/* Ícone e título na mesma linha; ícone + à direita da ação */
+#familiar-busca .busca-alert-head { display: flex; align-items: center; gap: var(--space-inline-related); }
+#familiar-busca .busca-alert-head .po-alert-title { margin: 0; }
+#familiar-busca .po-alert-action .po-btn-content { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+/* Botão ocupa a largura do bloco de texto do alerta */
+#familiar-busca .busca-alert .po-alert-text { align-items: stretch; }
+#familiar-busca .po-alert-action { width: 100%; }
+
+/* Vincular familiar · Card do familiar encontrado (Caminho A) */
+#familiar-vinculo .busca-form { flex: 1 1 auto; min-height: 0; }
+#familiar-vinculo .busca-form .foot { margin-top: auto; padding-bottom: var(--space-page-block-end); }
+#familiar-vinculo .busca-card { display: flex; align-items: center; gap: var(--space-inline-loose); padding: var(--space-inset-md); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-surface); }
+#familiar-vinculo .busca-card-avatar { flex: none; width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--icon-brand); }
+#familiar-vinculo .busca-card-text { display: flex; flex-direction: column; gap: var(--space-stack-tight); min-width: 0; }
+#familiar-vinculo .busca-card-name { margin: 0; font-family: var(--font-heading); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+#familiar-vinculo .busca-card-doc { margin: 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+
+/* Vincular familiar · Contatos e envio do convite (Caminho A) */
+#familiar-contatos .busca-form { flex: 1 1 auto; min-height: 0; }
+#familiar-contatos .busca-form .foot { margin-top: auto; padding-bottom: var(--space-page-block-end); }
+#familiar-contatos .busca-channels { display: flex; flex-direction: column; gap: var(--space-stack-related); margin: 0; padding: 0; border: 0; min-width: 0; }
+#familiar-contatos .busca-channels-legend { padding: 0; margin-bottom: var(--space-stack-related); font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+#familiar-contatos .busca-channel { max-width: none; align-items: center; }
+#familiar-contatos .busca-channel .po-check-label { display: flex; flex-direction: column; gap: var(--space-stack-tight); color: var(--text-default); }
+#familiar-contatos .busca-channel-title { font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+#familiar-contatos .busca-channel-value { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+#familiar-contatos .po-alert-action { width: 100%; }
+#familiar-contatos .busca-alert .po-alert-text { align-items: stretch; }
+#familiar-contatos .po-alert-action .po-btn-content { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+/* Regras compartilhadas pelos alertas das telas do Vincular familiar */
+#familiar-contatos .busca-alert { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-contatos .busca-alert:empty { display: none; }
+#familiar-contatos .busca-alert .po-alert { max-width: none; }
+.busca-alert-head { display: flex; align-items: center; gap: var(--space-inline-related); }
+.busca-alert-head .po-alert-title { margin: 0; }
+
+/* Enviar convite: explicação do fluxo */
+#familiar-contatos .busca-steps-wrap { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-contatos .busca-steps-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-title-sm-size); line-height: var(--type-title-sm-line-height); font-weight: var(--type-title-sm-weight); color: var(--text-default); }
+#familiar-contatos .busca-steps { margin: 0; padding: 0; list-style: none; counter-reset: passo; display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-contatos .busca-steps li { counter-increment: passo; position: relative; padding-left: 32px; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); color: var(--text-default); }
+#familiar-contatos .busca-steps li::before { content: counter(passo); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--text-brand); font-size: var(--type-label-sm-size); line-height: 24px; text-align: center; font-weight: var(--type-label-sm-strong-weight); }
+#familiar-contatos .busca-channels-hint { margin: 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+
+/* Enviar convite ao familiar (ref. Figma 3057:46066): cards de contato, Enviar link e Copiar link */
+#familiar-contatos .busca-foot { gap: var(--space-stack-related); }
+#familiar-contatos .busca-contact { display: flex; align-items: center; gap: var(--space-inline-related); padding: var(--space-inset-sm); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-surface); }
+#familiar-contatos .busca-contact-main { position: relative; flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: var(--space-inline-related); cursor: pointer; }
+#familiar-contatos .busca-contact-input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+#familiar-contatos .busca-contact-input:focus-visible + .busca-contact-mark { outline: 2px solid var(--border-focused); outline-offset: 2px; border-radius: 50%; }
+#familiar-contatos .busca-contact-mark { flex: none; display: inline-flex; color: var(--icon-subtle); }
+#familiar-contatos .busca-contact-mark .po-icon { font-variation-settings: 'FILL' 0; }
+#familiar-contatos .busca-contact-input:checked + .busca-contact-mark { color: var(--icon-success); }
+#familiar-contatos .busca-contact-input:checked + .busca-contact-mark .po-icon { font-variation-settings: 'FILL' 1; }
+#familiar-contatos .busca-contact-text { display: flex; flex-direction: column; gap: var(--space-stack-tight); min-width: 0; }
+#familiar-contatos .busca-contact-title { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+#familiar-contatos .busca-contact-value { font-family: var(--font-body); font-size: var(--type-label-lg-size); line-height: var(--type-label-lg-line-height); font-weight: var(--type-label-lg-weight); color: var(--text-default); overflow-wrap: anywhere; }
+#familiar-contatos .busca-contact-edit { flex: none; display: inline-flex; align-items: center; gap: var(--space-inline-tight); border: 0; background: none; padding: var(--space-050) var(--space-inline-tight); font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-brand); cursor: pointer; }
+#familiar-contatos .busca-channels-hint { margin: 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+
+/* Enviar convite: descrição mais perto do título e mais afastada dos canais */
+#familiar-contatos .po-heading-spaced { gap: var(--space-050); }
+#familiar-contatos .po-heading .area-form-note { margin: 0; }
+#familiar-contatos .area-body { gap: var(--space-stack-section); }
+
+/* Cadastro do familiar sem conta (spec seção 6.1) */
+#familiar-cadastro .busca-form { flex: 1 1 auto; min-height: 0; }
+#familiar-cadastro .busca-form .foot { margin-top: auto; padding-bottom: var(--space-page-block-end); }
+#familiar-cadastro .busca-alert { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-cadastro .busca-alert:empty { display: none; }
+#familiar-cadastro .busca-alert .po-alert { max-width: none; }
+#familiar-cadastro .po-heading-spaced { gap: var(--space-050); }
+#familiar-cadastro .po-heading .area-form-note { margin: 0; }
+#familiar-cadastro .area-body { gap: var(--space-stack-section); }
+#familiar-cadastro .po-alert-action { width: 100%; }
+#familiar-cadastro .busca-alert .po-alert-text { align-items: stretch; }
+/* Cadastro: campos com espaçamento menor para caber na tela */
+#familiar-cadastro .busca-form { gap: var(--space-stack-loose); }
+
+/* Adicionar familiar · Introdução (entrada do fluxo: Meus familiares → Introdução → Busca) */
+#familiar-intro .familiar-intro-page { gap: var(--space-stack-section); padding-top: var(--space-inset-lg); }
+#familiar-intro .po-heading-title { text-wrap: balance; }
+#familiar-intro .familiar-intro-block { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+#familiar-intro .familiar-intro-kicker { margin: 0; padding-left: var(--space-inset-sm); font-family: var(--font-body); font-size: var(--type-label-xs-size); line-height: var(--type-label-xs-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-subtle); text-transform: uppercase; letter-spacing: .02em; }
+#familiar-intro .familiar-intro-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-surface); overflow: hidden; }
+#familiar-intro .familiar-intro-item { display: flex; align-items: center; gap: var(--space-inline-group); min-height: 64px; padding: var(--space-inset-sm) var(--space-inset-md); font-family: var(--font-body); font-size: var(--type-label-lg-size); line-height: var(--type-label-lg-line-height); font-weight: var(--type-label-lg-weight); color: var(--text-default); }
+#familiar-intro .familiar-intro-item + .familiar-intro-item { border-top: 1px solid var(--border-default); }
+#familiar-intro .familiar-intro-icon { flex: none; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-subtle); color: var(--icon-brand); }
+#familiar-intro .familiar-intro-alert { margin: 0; max-width: none; }
+#familiar-intro .familiar-intro-alert .po-alert-body { margin: 0; }
+#familiar-intro .familiar-intro-foot { margin-top: auto; padding-bottom: var(--space-page-block-end); }
+/* Introdução: espaçamento mais compacto para o botão caber sem rolagem */
+#familiar-intro .familiar-intro-page { gap: var(--space-stack-loose); padding-top: var(--space-inset-md); }
+#familiar-intro .familiar-intro-item { min-height: 56px; padding: var(--space-inset-sm) var(--space-inset-md); }
+#familiar-intro .familiar-intro-foot { padding-bottom: var(--space-stack-related); }
+#familiar-intro .familiar-intro-page { gap: var(--space-stack-group); }
+#familiar-intro .familiar-intro-item { min-height: 52px; }
+#familiar-intro .familiar-intro-page { padding-top: var(--space-inset-sm); }
+#familiar-intro .familiar-intro-block { gap: var(--space-stack-tight); }
+#familiar-intro .familiar-intro-foot { padding-bottom: 0; }
+/* Introdução: lista sem caixa branca e sem divisórias; ícones menores */
+#familiar-intro .familiar-intro-list { border: 0; border-radius: 0; background: none; overflow: visible; }
+#familiar-intro .familiar-intro-item { min-height: 0; padding: var(--space-inset-sm) 0; }
+#familiar-intro .familiar-intro-item + .familiar-intro-item { border-top: 0; }
+#familiar-intro .familiar-intro-kicker { padding-left: 0; }
+#familiar-intro .familiar-intro-icon { width: 32px; height: 32px; }
+#familiar-intro .familiar-intro-icon .po-icon { font-size: 16px; line-height: 16px; width: 16px; height: 16px; }
+/* Introdução: ícones maiores dentro dos círculos de 32px; itens mais próximos */
+#familiar-intro .familiar-intro-icon .po-icon { font-size: 20px; line-height: 20px; width: 20px; height: 20px; }
+#familiar-intro .familiar-intro-item { padding: var(--space-stack-tight) 0; }
+#familiar-intro .familiar-intro-list { gap: 0; }
+/* Introdução: mais espaço entre a descrição e o rótulo da lista; itens um pouco mais juntos para manter a tela sem rolagem */
+#familiar-intro .familiar-intro-block { gap: var(--space-stack-tight); }
+#familiar-intro .familiar-intro-kicker { margin: var(--space-stack-group) 0 0; }
+#familiar-intro .familiar-intro-item { padding: 2px 0; }
+/* Introdução: o botão fica fixo no rodapé; só a lista rola */
+#familiar-intro .familiar-intro-foot { margin: 0; padding: var(--space-stack-related) var(--space-page-inline) var(--space-stack-section); background: var(--bg-page); }
+#familiar-intro .familiar-intro-page { padding-bottom: 0; }
+#familiar-intro .familiar-intro-item { padding: var(--space-stack-related) 0; }
+#familiar-intro .familiar-intro-icon .po-icon { color: var(--icon-brand); }
+
+/* Decisão do maior de idade (spec seção 6.3): reutiliza as opções do DS (po-optcard) */
+#familiar-decisao .familiar-options { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+
+/* Decisão: cards com cara de botão (borda da marca, ícone em círculo, seta em botão verde, toque com fundo) */
+#familiar-decisao .po-optcard { background: var(--bg-surface); border: 1px solid var(--border-brand); box-shadow: var(--shadow-sm); cursor: pointer; }
+#familiar-decisao .po-optcard:hover { background: var(--bg-brand-subtlest); }
+#familiar-decisao .po-optcard:active { background: var(--bg-brand-subtle); }
+#familiar-decisao .po-optcard-icon { width: 40px; height: 40px; }
+#familiar-decisao .po-optcard-icon .po-icon { color: var(--icon-brand); }
+#familiar-decisao .po-optcard-title { color: var(--text-brand); }
+#familiar-decisao .po-optcard-arrow { color: var(--text-on-brand); }
+#familiar-decisao .busca-option-go { width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--bg-brand-bold); color: var(--text-on-brand); }
+#familiar-decisao .po-optcard:hover .busca-option-go { background: var(--bg-brand-bold-hovered); }
+/* Decisão: só o ícone de seta, sem círculo */
+#familiar-decisao .po-optcard-arrow { color: var(--icon-brand); }
+#familiar-decisao .busca-option-go { width: auto; height: auto; border-radius: 0; background: none; color: var(--icon-brand); }
+#familiar-decisao .po-optcard:hover .busca-option-go { background: none; color: var(--icon-brand); }
+/* Decisão: borda mais clara e um pouco mais espessa */
+#familiar-decisao .po-optcard { border: 2px solid var(--brand-300); }
+/* Decisão: ícones maiores dentro dos círculos de 40px */
+#familiar-decisao .po-optcard-icon .po-icon { font-size: 24px; line-height: 24px; width: 24px; height: 24px; }
+
+/* Termo de responsabilidade do menor (spec seção 6.2) */
+#familiar-termo .termo-page { gap: var(--space-stack-group); padding-top: var(--space-inset-sm); padding-bottom: 0; }
+#familiar-termo .termo-box { max-height: 220px; overflow-y: auto; padding: var(--space-inset-md); border: 1px solid var(--border-default); border-radius: var(--radius-lg); background: var(--bg-surface); font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); color: var(--text-subtle); }
+#familiar-termo .termo-box p { margin: 0 0 var(--space-stack-related); }
+#familiar-termo .termo-box p:last-child { margin: 0; }
+#familiar-termo .termo-check { max-width: none; }
+#familiar-termo .termo-foot { margin: 0; padding: var(--space-stack-related) var(--space-page-inline) var(--space-stack-section); background: var(--bg-page); }
+/* Termo: a área de leitura ocupa todo o espaço disponível entre o título e o aceite */
+#familiar-termo .termo-page { min-height: 0; }
+#familiar-termo .termo-box { flex: 1 1 auto; min-height: 0; max-height: none; }
+#familiar-termo .termo-check { flex: none; }
+#familiar-termo .termo-page { padding-bottom: var(--space-stack-related); }

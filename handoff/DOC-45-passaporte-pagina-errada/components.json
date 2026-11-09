@@ -1,0 +1,222 @@
+{
+ "screen": "DOC-45",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-45-passaporte-pagina-errada/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Validação do passaporte",
+    "language": false,
+    "help": {
+     "label": "Ajuda"
+    }
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Validação do passaporte\" language={false} help={{ label: \"Ajuda\" }} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Validação do passaporte",
+      "language": false,
+      "help": {
+       "label": "Ajuda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "component": "ResultHero",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResultHero/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "danger",
+    "icon": "menu_book",
+    "title": "Esta não é a página com sua foto",
+    "description": "Abra o passaporte na página de dados, onde estão sua foto e seus dados pessoais."
+   },
+   "behavior": null,
+   "jsx": "<ResultHero tone=\"danger\" icon=\"menu_book\" title=\"Esta não é a página com sua foto\" description=\"Abra o passaporte na página de dados, onde estão sua foto e seus dados pessoais.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info",
+      "warning",
+      "danger"
+     ],
+     "used": "danger"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "danger",
+      "icon": "menu_book",
+      "title": "Esta não é a página com sua foto",
+      "description": "Abra o passaporte na página de dados, onde estão sua foto e seus dados pessoais."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "children": "Tirar outra foto"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" onClick={() => {}}>Tirar outra foto</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "children": "Tirar outra foto",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 4
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -1,0 +1,4619 @@
+{
+ "title": "Palmeiras · Onboarding",
+ "artifact": "https://claude.ai/artifact/11KYqUc8M7tEadXLZmQtQH",
+ "figmaFile": "apbNVzymCikALAJtrz0Zjp",
+ "prototype": "prototipo.html",
+ "lanes": [
+  {
+   "id": "cadastro",
+   "title": "Entrada e cadastro",
+   "sub": "Etapa 1 de 4 · dados pessoais, contatos e endereço",
+   "rows": 2
+  },
+  {
+   "id": "documento",
+   "title": "Documento de identidade · brasileiro",
+   "sub": "Etapa 2 de 4 · CIN, CNH e RG",
+   "rows": 1
+  },
+  {
+   "id": "estrangeiro",
+   "title": "Documento de identidade · estrangeiro",
+   "sub": "Etapa 2 de 4 · uma linha por documento: CRNM, DPRNM, RNE, Cédula, Passaporte e erros de sistema · Figma 2283:33539",
+   "rows": 7
+  },
+  {
+   "id": "biometria",
+   "title": "Biometria facial",
+   "sub": "Etapa 3 de 4 · validação facial · Figma 1774:46029",
+   "rows": 2
+  },
+  {
+   "id": "area",
+   "title": "Área logada",
+   "sub": "Meu cadastro, notificações, ajuda e segurança",
+   "rows": 1
+  },
+  {
+   "id": "familiares",
+   "title": "Familiares",
+   "sub": "Inclusão e gestão de vínculos",
+   "rows": 6
+  }
+ ],
+ "kinds": {
+  "principal": "Caminho principal",
+  "alternativa": "Caminho alternativo",
+  "erro": "Erro ou nova tentativa",
+  "automatica": "Automática (timer)",
+  "voltar": "Voltar",
+  "saida": "Sair do fluxo",
+  "lacuna": "Lacuna (a desenhar)"
+ },
+ "nodes": [
+  {
+   "code": "ENT-01",
+   "proto": "login",
+   "name": "Login",
+   "lane": "cadastro",
+   "col": 0,
+   "row": 0,
+   "figma": "1620:26870",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "ENT-01-login",
+   "variants": [
+    {
+     "id": "login",
+     "label": "Padrão",
+     "file": "handoff/ENT-01-login/screen.html"
+    }
+   ],
+   "components": "handoff/ENT-01-login/components.json",
+   "spec": "handoff/ENT-01-login/spec.md",
+   "inputs": 9,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-01",
+   "proto": "cadastro",
+   "name": "Cadastro · Dados pessoais",
+   "lane": "cadastro",
+   "col": 1,
+   "row": 0,
+   "figma": "1619:11919",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-01-cadastro-dados-pessoais",
+   "variants": [
+    {
+     "id": "cadastro",
+     "label": "Padrão",
+     "file": "handoff/CAD-01-cadastro-dados-pessoais/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-01-cadastro-dados-pessoais/components.json",
+   "spec": "handoff/CAD-01-cadastro-dados-pessoais/spec.md",
+   "inputs": 3,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-02",
+   "proto": "otp-sms",
+   "name": "Código por SMS",
+   "lane": "cadastro",
+   "col": 2,
+   "row": 0,
+   "figma": "1620:29884",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-02-codigo-por-sms",
+   "variants": [
+    {
+     "id": "otp-sms",
+     "label": "Padrão",
+     "file": "handoff/CAD-02-codigo-por-sms/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-02-codigo-por-sms/components.json",
+   "spec": "handoff/CAD-02-codigo-por-sms/spec.md",
+   "inputs": 4,
+   "outputs": 3
+  },
+  {
+   "code": "CAD-03",
+   "proto": "editar-celular",
+   "name": "Editar celular",
+   "lane": "cadastro",
+   "col": 2,
+   "row": 1,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "CAD-03-editar-celular",
+   "variants": [
+    {
+     "id": "editar-celular",
+     "label": "Padrão",
+     "file": "handoff/CAD-03-editar-celular/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-03-editar-celular/components.json",
+   "spec": "handoff/CAD-03-editar-celular/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DEC-01",
+   "type": "decision",
+   "name": "Código SMS correto?",
+   "lane": "cadastro",
+   "col": 3,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-04",
+   "proto": "otp-email",
+   "name": "Código por e-mail",
+   "lane": "cadastro",
+   "col": 4,
+   "row": 0,
+   "figma": "1619:11471",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-04-codigo-por-e-mail",
+   "variants": [
+    {
+     "id": "otp-email",
+     "label": "Padrão",
+     "file": "handoff/CAD-04-codigo-por-e-mail/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-04-codigo-por-e-mail/components.json",
+   "spec": "handoff/CAD-04-codigo-por-e-mail/spec.md",
+   "inputs": 4,
+   "outputs": 3
+  },
+  {
+   "code": "CAD-05",
+   "proto": "editar-email",
+   "name": "Editar e-mail",
+   "lane": "cadastro",
+   "col": 4,
+   "row": 1,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "CAD-05-editar-e-mail",
+   "variants": [
+    {
+     "id": "editar-email",
+     "label": "Padrão",
+     "file": "handoff/CAD-05-editar-e-mail/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-05-editar-e-mail/components.json",
+   "spec": "handoff/CAD-05-editar-e-mail/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DEC-02",
+   "type": "decision",
+   "name": "Código e-mail correto?",
+   "lane": "cadastro",
+   "col": 5,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-06",
+   "proto": "email-atualizado",
+   "name": "E-mail verificado",
+   "lane": "cadastro",
+   "col": 6,
+   "row": 0,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "CAD-06-e-mail-verificado",
+   "variants": [
+    {
+     "id": "email-atualizado",
+     "label": "Padrão",
+     "file": "handoff/CAD-06-e-mail-verificado/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-06-e-mail-verificado/components.json",
+   "spec": "handoff/CAD-06-e-mail-verificado/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-07",
+   "proto": "endereco",
+   "name": "Endereço",
+   "lane": "cadastro",
+   "col": 7,
+   "row": 0,
+   "figma": "1619:11471",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-07-endereco",
+   "variants": [
+    {
+     "id": "endereco",
+     "label": "Padrão",
+     "file": "handoff/CAD-07-endereco/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-07-endereco/components.json",
+   "spec": "handoff/CAD-07-endereco/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "CAD-08",
+   "proto": "status",
+   "name": "Status · dados recebidos",
+   "lane": "cadastro",
+   "col": 8,
+   "row": 0,
+   "figma": "2198:23407",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-08-status-dados-recebidos",
+   "variants": [
+    {
+     "id": "status",
+     "label": "Padrão",
+     "file": "handoff/CAD-08-status-dados-recebidos/screen.html"
+    }
+   ],
+   "components": "handoff/CAD-08-status-dados-recebidos/components.json",
+   "spec": "handoff/CAD-08-status-dados-recebidos/spec.md",
+   "inputs": 3,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-01",
+   "proto": "documento",
+   "name": "Seleção de documento",
+   "lane": "documento",
+   "col": 0,
+   "row": 0,
+   "figma": "1928:61728",
+   "variants": [
+    {
+     "id": "documento",
+     "label": "Fechado",
+     "file": "handoff/DOC-01-selecao-de-documento/screen.html"
+    },
+    {
+     "id": "documento--cnh-aberto",
+     "label": "CNH aberta",
+     "file": "handoff/DOC-01-selecao-de-documento/screen--cnh-aberta.html"
+    }
+   ],
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-01-selecao-de-documento",
+   "components": "handoff/DOC-01-selecao-de-documento/components.json",
+   "spec": "handoff/DOC-01-selecao-de-documento/spec.md",
+   "inputs": 3,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-G1",
+   "type": "gap",
+   "name": "Captura do documento",
+   "lane": "documento",
+   "col": 1,
+   "row": 0,
+   "note": "Foto ou upload da frente e do verso e conferência. Hoje os dois botões pulam direto para a biometria.",
+   "status": "lacuna",
+   "folder": null
+  },
+  {
+   "code": "DOC-02",
+   "name": "Seleção do documento · estrangeiro",
+   "lane": "estrangeiro",
+   "col": 0,
+   "row": 0,
+   "figma": "2788:34526",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-02-selecao-documento-estrangeiro",
+   "components": "handoff/DOC-02-selecao-documento-estrangeiro/components.json",
+   "spec": "handoff/DOC-02-selecao-documento-estrangeiro/spec.md",
+   "variants": [
+    {
+     "id": "doc-02--fechada",
+     "label": "Lista fechada",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/fechada/screen.html",
+     "figma": "2283:37196"
+    },
+    {
+     "id": "doc-02--crnm-aberto",
+     "label": "CRNM aberto",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/crnm-aberto/screen.html",
+     "figma": "2788:34526"
+    },
+    {
+     "id": "doc-02--dprnm-aberto",
+     "label": "DPRNM aberto",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/dprnm-aberto/screen.html",
+     "figma": "2794:35275"
+    },
+    {
+     "id": "doc-02--rne-aberto",
+     "label": "RNE aberto (sem Figma)",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/rne-aberto/screen.html"
+    },
+    {
+     "id": "doc-02--passaporte-aberto",
+     "label": "Passaporte aberto",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/passaporte-aberto/screen.html",
+     "figma": "3080:59740"
+    },
+    {
+     "id": "doc-02--cedula-aberta",
+     "label": "Cédula aberta",
+     "file": "handoff/DOC-02-selecao-documento-estrangeiro/telas/cedula-aberta/screen.html",
+     "figma": "2799:36027"
+    }
+   ],
+   "inputs": 23,
+   "outputs": 9
+  },
+  {
+   "code": "DOC-03",
+   "name": "CRNM · tutorial da frente",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 0,
+   "figma": "2788:34545",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-03-crnm-tutorial-frente",
+   "components": "handoff/DOC-03-crnm-tutorial-frente/components.json",
+   "spec": "handoff/DOC-03-crnm-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-03--passo-1",
+     "label": "Passo 1 · frente do CRNM",
+     "file": "handoff/DOC-03-crnm-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "2788:34545"
+    },
+    {
+     "id": "doc-03--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-03-crnm-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "2788:34567"
+    },
+    {
+     "id": "doc-03--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-03-crnm-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "2788:34589"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-04",
+   "name": "CRNM · câmera da frente",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 0,
+   "figma": "2788:34617",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-04-crnm-camera-frente",
+   "components": "handoff/DOC-04-crnm-camera-frente/components.json",
+   "spec": "handoff/DOC-04-crnm-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-04--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-04-crnm-camera-frente/telas/enquadrando/screen.html",
+     "figma": "2788:34617"
+    },
+    {
+     "id": "doc-04--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-04-crnm-camera-frente/telas/enquadrado/screen.html",
+     "figma": "2788:34644"
+    },
+    {
+     "id": "doc-04--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-04-crnm-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-04--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-04-crnm-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-04--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-04-crnm-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-05",
+   "name": "CRNM · confirmação da frente",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 0,
+   "figma": "2788:34658",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-05-crnm-confirmacao-frente",
+   "components": "handoff/DOC-05-crnm-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-05-crnm-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-05--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-05-crnm-confirmacao-frente/telas/padrao/screen.html",
+     "figma": "2788:34658"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-06",
+   "name": "CRNM · tutorial do verso",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 0,
+   "figma": "2788:34672",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-06-crnm-tutorial-verso",
+   "components": "handoff/DOC-06-crnm-tutorial-verso/components.json",
+   "spec": "handoff/DOC-06-crnm-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-06--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-06-crnm-tutorial-verso/telas/passo-1/screen.html",
+     "figma": "2788:34672"
+    },
+    {
+     "id": "doc-06--passo-2",
+     "label": "Passo 2 · enquadrar o código",
+     "file": "handoff/DOC-06-crnm-tutorial-verso/telas/passo-2/screen.html",
+     "figma": "2788:34694"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-07",
+   "name": "CRNM · câmera do verso (código)",
+   "lane": "estrangeiro",
+   "col": 5,
+   "row": 0,
+   "figma": "2788:34736",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-07-crnm-camera-verso",
+   "components": "handoff/DOC-07-crnm-camera-verso/components.json",
+   "spec": "handoff/DOC-07-crnm-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-07--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/enquadrando/screen.html",
+     "figma": "2788:34736"
+    },
+    {
+     "id": "doc-07--enquadrado",
+     "label": "Enquadrado (lendo o MRZ)",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/enquadrado/screen.html",
+     "figma": "2788:34767"
+    },
+    {
+     "id": "doc-07--codigo-capturado",
+     "label": "Código capturado (notificação e redirecionamento)",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/codigo-capturado/screen.html",
+     "figma": "2788:34767"
+    },
+    {
+     "id": "doc-07--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-07--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-07--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-07-crnm-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-09",
+   "name": "CRNM · upload da frente e do verso",
+   "lane": "estrangeiro",
+   "col": 6,
+   "row": 0,
+   "figma": "2788:37354",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-09-crnm-upload",
+   "components": "handoff/DOC-09-crnm-upload/components.json",
+   "spec": "handoff/DOC-09-crnm-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-09--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-09-crnm-upload/telas/vazio/screen.html",
+     "figma": "2788:37354"
+    },
+    {
+     "id": "doc-09--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-09-crnm-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-09--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-09-crnm-upload/telas/completo/screen.html",
+     "figma": "2788:37430"
+    },
+    {
+     "id": "doc-09--erro-mrz-verso",
+     "label": "Erro: MRZ não encontrado no verso (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-09--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-09--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-09--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-09--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-09--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-09-crnm-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 6,
+   "outputs": 6
+  },
+  {
+   "code": "DOC-10",
+   "name": "Status · documento recebido",
+   "lane": "estrangeiro",
+   "col": 7,
+   "row": 0,
+   "figma": "2283:34738",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-10-status-documento-recebido",
+   "components": "handoff/DOC-10-status-documento-recebido/components.json",
+   "spec": "handoff/DOC-10-status-documento-recebido/spec.md",
+   "variants": [
+    {
+     "id": "doc-10--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-10-status-documento-recebido/telas/padrao/screen.html",
+     "figma": "2283:34738"
+    }
+   ],
+   "inputs": 5,
+   "outputs": 5
+  },
+  {
+   "code": "DOC-11",
+   "name": "Falha na validação do documento",
+   "lane": "estrangeiro",
+   "col": 8,
+   "row": 0,
+   "figma": "2283:34313",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-11-falha-validacao-documento",
+   "components": "handoff/DOC-11-falha-validacao-documento/components.json",
+   "spec": "handoff/DOC-11-falha-validacao-documento/spec.md",
+   "variants": [
+    {
+     "id": "doc-11--padrao",
+     "label": "Volta ao upload do CRNM",
+     "file": "handoff/DOC-11-falha-validacao-documento/telas/padrao/screen.html",
+     "figma": "2283:34313"
+    },
+    {
+     "id": "doc-11--dprnm",
+     "label": "Volta ao upload do DPRNM",
+     "file": "handoff/DOC-11-falha-validacao-documento/telas/dprnm/screen.html",
+     "figma": "2283:34313"
+    },
+    {
+     "id": "doc-11--rne",
+     "label": "Volta ao upload do RNE",
+     "file": "handoff/DOC-11-falha-validacao-documento/telas/rne/screen.html",
+     "figma": "2283:34313"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 4
+  },
+  {
+   "code": "DOC-12",
+   "name": "Sem conexão ao enviar o documento",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 2,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-12-sem-conexao",
+   "components": "handoff/DOC-12-sem-conexao/components.json",
+   "spec": "handoff/DOC-12-sem-conexao/spec.md",
+   "variants": [
+    {
+     "id": "doc-12--padrao",
+     "label": "Volta ao upload do CRNM",
+     "file": "handoff/DOC-12-sem-conexao/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-12--dprnm",
+     "label": "Volta ao upload do DPRNM",
+     "file": "handoff/DOC-12-sem-conexao/telas/dprnm/screen.html"
+    },
+    {
+     "id": "doc-12--rne",
+     "label": "Volta ao upload do RNE",
+     "file": "handoff/DOC-12-sem-conexao/telas/rne/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-13",
+   "name": "Tempo excedido ao enviar o documento",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 2,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-13-tempo-excedido",
+   "components": "handoff/DOC-13-tempo-excedido/components.json",
+   "spec": "handoff/DOC-13-tempo-excedido/spec.md",
+   "variants": [
+    {
+     "id": "doc-13--padrao",
+     "label": "Volta ao upload do CRNM",
+     "file": "handoff/DOC-13-tempo-excedido/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-13--dprnm",
+     "label": "Volta ao upload do DPRNM",
+     "file": "handoff/DOC-13-tempo-excedido/telas/dprnm/screen.html"
+    },
+    {
+     "id": "doc-13--rne",
+     "label": "Volta ao upload do RNE",
+     "file": "handoff/DOC-13-tempo-excedido/telas/rne/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-14",
+   "name": "Erro inesperado ao enviar o documento",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 2,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-14-erro-inesperado",
+   "components": "handoff/DOC-14-erro-inesperado/components.json",
+   "spec": "handoff/DOC-14-erro-inesperado/spec.md",
+   "variants": [
+    {
+     "id": "doc-14--padrao",
+     "label": "Volta ao upload do CRNM",
+     "file": "handoff/DOC-14-erro-inesperado/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-14--dprnm",
+     "label": "Volta ao upload do DPRNM",
+     "file": "handoff/DOC-14-erro-inesperado/telas/dprnm/screen.html"
+    },
+    {
+     "id": "doc-14--rne",
+     "label": "Volta ao upload do RNE",
+     "file": "handoff/DOC-14-erro-inesperado/telas/rne/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 4
+  },
+  {
+   "code": "DOC-15",
+   "name": "Sessão expirada no documento",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 2,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-15-sessao-expirada",
+   "components": "handoff/DOC-15-sessao-expirada/components.json",
+   "spec": "handoff/DOC-15-sessao-expirada/spec.md",
+   "variants": [
+    {
+     "id": "doc-15--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/DOC-15-sessao-expirada/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 1
+  },
+  {
+   "code": "DOC-16",
+   "name": "DPRNM · tutorial da frente",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 1,
+   "figma": "2794:35439",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-16-dprnm-tutorial-frente",
+   "components": "handoff/DOC-16-dprnm-tutorial-frente/components.json",
+   "spec": "handoff/DOC-16-dprnm-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-16--passo-1",
+     "label": "Passo 1 · frente do DPRNM",
+     "file": "handoff/DOC-16-dprnm-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "2794:35439"
+    },
+    {
+     "id": "doc-16--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-16-dprnm-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "2794:35461"
+    },
+    {
+     "id": "doc-16--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-16-dprnm-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "2794:35483"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-17",
+   "name": "DPRNM · câmera da frente",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 1,
+   "figma": "2794:35511",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-17-dprnm-camera-frente",
+   "components": "handoff/DOC-17-dprnm-camera-frente/components.json",
+   "spec": "handoff/DOC-17-dprnm-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-17--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-17-dprnm-camera-frente/telas/enquadrando/screen.html",
+     "figma": "2794:35511"
+    },
+    {
+     "id": "doc-17--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-17-dprnm-camera-frente/telas/enquadrado/screen.html",
+     "figma": "2794:35538"
+    },
+    {
+     "id": "doc-17--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-17-dprnm-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-17--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-17-dprnm-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-17--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-17-dprnm-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-18",
+   "name": "DPRNM · confirmação da frente",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 1,
+   "figma": "2794:35552",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-18-dprnm-confirmacao-frente",
+   "components": "handoff/DOC-18-dprnm-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-18-dprnm-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-18--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-18-dprnm-confirmacao-frente/telas/padrao/screen.html",
+     "figma": "2794:35552"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-19",
+   "name": "DPRNM · tutorial do verso (QR Code)",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 1,
+   "figma": "2794:35566",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-19-dprnm-tutorial-verso",
+   "components": "handoff/DOC-19-dprnm-tutorial-verso/components.json",
+   "spec": "handoff/DOC-19-dprnm-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-19--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-19-dprnm-tutorial-verso/telas/passo-1/screen.html",
+     "figma": "2794:35566"
+    },
+    {
+     "id": "doc-19--passo-2",
+     "label": "Passo 2 · enquadrar o QR Code",
+     "file": "handoff/DOC-19-dprnm-tutorial-verso/telas/passo-2/screen.html",
+     "figma": "2794:35588"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-20",
+   "name": "DPRNM · captura do código do verso",
+   "lane": "estrangeiro",
+   "col": 5,
+   "row": 1,
+   "figma": "2794:35630",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-20-dprnm-camera-verso",
+   "components": "handoff/DOC-20-dprnm-camera-verso/components.json",
+   "spec": "handoff/DOC-20-dprnm-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-20--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/enquadrando/screen.html",
+     "figma": "2794:35630"
+    },
+    {
+     "id": "doc-20--enquadrado",
+     "label": "Enquadrado (lendo o código)",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/enquadrado/screen.html",
+     "figma": "2794:35661"
+    },
+    {
+     "id": "doc-20--codigo-capturado",
+     "label": "Código capturado (notificação e redirecionamento)",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/codigo-capturado/screen.html",
+     "figma": "2794:35661"
+    },
+    {
+     "id": "doc-20--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-20--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-20--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-20-dprnm-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-21",
+   "name": "DPRNM · upload da frente e do verso",
+   "lane": "estrangeiro",
+   "col": 6,
+   "row": 1,
+   "figma": "2794:35764",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-21-dprnm-upload",
+   "components": "handoff/DOC-21-dprnm-upload/components.json",
+   "spec": "handoff/DOC-21-dprnm-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-21--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-21-dprnm-upload/telas/vazio/screen.html",
+     "figma": "2794:35764"
+    },
+    {
+     "id": "doc-21--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-21--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/completo/screen.html",
+     "figma": "2794:35840"
+    },
+    {
+     "id": "doc-21--erro-mrz-verso",
+     "label": "Erro: código não encontrado no verso (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-21--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-21--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-21--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-21--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-21--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-21-dprnm-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 6,
+   "outputs": 6
+  },
+  {
+   "code": "DOC-22",
+   "name": "Os dados do documento não conferem",
+   "lane": "estrangeiro",
+   "col": 9,
+   "row": 0,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-22-dados-nao-conferem",
+   "components": "handoff/DOC-22-dados-nao-conferem/components.json",
+   "spec": "handoff/DOC-22-dados-nao-conferem/spec.md",
+   "variants": [
+    {
+     "id": "doc-22--padrao",
+     "label": "Volta ao upload do CRNM",
+     "file": "handoff/DOC-22-dados-nao-conferem/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-22--dprnm",
+     "label": "Volta ao upload do DPRNM",
+     "file": "handoff/DOC-22-dados-nao-conferem/telas/dprnm/screen.html"
+    },
+    {
+     "id": "doc-22--rne",
+     "label": "Volta ao upload do RNE",
+     "file": "handoff/DOC-22-dados-nao-conferem/telas/rne/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 5
+  },
+  {
+   "code": "DOC-23",
+   "name": "Documento vencido",
+   "lane": "estrangeiro",
+   "col": 10,
+   "row": 0,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-23-documento-vencido",
+   "components": "handoff/DOC-23-documento-vencido/components.json",
+   "spec": "handoff/DOC-23-documento-vencido/spec.md",
+   "variants": [
+    {
+     "id": "doc-23--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/DOC-23-documento-vencido/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DOC-24",
+   "name": "Conclusão do fluxo de documento",
+   "lane": "estrangeiro",
+   "col": 11,
+   "row": 0,
+   "figma": "2283:34738",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-24-documento-em-analise",
+   "components": "handoff/DOC-24-documento-em-analise/components.json",
+   "spec": "handoff/DOC-24-documento-em-analise/spec.md",
+   "variants": [
+    {
+     "id": "doc-24--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-24-documento-em-analise/telas/padrao/screen.html",
+     "figma": "2283:34738"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DOC-25",
+   "name": "Bloqueio por tentativas no documento",
+   "lane": "estrangeiro",
+   "col": 12,
+   "row": 0,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-25-bloqueio-tentativas",
+   "components": "handoff/DOC-25-bloqueio-tentativas/components.json",
+   "spec": "handoff/DOC-25-bloqueio-tentativas/spec.md",
+   "variants": [
+    {
+     "id": "doc-25--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/DOC-25-bloqueio-tentativas/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 1
+  },
+  {
+   "code": "DOC-26",
+   "name": "RNE · tutorial da frente",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 3,
+   "figma": "1817:51415",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-26-rne-tutorial-frente",
+   "components": "handoff/DOC-26-rne-tutorial-frente/components.json",
+   "spec": "handoff/DOC-26-rne-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-26--passo-1",
+     "label": "Passo 1 · frente do RNE",
+     "file": "handoff/DOC-26-rne-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "1817:51415"
+    },
+    {
+     "id": "doc-26--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-26-rne-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "1817:51360"
+    },
+    {
+     "id": "doc-26--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-26-rne-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "1817:51297"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-27",
+   "name": "RNE · câmera da frente",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 3,
+   "figma": "1620:12173",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-27-rne-camera-frente",
+   "components": "handoff/DOC-27-rne-camera-frente/components.json",
+   "spec": "handoff/DOC-27-rne-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-27--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-27-rne-camera-frente/telas/enquadrando/screen.html",
+     "figma": "1620:12173"
+    },
+    {
+     "id": "doc-27--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-27-rne-camera-frente/telas/enquadrado/screen.html",
+     "figma": "1620:12159"
+    },
+    {
+     "id": "doc-27--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-27-rne-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-27--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-27-rne-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-27--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-27-rne-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-28",
+   "name": "RNE · confirmação da frente",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 3,
+   "figma": "1620:12658",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-28-rne-confirmacao-frente",
+   "components": "handoff/DOC-28-rne-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-28-rne-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-28--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-28-rne-confirmacao-frente/telas/padrao/screen.html",
+     "figma": "1620:12658"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-29",
+   "name": "RNE · tutorial do verso (código)",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 3,
+   "figma": "1620:13673",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-29-rne-tutorial-verso",
+   "components": "handoff/DOC-29-rne-tutorial-verso/components.json",
+   "spec": "handoff/DOC-29-rne-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-29--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-29-rne-tutorial-verso/telas/passo-1/screen.html",
+     "figma": "1620:13673"
+    },
+    {
+     "id": "doc-29--passo-2",
+     "label": "Passo 2 · enquadrar o código",
+     "file": "handoff/DOC-29-rne-tutorial-verso/telas/passo-2/screen.html",
+     "figma": "1620:13719"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-30",
+   "name": "RNE · leitura do código MRZ (verso)",
+   "lane": "estrangeiro",
+   "col": 5,
+   "row": 3,
+   "figma": "2169:22442",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-30-rne-camera-verso",
+   "components": "handoff/DOC-30-rne-camera-verso/components.json",
+   "spec": "handoff/DOC-30-rne-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-30--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/enquadrando/screen.html",
+     "figma": "2169:22442"
+    },
+    {
+     "id": "doc-30--enquadrado",
+     "label": "Enquadrado (lendo o MRZ)",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/enquadrado/screen.html",
+     "figma": "2178:22552"
+    },
+    {
+     "id": "doc-30--codigo-capturado",
+     "label": "Código capturado (notificação e redirecionamento)",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/codigo-capturado/screen.html",
+     "figma": "2178:22552"
+    },
+    {
+     "id": "doc-30--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-30--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-30--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-30-rne-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-31",
+   "name": "RNE · upload da frente e do verso",
+   "lane": "estrangeiro",
+   "col": 6,
+   "row": 3,
+   "figma": "1620:13176",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-31-rne-upload",
+   "components": "handoff/DOC-31-rne-upload/components.json",
+   "spec": "handoff/DOC-31-rne-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-31--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-31-rne-upload/telas/vazio/screen.html",
+     "figma": "1620:13176"
+    },
+    {
+     "id": "doc-31--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-31-rne-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-31--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-31-rne-upload/telas/completo/screen.html",
+     "figma": "1620:12672"
+    },
+    {
+     "id": "doc-31--erro-mrz-verso",
+     "label": "Erro: código não encontrado no verso (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-31--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-31--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-31--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-31--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-31--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-31-rne-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 6,
+   "outputs": 6
+  },
+  {
+   "code": "DOC-32",
+   "name": "Cédula · formulário",
+   "lane": "estrangeiro",
+   "col": 0,
+   "row": 4,
+   "figma": "2799:36191",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-32-cedula-formulario",
+   "components": "handoff/DOC-32-cedula-formulario/components.json",
+   "spec": "handoff/DOC-32-cedula-formulario/spec.md",
+   "variants": [
+    {
+     "id": "doc-32--padrao",
+     "label": "Vazio",
+     "file": "handoff/DOC-32-cedula-formulario/telas/padrao/screen.html",
+     "figma": "2799:36191"
+    },
+    {
+     "id": "doc-32--preenchido",
+     "label": "Preenchido (Argentina)",
+     "file": "handoff/DOC-32-cedula-formulario/telas/preenchido/screen.html"
+    },
+    {
+     "id": "doc-32--erro-numero",
+     "label": "Erro: número inválido (sem Figma)",
+     "file": "handoff/DOC-32-cedula-formulario/telas/erro-numero/screen.html"
+    },
+    {
+     "id": "doc-32--erro-pais",
+     "label": "Erro: país sem suporte (sem Figma)",
+     "file": "handoff/DOC-32-cedula-formulario/telas/erro-pais/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-33",
+   "name": "Cédula · tutorial da frente",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 4,
+   "figma": "2799:36264",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-33-cedula-tutorial-frente",
+   "components": "handoff/DOC-33-cedula-tutorial-frente/components.json",
+   "spec": "handoff/DOC-33-cedula-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-33--passo-1",
+     "label": "Passo 1 · frente da Cédula",
+     "file": "handoff/DOC-33-cedula-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "2799:36264"
+    },
+    {
+     "id": "doc-33--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-33-cedula-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "2799:36286"
+    },
+    {
+     "id": "doc-33--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-33-cedula-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "2799:36308"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-34",
+   "name": "Cédula · câmera da frente",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 4,
+   "figma": "2799:36336",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-34-cedula-camera-frente",
+   "components": "handoff/DOC-34-cedula-camera-frente/components.json",
+   "spec": "handoff/DOC-34-cedula-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-34--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-34-cedula-camera-frente/telas/enquadrando/screen.html",
+     "figma": "2799:36336"
+    },
+    {
+     "id": "doc-34--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-34-cedula-camera-frente/telas/enquadrado/screen.html",
+     "figma": "2799:36363"
+    },
+    {
+     "id": "doc-34--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-34-cedula-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-34--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-34-cedula-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-34--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-34-cedula-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-35",
+   "name": "Cédula · confirmação da frente",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 4,
+   "figma": "2799:36377",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-35-cedula-confirmacao-frente",
+   "components": "handoff/DOC-35-cedula-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-35-cedula-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-35--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-35-cedula-confirmacao-frente/telas/padrao/screen.html",
+     "figma": "2799:36377"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-36",
+   "name": "Cédula · tutorial do verso",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 4,
+   "figma": "2799:36391",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-36-cedula-tutorial-verso",
+   "components": "handoff/DOC-36-cedula-tutorial-verso/components.json",
+   "spec": "handoff/DOC-36-cedula-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-36--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-36-cedula-tutorial-verso/telas/passo-1/screen.html",
+     "figma": "2799:36391"
+    },
+    {
+     "id": "doc-36--passo-2",
+     "label": "Passo 2 · enquadrar o verso",
+     "file": "handoff/DOC-36-cedula-tutorial-verso/telas/passo-2/screen.html",
+     "figma": "2799:36413"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-37",
+   "name": "Cédula · câmera do verso",
+   "lane": "estrangeiro",
+   "col": 5,
+   "row": 4,
+   "figma": "2799:36455",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-37-cedula-camera-verso",
+   "components": "handoff/DOC-37-cedula-camera-verso/components.json",
+   "spec": "handoff/DOC-37-cedula-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-37--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-37-cedula-camera-verso/telas/enquadrando/screen.html",
+     "figma": "2799:36455"
+    },
+    {
+     "id": "doc-37--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-37-cedula-camera-verso/telas/enquadrado/screen.html",
+     "figma": "2799:36486"
+    },
+    {
+     "id": "doc-37--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-37-cedula-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-37--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-37-cedula-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-37--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-37-cedula-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-38",
+   "name": "Cédula · confirmação do verso",
+   "lane": "estrangeiro",
+   "col": 6,
+   "row": 4,
+   "figma": "2799:36504",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "DOC-38-cedula-confirmacao-verso",
+   "components": "handoff/DOC-38-cedula-confirmacao-verso/components.json",
+   "spec": "handoff/DOC-38-cedula-confirmacao-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-38--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-38-cedula-confirmacao-verso/telas/padrao/screen.html",
+     "figma": "2799:36504"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-39",
+   "name": "Passaporte · tutorial da página",
+   "lane": "estrangeiro",
+   "col": 0,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-39-passaporte-tutorial-pagina",
+   "components": "handoff/DOC-39-passaporte-tutorial-pagina/components.json",
+   "spec": "handoff/DOC-39-passaporte-tutorial-pagina/spec.md",
+   "variants": [
+    {
+     "id": "doc-39--passo-1",
+     "label": "Passo 1 · abrir na página com a foto",
+     "file": "handoff/DOC-39-passaporte-tutorial-pagina/telas/passo-1/screen.html"
+    },
+    {
+     "id": "doc-39--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-39-passaporte-tutorial-pagina/telas/passo-2/screen.html"
+    },
+    {
+     "id": "doc-39--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-39-passaporte-tutorial-pagina/telas/passo-3/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-40",
+   "name": "Passaporte · câmera da página",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-40-passaporte-camera-pagina",
+   "components": "handoff/DOC-40-passaporte-camera-pagina/components.json",
+   "spec": "handoff/DOC-40-passaporte-camera-pagina/spec.md",
+   "variants": [
+    {
+     "id": "doc-40--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-40-passaporte-camera-pagina/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-40--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-40-passaporte-camera-pagina/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-40--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-40-passaporte-camera-pagina/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-40--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-40-passaporte-camera-pagina/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-40--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-40-passaporte-camera-pagina/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 4
+  },
+  {
+   "code": "DOC-41",
+   "name": "Passaporte · confirmação da página",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-41-passaporte-confirmacao-pagina",
+   "components": "handoff/DOC-41-passaporte-confirmacao-pagina/components.json",
+   "spec": "handoff/DOC-41-passaporte-confirmacao-pagina/spec.md",
+   "variants": [
+    {
+     "id": "doc-41--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-41-passaporte-confirmacao-pagina/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-42",
+   "name": "Passaporte · tutorial do código",
+   "lane": "estrangeiro",
+   "col": 3,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-42-passaporte-tutorial-codigo",
+   "components": "handoff/DOC-42-passaporte-tutorial-codigo/components.json",
+   "spec": "handoff/DOC-42-passaporte-tutorial-codigo/spec.md",
+   "variants": [
+    {
+     "id": "doc-42--passo-1",
+     "label": "Passo 1 · manter aberto",
+     "file": "handoff/DOC-42-passaporte-tutorial-codigo/telas/passo-1/screen.html"
+    },
+    {
+     "id": "doc-42--passo-2",
+     "label": "Passo 2 · enquadrar o código",
+     "file": "handoff/DOC-42-passaporte-tutorial-codigo/telas/passo-2/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-43",
+   "name": "Passaporte · leitura do código MRZ",
+   "lane": "estrangeiro",
+   "col": 4,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-43-passaporte-camera-mrz",
+   "components": "handoff/DOC-43-passaporte-camera-mrz/components.json",
+   "spec": "handoff/DOC-43-passaporte-camera-mrz/spec.md",
+   "variants": [
+    {
+     "id": "doc-43--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-43--enquadrado",
+     "label": "Enquadrado (lendo o MRZ)",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-43--codigo-capturado",
+     "label": "Código capturado (notificação e redirecionamento)",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/codigo-capturado/screen.html"
+    },
+    {
+     "id": "doc-43--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-43--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-43--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-43-passaporte-camera-mrz/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 4
+  },
+  {
+   "code": "DOC-44",
+   "name": "Passaporte · confirmação do código",
+   "lane": "estrangeiro",
+   "col": 5,
+   "row": 5,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-44-passaporte-confirmacao-mrz",
+   "components": "handoff/DOC-44-passaporte-confirmacao-mrz/components.json",
+   "spec": "handoff/DOC-44-passaporte-confirmacao-mrz/spec.md",
+   "variants": [
+    {
+     "id": "doc-44--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-44-passaporte-confirmacao-mrz/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-45",
+   "name": "Passaporte · página errada",
+   "lane": "estrangeiro",
+   "col": 1,
+   "row": 6,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-45-passaporte-pagina-errada",
+   "components": "handoff/DOC-45-passaporte-pagina-errada/components.json",
+   "spec": "handoff/DOC-45-passaporte-pagina-errada/spec.md",
+   "variants": [
+    {
+     "id": "doc-45--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/DOC-45-passaporte-pagina-errada/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DOC-46",
+   "name": "Passaporte · código não encontrado",
+   "lane": "estrangeiro",
+   "col": 2,
+   "row": 6,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-46-passaporte-mrz-nao-encontrado",
+   "components": "handoff/DOC-46-passaporte-mrz-nao-encontrado/components.json",
+   "spec": "handoff/DOC-46-passaporte-mrz-nao-encontrado/spec.md",
+   "variants": [
+    {
+     "id": "doc-46--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/DOC-46-passaporte-mrz-nao-encontrado/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "BIO-01",
+   "proto": "liv-tutorial",
+   "name": "Tutorial da captura",
+   "lane": "biometria",
+   "col": 0,
+   "row": 0,
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "BIO-01-tutorial-da-captura",
+   "variants": [
+    {
+     "id": "liv-tutorial--permissao",
+     "label": "Permissão · câmera e localização",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--permissao.html",
+     "figma": "1774:46339"
+    },
+    {
+     "id": "liv-tutorial",
+     "label": "Passo 1 · lugar claro",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen.html",
+     "figma": "1774:46320"
+    },
+    {
+     "id": "liv-tutorial--passo-2",
+     "label": "Passo 2 · óculos e boné",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--passo-2.html",
+     "figma": "1774:46300"
+    },
+    {
+     "id": "liv-tutorial--passo-3",
+     "label": "Passo 3 · roupa",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--passo-3.html",
+     "figma": "1774:46375"
+    }
+   ],
+   "components": "handoff/BIO-01-tutorial-da-captura/components.json",
+   "spec": "handoff/BIO-01-tutorial-da-captura/spec.md",
+   "inputs": 8,
+   "outputs": 2,
+   "figma": "1774:46320"
+  },
+  {
+   "code": "BIO-02",
+   "proto": "liv-face",
+   "name": "Captura facial",
+   "lane": "biometria",
+   "col": 1,
+   "row": 0,
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "BIO-02-captura-facial",
+   "variants": [
+    {
+     "id": "liv-face",
+     "label": "Giro · esquerda",
+     "file": "handoff/BIO-02-captura-facial/screen.html",
+     "figma": "1774:46144"
+    },
+    {
+     "id": "liv-face--perfeito",
+     "label": "Giro · Perfeito!",
+     "file": "handoff/BIO-02-captura-facial/screen--perfeito.html",
+     "figma": "1774:46127"
+    },
+    {
+     "id": "liv-face--giro-direita",
+     "label": "Giro · direita",
+     "file": "handoff/BIO-02-captura-facial/screen--giro-direita.html",
+     "figma": "1774:46165"
+    },
+    {
+     "id": "liv-face--muito-bom",
+     "label": "Giro · Muito bom!",
+     "file": "handoff/BIO-02-captura-facial/screen--muito-bom.html",
+     "figma": "1774:46110"
+    },
+    {
+     "id": "liv-face--olhe-para-frente",
+     "label": "Enquadramento · olhe para frente",
+     "file": "handoff/BIO-02-captura-facial/screen--olhe-para-frente.html",
+     "figma": "1774:46185"
+    },
+    {
+     "id": "liv-face--moldura",
+     "label": "Enquadramento · moldura",
+     "file": "handoff/BIO-02-captura-facial/screen--moldura.html",
+     "figma": "1774:46205"
+    },
+    {
+     "id": "liv-face--aprovado",
+     "label": "Aprovado · Excelente!",
+     "file": "handoff/BIO-02-captura-facial/screen--aprovado.html",
+     "figma": "1774:46229"
+    },
+    {
+     "id": "liv-face--contagem",
+     "label": "Aprovado · contagem 3, 2, 1",
+     "file": "handoff/BIO-02-captura-facial/screen--contagem.html",
+     "figma": "1774:46265"
+    },
+    {
+     "id": "liv-face--captura",
+     "label": "Aprovado · captura",
+     "file": "handoff/BIO-02-captura-facial/screen--captura.html",
+     "figma": "1774:46400"
+    },
+    {
+     "id": "liv-face--reprovado-aproxime",
+     "label": "Reprovado · aproxime-se",
+     "file": "handoff/BIO-02-captura-facial/screen--reprovado-aproxime.html",
+     "figma": "1774:46056"
+    },
+    {
+     "id": "liv-face--reprovado-afaste",
+     "label": "Reprovado · afaste-se",
+     "file": "handoff/BIO-02-captura-facial/screen--reprovado-afaste.html",
+     "figma": "1774:46090"
+    },
+    {
+     "id": "liv-face--reprovado-centro",
+     "label": "Reprovado · enquadre no centro",
+     "file": "handoff/BIO-02-captura-facial/screen--reprovado-centro.html",
+     "figma": "1774:46073"
+    },
+    {
+     "id": "liv-face--horizontal",
+     "label": "Celular na horizontal",
+     "file": "handoff/BIO-02-captura-facial/screen--horizontal.html",
+     "figma": "1774:46031"
+    }
+   ],
+   "components": "handoff/BIO-02-captura-facial/components.json",
+   "spec": "handoff/BIO-02-captura-facial/spec.md",
+   "inputs": 3,
+   "outputs": 2,
+   "figma": "1774:46144"
+  },
+  {
+   "code": "DEC-03",
+   "type": "decision",
+   "name": "Rosto aprovado?",
+   "lane": "biometria",
+   "col": 2,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "BIO-03",
+   "proto": "liv-validating",
+   "name": "Validando a foto",
+   "lane": "biometria",
+   "col": 3,
+   "row": 0,
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "BIO-03-validando-a-foto",
+   "variants": [
+    {
+     "id": "liv-validating",
+     "label": "Padrão",
+     "file": "handoff/BIO-03-validando-a-foto/screen.html"
+    }
+   ],
+   "components": "handoff/BIO-03-validando-a-foto/components.json",
+   "spec": "handoff/BIO-03-validando-a-foto/spec.md",
+   "inputs": 1,
+   "outputs": 1,
+   "figma": "1774:46292"
+  },
+  {
+   "code": "BIO-04",
+   "proto": "liv-review",
+   "name": "Conferência da foto",
+   "lane": "biometria",
+   "col": 4,
+   "row": 0,
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "BIO-04-conferencia-da-foto",
+   "variants": [
+    {
+     "id": "liv-review",
+     "label": "Padrão",
+     "file": "handoff/BIO-04-conferencia-da-foto/screen.html"
+    }
+   ],
+   "components": "handoff/BIO-04-conferencia-da-foto/components.json",
+   "spec": "handoff/BIO-04-conferencia-da-foto/spec.md",
+   "inputs": 1,
+   "outputs": 2,
+   "figma": "1774:46253"
+  },
+  {
+   "code": "BIO-07",
+   "proto": "liv-done",
+   "name": "Status · identidade enviada",
+   "lane": "biometria",
+   "col": 5,
+   "row": 0,
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "BIO-07-status-identidade-enviada",
+   "variants": [
+    {
+     "id": "liv-done",
+     "label": "Padrão",
+     "file": "handoff/BIO-07-status-identidade-enviada/screen.html"
+    }
+   ],
+   "components": "handoff/BIO-07-status-identidade-enviada/components.json",
+   "spec": "handoff/BIO-07-status-identidade-enviada/spec.md",
+   "inputs": 1,
+   "outputs": 2,
+   "figma": "2602:31414"
+  },
+  {
+   "code": "BEN-G1",
+   "type": "gap",
+   "name": "Validação de benefícios",
+   "lane": "biometria",
+   "col": 6,
+   "row": 0,
+   "note": "Etapa 4 de 4. A próxima etapa vem do backend; no protótipo o fluxo cai na área logada.",
+   "status": "lacuna",
+   "folder": null
+  },
+  {
+   "code": "BIO-05",
+   "proto": "liv-lock",
+   "name": "Bloqueio · 3 tentativas",
+   "lane": "biometria",
+   "col": 2,
+   "row": 1,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "BIO-05-bloqueio-3-tentativas",
+   "variants": [
+    {
+     "id": "liv-lock",
+     "label": "Padrão",
+     "file": "handoff/BIO-05-bloqueio-3-tentativas/screen.html"
+    }
+   ],
+   "components": "handoff/BIO-05-bloqueio-3-tentativas/components.json",
+   "spec": "handoff/BIO-05-bloqueio-3-tentativas/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "BIO-06",
+   "proto": "liv-error",
+   "name": "Erro com suporte",
+   "lane": "biometria",
+   "col": 3,
+   "row": 1,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "BIO-06-erro-com-suporte",
+   "variants": [
+    {
+     "id": "liv-error",
+     "label": "Padrão",
+     "file": "handoff/BIO-06-erro-com-suporte/screen.html"
+    }
+   ],
+   "components": "handoff/BIO-06-erro-com-suporte/components.json",
+   "spec": "handoff/BIO-06-erro-com-suporte/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "AREA-01",
+   "proto": "area-cadastro-detalhe",
+   "name": "Meu cadastro",
+   "lane": "area",
+   "col": 0,
+   "row": 0,
+   "figma": "2831:36859",
+   "variants": [
+    {
+     "id": "area-cadastro-detalhe--completo",
+     "label": "Completo",
+     "cenario": "completo",
+     "file": "handoff/AREA-01-meu-cadastro/screen.html"
+    },
+    {
+     "id": "area-cadastro-detalhe--pendente",
+     "label": "Pendente",
+     "cenario": "pendente",
+     "file": "handoff/AREA-01-meu-cadastro/screen--pendente.html"
+    },
+    {
+     "id": "area-cadastro-detalhe--reprovado",
+     "label": "Reprovado",
+     "cenario": "reprovado",
+     "file": "handoff/AREA-01-meu-cadastro/screen--reprovado.html"
+    },
+    {
+     "id": "area-cadastro-detalhe--analise",
+     "label": "Em análise",
+     "cenario": "analise",
+     "file": "handoff/AREA-01-meu-cadastro/screen--em-analise.html"
+    }
+   ],
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "AREA-01-meu-cadastro",
+   "components": "handoff/AREA-01-meu-cadastro/components.json",
+   "spec": "handoff/AREA-01-meu-cadastro/spec.md",
+   "inputs": 8,
+   "outputs": 8
+  },
+  {
+   "code": "AREA-02",
+   "proto": "notificacoes",
+   "name": "Notificações",
+   "lane": "area",
+   "col": 1,
+   "row": 0,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "AREA-02-notificacoes",
+   "variants": [
+    {
+     "id": "notificacoes",
+     "label": "Padrão",
+     "file": "handoff/AREA-02-notificacoes/screen.html"
+    }
+   ],
+   "components": "handoff/AREA-02-notificacoes/components.json",
+   "spec": "handoff/AREA-02-notificacoes/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "AJD-01",
+   "proto": "ajuda-form",
+   "name": "Ajuda · abrir chamado",
+   "lane": "area",
+   "col": 2,
+   "row": 0,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "AJD-01-ajuda-abrir-chamado",
+   "variants": [
+    {
+     "id": "ajuda-form",
+     "label": "Padrão",
+     "file": "handoff/AJD-01-ajuda-abrir-chamado/screen.html"
+    }
+   ],
+   "components": "handoff/AJD-01-ajuda-abrir-chamado/components.json",
+   "spec": "handoff/AJD-01-ajuda-abrir-chamado/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "AJD-02",
+   "proto": "ajuda-enviado",
+   "name": "Ajuda · chamado aberto",
+   "lane": "area",
+   "col": 3,
+   "row": 0,
+   "type": "screen",
+   "status": "sem-figma",
+   "folder": "AJD-02-ajuda-chamado-aberto",
+   "variants": [
+    {
+     "id": "ajuda-enviado",
+     "label": "Padrão",
+     "file": "handoff/AJD-02-ajuda-chamado-aberto/screen.html"
+    }
+   ],
+   "components": "handoff/AJD-02-ajuda-chamado-aberto/components.json",
+   "spec": "handoff/AJD-02-ajuda-chamado-aberto/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "AREA-03",
+   "proto": "seguranca",
+   "name": "Segurança",
+   "lane": "area",
+   "col": 4,
+   "row": 0,
+   "figma": "3142:61656",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "AREA-03-seguranca",
+   "variants": [
+    {
+     "id": "seguranca",
+     "label": "Padrão",
+     "file": "handoff/AREA-03-seguranca/screen.html"
+    }
+   ],
+   "components": "handoff/AREA-03-seguranca/components.json",
+   "spec": "handoff/AREA-03-seguranca/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "AREA-04",
+   "proto": "encerrar-conta",
+   "name": "Encerrar conta",
+   "lane": "area",
+   "col": 5,
+   "row": 0,
+   "figma": "3142:61697",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "AREA-04-encerrar-conta",
+   "variants": [
+    {
+     "id": "encerrar-conta",
+     "label": "Padrão",
+     "file": "handoff/AREA-04-encerrar-conta/screen.html"
+    }
+   ],
+   "components": "handoff/AREA-04-encerrar-conta/components.json",
+   "spec": "handoff/AREA-04-encerrar-conta/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-01",
+   "proto": "area-familiares-vazio",
+   "name": "Meus familiares · vazio",
+   "lane": "familiares",
+   "col": 0,
+   "row": 0,
+   "figma": "2831:38227",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "FAM-01-meus-familiares-vazio",
+   "variants": [
+    {
+     "id": "area-familiares-vazio",
+     "label": "Padrão",
+     "file": "handoff/FAM-01-meus-familiares-vazio/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-01-meus-familiares-vazio/components.json",
+   "spec": "handoff/FAM-01-meus-familiares-vazio/spec.md",
+   "inputs": 3,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-03",
+   "proto": "familiar-intro",
+   "name": "Adicionar familiar · introdução",
+   "lane": "familiares",
+   "col": 1,
+   "row": 0,
+   "figma": "3057:44465",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "FAM-03-adicionar-familiar-introducao",
+   "variants": [
+    {
+     "id": "familiar-intro",
+     "label": "Padrão",
+     "file": "handoff/FAM-03-adicionar-familiar-introducao/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-03-adicionar-familiar-introducao/components.json",
+   "spec": "handoff/FAM-03-adicionar-familiar-introducao/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-09",
+   "proto": "familiar-busca",
+   "name": "Buscar familiar",
+   "lane": "familiares",
+   "col": 2,
+   "row": 0,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-09-buscar-familiar",
+   "variants": [
+    {
+     "id": "familiar-busca",
+     "label": "Padrão",
+     "file": "handoff/FAM-09-buscar-familiar/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-09-buscar-familiar/components.json",
+   "spec": "handoff/FAM-09-buscar-familiar/spec.md",
+   "inputs": 3,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-10",
+   "proto": "familiar-vinculo",
+   "name": "Card e tipo de vínculo",
+   "lane": "familiares",
+   "col": 3,
+   "row": 0,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-10-card-e-tipo-de-vinculo",
+   "variants": [
+    {
+     "id": "familiar-vinculo",
+     "label": "Padrão",
+     "file": "handoff/FAM-10-card-e-tipo-de-vinculo/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-10-card-e-tipo-de-vinculo/components.json",
+   "spec": "handoff/FAM-10-card-e-tipo-de-vinculo/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-11",
+   "proto": "familiar-contatos",
+   "name": "Confirmação de contatos e convite",
+   "lane": "familiares",
+   "col": 4,
+   "row": 0,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-11-confirmacao-de-contatos-e-convite",
+   "variants": [
+    {
+     "id": "familiar-contatos",
+     "label": "Padrão",
+     "file": "handoff/FAM-11-confirmacao-de-contatos-e-convite/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-11-confirmacao-de-contatos-e-convite/components.json",
+   "spec": "handoff/FAM-11-confirmacao-de-contatos-e-convite/spec.md",
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-12",
+   "proto": "familiar-cadastro",
+   "name": "Cadastro do familiar (sem conta)",
+   "lane": "familiares",
+   "col": 2,
+   "row": 1,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-12-cadastro-do-familiar-sem-conta",
+   "variants": [
+    {
+     "id": "familiar-cadastro",
+     "label": "Padrão",
+     "file": "handoff/FAM-12-cadastro-do-familiar-sem-conta/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-12-cadastro-do-familiar-sem-conta/components.json",
+   "spec": "handoff/FAM-12-cadastro-do-familiar-sem-conta/spec.md",
+   "inputs": 4,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-13",
+   "proto": "familiar-termo",
+   "name": "Termo de responsabilidade · menor",
+   "lane": "familiares",
+   "col": 3,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-13-termo-de-responsabilidade-menor",
+   "variants": [
+    {
+     "id": "familiar-termo",
+     "label": "Padrão",
+     "file": "handoff/FAM-13-termo-de-responsabilidade-menor/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-13-termo-de-responsabilidade-menor/components.json",
+   "spec": "handoff/FAM-13-termo-de-responsabilidade-menor/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-14",
+   "proto": "familiar-decisao",
+   "name": "Decisão do titular · maior de idade",
+   "lane": "familiares",
+   "col": 2,
+   "row": 3,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-14-decisao-do-titular-maior-de-idade",
+   "variants": [
+    {
+     "id": "familiar-decisao",
+     "label": "Padrão",
+     "file": "handoff/FAM-14-decisao-do-titular-maior-de-idade/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-14-decisao-do-titular-maior-de-idade/components.json",
+   "spec": "handoff/FAM-14-decisao-do-titular-maior-de-idade/spec.md",
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-16",
+   "proto": "convite-link",
+   "name": "Convite · entrada pelo link (sem conta)",
+   "lane": "familiares",
+   "col": 4,
+   "row": 1,
+   "status": "sem-figma",
+   "note": "Entrada pelo link enviado em FAM-11. No protótipo a tela só aparece pelo menu de cenários: o caminho pelo link ainda não está desenhado.",
+   "type": "screen",
+   "folder": "FAM-16-convite-entrada-pelo-link-sem-conta",
+   "variants": [
+    {
+     "id": "convite-link",
+     "label": "Padrão",
+     "file": "handoff/FAM-16-convite-entrada-pelo-link-sem-conta/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-16-convite-entrada-pelo-link-sem-conta/components.json",
+   "spec": "handoff/FAM-16-convite-entrada-pelo-link-sem-conta/spec.md",
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-17",
+   "proto": "familiar-recebidos",
+   "name": "Área do convidado · Meus familiares e Sou familiar de",
+   "lane": "familiares",
+   "col": 5,
+   "row": 0,
+   "status": "sem-figma",
+   "note": "Lista de Meus familiares com atividade (cadastro, recebimento ou envio de convite), com as abas Meus familiares e Sou familiar de. Substitui as telas de lista e de convites pendentes. No protótipo, a aba Meus familiares da área logada ainda não troca para esta tela.",
+   "type": "screen",
+   "folder": "FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de",
+   "variants": [
+    {
+     "id": "familiar-recebidos",
+     "label": "Padrão",
+     "file": "handoff/FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de/screen.html"
+    }
+   ],
+   "components": "handoff/FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de/components.json",
+   "spec": "handoff/FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de/spec.md",
+   "inputs": 7,
+   "outputs": 5
+  },
+  {
+   "code": "FAM-15",
+   "name": "Código do contato do familiar",
+   "lane": "familiares",
+   "col": 3,
+   "row": 1,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-15-codigo-do-contato-do-familiar",
+   "variants": [
+    {
+     "id": "fam-15",
+     "label": "Padrão",
+     "file": "handoff/FAM-15-codigo-do-contato-do-familiar/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-15-codigo-do-contato-do-familiar/spec.md",
+   "inputs": 1,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-18",
+   "name": "Convite indisponível (expirado, cancelado ou já usado)",
+   "lane": "familiares",
+   "col": 5,
+   "row": 1,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-18-convite-indisponivel",
+   "variants": [
+    {
+     "id": "fam-18",
+     "label": "Padrão",
+     "file": "handoff/FAM-18-convite-indisponivel/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-18-convite-indisponivel/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "FAM-19",
+   "name": "Cancelar convite (modal)",
+   "lane": "familiares",
+   "col": 6,
+   "row": 0,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-19-cancelar-convite",
+   "variants": [
+    {
+     "id": "fam-19",
+     "label": "Padrão",
+     "file": "handoff/FAM-19-cancelar-convite/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-19-cancelar-convite/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-G2-1",
+   "name": "FAM-G2 · Tutorial da captura do familiar",
+   "lane": "familiares",
+   "col": 6,
+   "row": 4,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-preparacao-do-cadastro",
+   "variants": [
+    {
+     "id": "fam-g2-1",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-preparacao-do-cadastro/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-preparacao-do-cadastro/spec.md",
+   "inputs": 0,
+   "outputs": 0
+  },
+  {
+   "code": "FAM-G2-2",
+   "name": "FAM-G2 · Captura da frente do documento do familiar",
+   "lane": "familiares",
+   "col": 7,
+   "row": 4,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-captura-do-documento",
+   "variants": [
+    {
+     "id": "fam-g2-2",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-captura-do-documento/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-captura-do-documento/spec.md",
+   "inputs": 0,
+   "outputs": 1
+  },
+  {
+   "code": "FAM-G2-3",
+   "name": "FAM-G2 · Confirmação da frente do documento",
+   "lane": "familiares",
+   "col": 8,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-confirmacao-da-frente",
+   "variants": [
+    {
+     "id": "fam-g2-3",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-confirmacao-da-frente/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-confirmacao-da-frente/spec.md",
+   "inputs": 4,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-G2-4",
+   "name": "FAM-G2 · Captura do verso do documento do familiar",
+   "lane": "familiares",
+   "col": 8,
+   "row": 4,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-captura-do-verso",
+   "variants": [
+    {
+     "id": "fam-g2-4",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-captura-do-verso/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-captura-do-verso/spec.md",
+   "inputs": 0,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-G2-5",
+   "type": "gap",
+   "name": "FAM-G2 · Confirmação do verso (a desenhar)",
+   "lane": "familiares",
+   "col": 10,
+   "row": 2,
+   "note": "Conferência da foto do verso do documento do familiar. Parte da lacuna DOC-G1. Não desenhado.",
+   "status": "lacuna",
+   "folder": null
+  },
+  {
+   "code": "FAM-G2-0",
+   "name": "FAM-G2 · Seleção do documento do familiar",
+   "lane": "familiares",
+   "col": 5,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-selecao-do-documento",
+   "variants": [
+    {
+     "id": "fam-g2-0",
+     "label": "Maior de idade (CIN, CNH e RG)",
+     "file": "handoff/FAM-G2-selecao-do-documento/screen.html"
+    },
+    {
+     "id": "fam-g2-0-menor",
+     "label": "Menor de idade (CIN e RG)",
+     "file": "handoff/FAM-G2-selecao-do-documento/screen--menor.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-selecao-do-documento/spec.md",
+   "inputs": 3,
+   "outputs": 3
+  },
+  {
+   "code": "FAM-G2-CIN-1",
+   "name": "FAM-G2 · CIN · tutorial da frente do familiar",
+   "lane": "familiares",
+   "col": 6,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-cin-tutorial-frente",
+   "variants": [
+    {
+     "id": "fam-g2-cin-1",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-cin-tutorial-frente/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-cin-tutorial-frente/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-G2-CIN-2",
+   "name": "FAM-G2 · CIN · captura da frente do familiar",
+   "lane": "familiares",
+   "col": 7,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-cin-captura-frente",
+   "variants": [
+    {
+     "id": "fam-g2-cin-2",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-cin-captura-frente/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-cin-captura-frente/spec.md",
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-G2-CIN-3",
+   "name": "FAM-G2 · CIN · captura do verso do familiar",
+   "lane": "familiares",
+   "col": 9,
+   "row": 2,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-G2-cin-captura-verso",
+   "variants": [
+    {
+     "id": "fam-g2-cin-3",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-cin-captura-verso/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-cin-captura-verso/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "FAM-20",
+   "name": "Meus familiares · erro ao carregar",
+   "lane": "familiares",
+   "col": 6,
+   "row": 1,
+   "status": "sem-figma",
+   "type": "screen",
+   "folder": "FAM-20-erro-ao-carregar-familiares",
+   "variants": [
+    {
+     "id": "fam-20",
+     "label": "Padrão",
+     "file": "handoff/FAM-20-erro-ao-carregar-familiares/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-20-erro-ao-carregar-familiares/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  }
+ ],
+ "edges": [
+  {
+   "src": "ENT-01",
+   "dst": "AREA-01",
+   "kind": "principal",
+   "trigger": "Entrar",
+   "cond": "CPF válido e senha preenchida",
+   "id": "E01"
+  },
+  {
+   "src": "ENT-01",
+   "dst": "CAD-01",
+   "kind": "principal",
+   "trigger": "Criar cadastro",
+   "cond": "",
+   "id": "E02"
+  },
+  {
+   "src": "CAD-01",
+   "dst": "ENT-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E03"
+  },
+  {
+   "src": "CAD-01",
+   "dst": "CAD-02",
+   "kind": "principal",
+   "trigger": "Iniciar validação",
+   "cond": "CPF, data, celular e e-mail válidos e Termos aceitos",
+   "id": "E04"
+  },
+  {
+   "src": "CAD-02",
+   "dst": "DEC-01",
+   "kind": "principal",
+   "trigger": "6º dígito digitado",
+   "cond": "",
+   "id": "E05"
+  },
+  {
+   "src": "DEC-01",
+   "dst": "CAD-04",
+   "kind": "principal",
+   "trigger": "Sim · após 1,8 s",
+   "cond": "Código confere",
+   "id": "E06"
+  },
+  {
+   "src": "DEC-01",
+   "dst": "CAD-02",
+   "kind": "erro",
+   "trigger": "Não · tenta de novo",
+   "cond": "Até 3 erros; no 3º o campo bloqueia",
+   "id": "E07"
+  },
+  {
+   "src": "CAD-02",
+   "dst": "CAD-03",
+   "kind": "alternativa",
+   "trigger": "Editar celular",
+   "cond": "",
+   "id": "E08"
+  },
+  {
+   "src": "CAD-03",
+   "dst": "CAD-02",
+   "kind": "alternativa",
+   "trigger": "Confirmar e enviar código",
+   "cond": "Celular válido e igual nos dois campos; zera as tentativas",
+   "id": "E09"
+  },
+  {
+   "src": "CAD-02",
+   "dst": "CAD-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E10"
+  },
+  {
+   "src": "CAD-04",
+   "dst": "DEC-02",
+   "kind": "principal",
+   "trigger": "6º dígito digitado",
+   "cond": "",
+   "id": "E11"
+  },
+  {
+   "src": "DEC-02",
+   "dst": "CAD-06",
+   "kind": "principal",
+   "trigger": "Sim · após 1,8 s",
+   "cond": "Código confere",
+   "id": "E12"
+  },
+  {
+   "src": "DEC-02",
+   "dst": "CAD-04",
+   "kind": "erro",
+   "trigger": "Não · tenta de novo",
+   "cond": "Até 3 erros; no 3º o campo bloqueia",
+   "id": "E13"
+  },
+  {
+   "src": "CAD-04",
+   "dst": "CAD-05",
+   "kind": "alternativa",
+   "trigger": "Editar e-mail",
+   "cond": "",
+   "id": "E14"
+  },
+  {
+   "src": "CAD-05",
+   "dst": "CAD-04",
+   "kind": "alternativa",
+   "trigger": "Confirmar e enviar código",
+   "cond": "E-mail válido e igual nos dois campos; mostra o toast",
+   "id": "E15"
+  },
+  {
+   "src": "CAD-04",
+   "dst": "CAD-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E16"
+  },
+  {
+   "src": "CAD-06",
+   "dst": "CAD-07",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "",
+   "id": "E17"
+  },
+  {
+   "src": "CAD-06",
+   "dst": "CAD-04",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E18"
+  },
+  {
+   "src": "CAD-07",
+   "dst": "CAD-08",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "CEP, rua, número, estado e cidade preenchidos",
+   "id": "E19"
+  },
+  {
+   "src": "CAD-07",
+   "dst": "CAD-06",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E20"
+  },
+  {
+   "src": "CAD-08",
+   "dst": "DOC-01",
+   "kind": "automatica",
+   "trigger": "10 s ou Continuar agora",
+   "cond": "",
+   "id": "E21"
+  },
+  {
+   "src": "DOC-01",
+   "dst": "CAD-08",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E22"
+  },
+  {
+   "src": "DOC-01",
+   "dst": "BIO-01",
+   "kind": "principal",
+   "trigger": "Tirar foto ou Fazer upload",
+   "cond": "Provisório: pula a captura do documento",
+   "id": "E23"
+  },
+  {
+   "src": "DOC-01",
+   "dst": "DOC-G1",
+   "kind": "lacuna",
+   "trigger": "Tirar foto ou Fazer upload",
+   "cond": "",
+   "id": "E24"
+  },
+  {
+   "src": "DOC-G1",
+   "dst": "BIO-01",
+   "kind": "lacuna",
+   "trigger": "Documento aprovado",
+   "cond": "",
+   "id": "E25"
+  },
+  {
+   "src": "BIO-01",
+   "dst": "BIO-02",
+   "kind": "principal",
+   "trigger": "Continuar no 3º passo",
+   "cond": "O botão libera 3 s depois de cada passo",
+   "id": "E26"
+  },
+  {
+   "src": "BIO-01",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar no 1º passo",
+   "cond": "",
+   "id": "E27"
+  },
+  {
+   "src": "BIO-02",
+   "dst": "DEC-03",
+   "kind": "principal",
+   "trigger": "Rosto enquadrado na moldura",
+   "cond": "",
+   "id": "E28"
+  },
+  {
+   "src": "BIO-02",
+   "dst": "BIO-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E29"
+  },
+  {
+   "src": "DEC-03",
+   "dst": "BIO-03",
+   "kind": "principal",
+   "trigger": "Aprovado · contagem 3, 2, 1",
+   "cond": "",
+   "id": "E30"
+  },
+  {
+   "src": "DEC-03",
+   "dst": "BIO-02",
+   "kind": "erro",
+   "trigger": "Reprovado · avisos e nova tentativa",
+   "cond": "1ª e 2ª reprovação",
+   "id": "E31"
+  },
+  {
+   "src": "DEC-03",
+   "dst": "BIO-05",
+   "kind": "erro",
+   "trigger": "3ª reprovação",
+   "cond": "",
+   "id": "E32"
+  },
+  {
+   "src": "BIO-03",
+   "dst": "BIO-04",
+   "kind": "automatica",
+   "trigger": "Após 2 s",
+   "cond": "",
+   "id": "E33"
+  },
+  {
+   "src": "BIO-04",
+   "dst": "BIO-07",
+   "kind": "principal",
+   "trigger": "Salvar e continuar",
+   "cond": "",
+   "id": "E34"
+  },
+  {
+   "src": "BIO-04",
+   "dst": "BIO-02",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto",
+   "cond": "",
+   "id": "E35"
+  },
+  {
+   "src": "BIO-05",
+   "dst": "BIO-06",
+   "kind": "automatica",
+   "trigger": "Fim do bloqueio de 5 min",
+   "cond": "",
+   "id": "E36"
+  },
+  {
+   "src": "BIO-05",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Sair e continuar depois",
+   "cond": "",
+   "id": "E37"
+  },
+  {
+   "src": "BIO-06",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Sair e continuar depois",
+   "cond": "",
+   "id": "E38"
+  },
+  {
+   "src": "BIO-07",
+   "dst": "AREA-01",
+   "kind": "automatica",
+   "trigger": "10 s ou Continuar agora",
+   "cond": "Provisório até existir a validação de benefícios",
+   "id": "E39"
+  },
+  {
+   "src": "BIO-07",
+   "dst": "BEN-G1",
+   "kind": "lacuna",
+   "trigger": "Próxima etapa definida pelo backend",
+   "cond": "",
+   "id": "E40"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "AREA-02",
+   "kind": "alternativa",
+   "trigger": "Sino de notificações",
+   "cond": "",
+   "id": "E41"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "AJD-01",
+   "kind": "alternativa",
+   "trigger": "Ajuda e atendimento",
+   "cond": "",
+   "id": "E42"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "AREA-03",
+   "kind": "alternativa",
+   "trigger": "Menu › Segurança",
+   "cond": "",
+   "id": "E43"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Menu › Sair",
+   "cond": "",
+   "id": "E44"
+  },
+  {
+   "src": "FAM-03",
+   "dst": "FAM-09",
+   "kind": "principal",
+   "trigger": "Adicionar familiar",
+   "cond": "",
+   "id": "E45"
+  },
+  {
+   "src": "FAM-09",
+   "dst": "FAM-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E46"
+  },
+  {
+   "src": "FAM-09",
+   "dst": "FAM-10",
+   "kind": "principal",
+   "trigger": "Conta ativa encontrada",
+   "cond": "Busca devolve conta ativa (spec §4)",
+   "id": "E47"
+  },
+  {
+   "src": "FAM-09",
+   "dst": "FAM-12",
+   "kind": "alternativa",
+   "trigger": "Cadastrar novo familiar",
+   "cond": "Sem conta ativa, o titular cadastra o familiar (spec §6)",
+   "id": "E48"
+  },
+  {
+   "src": "FAM-10",
+   "dst": "FAM-09",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E49"
+  },
+  {
+   "src": "FAM-10",
+   "dst": "FAM-11",
+   "kind": "principal",
+   "trigger": "Prosseguir",
+   "cond": "Tipo de vínculo escolhido (spec §5)",
+   "id": "E50"
+  },
+  {
+   "src": "FAM-11",
+   "dst": "FAM-10",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E51"
+  },
+  {
+   "src": "FAM-11",
+   "dst": "FAM-17",
+   "kind": "principal",
+   "trigger": "Enviar convite",
+   "cond": "Pelo menos um canal marcado (spec §5 e §7)",
+   "id": "E52"
+  },
+  {
+   "src": "FAM-12",
+   "dst": "FAM-09",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E53"
+  },
+  {
+   "src": "FAM-13",
+   "dst": "FAM-12",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E56"
+  },
+  {
+   "src": "FAM-14",
+   "dst": "FAM-12",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E58"
+  },
+  {
+   "src": "FAM-14",
+   "dst": "FAM-11",
+   "kind": "alternativa",
+   "trigger": "Enviar convite",
+   "cond": "Reaproveita os contatos informados (spec §6.3)",
+   "id": "E60"
+  },
+  {
+   "src": "FAM-11",
+   "dst": "FAM-16",
+   "kind": "alternativa",
+   "trigger": "Convidado abre o link do convite",
+   "cond": "Mesmo convite enviado em FAM-11 (spec §8.2)",
+   "id": "E61"
+  },
+  {
+   "src": "FAM-16",
+   "dst": "CAD-01",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "CPF igual ao do convite; reaproveita os dados pessoais",
+   "id": "E62"
+  },
+  {
+   "src": "FAM-16",
+   "dst": "ENT-01",
+   "kind": "alternativa",
+   "trigger": "Já tenho conta",
+   "cond": "",
+   "id": "E63"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "FAM-01",
+   "kind": "alternativa",
+   "trigger": "Aba Meus familiares",
+   "cond": "Sem familiares nem convites",
+   "id": "E64"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "FAM-17",
+   "kind": "alternativa",
+   "trigger": "Aba Meus familiares",
+   "cond": "Com familiares ou convites",
+   "id": "E65"
+  },
+  {
+   "src": "AREA-01",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Concluir validação ou Tentar novamente",
+   "cond": "Cenário pendente ou reprovado",
+   "id": "E66"
+  },
+  {
+   "src": "AREA-02",
+   "dst": "AREA-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E67"
+  },
+  {
+   "src": "AJD-01",
+   "dst": "AJD-02",
+   "kind": "principal",
+   "trigger": "Abrir chamado",
+   "cond": "Categoria escolhida e descrição com 20+ caracteres",
+   "id": "E68"
+  },
+  {
+   "src": "AJD-01",
+   "dst": "AREA-01",
+   "kind": "voltar",
+   "trigger": "Voltar ou Alterar contato",
+   "cond": "",
+   "id": "E69"
+  },
+  {
+   "src": "AJD-02",
+   "dst": "AREA-01",
+   "kind": "principal",
+   "trigger": "Voltar para a área logada ou Fechar",
+   "cond": "",
+   "id": "E70"
+  },
+  {
+   "src": "AREA-03",
+   "dst": "AREA-04",
+   "kind": "alternativa",
+   "trigger": "Encerrar conta",
+   "cond": "",
+   "id": "E71"
+  },
+  {
+   "src": "AREA-03",
+   "dst": "AREA-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E72"
+  },
+  {
+   "src": "AREA-04",
+   "dst": "ENT-01",
+   "kind": "principal",
+   "trigger": "Encerrar conta",
+   "cond": "Senha preenchida; o login mostra o aviso de conta encerrada",
+   "id": "E73"
+  },
+  {
+   "src": "AREA-04",
+   "dst": "AREA-03",
+   "kind": "voltar",
+   "trigger": "Cancelar ou Voltar",
+   "cond": "",
+   "id": "E74"
+  },
+  {
+   "src": "FAM-01",
+   "dst": "FAM-03",
+   "kind": "principal",
+   "trigger": "Incluir novo familiar",
+   "cond": "",
+   "id": "E75"
+  },
+  {
+   "src": "FAM-01",
+   "dst": "AREA-01",
+   "kind": "alternativa",
+   "trigger": "Aba Meu cadastro",
+   "cond": "",
+   "id": "E76"
+  },
+  {
+   "src": "FAM-17",
+   "dst": "FAM-03",
+   "kind": "principal",
+   "trigger": "Incluir novo familiar",
+   "cond": "",
+   "id": "E77"
+  },
+  {
+   "src": "FAM-17",
+   "dst": "FAM-01",
+   "kind": "automatica",
+   "trigger": "Desvincular o último familiar",
+   "cond": "",
+   "id": "E78"
+  },
+  {
+   "src": "FAM-17",
+   "dst": "AREA-01",
+   "kind": "alternativa",
+   "trigger": "Aba Meu cadastro",
+   "cond": "",
+   "id": "E79"
+  },
+  {
+   "src": "FAM-03",
+   "dst": "FAM-17",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "Sempre volta para a lista, mesmo vindo do estado vazio",
+   "id": "E80"
+  },
+  {
+   "src": "FAM-G2-2",
+   "dst": "FAM-G2-3",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "",
+   "id": "E216"
+  },
+  {
+   "src": "FAM-G2-3",
+   "dst": "FAM-G2-CIN-2",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto",
+   "cond": "",
+   "id": "E217"
+  },
+  {
+   "src": "FAM-16",
+   "dst": "FAM-18",
+   "kind": "erro",
+   "trigger": "Link expirado, cancelado ou já usado",
+   "cond": "Servidor responde 410 ou 409 (spec §8.3)",
+   "id": "E219"
+  },
+  {
+   "src": "FAM-19",
+   "dst": "FAM-17",
+   "kind": "principal",
+   "trigger": "Cancelar convite",
+   "cond": "Confirmado no modal; convite sai da lista",
+   "id": "E222"
+  },
+  {
+   "src": "FAM-19",
+   "dst": "FAM-17",
+   "kind": "voltar",
+   "trigger": "Manter convite",
+   "cond": "",
+   "id": "E223"
+  },
+  {
+   "src": "FAM-G2-4",
+   "dst": "FAM-G2-3",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E224"
+  },
+  {
+   "src": "FAM-G2-4",
+   "dst": "FAM-G2-5",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "",
+   "id": "E226"
+  },
+  {
+   "src": "FAM-13",
+   "dst": "FAM-G2-0",
+   "kind": "principal",
+   "trigger": "Aceitar termo",
+   "cond": "Obrigatório para menor (spec §6.2); variante de menor (CIN e RG)",
+   "id": "E227"
+  },
+  {
+   "src": "FAM-14",
+   "dst": "FAM-G2-0",
+   "kind": "principal",
+   "trigger": "Cadastrar agora",
+   "cond": "Mesmo fluxo do menor, sem termo; variante de maior (CIN, CNH e RG)",
+   "id": "E228"
+  },
+  {
+   "src": "FAM-G2-CIN-1",
+   "dst": "FAM-G2-0",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "No 1º passo",
+   "id": "E235"
+  },
+  {
+   "src": "FAM-G2-CIN-1",
+   "dst": "FAM-G2-CIN-2",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": "Captura da frente da CIN",
+   "id": "E236"
+  },
+  {
+   "src": "FAM-G2-CIN-2",
+   "dst": "FAM-G2-CIN-1",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E237"
+  },
+  {
+   "src": "FAM-G2-CIN-2",
+   "dst": "FAM-G2-3",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Confirmação da frente",
+   "id": "E238"
+  },
+  {
+   "src": "FAM-G2-3",
+   "dst": "FAM-G2-CIN-3",
+   "kind": "principal",
+   "trigger": "Salvar e continuar",
+   "cond": "CIN: captura do verso",
+   "id": "E239"
+  },
+  {
+   "id": "E81",
+   "src": "CAD-08",
+   "dst": "DOC-02",
+   "kind": "automatica",
+   "trigger": "10 s ou Continuar agora",
+   "cond": "Usuário estrangeiro (aba Estrangeiro no cadastro)"
+  },
+  {
+   "id": "E82",
+   "src": "DOC-02",
+   "dst": "CAD-08",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E201",
+   "src": "DOC-02",
+   "dst": "DOC-03",
+   "kind": "principal",
+   "trigger": "CRNM · Tirar foto do documento",
+   "cond": ""
+  },
+  {
+   "id": "E202",
+   "src": "DOC-03",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E203",
+   "src": "DOC-03",
+   "dst": "DOC-04",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E204",
+   "src": "DOC-04",
+   "dst": "DOC-03",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E205",
+   "src": "DOC-04",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E206",
+   "src": "DOC-04",
+   "dst": "DOC-05",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E207",
+   "src": "DOC-05",
+   "dst": "DOC-04",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E208",
+   "src": "DOC-05",
+   "dst": "DOC-06",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E209",
+   "src": "DOC-06",
+   "dst": "DOC-05",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E210",
+   "src": "DOC-06",
+   "dst": "DOC-07",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E211",
+   "src": "DOC-07",
+   "dst": "DOC-06",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E212",
+   "src": "DOC-07",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E215",
+   "src": "DOC-07",
+   "dst": "BIO-01",
+   "kind": "automatica",
+   "trigger": "Código MRZ lido e validado via API",
+   "cond": "Sem confirmação do verso (decisão de 2026-11-08)"
+  },
+  {
+   "id": "E220",
+   "src": "DOC-02",
+   "dst": "DOC-09",
+   "kind": "principal",
+   "trigger": "CRNM · Fazer upload do documento",
+   "cond": ""
+  },
+  {
+   "id": "E230",
+   "src": "DOC-09",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos e MRZ lido do verso"
+  },
+  {
+   "id": "E231",
+   "src": "DOC-10",
+   "dst": "BIO-01",
+   "kind": "automatica",
+   "trigger": "10 s ou Continuar agora",
+   "cond": "Próxima etapa: validação facial"
+  },
+  {
+   "id": "E232",
+   "src": "DOC-10",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": ""
+  },
+  {
+   "id": "E233",
+   "src": "DOC-11",
+   "dst": "DOC-09",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": ""
+  },
+  {
+   "id": "E240",
+   "src": "DOC-09",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Enviar documento sem conexão",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E241",
+   "src": "DOC-12",
+   "dst": "DOC-09",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": ""
+  },
+  {
+   "id": "E242",
+   "src": "DOC-09",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E243",
+   "src": "DOC-13",
+   "dst": "DOC-09",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": ""
+  },
+  {
+   "id": "E244",
+   "src": "DOC-09",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E245",
+   "src": "DOC-14",
+   "dst": "DOC-09",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": ""
+  },
+  {
+   "id": "E246",
+   "src": "DOC-14",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E250",
+   "src": "DOC-09",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E251",
+   "src": "DOC-15",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Entrar",
+   "cond": "Volta para esta etapa depois do login"
+  },
+  {
+   "id": "E260",
+   "src": "DOC-02",
+   "dst": "DOC-16",
+   "kind": "principal",
+   "trigger": "DPRNM · Tirar foto do documento",
+   "cond": ""
+  },
+  {
+   "id": "E261",
+   "src": "DOC-16",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E262",
+   "src": "DOC-16",
+   "dst": "DOC-17",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E263",
+   "src": "DOC-17",
+   "dst": "DOC-16",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E264",
+   "src": "DOC-17",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E270",
+   "src": "DOC-17",
+   "dst": "DOC-18",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E271",
+   "src": "DOC-18",
+   "dst": "DOC-17",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E272",
+   "src": "DOC-18",
+   "dst": "DOC-19",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E273",
+   "src": "DOC-19",
+   "dst": "DOC-18",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E274",
+   "src": "DOC-19",
+   "dst": "DOC-20",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E275",
+   "src": "DOC-20",
+   "dst": "DOC-19",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E276",
+   "src": "DOC-20",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E277",
+   "src": "DOC-20",
+   "dst": "BIO-01",
+   "kind": "automatica",
+   "trigger": "QR Code lido por OCR",
+   "cond": "Próxima etapa: validação facial"
+  },
+  {
+   "id": "E280",
+   "src": "DOC-02",
+   "dst": "DOC-21",
+   "kind": "principal",
+   "trigger": "DPRNM · Fazer upload do documento",
+   "cond": ""
+  },
+  {
+   "id": "E281",
+   "src": "DOC-21",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E282",
+   "src": "DOC-21",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos e código lido do verso"
+  },
+  {
+   "id": "E290",
+   "src": "DOC-21",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar (DPRNM)",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E291",
+   "src": "DOC-21",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s (DPRNM)",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E292",
+   "src": "DOC-21",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio (DPRNM)",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E293",
+   "src": "DOC-21",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio (DPRNM)",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E300",
+   "src": "DOC-10",
+   "dst": "DOC-22",
+   "kind": "erro",
+   "trigger": "Dados lidos não conferem com os informados",
+   "cond": "Número, país, tipo ou validade diferentes"
+  },
+  {
+   "id": "E301",
+   "src": "DOC-22",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Revisar dados informados",
+   "cond": ""
+  },
+  {
+   "id": "E302",
+   "src": "DOC-22",
+   "dst": "DOC-09",
+   "kind": "alternativa",
+   "trigger": "Enviar novos arquivos",
+   "cond": "Envio do CRNM"
+  },
+  {
+   "id": "E310",
+   "src": "DOC-10",
+   "dst": "DOC-23",
+   "kind": "erro",
+   "trigger": "Validade impressa já passou",
+   "cond": "Documento vencido"
+  },
+  {
+   "id": "E311",
+   "src": "DOC-23",
+   "dst": "DOC-02",
+   "kind": "principal",
+   "trigger": "Escolher outro documento",
+   "cond": ""
+  },
+  {
+   "id": "E320",
+   "src": "DOC-10",
+   "dst": "DOC-24",
+   "kind": "principal",
+   "trigger": "Documento aprovado",
+   "cond": ""
+  },
+  {
+   "id": "E322",
+   "src": "DOC-24",
+   "dst": "BIO-01",
+   "kind": "automatica",
+   "trigger": "10 s ou Continuar agora",
+   "cond": "Próxima etapa: validação facial"
+  },
+  {
+   "id": "E330",
+   "src": "DOC-11",
+   "dst": "DOC-25",
+   "kind": "erro",
+   "trigger": "Terceira validação reprovada",
+   "cond": "Três tentativas esgotadas"
+  },
+  {
+   "id": "E331",
+   "src": "DOC-25",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Sair e continuar depois",
+   "cond": "Dados e documentos enviados ficam salvos"
+  },
+  {
+   "id": "E340",
+   "src": "DOC-02",
+   "dst": "DOC-26",
+   "kind": "principal",
+   "trigger": "RNE · Tirar foto do documento",
+   "cond": "RNE aberto (sem Figma da seleção)"
+  },
+  {
+   "id": "E341",
+   "src": "DOC-26",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E401",
+   "src": "DOC-26",
+   "dst": "DOC-27",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E402",
+   "src": "DOC-27",
+   "dst": "DOC-26",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E403",
+   "src": "DOC-27",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E404",
+   "src": "DOC-27",
+   "dst": "DOC-28",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E405",
+   "src": "DOC-28",
+   "dst": "DOC-27",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E406",
+   "src": "DOC-28",
+   "dst": "DOC-29",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E407",
+   "src": "DOC-29",
+   "dst": "DOC-28",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E408",
+   "src": "DOC-29",
+   "dst": "DOC-30",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E409",
+   "src": "DOC-30",
+   "dst": "DOC-29",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E410",
+   "src": "DOC-30",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E411",
+   "src": "DOC-30",
+   "dst": "BIO-01",
+   "kind": "automatica",
+   "trigger": "Código MRZ lido e validado via API",
+   "cond": "Próxima etapa: validação facial"
+  },
+  {
+   "id": "E412",
+   "src": "DOC-02",
+   "dst": "DOC-31",
+   "kind": "principal",
+   "trigger": "RNE · Fazer upload do documento",
+   "cond": ""
+  },
+  {
+   "id": "E413",
+   "src": "DOC-31",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E414",
+   "src": "DOC-31",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos e código lido do verso"
+  },
+  {
+   "id": "E415",
+   "src": "DOC-31",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar (RNE)",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E416",
+   "src": "DOC-31",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s (RNE)",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E417",
+   "src": "DOC-31",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio (RNE)",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E418",
+   "src": "DOC-31",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio (RNE)",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E419",
+   "src": "DOC-02",
+   "dst": "DOC-32",
+   "kind": "principal",
+   "trigger": "Cédula · Tirar foto do documento",
+   "cond": ""
+  },
+  {
+   "id": "E420",
+   "src": "DOC-32",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E421",
+   "src": "DOC-32",
+   "dst": "DOC-33",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E422",
+   "src": "DOC-33",
+   "dst": "DOC-32",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E423",
+   "src": "DOC-33",
+   "dst": "DOC-34",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E424",
+   "src": "DOC-34",
+   "dst": "DOC-33",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E425",
+   "src": "DOC-34",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E426",
+   "src": "DOC-34",
+   "dst": "DOC-35",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E427",
+   "src": "DOC-35",
+   "dst": "DOC-34",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E428",
+   "src": "DOC-35",
+   "dst": "DOC-36",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E429",
+   "src": "DOC-36",
+   "dst": "DOC-35",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E430",
+   "src": "DOC-36",
+   "dst": "DOC-37",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E431",
+   "src": "DOC-37",
+   "dst": "DOC-36",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E432",
+   "src": "DOC-37",
+   "dst": "DOC-38",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E433",
+   "src": "DOC-37",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E434",
+   "src": "DOC-38",
+   "dst": "DOC-37",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E435",
+   "src": "DOC-38",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E436",
+   "src": "DOC-02",
+   "dst": "DOC-39",
+   "kind": "principal",
+   "trigger": "Passaporte · Tirar foto do documento",
+   "cond": ""
+  },
+  {
+   "id": "E437",
+   "src": "DOC-39",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E438",
+   "src": "DOC-39",
+   "dst": "DOC-40",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E439",
+   "src": "DOC-40",
+   "dst": "DOC-39",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E440",
+   "src": "DOC-40",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E441",
+   "src": "DOC-40",
+   "dst": "DOC-41",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E442",
+   "src": "DOC-40",
+   "dst": "DOC-45",
+   "kind": "erro",
+   "trigger": "Página errada do passaporte",
+   "cond": "Não é a página com a foto"
+  },
+  {
+   "id": "E443",
+   "src": "DOC-41",
+   "dst": "DOC-40",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E444",
+   "src": "DOC-41",
+   "dst": "DOC-42",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E445",
+   "src": "DOC-42",
+   "dst": "DOC-41",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E446",
+   "src": "DOC-42",
+   "dst": "DOC-43",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E447",
+   "src": "DOC-43",
+   "dst": "DOC-42",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E448",
+   "src": "DOC-43",
+   "dst": "DOC-44",
+   "kind": "principal",
+   "trigger": "Código MRZ capturado",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E449",
+   "src": "DOC-43",
+   "dst": "DOC-46",
+   "kind": "erro",
+   "trigger": "Código MRZ não encontrado",
+   "cond": "Leitura por OCR falhou"
+  },
+  {
+   "id": "E450",
+   "src": "DOC-43",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E451",
+   "src": "DOC-44",
+   "dst": "DOC-43",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E452",
+   "src": "DOC-44",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": ""
+  },
+  {
+   "id": "E453",
+   "src": "DOC-45",
+   "dst": "DOC-40",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto",
+   "cond": ""
+  },
+  {
+   "id": "E454",
+   "src": "DOC-46",
+   "dst": "DOC-43",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto",
+   "cond": ""
+  },
+  {
+   "id": "E455",
+   "src": "DOC-11",
+   "dst": "DOC-21",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do DPRNM"
+  },
+  {
+   "id": "E456",
+   "src": "DOC-11",
+   "dst": "DOC-31",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do RNE"
+  },
+  {
+   "id": "E457",
+   "src": "DOC-12",
+   "dst": "DOC-21",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do DPRNM"
+  },
+  {
+   "id": "E458",
+   "src": "DOC-12",
+   "dst": "DOC-31",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do RNE"
+  },
+  {
+   "id": "E459",
+   "src": "DOC-13",
+   "dst": "DOC-21",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do DPRNM"
+  },
+  {
+   "id": "E460",
+   "src": "DOC-13",
+   "dst": "DOC-31",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do RNE"
+  },
+  {
+   "id": "E461",
+   "src": "DOC-14",
+   "dst": "DOC-21",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do DPRNM"
+  },
+  {
+   "id": "E462",
+   "src": "DOC-14",
+   "dst": "DOC-31",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "Envio do RNE"
+  },
+  {
+   "id": "E463",
+   "src": "DOC-22",
+   "dst": "DOC-21",
+   "kind": "alternativa",
+   "trigger": "Enviar novos arquivos",
+   "cond": "Envio do DPRNM"
+  },
+  {
+   "id": "E464",
+   "src": "DOC-22",
+   "dst": "DOC-31",
+   "kind": "alternativa",
+   "trigger": "Enviar novos arquivos",
+   "cond": "Envio do RNE"
+  },
+  {
+   "id": "E221",
+   "src": "DOC-09",
+   "dst": "DOC-02",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E600",
+   "src": "DOC-22",
+   "dst": "DOC-25",
+   "kind": "erro",
+   "trigger": "Terceira validação com dados divergentes",
+   "cond": "Três tentativas esgotadas"
+  },
+  {
+   "id": "E84",
+   "src": "AREA-01",
+   "dst": "DOC-02",
+   "kind": "alternativa",
+   "trigger": "Concluir validação ou Tentar novamente",
+   "cond": "Estrangeiro com cenário pendente ou reprovado"
+  },
+  {
+   "src": "FAM-12",
+   "dst": "FAM-15",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Contatos do familiar informados (e-mail e celular)",
+   "id": "E601"
+  },
+  {
+   "src": "FAM-15",
+   "dst": "FAM-13",
+   "kind": "principal",
+   "trigger": "Último contato confirmado · após 1,8 s",
+   "cond": "Receita informou familiar menor de idade",
+   "id": "E602"
+  },
+  {
+   "src": "FAM-15",
+   "dst": "FAM-14",
+   "kind": "principal",
+   "trigger": "Último contato confirmado · após 1,8 s",
+   "cond": "Receita informou familiar maior de idade",
+   "id": "E603"
+  },
+  {
+   "src": "FAM-15",
+   "dst": "FAM-12",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "Trocar o contato zera tentativas e bloqueio",
+   "id": "E604"
+  },
+  {
+   "src": "FAM-G2-0",
+   "dst": "FAM-G2-CIN-1",
+   "kind": "principal",
+   "trigger": "Tirar foto ou Fazer upload",
+   "cond": "CIN escolhida",
+   "id": "E605"
+  },
+  {
+   "src": "FAM-G2-CIN-3",
+   "dst": "FAM-G2-3",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E606"
+  },
+  {
+   "src": "FAM-G2-CIN-3",
+   "dst": "FAM-G2-5",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Confirmação do verso (a desenhar)",
+   "id": "E607"
+  },
+  {
+   "src": "FAM-G2-0",
+   "dst": "FAM-13",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "Se veio de FAM-13",
+   "id": "E608"
+  },
+  {
+   "src": "FAM-G2-0",
+   "dst": "FAM-14",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "Se veio de FAM-14",
+   "id": "E609"
+  },
+  {
+   "src": "FAM-18",
+   "dst": "ENT-01",
+   "kind": "principal",
+   "trigger": "Entrar na minha conta",
+   "cond": "",
+   "id": "E610"
+  },
+  {
+   "src": "FAM-17",
+   "dst": "FAM-19",
+   "kind": "alternativa",
+   "trigger": "Cancelar convite",
+   "cond": "Convite enviado, pendente ou expirado",
+   "id": "E611"
+  },
+  {
+   "src": "AREA-02",
+   "dst": "FAM-17",
+   "kind": "alternativa",
+   "trigger": "Notificação de convite recebido",
+   "cond": "Abre direto em Sou familiar de, com a seção expandida",
+   "id": "E612"
+  },
+  {
+   "src": "FAM-17",
+   "dst": "FAM-20",
+   "kind": "erro",
+   "trigger": "Falha ao carregar a lista",
+   "cond": "Rede, 5xx ou timeout",
+   "id": "E613"
+  },
+  {
+   "src": "FAM-20",
+   "dst": "FAM-17",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "",
+   "id": "E614"
+  }
+ ],
+ "decisions": {
+  "DEC-01": "Avaliada em CAD-02 quando o 6º dígito é digitado. Sim: sucesso e CAD-04. Não: erro com tentativas restantes; no 3º erro, bloqueio.",
+  "DEC-02": "Avaliada em CAD-04 quando o 6º dígito é digitado. Sim: sucesso e CAD-06. Não: erro; no 3º, bloqueio.",
+  "DEC-03": "Avaliada em BIO-02 com o rosto na moldura. Aprovado: contagem e BIO-03. Reprovado: avisos e nova tentativa; na 3ª reprovação, BIO-05."
+ }
+}

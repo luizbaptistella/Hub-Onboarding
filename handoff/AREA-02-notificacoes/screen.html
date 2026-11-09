@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AREA-02 · Notificações · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela AREA-02 (notificacoes), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen seg-screen" id="notificacoes" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><h1 class="po-header-title">Notificações</h1></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="seg-body">
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="notif-hoje">Hoje</h2>
+          <ul class="po-list" aria-labelledby="notif-hoje">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span><span class="po-list-text"><span class="po-list-title">Ingresso confirmado</span><span class="po-list-desc">Palmeiras x Corinthians · 12/11, setor Norte</span></span><span class="po-list-trailing"><span class="po-badge po-badge-info">Novo</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">mail</span></span><span class="po-list-text"><span class="po-list-title">Cadastro atualizado</span><span class="po-list-desc">Seu e-mail foi alterado. Se não foi você, fale com a gente.</span></span><span class="po-list-trailing"><span class="po-badge po-badge-info">Novo</span></span></div></li>
+          </ul>
+        </section>
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="notif-antes">Anteriores</h2>
+          <ul class="po-list" aria-labelledby="notif-antes">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">school</span></span><span class="po-list-text"><span class="po-list-title">Meia-entrada aprovada</span><span class="po-list-desc">Estudante · válido até 31/12/2026</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">celebration</span></span><span class="po-list-text"><span class="po-list-title">Bem-vindo ao Sócio Torcedor</span><span class="po-list-desc">Seu cadastro foi concluído</span></span></div></li>
+          </ul>
+        </section>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+</body>
+</html>

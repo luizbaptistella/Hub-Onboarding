@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM-17 · Área do convidado · Meus familiares e Sou familiar de · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela FAM-17 (familiar-recebidos), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen area-screen fam-var" id="familiar-recebidos" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="area-top">
+        <div class="area-profile">
+          <div class="area-user">
+            <span class="rec-avatar" aria-hidden="true">MC</span>
+            <div class="area-user-info">
+              <p class="area-name">Mariana Costa</p>
+              <span class="po-badge po-badge-success">Cadastro completo</span>
+            </div>
+          </div>
+          <button type="button" class="area-help-btn proto-soon" aria-label="Ajuda e atendimento" title="Ajuda e atendimento"><span class="area-help-ring"><span class="po-icon" aria-hidden="true">help_outline</span></span></button>
+          <button type="button" class="area-notif-btn proto-soon" aria-label="Notificações, 1 não lida"><span class="po-icon s24" aria-hidden="true">notifications</span><span class="area-notif-dot" aria-hidden="true"></span></button>
+          <div class="po-profile" data-profile="">
+            <button type="button" class="po-profile-btn" id="pf-6" aria-haspopup="menu" aria-expanded="false" aria-controls="pf-6-menu"><span class="po-icon s24" aria-hidden="true">menu</span><span class="po-sr-only">Abrir menu do perfil</span></button>
+            <ul class="po-profile-menu" id="pf-6-menu" role="menu" aria-label="Meu perfil" hidden="">
+              <li role="none" class="po-profile-lang">
+                <span class="po-icon s20 po-profile-icon" aria-hidden="true">translate</span>
+                <span class="po-profile-label">Idioma</span>
+                <button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="../../design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button>
+              </li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitemcheckbox" aria-checked="false" tabindex="-1" data-theme-toggle=""><span class="po-icon s20 po-profile-icon" aria-hidden="true">dark_mode</span><span class="po-profile-label">Modo escuro</span><span class="po-theme-switch" aria-hidden="true"><span></span></span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">lock</span><span class="po-profile-label">Privacidade</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">shield</span><span class="po-profile-label">Segurança</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">password</span><span class="po-profile-label">Senha</span></button></li>
+              <li role="separator" class="po-profile-divider"></li>
+              <li role="none"><button type="button" class="po-profile-item po-profile-item-danger" role="menuitem" tabindex="-1" data-go="login"><span class="po-icon s20 po-profile-icon" aria-hidden="true">logout</span><span class="po-profile-label">Sair</span></button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="po-tabs area-tabs" role="tablist">
+          <button type="button" role="tab" class="po-tab proto-soon" aria-selected="false">Meus cadastro</button>
+          <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true" data-go="familiar-recebidos">Meus familiares</button>
+        </div>
+      </header>
+      <div class="toast-slot" id="rec-toast" hidden="">
+        <div class="po-toast" role="status">
+          <span class="po-toast-icon"><span class="po-icon s20" aria-hidden="true">check_circle</span></span>
+          <p class="po-toast-title" id="rec-toast-text">Convite aceito.</p>
+          <button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-xs po-toast-close" aria-label="Fechar" title="Fechar"><span class="po-btn-content"><span class="po-icon s16" aria-hidden="true">close</span></span></button>
+        </div>
+      </div>
+      <div class="area-body rec-v4">
+        <fieldset class="po-seg rec-seg" id="rec-seg">
+          <legend class="po-seg-legend po-sr-only">Mostrar</legend>
+          <div class="po-seg-track">
+            <label class="po-seg-option"><input class="po-seg-input" type="radio" name="rec-vista" value="meus" checked=""><span class="po-seg-label">Meus familiares</span></label>
+            <label class="po-seg-option"><input class="po-seg-input" type="radio" name="rec-vista" value="sou"><span class="po-seg-label">Sou familiar de</span></label>
+          </div>
+        </fieldset>
+
+        <!-- ── Aba Meus familiares ── -->
+        <div class="rec-vista" id="rec-vista-meus">
+          <section class="hub-card" id="rec-card-meus">
+            <button type="button" class="hub-card-head" aria-expanded="false" aria-controls="rec-panel-meus">
+              <span class="hub-card-icon"><span class="po-icon s20" aria-hidden="true">outgoing_mail</span></span>
+              <span class="hub-card-text"><span class="hub-card-title">Convites enviados</span><span class="hub-card-count" data-count-rec-meus="">2 convites</span></span>
+              <span class="hub-dot" id="rec-dot-meus" role="img" aria-label="Convite expirado precisa de reenvio"></span>
+              <span class="po-icon area-chev hub-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="hub-panel" id="rec-panel-meus" hidden="">
+              <div class="rec-invite" data-invite="carla" data-status="pendente">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name">Carla S*** Lima</span><span class="rec-invite-meta">Irmã</span></span>
+                  <span class="po-badge po-badge-info" data-badge="">Pendente</span>
+                </div>
+                <div class="rec-invite-actions">
+                  <button type="button" class="po-btn po-btn-secondary" data-act="copiar"><span class="po-btn-content"><span data-label="">Copiar link</span></span></button>
+                </div>
+              </div>
+              <div class="rec-invite" data-invite="paulo" data-status="expirado">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name">Paulo H*** Silva</span><span class="rec-invite-meta">Pai/mãe</span></span>
+                  <span class="po-badge po-badge-warning" data-badge="">Expirado</span>
+                </div>
+                <p class="rec-invite-note" data-note="">O link não vale mais. Reenvie para gerar um novo, válido por 7 dias.</p>
+                <div class="rec-invite-actions">
+                  <button type="button" class="po-btn po-btn-secondary" data-act="reenviar"><span class="po-btn-content"><span>Reenviar convite</span></span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pend-group" aria-labelledby="rec-h-meus">
+            <div class="rec-sec-head">
+              <h2 class="pend-group-title" id="rec-h-meus">Familiares <span class="pend-count" data-count-meus-fam="">2</span></h2>
+              <p class="rec-sec-desc">Familiares que você adicionou como titular. Expanda para ver as etapas de validação de cada um.</p>
+            </div>
+            <div class="area-family" id="rec-fam-leandro">
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Leandro Costa</span><span class="area-family-meta">Filho</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden="">
+                <div class="area-detalhe" data-detalhe="leandro-costa" data-nome="Leandro Costa" data-cpf="318.645.270-55" data-email="mariana.costa@email.com" data-telefone="(11) 99876-5432"><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email">mariana.costa@email.com</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone">(11) 99876-5432</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Leandro Costa</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">318.645.270-55</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled=""><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+                <button type="button" class="area-link-danger" data-act="desvincular"><span class="po-icon s16" aria-hidden="true">link_off</span> Desvincular familiar</button>
+              </div>
+            </div>
+          <div class="area-family" id="rec-fam-marcia-costa">
+            <button type="button" class="area-family-head" aria-expanded="false">
+              <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+              <span class="area-family-text"><span class="area-family-name">Márcia Costa</span><span class="area-family-meta">Mãe</span></span>
+              <span class="po-badge po-badge-success">Ativo</span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-family-body" hidden="">
+              <div class="area-detalhe" data-detalhe="marcia-costa" data-nome="Márcia Costa" data-cpf="412.907.355-68" data-email="mariana.costa@email.com" data-telefone="(11) 98888-1234"><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email">mariana.costa@email.com</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone">(11) 98888-1234</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Márcia Costa</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">412.907.355-68</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled=""><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+              <button type="button" class="area-link-danger" data-act="desvincular"><span class="po-icon s16" aria-hidden="true">link_off</span> Desvincular familiar</button>
+            </div>
+          </div>
+          </section>
+                    <div class="area-add-wrap">
+            <button type="button" class="po-btn po-btn-secondary area-add proto-soon"><span class="po-btn-content"><span>Incluir novo familiar</span><span class="po-icon s18" aria-hidden="true">add</span></span></button>
+          </div>
+        </div>
+
+        <!-- ── Aba Sou familiar de ── -->
+        <div class="rec-vista" id="rec-vista-sou" hidden="">
+          <section class="hub-card" id="rec-card-sou">
+            <button type="button" class="hub-card-head" aria-expanded="false" aria-controls="rec-panel-sou">
+              <span class="hub-card-icon"><span class="po-icon s20" aria-hidden="true">inbox</span></span>
+              <span class="hub-card-text"><span class="hub-card-title">Convites recebidos</span><span class="hub-card-count" data-count-rec-sou="">1 convite</span></span>
+              <span class="hub-dot" id="rec-dot-sou" role="img" aria-label="Convite aguardando sua resposta"></span>
+              <span class="po-icon area-chev hub-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="hub-panel" id="rec-panel-sou" hidden="">
+              <div class="rec-invite" id="rec-invite-roberto" data-invite="roberto" data-status="pendente">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name" data-nome="">Roberto Silva</span><span class="rec-invite-meta" data-meta="">Quer vincular você como Filha · expira em 5 dias</span></span>
+                  <span class="po-badge po-badge-info" data-badge="">Pendente</span>
+                </div>
+                <div class="rec-invite-actions rec-invite-par">
+                  <button type="button" class="po-btn po-btn-primary" data-act="aceitar"><span class="po-btn-content"><span>Aceitar</span></span></button>
+                  <button type="button" class="po-btn po-btn-secondary" data-act="recusar"><span class="po-btn-content"><span>Recusar</span></span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pend-group" aria-labelledby="rec-h-sou">
+            <div class="rec-sec-head">
+            <h2 class="pend-group-title" id="rec-h-sou">Familiares <span class="pend-count" data-count-sou-fam="">2</span></h2>
+            <p class="rec-sec-desc">Estas pessoas incluíram você como familiar e podem comprar ingressos para você.</p>
+          </div>
+            <div class="area-family" id="rec-fam-carlos-silva">
+            <button type="button" class="area-family-head" aria-expanded="false">
+              <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+              <span class="area-family-text"><span class="area-family-name">Carlos Silva</span><span class="area-family-meta">Você como Cônjuge</span></span>
+              <span class="po-badge po-badge-success">Ativo</span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+              <div class="area-family-body" hidden="">
+                <div class="area-detalhe" data-detalhe="carlos-silva" data-nome="Carlos Silva" data-cpf="264.178.093-10" data-email="carlos.silva@email.com" data-telefone="(11) 97777-4321"><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email">carlos.silva@email.com</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone">(11) 97777-4321</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Carlos Silva</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">264.178.093-10</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled=""><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+            </div>
+            </div>
+            <div class="area-family" id="rec-fam-ana">
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Ana Paula Costa</span><span class="area-family-meta">Você como Filha</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden="">
+                <div class="area-detalhe" data-detalhe="ana-paula" data-nome="Ana Paula Costa" data-cpf="402.118.975-30" data-email="ana.paula@email.com" data-telefone="(11) 91234-5678"><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email">ana.paula@email.com</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone">(11) 91234-5678</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Ana Paula Costa</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">402.118.975-30</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled=""><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+              </div>
+            </div>
+            <div class="area-family" id="rec-fam-roberto" hidden="">
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Roberto Silva</span><span class="area-family-meta">Você como Filha</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden="">
+                <div class="area-detalhe" data-detalhe="roberto-silva" data-nome="Roberto Silva" data-cpf="529.982.247-25" data-email="roberto.santos@email.com" data-telefone="(11) 98765-4321"><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email">roberto.santos@email.com</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone">(11) 98765-4321</span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome">Roberto Silva</span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf">529.982.247-25</span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled=""><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="concluido"><div class="tl-eyebrow">Concluído</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div><div class="area-acc" data-state="validado"><div class="tl-eyebrow">Validado</div>
+        <button type="button" class="area-acc-head" aria-expanded="false">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body" hidden="">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+</body>
+</html>

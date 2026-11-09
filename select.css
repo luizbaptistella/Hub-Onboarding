@@ -1,0 +1,39 @@
+/* Select do DS: a lista aberta segue o padrão visual do DS, no lugar do menu nativo do sistema.
+   O <select> continua no DOM, escondido, como fonte do valor, da validação e dos eventos. */
+
+.po-select > select.po-select-native {
+  position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; border: 0;
+  opacity: 0; overflow: hidden; pointer-events: none; clip-path: inset(50%);
+}
+
+.po-select-trigger {
+  flex: 1 1 auto; min-width: 0; height: 100%; margin: 0; padding: 0 calc(var(--space-150) + 14px) 0 var(--space-150);
+  border: 0; border-radius: inherit; background: transparent; color: var(--text-default);
+  font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height);
+  text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer;
+}
+.po-select-trigger:focus-visible { outline: none; }
+.po-select-trigger:disabled { cursor: not-allowed; color: var(--text-subtle); }
+.po-select.po-select-empty .po-select-trigger { color: var(--text-subtle); }
+
+.po-select-menu {
+  position: absolute; top: calc(100% + var(--space-050)); left: 0; right: 0; z-index: 30;
+  box-sizing: border-box; margin: 0; padding: var(--space-050); list-style: none;
+  max-height: 280px; overflow-y: auto;
+  background: var(--bg-surface); border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+}
+.po-select-menu[hidden] { display: none; }
+
+.po-select-option {
+  display: flex; align-items: center; gap: var(--space-100); min-height: var(--size-touch-target);
+  padding: 0 var(--space-150) 0 var(--space-050); border-radius: var(--radius-md);
+  font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height);
+  color: var(--text-default); cursor: pointer;
+}
+.po-select-option:not(.is-disabled):hover,
+.po-select-option:not(.is-disabled):focus-visible { background: var(--bg-neutral-subtle-hovered); outline: none; }
+.po-select-option.is-disabled { color: var(--text-subtle); cursor: default; }
+.po-select-option-placeholder { color: var(--text-subtle); }
+.po-select-check { flex: none; width: 18px; display: inline-flex; justify-content: center; color: var(--icon-brand); }
+.po-select-option-text { min-width: 0; overflow-wrap: anywhere; }

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM-G2 · Captura da frente do documento do familiar · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela FAM-G2, passo 2 (proposta, ainda não validada), variante "Padrão" (enquadrando).
+     Família de DOC-G1 (captura do documento) com a estrutura de DOC-04 (câmera da frente). Comportamento: spec.md nesta pasta.
+     Marcação renderizada pelos componentes reais do DS (ds/bundle.js); o script tela.js a torna interativa. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../ds/bundle.css">
+<style>
+html,body{margin:0;padding:0;background:var(--bg-surface)}
+.est-device{width:375px;min-height:812px;display:flex;flex-direction:column;background:var(--bg-surface)}
+/* Barra de status do celular: mock do sistema, não implementar. */
+.est-statusbar{flex:none;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--space-300) 0 var(--space-400);background:var(--bg-surface);color:var(--text-default);font:600 15px/1 var(--font-body)}
+.est-statusbar-icons{display:flex;align-items:center;gap:6px;fill:currentColor;color:inherit}
+.est-statusbar-dark{background:var(--camera-bg);color:var(--camera-fg)}
+.est-device-camera{height:812px;min-height:0;background:var(--camera-bg)}
+.est-device-camera > .po-camera{flex:1 1 auto;min-height:0}
+.est-camera-feed{cursor:pointer}
+</style>
+</head>
+<body>
+<div id="est-root" data-props='{"state":"aligning"}'></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="../../ds/bundle.js"></script>
+<script src="../../estrangeiro.js"></script>
+<script src="tela.js"></script>
+</body>
+</html>

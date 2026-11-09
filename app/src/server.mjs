@@ -1,0 +1,127 @@
+// Servidor HTTP da aplicação: login compartilhado, interface em public/ e API em /api. Só leitura.
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { loadHub } from '../../mcp-server/src/hub.mjs';
+import { handoffDir } from '../../mcp-server/src/handoff-path.mjs';
+import { handleApi } from './api.mjs';
+import { createAuth } from './auth.mjs';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const publicDir = path.resolve(here, '../public');
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml' };
+// Assets sem dados do handoff ficam públicos para a tela de login carregar.
+const PUBLIC_ASSETS = new Set(['/styles.css', '/app.js', '/login.js']);
+const LOOPBACK = new Set(['127.0.0.1', 'localhost', '::1']);
+
+const SECURITY_HEADERS = {
+  'x-content-type-options': 'nosniff',
+  'referrer-policy': 'no-referrer',
+  'content-security-policy': "default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+};
+
+export async function createApp({ password = process.env.APP_PASSWORD, secure = process.env.COOKIE_SECURE === '1' } = {}) {
+  const handoff = await loadHub(handoffDir);
+  const auth = createAuth({ password });
+
+  return createServer(async (req, res) => {
+    try {
+      const url = new URL(req.url, 'http://localhost');
+      const p = url.pathname;
+
+      if (p === '/login' && req.method === 'GET') return sendFile(res, 'login.html');
+
+      if (p === '/login' && req.method === 'POST') {
+        const ip = clientIp(req);
+        const form = new URLSearchParams(await readBody(req, 4096));
+        const result = auth.checkPassword(ip, form.get('password'));
+        if (result.locked) return redirect(res, '/login?erro=bloqueado');
+        if (!result.ok) return redirect(res, '/login?erro=senha');
+        res.setHeader('set-cookie', auth.issueCookie({ secure }));
+        return redirect(res, '/');
+      }
+
+      if (p === '/logout' && req.method === 'POST') {
+        res.setHeader('set-cookie', auth.clearCookie({ secure }));
+        return redirect(res, '/login');
+      }
+
+      if (req.method !== 'GET') return send(res, { status: 405, type: 'text/plain', body: 'method not allowed' });
+
+      if (p === '/healthz') return send(res, { status: 200, type: 'application/json', body: JSON.stringify({ ok: true }) });
+
+      const authed = !auth.enabled || auth.hasSession(req);
+      if (!authed) {
+        if (PUBLIC_ASSETS.has(p)) return sendFile(res, p.slice(1));
+        if (p.startsWith('/api')) return send(res, { status: 401, type: 'application/json', body: JSON.stringify({ error: 'não autenticado' }) });
+        return redirect(res, '/login');
+      }
+
+      if (p.startsWith('/api')) {
+        return send(res, await handleApi(handoff, p, url.searchParams));
+      }
+
+      return sendFile(res, p === '/' ? 'index.html' : p.slice(1));
+    } catch (err) {
+      if (err.status === 413) return send(res, { status: 413, type: 'text/plain', body: 'payload grande' });
+      return send(res, { status: 500, type: 'application/json', body: JSON.stringify({ error: 'erro interno' }) });
+    }
+  });
+
+  async function sendFile(res, rel) {
+    const file = path.resolve(publicDir, rel);
+    if (!file.startsWith(publicDir + path.sep)) return send(res, { status: 404, type: 'text/plain', body: 'not found' });
+    const body = await readFile(file).catch(() => null);
+    if (!body) return send(res, { status: 404, type: 'text/plain', body: 'not found' });
+    return send(res, { status: 200, type: TYPES[path.extname(file)] ?? 'application/octet-stream', body });
+  }
+}
+
+function readBody(req, max) {
+  return new Promise((resolve, reject) => {
+    let size = 0;
+    const chunks = [];
+    req.on('data', (c) => {
+      size += c.length;
+      if (size > max) {
+        reject(Object.assign(new Error('grande'), { status: 413 }));
+        req.destroy();
+        return;
+      }
+      chunks.push(c);
+    });
+    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+    req.on('error', reject);
+  });
+}
+
+// Atrás de proxy (Render, Fly etc.), o IP real vem em X-Forwarded-For. Só confie nele com TRUST_PROXY=1.
+function clientIp(req) {
+  if (process.env.TRUST_PROXY === '1') {
+    const first = String(req.headers['x-forwarded-for'] ?? '').split(',')[0].trim();
+    if (first) return first;
+  }
+  return req.socket.remoteAddress ?? 'desconhecido';
+}
+
+function redirect(res, location) {
+  res.writeHead(303, { location, ...SECURITY_HEADERS });
+  res.end();
+}
+
+function send(res, { status, type, body, headers = {} }) {
+  res.writeHead(status, { 'content-type': type, ...SECURITY_HEADERS, 'cache-control': type.startsWith('text/html') || type.startsWith('application/json') ? 'no-store' : 'public, max-age=300', ...headers });
+  res.end(body);
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const HOST = process.env.HOST ?? '127.0.0.1';
+  const PORT = Number(process.env.PORT ?? 8800);
+  if (!LOOPBACK.has(HOST) && !process.env.APP_PASSWORD) {
+    console.error('Recuso subir em HOST não local sem APP_PASSWORD. Defina a senha do time ou use HOST=127.0.0.1.');
+    process.exit(1);
+  }
+  const app = await createApp();
+  app.listen(PORT, HOST, () => console.log(`Palmeiras Hub em http://${HOST}:${PORT} · login ${process.env.APP_PASSWORD ? 'ativo' : 'desligado (local)'}`));
+}

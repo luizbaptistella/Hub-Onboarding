@@ -1,0 +1,78 @@
+/* Validação facial (liveness). Telas novas do protótipo, com os componentes do DS atual (FaceCapture, OrientationHint, LoadingState) em HTML e CSS puros. Valores do tokens.json v45, palmeiras. */
+:root {
+  --lv-brand: #00522e;        /* brand-800: ação, anel de progresso */
+  --lv-ring-success: #10a066; /* green-500: sucesso e contagem */
+  --lv-ring-warning: #d97706; /* amber-600 (icon-warning): aviso, 3.19:1 sobre branco */
+  --lv-neutral: #eeeef0;      /* neutral-100: fundo do círculo */
+  --lv-line: #e2e3e8;         /* neutral-200: trilha do spinner */
+  --lv-scrim: rgba(0, 0, 0, 0.4);
+}
+
+.lv-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: 24px; padding: 16px 24px 24px; position: relative; overflow: hidden; }
+.lv-body-center { justify-content: center; align-items: center; text-align: center; }
+
+/* FaceCapture: círculo de 340px (a confirmar), anel de 6px, moldura oval e contagem */
+.lv-circle { position: relative; width: min(340px, 100%); aspect-ratio: 1; margin: 0 auto; border-radius: 9999px; overflow: hidden; isolation: isolate; background: var(--lv-neutral); }
+.lv-circle::after { content: ""; position: absolute; inset: 0; background: transparent; z-index: 1; pointer-events: none; }
+.lv-circle[data-state="countdown"]::after { background: var(--lv-scrim); }
+.lv-arc { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.lv-arc circle { fill: none; stroke: var(--lv-brand); stroke-width: 1.8; stroke-linecap: round; transform-box: view-box; transform-origin: 50% 50%; transition: stroke-dasharray .2s; }
+.lv-arc-left circle { transform: rotate(90deg); }
+.lv-arc-right circle { transform: rotate(-90deg); }
+.lv-ring { position: absolute; inset: 0; border-radius: 9999px; border: 6px solid transparent; pointer-events: none; z-index: 2; }
+.lv-ring-success { border-color: var(--lv-ring-success); }
+.lv-ring-warning { border-color: var(--lv-ring-warning); }
+.lv-oval { position: absolute; left: 50%; top: 50%; width: 72%; height: 86%; transform: translate(-50%, -50%); border-radius: 50%; border: 2px dashed #ffffff; box-shadow: 0 0 0 999px var(--lv-scrim); pointer-events: none; z-index: 2; }
+.lv-count-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 3; }
+.lv-count { width: 72px; height: 72px; border-radius: 9999px; background: var(--lv-brand); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 36px; line-height: 40px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.lv-face-title { min-height: 56px; }
+
+/* OrientationHint: tela cheia só para o celular na horizontal */
+.lv-orient { position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; background: #ffffff; text-align: center; }
+.lv-orient[hidden] { display: none; }
+.lv-orient .po-icon { font-size: 64px; width: 64px; height: 64px; color: var(--lv-brand); }
+.lv-orient-text { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: #141823; }
+
+/* LoadingState: spinner de 48px, trilha de 4px, arco em brand */
+.lv-loading { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.lv-spinner { width: 48px; height: 48px; box-sizing: border-box; border-radius: 9999px; border: 4px solid var(--lv-line); border-top-color: var(--lv-brand); animation: lv-spin 1s linear infinite; }
+.lv-loading-copy { display: flex; flex-direction: column; gap: 8px; }
+.lv-loading-title { margin: 0; font-size: 20px; line-height: 28px; font-weight: 600; color: #141823; }
+.lv-loading-text { margin: 0; font-size: 14px; line-height: 20px; color: #616674; }
+@keyframes lv-spin { to { transform: rotate(360deg); } }
+
+/* Tutorial: imagem provisória, indicador, número e texto */
+.lv-tut-img { height: 300px; border-radius: 16px; background: var(--lv-neutral); display: flex; align-items: center; justify-content: center; position: relative; }
+.lv-tut-img .po-icon { font-size: 48px; color: #616674; }
+.lv-tut-dots { position: absolute; left: 0; right: 0; bottom: 16px; display: flex; justify-content: center; gap: 8px; }
+/* Pontos brancos com anel escuro (como carousel-dot-ring do DS), visíveis sobre imagem clara. */
+.lv-tut-dots span { width: 8px; height: 8px; border-radius: 9999px; background: #ffffff; box-shadow: 0 0 0 1px rgba(20, 24, 35, .45); }
+.lv-tut-dots span.on { width: 20px; background: var(--lv-brand); box-shadow: none; }
+.lv-tut-step { width: 40px; height: 40px; border-radius: 9999px; background: var(--lv-brand); color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+/* Alerta de bloqueio e erro (Alert tom danger) */
+.lv-alert { display: flex; gap: 12px; padding: 16px; border-radius: 12px; border: 1px solid #fca5a5; background: #fef2f2; color: #141823; text-align: left; }
+.lv-alert .po-icon { color: #b91c1c; font-size: 24px; }
+/* Texto em text-default: a cor do tom fica só no fundo, na borda e no ícone (regra do Alert). */
+.lv-alert-title { margin: 0 0 4px; font-size: 16px; line-height: 24px; font-weight: 600; color: #141823; }
+.lv-alert-text { margin: 0; font-size: 14px; line-height: 20px; }
+.lv-alert a { color: var(--lv-brand); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) { .lv-spinner { animation: none; } .lv-arc circle { transition: none; } }
+
+/* Títulos de grupo no menu de telas */
+.proto-group { margin: 12px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #616674; }
+
+/* Redirecionamento de 10 s na tela de dados recebidos: só "Continuar agora" */
+.lv-done-actions[hidden] { display: none; }
+.lv-done-actions .lv-done-now { background: #ffffff; color: var(--lv-brand); border-color: transparent; }
+.lv-done-actions .po-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+
+/* Bloqueio e erro: texto de saída, painel de suporte e botões no pé da tela */
+.lv-exit-text { margin: 0; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); color: var(--text-subtle); }
+.lv-exit { margin-top: auto; display: flex; flex-direction: column; gap: var(--space-stack-related); }
+.lv-support { display: flex; flex-direction: column; gap: var(--space-stack-tight); padding: var(--space-inset-md); background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); }
+.lv-support[hidden] { display: none; }
+.lv-support-title, .lv-support-text { margin: 0; font-family: var(--font-body); }
+.lv-support-title { font-size: var(--type-title-sm-size); line-height: var(--type-title-sm-line-height); font-weight: var(--type-title-sm-weight); color: var(--text-default); }
+.lv-support-text { font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); color: var(--text-subtle); }

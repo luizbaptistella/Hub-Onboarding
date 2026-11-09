@@ -1,0 +1,477 @@
+{
+ "screen": "DOC-26",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-26-rne-tutorial-frente/telas/passo-1/screen.html",
+ "instances": [
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "Tutorial",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tutorial/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Passo 1 · frente do RNE",
+   "dsProps": {
+    "label": "Como fotografar a frente do RNE",
+    "title": "Foto do documento",
+    "steps": [
+     {
+      "title": "Vamos capturar a frente do RNE",
+      "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Coloque o documento numa superfície plana",
+      "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Enquadre a frente do documento",
+      "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+      "imageAlt": "",
+      "frame": true
+     }
+    ],
+    "defaultStep": 1
+   },
+   "behavior": {
+    "eventos": "onExit, onSkip, onFinish"
+   },
+   "jsx": "<Tutorial label=\"Como fotografar a frente do RNE\" title=\"Foto do documento\" steps={[{ title: \"Vamos capturar a frente do RNE\", description: \"É importante que o documento esteja atualizado e com todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg\", imageAlt: \"\" }, { title: \"Coloque o documento numa superfície plana\", description: \"Use uma superfície clara e limpa, num lugar bem iluminado.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg\", imageAlt: \"\" }, { title: \"Enquadre a frente do documento\", description: \"Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg\", imageAlt: \"\", frame: true }]} defaultStep={1} onExit={() => {}} onSkip={() => {}} onFinish={() => {}} />",
+   "states": [
+    "Passo 1 · frente do RNE",
+    "Passo 2 · superfície plana",
+    "Passo 3 · enquadrar"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Passo 1 · frente do RNE",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 1,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 2 · superfície plana",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 2,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 3 · enquadrar",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 3,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Tutorial",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tutorial/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Passo 2 · superfície plana",
+   "dsProps": {
+    "label": "Como fotografar a frente do RNE",
+    "title": "Foto do documento",
+    "steps": [
+     {
+      "title": "Vamos capturar a frente do RNE",
+      "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Coloque o documento numa superfície plana",
+      "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Enquadre a frente do documento",
+      "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+      "imageAlt": "",
+      "frame": true
+     }
+    ],
+    "defaultStep": 2
+   },
+   "behavior": {
+    "eventos": "onExit, onSkip, onFinish"
+   },
+   "jsx": "<Tutorial label=\"Como fotografar a frente do RNE\" title=\"Foto do documento\" steps={[{ title: \"Vamos capturar a frente do RNE\", description: \"É importante que o documento esteja atualizado e com todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg\", imageAlt: \"\" }, { title: \"Coloque o documento numa superfície plana\", description: \"Use uma superfície clara e limpa, num lugar bem iluminado.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg\", imageAlt: \"\" }, { title: \"Enquadre a frente do documento\", description: \"Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg\", imageAlt: \"\", frame: true }]} defaultStep={2} onExit={() => {}} onSkip={() => {}} onFinish={() => {}} />",
+   "states": [
+    "Passo 1 · frente do RNE",
+    "Passo 2 · superfície plana",
+    "Passo 3 · enquadrar"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Passo 1 · frente do RNE",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 1,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 2 · superfície plana",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 2,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 3 · enquadrar",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 3,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Tutorial",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tutorial/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Passo 3 · enquadrar",
+   "dsProps": {
+    "label": "Como fotografar a frente do RNE",
+    "title": "Foto do documento",
+    "steps": [
+     {
+      "title": "Vamos capturar a frente do RNE",
+      "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Coloque o documento numa superfície plana",
+      "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Enquadre a frente do documento",
+      "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+      "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+      "imageAlt": "",
+      "frame": true
+     }
+    ],
+    "defaultStep": 3
+   },
+   "behavior": {
+    "eventos": "onExit, onSkip, onFinish"
+   },
+   "jsx": "<Tutorial label=\"Como fotografar a frente do RNE\" title=\"Foto do documento\" steps={[{ title: \"Vamos capturar a frente do RNE\", description: \"É importante que o documento esteja atualizado e com todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg\", imageAlt: \"\" }, { title: \"Coloque o documento numa superfície plana\", description: \"Use uma superfície clara e limpa, num lugar bem iluminado.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg\", imageAlt: \"\" }, { title: \"Enquadre a frente do documento\", description: \"Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.\", image: \"handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg\", imageAlt: \"\", frame: true }]} defaultStep={3} onExit={() => {}} onSkip={() => {}} onFinish={() => {}} />",
+   "states": [
+    "Passo 1 · frente do RNE",
+    "Passo 2 · superfície plana",
+    "Passo 3 · enquadrar"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Passo 1 · frente do RNE",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 1,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 2 · superfície plana",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 2,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 3 · enquadrar",
+     "props": {
+      "label": "Como fotografar a frente do RNE",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Vamos capturar a frente do RNE",
+        "description": "É importante que o documento esteja atualizado e com todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Coloque o documento numa superfície plana",
+        "description": "Use uma superfície clara e limpa, num lugar bem iluminado.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-2.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre a frente do documento",
+        "description": "Posicione o documento dentro da moldura e confira se a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-26-rne-tutorial-frente/img/passo-3.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 3,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

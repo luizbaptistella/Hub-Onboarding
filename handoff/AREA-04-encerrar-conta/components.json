@@ -1,0 +1,2199 @@
+{
+ "screen": "AREA-04",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/AREA-04-encerrar-conta/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Encerrar conta",
+    "language": false,
+    "help": true
+   },
+   "behavior": {
+    "navega para": "seguranca"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Encerrar conta\" language={false} help />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Encerrar conta",
+      "language": false,
+      "help": {}
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×56",
+      "DS": "375×40"
+     },
+     {
+      "parte": "header-slot",
+      "protótipo": "48×48",
+      "DS": "—"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "header-center",
+      "protótipo": "247×16",
+      "DS": "—"
+     },
+     {
+      "parte": "header-title",
+      "protótipo": "247×16",
+      "DS": "263×20"
+     },
+     {
+      "parte": "ícone (help)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "0px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "width",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "header-center",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-size",
+      "token": "--type-label-sm-size",
+      "cadeia": "--type-label-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "line-height",
+      "token": "--type-label-sm-line-height",
+      "cadeia": "--type-label-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-sm-weight",
+      "cadeia": "--type-label-sm-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (help)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "56px",
+      "DS": "40px"
+     },
+     {
+      "onde": "header-title",
+      "prop": "tamanho",
+      "protótipo": "247×16",
+      "DS": "263×20"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 56,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Encerrar sua conta",
+    "subtitle": "Por exigência legal e pela segurança do estádio, seu cadastro não é apagado: ele fica inativo e bloqueado para uso.",
+    "tone": "neutral"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Encerrar sua conta\" subtitle=\"Por exigência legal e pela segurança do estádio, seu cadastro não é apagado: ele fica inativo e bloqueado para uso.\" tone=\"neutral\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Encerrar sua conta",
+      "subtitle": "Por exigência legal e pela segurança do estádio, seu cadastro não é apagado: ele fica inativo e bloqueado para uso.",
+      "tone": "neutral"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×100",
+      "DS": "327×100"
+     },
+     {
+      "parte": "heading-title",
+      "protótipo": "327×32",
+      "DS": "327×32"
+     },
+     {
+      "parte": "heading-sub",
+      "protótipo": "327×60",
+      "DS": "327×60"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "margin-bottom",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-size",
+      "token": "--type-heading-xl-size",
+      "cadeia": "--type-heading-xl-size",
+      "valor": "24px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "line-height",
+      "token": "--type-heading-xl-line-height",
+      "cadeia": "--type-heading-xl-line-height",
+      "valor": "32px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-weight",
+      "token": "--type-heading-xl-weight",
+      "cadeia": "--type-heading-xl-weight",
+      "valor": "700"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "List",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > section:nth-of-type(1)",
+   "dsProps": {
+    "label": "O que acontece"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/List/README.md",
+   "jsx": "<List label=\"O que acontece\" />",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "O que acontece"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×253",
+      "DS": "327×26"
+     },
+     {
+      "parte": "list-label",
+      "protótipo": "327×16",
+      "DS": "327×16"
+     },
+     {
+      "parte": "list",
+      "protótipo": "327×229",
+      "DS": "327×2"
+     },
+     {
+      "parte": "list-li",
+      "protótipo": "325×64",
+      "DS": "—"
+     },
+     {
+      "parte": "list-item",
+      "protótipo": "325×64",
+      "DS": "—"
+     },
+     {
+      "parte": "list-icon",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (cancel)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "list-text",
+      "protótipo": "261×40",
+      "DS": "—"
+     },
+     {
+      "parte": "list-title",
+      "protótipo": "261×40",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (shield)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (folder)",
+      "protótipo": "20×20",
+      "DS": "—"
+     },
+     {
+      "parte": "ícone (chat)",
+      "protótipo": "20×20",
+      "DS": "—"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "margin-bottom",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "list-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-label",
+      "propriedade": "font-size",
+      "token": "--type-label-xs-size",
+      "cadeia": "--type-label-xs-size",
+      "valor": "11px"
+     },
+     {
+      "parte": "list-label",
+      "propriedade": "line-height",
+      "token": "--type-label-xs-line-height",
+      "cadeia": "--type-label-xs-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "list-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-sm-strong-weight",
+      "cadeia": "--type-label-sm-strong-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "list-label",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "list",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "list",
+      "propriedade": "border",
+      "token": "--border-default",
+      "cadeia": "--border-default → --neutral-200 → --gray-200",
+      "valor": "1px solid rgb(226, 227, 232)"
+     },
+     {
+      "parte": "list",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "list-item",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "list-item",
+      "propriedade": "min-height",
+      "token": "--size-menu-item",
+      "cadeia": "--size-menu-item",
+      "valor": "48px"
+     },
+     {
+      "parte": "list-item",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 16px"
+     },
+     {
+      "parte": "list-item",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "list-icon",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (cancel)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "list-text",
+      "propriedade": "gap",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "ícone (shield)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (folder)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "ícone (chat)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "253px",
+      "DS": "26px"
+     },
+     {
+      "onde": "list",
+      "prop": "tamanho",
+      "protótipo": "327×229",
+      "DS": "327×2"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 4,
+   "component": "ListItem",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": 3,
+   "dsProps": {
+    "title": "Você perde o acesso a ingressos e benefícios",
+    "icon": "cancel"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ListItem/README.md",
+   "jsx": "<ListItem title=\"Você perde o acesso a ingressos e benefícios\" icon=\"cancel\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "default",
+      "danger"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Você perde o acesso a ingressos e benefícios",
+      "icon": "cancel"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "325×64",
+      "DS": "325×64"
+     },
+     {
+      "parte": "list-icon",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (cancel)",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "list-text",
+      "protótipo": "261×40",
+      "DS": "261×40"
+     },
+     {
+      "parte": "list-title",
+      "protótipo": "261×40",
+      "DS": "261×40"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-menu-item",
+      "cadeia": "--size-menu-item",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "list-icon",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (cancel)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "list-text",
+      "propriedade": "gap",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 5,
+   "component": "ListItem",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": 3,
+   "dsProps": {
+    "title": "Sua biometria é removida das catracas",
+    "icon": "shield"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ListItem/README.md",
+   "jsx": "<ListItem title=\"Sua biometria é removida das catracas\" icon=\"shield\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "default",
+      "danger"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Sua biometria é removida das catracas",
+      "icon": "shield"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "325×48",
+      "DS": "325×48"
+     },
+     {
+      "parte": "list-icon",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (shield)",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "list-text",
+      "protótipo": "261×20",
+      "DS": "261×20"
+     },
+     {
+      "parte": "list-title",
+      "protótipo": "261×20",
+      "DS": "261×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-menu-item",
+      "cadeia": "--size-menu-item",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "list-icon",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (shield)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "list-text",
+      "propriedade": "gap",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 6,
+   "component": "ListItem",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > div:nth-of-type(1)",
+   "parent": 3,
+   "dsProps": {
+    "title": "Compras e histórico ficam guardados pelo prazo legal",
+    "icon": "folder"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ListItem/README.md",
+   "jsx": "<ListItem title=\"Compras e histórico ficam guardados pelo prazo legal\" icon=\"folder\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "default",
+      "danger"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Compras e histórico ficam guardados pelo prazo legal",
+      "icon": "folder"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "325×64",
+      "DS": "325×64"
+     },
+     {
+      "parte": "list-icon",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (folder)",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "list-text",
+      "protótipo": "261×40",
+      "DS": "261×40"
+     },
+     {
+      "parte": "list-title",
+      "protótipo": "261×40",
+      "DS": "261×40"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-menu-item",
+      "cadeia": "--size-menu-item",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "list-icon",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (folder)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "list-text",
+      "propriedade": "gap",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 7,
+   "component": "ListItem",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > section:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > div:nth-of-type(1)",
+   "parent": 3,
+   "dsProps": {
+    "title": "Para voltar, fale com o atendimento",
+    "icon": "chat"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ListItem/README.md",
+   "jsx": "<ListItem title=\"Para voltar, fale com o atendimento\" icon=\"chat\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "default",
+      "danger"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Para voltar, fale com o atendimento",
+      "icon": "chat"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "325×48",
+      "DS": "325×48"
+     },
+     {
+      "parte": "list-icon",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (chat)",
+      "protótipo": "20×20",
+      "DS": "20×20"
+     },
+     {
+      "parte": "list-text",
+      "protótipo": "261×20",
+      "DS": "261×20"
+     },
+     {
+      "parte": "list-title",
+      "protótipo": "261×20",
+      "DS": "261×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-group",
+      "cadeia": "--space-inline-group",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-menu-item",
+      "cadeia": "--size-menu-item",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "list-icon",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (chat)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "list-text",
+      "propriedade": "gap",
+      "token": "--space-025",
+      "cadeia": "--space-025",
+      "valor": "2px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "list-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 8,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > div:nth-of-type(2)",
+   "note": "Botão de mostrar senha: no DS faz parte do preset password.",
+   "dsProps": {
+    "label": "Para confirmar, digite sua senha",
+    "preset": "password",
+    "name": "senha",
+    "placeholder": "Sua senha",
+    "autoComplete": "current-password"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"Para confirmar, digite sua senha\" preset=\"password\" name=\"senha\" placeholder=\"Sua senha\" autoComplete=\"current-password\" />",
+   "states": [
+    "padrão",
+    "preenchido",
+    "erro (prop `error`, mostra FormMessage)",
+    "senha visível ou oculta"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "password"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Para confirmar, digite sua senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Sua senha",
+      "autoComplete": "current-password"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Para confirmar, digite sua senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Sua senha",
+      "autoComplete": "current-password",
+      "defaultValue": "senha1234"
+     }
+    },
+    {
+     "label": "Erro",
+     "props": {
+      "label": "Para confirmar, digite sua senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Sua senha",
+      "autoComplete": "current-password",
+      "defaultValue": "senh",
+      "error": "Digite sua senha para confirmar o encerramento."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×72",
+      "DS": "327×72"
+     },
+     {
+      "parte": "field-label",
+      "protótipo": "327×20",
+      "DS": "327×20"
+     },
+     {
+      "parte": "input",
+      "protótipo": "327×44",
+      "DS": "283×42"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (visibility)",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "height",
+      "token": "--size-input",
+      "cadeia": "--size-input",
+      "valor": "44px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "padding",
+      "token": "--space-control-inline",
+      "cadeia": "--space-control-inline",
+      "valor": "0px 48px 0px 16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "1px solid rgb(97, 102, 116)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "background",
+      "token": "--bg-page",
+      "cadeia": "--bg-page → --neutral-50 → --gray-50",
+      "valor": "rgb(248, 249, 250) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-size",
+      "token": "--type-body-lg-size",
+      "cadeia": "--type-body-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "line-height",
+      "token": "--type-body-lg-line-height",
+      "cadeia": "--type-body-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "input",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-color",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "padding-right",
+      "token": "--space-600",
+      "cadeia": "--space-600",
+      "valor": "48px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "width",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "right",
+      "token": "--space-050",
+      "cadeia": "--space-050",
+      "valor": "4px"
+     },
+     {
+      "parte": "ícone (visibility)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "input",
+      "prop": "tamanho",
+      "protótipo": "327×44",
+      "DS": "283×42"
+     },
+     {
+      "onde": "btn-content",
+      "prop": "tamanho",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "onde": "ícone (visibility)",
+      "prop": "tamanho",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 72,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 9,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "danger",
+    "fullWidth": true,
+    "type": "submit",
+    "children": "Encerrar conta"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"danger\" fullWidth type=\"submit\">Encerrar conta</Button>",
+   "states": [
+    "padrão",
+    "carregando (`loading`, \"Encerrando conta\")"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "danger"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "danger",
+      "fullWidth": true,
+      "children": "Encerrar conta"
+     }
+    },
+    {
+     "label": "Carregando",
+     "props": {
+      "variant": "danger",
+      "fullWidth": true,
+      "children": "Encerrar conta",
+      "loading": true,
+      "loadingLabel": "Encerrando conta"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×50",
+      "DS": "327×50"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "113×24",
+      "DS": "113×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-danger-bold",
+      "cadeia": "--bg-danger-bold → --red-600",
+      "valor": "rgb(220, 38, 38) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-on-danger",
+      "cadeia": "--text-on-danger → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 50,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 10,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > form:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2)",
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": true,
+    "children": "Cancelar"
+   },
+   "behavior": {
+    "navega para": "seguranca"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth>Cancelar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": true,
+      "children": "Cancelar"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×50",
+      "DS": "327×50"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "68×24",
+      "DS": "68×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 50,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 11,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#encerrar-conta > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×77"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "8px 16px 24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-sm-size",
+      "cadeia": "--type-body-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-sm-line-height",
+      "cadeia": "--type-body-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-sm-weight",
+      "cadeia": "--type-body-sm-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "77px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [
+  {
+   "component": "FormMessage",
+   "props": "via `error` do TextField",
+   "when": "Senha vazia, ao enviar.",
+   "inDs": true
+  }
+ ],
+ "localClasses": {
+  "enc-actions": 1
+ }
+}

@@ -1,0 +1,20 @@
+# Deploy no Render (plano gratuito). O serviço usa a pasta palmeiras-hub inteira,
+# porque a API lê handoff/ e mcp-server/src/hub.mjs ao lado de app/.
+services:
+  - type: web
+    name: palmeiras-hub
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: "echo sem dependências para instalar"
+    startCommand: "node app/src/server.mjs"
+    healthCheckPath: /healthz
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: APP_PASSWORD
+        sync: false   # você define a senha no painel do Render; ela não vai para o repositório

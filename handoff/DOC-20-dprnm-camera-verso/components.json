@@ -1,0 +1,996 @@
+{
+ "screen": "DOC-20",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-20-dprnm-camera-verso/telas/enquadrando/screen.html",
+ "instances": [
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  },
+  {
+   "component": "Faixa do código (moldura horizontal)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-code-strip",
+   "parent": null,
+   "hidden": false,
+   "note": "Moldura de 335×93 desenhada sobre o visor; o CameraCapture do DS só tem molduras verticais. Proposta para o DS: ratio livre.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Enquadrando",
+   "dsProps": {
+    "state": "aligning",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"aligning\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "aligning"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Enquadrado (lendo o código)",
+   "dsProps": {
+    "state": "aligned",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"aligned\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "aligned"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Código capturado (notificação e redirecionamento)",
+   "dsProps": {
+    "state": "aligned",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Código capturado com sucesso!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"aligned\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Código capturado com sucesso!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "aligned"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "Tirando a foto (sem Figma)",
+   "dsProps": {
+    "state": "capturing",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"capturing\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "capturing"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Sem acesso à câmera (sem Figma)",
+   "dsProps": {
+    "state": "denied",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"denied\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "denied"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "CameraCapture",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/CameraCapture/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Câmera indisponível (sem Figma)",
+   "dsProps": {
+    "state": "unavailable",
+    "frame": "card",
+    "instruction": "Enquadre o código MRZ no verso do documento",
+    "successMessage": "Enquadramento perfeito!",
+    "autoCapture": true
+   },
+   "behavior": {
+    "eventos": "onBack, onCapture, onOpenSettings"
+   },
+   "jsx": "<CameraCapture state=\"unavailable\" frame=\"card\" instruction=\"Enquadre o código MRZ no verso do documento\" successMessage=\"Enquadramento perfeito!\" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />",
+   "states": [
+    "Enquadrando",
+    "Enquadrado (lendo o código)",
+    "Código capturado (notificação e redirecionamento)",
+    "Tirando a foto (sem Figma)",
+    "Sem acesso à câmera (sem Figma)",
+    "Câmera indisponível (sem Figma)"
+   ],
+   "propOptions": {
+    "state": {
+     "options": [
+      "starting",
+      "aligning",
+      "aligned",
+      "capturing",
+      "denied",
+      "unavailable"
+     ],
+     "used": "unavailable"
+    },
+    "frame": {
+     "options": [
+      "card",
+      "open"
+     ],
+     "used": "card"
+    },
+    "autoCapture": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "haptics": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Enquadrando",
+     "props": {
+      "state": "aligning",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Enquadrado (lendo o código)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Código capturado (notificação e redirecionamento)",
+     "props": {
+      "state": "aligned",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Código capturado com sucesso!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Tirando a foto (sem Figma)",
+     "props": {
+      "state": "capturing",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Sem acesso à câmera (sem Figma)",
+     "props": {
+      "state": "denied",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    },
+    {
+     "label": "Câmera indisponível (sem Figma)",
+     "props": {
+      "state": "unavailable",
+      "frame": "card",
+      "instruction": "Enquadre o código MRZ no verso do documento",
+      "successMessage": "Enquadramento perfeito!",
+      "autoCapture": false,
+      "onBack": "(fn)",
+      "onCapture": "(fn)",
+      "onOpenSettings": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Vídeo da câmera (simulado)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-camera-feed",
+   "parent": null,
+   "hidden": false,
+   "note": "No app é o <video> da câmera (getUserMedia), passado como children do CameraCapture. Aqui é uma foto.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1007,
+   "variant": "Enquadrando"
+  },
+  {
+   "component": "Vídeo da câmera (simulado)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-camera-feed",
+   "parent": null,
+   "hidden": false,
+   "note": "No app é o <video> da câmera (getUserMedia), passado como children do CameraCapture. Aqui é uma foto.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1008,
+   "variant": "Enquadrado (lendo o código)"
+  },
+  {
+   "component": "Vídeo da câmera (simulado)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-camera-feed",
+   "parent": null,
+   "hidden": false,
+   "note": "No app é o <video> da câmera (getUserMedia), passado como children do CameraCapture. Aqui é uma foto.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1009,
+   "variant": "Código capturado (notificação e redirecionamento)"
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar",
+  "est-camera-feed",
+  "est-code-strip"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -1,0 +1,138 @@
+/* Tema escuro do protótipo. Ativo com <html data-theme="dark">; sem o atributo vale o tema claro dos tokens.
+   Redefine só a camada semântica (bg-, text-, icon-, border-), então os componentes do DS trocam sozinhos. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page: #0f1217;
+  --bg-surface: #171b22;
+  --bg-input: #1d222b;
+  --bg-input-readonly: #232932;
+  --bg-neutral: #232932;
+  --bg-neutral-subtle-hovered: #262c36;
+  --bg-neutral-subtle-pressed: #2e3541;
+  --bg-inverse: #f2f4f7;
+  --bg-disabled: #1d222b;
+  --bg-brand-bold: var(--green-700);
+  --bg-brand-bold-hovered: var(--green-600);
+  --bg-brand-bold-pressed: var(--green-500);
+  --bg-brand-subtlest: #0f2a1e;
+  --bg-brand-subtle: #16382a;
+  --bg-success-subtlest: #0f2419;
+  --bg-success-subtle: #163222;
+  --bg-success-bold: var(--green-500);
+  --bg-danger-subtlest: #2a1214;
+  --bg-danger-subtle: #3a1719;
+  --bg-danger-bold: var(--red-600);
+  --bg-danger-bold-hovered: var(--red-500);
+  --bg-danger-bold-pressed: var(--red-400);
+  --bg-warning-subtlest: #2b220c;
+  --bg-warning-subtle: #3a2e10;
+  --bg-warning-bold: var(--amber-400);
+  --bg-info-subtlest: #0f1d33;
+  --bg-info-subtle: #15294a;
+  --bg-info-bold: var(--blue-600);
+
+  --text-default: #f2f4f7;
+  --text-subtle: #9aa3b2;
+  --text-subtle-pressed: #c3c9d4;
+  --text-disabled: #5c6472;
+  --text-inverse: #141823;
+  --text-brand: #7acfa2;
+  --text-link: #7acfa2;
+  --text-on-brand: #ffffff;
+  --text-success: #7acfa2;
+  --text-danger: #fca5a5;
+  --text-warning: #fcd34d;
+  --text-info: #93c5fd;
+
+  --icon-default: #e5e8ee;
+  --icon-subtle: #9aa3b2;
+  --icon-inverse: #141823;
+  --icon-disabled: #4b5260;
+  --icon-brand: #7acfa2;
+  --icon-success: #46b780;
+  --icon-danger: #f87171;
+  --icon-warning: #fbbf24;
+  --icon-info: #60a5fa;
+
+  --border-subtle: #242a34;
+  --border-default: #2e3541;
+  --border-input: #6b7383;
+  --border-input-hovered: #8b93a1;
+  --border-selectable: #6b7383;
+  --border-bold: #6b7383;
+  --border-focused: #7acfa2;
+  --border-brand: #46b780;
+  --border-inverse: #141823;
+  --border-success: #1f6b47;
+  --border-success-bold: #46b780;
+  --border-danger: #7f1d1d;
+  --border-danger-bold: #ef4444;
+  --border-warning: #7a5d12;
+  --border-info: #1e4a7a;
+}
+
+:root[data-theme="dark"] body { background: var(--bg-page); color: var(--text-default); }
+
+/* Interruptor do item "Modo escuro" no menu Meu perfil */
+.po-theme-switch { position: relative; flex: none; width: 36px; height: 20px; margin-left: auto; border-radius: var(--radius-full); background: var(--border-bold); transition: background 150ms ease; }
+.po-theme-switch > span { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); transition: transform 150ms ease; }
+[aria-checked="true"] > .po-theme-switch { background: var(--bg-brand-bold); }
+[aria-checked="true"] > .po-theme-switch > span { transform: translateX(16px); }
+
+/* Cores fixas da área logada (area.css): trocam no tema escuro */
+:root[data-theme="dark"] .statusbar-white { color: var(--text-default); }
+:root[data-theme="dark"] .area-acc-title { color: var(--text-default); }
+:root[data-theme="dark"] .area-acc-desc { color: var(--text-subtle); }
+:root[data-theme="dark"] .area-acc-icon { background: #1f3a2c; }
+:root[data-theme="dark"] .area-acc[data-state="pendente"] .area-acc-icon { background: #3a2e10; color: #fcd34d; }
+:root[data-theme="dark"] .area-acc[data-state="reprovado"] .area-acc-icon { background: #3a1719; color: #fca5a5; }
+:root[data-theme="dark"] .area-acc[data-state="analise"] .area-acc-icon { background: #15294a; color: #93c5fd; }
+:root[data-theme="dark"] .area-acc[data-state="aguardando"] .area-acc-icon { background: #232932; color: #9aa3b2; }
+:root[data-theme="dark"] .area-acc[data-state="aguardando"] .area-acc-title { color: #9aa3b2; }
+:root[data-theme="dark"] .area-acc[data-state="aguardando"] .area-acc-badge { background: #232932; color: #9aa3b2; }
+:root[data-theme="dark"] .tl-eyebrow { background: #2b220c; border-bottom-color: #5c4a14; color: #fcd34d; }
+:root[data-theme="dark"] .area-acc[data-state="reprovado"] .tl-eyebrow { background: #2a1214; border-bottom-color: #5b1d22; color: #fca5a5; }
+:root[data-theme="dark"] .area-acc[data-state="concluido"] .tl-eyebrow, :root[data-theme="dark"] .area-acc[data-state="validado"] .tl-eyebrow { background: #0f2419; border-bottom-color: #1f6b47; color: #7acfa2; }
+:root[data-theme="dark"] .area-acc[data-state="analise"] .tl-eyebrow { background: #0f1d33; border-bottom-color: #1e4a7a; color: #93c5fd; }
+:root[data-theme="dark"] .tl-node { background: var(--bg-surface); border-color: #4b5260; }
+:root[data-theme="dark"] .tl-rail::after { background: #3a4150; }
+:root[data-theme="dark"] .tl-detail-title, :root[data-theme="dark"] .tl-progress-count { color: var(--text-default); }
+:root[data-theme="dark"] .tl-detail-text, :root[data-theme="dark"] .tl-progress-label { color: var(--text-subtle); }
+:root[data-theme="dark"] .tl-progress { border-color: var(--border-default); }
+:root[data-theme="dark"] .tl-progress-track { background: #2e3541; }
+:root[data-theme="dark"] .area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-title { color: var(--text-default); }
+:root[data-theme="dark"] .area-acc[data-state="aguardando"]:not(.area-acc-nested) > .area-acc-head .area-acc-title { color: #9aa3b2; }
+/* Cards de cadastro por estado (area.css): fundo de cada estado no tema escuro */
+:root[data-theme="dark"] .area-acc[data-state="pendente"] { background: #2a2310; }
+:root[data-theme="dark"] .area-acc[data-state="pendente"] .area-acc-badge { background: #3a2e10; color: #fcd34d; }
+:root[data-theme="dark"] .area-acc[data-state="reprovado"] { background: #2a1517; }
+:root[data-theme="dark"] .area-acc[data-state="reprovado"] .area-acc-badge { background: #3a1719; color: #fca5a5; }
+:root[data-theme="dark"] .area-acc[data-state="analise"] { background: #0f1a2e; }
+
+/* Telas de login, cadastro e captura (app.css, liveness.css): cores legadas que não passam pela camada semântica */
+:root[data-theme="dark"] { --lv-neutral: #232932; }
+:root[data-theme="dark"] .device { background: var(--bg-page); }
+:root[data-theme="dark"] .screen { background: var(--bg-page); }
+:root[data-theme="dark"] .statusbar:not(.statusbar-dark) { background: var(--bg-surface); color: var(--text-default); }
+:root[data-theme="dark"] .header { background: var(--bg-surface); }
+:root[data-theme="dark"] .heading h1 { color: var(--text-brand); }
+:root[data-theme="dark"] .heading p, :root[data-theme="dark"] .progress-label, :root[data-theme="dark"] .divider p, :root[data-theme="dark"] .check-label, :root[data-theme="dark"] .footer { color: var(--text-subtle); }
+:root[data-theme="dark"] .field label, :root[data-theme="dark"] .input { color: var(--text-default); }
+:root[data-theme="dark"] .input-md, :root[data-theme="dark"] .input-sm { background: var(--bg-input); border-color: var(--border-input); }
+:root[data-theme="dark"] .progress-track span { background: #2e3541; }
+:root[data-theme="dark"] .tabs, :root[data-theme="dark"] .divider span { border-color: var(--border-default); }
+:root[data-theme="dark"] .divider span { background: var(--border-default); }
+:root[data-theme="dark"] .tab { color: var(--text-subtle); }
+:root[data-theme="dark"] .tab[aria-selected="true"] { color: var(--text-brand); border-bottom-color: var(--border-brand); }
+:root[data-theme="dark"] .btn-primary, :root[data-theme="dark"] .check input:checked + .check-box { background: var(--green-700); border-color: var(--green-700); }
+:root[data-theme="dark"] .check-box { background: var(--bg-input); border-color: var(--border-input); }
+:root[data-theme="dark"] .social { background: var(--bg-surface); border-color: var(--border-default); }
+:root[data-theme="dark"] .input.is-error, :root[data-theme="dark"] .input-md.is-error { background: var(--bg-danger-subtle); }
+:root[data-theme="dark"] .lv-loading-title { color: var(--text-default); }
+:root[data-theme="dark"] .lv-loading-text, :root[data-theme="dark"] .lv-tut-img .po-icon { color: var(--text-subtle); }
+/* Navegação do protótipo, fora do aparelho */
+:root[data-theme="dark"] .proto-nav h2 { color: var(--text-brand); }
+:root[data-theme="dark"] .proto-nav button { color: var(--text-subtle); }
+:root[data-theme="dark"] .proto-nav button[aria-current="page"] { background: var(--bg-surface); color: var(--text-brand); }
+:root[data-theme="dark"] .proto-hint { color: var(--text-subtle); }

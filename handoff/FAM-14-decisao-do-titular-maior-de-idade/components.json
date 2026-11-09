@@ -1,0 +1,278 @@
+{
+ "screen": "FAM-14",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-14-decisao-do-titular-maior-de-idade/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-decisao > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Cadastrar familiar",
+    "language": false,
+    "help": false
+   },
+   "behavior": {
+    "navega para": "familiar-cadastro"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Cadastrar familiar\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Cadastrar familiar",
+      "language": false,
+      "help": false
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-decisao > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Como deseja concluir o cadastro?",
+    "subtitle": "Você pode preencher agora, no seu celular, ou enviar um convite para o familiar confirmar os próprios dados.",
+    "tone": "neutral"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Como deseja concluir o cadastro?\" subtitle=\"Você pode preencher agora, no seu celular, ou enviar um convite para o familiar confirmar os próprios dados.\" tone=\"neutral\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Como deseja concluir o cadastro?",
+      "subtitle": "Você pode preencher agora, no seu celular, ou enviar um convite para o familiar confirmar os próprios dados.",
+      "tone": "neutral"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "OptionCard",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-decisao > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "dsProps": {
+    "icon": "person_add",
+    "title": "Cadastrar agora",
+    "description": "Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular.",
+    "layout": "stacked"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/OptionCard/README.md",
+   "jsx": "<OptionCard icon=\"person_add\" title=\"Cadastrar agora\" description=\"Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular.\" layout=\"stacked\" />",
+   "states": [],
+   "propOptions": {
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "inline",
+      "stacked"
+     ],
+     "used": "stacked"
+    },
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "icon": "person_add",
+      "title": "Cadastrar agora",
+      "description": "Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular.",
+      "layout": "stacked"
+     }
+    },
+    {
+     "label": "Escolhido",
+     "props": {
+      "icon": "person_add",
+      "title": "Cadastrar agora",
+      "description": "Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular.",
+      "layout": "stacked",
+      "selected": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 4,
+   "component": "OptionCard",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-decisao > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "dsProps": {
+    "icon": "send",
+    "title": "Enviar convite",
+    "description": "O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados.",
+    "layout": "stacked"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/OptionCard/README.md",
+   "jsx": "<OptionCard icon=\"send\" title=\"Enviar convite\" description=\"O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados.\" layout=\"stacked\" />",
+   "states": [],
+   "propOptions": {
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "inline",
+      "stacked"
+     ],
+     "used": "stacked"
+    },
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "icon": "send",
+      "title": "Enviar convite",
+      "description": "O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados.",
+      "layout": "stacked"
+     }
+    },
+    {
+     "label": "Escolhido",
+     "props": {
+      "icon": "send",
+      "title": "Enviar convite",
+      "description": "O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados.",
+      "layout": "stacked",
+      "selected": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 5,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-decisao > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": null
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {
+  "familiar-options": 2
+ }
+}

@@ -1,0 +1,769 @@
+{
+ "screen": "FAM-12",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/FAM-12-cadastro-do-familiar-sem-conta/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Cadastrar familiar",
+    "language": false,
+    "help": false
+   },
+   "behavior": {
+    "navega para": "familiar-busca"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Cadastrar familiar\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Cadastrar familiar",
+      "language": false,
+      "help": false
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Dados do familiar",
+    "tone": "neutral",
+    "spaced": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Dados do familiar\" tone=\"neutral\" spaced />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Dados do familiar",
+      "tone": "neutral",
+      "spaced": true
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 3,
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(1)",
+   "dsProps": {
+    "label": "Tipo de vínculo",
+    "options": [
+     "Filho(a)",
+     "Pai ou mãe",
+     "Irmão ou irmã",
+     "Cônjuge ou companheiro(a)",
+     "Sobrinho(a)",
+     "Outros"
+    ],
+    "placeholder": "Selecione o tipo de vínculo",
+    "required": true,
+    "name": "relation"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "jsx": "<Select label=\"Tipo de vínculo\" options={[\"Filho(a)\", \"Pai ou mãe\", \"Irmão ou irmã\", \"Cônjuge ou companheiro(a)\", \"Sobrinho(a)\", \"Outros\"]} placeholder=\"Selecione o tipo de vínculo\" required name=\"relation\" />",
+   "states": [
+    "padrão",
+    "aberto",
+    "preenchido"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Tipo de vínculo",
+      "options": [
+       "Filho(a)",
+       "Pai ou mãe",
+       "Irmão ou irmã",
+       "Cônjuge ou companheiro(a)",
+       "Sobrinho(a)",
+       "Outros"
+      ],
+      "placeholder": "Selecione o tipo de vínculo",
+      "required": true,
+      "name": "relation"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Tipo de vínculo",
+      "options": [
+       "Filho(a)",
+       "Pai ou mãe",
+       "Irmão ou irmã",
+       "Cônjuge ou companheiro(a)",
+       "Sobrinho(a)",
+       "Outros"
+      ],
+      "placeholder": "Selecione o tipo de vínculo",
+      "required": true,
+      "name": "relation",
+      "defaultValue": "Filho(a)",
+      "disabled": false
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 4,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(2)",
+   "dsProps": {
+    "label": "CPF",
+    "name": "cpf",
+    "placeholder": "000.000.000-00",
+    "required": true,
+    "autoComplete": "off"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"CPF\" name=\"cpf\" placeholder=\"000.000.000-00\" required autoComplete=\"off\" />",
+   "states": [
+    "padrão",
+    "preenchido"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "CPF",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "required": true,
+      "autoComplete": "off"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "CPF",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "required": true,
+      "autoComplete": "off",
+      "defaultValue": "Texto de exemplo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 5,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(3)",
+   "dsProps": {
+    "label": "Nome completo",
+    "name": "nome",
+    "placeholder": "Nome e sobrenome",
+    "required": true,
+    "autoComplete": "off"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"Nome completo\" name=\"nome\" placeholder=\"Nome e sobrenome\" required autoComplete=\"off\" />",
+   "states": [
+    "padrão",
+    "preenchido"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Nome completo",
+      "name": "nome",
+      "placeholder": "Nome e sobrenome",
+      "required": true,
+      "autoComplete": "off"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Nome completo",
+      "name": "nome",
+      "placeholder": "Nome e sobrenome",
+      "required": true,
+      "autoComplete": "off",
+      "defaultValue": "Texto de exemplo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 6,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(4)",
+   "dsProps": {
+    "label": "E-mail",
+    "preset": "email",
+    "name": "email",
+    "placeholder": "nome@email.com",
+    "required": true,
+    "autoComplete": "off"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"E-mail\" preset=\"email\" name=\"email\" placeholder=\"nome@email.com\" required autoComplete=\"off\" />",
+   "states": [
+    "padrão",
+    "preenchido"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "email"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "E-mail",
+      "preset": "email",
+      "name": "email",
+      "placeholder": "nome@email.com",
+      "required": true,
+      "autoComplete": "off"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "E-mail",
+      "preset": "email",
+      "name": "email",
+      "placeholder": "nome@email.com",
+      "required": true,
+      "autoComplete": "off",
+      "defaultValue": "nome@email.com"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 7,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(5)",
+   "dsProps": {
+    "label": "Celular",
+    "name": "celular",
+    "placeholder": "(00) 00000-0000",
+    "required": true,
+    "autoComplete": "off"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"Celular\" name=\"celular\" placeholder=\"(00) 00000-0000\" required autoComplete=\"off\" />",
+   "states": [
+    "padrão",
+    "preenchido"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Celular",
+      "name": "celular",
+      "placeholder": "(00) 00000-0000",
+      "required": true,
+      "autoComplete": "off"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Celular",
+      "name": "celular",
+      "placeholder": "(00) 00000-0000",
+      "required": true,
+      "autoComplete": "off",
+      "defaultValue": "Texto de exemplo"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 8,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > div:nth-of-type(2) > form:nth-of-type(1) > div:nth-of-type(7) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "type": "submit",
+    "children": "Continuar",
+    "iconEnd": "arrow_forward"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth type=\"submit\" iconEnd=\"arrow_forward\">Continuar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Continuar",
+      "iconEnd": "arrow_forward"
+     }
+    }
+   ],
+   "ficha": null
+  },
+  {
+   "id": 9,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#familiar-cadastro > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": null
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {
+  "area-form": 2
+ }
+}

@@ -1,0 +1,49 @@
+/* ── AppHeader do protótipo: um só componente, três modos ──────────────────────
+   Entrada (login, cadastro): voltar opcional · progresso ou título · idioma
+   Etapa de módulo: voltar · "Etapa X de Y · Módulo" + segmentos · ajuda
+   Tarefa avulsa: voltar · título · ajuda
+   Em todos os modos o texto do centro é igual: à esquerda, label-sm, text-subtle (padrão da tela Código por SMS).
+   Altura fixa de 56px; slots laterais de 48px sempre reservados, para o centro não pular. */
+
+.screen > .po-header {
+  flex: none;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: var(--space-inline-related);
+  width: 100%;
+  max-width: none;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 var(--space-100);
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: 0;
+}
+.screen > .po-header-entry { grid-template-columns: 48px minmax(0, 1fr) auto; }
+
+.po-header-slot { display: flex; align-items: center; justify-content: center; min-width: 48px; height: 48px; }
+.po-header-slot .po-header-action { margin: 0; }
+.po-header-entry .po-header-slot-end { padding-right: var(--space-050); }
+
+.po-header-center { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: var(--space-stack-tight); }
+.screen > .po-header .po-header-title {
+  margin: 0;
+  flex: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* Padrão escolhido pelo usuário (tela Código por SMS): texto à esquerda, mesmo tamanho e cor do rótulo de progresso */
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--type-label-sm-size);
+  line-height: var(--type-label-sm-line-height);
+  font-weight: var(--type-label-sm-weight);
+  color: var(--text-subtle);
+}
+.screen > .po-header .po-header-progress { flex: none; gap: var(--space-stack-tight); }
+.screen > .po-header .po-progress-label { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* Status bar: sempre na cor do header (as telas de status, sem header, ficam transparentes) */
+.statusbar.statusbar-white { background: var(--bg-surface); }
+.statusbar { font-family: var(--font-body); }

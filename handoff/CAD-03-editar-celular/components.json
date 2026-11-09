@@ -1,0 +1,1254 @@
+{
+ "screen": "CAD-03",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/CAD-03-editar-celular/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Editar celular",
+    "language": false,
+    "help": true
+   },
+   "behavior": {
+    "navega para": "otp-sms"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Editar celular\" language={false} help />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Editar celular",
+      "language": false,
+      "help": {}
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×56",
+      "DS": "375×40"
+     },
+     {
+      "parte": "header-slot",
+      "protótipo": "48×48",
+      "DS": "—"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "header-center",
+      "protótipo": "247×16",
+      "DS": "—"
+     },
+     {
+      "parte": "header-title",
+      "protótipo": "247×16",
+      "DS": "263×20"
+     },
+     {
+      "parte": "ícone (help)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "0px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "width",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "ícone (chevron_left)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "header-center",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-size",
+      "token": "--type-label-sm-size",
+      "cadeia": "--type-label-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "line-height",
+      "token": "--type-label-sm-line-height",
+      "cadeia": "--type-label-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "font-weight",
+      "token": "--type-label-sm-weight",
+      "cadeia": "--type-label-sm-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "header-title",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "ícone (help)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "56px",
+      "DS": "40px"
+     },
+     {
+      "onde": "header-title",
+      "prop": "tamanho",
+      "protótipo": "247×16",
+      "DS": "263×20"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 56,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > form:nth-of-type(1) > div:nth-of-type(1)",
+   "dsProps": {
+    "title": "Atualize seu celular",
+    "subtitle": "Informe o novo número para receber um novo código de verificação.",
+    "tone": "neutral",
+    "spaced": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "jsx": "<PageHeading title=\"Atualize seu celular\" subtitle=\"Informe o novo número para receber um novo código de verificação.\" tone=\"neutral\" spaced />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Atualize seu celular",
+      "subtitle": "Informe o novo número para receber um novo código de verificação.",
+      "tone": "neutral",
+      "spaced": true
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×88",
+      "DS": "327×80"
+     },
+     {
+      "parte": "heading-title",
+      "protótipo": "327×32",
+      "DS": "327×32"
+     },
+     {
+      "parte": "heading-sub",
+      "protótipo": "327×40",
+      "DS": "327×40"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-loose",
+      "cadeia": "--space-stack-loose",
+      "valor": "16px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-size",
+      "token": "--type-heading-xl-size",
+      "cadeia": "--type-heading-xl-size",
+      "valor": "24px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "line-height",
+      "token": "--type-heading-xl-line-height",
+      "cadeia": "--type-heading-xl-line-height",
+      "valor": "32px"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "font-weight",
+      "token": "--type-heading-xl-weight",
+      "cadeia": "--type-heading-xl-weight",
+      "valor": "700"
+     },
+     {
+      "parte": "heading-title",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "heading-sub",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "88px",
+      "DS": "80px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > form:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "label": "Celular",
+    "preset": "phone",
+    "name": "valor",
+    "placeholder": "(00) 00000-0000",
+    "autoComplete": "tel-national"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"Celular\" preset=\"phone\" name=\"valor\" placeholder=\"(00) 00000-0000\" autoComplete=\"tel-national\" />",
+   "states": [
+    "padrão",
+    "preenchido",
+    "erro (prop `error`, mostra FormMessage)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "phone"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Celular",
+      "preset": "phone",
+      "name": "valor",
+      "placeholder": "(00) 00000-0000",
+      "autoComplete": "tel-national"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Celular",
+      "preset": "phone",
+      "name": "valor",
+      "placeholder": "(00) 00000-0000",
+      "autoComplete": "tel-national",
+      "defaultValue": "(11) 98765-4321"
+     }
+    },
+    {
+     "label": "Erro",
+     "props": {
+      "label": "Celular",
+      "preset": "phone",
+      "name": "valor",
+      "placeholder": "(00) 00000-0000",
+      "autoComplete": "tel-national",
+      "defaultValue": "(11)",
+      "error": "Número de celular inválido. Use o formato (XX) XXXXX-XXXX."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×72",
+      "DS": "327×72"
+     },
+     {
+      "parte": "field-label",
+      "protótipo": "327×20",
+      "DS": "327×20"
+     },
+     {
+      "parte": "input",
+      "protótipo": "327×44",
+      "DS": "325×42"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "height",
+      "token": "--size-input",
+      "cadeia": "--size-input",
+      "valor": "44px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "padding",
+      "token": "--space-control-inline",
+      "cadeia": "--space-control-inline",
+      "valor": "0px 16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "1px solid rgb(97, 102, 116)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "background",
+      "token": "--bg-page",
+      "cadeia": "--bg-page → --neutral-50 → --gray-50",
+      "valor": "rgb(248, 249, 250) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-size",
+      "token": "--type-body-lg-size",
+      "cadeia": "--type-body-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "line-height",
+      "token": "--type-body-lg-line-height",
+      "cadeia": "--type-body-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "input",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-color",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "input",
+      "prop": "tamanho",
+      "protótipo": "327×44",
+      "DS": "325×42"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 72,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 4,
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > form:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "dsProps": {
+    "label": "Confirmar Celular",
+    "preset": "phone",
+    "name": "confirmacao",
+    "placeholder": "(00) 00000-0000"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "jsx": "<TextField label=\"Confirmar Celular\" preset=\"phone\" name=\"confirmacao\" placeholder=\"(00) 00000-0000\" />",
+   "states": [
+    "padrão",
+    "preenchido",
+    "erro (prop `error`, mostra FormMessage)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "phone"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "label": "Confirmar Celular",
+      "preset": "phone",
+      "name": "confirmacao",
+      "placeholder": "(00) 00000-0000"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Confirmar Celular",
+      "preset": "phone",
+      "name": "confirmacao",
+      "placeholder": "(00) 00000-0000",
+      "defaultValue": "(11) 98765-4321"
+     }
+    },
+    {
+     "label": "Erro",
+     "props": {
+      "label": "Confirmar Celular",
+      "preset": "phone",
+      "name": "confirmacao",
+      "placeholder": "(00) 00000-0000",
+      "defaultValue": "(11)",
+      "error": "Número de celular inválido. Use o formato (XX) XXXXX-XXXX."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×72",
+      "DS": "327×72"
+     },
+     {
+      "parte": "field-label",
+      "protótipo": "327×20",
+      "DS": "327×20"
+     },
+     {
+      "parte": "input",
+      "protótipo": "327×44",
+      "DS": "325×42"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-related",
+      "cadeia": "--space-stack-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-size",
+      "token": "--type-label-md-size",
+      "cadeia": "--type-label-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "line-height",
+      "token": "--type-label-md-line-height",
+      "cadeia": "--type-label-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-md-weight",
+      "cadeia": "--type-label-md-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "field-label",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "height",
+      "token": "--size-input",
+      "cadeia": "--size-input",
+      "valor": "44px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "padding",
+      "token": "--space-control-inline",
+      "cadeia": "--space-control-inline",
+      "valor": "0px 16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "1px solid rgb(97, 102, 116)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "background",
+      "token": "--bg-page",
+      "cadeia": "--bg-page → --neutral-50 → --gray-50",
+      "valor": "rgb(248, 249, 250) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-size",
+      "token": "--type-body-lg-size",
+      "cadeia": "--type-body-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "line-height",
+      "token": "--type-body-lg-line-height",
+      "cadeia": "--type-body-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "input",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "input",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "input",
+      "propriedade": "border-color",
+      "token": "--border-input",
+      "cadeia": "--border-input → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "input",
+      "prop": "tamanho",
+      "protótipo": "327×44",
+      "DS": "325×42"
+     }
+    ],
+    "toque": {
+     "w": 327,
+     "h": 72,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 5,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > form:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "primary",
+    "fullWidth": true,
+    "type": "submit",
+    "children": "Confirmar e enviar código"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"primary\" fullWidth type=\"submit\">Confirmar e enviar código</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "fullWidth": true,
+      "children": "Confirmar e enviar código"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×50",
+      "DS": "327×50"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "199×24",
+      "DS": "199×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-brand-bold",
+      "cadeia": "--bg-brand-bold → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-on-brand",
+      "cadeia": "--text-on-brand → --brand-on → --gray-0",
+      "valor": "rgb(255, 255, 255)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 50,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 6,
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "selector": "#editar-celular > footer:nth-of-type(1)",
+   "dsProps": {
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "jsx": "<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×48",
+      "DS": "375×77"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "8px 16px 24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-body-sm-size",
+      "cadeia": "--type-body-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-body-sm-line-height",
+      "cadeia": "--type-body-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-body-sm-weight",
+      "cadeia": "--type-body-sm-weight",
+      "valor": "400"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-subtle",
+      "cadeia": "--text-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "48px",
+      "DS": "77px"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [
+  {
+   "component": "FormMessage",
+   "props": "via `error` do TextField",
+   "when": "Formato inválido ou números diferentes.",
+   "inDs": true
+  }
+ ],
+ "localClasses": {}
+}

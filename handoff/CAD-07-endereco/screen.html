@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAD-07 · Endereço · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela CAD-07 (endereco), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen screen-page" id="endereco" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="email-atualizado"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <form class="page page-ds" id="endereco-form" novalidate="">
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Qual é o seu endereço?</h1>
+          <p class="po-heading-sub">Informe onde você mora para concluir o cadastro.</p>
+        </div>
+        <div class="fields fields-address">
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="end-cep">CEP</label>
+            <input class="po-input po-input-lg" id="end-cep" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" data-mask="cep" required="">
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="end-rua">Rua</label>
+            <input class="po-input po-input-lg" id="end-rua" name="rua" autocomplete="address-line1" placeholder="Nome da rua" required="">
+          </div>
+          <div class="po-row-fields row-align-end">
+            <div class="po-field po-field-lg field-number">
+              <label class="po-field-label" for="end-num">Número</label>
+              <input class="po-input po-input-lg" id="end-num" name="numero" inputmode="numeric" placeholder="000" required="">
+            </div>
+            <div class="po-field po-field-lg field-grow">
+              <label class="po-field-label" for="end-comp">Complemento (Opcional)</label>
+              <input class="po-input po-input-lg" id="end-comp" name="complemento" autocomplete="address-line2" placeholder="Apto, bloco">
+            </div>
+          </div>
+          <label class="po-check"><input type="checkbox" class="po-check-input" name="sem-complemento"><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+          <div class="po-row-fields">
+            <div class="po-field po-field-lg field-grow">
+              <label class="po-field-label" for="po-sel-1-btn">Cidade</label>
+              <div class="po-select po-select-empty">
+                <button type="button" id="po-sel-1-btn" class="po-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="po-sel-1-menu" disabled=""><span class="po-select-value">Selecione a cidade</span></button><select id="end-cidade" name="cidade" required="" disabled="" data-enhanced="1" class="po-select-native" tabindex="-1" aria-hidden="true"><option value="" disabled="" selected="">Selecione a cidade</option></select>
+                <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+              <ul id="po-sel-1-menu" class="po-select-menu" role="listbox" aria-labelledby="po-sel-1-btn" hidden=""></ul></div>
+            </div>
+            <div class="po-field po-field-lg field-state">
+              <label class="po-field-label" for="po-sel-2-btn">Estado</label>
+              <div class="po-select po-select-empty">
+                <button type="button" id="po-sel-2-btn" class="po-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="po-sel-2-menu"><span class="po-select-value">Selecione</span></button><select id="end-uf" name="uf" required="" data-enhanced="1" class="po-select-native" tabindex="-1" aria-hidden="true"><option value="" disabled="" selected="">Selecione</option><option value="SP">SP</option><option value="RJ">RJ</option><option value="MG">MG</option><option value="PR">PR</option><option value="RS">RS</option><option value="BA">BA</option><option value="PE">PE</option><option value="DF">DF</option></select>
+                <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+              <ul id="po-sel-2-menu" class="po-select-menu" role="listbox" aria-labelledby="po-sel-2-btn" hidden=""></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block"><span class="po-btn-content">Continuar</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+</body>
+</html>

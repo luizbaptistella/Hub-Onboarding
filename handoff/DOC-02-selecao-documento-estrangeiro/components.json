@@ -1,0 +1,1470 @@
+{
+ "screen": "DOC-02",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-02-selecao-documento-estrangeiro/telas/fechada/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Captura de documentos",
+    "progress": {
+     "current": 2,
+     "total": 4
+    },
+    "language": false,
+    "help": {
+     "label": "Ajuda"
+    }
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Captura de documentos\" progress={{ current: 2, total: 4 }} language={false} help={{ label: \"Ajuda\" }} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Captura de documentos",
+      "progress": {
+       "current": 2,
+       "total": 4
+      },
+      "language": false,
+      "help": {
+       "label": "Ajuda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "neutral",
+    "title": "Documento de identidade",
+    "subtitle": "Escolha o documento que você vai enviar. Depois, escolha como enviar."
+   },
+   "behavior": null,
+   "jsx": "<PageHeading tone=\"neutral\" title=\"Documento de identidade\" subtitle=\"Escolha o documento que você vai enviar. Depois, escolha como enviar.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "neutral",
+      "title": "Documento de identidade",
+      "subtitle": "Escolha o documento que você vai enviar. Depois, escolha como enviar."
+     }
+    }
+   ]
+  },
+  {
+   "component": "DocumentOption",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DocumentOption/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "value": "crnm",
+    "title": "CRNM",
+    "description": "Carteira de Registro Nacional Migratório"
+   },
+   "behavior": null,
+   "jsx": "<DocumentOption value=\"crnm\" title=\"CRNM\" description=\"Carteira de Registro Nacional Migratório\" />",
+   "states": [],
+   "propOptions": {
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "expanded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "value": "crnm",
+      "title": "CRNM",
+      "description": "Carteira de Registro Nacional Migratório"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DocumentOption",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DocumentOption/README.md",
+   "unknownProps": null,
+   "id": 4,
+   "dsProps": {
+    "value": "dprnm",
+    "title": "DPRNM",
+    "description": "Documento Provisório de Registro Nacional Migratório"
+   },
+   "behavior": null,
+   "jsx": "<DocumentOption value=\"dprnm\" title=\"DPRNM\" description=\"Documento Provisório de Registro Nacional Migratório\" />",
+   "states": [],
+   "propOptions": {
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "expanded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "value": "dprnm",
+      "title": "DPRNM",
+      "description": "Documento Provisório de Registro Nacional Migratório"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DocumentOption",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DocumentOption/README.md",
+   "unknownProps": null,
+   "id": 5,
+   "dsProps": {
+    "value": "rne",
+    "title": "RNE",
+    "description": "Registro Nacional de Estrangeiros"
+   },
+   "behavior": null,
+   "jsx": "<DocumentOption value=\"rne\" title=\"RNE\" description=\"Registro Nacional de Estrangeiros\" />",
+   "states": [],
+   "propOptions": {
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "expanded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "value": "rne",
+      "title": "RNE",
+      "description": "Registro Nacional de Estrangeiros"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DocumentOption",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DocumentOption/README.md",
+   "unknownProps": null,
+   "id": 6,
+   "dsProps": {
+    "value": "passaporte",
+    "title": "Passaporte",
+    "description": "Documento internacional"
+   },
+   "behavior": null,
+   "jsx": "<DocumentOption value=\"passaporte\" title=\"Passaporte\" description=\"Documento internacional\" />",
+   "states": [],
+   "propOptions": {
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "expanded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "value": "passaporte",
+      "title": "Passaporte",
+      "description": "Documento internacional"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DocumentOption",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DocumentOption/README.md",
+   "unknownProps": null,
+   "id": 7,
+   "dsProps": {
+    "value": "cedula",
+    "title": "Cédula de identidade",
+    "description": "Documento de identidade do país de origem (Mercosul)"
+   },
+   "behavior": null,
+   "jsx": "<DocumentOption value=\"cedula\" title=\"Cédula de identidade\" description=\"Documento de identidade do país de origem (Mercosul)\" />",
+   "states": [],
+   "propOptions": {
+    "selected": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "expanded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "value": "cedula",
+      "title": "Cédula de identidade",
+      "description": "Documento de identidade do país de origem (Mercosul)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > footer:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "unknownProps": null,
+   "id": 8,
+   "dsProps": {},
+   "behavior": null,
+   "jsx": "<LegalFooter />",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {}
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 9
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Lista fechada",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "CRNM aberto",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": "crnm"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"crnm\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "DPRNM aberto",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": "dprnm"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"dprnm\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "RNE aberto (sem Figma)",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": "rne"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"rne\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Passaporte aberto",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": "passaporte"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"passaporte\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "RadioGroup",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RadioGroup/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Cédula aberta",
+   "dsProps": {
+    "legend": "Qual documento você vai enviar?",
+    "hideLegend": true,
+    "value": "cedula"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<RadioGroup legend=\"Qual documento você vai enviar?\" hideLegend value=\"cedula\" onChange={() => {}} />",
+   "states": [
+    "Lista fechada",
+    "CRNM aberto",
+    "DPRNM aberto",
+    "RNE aberto (sem Figma)",
+    "Passaporte aberto",
+    "Cédula aberta"
+   ],
+   "propOptions": {
+    "hideLegend": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Lista fechada",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "crnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "dprnm",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "rne",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "passaporte",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "legend": "Qual documento você vai enviar?",
+      "hideLegend": true,
+      "value": "cedula",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1007,
+   "variant": "CRNM aberto",
+   "dsProps": {
+    "icon": "camera",
+    "description": "A câmera captura a frente e o verso sozinha",
+    "children": "Tirar foto do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"camera\" description=\"A câmera captura a frente e o verso sozinha\">Tirar foto do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "camera"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "icon": "camera",
+      "description": "A câmera captura a frente e o verso sozinha",
+      "children": "Tirar foto do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1008,
+   "variant": "CRNM aberto",
+   "dsProps": {
+    "icon": "upload",
+    "description": "Arquivo em PDF, de até 5 MB",
+    "children": "Fazer upload do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"upload\" description=\"Arquivo em PDF, de até 5 MB\">Fazer upload do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "upload"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "CRNM aberto",
+     "props": {
+      "icon": "upload",
+      "description": "Arquivo em PDF, de até 5 MB",
+      "children": "Fazer upload do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1009,
+   "variant": "DPRNM aberto",
+   "dsProps": {
+    "icon": "camera",
+    "description": "A câmera captura a frente e o verso sozinha",
+    "children": "Tirar foto do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"camera\" description=\"A câmera captura a frente e o verso sozinha\">Tirar foto do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "camera"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "icon": "camera",
+      "description": "A câmera captura a frente e o verso sozinha",
+      "children": "Tirar foto do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1010,
+   "variant": "DPRNM aberto",
+   "dsProps": {
+    "icon": "upload",
+    "description": "Arquivo em PDF, de até 5 MB",
+    "children": "Fazer upload do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"upload\" description=\"Arquivo em PDF, de até 5 MB\">Fazer upload do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "upload"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "DPRNM aberto",
+     "props": {
+      "icon": "upload",
+      "description": "Arquivo em PDF, de até 5 MB",
+      "children": "Fazer upload do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1011,
+   "variant": "RNE aberto (sem Figma)",
+   "dsProps": {
+    "icon": "camera",
+    "description": "A câmera captura a frente e o verso sozinha",
+    "children": "Tirar foto do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"camera\" description=\"A câmera captura a frente e o verso sozinha\">Tirar foto do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "camera"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "icon": "camera",
+      "description": "A câmera captura a frente e o verso sozinha",
+      "children": "Tirar foto do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1012,
+   "variant": "RNE aberto (sem Figma)",
+   "dsProps": {
+    "icon": "upload",
+    "description": "Arquivo em PDF, de até 5 MB",
+    "children": "Fazer upload do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"upload\" description=\"Arquivo em PDF, de até 5 MB\">Fazer upload do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "upload"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "RNE aberto (sem Figma)",
+     "props": {
+      "icon": "upload",
+      "description": "Arquivo em PDF, de até 5 MB",
+      "children": "Fazer upload do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1013,
+   "variant": "Passaporte aberto",
+   "dsProps": {
+    "icon": "camera",
+    "description": "Página com sua foto e a faixa de código",
+    "children": "Tirar foto do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"camera\" description=\"Página com sua foto e a faixa de código\">Tirar foto do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "camera"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Passaporte aberto",
+     "props": {
+      "icon": "camera",
+      "description": "Página com sua foto e a faixa de código",
+      "children": "Tirar foto do documento"
+     }
+    }
+   ]
+  },
+  {
+   "component": "ActionRow",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > fieldset:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ActionRow/README.md",
+   "unknownProps": null,
+   "id": 1014,
+   "variant": "Cédula aberta",
+   "dsProps": {
+    "icon": "camera",
+    "description": "Antes, você informa o país e o tipo do documento",
+    "children": "Tirar foto do documento"
+   },
+   "behavior": null,
+   "jsx": "<ActionRow icon=\"camera\" description=\"Antes, você informa o país e o tipo do documento\">Tirar foto do documento</ActionRow>",
+   "states": [],
+   "propOptions": {
+    "icon": {
+     "options": [
+      "camera",
+      "upload"
+     ],
+     "used": "camera"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Cédula aberta",
+     "props": {
+      "icon": "camera",
+      "description": "Antes, você informa o país e o tipo do documento",
+      "children": "Tirar foto do documento"
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJD-01 · Ajuda · abrir chamado · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela AJD-01 (ajuda-form), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen area-screen ajd-screen" id="ajuda-form" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Ajuda e atendimento</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <form class="area-body ajd-body" id="ajuda-form-el" novalidate="">
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Como podemos ajudar?</h1>
+        </div>
+
+        <div class="po-field">
+          <label class="po-field-label" for="po-sel-5-btn">Categoria</label>
+          <div class="po-select po-select-empty">
+            <button type="button" id="po-sel-5-btn" class="po-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="po-sel-5-menu"><span class="po-select-value">Selecione a categoria</span></button><select id="ajd-categoria" name="categoria" required="" data-enhanced="1" class="po-select-native" tabindex="-1" aria-hidden="true">
+              <option value="" disabled="" selected="">Selecione a categoria</option>
+              <option>Cadastro e dados pessoais</option>
+              <option>Familiares</option>
+              <option>Documentos</option>
+              <option>Biometria facial</option>
+              <option>Acesso e segurança</option>
+              <option>Sócio torcedor</option>
+              <option>Outros</option>
+            </select>
+            <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+          <ul id="po-sel-5-menu" class="po-select-menu" role="listbox" aria-labelledby="po-sel-5-btn" hidden=""></ul></div>
+        </div>
+
+        <div class="po-field">
+          <label class="po-field-label" for="ajd-descricao">O que aconteceu?</label>
+          <textarea class="po-input po-input-md ajd-textarea" id="ajd-descricao" name="descricao" rows="4" maxlength="1000" placeholder="Conte o problema e o que você tentou fazer"></textarea>
+          <p class="po-field-hint" id="ajd-descricao-count" hidden=""></p>
+        </div>
+
+        <div class="ajd-anexos">
+          <label class="ajd-anexar" for="ajd-anexos"><span class="po-icon" aria-hidden="true">attach_file</span>Anexar print ou foto (até 3)</label>
+          <input class="po-sr-only" type="file" id="ajd-anexos" name="anexos" multiple="" accept="image/jpeg,image/png,application/pdf">
+          <p class="ajd-caption" id="ajd-anexos-status" hidden=""></p>
+        </div>
+
+        <p class="ajd-contato">Resposta para <strong>roberto****@email.com</strong> e (11) 9****-4321. <button type="button" class="ajd-link" data-go="area-cadastro-detalhe">Alterar</button></p>
+        <p class="ajd-caption"><span class="po-icon" aria-hidden="true">shield</span><span>Não envie senhas nem códigos de verificação.</span></p>
+
+        <div class="ajd-actions">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block" id="ajd-submit"><span class="po-btn-content">Abrir chamado</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1612 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmeiras Onboarding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="design-system/tokens.css">
+<link rel="stylesheet" href="design-system/tokens-onboarding.css?v=accent-a">
+<link rel="stylesheet" href="design-system/components.css?v=sel1">
+<link rel="stylesheet" href="app.css?v=foot2">
+<link rel="stylesheet" href="liveness.css">
+<link rel="stylesheet" href="area.css?v=faxina1">
+<link rel="stylesheet" href="photo.css?v=merge1">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="proto-ds.css?v=faxina1">
+<link rel="stylesheet" href="theme.css?v=3">
+<link rel="stylesheet" href="select.css">
+<link rel="stylesheet" href="desvincular.css">
+<link rel="stylesheet" href="familiar-busca.css?v=busca35">
+<link rel="stylesheet" href="familiar-pendentes.css?v=pend34">
+<main class="proto">
+  <nav class="proto-nav" aria-label="Telas">
+    <h2>Palmeiras · Onboarding</h2>
+    <button type="button" data-go="login">login-01</button>
+    <button type="button" data-go="cadastro">Cadastro 1/4 · Dados pessoais</button>
+    <button type="button" data-go="otp-sms">Código por SMS</button>
+    <button type="button" data-go="editar-celular">Editar celular</button>
+    <button type="button" data-go="otp-email">Código por e-mail</button>
+    <button type="button" data-go="editar-email">Editar e-mail</button>
+    <button type="button" data-go="email-atualizado">E-mail atualizado</button>
+    <button type="button" data-go="endereco">Endereço</button>
+    <button type="button" data-go="status">Tela de status</button>
+    <button type="button" data-go="documento">Seleção de documento</button>
+    <p class="proto-group">Validação facial</p>
+    <button type="button" data-go="liv-tutorial">Tutorial da captura</button>
+    <button type="button" data-go="liv-face">Captura facial</button>
+    <button type="button" data-go="liv-review">Conferência da foto</button>
+    <button type="button" data-go="liv-lock">Bloqueio (3 tentativas)</button>
+    <button type="button" data-go="liv-error">Erro com suporte</button>
+    <button type="button" data-go="liv-done">Dados recebidos</button>
+    <p class="proto-group">Controles da captura</p>
+    <button type="button" id="lv-approve" disabled>Rosto aprovado</button>
+    <button type="button" id="lv-reject" disabled>Rosto reprovado</button>
+    <button type="button" id="lv-rotate">Girar para horizontal</button>
+    <button type="button" id="lv-unlock" disabled>Encerrar bloqueio</button>
+    <p class="proto-group">Área logada</p>
+    <button type="button" data-go="area-cadastro-detalhe">Meus cadastro</button>
+    <p class="proto-group">Cenário do cadastro (titular)</p>
+    <button type="button" data-cenario="completo" aria-pressed="false">Completo</button>
+    <button type="button" data-cenario="pendente" aria-pressed="false">Pendente</button>
+    <button type="button" data-cenario="reprovado" aria-pressed="false">Reprovado</button>
+    <button type="button" data-cenario="analise" aria-pressed="false">Em análise</button>
+    <button type="button" data-cenario="contatos-pendente" aria-pressed="false">Contatos · ação necessária</button>
+    <button type="button" data-cenario="contatos-analise" aria-pressed="false">Contatos · em análise</button>
+    <button type="button" data-cenario="dados-pendente" aria-pressed="false">Dados · ação necessária</button>
+    <button type="button" data-cenario="dados-reprovado" aria-pressed="false">Dados · reprovado</button>
+    <button type="button" data-cenario="dados-analise" aria-pressed="false">Dados · em análise</button>
+    <button type="button" data-cenario="identidade-bloqueada" aria-pressed="false">Identidade · bloqueada</button>
+    <button type="button" data-cenario="beneficio-reprovado" aria-pressed="false">Benefício · reprovado</button>
+    <button type="button" data-cenario="beneficio-analise" aria-pressed="false">Benefício · em análise</button>
+    <button type="button" data-cenario="beneficio-aguardando" aria-pressed="false">Benefício · aguardando</button>
+    <button type="button" data-go="seguranca">Segurança</button>
+    <button type="button" data-go="encerrar-conta">Encerrar conta</button>
+    <button type="button" data-go="area-familiares-vazio">Meus familiares · vazio</button>
+    <button type="button" data-go="familiar-recebidos">Convidado · convite e familiares</button>
+    <button type="button" data-go="convite-link" data-convite-state="inicial">Convidado sem conta · entrada pelo link</button>
+    <button type="button" data-go="convite-link" data-convite-state="divergente">Convidado sem conta · CPF divergente</button>
+    <button type="button" data-go="familiar-recebidos" data-rec-state="primeiro">Convidado · primeiro convite (sem vínculos)</button>
+    <button type="button" data-go="familiar-busca" data-busca-state="inicial">Vincular familiar · Busca</button>
+    <button type="button" data-go="familiar-busca" data-busca-state="nao-encontrado">Vincular familiar · Não encontrado</button>
+    <button type="button" data-go="familiar-busca" data-busca-state="limite">Vincular familiar · Limite de consultas</button>
+    <button type="button" data-go="familiar-vinculo">Vincular familiar · Card (conta ativa)</button>
+    <button type="button" data-go="familiar-contatos">Vincular familiar · Contatos e convite</button>
+    <button type="button" data-go="familiar-cadastro">Vincular familiar · Cadastro sem conta</button>
+    <button type="button" data-go="familiar-decisao">Vincular familiar · Decisão (maior de idade)</button>
+    <button type="button" data-go="familiar-termo">Vincular familiar · Termo (menor de idade)</button>
+    <button type="button" data-go="ajuda-form">Ajuda · Formulário do chamado</button>
+    <button type="button" data-go="ajuda-enviado">Ajuda · Chamado aberto</button>
+    <button type="button" data-go="familiar-intro">Adicionar familiar · Introdução</button>
+    <p class="proto-hint">Tentativas: <span id="lv-attempts">0 de 3</span></p>
+    <p class="proto-hint">Login e cadastro: <strong>DESIGN-SYSTEM.md</strong>. Demais telas: artefato <strong>Palmeiras · Onboarding</strong>. Mesmo Figma (<code>MVP Palmeiras - Benefício</code>).</p>
+    <p class="proto-hint">Código de demonstração: <strong>123456</strong>. Qualquer outro conta como tentativa errada.</p>
+  </nav>
+
+  <div class="device">
+
+    <!-- ── login-01 (1620:26870) ─────────────────────── -->
+    <section class="screen screen-login" id="login" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-entry">
+        <div class="po-header-slot"></div>
+        <div class="po-header-center"><p class="po-header-title">Login</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button></div>
+      </header>
+
+      <form class="page page-ds" id="login-form" novalidate>
+        <div class="logo" aria-hidden="true">
+          <img class="logo-bg" src="design-system/assets/logo-palmeiras-bg-ellipse.svg" alt="">
+          <img class="logo-mark" src="design-system/assets/logo-palmeiras.png" alt="">
+        </div>
+
+        <div class="po-heading">
+          <h1 class="po-heading-title">Faça seu login</h1>
+          <p class="po-heading-sub">Faça seu login para começar ou cadastre-se.</p>
+        </div>
+
+        <div class="po-alert po-alert-info" id="login-conta-encerrada" role="status" hidden><span class="po-alert-icon"><span class="po-icon" aria-hidden="true">info</span></span><div class="po-alert-text"><p class="po-alert-title">Sua conta foi encerrada.</p><p class="po-alert-body">O cadastro ficou inativo. Para voltar, fale com o atendimento.</p></div></div>
+
+        <div class="fields fields-edit">
+          <div class="po-field">
+            <label class="po-field-label" for="login-cpf">Número do seu CPF</label>
+            <input class="po-input po-input-md" id="login-cpf" name="cpf" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" data-mask="cpf">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="login-senha">Senha</label>
+            <input class="po-input po-input-md" id="login-senha" name="senha" type="password" autocomplete="current-password" placeholder="Digite sua senha">
+          </div>
+          <button type="button" class="po-link proto-soon">Esqueceu sua senha?</button>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block" id="login-submit"><span class="po-btn-content">Entrar</span></button>
+          <button type="button" class="po-btn po-btn-accent po-btn-block" data-go="cadastro"><span class="po-btn-content">Criar cadastro</span></button>
+        </div>
+
+        <div class="divider" role="separator"><span></span><p>ou entrar com:</p><span></span></div>
+
+        <div class="social-row">
+          <button type="button" class="social" aria-label="Entrar com Google"><img src="design-system/assets/icon-google.svg" alt="" width="32" height="32"></button>
+          <button type="button" class="social" aria-label="Entrar com Apple"><img src="design-system/assets/icon-apple.svg" alt="" width="32" height="32"></button>
+          <button type="button" class="social" aria-label="Entrar com Microsoft"><span class="ms" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+        </div>
+      </form>
+
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Cadastro / Mobile 1/4 (1619:11919) ────────── -->
+    <section class="screen" id="cadastro" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-entry">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="login"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button></div>
+      </header>
+
+      <form class="page page-ds" id="cadastro-form" novalidate>
+        <div class="heading-tabs">
+          <div class="po-heading">
+            <h1 class="po-heading-title">Bem-vindo(a) ao Palmeiras</h1>
+            <p class="po-heading-sub">Crie o seu cadastro em poucos passos</p>
+          </div>
+          <div class="po-tabs" role="tablist" aria-label="Nacionalidade">
+            <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true">Brasileiro</button>
+            <button type="button" role="tab" class="po-tab" aria-selected="false">Estrangeiro</button>
+          </div>
+        </div>
+
+        <div class="fields fields-edit">
+          <div class="po-field">
+            <label class="po-field-label" for="cad-cpf">Número do seu CPF</label>
+            <input class="po-input po-input-md" id="cad-cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" data-mask="cpf">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="cad-nasc">Data de nascimento</label>
+            <input class="po-input po-input-md" id="cad-nasc" name="nascimento" inputmode="numeric" placeholder="DD/MM/AAAA" data-mask="data">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="cad-cel">Número do seu celular</label>
+            <input class="po-input po-input-md" id="cad-cel" name="celular" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000" data-mask="celular">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="cad-email">Seu e-mail</label>
+            <input class="po-input po-input-md" id="cad-email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com">
+          </div>
+        </div>
+
+        <div class="foot">
+          <div class="checks">
+            <div class="po-field"><label class="po-check"><input type="checkbox" class="po-check-input" id="cad-termos" name="termos"><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Li e concordo com os <button type="button" class="po-link po-link-inline proto-soon">Termos de Uso</button>.</span></label></div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" id="cad-marketing" name="marketing"><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Quero receber novidades e ofertas do Palmeiras.</span></label>
+          </div>
+          <button type="submit" class="po-btn po-btn-primary po-btn-block" id="cadastro-submit"><span class="po-btn-content">Iniciar validação</span></button>
+        </div>
+      </form>
+
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── OTP / Mobile / SMS (1620:29884) ───────────── -->
+    <section class="screen screen-page" id="otp-sms" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="cadastro"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds otp-page">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Insira o seu código</h1>
+          <div class="po-contact">
+            <span class="po-contact-value"><span class="po-icon s16" aria-hidden="true">sms</span><span data-bind="phone"></span></span>
+            <button type="button" class="po-contact-edit" data-go="editar-celular"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar Celular</button>
+          </div>
+          <p class="po-heading-sub">Enviamos um código de 6 dígitos por SMS para o seu celular.</p>
+        </div>
+        <div class="otp-block" data-otp="sms"></div>
+      </div>
+      <p class="po-resend"><span>Não recebeu o código?</span><button type="button" class="po-resend-action" data-resend="sms">Reenviar código</button></p>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Editar celular (Header/Mobile com título) ──── -->
+    <section class="screen screen-page" id="editar-celular" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="otp-sms"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Editar celular</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <form class="page page-ds" id="editar-celular-form" novalidate>
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Atualize seu celular</h1>
+          <p class="po-heading-sub">Informe o novo número para receber um novo código de verificação.</p>
+        </div>
+        <div class="fields fields-edit">
+          <div class="po-field">
+            <label class="po-field-label" for="ed-cel">Celular</label>
+            <input class="po-input po-input-md" id="ed-cel" name="valor" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000" data-mask="celular">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="ed-cel2">Confirmar Celular</label>
+            <input class="po-input po-input-md" id="ed-cel2" name="confirmacao" inputmode="tel" placeholder="(00) 00000-0000" data-mask="celular">
+          </div>
+        </div>
+        <div class="foot">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block"><span class="po-btn-content">Confirmar e enviar código</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── OTP / Mobile / e-mail (1619:11471) ────────── -->
+    <section class="screen screen-page" id="otp-email" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="otp-sms"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="toast-slot" id="email-toast" hidden>
+        <div class="po-toast" role="status">
+          <span class="po-toast-icon"><span class="po-icon s20" aria-hidden="true">check_circle</span></span>
+          <p class="po-toast-title">E-mail alterado com sucesso</p>
+          <button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-xs po-toast-close" aria-label="Fechar" title="Fechar"><span class="po-btn-content"><span class="po-icon s16" aria-hidden="true">close</span></span></button>
+        </div>
+      </div>
+      <div class="page page-ds otp-page">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Insira o seu código</h1>
+          <p class="po-heading-sub">Enviamos um código de 6 dígitos para o seu e-mail.</p>
+          <div class="po-contact po-contact-email">
+            <span class="po-contact-value"><span class="po-icon s20" aria-hidden="true">mail</span><span data-bind="email"></span></span>
+            <button type="button" class="po-contact-edit" data-go="editar-email"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar Email</button>
+          </div>
+        </div>
+        <div class="otp-block" data-otp="email"></div>
+      </div>
+      <p class="po-resend"><span>Não recebeu o código?</span><button type="button" class="po-resend-action" data-resend="email">Reenviar código</button></p>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Editar e-mail (mesmo layout de editar celular) ── -->
+    <section class="screen screen-page" id="editar-email" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="otp-email"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Editar e-mail</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <form class="page page-ds" id="editar-email-form" novalidate>
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Atualize seu e-mail</h1>
+          <p class="po-heading-sub">Informe o novo e-mail para receber um novo código de verificação.</p>
+        </div>
+        <div class="fields fields-edit">
+          <div class="po-field">
+            <label class="po-field-label" for="ed-email">E-mail</label>
+            <input class="po-input po-input-md" id="ed-email" name="valor" type="email" autocomplete="email" placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="po-field">
+            <label class="po-field-label" for="ed-email2">Confirmar E-mail</label>
+            <input class="po-input po-input-md" id="ed-email2" name="confirmacao" type="email" placeholder="seuemail@exemplo.com">
+          </div>
+        </div>
+        <div class="foot">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block"><span class="po-btn-content">Confirmar e enviar código</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── E-mail atualizado ───────────────────────────── -->
+    <section class="screen screen-page" id="email-atualizado" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="otp-email"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds page-center">
+        <div class="po-hero">
+          <span class="po-hero-badge" aria-hidden="true"><span class="po-hero-badge-inner"><span class="po-icon s32" aria-hidden="true">mail</span></span></span>
+          <div class="po-hero-text">
+            <h1 class="po-hero-title" data-bind="hero-title">E-mail atualizado com sucesso!</h1>
+            <p class="po-hero-desc">Agora vamos completar o seu cadastro com o seu endereço.</p>
+          </div>
+        </div>
+        <div class="po-status" role="status">
+          <span class="po-status-icon"><span class="po-icon s20 fill" aria-hidden="true">check_circle</span></span>
+          <div class="po-status-text"><p class="po-status-title">E-mail verificado</p><p class="po-status-desc">Validação de e-mail concluída com sucesso.</p></div>
+        </div>
+        <div class="foot">
+          <button type="button" class="po-btn po-btn-primary po-btn-block" data-go="endereco"><span class="po-btn-content">Continuar</span></button>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Endereço (1619:11471) ───────────────────────── -->
+    <section class="screen screen-page" id="endereco" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="email-atualizado"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 1 de 4 · Cadastro</span><div class="po-progress-track" role="progressbar" aria-label="Cadastro" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Etapa 1 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <form class="page page-ds" id="endereco-form" novalidate>
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Qual é o seu endereço?</h1>
+          <p class="po-heading-sub">Informe onde você mora para concluir o cadastro.</p>
+        </div>
+        <div class="fields fields-address">
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="end-cep">CEP</label>
+            <input class="po-input po-input-lg" id="end-cep" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" data-mask="cep" required>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="end-rua">Rua</label>
+            <input class="po-input po-input-lg" id="end-rua" name="rua" autocomplete="address-line1" placeholder="Nome da rua" required>
+          </div>
+          <div class="po-row-fields row-align-end">
+            <div class="po-field po-field-lg field-number">
+              <label class="po-field-label" for="end-num">Número</label>
+              <input class="po-input po-input-lg" id="end-num" name="numero" inputmode="numeric" placeholder="000" required>
+            </div>
+            <div class="po-field po-field-lg field-grow">
+              <label class="po-field-label" for="end-comp">Complemento (Opcional)</label>
+              <input class="po-input po-input-lg" id="end-comp" name="complemento" autocomplete="address-line2" placeholder="Apto, bloco">
+            </div>
+          </div>
+          <label class="po-check"><input type="checkbox" class="po-check-input" name="sem-complemento"><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+          <div class="po-row-fields">
+            <div class="po-field po-field-lg field-grow">
+              <label class="po-field-label" for="end-cidade">Cidade</label>
+              <div class="po-select po-select-empty">
+                <select id="end-cidade" name="cidade" required disabled><option value="" disabled selected>Selecione a cidade</option></select>
+                <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+              </div>
+            </div>
+            <div class="po-field po-field-lg field-state">
+              <label class="po-field-label" for="end-uf">Estado</label>
+              <div class="po-select po-select-empty">
+                <select id="end-uf" name="uf" required><option value="" disabled selected>Selecione</option></select>
+                <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block"><span class="po-btn-content">Continuar</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Tela de status (2198:23407) ─────────────────── -->
+    <section class="screen screen-status" id="status" data-screen hidden>
+      <div class="statusbar statusbar-dark"><span>9:41</span></div>
+      <div class="po-status-screen">
+        <div class="po-status-screen-head">
+          <img src="design-system/assets/status-badge-success.svg" alt="" width="80" height="80">
+          <h1 class="po-status-screen-title">Recebemos seus dados cadastrais!</h1>
+        </div>
+        <div class="po-status-screen-body">
+          <ol class="po-journey">
+            <li class="po-journey-step po-journey-done">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s26 bold" aria-hidden="true">check</span></span><span class="po-journey-label">Cadastro</span></div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-current" aria-current="step">
+              <div class="po-journey-row">
+                <span class="po-journey-circle"><span class="po-icon s28" aria-hidden="true">description</span></span>
+                <span class="po-journey-pill">
+                  <svg class="po-journey-pill-bg" viewBox="0 0 251 40" preserveAspectRatio="none" aria-hidden="true"><path d="M6.97 20.5C6.97 6.5 0 0 0 0h243.03C247.43 0 251 3.58 251 8v24c0 4.42-3.57 8-7.97 8H0s6.97-6.5 6.97-19.5Z"/></svg>
+                  <span class="po-journey-label">Captura de documentos</span>
+                </span>
+              </div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-upcoming">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s22" aria-hidden="true">familiar_face_and_zone</span></span><span class="po-journey-label">Biometria facial</span></div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-upcoming">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s22" aria-hidden="true">assignment_turned_in</span></span><span class="po-journey-label">Validação de benefícios</span></div>
+            </li>
+          </ol>
+        </div>
+        <div class="po-status-screen-foot">
+          <div class="po-countdown">
+            <span class="po-countdown-number" id="countdown" aria-hidden="true">10</span>
+            <p class="po-countdown-text">Redirecionando para a captura de documentos de identidade...</p>
+          </div>
+          <div class="lv-done-actions">
+            <button type="button" class="po-btn po-btn-sm lv-done-now" id="st-now"><span class="po-btn-content"><span>Continuar agora</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+          </div>
+          <p class="po-sr-only" id="st-live" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Seleção de documento de identidade 5-1 (1928:61728) ── -->
+    <section class="screen screen-white" id="documento" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="status"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 2 de 4 · Captura de documentos</span><div class="po-progress-track" role="progressbar" aria-label="Captura de documentos" aria-valuemin="1" aria-valuemax="4" aria-valuenow="2" aria-valuetext="Etapa 2 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds">
+        <div class="po-heading heading-doc">
+          <h1 class="po-heading-title po-heading-neutral">Escolha um documento</h1>
+          <p class="po-heading-sub">Selecione um dos documentos listados abaixo para continuar com a validação.</p>
+        </div>
+        <div class="doc-list" role="radiogroup" aria-label="Documento de identidade" id="doc-list">
+          <div class="po-docopt" data-doc="cin">
+            <label class="po-docopt-head" for="doc-cin">
+              <input id="doc-cin" type="radio" class="po-docopt-input" name="documento" value="cin" aria-expanded="false" aria-controls="doc-cin-panel">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>CIN</span><span class="po-badge po-badge-success">Aprovação mais rápida</span></span>
+                <span class="po-docopt-desc">Carteira de Identidade Nacional</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          </div>
+          <div class="po-docopt" data-doc="cnh">
+            <label class="po-docopt-head" for="doc-cnh">
+              <input id="doc-cnh" type="radio" class="po-docopt-input" name="documento" value="cnh" aria-expanded="false" aria-controls="doc-cnh-panel">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>CNH</span><span class="po-badge po-badge-success">Aprovação mais rápida</span></span>
+                <span class="po-docopt-desc">Carteira Nacional de Habilitação</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          </div>
+          <div class="po-docopt" data-doc="rg">
+            <label class="po-docopt-head" for="doc-rg">
+              <input id="doc-rg" type="radio" class="po-docopt-input" name="documento" value="rg" aria-expanded="false" aria-controls="doc-rg-panel">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>RG</span><span class="po-badge po-badge-warning">Aprovação pode demorar mais</span></span>
+                <span class="po-docopt-desc">Registro Geral</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          </div>
+        </div>
+        <template id="doc-actions">
+          <div class="po-docopt-panel">
+            <button type="button" class="po-action" data-go="liv-tutorial"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">photo_camera</span></span><span class="po-action-label">Tirar foto do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+            <button type="button" class="po-action" data-go="liv-tutorial"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">upload</span></span><span class="po-action-label">Fazer upload do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+          </div>
+        </template>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Validação facial: tutorial (liveness) ───────── -->
+    <section class="screen screen-page" id="liv-tutorial" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" id="liv-tut-back"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body">
+        <div class="lv-tut-img" role="img" aria-label="Ilustração de exemplo do passo">
+          <span class="po-icon" aria-hidden="true">image</span>
+          <div class="lv-tut-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+        </div>
+        <div data-tut="0">
+          <div class="po-heading po-heading-spaced">
+            <p class="lv-tut-step" aria-hidden="true">1</p>
+            <h1 class="po-heading-title po-heading-neutral">Ache um lugar bem claro e com fundo simples.</h1>
+            <p class="po-heading-sub">Fique de frente para a luz e sem coisas ou pessoas atrás de você. Assim, sua foto fica boa e ajuda a aprovar mais rápido.</p>
+          </div>
+        </div>
+        <div data-tut="1" hidden>
+          <div class="po-heading po-heading-spaced">
+            <p class="lv-tut-step" aria-hidden="true">2</p>
+            <h1 class="po-heading-title po-heading-neutral">Tire óculos, boné ou o que cobrir seu rosto.</h1>
+            <p class="po-heading-sub">Deixe seu rosto e olhos bem à mostra e sem reflexos. Assim, fica mais fácil reconhecer você e sua foto é aceita de primeira.</p>
+          </div>
+        </div>
+        <div data-tut="2" hidden>
+          <div class="po-heading po-heading-spaced">
+            <p class="lv-tut-step" aria-hidden="true">3</p>
+            <h1 class="po-heading-title po-heading-neutral">Vista uma roupa apropriada.</h1>
+            <p class="po-heading-sub">Não tire a foto sem camisa, com roupas de banho ou íntimas. Estar bem vestido faz com que sua selfie seja aprovada rápido.</p>
+          </div>
+        </div>
+        <p class="po-sr-only" id="liv-tut-step" role="status" aria-live="polite"></p>
+        <div style="margin-top:auto">
+          <button type="button" class="po-btn po-btn-primary po-btn-block lv-fill" id="liv-tut-next" aria-disabled="true"><span class="po-btn-content"><span>Continuar</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: captura (FaceCapture) ─────── -->
+    <section class="screen screen-page" id="liv-face" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" id="liv-face-back"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body lv-body-center">
+        <h1 class="po-heading-title lv-face-title" id="lv-title" role="status" aria-live="polite">Gire seu rosto para a esquerda</h1>
+        <div class="lv-circle" id="lv-circle" data-state="idle"></div>
+        <p class="po-sr-only" id="lv-live" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: aguarde (LoadingState) ─────── -->
+    <section class="screen screen-page" id="liv-validating" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body lv-body-center">
+        <div class="lv-loading" role="status" aria-live="polite">
+          <span class="lv-spinner" aria-hidden="true"></span>
+          <div class="lv-loading-copy">
+            <p class="lv-loading-title">Aguarde!</p>
+            <p class="lv-loading-text">Estamos validando sua foto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: conferência da foto ───────── -->
+    <section class="screen screen-page" id="liv-review" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="liv-face"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body">
+        <div class="po-image po-image-rounded" role="img" aria-label="Foto capturada do rosto" style="height:320px"><div class="po-image-placeholder"><span class="po-icon" aria-hidden="true">image</span></div></div>
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Confira se sua foto está legível.</h1>
+          <p class="po-heading-sub">Confira se sua foto está nítida para agilizar a análise.</p>
+        </div>
+        <div style="margin-top:auto; display:flex; flex-direction:column; gap:8px">
+          <button type="button" class="po-btn po-btn-primary po-btn-block" data-go="liv-done"><span class="po-btn-content"><span>Salvar e continuar</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+          <button type="button" class="po-btn po-btn-secondary po-btn-block" data-go="liv-face"><span class="po-btn-content"><span>Tirar outra foto</span><span class="po-icon s18" aria-hidden="true">photo_camera</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: bloqueio ──────────────────── -->
+    <section class="screen screen-page" id="liv-lock" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body">
+        <div class="po-alert po-alert-danger" role="alert"><span class="po-alert-icon"><span class="po-icon" aria-hidden="true">error</span></span><div class="po-alert-text"><p class="po-alert-title">Excesso de tentativas.</p><p class="po-alert-body" id="lv-lock-text">Você excedeu o limite de 3 tentativas.</p></div></div>
+        <p class="lv-exit-text">Você pode sair agora e continuar depois. Seus dados e documentos já enviados ficam salvos.</p>
+        <div class="lv-exit">
+          <button type="button" class="po-btn po-btn-secondary po-btn-block" data-go="login"><span class="po-btn-content">Sair e continuar depois</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: erro com suporte ──────────── -->
+    <section class="screen screen-page" id="liv-error" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body">
+        <div class="po-alert po-alert-danger" role="alert"><span class="po-alert-icon"><span class="po-icon" aria-hidden="true">error</span></span><div class="po-alert-text"><p class="po-alert-title">Não conseguimos validar sua identidade.</p><p class="po-alert-body">Entre em contato com o suporte para continuar.</p></div></div>
+        <div class="lv-support" id="lv-support" hidden>
+          <p class="lv-support-title">Atendimento</p>
+          <p class="lv-support-text">Telefone e e-mail do suporte a definir pelo produto.</p>
+        </div>
+        <div class="lv-exit">
+          <button type="button" class="po-btn po-btn-primary po-btn-block" id="lv-support-btn" aria-expanded="false" aria-controls="lv-support"><span class="po-btn-content"><span>Falar com o suporte</span><span class="po-icon s18" aria-hidden="true">support_agent</span></span></button>
+          <button type="button" class="po-btn po-btn-secondary po-btn-block" data-go="login"><span class="po-btn-content">Sair e continuar depois</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Validação facial: concluído (StatusScreen) ──── -->
+    <section class="screen screen-status" id="liv-done" data-screen hidden>
+      <div class="statusbar statusbar-dark"><span>9:41</span></div>
+      <div class="po-status-screen">
+        <div class="po-status-screen-head">
+          <img src="design-system/assets/status-badge-success.svg" alt="" width="80" height="80">
+          <h1 class="po-status-screen-title">Recebemos seus dados cadastrais!</h1>
+        </div>
+        <div class="po-status-screen-body">
+          <ol class="po-journey">
+            <li class="po-journey-step po-journey-done">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s26 bold" aria-hidden="true">check</span></span><span class="po-journey-label">Cadastro</span></div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-done">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s26 bold" aria-hidden="true">check</span></span><span class="po-journey-label">Captura de documentos</span></div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-done">
+              <div class="po-journey-row"><span class="po-journey-circle"><span class="po-icon s26 bold" aria-hidden="true">check</span></span><span class="po-journey-label">Biometria facial</span></div>
+              <span class="po-journey-connector" aria-hidden="true"></span>
+            </li>
+            <li class="po-journey-step po-journey-current" aria-current="step">
+              <div class="po-journey-row">
+                <span class="po-journey-circle"><span class="po-icon s28" aria-hidden="true">assignment_turned_in</span></span>
+                <span class="po-journey-pill"><span class="po-journey-label">Validação de benefícios</span></span>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="po-status-screen-foot">
+          <div class="po-countdown">
+            <span class="po-countdown-number" id="lv-done-count" aria-hidden="true">10</span>
+            <p class="po-countdown-text" id="lv-done-text">Redirecionando para a próxima etapa...</p>
+          </div>
+          <div class="lv-done-actions" id="lv-done-actions">
+            <button type="button" class="po-btn po-btn-sm lv-done-now" id="lv-done-now"><span class="po-btn-content"><span>Continuar agora</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+          </div>
+          <p class="po-sr-only" id="lv-done-live" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Horizontal: celular na horizontal (OrientationHint) ── -->
+    <!-- ── Área logada: template do cadastro (titular e familiares) ───── -->
+    <template id="tpl-detalhe">
+      <div class="area-acc">
+        <button type="button" class="area-acc-head" aria-expanded="true">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">contact_mail</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Contatos</span><span class="area-acc-desc">E-mail e telefone</span></span>
+          <span class="area-acc-badge">Concluído</span>
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body">
+          <div class="area-fields">
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">E-mail</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">E-mail</span><span class="area-field-value"><span data-bind="email"></span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+            <div class="area-contact-group">
+              <div class="area-section-head"><p class="area-contact-title">Celular</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+              <div class="area-field"><span class="area-field-label">Telefone celular</span><span class="area-field-value"><span data-bind="telefone"></span><span class="po-icon s16" aria-hidden="true">check_circle</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-acc">
+        <button type="button" class="area-acc-head" aria-expanded="true">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">badge</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Dados pessoais</span><span class="area-acc-desc">Nome, CPF e endereço</span></span>
+          <span class="area-acc-badge">Concluído</span>
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body">
+          <p class="area-section-title">Dados Pessoais</p>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">Nome completo</span><span class="area-field-value" data-bind="nome"></span></div>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">CPF</span><span class="area-field-value" data-bind="cpf"></span></div>
+              <div class="area-field"><span class="area-field-label">Data de nascimento</span><span class="area-field-value">15/03/1990</span></div>
+            </div>
+          </div>
+          <div class="area-section-head"><p class="area-section-title">Endereço</p><button type="button" class="po-contact-edit"><span class="po-icon s18" aria-hidden="true">edit_square</span>Editar</button></div>
+          <div class="area-fields">
+            <div class="area-field"><span class="area-field-label">CEP</span><span class="area-field-value">01310-100</span></div>
+            <div class="area-field"><span class="area-field-label">Nome da rua</span><span class="area-field-value">Avenida Paulista</span></div>
+            <div class="area-row">
+              <div class="area-field" style="flex: 2 1 0"><span class="area-field-label">Complemento (Opcional)</span><span class="area-field-value">Apto 45</span></div>
+              <div class="area-field"><span class="area-field-label">Número</span><span class="area-field-value">123</span></div>
+            </div>
+            <label class="po-check"><input type="checkbox" class="po-check-input" disabled><span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span><span class="po-check-label">Não possuo complemento</span></label>
+            <div class="area-row">
+              <div class="area-field"><span class="area-field-label">Cidade</span><span class="area-field-value">São Paulo<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+              <div class="area-field"><span class="area-field-label">Estado</span><span class="area-field-value">SP<span class="po-icon s16" aria-hidden="true">expand_more</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-acc">
+        <button type="button" class="area-acc-head" aria-expanded="true">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">verified_user</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Validação de identidade</span><span class="area-acc-desc">Documento e biometria facial</span></span>
+          <span class="area-acc-badge">Concluído</span>
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body">
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação de Documentos</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-doc-grid">
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Frente</span></div>
+                <div class="area-doc"><div class="area-doc-thumb"><span class="po-icon s26" aria-hidden="true">id_card</span><span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span></div><span class="area-doc-label">CNH - Verso</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="area-acc area-acc-nested">
+            <button type="button" class="area-acc-head" aria-expanded="true">
+              <span class="area-check area-check-sm"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+              <span class="area-acc-text"><span class="area-acc-title">Validação Facial</span></span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-acc-body">
+              <div class="area-acc-row"><span class="area-section-title-muted">Biometria Facial</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="area-acc">
+        <button type="button" class="area-acc-head" aria-expanded="true">
+          <span class="area-acc-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span>
+          <span class="area-acc-text"><span class="area-acc-title">Benefício Meia-Entrada</span><span class="area-acc-desc">Meia-entrada para estudantes</span></span>
+          <span class="area-acc-badge">Validado</span>
+          <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+        </button>
+        <div class="area-acc-body">
+          <div class="area-benefit">
+            <div class="area-benefit-head"><p class="area-benefit-title">Meia-Entrada</p><span class="po-badge po-badge-success">Ativo</span></div>
+            <p class="area-benefit-line"><span class="po-icon s16" aria-hidden="true">school</span>Estudante</p>
+            <p class="area-benefit-line">Válido até 31/12/2026</p>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- ── Área logada · Meus cadastro, expandido (2831:36859) ───────── -->
+    <section class="screen area-screen" id="area-cadastro-detalhe" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="area-top">
+        <div class="area-profile">
+          <div class="area-user">
+            <button type="button" class="area-avatar-btn" data-photo-open aria-label="Alterar foto de perfil"><span class="area-avatar"><img alt="" src="assets/foto-perfil-mock.svg"></span><span class="area-avatar-badge" aria-hidden="true"><span class="po-icon s16">photo_camera</span></span></button>
+            <div class="area-user-info">
+              <p class="area-name">Roberto Silva</p>
+              <span class="po-badge po-badge-success">Cadastro completo</span>
+            </div>
+          </div>
+          <button type="button" class="area-help-btn" data-go="ajuda-form" aria-label="Ajuda e atendimento" title="Ajuda e atendimento"><span class="area-help-ring"><span class="po-icon" aria-hidden="true">help_outline</span></span></button>
+          <button type="button" class="area-notif-btn" data-go="notificacoes" aria-label="Notificações, 2 não lidas"><span class="po-icon s24" aria-hidden="true">notifications</span><span class="area-notif-dot" aria-hidden="true"></span></button>
+          <div class="po-profile" data-profile>
+            <button type="button" class="po-profile-btn" id="pf-1" aria-haspopup="menu" aria-expanded="false" aria-controls="pf-1-menu"><span class="po-icon s24" aria-hidden="true">menu</span><span class="po-sr-only">Abrir menu do perfil</span></button>
+            <ul class="po-profile-menu" id="pf-1-menu" role="menu" aria-label="Meu perfil" hidden>
+              <li role="none" class="po-profile-lang">
+                <span class="po-icon s20 po-profile-icon" aria-hidden="true">translate</span>
+                <span class="po-profile-label">Idioma</span>
+                <button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button>
+              </li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitemcheckbox" aria-checked="false" tabindex="-1" data-theme-toggle><span class="po-icon s20 po-profile-icon" aria-hidden="true">dark_mode</span><span class="po-profile-label">Modo escuro</span><span class="po-theme-switch" aria-hidden="true"><span></span></span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">lock</span><span class="po-profile-label">Privacidade</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1" data-go="seguranca"><span class="po-icon s20 po-profile-icon" aria-hidden="true">shield</span><span class="po-profile-label">Segurança</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">password</span><span class="po-profile-label">Senha</span></button></li>
+              <li role="separator" class="po-profile-divider"></li>
+              <li role="none"><button type="button" class="po-profile-item po-profile-item-danger" role="menuitem" tabindex="-1" data-go="login"><span class="po-icon s20 po-profile-icon" aria-hidden="true">logout</span><span class="po-profile-label">Sair</span></button></li>
+            </ul>
+          </div>
+        </div>
+        <button type="button" class="area-promo" hidden>
+          <img class="area-promo-watermark" src="assets/avanti-shield.png" alt="">
+          <span class="area-promo-head">
+            <span class="area-promo-text"><span class="area-promo-title">Torne-se Sócio Torcedor</span><span class="area-promo-sub">Programa Avanti</span></span>
+            <span class="area-promo-badge">Avanti</span>
+          </span>
+          <span class="area-promo-cta">Acesse benefícios exclusivos <span aria-hidden="true">→</span></span>
+        </button>
+        <div class="po-tabs area-tabs" role="tablist">
+          <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true" data-go="area-cadastro-detalhe">Meus cadastro</button>
+          <button type="button" role="tab" class="po-tab" aria-selected="false" data-go="area-familiares-vazio">Meus familiares</button>
+        </div>
+      </header>
+      <div class="area-body">
+        <div class="area-detalhe" data-detalhe="titular" data-recolhido data-nome="Roberto Silva Santos" data-cpf="123.456.789-00" data-email="roberto.santos@email.com" data-telefone="(11) 98765-4321"></div>
+        <section class="area-atalhos" aria-labelledby="area-atalhos-title">
+          <p class="area-atalhos-title" id="area-atalhos-title">Atalhos</p>
+          <div class="area-atalhos-grid">
+            <button type="button" class="area-atalho"><span class="po-icon s28 area-atalho-icon" aria-hidden="true">confirmation_number</span><span class="area-atalho-name">Comprar ingresso</span></button>
+            <button type="button" class="area-atalho"><span class="po-icon s28 area-atalho-icon" aria-hidden="true">shopping_cart</span><span class="area-atalho-name">Produtos do clube</span></button>
+            <button type="button" class="area-atalho"><img class="area-atalho-logo" src="assets/avanti.svg" alt="" width="84" height="26"><span class="area-atalho-name">Sócio Avanti Palmeiras</span></button>
+          </div>
+        </section>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Área logada · Meus familiares, vazio (2831:38227) ─────────── -->
+    <section class="screen area-screen" id="area-familiares-vazio" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="area-top">
+        <div class="area-profile">
+          <div class="area-user">
+            <button type="button" class="area-avatar-btn" data-photo-open aria-label="Alterar foto de perfil"><span class="area-avatar"><img alt="" src="assets/foto-perfil-mock.svg"></span><span class="area-avatar-badge" aria-hidden="true"><span class="po-icon s16">photo_camera</span></span></button>
+            <div class="area-user-info">
+              <p class="area-name">Roberto Silva</p>
+              <span class="po-badge po-badge-success">Cadastro completo</span>
+            </div>
+          </div>
+          <button type="button" class="area-help-btn" data-go="ajuda-form" aria-label="Ajuda e atendimento" title="Ajuda e atendimento"><span class="area-help-ring"><span class="po-icon" aria-hidden="true">help_outline</span></span></button>
+          <button type="button" class="area-notif-btn" data-go="notificacoes" aria-label="Notificações, 2 não lidas"><span class="po-icon s24" aria-hidden="true">notifications</span><span class="area-notif-dot" aria-hidden="true"></span></button>
+          <div class="po-profile" data-profile>
+            <button type="button" class="po-profile-btn" id="pf-2" aria-haspopup="menu" aria-expanded="false" aria-controls="pf-2-menu"><span class="po-icon s24" aria-hidden="true">menu</span><span class="po-sr-only">Abrir menu do perfil</span></button>
+            <ul class="po-profile-menu" id="pf-2-menu" role="menu" aria-label="Meu perfil" hidden>
+              <li role="none" class="po-profile-lang">
+                <span class="po-icon s20 po-profile-icon" aria-hidden="true">translate</span>
+                <span class="po-profile-label">Idioma</span>
+                <button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button>
+              </li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitemcheckbox" aria-checked="false" tabindex="-1" data-theme-toggle><span class="po-icon s20 po-profile-icon" aria-hidden="true">dark_mode</span><span class="po-profile-label">Modo escuro</span><span class="po-theme-switch" aria-hidden="true"><span></span></span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">lock</span><span class="po-profile-label">Privacidade</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1" data-go="seguranca"><span class="po-icon s20 po-profile-icon" aria-hidden="true">shield</span><span class="po-profile-label">Segurança</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">password</span><span class="po-profile-label">Senha</span></button></li>
+              <li role="separator" class="po-profile-divider"></li>
+              <li role="none"><button type="button" class="po-profile-item po-profile-item-danger" role="menuitem" tabindex="-1" data-go="login"><span class="po-icon s20 po-profile-icon" aria-hidden="true">logout</span><span class="po-profile-label">Sair</span></button></li>
+            </ul>
+          </div>
+        </div>
+        <button type="button" class="area-promo" hidden>
+          <img class="area-promo-watermark" src="assets/avanti-shield.png" alt="">
+          <span class="area-promo-head">
+            <span class="area-promo-text"><span class="area-promo-title">Torne-se Sócio Torcedor</span><span class="area-promo-sub">Programa Avanti</span></span>
+            <span class="area-promo-badge">Avanti</span>
+          </span>
+          <span class="area-promo-cta">Acesse benefícios exclusivos <span aria-hidden="true">→</span></span>
+        </button>
+        <div class="po-tabs area-tabs" role="tablist">
+          <button type="button" role="tab" class="po-tab" aria-selected="false" data-go="area-cadastro-detalhe">Meus cadastro</button>
+          <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true" data-go="area-familiares-vazio">Meus familiares</button>
+        </div>
+      </header>
+      <div class="area-body">
+        <div class="area-empty">
+          <p class="area-empty-title">Nenhum familiar cadastrado</p>
+          <p class="area-empty-text">Você pode cadastrar seu cônjuge ou companheiro(a), seus filhos menores de 18 anos e seus pais aposentados ou com mais de 60 anos.</p>
+          <button type="button" class="po-btn po-btn-secondary area-add" data-go="familiar-intro"><span class="po-btn-content"><span>Incluir novo familiar</span><span class="po-icon s18" aria-hidden="true">add</span></span></button>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Convidado sem conta · entrada pelo link do convite (spec seção 8.2) ── -->
+    <section class="screen area-screen convite-link" id="convite-link" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="login"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Convite de familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Roberto Silva convidou você</h1>
+          <p class="area-form-note">Quer vincular você como Filha. Confirme seu CPF para criar sua conta e responder ao convite.</p>
+        </div>
+        <form class="area-form convite-form" novalidate>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="convite-cpf">CPF</label>
+            <input class="po-input po-input-md" id="convite-cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" aria-describedby="convite-cpf-dica convite-cpf-msg">
+            <p class="convite-dica" id="convite-cpf-dica">Use o mesmo CPF que recebeu o convite.</p>
+            <p class="po-msg" id="convite-cpf-msg" hidden><span class="po-icon s16 fill po-msg-icon" aria-hidden="true">error</span><span>CPF inválido.</span></p>
+          </div>
+          <div class="convite-alert" id="convite-alert" aria-live="polite"></div>
+          <div class="foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="convite-submit" disabled><span class="po-btn-content">Continuar</span></button>
+            <button type="button" class="po-btn po-btn-secondary po-btn-block" data-go="login"><span class="po-btn-content">Já tenho conta</span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Vincular familiar · Busca de usuário (spec Vínculo de familiares, seção 4) ── -->
+    <section class="screen area-screen" id="familiar-busca" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-familiares-vazio"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Vincular familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Buscar familiar</h1>
+          <p class="area-form-note">Busque pelo CPF ou e-mail de quem já tem conta no Palmeiras. Se a pessoa ainda não tiver conta, você pode cadastrá-la.</p>
+        </div>
+        <form class="area-form busca-form" id="busca-form" novalidate>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="busca-valor">CPF ou e-mail</label>
+            <input class="po-input po-input-md" id="busca-valor" name="valor" autocomplete="off" placeholder="CPF ou e-mail" required>
+          </div>
+          <div class="busca-alert" id="busca-alert" aria-live="polite"></div>
+          <div class="foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="busca-submit" disabled><span class="po-btn-content">Buscar</span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Vincular familiar · Card e tipo de vínculo (spec Vínculo de familiares, seção 5, Caminho A) ── -->
+    <section class="screen area-screen" id="familiar-vinculo" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-busca"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Vincular familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Confirme o familiar</h1>
+          <p class="area-form-note">Verifique se é a pessoa certa antes de continuar.</p>
+        </div>
+        <div class="busca-card" aria-label="Familiar encontrado">
+          <span class="busca-card-avatar" aria-hidden="true"><span class="po-icon s24">person</span></span>
+          <div class="busca-card-text">
+            <p class="busca-card-name">Mariana S*** Costa</p>
+            <p class="busca-card-doc">CPF ***.456.789-**</p>
+          </div>
+        </div>
+        <form class="area-form busca-form" id="vinculo-form" novalidate>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="vinculo-tipo">Tipo de vínculo</label>
+            <div class="po-select">
+              <select id="vinculo-tipo" name="relation" required>
+                <option value="" disabled selected>Selecione o tipo de vínculo</option>
+                <option value="FILHO">Filho(a)</option>
+                <option value="PAI_MAE">Pai ou mãe</option>
+                <option value="IRMAO">Irmão ou irmã</option>
+                <option value="CONJUGE">Cônjuge ou companheiro(a)</option>
+                <option value="SOBRINHO">Sobrinho(a)</option>
+                <option value="OUTROS">Outros</option>
+              </select>
+              <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+            </div>
+          </div>
+          <div class="busca-alert" id="vinculo-alert" aria-live="polite"></div>
+          <div class="foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="vinculo-submit" disabled><span class="po-btn-content">Prosseguir</span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Vincular familiar · Contatos e envio do convite (spec seção 5, Caminho A) ── -->
+    <section class="screen area-screen" id="familiar-contatos" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-vinculo"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Vincular familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Enviar convite ao familiar</h1>
+          <p class="area-form-note"><span id="contatos-nome">Mariana S*** Costa</span> vai receber um convite de Roberto Silva para se vincular como <span id="contatos-relacao">Filho(a)</span>.</p>
+        </div>
+        <form class="area-form busca-form" id="contatos-form" novalidate>
+          <fieldset class="busca-channels">
+            <legend class="busca-channels-legend">Onde o convite será enviado</legend>
+            <div class="busca-contact">
+              <label class="busca-contact-main">
+                <input type="checkbox" class="busca-contact-input" id="canal-email" name="canal" checked>
+                <span class="busca-contact-mark" aria-hidden="true"><span class="po-icon s20 fill">check_circle</span></span>
+                <span class="busca-contact-text"><span class="busca-contact-title">E-mail de contato</span><span class="busca-contact-value" id="contatos-email-valor">ma****@email.com</span></span>
+              </label>
+              <button type="button" class="busca-contact-edit proto-soon"><span class="po-icon s16" aria-hidden="true">edit_square</span>Alterar</button>
+            </div>
+            <div class="busca-contact">
+              <label class="busca-contact-main">
+                <input type="checkbox" class="busca-contact-input" id="canal-sms" name="canal" checked>
+                <span class="busca-contact-mark" aria-hidden="true"><span class="po-icon s20 fill">check_circle</span></span>
+                <span class="busca-contact-text"><span class="busca-contact-title">Telefone celular</span><span class="busca-contact-value" id="contatos-cel-valor">(11) 9****-5432</span></span>
+              </label>
+              <button type="button" class="busca-contact-edit proto-soon"><span class="po-icon s16" aria-hidden="true">edit_square</span>Alterar</button>
+            </div>
+            <p class="busca-channels-hint">Escolha pelo menos um canal. O link vale por 7 dias.</p>
+          </fieldset>
+          <div class="busca-alert" id="contatos-alert" aria-live="polite"></div>
+          <div class="foot busca-foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="contatos-submit"><span class="po-btn-content"><span>Enviar link</span><span class="po-icon s18" aria-hidden="true">send</span></span></button>
+            <button type="button" class="po-btn po-btn-secondary po-btn-block" id="copiar-link"><span class="po-btn-content"><span class="busca-copy-label">Copiar link</span><span class="po-icon s18" aria-hidden="true">link</span></span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Vincular familiar · Cadastro do familiar sem conta (spec seção 6.1, Caminho B) ── -->
+    <section class="screen area-screen" id="familiar-cadastro" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-busca"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Cadastrar familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body">
+        <div class="po-heading po-heading-spaced">
+          <h1 class="po-heading-title po-heading-neutral">Dados do familiar</h1>
+          <p class="area-form-note">Preencha os dados de quem ainda não tem conta. Confirmaremos o CPF na Receita Federal.</p>
+        </div>
+        <form class="area-form busca-form" id="fam-cad-form" novalidate>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-vinculo">Tipo de vínculo</label>
+            <div class="po-select">
+              <select id="cad-fam-vinculo" name="relation" required>
+                <option value="" disabled selected>Selecione o tipo de vínculo</option>
+                <option value="FILHO">Filho(a)</option>
+                <option value="PAI_MAE">Pai ou mãe</option>
+                <option value="IRMAO">Irmão ou irmã</option>
+                <option value="CONJUGE">Cônjuge ou companheiro(a)</option>
+                <option value="SOBRINHO">Sobrinho(a)</option>
+                <option value="OUTROS">Outros</option>
+              </select>
+              <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+            </div>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-cpf">CPF</label>
+            <input class="po-input po-input-md" id="cad-fam-cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" required>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-nome">Nome completo</label>
+            <input class="po-input po-input-md" id="cad-fam-nome" name="nome" autocomplete="off" placeholder="Nome e sobrenome" required>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-email">E-mail</label>
+            <input class="po-input po-input-md" id="cad-fam-email" name="email" type="email" autocomplete="off" placeholder="nome@email.com" required>
+          </div>
+          <div class="po-field po-field-lg">
+            <label class="po-field-label" for="cad-fam-cel">Celular</label>
+            <input class="po-input po-input-md" id="cad-fam-cel" name="celular" inputmode="tel" autocomplete="off" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="busca-alert" id="fam-cad-alert" aria-live="polite"></div>
+          <div class="foot busca-foot">
+            <button type="submit" class="po-btn po-btn-primary po-btn-block" id="fam-cad-submit" disabled><span class="po-btn-content"><span>Continuar</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+          </div>
+        </form>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Cadastrar familiar · Termo de responsabilidade do menor (spec seção 6.2) ── -->
+    <section class="screen screen-page" id="familiar-termo" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-cadastro"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Cadastrar familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="page page-ds termo-page">
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Termo de responsabilidade</h1>
+          <p class="po-heading-sub">Como responsável, você responde pelo cadastro de quem tem menos de 18 anos. Leia o termo antes de confirmar.</p>
+        </div>
+        <div class="termo-box" tabindex="0" aria-label="Texto do termo de responsabilidade">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <label class="po-check termo-check">
+          <input type="checkbox" class="po-check-input" id="termo-aceite" name="aceite">
+          <span class="po-check-box" aria-hidden="true"><span class="po-icon s14 bold" aria-hidden="true">check</span></span>
+          <span class="po-check-label">Li e concordo com o termo de responsabilidade.</span>
+        </label>
+      </div>
+      <div class="foot termo-foot">
+        <button type="button" class="po-btn po-btn-primary po-btn-block" id="termo-submit" disabled><span class="po-btn-content"><span>Aceitar e continuar</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Cadastrar familiar · Decisão do maior de idade (spec seção 6.3) ── -->
+    <section class="screen screen-page" id="familiar-decisao" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-cadastro"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Cadastrar familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="page page-ds">
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Como deseja concluir o cadastro?</h1>
+          <p class="po-heading-sub">Você pode preencher agora, no seu celular, ou enviar um convite para o familiar confirmar os próprios dados.</p>
+        </div>
+        <div class="familiar-options familiar-options-stacked">
+          <button type="button" class="po-optcard po-optcard-stacked" id="decisao-cadastrar">
+            <span class="po-optcard-head"><span class="po-optcard-lead"><span class="po-optcard-icon"><span class="po-icon s20" aria-hidden="true">person_add</span></span><span class="po-optcard-title">Cadastrar agora</span></span><span class="po-optcard-arrow"><span class="busca-option-go"><span class="po-icon s20" aria-hidden="true">arrow_forward</span></span></span></span>
+            <span class="po-optcard-desc">Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular.</span>
+          </button>
+          <button type="button" class="po-optcard po-optcard-stacked" id="decisao-convite">
+            <span class="po-optcard-head"><span class="po-optcard-lead"><span class="po-optcard-icon"><span class="po-icon s20" aria-hidden="true">send</span></span><span class="po-optcard-title">Enviar convite</span></span><span class="po-optcard-arrow"><span class="busca-option-go"><span class="po-icon s20" aria-hidden="true">arrow_forward</span></span></span></span>
+            <span class="po-optcard-desc">O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados.</span>
+          </button>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Adicionar familiar · Introdução (3057:44465) ─────────── -->
+    <section class="screen screen-page" id="familiar-intro" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="familiar-recebidos"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Adicionar familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds familiar-intro-page">
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Sua família no Torcedor 360</h1>
+          <p class="po-heading-sub">Adicione familiares para comprar ingressos para eles. Cada um tem a própria identidade validada.</p>
+        </div>
+        <div class="familiar-intro-block">
+          <p class="familiar-intro-kicker">Quem você pode adicionar</p>
+          <ul class="familiar-intro-list">
+            <li class="familiar-intro-item"><span class="familiar-intro-icon"><span class="po-icon s20" aria-hidden="true">child_care</span></span>Filhos</li>
+            <li class="familiar-intro-item"><span class="familiar-intro-icon"><span class="po-icon s20" aria-hidden="true">favorite</span></span>Cônjuge ou companheiro(a)</li>
+            <li class="familiar-intro-item"><span class="familiar-intro-icon"><span class="po-icon s20" aria-hidden="true">family_restroom</span></span>Pai e mãe</li>
+            <li class="familiar-intro-item"><span class="familiar-intro-icon"><span class="po-icon s20" aria-hidden="true">group</span></span>Irmãos</li>
+            <li class="familiar-intro-item"><span class="familiar-intro-icon"><span class="po-icon s20" aria-hidden="true">elderly</span></span>Avô e avó</li>
+          </ul>
+        </div>
+        <div class="po-alert po-alert-info familiar-intro-alert">
+          <span class="po-alert-icon"><span class="po-icon" aria-hidden="true">info</span></span>
+          <div class="po-alert-text"><p class="po-alert-body">Menores de 18 anos ficam sob sua responsabilidade. Maiores de 18 recebem um convite e confirmam o vínculo.</p></div>
+        </div>
+      </div>
+      <div class="foot familiar-intro-foot">
+          <button type="button" class="po-btn po-btn-primary po-btn-block" data-go="familiar-busca"><span class="po-btn-content"><span>Adicionar familiar</span><span class="po-icon s18" aria-hidden="true">add</span></span></button>
+        </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Vínculo de familiares · Área logada do convidado: convites recebidos (spec seção 8.1) ── -->
+    <section class="screen area-screen fam-var" id="familiar-recebidos" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="area-top">
+        <div class="area-profile">
+          <div class="area-user">
+            <span class="rec-avatar" aria-hidden="true">MC</span>
+            <div class="area-user-info">
+              <p class="area-name">Mariana Costa</p>
+              <span class="po-badge po-badge-success">Cadastro completo</span>
+            </div>
+          </div>
+          <button type="button" class="area-help-btn proto-soon" aria-label="Ajuda e atendimento" title="Ajuda e atendimento"><span class="area-help-ring"><span class="po-icon" aria-hidden="true">help_outline</span></span></button>
+          <button type="button" class="area-notif-btn proto-soon" aria-label="Notificações, 1 não lida"><span class="po-icon s24" aria-hidden="true">notifications</span><span class="area-notif-dot" aria-hidden="true"></span></button>
+          <div class="po-profile" data-profile>
+            <button type="button" class="po-profile-btn" id="pf-6" aria-haspopup="menu" aria-expanded="false" aria-controls="pf-6-menu"><span class="po-icon s24" aria-hidden="true">menu</span><span class="po-sr-only">Abrir menu do perfil</span></button>
+            <ul class="po-profile-menu" id="pf-6-menu" role="menu" aria-label="Meu perfil" hidden>
+              <li role="none" class="po-profile-lang">
+                <span class="po-icon s20 po-profile-icon" aria-hidden="true">translate</span>
+                <span class="po-profile-label">Idioma</span>
+                <button type="button" class="po-lang" aria-haspopup="menu" aria-expanded="false" aria-label="Idioma: Português, PT"><img src="design-system/assets/flag-br.png" alt=""><span class="po-lang-code">PT</span><span class="po-icon s18" aria-hidden="true">expand_more</span></button>
+              </li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitemcheckbox" aria-checked="false" tabindex="-1" data-theme-toggle><span class="po-icon s20 po-profile-icon" aria-hidden="true">dark_mode</span><span class="po-profile-label">Modo escuro</span><span class="po-theme-switch" aria-hidden="true"><span></span></span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">lock</span><span class="po-profile-label">Privacidade</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">shield</span><span class="po-profile-label">Segurança</span></button></li>
+              <li role="none"><button type="button" class="po-profile-item" role="menuitem" tabindex="-1"><span class="po-icon s20 po-profile-icon" aria-hidden="true">password</span><span class="po-profile-label">Senha</span></button></li>
+              <li role="separator" class="po-profile-divider"></li>
+              <li role="none"><button type="button" class="po-profile-item po-profile-item-danger" role="menuitem" tabindex="-1" data-go="login"><span class="po-icon s20 po-profile-icon" aria-hidden="true">logout</span><span class="po-profile-label">Sair</span></button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="po-tabs area-tabs" role="tablist">
+          <button type="button" role="tab" class="po-tab proto-soon" aria-selected="false">Meus cadastro</button>
+          <button type="button" role="tab" class="po-tab po-tab-active" aria-selected="true" data-go="familiar-recebidos">Meus familiares</button>
+        </div>
+      </header>
+      <div class="toast-slot" id="rec-toast" hidden>
+        <div class="po-toast" role="status">
+          <span class="po-toast-icon"><span class="po-icon s20" aria-hidden="true">check_circle</span></span>
+          <p class="po-toast-title" id="rec-toast-text">Convite aceito.</p>
+          <button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-xs po-toast-close" aria-label="Fechar" title="Fechar"><span class="po-btn-content"><span class="po-icon s16" aria-hidden="true">close</span></span></button>
+        </div>
+      </div>
+      <div class="area-body rec-v4">
+        <fieldset class="po-seg rec-seg" id="rec-seg">
+          <legend class="po-seg-legend po-sr-only">Mostrar</legend>
+          <div class="po-seg-track">
+            <label class="po-seg-option"><input class="po-seg-input" type="radio" name="rec-vista" value="meus" checked><span class="po-seg-label">Meus familiares</span></label>
+            <label class="po-seg-option"><input class="po-seg-input" type="radio" name="rec-vista" value="sou"><span class="po-seg-label">Sou familiar de</span></label>
+          </div>
+        </fieldset>
+
+        <!-- ── Aba Meus familiares ── -->
+        <div class="rec-vista" id="rec-vista-meus">
+          <section class="hub-card" id="rec-card-meus">
+            <button type="button" class="hub-card-head" aria-expanded="false" aria-controls="rec-panel-meus">
+              <span class="hub-card-icon"><span class="po-icon s20" aria-hidden="true">outgoing_mail</span></span>
+              <span class="hub-card-text"><span class="hub-card-title">Convites enviados</span><span class="hub-card-count" data-count-rec-meus>2 convites</span></span>
+              <span class="hub-dot" id="rec-dot-meus" role="img" aria-label="Convite expirado precisa de reenvio"></span>
+              <span class="po-icon area-chev hub-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="hub-panel" id="rec-panel-meus" hidden>
+              <div class="rec-invite" data-invite="carla" data-status="pendente">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name">Carla S*** Lima</span><span class="rec-invite-meta">Irmã</span></span>
+                  <span class="po-badge po-badge-info" data-badge>Pendente</span>
+                </div>
+                <div class="rec-invite-actions">
+                  <button type="button" class="po-btn po-btn-secondary" data-act="copiar"><span class="po-btn-content"><span data-label>Copiar link</span></span></button>
+                </div>
+              </div>
+              <div class="rec-invite" data-invite="paulo" data-status="expirado">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name">Paulo H*** Silva</span><span class="rec-invite-meta">Pai/mãe</span></span>
+                  <span class="po-badge po-badge-warning" data-badge>Expirado</span>
+                </div>
+                <p class="rec-invite-note" data-note>O link não vale mais. Reenvie para gerar um novo, válido por 7 dias.</p>
+                <div class="rec-invite-actions">
+                  <button type="button" class="po-btn po-btn-secondary" data-act="reenviar"><span class="po-btn-content"><span>Reenviar convite</span></span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pend-group" aria-labelledby="rec-h-meus">
+            <div class="rec-sec-head">
+              <h2 class="pend-group-title" id="rec-h-meus">Familiares <span class="pend-count" data-count-meus-fam>1</span></h2>
+              <p class="rec-sec-desc">Familiares que você adicionou como titular. Expanda para ver as etapas de validação de cada um.</p>
+            </div>
+            <div class="area-family" id="rec-fam-leandro">
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Leandro Costa</span><span class="area-family-meta">Filho</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden>
+                <div class="area-detalhe" data-detalhe="leandro-costa" data-nome="Leandro Costa" data-cpf="318.645.270-55" data-email="mariana.costa@email.com" data-telefone="(11) 99876-5432"></div>
+                <button type="button" class="area-link-danger" data-act="desvincular"><span class="po-icon s16" aria-hidden="true">link_off</span> Desvincular familiar</button>
+              </div>
+            </div>
+          <div class="area-family" id="rec-fam-marcia-costa">
+            <button type="button" class="area-family-head" aria-expanded="false">
+              <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+              <span class="area-family-text"><span class="area-family-name">Márcia Costa</span><span class="area-family-meta">Mãe</span></span>
+              <span class="po-badge po-badge-success">Ativo</span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="area-family-body" hidden>
+              <div class="area-detalhe" data-detalhe="marcia-costa" data-nome="Márcia Costa" data-cpf="412.907.355-68" data-email="mariana.costa@email.com" data-telefone="(11) 98888-1234"></div>
+              <button type="button" class="area-link-danger" data-act="desvincular"><span class="po-icon s16" aria-hidden="true">link_off</span> Desvincular familiar</button>
+            </div>
+          </div>
+          </section>
+                    <div class="area-add-wrap">
+            <button type="button" class="po-btn po-btn-secondary area-add proto-soon"><span class="po-btn-content"><span>Incluir novo familiar</span><span class="po-icon s18" aria-hidden="true">add</span></span></button>
+          </div>
+        </div>
+
+        <!-- ── Aba Sou familiar de ── -->
+        <div class="rec-vista" id="rec-vista-sou" hidden>
+          <section class="hub-card" id="rec-card-sou">
+            <button type="button" class="hub-card-head" aria-expanded="false" aria-controls="rec-panel-sou">
+              <span class="hub-card-icon"><span class="po-icon s20" aria-hidden="true">inbox</span></span>
+              <span class="hub-card-text"><span class="hub-card-title">Convites recebidos</span><span class="hub-card-count" data-count-rec-sou>1 convite</span></span>
+              <span class="hub-dot" id="rec-dot-sou" role="img" aria-label="Convite aguardando sua resposta"></span>
+              <span class="po-icon area-chev hub-chev" aria-hidden="true">expand_more</span>
+            </button>
+            <div class="hub-panel" id="rec-panel-sou" hidden>
+              <div class="rec-invite" id="rec-invite-roberto" data-invite="roberto" data-status="pendente">
+                <div class="rec-invite-row">
+                  <span class="rec-invite-text"><span class="rec-invite-name" data-nome>Roberto Silva</span><span class="rec-invite-meta" data-meta>Quer vincular você como Filha · expira em 5 dias</span></span>
+                  <span class="po-badge po-badge-info" data-badge>Pendente</span>
+                </div>
+                <div class="rec-invite-actions rec-invite-par">
+                  <button type="button" class="po-btn po-btn-primary" data-act="aceitar"><span class="po-btn-content"><span>Aceitar</span></span></button>
+                  <button type="button" class="po-btn po-btn-secondary" data-act="recusar"><span class="po-btn-content"><span>Recusar</span></span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="pend-group" aria-labelledby="rec-h-sou">
+            <div class="rec-sec-head">
+            <h2 class="pend-group-title" id="rec-h-sou">Familiares <span class="pend-count" data-count-sou-fam>1</span></h2>
+            <p class="rec-sec-desc">Estas pessoas incluíram você como familiar e podem comprar ingressos para você.</p>
+          </div>
+            <div class="area-family" id="rec-fam-carlos-silva">
+            <button type="button" class="area-family-head" aria-expanded="false">
+              <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+              <span class="area-family-text"><span class="area-family-name">Carlos Silva</span><span class="area-family-meta">Você como Cônjuge</span></span>
+              <span class="po-badge po-badge-success">Ativo</span>
+              <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+            </button>
+              <div class="area-family-body" hidden>
+                <div class="area-detalhe" data-detalhe="carlos-silva" data-nome="Carlos Silva" data-cpf="264.178.093-10" data-email="carlos.silva@email.com" data-telefone="(11) 97777-4321"></div>
+            </div>
+            </div>
+            <div class="area-family" id="rec-fam-ana">
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Ana Paula Costa</span><span class="area-family-meta">Você como Filha</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden>
+                <div class="area-detalhe" data-detalhe="ana-paula" data-nome="Ana Paula Costa" data-cpf="402.118.975-30" data-email="ana.paula@email.com" data-telefone="(11) 91234-5678"></div>
+              </div>
+            </div>
+            <div class="area-family" id="rec-fam-roberto" hidden>
+              <button type="button" class="area-family-head" aria-expanded="false">
+                <span class="area-family-avatar"><span class="po-icon s20" aria-hidden="true">person</span></span>
+                <span class="area-family-text"><span class="area-family-name">Roberto Silva</span><span class="area-family-meta">Você como Filha</span></span>
+                <span class="po-badge po-badge-success">Ativo</span>
+                <span class="po-icon area-chev" aria-hidden="true">expand_more</span>
+              </button>
+              <div class="area-family-body" hidden>
+                <div class="area-detalhe" data-detalhe="roberto-silva" data-nome="Roberto Silva" data-cpf="529.982.247-25" data-email="roberto.santos@email.com" data-telefone="(11) 98765-4321"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Ajuda e atendimento · formulário do chamado (versão enxuta) ─────────── -->
+    <section class="screen area-screen ajd-screen" id="ajuda-form" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Ajuda e atendimento</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <form class="area-body ajd-body" id="ajuda-form-el" novalidate>
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Como podemos ajudar?</h1>
+        </div>
+
+        <div class="po-field">
+          <label class="po-field-label" for="ajd-categoria">Categoria</label>
+          <div class="po-select po-select-empty">
+            <select id="ajd-categoria" name="categoria" required>
+              <option value="" disabled selected>Selecione a categoria</option>
+              <option>Cadastro e dados pessoais</option>
+              <option>Familiares</option>
+              <option>Documentos</option>
+              <option>Biometria facial</option>
+              <option>Acesso e segurança</option>
+              <option>Sócio torcedor</option>
+              <option>Outros</option>
+            </select>
+            <span class="po-select-chevron"><span class="po-icon s18" aria-hidden="true">keyboard_arrow_down</span></span>
+          </div>
+        </div>
+
+        <div class="po-field">
+          <label class="po-field-label" for="ajd-descricao">O que aconteceu?</label>
+          <textarea class="po-input po-input-md ajd-textarea" id="ajd-descricao" name="descricao" rows="4" maxlength="1000" placeholder="Conte o problema e o que você tentou fazer"></textarea>
+          <p class="po-field-hint" id="ajd-descricao-count" hidden></p>
+        </div>
+
+        <div class="ajd-anexos">
+          <label class="ajd-anexar" for="ajd-anexos"><span class="po-icon" aria-hidden="true">attach_file</span>Anexar print ou foto (até 3)</label>
+          <input class="po-sr-only" type="file" id="ajd-anexos" name="anexos" multiple accept="image/jpeg,image/png,application/pdf">
+          <p class="ajd-caption" id="ajd-anexos-status" hidden></p>
+        </div>
+
+        <p class="ajd-contato">Resposta para <strong>roberto****@email.com</strong> e (11) 9****-4321. <button type="button" class="ajd-link" data-go="area-cadastro-detalhe">Alterar</button></p>
+        <p class="ajd-caption"><span class="po-icon" aria-hidden="true">shield</span><span>Não envie senhas nem códigos de verificação.</span></p>
+
+        <div class="ajd-actions">
+          <button type="submit" class="po-btn po-btn-primary po-btn-block" id="ajd-submit"><span class="po-btn-content">Abrir chamado</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Ajuda e atendimento · chamado aberto (protocolo) ─────────── -->
+    <section class="screen area-screen ajd-screen" id="ajuda-enviado" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Fechar" title="Fechar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">close</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Ajuda e atendimento</p></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="area-body ajd-done">
+        <span class="ajd-done-icon"><span class="po-icon fill" aria-hidden="true">check_circle</span></span>
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Chamado aberto</h1>
+          <p class="po-heading-sub">Guarde o número de protocolo. Enviamos uma cópia para o seu e-mail.</p>
+        </div>
+        <div class="ajd-proto">
+          <span class="ajd-proto-label">Número de protocolo</span>
+          <strong class="ajd-proto-num" id="ajd-protocolo">PAL-2026-004812</strong>
+          <button type="button" class="po-btn po-btn-secondary" id="ajd-copy"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">content_copy</span><span>Copiar número</span></span></button>
+        </div>
+        <p class="ajd-caption"><span class="po-icon" aria-hidden="true">notifications</span><span>Você recebe um aviso no sino quando houver resposta. Prazo a definir pelo atendimento.</span></p>
+        <div class="ajd-actions">
+          <button type="button" class="po-btn po-btn-primary po-btn-block" data-go="area-cadastro-detalhe"><span class="po-btn-content">Voltar para a área logada</span></button>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Área logada · Notificações ───────── -->
+    <section class="screen seg-screen" id="notificacoes" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><h1 class="po-header-title">Notificações</h1></div>
+        <div class="po-header-slot po-header-slot-end"></div>
+      </header>
+      <div class="seg-body">
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="notif-hoje">Hoje</h2>
+          <ul class="po-list" aria-labelledby="notif-hoje">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">confirmation_number</span></span><span class="po-list-text"><span class="po-list-title">Ingresso confirmado</span><span class="po-list-desc">Palmeiras x Corinthians · 12/11, setor Norte</span></span><span class="po-list-trailing"><span class="po-badge po-badge-info">Novo</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">mail</span></span><span class="po-list-text"><span class="po-list-title">Cadastro atualizado</span><span class="po-list-desc">Seu e-mail foi alterado. Se não foi você, fale com a gente.</span></span><span class="po-list-trailing"><span class="po-badge po-badge-info">Novo</span></span></div></li>
+          </ul>
+        </section>
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="notif-antes">Anteriores</h2>
+          <ul class="po-list" aria-labelledby="notif-antes">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">school</span></span><span class="po-list-text"><span class="po-list-title">Meia-entrada aprovada</span><span class="po-list-desc">Estudante · válido até 31/12/2026</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">celebration</span></span><span class="po-list-text"><span class="po-list-title">Bem-vindo ao Sócio Torcedor</span><span class="po-list-desc">Seu cadastro foi concluído</span></span></div></li>
+          </ul>
+        </section>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Área logada · Segurança (Figma 3142:61656) ───────── -->
+    <section class="screen seg-screen" id="seguranca" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="area-cadastro-detalhe"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><h1 class="po-header-title">Segurança</h1></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="seg-body">
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="seg-acesso">Acesso</h2>
+          <ul class="po-list" aria-labelledby="seg-acesso">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">password</span></span><span class="po-list-text"><span class="po-list-title">Senha</span><span class="po-list-desc">Alterada há 3 meses</span></span><button type="button" class="po-list-action proto-soon" aria-label="Alterar senha">Alterar</button></div></li>
+            <li class="po-list-li"><button type="button" class="po-list-item po-list-item-link proto-soon"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">password</span></span><span class="po-list-text"><span class="po-list-title">Verificação em duas etapas</span><span class="po-list-desc">Código por SMS ao entrar e ao alterar dados</span></span><span class="po-list-trailing"><span class="po-badge po-badge-warning">Desligada</span></span><span class="po-list-chevron"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button></li>
+          </ul>
+        </section>
+
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="seg-social">Login social</h2>
+          <ul class="po-list" aria-labelledby="seg-social">
+            <li class="po-list-li"><div class="po-list-item" data-social data-on="true" data-name="Google"><span class="po-list-icon"><img src="design-system/assets/icon-google.svg" alt="" width="20" height="20"></span><span class="po-list-text"><span class="po-list-title">Google</span><span class="po-list-desc" data-desc>Conectado · roberto.silva@gmail.com</span></span><button type="button" class="po-list-action po-list-action-danger" data-toggle aria-label="Desconectar Google">Desconectar</button></div></li>
+            <li class="po-list-li"><div class="po-list-item" data-social data-on="false" data-name="Apple"><span class="po-list-icon"><img src="design-system/assets/icon-apple.svg" alt="" width="20" height="20"></span><span class="po-list-text"><span class="po-list-title">Apple</span><span class="po-list-desc" data-desc>Não conectado</span></span><button type="button" class="po-list-action" data-toggle aria-label="Conectar Apple">Conectar</button></div></li>
+            <li class="po-list-li"><div class="po-list-item" data-social data-on="false" data-name="Microsoft"><span class="po-list-icon"><span class="seg-row-logo seg-row-ms" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span><span class="po-list-text"><span class="po-list-title">Microsoft</span><span class="po-list-desc" data-desc>Não conectado</span></span><button type="button" class="po-list-action" data-toggle aria-label="Conectar Microsoft">Conectar</button></div></li>
+          </ul>
+        </section>
+
+        <button type="button" class="seg-link-danger proto-soon">Sair de todos os outros aparelhos</button>
+        <p class="seg-help">Não reconhece alguma atividade? Troque a senha e fale com o atendimento.</p>
+
+        <ul class="po-list" aria-label="Conta">
+          <li class="po-list-li"><button type="button" class="po-list-item po-list-item-link po-list-item-danger" data-go="encerrar-conta"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">person_remove</span></span><span class="po-list-text"><span class="po-list-title">Encerrar conta</span></span><span class="po-list-chevron"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button></li>
+        </ul>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <!-- ── Área logada · Encerrar conta (Figma 3142:61697) ───────── -->
+    <section class="screen area-screen enc-screen" id="encerrar-conta" data-screen hidden>
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-task">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" data-go="seguranca"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Encerrar conta</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <form class="area-body enc-body" id="encerrar-form" novalidate>
+        <div class="po-heading">
+          <h1 class="po-heading-title po-heading-neutral">Encerrar sua conta</h1>
+          <p class="po-heading-sub">Por exigência legal e pela segurança do estádio, seu cadastro não é apagado: ele fica inativo e bloqueado para uso.</p>
+        </div>
+
+        <section class="po-list-section">
+          <h2 class="po-list-label" id="enc-list-label">O que acontece</h2>
+          <ul class="po-list" aria-labelledby="enc-list-label">
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">cancel</span></span><span class="po-list-text"><span class="po-list-title">Você perde o acesso a ingressos e benefícios</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">shield</span></span><span class="po-list-text"><span class="po-list-title">Sua biometria é removida das catracas</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">folder</span></span><span class="po-list-text"><span class="po-list-title">Compras e histórico ficam guardados pelo prazo legal</span></span></div></li>
+            <li class="po-list-li"><div class="po-list-item"><span class="po-list-icon"><span class="po-icon s20" aria-hidden="true">chat</span></span><span class="po-list-text"><span class="po-list-title">Para voltar, fale com o atendimento</span></span></div></li>
+          </ul>
+        </section>
+
+        <div class="po-field">
+          <label class="po-field-label" for="enc-senha">Para confirmar, digite sua senha</label>
+          <div class="proto-pass">
+            <input class="po-input po-input-md" id="enc-senha" name="senha" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Sua senha">
+            <button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm proto-pass-toggle" aria-label="Mostrar senha" aria-pressed="false" data-pass-toggle="enc-senha"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">visibility</span></span></button>
+          </div>
+        </div>
+
+        <div class="enc-actions">
+          <button type="submit" class="po-btn po-btn-danger po-btn-block" id="enc-submit"><span class="po-btn-content">Encerrar conta</span></button>
+          <button type="button" class="po-btn po-btn-secondary po-btn-block" data-go="seguranca"><span class="po-btn-content">Cancelar</span></button>
+        </div>
+      </form>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+    <div class="lv-orient" id="lv-orient" role="status" hidden>
+      <span class="po-icon" aria-hidden="true">screen_rotation</span>
+      <p class="lv-orient-text">Posicione seu celular na vertical.</p>
+    </div>
+  </div>
+</main>
+<input type="file" id="photo-input" accept="image/*" hidden>
+<input type="file" id="photo-camera" accept="image/*" capture="user" hidden>
+<div class="photo-sheet" id="photo-sheet" hidden>
+  <div class="photo-scrim" data-photo-close></div>
+  <div class="photo-panel" role="dialog" aria-modal="true" aria-labelledby="photo-sheet-title">
+    <p class="photo-title" id="photo-sheet-title">Foto de perfil</p>
+    <button type="button" class="photo-item" data-photo-act="camera"><span class="po-icon s24" aria-hidden="true">photo_camera</span><span>Tirar foto</span></button>
+    <button type="button" class="photo-item" data-photo-act="gallery"><span class="po-icon s24" aria-hidden="true">photo_library</span><span>Escolher da galeria</span></button>
+    <button type="button" class="photo-item photo-item-danger" data-photo-act="remove" id="photo-remove" hidden><span class="po-icon s24" aria-hidden="true">delete</span><span>Remover foto</span></button>
+    <button type="button" class="po-btn po-btn-secondary po-btn-block" data-photo-close><span class="po-btn-content"><span>Cancelar</span></span></button>
+  </div>
+</div>
+<div class="photo-sheet" id="photo-edit" hidden>
+  <div class="photo-scrim"></div>
+  <div class="photo-panel" role="dialog" aria-modal="true" aria-labelledby="photo-edit-title">
+    <p class="photo-title" id="photo-edit-title">Ajustar foto</p>
+    <div class="photo-preview"><canvas id="photo-preview" width="240" height="240" role="img" aria-label="Prévia da foto de perfil recortada"></canvas></div>
+    <label class="photo-zoom"><span>Zoom</span><input type="range" id="photo-zoom" min="1" max="3" step="0.05" value="1"></label>
+    <p class="photo-error" id="photo-error" role="alert" hidden></p>
+    <div class="photo-actions">
+      <button type="button" class="po-btn po-btn-secondary" data-photo-edit-cancel><span class="po-btn-content"><span>Cancelar</span></span></button>
+      <button type="button" class="po-btn po-btn-primary" id="photo-save"><span class="po-btn-content"><span>Salvar foto</span></span></button>
+    </div>
+  </div>
+</div>
+<div class="desv-modal" id="desv-modal" hidden>
+  <div class="desv-scrim" data-desv-close></div>
+  <div class="desv-panel" role="alertdialog" aria-modal="true" aria-labelledby="desv-title" aria-describedby="desv-text">
+    <span class="desv-icon"><span class="po-icon s24" aria-hidden="true">link_off</span></span>
+    <h2 class="desv-title" id="desv-title">Desvincular familiar?</h2>
+    <p class="desv-text" id="desv-text">Tem certeza que deseja desvincular <strong id="desv-nome"></strong> da sua conta?</p>
+    <div class="desv-actions">
+      <button type="button" class="po-btn po-btn-danger po-btn-block" id="desv-confirmar"><span class="po-btn-content"><span>Desvincular</span></span></button>
+      <button type="button" class="po-btn po-btn-secondary po-btn-block" id="desv-cancelar" data-desv-close><span class="po-btn-content"><span>Cancelar</span></span></button>
+    </div>
+  </div>
+</div>
+<div class="desv-modal" id="rec-modal" hidden>
+  <div class="desv-scrim" data-rec-close></div>
+  <div class="desv-panel" role="alertdialog" aria-modal="true" aria-labelledby="rec-modal-title" aria-describedby="rec-modal-text">
+    <span class="desv-icon"><span class="po-icon s24" aria-hidden="true">close</span></span>
+    <h2 class="desv-title" id="rec-modal-title">Recusar o convite de <span id="rec-modal-nome"></span>?</h2>
+    <p class="desv-text" id="rec-modal-text"><span data-rec-modal-nome></span> será avisado. Para vincular você depois, ele precisa enviar um novo convite.</p>
+    <div class="desv-actions">
+      <button type="button" class="po-btn po-btn-danger po-btn-block" id="rec-modal-confirmar"><span class="po-btn-content"><span>Recusar convite</span></span></button>
+      <button type="button" class="po-btn po-btn-secondary po-btn-block" id="rec-modal-voltar" data-rec-close><span class="po-btn-content"><span>Voltar</span></span></button>
+    </div>
+  </div>
+</div>
+<script src="app.js?v=faxina1"></script>
+<script src="familiar-convite-link.js?v=cl2"></script>
+<script src="liveness.js"></script>
+<script src="area.js?v=faxina1"></script>
+<script src="ajuda.js?v=ajuda2"></script>
+<script src="photo.js?v=avatar1"></script>
+<script src="select.js"></script>
+<script src="desvincular.js?v=rec2"></script>
+<script src="familiar-recebidos.js?v=rec7"></script>
+<script src="familiar-busca.js?v=busca23"></script>
+
+</body></html>

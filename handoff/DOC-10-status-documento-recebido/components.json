@@ -1,0 +1,180 @@
+{
+ "screen": "DOC-10",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-10-status-documento-recebido/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "StatusScreen",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/StatusScreen/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "title": "Recebemos seus dados cadastrais!",
+    "tone": "success"
+   },
+   "behavior": null,
+   "jsx": "<StatusScreen title=\"Recebemos seus dados cadastrais!\" tone=\"success\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "pending"
+     ],
+     "used": "success"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Recebemos seus dados cadastrais!",
+      "tone": "success"
+     }
+    }
+   ]
+  },
+  {
+   "component": "JourneyStepper",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(2) > ol:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/JourneyStepper/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "steps": [
+     {
+      "label": "Cadastro",
+      "state": "done"
+     },
+     {
+      "label": "Captura de documentos",
+      "state": "done",
+      "icon": "document"
+     },
+     {
+      "label": "Biometria facial",
+      "state": "current",
+      "icon": "face"
+     },
+     {
+      "label": "Validação de benefícios",
+      "state": "upcoming",
+      "icon": "clipboard"
+     }
+    ]
+   },
+   "behavior": null,
+   "jsx": "<JourneyStepper steps={[{ label: \"Cadastro\", state: \"done\" }, { label: \"Captura de documentos\", state: \"done\", icon: \"document\" }, { label: \"Biometria facial\", state: \"current\", icon: \"face\" }, { label: \"Validação de benefícios\", state: \"upcoming\", icon: \"clipboard\" }]} />",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "steps": [
+       {
+        "label": "Cadastro",
+        "state": "done"
+       },
+       {
+        "label": "Captura de documentos",
+        "state": "done",
+        "icon": "document"
+       },
+       {
+        "label": "Biometria facial",
+        "state": "current",
+        "icon": "face"
+       },
+       {
+        "label": "Validação de benefícios",
+        "state": "upcoming",
+        "icon": "clipboard"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "component": "RedirectCountdown",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/RedirectCountdown/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "seconds": 10,
+    "continueLabel": "Continuar agora",
+    "children": "Vamos para a validação facial."
+   },
+   "behavior": {
+    "eventos": "onComplete"
+   },
+   "jsx": "<RedirectCountdown seconds={10} continueLabel=\"Continuar agora\" onComplete={() => {}}>Vamos para a validação facial.</RedirectCountdown>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "seconds": 10,
+      "continueLabel": "Continuar agora",
+      "children": "Vamos para a validação facial.",
+      "onComplete": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 4
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

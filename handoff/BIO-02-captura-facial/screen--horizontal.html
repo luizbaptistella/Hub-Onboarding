@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIO-02 · Captura facial · Padrão</title>
+<!-- Handoff Palmeiras · Onboarding. Tela BIO-02 (liv-face), variante "Padrão".
+     Marcação renderizada do protótipo (inclui o conteúdo gerado por script), isolada desta tela.
+     Comportamento, regras e ligações: spec.md nesta pasta. Fonte de verdade de componentes: DS Palmeiras · Onboarding. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela (o app.css troca para altura automática abaixo de 720px). -->
+<!-- O components.css dá padding de 16px ao body; aqui a moldura fica colada no canto superior esquerdo. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen screen-page" id="liv-face" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar" id="liv-face-back"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><div class="po-progress po-header-progress"><span class="po-progress-label">Etapa 3 de 4 · Biometria facial</span><div class="po-progress-track" role="progressbar" aria-label="Biometria facial" aria-valuemin="1" aria-valuemax="4" aria-valuenow="3" aria-valuetext="Etapa 3 de 4"><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg po-progress-done"></span><span class="po-progress-seg"></span></div></div></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="lv-body lv-body-center">
+        <h1 class="po-heading-title lv-face-title po-heading-neutral" id="lv-title" role="status" aria-live="polite">Olhe para frente e enquadre seu rosto</h1>
+        <div class="lv-circle" id="lv-circle" data-state="idle"></div>
+        <p class="po-sr-only" id="lv-live" role="status" aria-live="polite"></p>
+      </div>
+    <div class="lv-orient" id="lv-orient" role="status"><span class="po-icon" aria-hidden="true">screen_rotation</span><p class="lv-orient-text">Posicione seu celular na vertical.</p></div>
+    </section>
+
+</div>
+</body>
+</html>

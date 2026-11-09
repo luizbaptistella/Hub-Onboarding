@@ -1,0 +1,755 @@
+{
+ "screen": "BIO-05",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/BIO-05-bloqueio-3-tentativas/screen.html",
+ "instances": [
+  {
+   "id": 1,
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-lock > header:nth-of-type(1)",
+   "note": "Forma no protótipo: Verificação (classe po-header-module).",
+   "dsProps": {
+    "back": false,
+    "title": "Biometria facial",
+    "progress": {
+     "current": 3,
+     "total": 4
+    },
+    "language": false,
+    "help": true
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "jsx": "<AppHeader back={false} title=\"Biometria facial\" progress={{ current: 3, total: 4 }} language={false} help />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": false,
+      "title": "Biometria facial",
+      "progress": {
+       "current": 3,
+       "total": 4
+      },
+      "language": false,
+      "help": {}
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "375×56",
+      "DS": "375×40"
+     },
+     {
+      "parte": "header-slot",
+      "protótipo": "48×48",
+      "DS": "—"
+     },
+     {
+      "parte": "header-center",
+      "protótipo": "247×24",
+      "DS": "—"
+     },
+     {
+      "parte": "progress",
+      "protótipo": "247×24",
+      "DS": "303×24"
+     },
+     {
+      "parte": "progress-label",
+      "protótipo": "247×16",
+      "DS": "89×16"
+     },
+     {
+      "parte": "progress-track",
+      "protótipo": "247×4",
+      "DS": "303×4"
+     },
+     {
+      "parte": "progress-seg",
+      "protótipo": "59×4",
+      "DS": "73×4"
+     },
+     {
+      "parte": "btn",
+      "protótipo": "40×40",
+      "DS": "40×40"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     },
+     {
+      "parte": "ícone (help)",
+      "protótipo": "24×24",
+      "DS": "24×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-100",
+      "cadeia": "--space-100",
+      "valor": "0px 8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "header-center",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-size",
+      "token": "--type-label-sm-size",
+      "cadeia": "--type-label-sm-size",
+      "valor": "12px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "line-height",
+      "token": "--type-label-sm-line-height",
+      "cadeia": "--type-label-sm-line-height",
+      "valor": "16px"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "font-weight",
+      "token": "--type-label-sm-weight",
+      "cadeia": "--type-label-sm-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "progress-label",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "progress-track",
+      "propriedade": "gap",
+      "token": "--space-inline-tight",
+      "cadeia": "--space-inline-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-top",
+      "token": "--size-progress",
+      "cadeia": "--size-progress",
+      "valor": "4px solid rgb(0, 82, 46)"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-radius",
+      "token": "--radius-sm",
+      "cadeia": "--radius-sm",
+      "valor": "4px"
+     },
+     {
+      "parte": "progress-seg",
+      "propriedade": "border-top-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "color",
+      "token": "--icon-subtle",
+      "cadeia": "--icon-subtle → --neutral-500 → --gray-500",
+      "valor": "rgb(97, 102, 116)"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "width",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "btn",
+      "propriedade": "height",
+      "token": "--size-button-sm",
+      "cadeia": "--size-button-sm",
+      "valor": "40px"
+     },
+     {
+      "parte": "ícone (help)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "56px",
+      "DS": "40px"
+     },
+     {
+      "onde": "progress",
+      "prop": "tamanho",
+      "protótipo": "247×24",
+      "DS": "303×24"
+     },
+     {
+      "onde": "progress-label",
+      "prop": "tamanho",
+      "protótipo": "247×16",
+      "DS": "89×16"
+     },
+     {
+      "onde": "progress-track",
+      "prop": "tamanho",
+      "protótipo": "247×4",
+      "DS": "303×4"
+     },
+     {
+      "onde": "progress-seg",
+      "prop": "tamanho",
+      "protótipo": "59×4",
+      "DS": "73×4"
+     }
+    ],
+    "toque": {
+     "w": 375,
+     "h": 56,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 2,
+   "component": "Alert",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-lock > div:nth-of-type(2) > div:nth-of-type(1)",
+   "dsProps": {
+    "tone": "danger",
+    "title": "Excesso de tentativas.",
+    "children": "Você excedeu o limite de 3 tentativas. Tente novamente em 5:00."
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Alert/README.md",
+   "jsx": "<Alert tone=\"danger\" title=\"Excesso de tentativas.\">Você excedeu o limite de 3 tentativas. Tente novamente em 5:00.</Alert>",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "error",
+      "info",
+      "success",
+      "warning",
+      "danger"
+     ],
+     "used": "danger"
+    },
+    "live": {
+     "options": [
+      "polite",
+      "assertive",
+      "off"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "danger",
+      "title": "Excesso de tentativas.",
+      "children": "Você excedeu o limite de 3 tentativas. Tente novamente em 5:00."
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×118",
+      "DS": "327×90"
+     },
+     {
+      "parte": "alert-icon",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "parte": "ícone (error)",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "parte": "alert-text",
+      "protótipo": "269×92",
+      "DS": "273×64"
+     },
+     {
+      "parte": "alert-title",
+      "protótipo": "269×20",
+      "DS": "273×20"
+     },
+     {
+      "parte": "alert-body",
+      "protótipo": "269×40",
+      "DS": "273×40"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-inset-sm",
+      "cadeia": "--space-inset-sm",
+      "valor": "12px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-danger-subtlest",
+      "cadeia": "--bg-danger-subtlest → --red-50",
+      "valor": "rgb(254, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-color",
+      "token": "--border-danger",
+      "cadeia": "--border-danger → --red-300",
+      "valor": "rgb(252, 165, 165)"
+     },
+     {
+      "parte": "alert-icon",
+      "propriedade": "color",
+      "token": "--icon-danger",
+      "cadeia": "--icon-danger → --red-600",
+      "valor": "rgb(220, 38, 38)"
+     },
+     {
+      "parte": "ícone (error)",
+      "propriedade": "font-family",
+      "token": "--font-icons",
+      "cadeia": "--font-icons",
+      "valor": "\"Material Symbols Outlined\""
+     },
+     {
+      "parte": "alert-text",
+      "propriedade": "gap",
+      "token": "--space-stack-tight",
+      "cadeia": "--space-stack-tight",
+      "valor": "4px"
+     },
+     {
+      "parte": "alert-text",
+      "propriedade": "color",
+      "token": "--text-default",
+      "cadeia": "--text-default → --neutral-900 → --gray-900",
+      "valor": "rgb(20, 24, 35)"
+     },
+     {
+      "parte": "alert-title",
+      "propriedade": "font-family",
+      "token": "--font-heading",
+      "cadeia": "--font-heading",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "alert-title",
+      "propriedade": "font-size",
+      "token": "--type-title-sm-size",
+      "cadeia": "--type-title-sm-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "alert-title",
+      "propriedade": "line-height",
+      "token": "--type-title-sm-line-height",
+      "cadeia": "--type-title-sm-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "alert-title",
+      "propriedade": "font-weight",
+      "token": "--type-title-sm-weight",
+      "cadeia": "--type-title-sm-weight",
+      "valor": "600"
+     },
+     {
+      "parte": "alert-body",
+      "propriedade": "font-size",
+      "token": "--type-body-md-size",
+      "cadeia": "--type-body-md-size",
+      "valor": "14px"
+     },
+     {
+      "parte": "alert-body",
+      "propriedade": "line-height",
+      "token": "--type-body-md-line-height",
+      "cadeia": "--type-body-md-line-height",
+      "valor": "20px"
+     },
+     {
+      "parte": "alert-body",
+      "propriedade": "font-weight",
+      "token": "--type-body-md-weight",
+      "cadeia": "--type-body-md-weight",
+      "valor": "400"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [
+     {
+      "onde": "contêiner",
+      "prop": "height",
+      "protótipo": "118px",
+      "DS": "90px"
+     },
+     {
+      "onde": "alert-icon",
+      "prop": "tamanho",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "onde": "ícone (error)",
+      "prop": "tamanho",
+      "protótipo": "24×24",
+      "DS": "20×20"
+     },
+     {
+      "onde": "alert-text",
+      "prop": "tamanho",
+      "protótipo": "269×92",
+      "DS": "273×64"
+     },
+     {
+      "onde": "alert-title",
+      "prop": "tamanho",
+      "protótipo": "269×20",
+      "DS": "273×20"
+     },
+     {
+      "onde": "alert-body",
+      "prop": "tamanho",
+      "protótipo": "269×40",
+      "DS": "273×40"
+     }
+    ],
+    "toque": null,
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  },
+  {
+   "id": 3,
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "selector": "#liv-lock > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "dsProps": {
+    "variant": "secondary",
+    "fullWidth": true,
+    "children": "Sair e continuar depois"
+   },
+   "behavior": {
+    "navega para": "login"
+   },
+   "inDs": true,
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "jsx": "<Button variant=\"secondary\" fullWidth>Sair e continuar depois</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "fullWidth": true,
+      "children": "Sair e continuar depois"
+     }
+    }
+   ],
+   "ficha": {
+    "anatomia": [
+     {
+      "parte": "contêiner",
+      "protótipo": "327×50",
+      "DS": "327×50"
+     },
+     {
+      "parte": "btn-content",
+      "protótipo": "176×24",
+      "DS": "176×24"
+     }
+    ],
+    "tokens": [
+     {
+      "parte": "contêiner",
+      "propriedade": "font-family",
+      "token": "--font-body",
+      "cadeia": "--font-body",
+      "valor": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-size",
+      "token": "--type-label-lg-size",
+      "cadeia": "--type-label-lg-size",
+      "valor": "16px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "line-height",
+      "token": "--type-label-lg-line-height",
+      "cadeia": "--type-label-lg-line-height",
+      "valor": "24px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "font-weight",
+      "token": "--type-label-lg-weight",
+      "cadeia": "--type-label-lg-weight",
+      "valor": "500"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "min-height",
+      "token": "--size-button",
+      "cadeia": "--size-button",
+      "valor": "48px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "padding",
+      "token": "--space-150",
+      "cadeia": "--space-150",
+      "valor": "12px 20px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-radius",
+      "token": "--radius-lg",
+      "cadeia": "--radius-lg",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "background",
+      "token": "--bg-surface",
+      "cadeia": "--bg-surface → --neutral-0 → --gray-0",
+      "valor": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "color",
+      "token": "--text-brand",
+      "cadeia": "--text-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "gap",
+      "token": "--space-inline-related",
+      "cadeia": "--space-inline-related",
+      "valor": "8px"
+     },
+     {
+      "parte": "contêiner",
+      "propriedade": "border-color",
+      "token": "--border-brand",
+      "cadeia": "--border-brand → --brand-800 → --green-800",
+      "valor": "rgb(0, 82, 46)"
+     }
+    ],
+    "valoresFixos": [],
+    "diferencas": [],
+    "toque": {
+     "w": 327,
+     "h": 50,
+     "ok": true
+    },
+    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+   }
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": {
+  "lv-exit": 2
+ }
+}

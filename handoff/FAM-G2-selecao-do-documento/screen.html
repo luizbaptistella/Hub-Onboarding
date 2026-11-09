@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAM-G2 · Seleção do documento do familiar · Padrão (maior de idade)</title>
+<!-- Handoff Palmeiras · Onboarding. Tela FAM-G2, seleção do documento (proposta, ainda não validada), variante "Padrão":
+     familiar maior de idade, com CIN, CNH e RG. Estrutura de DOC-01 (seleção de documento), sem os painéis de ação.
+     Variante para menor de idade: screen--menor.html. Comportamento: spec.md nesta pasta. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/tokens-onboarding.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../app.css">
+<link rel="stylesheet" href="../../liveness.css">
+<link rel="stylesheet" href="../../area.css">
+<link rel="stylesheet" href="../../photo.css">
+<link rel="stylesheet" href="../../header.css">
+<link rel="stylesheet" href="../../proto-ds.css">
+<link rel="stylesheet" href="../../theme.css">
+<link rel="stylesheet" href="../../select.css">
+<link rel="stylesheet" href="../../desvincular.css">
+<link rel="stylesheet" href="../../familiar-busca.css">
+<link rel="stylesheet" href="../../familiar-pendentes.css">
+<!-- Moldura fixa 375×812 em qualquer largura de janela. -->
+<style>html,body{margin:0!important;padding:0!important;background:var(--bg-page,#f8f9fa)} .device{width:375px!important;height:812px!important;min-height:0!important;max-width:none!important;border-radius:0} .device .screen{height:812px!important;min-height:0!important}</style>
+</head>
+<body>
+<div class="device">
+<section class="screen screen-white" id="fam-g2-documento" data-screen="">
+      <div class="statusbar statusbar-white"><span>9:41</span></div>
+      <header class="po-header po-header-module">
+        <div class="po-header-slot"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Voltar" title="Voltar"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">chevron_left</span></span></button></div>
+        <div class="po-header-center"><p class="po-header-title">Cadastro do familiar</p></div>
+        <div class="po-header-slot po-header-slot-end"><button type="button" class="po-btn po-iconbtn po-btn-subtle po-iconbtn-sm po-header-action" aria-label="Ajuda" title="Ajuda"><span class="po-btn-content"><span class="po-icon" aria-hidden="true">help</span></span></button></div>
+      </header>
+      <div class="page page-ds">
+        <div class="po-heading heading-doc">
+          <h1 class="po-heading-title po-heading-neutral">Escolha um documento</h1>
+          <p class="po-heading-sub">Selecione o documento de identidade de Ana Paula e escolha como enviá-lo.</p>
+        </div>
+        <div class="doc-list" role="radiogroup" aria-label="Documento de identidade" id="doc-list">
+          <div class="po-docopt" data-doc="cin">
+            <label class="po-docopt-head" for="doc-cin">
+              <input id="doc-cin" type="radio" class="po-docopt-input" name="documento" value="cin">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>CIN</span><span class="po-badge po-badge-success">Aprovação mais rápida</span></span>
+                <span class="po-docopt-desc">Carteira de Identidade Nacional</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          <div class="po-docopt-panel" hidden>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">photo_camera</span></span><span class="po-action-label">Tirar foto do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">upload</span></span><span class="po-action-label">Fazer upload do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+          </div>
+          </div>
+          <div class="po-docopt" data-doc="cnh">
+            <label class="po-docopt-head" for="doc-cnh">
+              <input id="doc-cnh" type="radio" class="po-docopt-input" name="documento" value="cnh">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>CNH</span><span class="po-badge po-badge-success">Aprovação mais rápida</span></span>
+                <span class="po-docopt-desc">Carteira Nacional de Habilitação</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          <div class="po-docopt-panel" hidden>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">photo_camera</span></span><span class="po-action-label">Tirar foto do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">upload</span></span><span class="po-action-label">Fazer upload do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+          </div>
+          </div>
+          <div class="po-docopt" data-doc="rg">
+            <label class="po-docopt-head" for="doc-rg">
+              <input id="doc-rg" type="radio" class="po-docopt-input" name="documento" value="rg">
+              <span class="po-docopt-radio" aria-hidden="true"></span>
+              <span class="po-docopt-text">
+                <span class="po-docopt-title"><span>RG</span><span class="po-badge po-badge-warning">Aprovação pode demorar mais</span></span>
+                <span class="po-docopt-desc">Registro Geral</span>
+              </span>
+              <span class="po-docopt-chevron"><span class="po-icon s20" aria-hidden="true">keyboard_arrow_down</span></span>
+            </label>
+          <div class="po-docopt-panel" hidden>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">photo_camera</span></span><span class="po-action-label">Tirar foto do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+            <button type="button" class="po-action"><span class="po-action-icon"><span class="po-icon s32" aria-hidden="true">upload</span></span><span class="po-action-label">Fazer upload do documento</span><span class="po-action-arrow"><span class="po-icon s20" aria-hidden="true">chevron_right</span></span></button>
+          </div>
+          </div>
+        </div>
+      </div>
+      <footer class="po-legal">© 2026 Ellena. Todos os direitos reservados.</footer>
+    </section>
+
+</div>
+<script>
+// Como o DS (DocumentOption): a opção escolhida fica marcada e expande com as ações de foto e upload.
+// Clicar de novo na opção escolhida colapsa e desmarca. Escolher outra opção fecha a anterior.
+(function () {
+  var opts = Array.prototype.slice.call(document.querySelectorAll(".po-docopt"));
+  function paint(o, on) {
+    o.classList.toggle("po-docopt-selected", on);
+    var p = o.querySelector(".po-docopt-panel");
+    if (p) p.hidden = !on;
+    var input = o.querySelector(".po-docopt-input");
+    if (input) input.setAttribute("aria-expanded", String(on));
+  }
+  opts.forEach(function (o) {
+    var input = o.querySelector(".po-docopt-input");
+    var head = o.querySelector(".po-docopt-head");
+    head.addEventListener("click", function (e) {
+      if (e.target === input) return; // o clique que chega ao rádio já o marcou: não é um segundo clique
+      if (input.checked) {
+        // Segundo clique na opção escolhida: colapsa e desmarca (o rádio, por padrão, não desmarca).
+        e.preventDefault();
+        input.checked = false;
+        paint(o, false);
+      }
+    });
+    input.addEventListener("change", function () {
+      opts.forEach(function (x) { paint(x, x === o); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

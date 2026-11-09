@@ -1,0 +1,693 @@
+/* Componentes do DS Palmeiras · Onboarding, sincronizados com o DS publicado v59 (04/11/2026).
+   Bloco 1: bundle.css v59.
+   Bloco 2: regras legadas só para classes que o bundle não define (campos .po-input-md/lg, cabeçalhos, checkbox, toast), por isso vêm depois. */
+body { margin: 0; padding: var(--space-200); font-family: var(--font-body); background: var(--bg-page); color: var(--text-default); -webkit-font-smoothing: antialiased; }
+.po-stack { display: flex; flex-direction: column; gap: var(--space-stack-group); max-width: 327px; }
+.po-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-inline-group); }
+
+/* Button e IconButton */
+.po-btn { position: relative; font-family: var(--font-body); font-size: var(--type-label-lg-size); line-height: var(--type-label-lg-line-height); font-weight: var(--type-label-lg-weight); min-height: var(--size-button); padding: var(--space-150) var(--space-button-inline); border: 1.5px solid transparent; border-radius: var(--radius-lg); background: none; color: var(--text-on-brand); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--space-inline-related); box-sizing: border-box; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background-color .12s, color .12s, border-color .12s; }
+.po-btn-block { width: 100%; }
+.po-btn-primary { background: var(--bg-brand-bold); color: var(--text-on-brand); }
+.po-btn-primary:not([aria-disabled="true"]):hover { background: var(--bg-brand-bold-hovered); }
+.po-btn-primary:not([aria-disabled="true"]):active { background: var(--bg-brand-bold-pressed); }
+.po-btn-secondary { background: var(--bg-surface); color: var(--text-brand); border-color: var(--border-brand); }
+.po-btn-secondary:not([aria-disabled="true"]):hover, .po-btn-tertiary:not([aria-disabled="true"]):hover { background: var(--bg-brand-subtlest); }
+.po-btn-secondary:not([aria-disabled="true"]):active, .po-btn-tertiary:not([aria-disabled="true"]):active { background: var(--bg-brand-subtle); }
+.po-btn-tertiary { background: transparent; color: var(--text-brand); }
+.po-btn-accent { background: var(--bg-accent-bold); color: var(--text-on-accent); }
+.po-btn-accent:not([aria-disabled="true"]):hover { background: var(--bg-accent-bold-hovered); }
+.po-btn-accent:not([aria-disabled="true"]):active { background: var(--bg-accent-bold-pressed); }
+.po-btn-danger { background: var(--bg-danger-bold); color: var(--text-on-danger); }
+.po-btn-danger:not([aria-disabled="true"]):hover { background: var(--bg-danger-bold-hovered); }
+.po-btn-danger:not([aria-disabled="true"]):active { background: var(--bg-danger-bold-pressed); }
+.po-btn-subtle { background: transparent; color: var(--icon-subtle); }
+.po-btn-subtle:not([aria-disabled="true"]):hover { background: var(--bg-neutral-subtle-hovered); }
+.po-btn-subtle:not([aria-disabled="true"]):active { background: var(--bg-neutral-subtle-pressed); }
+/* Desabilitado com aria-disabled: continua focável; preenchidos ficam legíveis (text-subtle), os sem fundo usam text-disabled. Em loading o botão mantém as cores da variante. */
+.po-btn[aria-disabled="true"]:not([aria-busy="true"]) { background: var(--bg-disabled); color: var(--text-subtle); border-color: transparent; cursor: not-allowed; }
+.po-btn-tertiary[aria-disabled="true"]:not([aria-busy="true"]), .po-btn-subtle[aria-disabled="true"]:not([aria-busy="true"]) { background: transparent; color: var(--text-disabled); }
+.po-btn[aria-busy="true"] { cursor: progress; }
+.po-btn:focus-visible, .po-social:focus-visible, .po-tab:focus-visible, .po-lang:focus-visible, .po-link:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+/* Área de toque mínima: invisível, centrada, nunca menor que o botão. */
+.po-btn::after { content: ""; position: absolute; top: 50%; left: 50%; width: max(100%, var(--size-touch-target)); height: max(100%, var(--size-touch-target)); transform: translate(-50%, -50%); }
+/* Loading: o rótulo some sem mudar a largura e o spinner ocupa o centro. */
+.po-btn-content { display: inline-flex; align-items: center; justify-content: center; gap: inherit; }
+.po-btn[aria-busy="true"] .po-btn-content { visibility: hidden; }
+.po-btn-spinner { position: absolute; inset: 0; display: grid; place-items: center; }
+.po-btn-spinner::before { content: ""; width: 20px; height: 20px; box-sizing: border-box; border-radius: var(--radius-full); border: 2.5px solid currentColor; border-right-color: transparent; animation: po-spin .8s linear infinite; }
+.po-btn-sm .po-btn-spinner::before, .po-iconbtn-xs .po-btn-spinner::before { width: 16px; height: 16px; border-width: 2px; }
+@keyframes po-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .po-btn { transition: none; } .po-btn-spinner::before { animation-duration: 2.4s; } }
+.po-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.po-iconbtn { width: var(--size-button); min-height: 0; height: var(--size-button); padding: 0; flex: none; }
+.po-iconbtn-sm { width: var(--size-button-sm); height: var(--size-button-sm); }
+.po-iconbtn-xs { width: var(--size-button-xs); height: var(--size-button-xs); border-radius: var(--radius-sm); }
+
+/* TextLink: um só estilo de link (o rótulo do Checkbox e o ErrorSummary seguem o mesmo): sublinhado de 1px com recuo de 2px, 2px no hover, sem estado visitado.
+   inline (padrão) herda a fonte do texto em volta, em semibold; standalone usa label-md com 24px de alvo (WCAG 2.5.8). */
+.po-link { color: var(--text-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.po-link:hover, .po-choice-label a:hover, .po-error-summary-list a:hover { text-decoration-thickness: 2px; }
+.po-link-inline { font: inherit; font-weight: var(--font-weight-semibold); }
+.po-link-standalone { display: inline-block; padding: var(--space-025) 0; font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); }
+.po-link-icon { margin-left: var(--space-025); vertical-align: middle; }
+
+/* SocialButton: largura total, 48px, borda border-input (limite visível que o Google pede, 3:1 nos dois temas), texto label-lg-strong em text-default.
+   Marca de 20px e texto centralizados juntos, a space-inline-group (cabe numa tela de 320px sem quebrar). Os quadrados da Microsoft são a grade da marca (px de propósito). */
+.po-social { width: 100%; padding-left: var(--space-inset-md); padding-right: var(--space-inset-md); gap: var(--space-inline-group); background: var(--bg-surface); color: var(--text-default); border: 1px solid var(--border-input); font-weight: var(--type-label-lg-strong-weight); }
+.po-social:not([aria-disabled="true"]):hover { border-color: var(--border-input-hovered); }
+.po-social-mark { display: flex; flex: none; align-items: center; justify-content: center; width: var(--size-icon-sm); height: var(--size-icon-sm); }
+.po-social-svg { display: block; width: 100%; height: 100%; }
+.po-ms { display: grid; grid-template-columns: 9px 9px; gap: 2px; }
+.po-ms i { display: block; width: 9px; height: 9px; }
+/* layout="icon" (depreciado): o quadrado antigo de 64px, só com a marca em 32px. */
+.po-social-icon { width: var(--size-social); height: var(--size-social); min-height: 0; padding: 0; flex: none; }
+.po-social-icon .po-social-mark { width: var(--size-icon-lg); height: var(--size-icon-lg); }
+
+/* Field: base de TextField e Select (rótulo, controle, apoio e erro) */
+.po-field { display: flex; flex-direction: column; gap: var(--space-stack-related); width: 100%; min-width: 0; }
+.po-field-half { width: calc((100% - var(--space-inline-group)) / 2); flex: none; }
+.po-field-short { width: var(--size-field-short); flex: none; }
+.po-field-label { font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-field-optional { font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+.po-field-control { position: relative; display: flex; align-items: center; height: var(--size-input); box-sizing: border-box; border: 1px solid var(--border-input); border-radius: var(--radius-lg); background: var(--bg-input); transition: border-color .12s; }
+.po-field-control:hover { border-color: var(--border-input-hovered); }
+.po-field-control:focus-within { border-color: var(--border-focused); box-shadow: 0 0 0 1px var(--border-focused); }
+.po-input { flex: 1 1 auto; min-width: 0; height: 100%; margin: 0; padding: 0 var(--space-control-inline); box-sizing: border-box; border: 0; border-radius: inherit; background: transparent; outline: none; font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); font-weight: var(--type-body-lg-weight); color: var(--text-default); }
+.po-input::placeholder { color: var(--text-subtle); opacity: 1; }
+.po-field-has-start .po-input { padding-left: var(--space-100); }
+.po-field-icon { margin-left: var(--space-150); color: var(--icon-subtle); }
+.po-field-affix { flex: none; padding-left: var(--space-control-inline); font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); color: var(--text-subtle); }
+/* Ações dentro do campo (limpar, mostrar senha): IconButton sm de 40px encostado na borda direita. */
+.po-field-action { flex: none; margin-right: var(--space-025); }
+.po-field-action + .po-field-action { margin-left: calc(var(--space-050) * -1); }
+.po-field-spinner { flex: none; display: grid; place-items: center; width: var(--size-button-sm); height: var(--size-button-sm); color: var(--icon-subtle); }
+.po-field-spinner::before { content: ""; width: 16px; height: 16px; box-sizing: border-box; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; animation: po-spin .8s linear infinite; }
+.po-field-hint { margin: 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-field > .po-msg, .po-field > .po-field-hint { margin-top: calc(var(--space-stack-tight) - var(--space-stack-related)); }
+.po-field-invalid .po-field-control, .po-field-invalid .po-field-control:hover { background: var(--bg-danger-subtlest); border-color: var(--border-danger-bold); }
+/* Foco no campo com erro: a borda continua vermelha e ganha o anel de foco por fora. */
+.po-field-invalid .po-field-control:focus-within { border-color: var(--border-danger-bold); box-shadow: 0 0 0 1px var(--border-danger-bold); outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-field-readonly .po-field-control, .po-field-readonly .po-field-control:hover { background: var(--bg-input-readonly); border-color: var(--border-default); }
+.po-field-disabled .po-field-control, .po-field-disabled .po-field-control:hover { background: var(--bg-disabled); border-color: transparent; }
+.po-field-disabled .po-input { color: var(--text-subtle); cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .po-field-control { transition: none; } .po-field-spinner::before { animation-duration: 2.4s; } }
+
+/* FormMessage */
+.po-msg { display: flex; align-items: flex-start; gap: var(--space-inline-tight); margin: 0; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-danger); }
+.po-msg .po-icon { color: var(--icon-danger); }
+
+/* Checkbox e Radio: input nativo invisível com 44px de alvo sobre a caixa de 20px */
+.po-choice { display: flex; align-items: flex-start; gap: var(--space-inline-group); max-width: 327px; font-family: var(--font-body); }
+.po-choice-control { position: relative; flex: none; width: var(--size-checkbox); height: var(--size-checkbox); }
+.po-choice-input { position: absolute; top: 50%; left: 50%; z-index: 1; width: var(--size-touch-target); height: var(--size-touch-target); margin: 0; transform: translate(-50%, -50%); opacity: 0; cursor: pointer; }
+.po-choice-box { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; box-sizing: border-box; border: 1.5px solid var(--border-input); border-radius: var(--radius-sm); background: var(--bg-input); color: var(--text-on-brand); transition: background-color .12s, border-color .12s; }
+.po-choice-radio .po-choice-box { border-radius: var(--radius-full); }
+.po-choice:hover .po-choice-box { border-color: var(--border-input-hovered); }
+.po-choice-input:checked + .po-choice-box, .po-choice-input[type="checkbox"]:indeterminate + .po-choice-box, .po-choice:hover .po-choice-input:checked + .po-choice-box { background: var(--bg-brand-bold); border-color: transparent; }
+/* Rádio marcado: anel de 6px em border-brand, ponto de 8px no fundo do campo. */
+.po-choice-radio .po-choice-input:checked + .po-choice-box, .po-choice-radio:hover .po-choice-input:checked + .po-choice-box { background: var(--bg-input); border: 6px solid var(--border-brand); }
+.po-choice-input:focus-visible + .po-choice-box { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-choice-text { display: flex; flex-direction: column; gap: var(--space-stack-tight); min-width: 0; }
+.po-choice-label { font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-default); cursor: pointer; }
+.po-choice-label a { color: var(--text-link); font-weight: var(--font-weight-semibold); text-decoration: underline; text-underline-offset: 2px; }
+.po-choice-label strong { font-weight: var(--font-weight-semibold); }
+.po-choice-desc { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-choice-invalid .po-choice-box, .po-choice-invalid:hover .po-choice-box { border-color: var(--border-danger-bold); background: var(--bg-danger-subtlest); }
+.po-choice-disabled .po-choice-input, .po-choice-disabled .po-choice-label { cursor: not-allowed; }
+.po-choice-disabled .po-choice-label { color: var(--text-subtle); }
+.po-choice-disabled .po-choice-box, .po-choice-disabled:hover .po-choice-box, .po-choice-disabled .po-choice-input:checked + .po-choice-box { background: var(--bg-disabled); border-color: var(--border-default); color: var(--text-subtle); }
+.po-choice-disabled.po-choice-radio .po-choice-input:checked + .po-choice-box { border-color: var(--border-input); }
+@media (prefers-reduced-motion: reduce) { .po-choice-box { transition: none; } }
+
+/* RadioGroup e CheckboxGroup: fieldset + legend */
+.po-choice-group { display: flex; flex-direction: column; gap: var(--space-stack-related); min-width: 0; max-width: 327px; margin: 0; padding: 0; border: 0; }
+.po-choice-legend { margin-bottom: var(--space-stack-related); padding: 0; font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-choice-group > .po-field-hint { margin-top: calc(var(--space-stack-tight) - var(--space-stack-related)); }
+.po-choice-list { display: flex; flex-direction: column; gap: var(--space-stack-loose); }
+/* DocumentOption na lista: as opções se encostam (cada uma tem a borda de cima). */
+.po-choice-list:has(> .po-docopt) { gap: 0; }
+
+/* Tabs: mesmo peso nas duas abas (sem salto de largura); a ativa muda cor e indicador */
+.po-tabs { display: flex; width: 100%; border-bottom: 1px solid var(--border-default); }
+.po-tab { flex: 1 1 0; height: var(--size-control); padding: 0; margin-bottom: -1px; background: none; border: 0; border-bottom: 2px solid transparent; font-family: var(--font-body); font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-subtle); cursor: pointer; }
+.po-tab:hover { color: var(--text-default); }
+.po-tab-active, .po-tab-active:hover { color: var(--text-brand); border-bottom-color: var(--border-brand); }
+.po-tabpanel { padding-top: var(--space-stack-group); }
+.po-tabpanel:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+
+/* SegmentedControl: trilho bg-neutral, opção marcada em bg-surface com sombra */
+.po-seg { min-width: 0; width: 100%; max-width: 327px; margin: 0; padding: 0; border: 0; }
+.po-seg-legend { padding: 0; margin-bottom: var(--space-stack-related); font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-seg-track { display: flex; gap: var(--space-050); padding: var(--space-050); border-radius: var(--radius-lg); background: var(--bg-neutral); }
+.po-seg-option { position: relative; flex: 1 1 0; min-width: 0; }
+.po-seg-input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.po-seg-label { display: flex; align-items: center; justify-content: center; min-height: var(--size-button-sm); padding: 0 var(--space-150); border-radius: var(--radius-md); text-align: center; font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-subtle); }
+.po-seg-option:hover .po-seg-label { color: var(--text-default); }
+.po-seg-input:checked + .po-seg-label { background: var(--bg-surface); box-shadow: var(--shadow-sm); font-weight: var(--type-label-md-strong-weight); color: var(--text-default); }
+.po-seg-input:focus-visible + .po-seg-label { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-seg[disabled] .po-seg-input { cursor: not-allowed; }
+.po-seg[disabled] .po-seg-label { color: var(--text-disabled); }
+
+/* ProgressBar: texto "Etapa X de Y" + traços (border-brand concluído, border-default pendente) */
+.po-progress { display: flex; flex-direction: column; gap: var(--space-stack-tight); min-width: 0; }
+.po-progress-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-inline-related); min-width: 0; }
+.po-progress-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-body); font-size: var(--type-label-sm-size); line-height: var(--type-label-sm-line-height); font-weight: var(--type-label-sm-weight); color: var(--text-default); }
+.po-progress-count { flex: none; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); font-variant-numeric: tabular-nums; }
+.po-progress-track { display: flex; gap: var(--space-inline-tight); }
+.po-progress-seg { flex: 1 1 0; border-top: var(--size-progress) solid var(--border-default); border-radius: var(--radius-sm); }
+.po-progress-done { border-top-color: var(--border-brand); }
+
+/* LanguageSelector: 32px de desenho, 44px de alvo; menu de idiomas com itens de 48px */
+.po-lang-root { position: relative; display: inline-flex; flex: none; }
+.po-lang { position: relative; display: inline-flex; align-items: center; gap: var(--space-inline-tight); flex: none; height: 32px; padding: 0 var(--space-050) 0 var(--space-100); background: var(--bg-surface); border: 0; border-radius: var(--radius-full); font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-default); cursor: pointer; white-space: nowrap; }
+.po-lang::after { content: ""; position: absolute; inset: calc((var(--size-touch-target) - 32px) / -2) 0; }
+.po-lang:hover { background: var(--bg-neutral-subtle-hovered); }
+.po-lang[aria-expanded="true"] { background: var(--bg-neutral-subtle-pressed); }
+.po-lang-flag { display: block; flex: none; width: var(--size-icon-sm); height: var(--size-icon-sm); border-radius: var(--radius-full); clip-path: circle(50%); }
+.po-lang-chevron { color: var(--icon-subtle); transition: transform 150ms ease; }
+.po-lang[aria-expanded="true"] .po-lang-chevron { transform: rotate(180deg); }
+.po-lang-menu { position: absolute; top: calc(100% + var(--space-050)); right: 0; z-index: 20; min-width: 200px; margin: 0; padding: var(--space-050); list-style: none; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); box-sizing: border-box; }
+.po-lang-menu[hidden] { display: none; }
+.po-lang-item { display: flex; align-items: center; gap: var(--space-inline-group); height: var(--size-menu-item); padding: 0 var(--space-150) 0 var(--space-200); border-radius: var(--radius-md); font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); font-weight: var(--type-body-lg-weight); color: var(--text-default); cursor: pointer; white-space: nowrap; outline: none; }
+.po-lang-item:hover, .po-lang-item:focus { background: var(--bg-neutral-subtle-hovered); }
+.po-lang-item:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.po-lang-item[aria-checked="true"] { font-weight: var(--type-label-lg-strong-weight); }
+.po-lang-item-name { flex: 1 1 auto; }
+.po-lang-check { color: var(--icon-brand); visibility: hidden; }
+.po-lang-item[aria-checked="true"] .po-lang-check { visibility: visible; }
+@media (prefers-reduced-motion: reduce) { .po-lang-chevron { transition: none; } }
+/* ProfileMenu: gatilho de 44px (alvo de toque) e menu de itens de 48px; cores só dos tokens existentes. */
+.po-profile { position: relative; display: inline-flex; flex: none; }
+.po-profile-btn { display: inline-flex; align-items: center; gap: var(--space-inline-related); height: var(--size-touch-target); padding: 0 var(--space-100); border: 0; border-radius: var(--radius-lg); background: transparent; color: var(--text-default); font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); cursor: pointer; white-space: nowrap; box-sizing: border-box; }
+.po-profile-btn:hover { background: var(--bg-neutral-subtle-hovered); }
+.po-profile-btn[aria-expanded="true"] { background: var(--bg-neutral-subtle-pressed); }
+.po-profile-btn:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-profile-chevron { transition: transform 150ms ease; }
+.po-profile-btn[aria-expanded="true"] .po-profile-chevron { transform: rotate(180deg); }
+.po-profile-menu { position: absolute; top: calc(100% + var(--space-050)); right: 0; z-index: 20; min-width: 240px; margin: 0; padding: var(--space-050); list-style: none; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); box-sizing: border-box; }
+.po-profile-menu[hidden] { display: none; }
+.po-profile-menu li { margin: 0; padding: 0; }
+.po-profile-item, .po-profile-lang { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; min-height: var(--size-menu-item); padding: 0 var(--space-150) 0 var(--space-200); margin: 0; border: 0; border-radius: var(--radius-md); background: transparent; box-sizing: border-box; font-family: var(--font-body); font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line-height); font-weight: var(--type-body-lg-weight); color: var(--text-default); text-align: left; text-decoration: none; cursor: pointer; white-space: nowrap; outline: none; }
+.po-profile-item:hover, .po-profile-item:focus, .po-profile-lang:hover { background: var(--bg-neutral-subtle-hovered); }
+.po-profile-item:active { background: var(--bg-neutral-subtle-pressed); }
+.po-profile-item:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.po-profile-label { flex: 1 1 auto; min-width: 0; }
+.po-profile-lang .po-lang-root { flex: none; }
+.po-profile-divider { height: 1px; margin: var(--space-050) 0; background: var(--border-default); }
+.po-profile-item-danger { color: var(--text-danger); }
+.po-profile-item-danger:hover, .po-profile-item-danger:focus { background: var(--bg-danger-subtlest); }
+.po-profile-item-danger:active { background: var(--bg-danger-subtle); }
+.po-profile-item-danger .po-icon { color: var(--icon-danger); }
+.po-profile-item[aria-disabled="true"] { color: var(--text-subtle); cursor: not-allowed; }
+.po-profile-item[aria-disabled="true"]:hover, .po-profile-item[aria-disabled="true"]:active { background: transparent; }
+.po-profile-item[aria-disabled="true"] .po-icon { color: var(--icon-subtle); }
+@media (prefers-reduced-motion: reduce) { .po-profile-chevron { transition: none; } }
+
+/* AppHeader */
+.po-header { display: flex; align-items: center; gap: var(--space-inline-loose); min-height: 40px; padding: var(--space-100) var(--space-inset-md); box-sizing: border-box; background: var(--bg-surface); width: 100%; max-width: 375px; }
+.po-header-icon { flex: none; width: var(--size-icon); height: var(--size-icon); }
+/* IconButton sm (40px) sangra 8px para ocupar só os 24px do ícone, como no Figma. */
+.po-header-action { margin: calc(var(--space-100) * -1); }
+.po-header-progress { flex: 1 1 0; }
+
+/* PageHeading: título → subtítulo → children, sempre a space-stack-related. O h1 recebe foco programático (tabIndex -1) sem anel, porque não é controle. */
+.po-heading { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+.po-heading-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); color: var(--text-brand); }
+.po-heading-title:focus { outline: none; }
+.po-heading-sub { margin: 0; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+
+/* DividerText: linhas decorativas e o texto ("ou") como parágrafo em body-md. */
+.po-divider { display: flex; align-items: center; gap: var(--space-inline-related); width: 100%; }
+.po-divider-line { flex: 1 1 0; height: 1px; background: var(--border-default); }
+.po-divider-text { margin: 0; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); white-space: nowrap; }
+
+/* LegalFooter: body-sm (12/16) em text-subtle; links de Termos e Privacidade com 24px de alvo, acima do copyright. */
+.po-legal { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-tight); padding: var(--space-100) var(--space-inset-md) var(--space-300); text-align: center; font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 var(--space-inline-loose); margin: 0; padding: 0; list-style: none; }
+.po-legal-links .po-link { display: inline-block; padding: var(--space-050) 0; }
+.po-legal-copy { margin: 0; }
+.po-header-title, .po-header-text { flex: 1 1 0; min-width: 0; font-family: var(--font-heading); font-size: var(--type-title-sm-size); line-height: var(--type-title-sm-line-height); font-weight: var(--type-title-sm-weight); color: var(--text-default); }
+.po-header-title { text-align: center; }
+.po-heading-neutral { color: var(--text-default); }
+
+/* OTPInput: um <input> transparente sobre as células visuais */
+.po-otp { display: flex; flex-direction: column; gap: var(--space-stack-loose); width: 100%; max-width: 327px; }
+.po-otp-row { position: relative; }
+.po-otp-input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background: transparent; color: transparent; caret-color: transparent; font-size: var(--type-body-lg-size); opacity: 0; cursor: text; }
+.po-otp-cells { display: flex; align-items: center; gap: var(--space-inline-related); }
+.po-otp-cell { flex: 1 1 0; min-width: 0; height: var(--size-control); box-sizing: border-box; display: grid; place-items: center; border: 1px solid var(--border-input); border-radius: var(--radius-lg); background: var(--bg-input); font-family: var(--font-heading); font-size: var(--type-title-lg-size); line-height: var(--type-title-lg-line-height); font-weight: var(--type-title-lg-weight); font-variant-numeric: tabular-nums; color: var(--text-brand); }
+.po-otp-cell-active { border-color: var(--border-focused); box-shadow: 0 0 0 1px var(--border-focused); }
+/* Cursor falso na célula da vez. */
+.po-otp-cell-active:empty::after { content: ""; width: 2px; height: var(--type-title-lg-size); background: var(--text-brand); animation: po-blink 1s step-end infinite; }
+@keyframes po-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .po-otp-cell-active:empty::after { animation: none; } }
+.po-otp-sep { flex: none; width: 12px; height: 2px; border-radius: 1px; background: var(--text-subtle); }
+.po-otp-success .po-otp-cell { background: var(--bg-neutral); border: 2px solid var(--border-default); color: var(--text-success); }
+.po-otp-error .po-otp-cell { border: 2px solid var(--border-danger-bold); color: var(--text-danger); }
+.po-otp-error .po-otp-cell-active { box-shadow: none; outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-otp-msg { margin: 0; text-align: center; font-family: var(--font-body); font-size: var(--type-label-sm-strong-size); line-height: var(--type-label-sm-strong-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-subtle); }
+.po-otp-msg-error { color: var(--text-danger); }
+
+/* Alert, StatusCard, ErrorSummary e Toast: mesma anatomia. Cor no fundo, na borda e no ícone; texto em text-default. */
+.po-alert { display: flex; align-items: flex-start; gap: var(--space-inline-related); padding: var(--space-inset-sm); border: 1px solid; border-radius: var(--radius-lg); box-sizing: border-box; width: 100%; max-width: 327px; font-family: var(--font-body); color: var(--text-default); }
+.po-alert-info { background: var(--bg-info-subtlest); border-color: var(--border-info); }
+.po-alert-success { background: var(--bg-success-subtlest); border-color: var(--border-success); }
+.po-alert-warning { background: var(--bg-warning-subtlest); border-color: var(--border-warning); }
+.po-alert-danger { background: var(--bg-danger-subtlest); border-color: var(--border-danger); }
+.po-alert-icon { flex: none; display: inline-flex; }
+.po-alert-info .po-alert-icon { color: var(--icon-info); }
+.po-alert-success .po-alert-icon { color: var(--icon-success); }
+.po-alert-warning .po-alert-icon { color: var(--icon-warning); }
+.po-alert-danger .po-alert-icon { color: var(--icon-danger); }
+.po-alert-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.po-alert-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-title-sm-size); line-height: var(--type-title-sm-line-height); font-weight: var(--type-title-sm-weight); }
+.po-alert-body { font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); }
+.po-alert-body p { margin: 0; }
+/* Ação em texto: alvo de 44px de altura sem mudar o desenho. */
+.po-alert-action { position: relative; align-self: flex-start; margin-top: var(--space-050); padding: 0; border: 0; background: none; font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-link); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.po-alert-action::after { content: ""; position: absolute; inset: calc(var(--space-150) * -1) 0; }
+.po-alert-action:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-alert-close { margin: calc(var(--space-025) * -1) calc(var(--space-025) * -1) 0 0; }
+.po-error-summary:focus { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-error-summary-list { margin: 0; padding-left: var(--space-250); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); }
+.po-error-summary-list li + li { margin-top: var(--space-050); }
+.po-error-summary-list a { color: var(--text-danger); font-weight: var(--font-weight-semibold); text-underline-offset: 2px; }
+.po-error-summary-list a:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+
+/* ContactRow */
+/* Valor mascarado em text-subtle (o leitor ouve o texto falado); a ação "Editar" tem alvo de 44px por ::after, como o .po-btn. Sem onEdit, sem botão. */
+.po-contact { display: flex; align-items: center; gap: var(--space-inline-group); font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); }
+.po-contact-value { display: inline-flex; align-items: center; gap: var(--space-inline-tight); font-weight: var(--type-label-md-strong-weight); color: var(--text-subtle); }
+.po-contact-edit { position: relative; display: inline-flex; align-items: center; gap: var(--space-inline-tight); padding: 0; background: none; border: 0; font: inherit; font-weight: var(--type-label-md-weight); color: var(--text-brand); cursor: pointer; }
+.po-contact-edit::after { content: ""; position: absolute; top: 50%; left: 50%; width: max(100%, var(--size-touch-target)); height: max(100%, var(--size-touch-target)); transform: translate(-50%, -50%); }
+.po-contact-edit:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ResendPrompt */
+/* Texto e ação centralizados, sem padding (o espaço vem da tela). A ação tem alvo de 44px e não usa disabled nativo: a espera é aria-disabled e continua no Tab. */
+.po-resend { margin: 0; font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-subtle); text-align: center; }
+.po-resend-line { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: var(--space-inline-related); row-gap: var(--space-025); }
+.po-resend-action { position: relative; padding: 0; background: none; border: 0; font: inherit; color: var(--text-brand); cursor: pointer; }
+.po-resend-action::after { content: ""; position: absolute; top: 50%; left: 50%; width: max(100%, var(--size-touch-target)); height: max(100%, var(--size-touch-target)); transform: translate(-50%, -50%); }
+.po-resend-action[aria-disabled="true"] { color: var(--text-subtle); cursor: not-allowed; }
+.po-resend-action:not([aria-disabled="true"]):hover { text-decoration: underline; text-underline-offset: 3px; }
+.po-resend-time { font-variant-numeric: tabular-nums; }
+.po-contact-edit:focus-visible, .po-resend-action:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+
+/* ContactRow — e-mail */
+.po-contact-email { gap: var(--space-inline-related); }
+
+/* Select (usa a base Field) */
+.po-select .po-input { appearance: none; -webkit-appearance: none; padding-right: calc(var(--space-150) + 18px + var(--space-050)); cursor: pointer; }
+.po-select-empty .po-input { color: var(--text-subtle); }
+.po-select-chevron { position: absolute; right: var(--space-150); display: inline-flex; color: var(--text-subtle); pointer-events: none; }
+.po-row-fields { display: flex; gap: var(--space-inline-group); align-items: flex-start; width: 100%; max-width: 327px; }
+
+/* Toast e ToastRegion: a região fica logo abaixo do AppHeader, sem altura própria, e o toast flutua sobre o conteúdo. */
+.po-toast { max-width: 356px; box-shadow: var(--shadow-md); }
+.po-toast-region { position: relative; z-index: 10; width: 100%; height: 0; }
+.po-toast-region > .po-toast { position: absolute; top: var(--space-100); left: var(--space-100); right: var(--space-100); width: auto; max-width: none; animation: po-toast-in .2s ease-out; }
+@keyframes po-toast-in { from { opacity: 0; transform: translateY(calc(var(--space-100) * -1)); } }
+@media (prefers-reduced-motion: reduce) { .po-toast-region > .po-toast { animation: none; } }
+
+/* ResultHero */
+/* Selo size-status-badge (64) com miolo de 75% (48) e ícone lg, nos tokens do tom. Título text-brand só no sucesso. O h1 recebe foco programático (tabIndex -1) sem anel. */
+.po-hero { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-section-lg); width: 100%; max-width: 327px; }
+.po-hero-badge { display: inline-flex; align-items: center; justify-content: center; width: var(--size-status-badge); height: var(--size-status-badge); border-radius: var(--radius-full); background: var(--bg-success-subtle); }
+.po-hero-badge-inner { display: inline-flex; align-items: center; justify-content: center; width: calc(var(--size-status-badge) * 0.75); height: calc(var(--size-status-badge) * 0.75); border-radius: var(--radius-full); background: var(--bg-success-bold); color: var(--text-on-success); }
+.po-hero-info .po-hero-badge { background: var(--bg-info-subtle); }
+.po-hero-info .po-hero-badge-inner { background: var(--bg-info-bold); color: var(--text-on-info); }
+.po-hero-warning .po-hero-badge { background: var(--bg-warning-subtle); }
+.po-hero-warning .po-hero-badge-inner { background: var(--bg-warning-bold); color: var(--text-on-warning); }
+.po-hero-danger .po-hero-badge { background: var(--bg-danger-subtle); }
+.po-hero-danger .po-hero-badge-inner { background: var(--bg-danger-bold); color: var(--text-on-danger); }
+.po-hero-text { display: flex; flex-direction: column; gap: var(--space-stack-loose); text-align: center; font-family: var(--font-body); }
+.po-hero-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); color: var(--text-default); }
+.po-hero-success .po-hero-title { color: var(--text-brand); }
+.po-hero-title:focus { outline: none; }
+.po-hero-desc { margin: 0; font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+
+/* StatusScreen */
+/* Selo desenhado: disco status-screen-badge-bg, miolo branco e Icon em status-screen-badge-icon. Foco sobre o gradiente em border-focused-on-brand. */
+.po-status-screen { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-section); box-sizing: border-box; width: 100%; max-width: 375px; min-height: 100%; padding: var(--space-inset-lg) var(--space-page-inline) var(--space-500); background: linear-gradient(180deg, var(--status-screen-gradient-top), var(--status-screen-gradient-bottom)); color: var(--text-on-brand); }
+.po-status-screen :focus-visible { outline: 2px solid var(--border-focused-on-brand); outline-offset: 2px; }
+.po-status-screen-head { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-loose); width: 100%; }
+.po-status-screen-badge { position: relative; flex: none; display: inline-flex; align-items: center; justify-content: center; width: var(--size-status-screen-badge); height: var(--size-status-screen-badge); border-radius: var(--radius-full); background: var(--status-screen-badge-bg); color: var(--status-screen-badge-icon); }
+.po-status-screen-badge::before { content: ""; position: absolute; width: 45%; height: 45%; border-radius: var(--radius-full); background: var(--status-screen-badge-inner); }
+.po-status-screen-badge-pending::before { width: 70%; height: 70%; }
+.po-status-screen-badge .po-icon { position: relative; }
+.po-status-screen-badge-success .po-icon { transform: scale(1.4); }
+.po-status-screen-title { margin: 0; text-align: center; font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); color: var(--text-on-brand); }
+.po-status-screen .po-status-screen-title:focus { outline: none; }
+.po-status-screen-desc { margin: 0; max-width: 327px; text-align: center; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-on-brand); }
+.po-status-screen-body { flex: 1 1 auto; width: 100%; display: flex; justify-content: center; }
+.po-status-screen-foot { width: 100%; display: flex; justify-content: center; }
+
+/* JourneyStepper */
+/* Rótulos quebram linha (200% de zoom, fonte grande); sem padding à direita, "Captura de documentos" ainda cabe numa linha em 375px. Etapa atual: círculo preenchido com anel de 2px e pílula com borda de 1px em journey-step-current-ring. */
+.po-journey { list-style: none; margin: 0; padding: 36px 0 var(--space-inset-md) var(--space-inset-md); width: 100%; max-width: 327px; box-sizing: border-box; font-family: var(--font-body); }
+.po-journey-step { display: flex; flex-direction: column; }
+.po-journey-row { display: flex; align-items: center; gap: var(--space-inline-related); }
+.po-journey-circle { flex: none; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; border-radius: var(--radius-full); }
+.po-journey-label { min-width: 0; overflow-wrap: anywhere; font-family: var(--font-heading); font-size: var(--type-title-lg-size); line-height: var(--type-title-lg-line-height); font-weight: var(--type-title-lg-weight); color: var(--text-on-brand); }
+.po-journey-done { padding-left: 9px; }
+.po-journey-done .po-journey-circle { width: 44px; height: 44px; background: var(--journey-step-current); color: var(--text-on-brand); }
+.po-journey-done .po-journey-label { color: var(--text-on-brand); }
+.po-journey-current .po-journey-row { gap: 0; }
+.po-journey-current .po-journey-circle { position: relative; z-index: 1; width: 60px; height: 60px; background: var(--journey-step-current); border: 2px solid var(--journey-step-current-ring); color: var(--text-on-brand); }
+.po-journey-pill { position: relative; flex: 0 1 auto; min-width: 0; display: inline-flex; align-items: center; min-height: 40px; margin-left: -11px; padding: var(--space-050) var(--space-100) var(--space-050) 18px; box-sizing: border-box; }
+.po-journey-pill-bg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: var(--journey-step-current); stroke: var(--journey-step-current-ring); stroke-width: 1px; }
+.po-journey-pill .po-journey-label { position: relative; }
+.po-journey-upcoming { padding-left: 11px; }
+.po-journey-upcoming .po-journey-circle { width: 38px; height: 38px; border: 2px solid var(--journey-step-upcoming); color: var(--text-on-brand); }
+.po-journey-connector { display: block; width: 2px; height: 36px; border-radius: var(--radius-full); background: var(--journey-step-upcoming); }
+.po-journey-done .po-journey-connector { height: 24px; margin-left: 21px; background: var(--journey-step-done); }
+.po-journey-current .po-journey-connector { margin-left: 29px; }
+.po-journey-upcoming .po-journey-connector { margin-left: 18px; }
+
+/* RedirectCountdown */
+/* Número aria-hidden, texto visível, região status oculta e as ações: "Continuar agora" (Button accent sm) e "Pausar"/"Retomar" (botão-link com alvo de 44px). Foco em border-focused-on-brand. */
+.po-countdown { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-related); padding: 0 var(--space-inset-md); }
+.po-countdown-row { display: flex; align-items: center; justify-content: center; gap: var(--space-inline-loose); }
+.po-countdown-number { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--bg-brand-bold); font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); font-variant-numeric: tabular-nums; color: var(--text-on-brand); }
+.po-countdown-text { margin: 0; max-width: 260px; font-family: var(--font-body); font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-on-brand); }
+.po-countdown-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-050) var(--space-inline-loose); }
+.po-countdown-pause { display: inline-flex; align-items: center; min-height: var(--size-touch-target); padding: 0 var(--space-050); border: 0; background: none; cursor: pointer; font-family: var(--font-body); font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-on-brand); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.po-countdown-pause:hover { text-decoration-thickness: 2px; }
+.po-countdown .po-btn:focus-visible, .po-countdown-pause:focus-visible { outline: 2px solid var(--border-focused-on-brand); outline-offset: 2px; }
+
+/* Badge */
+/* Texto carrega o sentido, nunca só a cor. Cinco tons; success é o padrão. Quebra dentro do próprio badge quando não cabe no título. */
+.po-badge { display: inline-flex; align-items: center; max-width: 100%; padding: var(--space-025) var(--space-100); border-radius: var(--radius-md); font-family: var(--font-body); font-size: var(--type-label-xs-size); line-height: var(--type-label-xs-line-height); font-weight: var(--type-label-xs-weight); }
+.po-badge-neutral { background: var(--bg-neutral); color: var(--text-subtle); }
+.po-badge-info { background: var(--bg-info-subtle); color: var(--text-info); }
+.po-badge-success { background: var(--bg-success-subtle); color: var(--text-success); }
+.po-badge-warning { background: var(--bg-warning-subtle); color: var(--text-warning); }
+.po-badge-danger { background: var(--bg-danger-subtle); color: var(--text-danger); }
+
+/* DocumentOption */
+.po-docopt { border-top: 1px solid var(--border-default); background: var(--bg-surface); width: 100%; max-width: 327px; box-sizing: border-box; font-family: var(--font-body); }
+.po-docopt-selected { background: var(--bg-page); }
+.po-docopt-head { position: relative; display: flex; align-items: center; gap: var(--space-inline-loose); min-height: 42px; padding: var(--space-inset-md); cursor: pointer; }
+.po-docopt-input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.po-docopt-radio { flex: none; box-sizing: border-box; width: var(--size-checkbox); height: var(--size-checkbox); border-radius: var(--radius-full); background: var(--bg-input); border: 1.5px solid var(--border-input); }
+.po-docopt-head:hover .po-docopt-radio { border-color: var(--border-input-hovered); }
+.po-docopt-selected .po-docopt-radio, .po-docopt-selected .po-docopt-head:hover .po-docopt-radio { border: 6px solid var(--border-brand); }
+.po-docopt-invalid .po-docopt-radio { border-color: var(--border-danger-bold); background: var(--bg-danger-subtlest); }
+.po-docopt-input:focus-visible ~ .po-docopt-radio { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-docopt-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.po-docopt-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-inline-tight); font-family: var(--font-heading); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+.po-docopt-desc { font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+.po-docopt-chevron { flex: none; display: inline-flex; color: var(--icon-default); transition: transform .15s; }
+.po-docopt-chevron-up { transform: scaleY(-1); }
+.po-docopt-panel { display: flex; flex-direction: column; gap: var(--space-stack-group); padding: 0 var(--space-inset-md) var(--space-inset-md); }
+
+/* ActionRow */
+/* A linha inteira é o botão. Hover e pressionado com tokens de fundo neutro; indisponível com aria-disabled e cores nomeadas (sem opacidade). */
+.po-action { display: flex; align-items: center; gap: var(--space-inline-related); width: 100%; box-sizing: border-box; padding: var(--space-100) var(--space-050) var(--space-100) var(--space-150); background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); font: inherit; text-align: left; color: var(--text-default); cursor: pointer; }
+.po-action:not([aria-disabled="true"]):hover { background: var(--bg-neutral-subtle-hovered); }
+.po-action:not([aria-disabled="true"]):active { background: var(--bg-neutral-subtle-pressed); }
+.po-action-icon { flex: none; display: inline-flex; padding: var(--space-050); color: var(--icon-brand); }
+.po-action-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-025); }
+.po-action-label { font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-action-desc { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-action-arrow { flex: none; display: inline-flex; padding: var(--space-150); border-radius: var(--radius-full); color: var(--icon-brand); }
+.po-action:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-action[aria-disabled="true"] { background: var(--bg-surface); cursor: not-allowed; }
+.po-action[aria-disabled="true"] .po-action-label, .po-action[aria-disabled="true"] .po-action-desc { color: var(--text-disabled); }
+.po-action[aria-disabled="true"] .po-action-icon, .po-action[aria-disabled="true"] .po-action-arrow { color: var(--icon-disabled); }
+
+/* OptionCard */
+.po-optcard { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; box-sizing: border-box; padding: 14px var(--space-inset-sm) 14px var(--space-control-inline); background: var(--bg-surface); border: 1px solid var(--border-selectable); border-radius: var(--radius-lg); font: inherit; text-align: left; color: var(--text-default); cursor: pointer; }
+.po-optcard:not([aria-disabled="true"]):hover { background: var(--bg-neutral-subtle-hovered); }
+.po-optcard:not([aria-disabled="true"]):active { background: var(--bg-neutral-subtle-pressed); }
+.po-optcard:not([aria-disabled="true"]):active .po-optcard-desc, .po-list-item-link:not([aria-disabled="true"]):active .po-list-desc { color: var(--text-subtle-pressed); }
+.po-optcard-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--bg-brand-subtle); }
+.po-optcard-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-025); }
+.po-optcard-title { font-family: var(--font-heading); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); color: var(--text-default); }
+.po-optcard-desc { font-family: var(--font-body); font-size: var(--type-body-xs-size); line-height: var(--type-body-xs-line-height); font-weight: var(--type-body-xs-weight); color: var(--text-subtle); }
+.po-optcard-arrow { flex: none; display: inline-flex; color: var(--icon-default); }
+.po-optcard:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-optcard[aria-disabled="true"] { background: var(--bg-surface); cursor: not-allowed; }
+.po-optcard[aria-disabled="true"] .po-optcard-title, .po-optcard[aria-disabled="true"] .po-optcard-desc { color: var(--text-disabled); }
+.po-optcard[aria-disabled="true"] .po-optcard-arrow { color: var(--icon-disabled); }
+.po-optcard-selected { border-width: 2px; }
+.po-optcard-stacked { flex-direction: column; align-items: stretch; gap: var(--space-inline-group); padding: var(--space-inset-md); }
+.po-optcard-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-inline-group); }
+.po-optcard-lead { display: inline-flex; align-items: center; gap: var(--space-inline-related); min-width: 0; }
+.po-optcard-stacked .po-optcard-desc { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); }
+
+/* Icon — Material Symbols Outlined. Tamanho pelos tokens size-icon-* (inline); tone pinta com um token icon-*, sem tone o ícone herda o currentColor. */
+.po-icon { display: inline-flex; align-items: center; justify-content: center; flex: none; overflow: hidden; font-family: var(--font-icons); font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; direction: ltr; font-feature-settings: 'liga'; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; user-select: none; }
+.po-icon-default { color: var(--icon-default); }
+.po-icon-subtle { color: var(--icon-subtle); }
+.po-icon-brand { color: var(--icon-brand); }
+.po-icon-success { color: var(--icon-success); }
+.po-icon-danger { color: var(--icon-danger); }
+.po-icon-warning { color: var(--icon-warning); }
+.po-icon-info { color: var(--icon-info); }
+
+/* Button sm */
+.po-btn-sm { min-height: var(--size-button-sm); padding: var(--space-100) var(--space-button-inline); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); }
+
+/* List */
+/* Lista agrupada: rótulo de seção em label-xs caixa-alta, cartão bg-surface com borda border-default e linhas de no mínimo 48px (size-menu-item). */
+.po-list-section { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+.po-list-label { margin: 0; font-family: var(--font-body); font-size: var(--type-label-xs-size); line-height: var(--type-label-xs-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-subtle); text-transform: uppercase; }
+.po-list { margin: 0; padding: 0; list-style: none; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+.po-list-li + .po-list-li { border-top: 1px solid var(--border-default); }
+.po-list-item { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; min-height: var(--size-menu-item); box-sizing: border-box; padding: var(--space-150) var(--space-inset-md); margin: 0; border: 0; background: transparent; font: inherit; text-align: left; text-decoration: none; color: var(--text-default); }
+.po-list-icon { flex: none; display: inline-flex; color: var(--icon-subtle); }
+.po-list-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-025); }
+.po-list-title { font-family: var(--font-body); font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-weight); color: var(--text-default); }
+.po-list-desc { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-list-trailing { flex: none; display: inline-flex; align-items: center; }
+.po-list-chevron { flex: none; display: inline-flex; color: var(--icon-subtle); }
+.po-list-item-link { cursor: pointer; }
+.po-list-item-link:not([aria-disabled="true"]):hover { background: var(--bg-neutral-subtle-hovered); }
+.po-list-item-link:not([aria-disabled="true"]):active { background: var(--bg-neutral-subtle-pressed); }
+.po-list-item-link:focus-visible { outline: 2px solid var(--border-focused); outline-offset: -2px; }
+.po-list-item-link[aria-disabled="true"] { cursor: not-allowed; }
+.po-list-item-link[aria-disabled="true"] .po-list-title, .po-list-item-link[aria-disabled="true"] .po-list-desc { color: var(--text-disabled); }
+.po-list-item-link[aria-disabled="true"] .po-list-icon, .po-list-item-link[aria-disabled="true"] .po-list-chevron { color: var(--icon-disabled); }
+.po-list-item-danger .po-list-title { color: var(--text-danger); }
+.po-list-item-danger .po-list-icon { color: var(--icon-danger); }
+.po-list-item-danger.po-list-item-link:not([aria-disabled="true"]):hover { background: var(--bg-danger-subtlest); }
+.po-list-action { position: relative; flex: none; padding: var(--space-050) 0; border: 0; background: transparent; font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-brand); cursor: pointer; white-space: nowrap; }
+.po-list-action::after { content: ""; position: absolute; left: 50%; top: 50%; width: max(100%, var(--size-touch-target)); height: var(--size-touch-target); transform: translate(-50%, -50%); }
+.po-list-action:hover { text-decoration: underline; }
+.po-list-action:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 2px; border-radius: var(--radius-sm); }
+.po-list-action-danger { color: var(--text-danger); }
+
+/* Image */
+/* Sem src ou com erro de carregamento: placeholder bg-neutral. srcDark: as duas fontes no DOM, só a do tema aparece (a oculta não carrega com loading="lazy"). */
+.po-image { position: relative; width: 100%; overflow: hidden; background: var(--bg-neutral); }
+.po-image-rounded { border-radius: var(--radius-lg); }
+.po-image-img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.po-image-dark { display: none; }
+[data-theme="dark"] .po-image-light { display: none; }
+[data-theme="dark"] .po-image-dark { display: block; }
+.po-image-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--icon-subtle); }
+
+/* ScanFrame */
+/* media: cantos de 6px em border-brand (tutorial). camera: cantos de 5px em camera-fg com contorno camera-bg, visíveis sobre qualquer quadro de vídeo.
+   ratio: o .po-scanframe-fit ocupa o pai e a moldura pega o maior retângulo na proporção (container query). */
+.po-scanframe { position: relative; box-sizing: border-box; }
+.po-scanframe-fit { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; container-type: size; }
+.po-scanframe-ratio { width: min(100cqw, 100cqh * var(--po-frame-ratio)); max-height: 100%; }
+.po-scanframe-c { position: absolute; width: 28px; height: 28px; border: 0 solid var(--border-brand); }
+.po-scanframe-tl { top: 0; left: 0; border-top-width: 6px; border-left-width: 6px; }
+.po-scanframe-tr { top: 0; right: 0; border-top-width: 6px; border-right-width: 6px; }
+.po-scanframe-bl { bottom: 0; left: 0; border-bottom-width: 6px; border-left-width: 6px; }
+.po-scanframe-br { bottom: 0; right: 0; border-bottom-width: 6px; border-right-width: 6px; }
+.po-scanframe-camera .po-scanframe-c { border-color: var(--camera-fg); filter: drop-shadow(0 0 1px var(--camera-bg)) drop-shadow(0 0 1px var(--camera-bg)); }
+.po-scanframe-camera .po-scanframe-tl, .po-scanframe-camera .po-scanframe-tr { border-top-width: 5px; }
+.po-scanframe-camera .po-scanframe-bl, .po-scanframe-camera .po-scanframe-br { border-bottom-width: 5px; }
+.po-scanframe-camera .po-scanframe-tl, .po-scanframe-camera .po-scanframe-bl { border-left-width: 5px; }
+.po-scanframe-camera .po-scanframe-tr, .po-scanframe-camera .po-scanframe-br { border-right-width: 5px; }
+
+/* CarouselDots */
+/* Ponto de 8px com anel de 1px em carousel-dot-ring (10px no total, como no Figma); ativo 20×8 em bg-brand-bold. Clicáveis: botões de 24×24 (ativo 32), sem gap. */
+.po-dots { display: inline-flex; align-items: center; gap: var(--space-inline-group); }
+.po-dot { display: block; width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--carousel-dot); box-shadow: 0 0 0 1px var(--carousel-dot-ring); transition: width .2s; }
+.po-dot-active { width: 20px; background: var(--bg-brand-bold); }
+.po-dots-interactive { gap: 0; }
+.po-dot-btn { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: var(--radius-full); background: none; cursor: pointer; }
+.po-dot-btn-active { width: 32px; }
+.po-dot-btn:focus-visible { outline: 2px solid var(--border-focused); outline-offset: 0; }
+@media (prefers-reduced-motion: reduce) { .po-dot { transition: none; } }
+
+/* StepNumber */
+.po-stepnum { display: inline-flex; align-items: center; justify-content: center; width: var(--size-step-number); height: var(--size-step-number); border-radius: var(--radius-full); background: var(--bg-neutral); font-family: var(--font-heading); font-size: var(--type-numeral-size); line-height: var(--type-numeral-line-height); font-weight: var(--type-numeral-weight); font-variant-numeric: tabular-nums; color: var(--text-default); }
+
+/* TutorialSlide */
+/* Imagem em size-media-hero (clamp 240–470px). A moldura do último passo ocupa 85% da altura da imagem. */
+.po-tutorial { display: flex; flex-direction: column; width: 100%; max-width: 375px; background: var(--bg-surface); }
+.po-tutorial-frame { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.po-tutorial-frame-fit { inset: 7.5% 0; }
+.po-tutorial-dots { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); }
+.po-tutorial-body { position: relative; display: flex; flex-direction: column; gap: var(--space-stack-section); padding: var(--space-stack-section-lg) var(--space-page-inline) var(--space-300); }
+.po-tutorial-num { position: absolute; top: -22px; left: 22px; }
+.po-tutorial-text { display: flex; flex-direction: column; gap: var(--space-stack-related); font-family: var(--font-body); color: var(--text-default); }
+.po-tutorial-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); }
+.po-tutorial-desc { margin: 0; font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); }
+
+/* Tutorial */
+/* Header do DS (voltar, título, "Pular" tertiary sm) + slide. Sem animação de troca: nada a desligar em reduced motion. */
+.po-tutorial-carousel { display: flex; flex-direction: column; width: 100%; max-width: 375px; background: var(--bg-surface); }
+.po-tutorial-header { max-width: none; }
+.po-tutorial-skip { flex: none; margin: calc(var(--space-100) * -1) 0; }
+.po-tutorial-slide { display: flex; flex-direction: column; }
+
+/* PageHeading sm */
+.po-heading-sm { font-size: var(--type-heading-lg-size); line-height: var(--type-heading-lg-line-height); }
+
+/* UploadArea */
+/* Input nativo invisível cobrindo a área: um só controle (uma parada de Tab), foco desenhado na área. Tracejado em border-input (5.4:1 claro, 3.4:1 escuro).
+   Com arquivo, borda contínua: escolhido border-input · enviando border-brand · enviado border-success-bold · erro border-danger-bold. */
+.po-upload-wrap { display: flex; flex-direction: column; gap: var(--space-stack-tight); width: 100%; height: 100%; }
+.po-upload { position: relative; flex: 1 1 auto; min-height: 160px; display: flex; align-items: center; justify-content: center; padding: var(--space-inset-lg); box-sizing: border-box; border: 1px dashed var(--border-input); border-radius: var(--radius-lg); background: var(--bg-page); font-family: var(--font-body); text-align: center; }
+.po-upload:has(> .po-upload-input:focus-visible) { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-upload:hover { background-color: var(--bg-brand-subtlest); }
+.po-upload-filled, .po-upload-uploading, .po-upload-done { border-style: solid; background: var(--bg-surface); }
+.po-upload-uploading { border-color: var(--border-brand); }
+.po-upload-done { border-color: var(--border-success-bold); }
+.po-upload-error { border-color: var(--border-danger-bold); background: var(--bg-danger-subtlest); }
+.po-upload-error:hover { background: var(--bg-danger-subtlest); }
+.po-upload-drag { border-color: var(--border-brand); border-style: solid; background: var(--bg-brand-subtlest); }
+.po-upload-input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
+.po-upload-input:disabled { cursor: progress; }
+.po-upload-empty { display: flex; flex-direction: column; align-items: center; gap: var(--space-stack-related); color: var(--icon-brand); }
+.po-upload-label { font-size: var(--type-label-lg-strong-size); line-height: var(--type-label-lg-strong-line-height); font-weight: var(--type-label-lg-strong-weight); color: var(--text-default); }
+.po-upload-hint { margin: 0; font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+.po-upload-file { display: flex; align-items: center; gap: var(--space-inline-group); width: 100%; text-align: left; }
+.po-upload-file-icon { color: var(--icon-brand); }
+.po-upload-done .po-upload-file-icon { color: var(--icon-success); }
+.po-upload-error .po-upload-file-icon { color: var(--icon-danger); }
+.po-upload-file-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.po-upload-file-info { display: flex; flex-direction: column; }
+.po-upload-name { font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-default); overflow-wrap: anywhere; }
+.po-upload-meta { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-upload-swap { font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-brand); text-decoration: underline; text-underline-offset: 2px; }
+.po-upload-progress { display: block; height: var(--size-progress); border-radius: var(--radius-sm); background: var(--bg-neutral); overflow: hidden; }
+.po-upload-progress > span { display: block; height: 100%; background: var(--bg-brand-bold); transition: width .2s; }
+.po-upload-action { position: relative; z-index: 2; flex: none; }
+@media (prefers-reduced-motion: reduce) { .po-upload-progress > span { transition: none; } }
+
+/* ScanFrame solid */
+/* Enquadrado. surface media: borda contínua de 8px em border-success-bold; surface camera: 5px com linhas camera-fg de 2px (abaixo, em CameraCapture). */
+.po-scanframe-solid { border: 8px solid var(--border-success-bold); }
+
+/* CameraCapture */
+/* Escura nos dois modos. Faixa: só a instrução é região viva; o Voltar (IconButton) fica ao lado. Enquadrado: camera-bar-success-bg (4.9:1) + ícone check.
+   Moldura até 80% do visor, na proporção de frame; a máscara bg-scrim sai da sombra da moldura. Rodapé de 96px com "Tirar foto" (64px) e "Enviar arquivo". */
+.po-camera { display: flex; flex-direction: column; width: 100%; max-width: 375px; height: 100%; min-height: 480px; background: var(--camera-bg); overflow: hidden; }
+.po-camera-bar { flex: none; display: flex; align-items: center; gap: var(--space-inline-related); height: var(--size-camera-bar); padding: 0 var(--space-inset-sm); box-sizing: border-box; background: var(--camera-bg); color: var(--camera-fg); transition: background .2s; }
+.po-camera-aligned .po-camera-bar { background: var(--camera-bar-success-bg); color: var(--text-on-success); }
+.po-camera-side { flex: none; width: var(--size-button-sm); display: flex; }
+.po-btn.po-camera-back { color: var(--camera-fg); }
+.po-btn.po-camera-back:not([aria-disabled="true"]):hover, .po-btn.po-camera-back:not([aria-disabled="true"]):active { background: transparent; }
+.po-camera .po-btn:focus-visible, .po-camera-upload:focus-visible, .po-camera-shutter:focus-visible { outline: 2px solid var(--camera-fg); outline-offset: 2px; }
+.po-camera-msg { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; gap: var(--space-inline-tight); margin: 0; text-align: center; font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); }
+.po-camera-aligned .po-camera-msg { font-family: var(--font-heading); font-size: var(--type-title-md-size); line-height: var(--type-title-md-line-height); font-weight: var(--type-title-md-weight); }
+.po-camera-viewport { position: relative; flex: 1 1 auto; overflow: hidden; background: var(--camera-viewport-bg); }
+.po-camera-blocked .po-camera-viewport { background: var(--camera-bg); }
+.po-camera-feed { position: absolute; inset: 0; }
+.po-camera-feed > video, .po-camera-feed > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.po-camera-window { position: absolute; inset: 10%; }
+.po-camera-window .po-scanframe { box-shadow: 0 0 0 9999px var(--bg-scrim); }
+.po-camera-window-legacy { inset: auto; left: 50%; transform: translateX(-50%); max-height: calc(100% - 34px); }
+.po-scanframe-camera.po-scanframe-solid { border: 5px solid var(--border-success-bold); outline: 2px solid var(--camera-fg); outline-offset: 0; }
+.po-scanframe-camera.po-scanframe-solid::after { content: ""; position: absolute; inset: 0; border: 2px solid var(--camera-fg); }
+.po-camera-panel { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-stack-loose); padding: var(--space-page-inline); color: var(--camera-fg); text-align: center; }
+.po-camera-panel .po-btn { max-width: 279px; }
+.po-camera-panel-text { margin: 0; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); }
+.po-camera-footer { flex: none; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: var(--size-camera-footer); padding: 0 var(--space-inset-md); box-sizing: border-box; background: var(--camera-bg); }
+.po-camera-footer-side { display: flex; }
+.po-camera-upload { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: var(--space-stack-tight); min-height: var(--size-touch-target); padding: var(--space-050); border: 0; border-radius: var(--radius-lg); background: none; color: var(--camera-fg); cursor: pointer; font-family: var(--font-body); font-size: var(--type-label-sm-size); line-height: var(--type-label-sm-line-height); font-weight: var(--type-label-sm-weight); }
+.po-camera-shutter { display: inline-flex; align-items: center; justify-content: center; width: var(--size-camera-shutter); height: var(--size-camera-shutter); padding: 0; box-sizing: border-box; border: 4px solid var(--camera-fg); border-radius: var(--radius-full); background: none; cursor: pointer; }
+.po-camera-shutter-core { width: calc(100% - 8px); height: calc(100% - 8px); border-radius: var(--radius-full); background: var(--camera-fg); transition: transform .15s; }
+.po-camera-shutter:not([aria-disabled="true"]):active .po-camera-shutter-core { transform: scale(.9); }
+.po-camera-shutter[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.po-camera-shutter[aria-busy="true"] { cursor: progress; }
+@media (prefers-reduced-motion: reduce) { .po-camera-bar, .po-camera-shutter-core { transition: none; } }
+
+/* FaceCapture */
+/* Captura de selfie em círculo, dentro de tela branca (não é tela cheia). Anel de 6px com a cor do estado; máscara bg-scrim só dentro do círculo, fora da moldura oval. */
+.po-face { display: flex; justify-content: center; }
+.po-face-circle { position: relative; width: var(--size-face-capture); max-width: 100%; aspect-ratio: 1; border-radius: var(--radius-full); overflow: hidden; isolation: isolate; background: var(--bg-neutral); }
+.po-face-feed { position: absolute; inset: 0; }
+.po-face-feed > * { width: 100%; height: 100%; object-fit: cover; }
+.po-face[data-state="countdown"] .po-face-feed::after { content: ""; position: absolute; inset: 0; background: var(--bg-scrim); }
+/* Moldura oval em camera-fg (clara nos dois temas, como o ScanFrame da câmera); a sombra de 999px escurece tudo fora dela, cortada pelo círculo. */
+.po-face-oval { position: absolute; left: 50%; top: 50%; width: 72%; height: 86%; transform: translate(-50%, -50%); border-radius: 50%; border: 2px dashed var(--camera-fg); box-shadow: 0 0 0 999px var(--bg-scrim); }
+/* Progresso: meio círculo no máximo (180°), do lado da virada da cabeça. Traço em unidades do viewBox (1.8 de 100 = 6px no círculo de 340px; acompanha o tamanho). */
+.po-face-arc { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.po-face-arc circle { fill: none; stroke: var(--border-brand); stroke-width: 1.8; stroke-linecap: round; transform-box: view-box; transform-origin: 50% 50%; transition: stroke-dasharray .2s; }
+.po-face-arc-left circle { transform: rotate(90deg); }
+.po-face-arc-right circle { transform: rotate(-90deg); }
+.po-face-ring { position: absolute; inset: 0; border-radius: var(--radius-full); border: 6px solid; pointer-events: none; }
+.po-face-ring-success { border-color: var(--border-success-bold); }
+.po-face-ring-warning { border-color: var(--icon-warning); }
+.po-face-count { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.po-face-count-num { display: flex; align-items: center; justify-content: center; width: var(--size-face-count); height: var(--size-face-count); border-radius: var(--radius-full); background: var(--bg-brand-bold); color: var(--text-on-brand); font-family: var(--font-heading); font-size: var(--type-heading-xl-size); line-height: var(--type-heading-xl-line-height); font-weight: var(--type-heading-xl-weight); font-variant-numeric: tabular-nums; }
+
+/* OrientationHint */
+/* Tela cheia só para o celular na vertical. Some sozinha: o consumidor controla `visible`. */
+.po-orientation { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-stack-group); padding: var(--space-page-inline); background: var(--bg-surface); text-align: center; }
+/* Ícone de 64px: glifo do Icon sem o componente, porque o Icon só vai até xl (40) e `style` está depreciado. */
+.po-orientation-icon { font-size: var(--size-hint-icon); width: var(--size-hint-icon); height: var(--size-hint-icon); color: var(--icon-brand); font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+.po-orientation-text { margin: 0; font-family: var(--font-body); font-size: var(--type-label-md-strong-size); line-height: var(--type-label-md-strong-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-default); }
+
+/* LoadingState */
+/* Espera do backend. Spinner de 4px: trilha border-default e arco border-brand. Com movimento reduzido, fica o arco estático. */
+.po-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-stack-group); padding: var(--space-inset-lg) var(--space-page-inline); text-align: center; }
+.po-loading-spinner { width: var(--size-spinner); height: var(--size-spinner); box-sizing: border-box; border-radius: var(--radius-full); border: 4px solid var(--border-default); border-top-color: var(--border-brand); animation: po-spin 1s linear infinite; }
+.po-loading-copy { display: flex; flex-direction: column; gap: var(--space-stack-related); }
+.po-loading-title { margin: 0; font-family: var(--font-heading); font-size: var(--type-title-lg-size); line-height: var(--type-title-lg-line-height); font-weight: var(--type-title-lg-weight); color: var(--text-default); }
+.po-loading-text { margin: 0; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-subtle); }
+@media (prefers-reduced-motion: reduce) { .po-loading-spinner { animation: none; } .po-face-arc circle { transition: none; } }
+
+
+.po-input-sm, .po-input-md, .po-input-lg { height: var(--size-input); padding: 0 var(--space-control-inline); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); background: var(--bg-page); border-color: var(--border-input); border-radius: var(--radius-lg); }
+.po-input-error, .po-input-error:focus-visible { background: var(--bg-danger-subtlest); border-color: var(--border-danger-bold); box-shadow: none; }
+.po-msg-dot { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--icon-danger); transform: translateY(-1px); }
+.po-check { position: relative; display: flex; align-items: flex-start; gap: var(--space-inline-related); cursor: pointer; max-width: 327px; }
+.po-check-input { position: absolute; opacity: 0; width: var(--size-checkbox); height: var(--size-checkbox); margin: 0; cursor: pointer; }
+.po-check-box { flex: none; box-sizing: border-box; width: var(--size-checkbox); height: var(--size-checkbox); margin-top: 1px; display: inline-flex; align-items: center; justify-content: center; border: .5px solid var(--border-input); border-radius: var(--radius-sm); background: var(--bg-page); color: var(--text-on-brand); }
+.po-check-input:checked + .po-check-box { background: var(--bg-brand-bold); border-color: var(--border-brand); }
+.po-check-input:focus-visible + .po-check-box { outline: 2px solid var(--border-focused); outline-offset: 2px; }
+.po-check-label { font-family: var(--font-body); font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-check-label a, .po-check-label strong { color: var(--text-brand); font-weight: var(--font-weight-semibold); text-decoration: none; }
+.po-heading-spaced { gap: var(--space-stack-loose); }
+.po-status { display: flex; align-items: flex-start; gap: var(--space-inline-group); padding: var(--space-inset-md); border: 1.5px solid var(--border-success); border-radius: var(--radius-lg); background: var(--bg-success-subtlest); box-sizing: border-box; width: 100%; max-width: 327px; }
+.po-status-icon { flex: none; display: inline-flex; border-radius: var(--radius-full); background: var(--bg-success-subtle); color: var(--icon-success); }
+.po-status-text { display: flex; flex-direction: column; gap: var(--space-stack-tight); font-family: var(--font-body); }
+.po-status-title { margin: 0; font-size: var(--type-label-lg-size); line-height: var(--type-label-lg-line-height); font-weight: var(--type-label-lg-weight); color: var(--text-default); }
+.po-status-desc { margin: 0; font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line-height); font-weight: var(--type-body-sm-weight); color: var(--text-subtle); }
+.po-field-lg { gap: var(--space-stack-related); }
+.po-field-lg .po-field-label { line-height: var(--type-label-md-line-height); color: var(--text-default); }
+.po-select.po-input-error { background: var(--bg-danger-subtlest); border-color: var(--border-danger-bold); }
+.po-toast-icon { flex: none; display: inline-flex; color: var(--icon-success); }
+.po-toast-title { flex: 1 1 auto; margin: 0; padding-top: var(--space-025); font-family: var(--font-heading); font-size: var(--type-title-sm-size); line-height: var(--type-title-sm-line-height); font-weight: var(--type-title-sm-weight); color: var(--text-success); }
+.po-toast-close { margin: calc(var(--space-025) * -1) calc(var(--space-025) * -1) 0 0; }
+.po-camera-spacer { flex: none; width: var(--size-icon); }
+
+/* Campos da versão de protótipo: o bundle v59 usa .po-field-control como moldura; as telas daqui
+   usam input direto com .po-input-md/lg. Estas regras devolvem a borda e o foco a esse markup. */
+.po-input.po-input-sm, .po-input.po-input-md, .po-input.po-input-lg { border: 1px solid var(--border-input); }
+.po-input.po-input-md:focus-visible, .po-input.po-input-lg:focus-visible { border-color: var(--border-focused); box-shadow: 0 0 0 1px var(--border-focused); }
+
+/* OTP: o protótipo monta as células direto em .po-otp-row (linha flex), como no DS antes da v59.
+   A v59 põe um .po-otp-cells dentro de .po-otp-row; sem isso as seis células empilham. */
+.po-otp-row { display: flex; align-items: center; gap: var(--space-inline-related); }
+
+/* Reenviar código: o protótipo põe o texto e o botão direto em .po-resend (sem .po-resend-line). Layout em linha, centralizado, com a folga do DS. */
+.po-resend { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: var(--space-inline-related); }
+
+/* Select: a marcação do protótipo põe o <select> direto em .po-select (a moldura com borda). O bundle v59 só cobre .po-select .po-input; estas regras vêm da cópia anterior. */
+.po-select { position: relative; display: flex; align-items: center; height: var(--size-input); box-sizing: border-box; border: 1px solid var(--border-input); border-radius: var(--radius-lg); background: var(--bg-page); }
+.po-select select { appearance: none; -webkit-appearance: none; flex: 1 1 auto; min-width: 0; height: 100%; padding: 0 calc(var(--space-150) + 14px) 0 var(--space-150); border: 0; background: transparent; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-default); outline: none; cursor: pointer; }
+.po-select-empty select { color: var(--text-subtle); }
+.po-select:focus-within { border-color: var(--border-focused); box-shadow: 0 0 0 1px var(--border-focused); }
+.po-select.po-input-error { background: var(--bg-danger-subtlest); border-color: var(--border-danger-bold); }

@@ -1,0 +1,13 @@
+{
+  "name": "palmeiras-hub-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hub do Palmeiras · Onboarding como aplicação web: interface e API JSON sobre o handoff.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/"
+  },
+  "dependencies": {}
+}
