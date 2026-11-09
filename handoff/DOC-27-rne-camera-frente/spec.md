@@ -1,6 +1,6 @@
 # DOC-27 · RNE · câmera da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Fotografar a frente do RNE. A foto é tirada sozinha quando o documento está en
 |---|---|---|---|---|
 | `CameraCapture` | 5 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre a frente do documento na moldura" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />` | state | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

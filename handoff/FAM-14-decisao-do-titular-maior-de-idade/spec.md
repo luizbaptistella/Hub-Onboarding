@@ -1,16 +1,15 @@
 # FAM-14 · Decisão do titular · maior de idade
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-14` |
-| Id no protótipo | `familiar-decisao` (`prototipo.html#familiar-decisao`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 3 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastrar familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `familiar-cadastro`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastrar familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `familiar-cadastro`. |
 | 2 | `PageHeading` | `<PageHeading title="Como deseja concluir o cadastro?" subtitle="Você pode preencher agora, no seu celular, ou enviar um convite para o familiar confirmar os próprios dados." tone="neutral" />` | — | — |
 | 3 | `OptionCard` | `<OptionCard icon="person_add" title="Cadastrar agora" description="Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular." layout="stacked" />` | — | — |
 | 4 | `OptionCard` | `<OptionCard icon="send" title="Enviar convite" description="O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados." layout="stacked" />` | — | — |

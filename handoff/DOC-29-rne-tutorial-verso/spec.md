@@ -1,6 +1,6 @@
 # DOC-29 · RNE · tutorial do verso (código)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar o código (MRZ) do verso do RNE.
 |---|---|---|---|---|
 | `Tutorial` | 2 | `<Tutorial label="Como fotografar o código do verso do RNE" title="Foto do documento" steps={[{ title: "Vire o documento", description: "Agora vamos fotografar o código: as três linhas de …` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

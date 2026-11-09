@@ -1,6 +1,6 @@
 # DOC-30 · RNE · leitura do código MRZ (verso)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Enquadrar o código MRZ do verso do RNE na câmera. O código é lido por OCR da
 |---|---|---|---|---|
 | `CameraCapture` | 6 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre o código MRZ no verso do documento" successMessage="Enquadramento perfeito!" autoCapture onBack={() => {}} onCapture={()…` | state, successMessage | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

@@ -48,67 +48,67 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×768",
+      "implementacao": "375×768",
       "DS": "375×224"
      },
      {
       "parte": "status-screen-head",
-      "protótipo": "327×160",
+      "implementacao": "327×160",
       "DS": "327×160"
      },
      {
       "parte": "imagem",
-      "protótipo": "80×80",
+      "implementacao": "80×80",
       "DS": "—"
      },
      {
       "parte": "status-screen-title",
-      "protótipo": "327×64",
+      "implementacao": "327×64",
       "DS": "327×64"
      },
      {
       "parte": "status-screen-body",
-      "protótipo": "327×328",
+      "implementacao": "327×328",
       "DS": "—"
      },
      {
       "parte": "journey",
-      "protótipo": "327×328",
+      "implementacao": "327×328",
       "DS": "—"
      },
      {
       "parte": "journey-step",
-      "protótipo": "311×68",
+      "implementacao": "311×68",
       "DS": "—"
      },
      {
       "parte": "journey-row",
-      "protótipo": "302×44",
+      "implementacao": "302×44",
       "DS": "—"
      },
      {
       "parte": "journey-circle",
-      "protótipo": "44×44",
+      "implementacao": "44×44",
       "DS": "—"
      },
      {
       "parte": "ícone (check)",
-      "protótipo": "26×26",
+      "implementacao": "26×26",
       "DS": "—"
      },
      {
       "parte": "journey-label",
-      "protótipo": "88×28",
+      "implementacao": "88×28",
       "DS": "—"
      },
      {
       "parte": "journey-connector",
-      "protótipo": "2×24",
+      "implementacao": "2×24",
       "DS": "—"
      },
      {
       "parte": "ícone (description)",
-      "protótipo": "28×28",
+      "implementacao": "28×28",
       "DS": "—"
      }
     ],
@@ -287,7 +287,7 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "768px",
+      "implementacao": "768px",
       "DS": "224px"
      }
     ],
@@ -296,7 +296,7 @@
      "h": 768,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -360,62 +360,62 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×328",
+      "implementacao": "327×328",
       "DS": "327×328"
      },
      {
       "parte": "journey-step",
-      "protótipo": "311×68",
+      "implementacao": "311×68",
       "DS": "311×68"
      },
      {
       "parte": "journey-row",
-      "protótipo": "302×44",
+      "implementacao": "302×44",
       "DS": "302×44"
      },
      {
       "parte": "journey-circle",
-      "protótipo": "44×44",
+      "implementacao": "44×44",
       "DS": "44×44"
      },
      {
       "parte": "ícone (check)",
-      "protótipo": "26×26",
+      "implementacao": "26×26",
       "DS": "24×24"
      },
      {
       "parte": "journey-label",
-      "protótipo": "88×28",
+      "implementacao": "88×28",
       "DS": "88×28"
      },
      {
       "parte": "journey-connector",
-      "protótipo": "2×24",
+      "implementacao": "2×24",
       "DS": "2×24"
      },
      {
       "parte": "ícone (description)",
-      "protótipo": "28×28",
+      "implementacao": "28×28",
       "DS": "—"
      },
      {
       "parte": "journey-pill",
-      "protótipo": "258×40",
+      "implementacao": "258×40",
       "DS": "258×40"
      },
      {
       "parte": "journey-pill-bg",
-      "protótipo": "258×40",
+      "implementacao": "258×40",
       "DS": "258×40"
      },
      {
       "parte": "ícone (familiar_face_and_zone)",
-      "protótipo": "22×22",
+      "implementacao": "22×22",
       "DS": "—"
      },
      {
       "parte": "ícone (assignment_turned_in)",
-      "protótipo": "22×22",
+      "implementacao": "22×22",
       "DS": "—"
      }
     ],
@@ -566,12 +566,12 @@
      {
       "onde": "ícone (check)",
       "prop": "tamanho",
-      "protótipo": "26×26",
+      "implementacao": "26×26",
       "DS": "24×24"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -610,17 +610,17 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "279×100",
+      "implementacao": "279×100",
       "DS": "279×40"
      },
      {
       "parte": "countdown-number",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "countdown-text",
-      "protótipo": "279×48",
+      "implementacao": "279×48",
       "DS": "—"
      }
     ],
@@ -722,12 +722,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "100px",
+      "implementacao": "100px",
       "DS": "40px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   }
  ],

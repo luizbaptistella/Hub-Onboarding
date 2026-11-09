@@ -278,7 +278,7 @@
 .po-profile-item[aria-disabled="true"] .po-icon { color: var(--icon-subtle); }
 @media (prefers-reduced-motion: reduce) { .po-profile-chevron { transition: none; } }
 
-/* Tokens que o ProfileMenu usa e o protótipo ainda não define (mesmos valores do DS) */
+/* Tokens que o ProfileMenu usa e a implementação atual ainda não define (mesmos valores do DS) */
 :root { --size-menu-item: 48px; --type-body-lg-size: 1rem; --type-body-lg-line-height: 1.5rem; --type-body-lg-weight: 400; }
 .po-profile .po-icon, .po-profile-icon, .po-profile-chevron { color: var(--icon-subtle); }
 .po-profile-btn > .po-icon:first-child { color: var(--icon-default); }

@@ -2,7 +2,7 @@
 
 Uma pasta por tela, com `spec.md` (regras, ligações e critérios) e `screen.html` (marcação isolada). Comece por esta página, escolha o código da tela e leia só a pasta dela.
 
-Precedência: **DS Palmeiras · Onboarding > spec.md > protótipo**. Dados compartilhados: [dados.md](dados.md). Componentes por tela e inventário: [componentes.md](componentes.md). Fonte do mapa: [flow.json](flow.json). Componentes do fluxo de estrangeiro: [componentes-estrangeiro.md](componentes-estrangeiro.md).
+Precedência: **DS Palmeiras · Onboarding > spec.md > implementação atual**. Dados compartilhados: [dados.md](dados.md). Componentes por tela e inventário: [componentes.md](componentes.md). Fonte do mapa: [flow.json](flow.json). Componentes do fluxo de estrangeiro: [componentes-estrangeiro.md](componentes-estrangeiro.md).
 
 ## Entrada e cadastro
 
@@ -91,7 +91,7 @@ Etapa 3 de 4 · validação facial · Figma 1774:46029
 | BIO-03 | Validando a foto | Desenhada | 1774:46292 | [BIO-03-validando-a-foto/](BIO-03-validando-a-foto/spec.md) |
 | BIO-04 | Conferência da foto | Desenhada | 1774:46253 | [BIO-04-conferencia-da-foto/](BIO-04-conferencia-da-foto/spec.md) |
 | BIO-07 | Status · identidade enviada | Desenhada | 2602:31414 | [BIO-07-status-identidade-enviada/](BIO-07-status-identidade-enviada/spec.md) |
-| BEN-G1 | Validação de benefícios | Lacuna, a desenhar | — | Etapa 4 de 4. A próxima etapa vem do backend; no protótipo o fluxo cai na área logada. |
+| BEN-G1 | Validação de benefícios | Lacuna, a desenhar | — | Etapa 4 de 4. A próxima etapa vem do backend; na implementação atual o fluxo cai na área logada. |
 | BIO-05 | Bloqueio · 3 tentativas | Sem Figma | — | [BIO-05-bloqueio-3-tentativas/](BIO-05-bloqueio-3-tentativas/spec.md) |
 | BIO-06 | Erro com suporte | Sem Figma | — | [BIO-06-erro-com-suporte/](BIO-06-erro-com-suporte/spec.md) |
 
@@ -122,7 +122,7 @@ Inclusão e gestão de vínculos
 | FAM-12 | Cadastro do familiar (sem conta) | Sem Figma | — | [FAM-12-cadastro-do-familiar-sem-conta/](FAM-12-cadastro-do-familiar-sem-conta/spec.md) |
 | FAM-13 | Termo de responsabilidade · menor | Sem Figma | — | [FAM-13-termo-de-responsabilidade-menor/](FAM-13-termo-de-responsabilidade-menor/spec.md) |
 | FAM-15 | Código do contato do familiar | Aprovada; estados pendentes | — | [FAM-15-codigo-do-contato-do-familiar/](FAM-15-codigo-do-contato-do-familiar/spec.md) |
-| FAM-G2 | Preenchimento e capturas no celular do titular | Aprovada (passo 1 · tutorial DOC-03, botão lv-fill) | — | [FAM-G2-preparacao-do-cadastro/](FAM-G2-preparacao-do-cadastro/spec.md) · Documento, liveness e criação de senha feitos no celular do titular, em nome do familiar (spec §6.2 e §6.5). Não desenhado: no protótipo o fluxo não passa daqui. |
+| FAM-G2 | Preenchimento e capturas no celular do titular | Aprovada (passo 1 · tutorial DOC-03, botão lv-fill) | — | [FAM-G2-preparacao-do-cadastro/](FAM-G2-preparacao-do-cadastro/spec.md) · Documento, liveness e criação de senha feitos no celular do titular, em nome do familiar (spec §6.2 e §6.5). Não desenhado: na implementação atual o fluxo não passa daqui. |
 | FAM-G2 | Captura da frente do documento do familiar | Aprovada (passo 2 · câmera de DOC-04) | — | [FAM-G2-captura-do-documento/](FAM-G2-captura-do-documento/spec.md) · Variante familiar de DOC-G1. |
 | FAM-G2 | Confirmação da frente do documento do familiar | Proposta, a validar (passo 3 · conferência de BIO-04) | — | [FAM-G2-confirmacao-da-frente/](FAM-G2-confirmacao-da-frente/spec.md) |
 | FAM-G2 | Captura do verso do documento do familiar | Proposta, a validar (passo 4 · câmera da frente) | — | [FAM-G2-captura-do-verso/](FAM-G2-captura-do-verso/spec.md) |

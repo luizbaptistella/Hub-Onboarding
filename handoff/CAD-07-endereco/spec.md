@@ -1,13 +1,12 @@
 # CAD-07 · Endereço
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-07` |
-| Id no protótipo | `endereco` (`prototipo.html#endereco`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `1619:11471` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `email-atualizado`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `email-atualizado`. |
 | 2 | `PageHeading` | `<PageHeading title="Qual é o seu endereço?" subtitle="Informe onde você mora para concluir o cadastro." tone="neutral" />` | — | — |
 | 3 | `TextField` | `<TextField label="CEP" preset="cep" name="cep" placeholder="00000-000" required autoComplete="postal-code" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | Campo no tamanho lg (classe po-input-lg); o DS não tem prop de tamanho. |
 | 4 | `TextField` | `<TextField label="Rua" name="rua" placeholder="Nome da rua" required autoComplete="address-line1" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | Campo no tamanho lg (classe po-input-lg); o DS não tem prop de tamanho. |

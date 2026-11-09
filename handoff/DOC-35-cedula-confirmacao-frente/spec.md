@@ -1,6 +1,6 @@
 # DOC-35 · Cédula · confirmação da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -28,7 +28,7 @@ Conferir a foto da frente da Cédula antes de seguir.
 | `Image` | 1 | `<Image src="handoff/DOC-35-cedula-confirmacao-frente/img/frente.jpg" alt="Foto da frente da Cédula" fit="contain" rounded loading="eager" height="100%" />` | — | — |
 | `Button` | 2 | `<Button variant="primary" iconEnd="arrow_forward" onClick={() => {}}>Continuar</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

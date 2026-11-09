@@ -1,7 +1,7 @@
 # Documento de estrangeiro · regras do módulo (DOC-02 a DOC-13)
 > **Reorganizado em 2026-11-08.** Este era o spec do antigo DOC-02 (um nó só com 64 telas). As telas agora estão em um nó por fluxo: DOC-02 seleção, DOC-03/04 CRNM, DOC-05/06 DPRNM, DOC-07/08 RNE, DOC-09 Cédula, DOC-10 Passaporte, DOC-11 status, DOC-12 resultado, DOC-13 erros. Os links para `telas/` abaixo apontam para a estrutura antiga; use o spec de cada nó para a marcação.
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Rascunho.** Decisões tomadas com o time estão marcadas como **Decidido**. O que falta está na seção 10. Telas: 64 `screen.html` em [telas/](telas/), montadas com os componentes reais do DS (`ds/bundle.js`). Galeria para revisão: [Telas do DOC-02](https://claude.ai/artifact/Jf5trHM9UMbTJ6bM6TsLHS). Textos das telas de erro em 3 idiomas: [telas-erro.json](../DOC-13-erros-de-captura-e-envio/telas-erro.json).
 
 ## Índice do módulo
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `DOC-02` (nova numeração; `DOC-G1` continua como lacuna da captura de CIN, CNH e RG) |
-| Id no protótipo | — (não existe no protótipo) |
 | Raia | Documento e biometria · Etapa 2 de 4 · documento |
 | Figma | `2283:33539` (seção "Onboarding / Documento de identidade"). Frames por fluxo: CRNM `2788:34526` a `2788:37492`, DPRNM `2794:35275` a `2794:35902`, Cédula `2799:36027` a `2799:36727`, conferência `2802:36833`. Passaporte: seleção `3080:59740`; intros e câmera no print do time, sem node próprio |
 | Status | Desenhada no Figma para CRNM, DPRNM, RNE e Cédula. Passaporte com seleção no Figma e intros no print. Telas de erro desenhadas com os componentes do DS, sem desenho final no Figma. |

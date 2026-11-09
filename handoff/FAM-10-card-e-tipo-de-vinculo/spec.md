@@ -1,16 +1,15 @@
 # FAM-10 · Card e tipo de vínculo
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-10` |
-| Id no protótipo | `familiar-vinculo` (`prototipo.html#familiar-vinculo`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 2 / 2 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `familiar-busca`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `familiar-busca`. |
 | 2 | `PageHeading` | `<PageHeading title="Confirme o familiar" tone="neutral" spaced />` | — | — |
 | 3 | `Select` | `<Select label="Tipo de vínculo" options={["Filho(a)", "Pai ou mãe", "Irmão ou irmã", "Cônjuge ou companheiro(a)", "Sobrinho(a)", "Outros"]} placeholder="Selecione o tipo de vínculo" required name="relation" />` | padrão; aberto; preenchido | — |
 | 4 | `Button` | `<Button variant="primary" fullWidth type="submit">Prosseguir</Button>` | — | — |

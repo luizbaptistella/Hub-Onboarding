@@ -1,13 +1,12 @@
 # CAD-02 · Código por SMS
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-02` |
-| Id no protótipo | `otp-sms` (`prototipo.html#otp-sms`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `1620:29884` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `cadastro`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `cadastro`. |
 | 2 | `PageHeading` | `<PageHeading title="Insira o seu código" subtitle="Enviamos um código de 6 dígitos por SMS para o seu celular." tone="neutral" spaced />` | — | — |
 | 3 | ↳ `ContactRow` | `<ContactRow channel="sms" value={maskPhone(celular)} editLabel="Editar Celular" />` | — | Navega para `editar-celular`. |
 | 4 | `OTPInput` | `<OTPInput length={6} state="default" />` | padrão; erro ("Tentativas restantes: n/3"); sucesso; bloqueado (`disabled`, 3 erros) | — |
@@ -108,7 +107,7 @@ Visão geral: [dados.md](../dados.md).
 ## 10. Lacunas e perguntas
 
 - O botão Ajuda do cabeçalho não tem ação.
-- Tempo real do bloqueio: o texto diz 30 min, mas o protótipo não conta o tempo.
+- Tempo real do bloqueio: o texto diz 30 min, mas a implementação atual não conta o tempo.
 
 ## 11. Critérios de aceite
 

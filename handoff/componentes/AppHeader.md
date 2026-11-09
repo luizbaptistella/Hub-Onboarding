@@ -16,7 +16,7 @@ Usado em 28 telas, 28 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 1 | `<AppHeader back={false} title="Login" language help={false} />` | contêiner height: proto 56px · DS 48px; header-title tamanho: proto 211×16 · DS 169×20; lang tamanho: proto 80×44 · DS 78×32; ícone (expand_more) tamanho: proto 18×18 · DS 20×20 |
 | CAD-01 | 1 | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language help={false} />` | contêiner height: proto 56px · DS 48px; progress tamanho: proto 211×24 · DS 209×24; progress-label tamanho: proto 211×16 · DS 52×16; progress-track tamanho: proto 211×4 · DS 209×4; lang tamanho: proto 80×44 · DS 78×32 |
@@ -49,7 +49,7 @@ Usado em 28 telas, 28 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 375×56 | 375×48 |
 | header-slot | 48×48 | — |

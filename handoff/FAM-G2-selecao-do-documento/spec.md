@@ -1,6 +1,6 @@
 # FAM-G2 · Seleção do documento do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Tela nova, que não estava no fluxo. Entra antes do tutorial de captura. Cada documento escolhido vai ter a sua versão do fluxo de captura. Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` (passo 0: escolha do documento e do modo de envio, antes do tutorial) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-01, [`1928:61728`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1928-61728) (variante CNH aberta, [`screen--cnh-aberta.html`](../DOC-01-selecao-de-documento/screen--cnh-aberta.html)). Comportamento de expansão: [`2256:29943`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2256-29943) |
 | Status | Aprovada |

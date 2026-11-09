@@ -1,13 +1,12 @@
 # BIO-07 · Status · identidade enviada
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `BIO-07` |
-| Id no protótipo | `liv-done` (`prototipo.html#liv-done`) |
 | Raia | Biometria facial · Etapa 3 de 4 · Figma `1774:46029` |
 | Figma | [`2602:31414`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2602-31414) (seção `1774:46029`) |
 | Status | Desenhada no Figma |
@@ -55,7 +54,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 ## 6. Comportamento
 
 - StatusScreen com Cadastro, Documento e Biometria feitos e Validação de benefícios como atual.
-- Contagem de 10 s e depois a próxima etapa (no protótipo, AREA-01). Continuar agora adianta. Pausa com a aba oculta.
+- Contagem de 10 s e depois a próxima etapa (na implementação atual, AREA-01). Continuar agora adianta. Pausa com a aba oculta.
 
 ## 7. Entradas (de onde se chega)
 

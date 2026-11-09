@@ -1,6 +1,6 @@
 # DOC-23 · Documento vencido
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de resultado para o CRNM e o DPRNM. O texto vem do Figma de conferência (rascunho antigo, sem node próprio).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Dizer que o documento não pode ser usado porque a validade impressa já passou,
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="event_busy" title="Seu documento está vencido" description="A data de validade impressa no documento já passou. Use um documento válido." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" iconEnd="arrow_forward" onClick={() => {}}>Escolher outro documento</Button>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

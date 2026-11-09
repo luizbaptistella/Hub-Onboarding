@@ -13,7 +13,7 @@ Usado em 25 telas, 25 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 14 | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | contêiner height: proto 48px · DS 77px |
 | CAD-01 | 12 | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | contêiner height: proto 48px · DS 77px |
@@ -43,7 +43,7 @@ Usado em 25 telas, 25 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 375×48 | 375×77 |
 

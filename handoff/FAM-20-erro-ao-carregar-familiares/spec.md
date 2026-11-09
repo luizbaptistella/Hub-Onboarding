@@ -1,6 +1,6 @@
 # FAM-20 · Meus familiares · erro ao carregar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Proposta, ainda não validada.** Estado de erro da lista Meus familiares (FAM-17), para falha de rede, 5xx ou timeout. Usa o mesmo padrão de FAM-18 (selo do DS com ícone). Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-20` (estado de erro de FAM-17) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | — (padrão de FAM-18 e do Hero do DS) |
 | Status | Proposta, a validar |

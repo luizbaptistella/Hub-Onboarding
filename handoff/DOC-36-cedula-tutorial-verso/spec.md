@@ -1,6 +1,6 @@
 # DOC-36 · Cédula · tutorial do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar o verso inteiro da Cédula, incluindo as linha
 |---|---|---|---|---|
 | `Tutorial` | 2 | `<Tutorial label="Como fotografar o verso da Cédula" title="Foto do documento" steps={[{ title: "Agora, vamos capturar o verso.", description: "Vire o documento e capture o verso inteiro. …` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

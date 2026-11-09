@@ -1,6 +1,6 @@
 # FAM-G2 · CIN · tutorial da frente do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Primeira tela da versão de captura da CIN. Estrutura de DOC-03 (CRNM · tutorial da frente), com os passos da CIN e o botão de preenchimento validado na FAM-G2. Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` · CIN · tutorial da frente |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-03, [`2788:34545`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34545). Telas da CIN do familiar: não desenhadas |
 | Status | Aprovada |

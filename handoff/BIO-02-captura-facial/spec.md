@@ -1,13 +1,12 @@
 # BIO-02 · Captura facial
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `BIO-02` |
-| Id no protótipo | `liv-face` (`prototipo.html#liv-face`) |
 | Raia | Biometria facial · Etapa 3 de 4 · Figma `1774:46029` |
 | Figma | [`1774:46144`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1774-46144) (seção `1774:46029`) |
 | Status | Desenhada no Figma |
@@ -48,8 +47,8 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). |
-| 2 | `FaceCapture` _(no protótipo, classes locais)_ | `<FaceCapture state="progress" />` | `progress` esquerda/direita; `success`; `idle`; `frame` (aguardando decisão); `warning` (avisos); `countdown` 3-2-1; pausado com o celular na horizontal | Protótipo usa classes locais lv-*; implementar com o FaceCapture do DS. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). |
+| 2 | `FaceCapture` _(na implementação atual, classes locais)_ | `<FaceCapture state="progress" />` | `progress` esquerda/direita; `success`; `idle`; `frame` (aguardando decisão); `warning` (avisos); `countdown` 3-2-1; pausado com o celular na horizontal | Implementação atual usa classes locais lv-*; implementar com o FaceCapture do DS. |
 
 **Aparecem por condição** (não estão na marcação padrão):
 
@@ -89,7 +88,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 - Reprovado (1ª e 2ª vez): avisos de 1,4 s cada ("Aproxime-se...", "Afaste-se...", "Enquadre seu rosto...") e volta à moldura.
 - 3ª reprovação: abre BIO-05.
 - Celular na horizontal: pausa e mostra "Posicione seu celular na vertical"; retoma de onde parou ao voltar para a vertical.
-- No protótipo, aprovar e reprovar são botões no menu lateral. No app, a decisão vem do SDK ou backend de liveness.
+- Na implementação atual, aprovar e reprovar são botões no menu lateral. No app, a decisão vem do SDK ou backend de liveness.
 
 ## 7. Entradas (de onde se chega)
 

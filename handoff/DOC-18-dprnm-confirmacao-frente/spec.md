@@ -1,6 +1,6 @@
 # DOC-18 · DPRNM · confirmação da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Terceira tela do DPRNM. Segue a confirmação da frente do CRNM (DOC-05).
 
 ## Índice da tela
@@ -28,7 +28,7 @@ Depois da foto da frente, a pessoa confere se o DPRNM ficou nítido antes de seg
 | `Image` | 1 | `<Image src="handoff/DOC-18-dprnm-confirmacao-frente/img/frente.jpg" alt="Foto da frente do DPRNM" fit="contain" rounded loading="eager" height="100%" />` | — | — |
 | `Button` | 2 | `<Button variant="primary" iconEnd="arrow_forward" onClick={() => {}}>Continuar</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

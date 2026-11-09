@@ -9,7 +9,7 @@
    "ds": true,
    "local": false,
    "selector": "#email-atualizado > header:nth-of-type(1)",
-   "note": "Forma no protótipo: Verificação (classe po-header-module).",
+   "note": "Forma atual: Verificação (classe po-header-module).",
    "dsProps": {
     "back": {
      "label": "Voltar"
@@ -74,57 +74,57 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×56",
+      "implementacao": "375×56",
       "DS": "375×40"
      },
      {
       "parte": "header-slot",
-      "protótipo": "48×48",
+      "implementacao": "48×48",
       "DS": "—"
      },
      {
       "parte": "btn",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "btn-content",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "ícone (chevron_left)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "header-center",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "—"
      },
      {
       "parte": "progress",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "263×24"
      },
      {
       "parte": "progress-label",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "52×16"
      },
      {
       "parte": "progress-track",
-      "protótipo": "247×4",
+      "implementacao": "247×4",
       "DS": "263×4"
      },
      {
       "parte": "progress-seg",
-      "protótipo": "59×4",
+      "implementacao": "59×4",
       "DS": "63×4"
      },
      {
       "parte": "ícone (help)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      }
     ],
@@ -310,31 +310,31 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "56px",
+      "implementacao": "56px",
       "DS": "40px"
      },
      {
       "onde": "progress",
       "prop": "tamanho",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "263×24"
      },
      {
       "onde": "progress-label",
       "prop": "tamanho",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "52×16"
      },
      {
       "onde": "progress-track",
       "prop": "tamanho",
-      "protótipo": "247×4",
+      "implementacao": "247×4",
       "DS": "263×4"
      },
      {
       "onde": "progress-seg",
       "prop": "tamanho",
-      "protótipo": "59×4",
+      "implementacao": "59×4",
       "DS": "63×4"
      }
     ],
@@ -343,7 +343,7 @@
      "h": 56,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -395,37 +395,37 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×216",
+      "implementacao": "327×216",
       "DS": "327×216"
      },
      {
       "parte": "hero-badge",
-      "protótipo": "64×64",
+      "implementacao": "64×64",
       "DS": "64×64"
      },
      {
       "parte": "hero-badge-inner",
-      "protótipo": "48×48",
+      "implementacao": "48×48",
       "DS": "48×48"
      },
      {
       "parte": "ícone (mail)",
-      "protótipo": "32×32",
+      "implementacao": "32×32",
       "DS": "32×32"
      },
      {
       "parte": "hero-text",
-      "protótipo": "327×120",
+      "implementacao": "327×120",
       "DS": "327×120"
      },
      {
       "parte": "hero-title",
-      "protótipo": "327×64",
+      "implementacao": "327×64",
       "DS": "327×64"
      },
      {
       "parte": "hero-desc",
-      "protótipo": "327×40",
+      "implementacao": "327×40",
       "DS": "327×40"
      }
     ],
@@ -588,7 +588,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -597,7 +597,7 @@
    "ds": true,
    "local": false,
    "selector": "#email-atualizado > div:nth-of-type(2) > div:nth-of-type(2)",
-   "note": "No protótipo usa a classe po-status (StatusCard, depreciado no DS): implementar como Alert tone=\"success\".",
+   "note": "Na implementação atual usa a classe po-status (StatusCard, depreciado no DS): implementar como Alert tone=\"success\".",
    "dsProps": {
     "tone": "success",
     "title": "E-mail verificado",
@@ -641,32 +641,32 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×78",
+      "implementacao": "327×78",
       "DS": "327×90"
      },
      {
       "parte": "status-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (check_circle)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "status-text",
-      "protótipo": "252×44",
+      "implementacao": "252×44",
       "DS": "—"
      },
      {
       "parte": "status-title",
-      "protótipo": "252×24",
+      "implementacao": "252×24",
       "DS": "—"
      },
      {
       "parte": "status-desc",
-      "protótipo": "252×16",
+      "implementacao": "252×16",
       "DS": "—"
      }
     ],
@@ -810,12 +810,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "78px",
+      "implementacao": "78px",
       "DS": "90px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -890,12 +890,12 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×50",
+      "implementacao": "327×50",
       "DS": "327×50"
      },
      {
       "parte": "btn-content",
-      "protótipo": "75×24",
+      "implementacao": "75×24",
       "DS": "75×24"
      }
     ],
@@ -978,7 +978,7 @@
      "h": 50,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1007,7 +1007,7 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×48",
+      "implementacao": "375×48",
       "DS": "375×77"
      }
     ],
@@ -1067,12 +1067,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "48px",
+      "implementacao": "48px",
       "DS": "77px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   }
  ],

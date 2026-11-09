@@ -1,6 +1,6 @@
 # DOC-10 · Status · documento recebido
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de status logo depois do envio do documento. Usa o mesmo padrão do status de dados recebidos (CAD-08 e BIO-07).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Confirmar que o documento foi recebido e levar a pessoa para a validação facia
 | `JourneyStepper` | 1 | `<JourneyStepper steps={[{ label: "Cadastro", state: "done" }, { label: "Captura de documentos", state: "done", icon: "document" }, { label: "Biometria facial", state: "current", icon: "fa…` | — | — |
 | `RedirectCountdown` | 1 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" onComplete={() => {}}>Vamos para a validação facial.</RedirectCountdown>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

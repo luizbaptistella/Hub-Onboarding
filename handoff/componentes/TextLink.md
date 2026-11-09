@@ -15,14 +15,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 7 | `<TextLink variant="standalone" href="#">Esqueceu sua senha?</TextLink>` | contêiner height: proto 15px · DS 44px; contêiner font-size: proto 13.3333px · DS 14px; contêiner line-height: proto normal · DS 20px; contêiner font-weight: proto 400 · DS 500 |
 | CAD-01 | 9 | `<TextLink variant="inline" href="#">Termos de Uso</TextLink>` | contêiner width: proto 86px · DS 82px; contêiner height: proto 16px · DS 40px; contêiner font-size: proto 12px · DS 16px; contêiner line-height: proto 16px · DS normal; contêiner font-weight: proto 400 · DS 600 |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 132×15 | 132×44 |
 

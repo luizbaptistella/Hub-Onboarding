@@ -1,16 +1,15 @@
 # FAM-13 · Termo de responsabilidade · menor
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-13` |
-| Id no protótipo | `familiar-termo` (`prototipo.html#familiar-termo`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 2 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastrar familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `familiar-cadastro`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastrar familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `familiar-cadastro`. |
 | 2 | `PageHeading` | `<PageHeading title="Termo de responsabilidade" subtitle="Como responsável, você responde pelo cadastro de quem tem menos de 18 anos. Leia o termo antes de confirmar." tone="neutral" />` | — | — |
 | 3 | `Checkbox` | `<Checkbox name="aceite">Li e concordo com o termo de responsabilidade.</Checkbox>` | desmarcado; marcado | — |
 | 4 | `Button` | `<Button variant="primary" fullWidth iconEnd="arrow_forward">Aceitar e continuar</Button>` | — | — |
@@ -80,7 +79,7 @@ Visão geral: [dados.md](../dados.md).
 
 ## 10. Lacunas e perguntas
 
-- Texto final do termo e versionamento em aberto (P6): o protótipo usa lorem ipsum.
+- Texto final do termo e versionamento em aberto (P6): a implementação atual usa lorem ipsum.
 
 ## 11. Critérios de aceite
 

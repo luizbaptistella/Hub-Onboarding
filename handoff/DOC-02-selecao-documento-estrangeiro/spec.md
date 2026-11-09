@@ -1,6 +1,6 @@
 # DOC-02 · Seleção do documento · estrangeiro
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-08.** Primeira tela da reconstrução do fluxo de documento de estrangeiro (fluxo paralelo ao DOC-01, de brasileiro). As telas seguintes entram depois da aprovação desta.
 
 ## Índice da tela
@@ -31,7 +31,7 @@ A pessoa estrangeira escolhe qual documento vai enviar e como vai enviar (foto o
 | `RadioGroup` | 6 | `<RadioGroup legend="Qual documento você vai enviar?" hideLegend value="" onChange={() => {}} />` | value | — |
 | `ActionRow` | 8 | `<ActionRow icon="camera" description="A câmera captura a frente e o verso sozinha">Tirar foto do documento</ActionRow>` | children, description, icon | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

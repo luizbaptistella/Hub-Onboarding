@@ -3,7 +3,7 @@
 html, body { margin: 0; min-height: 100%; background: var(--color-gray-200); font-family: var(--font-family-base); }
 [hidden] { display: none !important; }
 
-/* ── Protótipo (fora do DS) ─────────────────────── */
+/* ── Implementação atual (fora do DS) ─────────────────────── */
 .proto { display: flex; gap: var(--space-8); justify-content: center; align-items: flex-start; padding: var(--space-8) var(--space-4); }
 .proto-nav { width: 220px; display: flex; flex-direction: column; gap: var(--space-1); position: sticky; top: var(--space-8); }
 .proto-nav h2 { margin: 0 0 var(--space-2); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-brand-primary-alt); }

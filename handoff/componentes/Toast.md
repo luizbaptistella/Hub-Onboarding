@@ -14,14 +14,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-04 | 2 | `<Toast tone="success" title="E-mail alterado com sucesso" />` | nenhuma |
 | FAM-17 | 7 | `<Toast tone="success" title="Convite aceito." />` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 
 ## Tokens (primeira instância)

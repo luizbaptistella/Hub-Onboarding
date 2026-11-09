@@ -1,6 +1,6 @@
 # Como ler este handoff
 
-Este artefato reúne o hub de visualização do fluxo (página inicial), o protótipo navegável (`prototipo.html`) e esta pasta `handoff/`.
+Este artefato reúne o hub de visualização do fluxo (página inicial), a implementação atual navegável (`implementação atual.html`) e esta pasta `handoff/`.
 
 ## Para devs e agentes de IA
 
@@ -16,7 +16,7 @@ Para pedir uma tela a um agente, basta: "Implemente `CAD-02` conforme `handoff/C
 
 - Códigos: `ENT` entrada, `CAD` cadastro, `DOC` documento, `BIO` biometria, `AREA` área logada, `AJD` ajuda, `FAM` familiares, `DEC` decisão, `*-G1` lacuna (a desenhar).
 - Tipos de ligação: Caminho principal, Caminho alternativo, Erro ou nova tentativa, Automática (timer), Voltar, Sair do fluxo, Lacuna (a desenhar).
-- Status: Desenhada (tem node no Figma), Sem Figma (só no protótipo), Legado (a decidir), Lacuna (não existe).
-- Precedência: DS > spec.md > protótipo.
+- Status: Desenhada (tem node no Figma), Sem Figma (só na implementação atual), Legado (a decidir), Lacuna (não existe).
+- Precedência: DS > spec.md > implementação atual.
 
 Para ler de fora com o Claude: ler o artefato https://claude.ai/artifact/11KYqUc8M7tEadXLZmQtQH com o caminho do arquivo (ex.: `handoff/INDEX.md`).

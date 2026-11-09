@@ -1,16 +1,15 @@
 # AREA-02 · Notificações
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `AREA-02` |
-| Id no protótipo | `notificacoes` (`prototipo.html#notificacoes`) |
 | Raia | Área logada · Meu cadastro, notificações, ajuda e segurança |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 1 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Notificações" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Notificações" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
 | 2 | `List` | `<List label="Hoje" />` | — | — |
 | 3 | ↳ `ListItem` | `<ListItem title="Ingresso confirmado" description="Palmeiras x Corinthians · 12/11, setor Norte" icon="confirmation_number" />` | — | — |
 | 4 | ↳ `ListItem` | `<ListItem title="Cadastro atualizado" description="Seu e-mail foi alterado. Se não foi você, fale com a gente." icon="mail" />` | — | — |

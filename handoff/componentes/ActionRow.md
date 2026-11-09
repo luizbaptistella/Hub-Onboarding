@@ -15,14 +15,14 @@ Usado em 1 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | DOC-01 | 102 | `<ActionRow icon="camera">Tirar foto do documento</ActionRow>` | action-label tamanho: proto 162×20 · DS 177×20 |
 | DOC-01 | 103 | `<ActionRow icon="upload">Fazer upload do documento</ActionRow>` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 295×62 | 295×62 |
 | action-icon | 40×40 | 40×40 |

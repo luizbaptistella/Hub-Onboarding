@@ -9,7 +9,7 @@
    "ds": true,
    "local": false,
    "selector": "#liv-validating > header:nth-of-type(1)",
-   "note": "Forma no protótipo: Verificação (classe po-header-module).",
+   "note": "Forma atual: Verificação (classe po-header-module).",
    "dsProps": {
     "back": false,
     "title": "Biometria facial",
@@ -67,52 +67,52 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×56",
+      "implementacao": "375×56",
       "DS": "375×40"
      },
      {
       "parte": "header-slot",
-      "protótipo": "48×48",
+      "implementacao": "48×48",
       "DS": "—"
      },
      {
       "parte": "header-center",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "—"
      },
      {
       "parte": "progress",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "303×24"
      },
      {
       "parte": "progress-label",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "89×16"
      },
      {
       "parte": "progress-track",
-      "protótipo": "247×4",
+      "implementacao": "247×4",
       "DS": "303×4"
      },
      {
       "parte": "progress-seg",
-      "protótipo": "59×4",
+      "implementacao": "59×4",
       "DS": "73×4"
      },
      {
       "parte": "btn",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "btn-content",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "ícone (help)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      }
     ],
@@ -291,31 +291,31 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "56px",
+      "implementacao": "56px",
       "DS": "40px"
      },
      {
       "onde": "progress",
       "prop": "tamanho",
-      "protótipo": "247×24",
+      "implementacao": "247×24",
       "DS": "303×24"
      },
      {
       "onde": "progress-label",
       "prop": "tamanho",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "89×16"
      },
      {
       "onde": "progress-track",
       "prop": "tamanho",
-      "protótipo": "247×4",
+      "implementacao": "247×4",
       "DS": "303×4"
      },
      {
       "onde": "progress-seg",
       "prop": "tamanho",
-      "protótipo": "59×4",
+      "implementacao": "59×4",
       "DS": "73×4"
      }
     ],
@@ -324,7 +324,7 @@
      "h": 56,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -333,7 +333,7 @@
    "ds": true,
    "local": true,
    "selector": "#liv-validating > div:nth-of-type(2) > div:nth-of-type(1)",
-   "note": "Protótipo usa classes locais lv-*; implementar com o LoadingState do DS.",
+   "note": "Implementação atual usa classes locais lv-*; implementar com o LoadingState do DS.",
    "dsProps": {
     "title": "Aguarde!",
     "description": "Estamos validando sua foto."
@@ -356,7 +356,7 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "186×120",
+      "implementacao": "186×120",
       "DS": "186×184"
      }
     ],
@@ -366,12 +366,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "120px",
+      "implementacao": "120px",
       "DS": "184px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   }
  ],

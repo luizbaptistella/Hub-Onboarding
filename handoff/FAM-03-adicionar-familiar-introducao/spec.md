@@ -1,13 +1,12 @@
 # FAM-03 · Adicionar familiar · introdução
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-03` |
-| Id no protótipo | `familiar-intro` (`prototipo.html#familiar-intro`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | `3057:44465` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Adicionar familiar" language={false} help />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `familiar-recebidos`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Adicionar familiar" language={false} help />` | — | Forma atual: Edição (classe po-header-task). Navega para `familiar-recebidos`. |
 | 2 | `PageHeading` | `<PageHeading title="Sua família no Torcedor 360" subtitle="Adicione familiares para comprar ingressos para eles. Cada um tem a própria identidade validada." tone="neutral" />` | — | — |
 | 3 | Lista de parentescos _(fora do DS)_ | items: ["Filhos", "Cônjuge ou companheiro(a)", "Pai e mãe", "Irmãos", "Avô e avó"] | — | Fora do DS; equivalente: List com ListItem. |
 | 4 | `Alert` | `<Alert tone="info">Menores de 18 anos ficam sob sua responsabilidade. Maiores de 18 recebem um convite e confirmam o vínculo.</Alert>` | — | — |

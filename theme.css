@@ -1,4 +1,4 @@
-/* Tema escuro do protótipo. Ativo com <html data-theme="dark">; sem o atributo vale o tema claro dos tokens.
+/* Tema escuro da implementação atual. Ativo com <html data-theme="dark">; sem o atributo vale o tema claro dos tokens.
    Redefine só a camada semântica (bg-, text-, icon-, border-), então os componentes do DS trocam sozinhos. */
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -131,7 +131,7 @@
 :root[data-theme="dark"] .input.is-error, :root[data-theme="dark"] .input-md.is-error { background: var(--bg-danger-subtle); }
 :root[data-theme="dark"] .lv-loading-title { color: var(--text-default); }
 :root[data-theme="dark"] .lv-loading-text, :root[data-theme="dark"] .lv-tut-img .po-icon { color: var(--text-subtle); }
-/* Navegação do protótipo, fora do aparelho */
+/* Navegação da implementação atual, fora do aparelho */
 :root[data-theme="dark"] .proto-nav h2 { color: var(--text-brand); }
 :root[data-theme="dark"] .proto-nav button { color: var(--text-subtle); }
 :root[data-theme="dark"] .proto-nav button[aria-current="page"] { background: var(--bg-surface); color: var(--text-brand); }

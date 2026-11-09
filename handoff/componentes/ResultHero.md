@@ -15,13 +15,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-06 | 2 | `<ResultHero title="E-mail verificado com sucesso!" description="Agora vamos completar o seu cadastro com o seu endereço." tone="success" icon="mail" />` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×216 | 327×216 |
 | hero-badge | 64×64 | 64×64 |

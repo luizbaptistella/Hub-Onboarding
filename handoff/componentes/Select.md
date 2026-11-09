@@ -18,7 +18,7 @@ Usado em 4 telas, 5 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-07 | 8 | `<Select label="Cidade" options={cidadesDoEstado} placeholder="Selecione a cidade" disabled required name="cidade" />` | select-chevron tamanho: proto 18×18 · DS 20×20; ícone (keyboard_arrow_down) tamanho: proto 18×18 · DS 20×20 |
 | CAD-07 | 9 | `<Select label="Estado" options={["SP", "RJ", "MG", "PR", "RS", "BA", "PE", "DF"]} placeholder="Selecione" required name="uf" />` | select-chevron tamanho: proto 18×18 · DS 20×20; ícone (keyboard_arrow_down) tamanho: proto 18×18 · DS 20×20 |
@@ -28,7 +28,7 @@ Usado em 4 telas, 5 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 203×72 | 203×72 |
 | field-label | 203×20 | 203×20 |

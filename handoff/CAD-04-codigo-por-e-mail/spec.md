@@ -1,13 +1,12 @@
 # CAD-04 · Código por e-mail
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-04` |
-| Id no protótipo | `otp-email` (`prototipo.html#otp-email`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `1619:11471` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `otp-sms`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `otp-sms`. |
 | 2 | `Toast` | `<Toast tone="success" title="E-mail alterado com sucesso" />` | oculto; visível por 4 s depois de trocar o e-mail | Vai dentro da ToastRegion, logo depois do AppHeader. Oculto no layout padrão. |
 | 3 | `PageHeading` | `<PageHeading title="Insira o seu código" subtitle="Enviamos um código de 6 dígitos para o seu e-mail." tone="neutral" spaced />` | — | — |
 | 4 | ↳ `ContactRow` | `<ContactRow channel="email" value={maskEmail(email)} editLabel="Editar Email" />` | — | Navega para `editar-email`. |

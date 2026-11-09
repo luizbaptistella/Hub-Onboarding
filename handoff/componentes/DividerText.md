@@ -13,13 +13,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 10 | `<DividerText>ou entrar com:</DividerText>` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×21 | 327×20 |
 

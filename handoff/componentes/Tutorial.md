@@ -13,13 +13,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | BIO-01 | 2 | `<Tutorial label="Tutorial da captura" steps={[{ title: "Ache um lugar bem claro e com fundo simples.", description: "Fique de frente para a luz e sem coisas ou pessoas atrás de você. Assim, sua foto fica boa e ajuda a aprovar mais rápido." }, { title: "Tire óculos, boné ou o que cobrir seu rosto.", description: "Deixe seu rosto e olhos bem à mostra e sem reflexos. Assim, fica mais fácil reconhecer você e sua foto é aceita de primeira." }, { title: "Vista uma roupa apropriada.", description: "Não tire a foto sem camisa, com roupas de banho ou íntimas. Estar bem vestido faz com que sua selfie seja aprovada rápido." }]} continueLabel="Continuar" />` | contêiner height: proto 300px · DS 814px; ícone (image) tamanho: proto 24×24 · DS 40×40 |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×300 | 327×814 |
 | ícone (image) | 24×24 | 40×40 |

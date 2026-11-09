@@ -1,4 +1,4 @@
-/* Validação facial (liveness). Telas novas do protótipo, com os componentes do DS atual (FaceCapture, OrientationHint, LoadingState) em HTML e CSS puros. Valores do tokens.json v45, palmeiras. */
+/* Validação facial (liveness). Telas novas da implementação atual, com os componentes do DS atual (FaceCapture, OrientationHint, LoadingState) em HTML e CSS puros. Valores do tokens.json v45, palmeiras. */
 :root {
   --lv-brand: #00522e;        /* brand-800: ação, anel de progresso */
   --lv-ring-success: #10a066; /* green-500: sucesso e contagem */

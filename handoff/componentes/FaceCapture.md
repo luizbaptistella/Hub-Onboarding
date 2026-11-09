@@ -15,13 +15,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | BIO-02 | 2 | `<FaceCapture state="progress" />` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×327 | 327×327 |
 

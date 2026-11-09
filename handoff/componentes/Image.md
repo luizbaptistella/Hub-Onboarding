@@ -16,13 +16,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | BIO-04 | 2 | `<Image alt="Foto capturada do rosto" rounded height={320} src={fotoCapturada} />` | ícone (image) tamanho: proto 24×24 · DS 40×40 |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×320 | 327×320 |
 | ícone (image) | 24×24 | 40×40 |

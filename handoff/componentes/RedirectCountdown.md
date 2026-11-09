@@ -13,14 +13,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-08 | 3 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" />` | contêiner height: proto 100px · DS 40px |
 | BIO-07 | 3 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" />` | contêiner height: proto 100px · DS 40px |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 279×100 | 279×40 |
 | countdown-number | 40×40 | 40×40 |

@@ -13,7 +13,7 @@ Usado em 4 telas, 4 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-01 | 3 | `<Tabs label="Nacionalidade" items={[{ value: "Brasileiro", label: "Brasileiro" }, { value: "Estrangeiro", label: "Estrangeiro" }]} value="Brasileiro" />` | nenhuma |
 | AREA-01 | 6 | `<Tabs items={[{ value: "Meus cadastro", label: "Meus cadastro" }, { value: "Meus familiares", label: "Meus familiares" }]} value="Meus cadastro" />` | tab tamanho: proto 164×48 · DS 188×48 |
@@ -22,7 +22,7 @@ Usado em 4 telas, 4 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×48 | 327×48 |
 | tab | 164×48 | 164×48 |

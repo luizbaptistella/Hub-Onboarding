@@ -1,6 +1,6 @@
 # DOC-11 · Falha na validação do documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de falha da validação do documento de identidade. Falha usa `ResultHero` com tom de erro, não `StatusScreen` (regra do DS).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Dizer à pessoa que o documento não foi aceito, por quais motivos, e o que ela 
 | `ResultHero` | 1 | `<ResultHero tone="danger" title="Falha na validação do documento de identidade" description="Sua validação foi reprovada pelos motivos listados abaixo. Você pode tentar novamente." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 2 | `<Button variant="primary" iconEnd="refresh" onClick={() => {}}>Tentar novamente</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

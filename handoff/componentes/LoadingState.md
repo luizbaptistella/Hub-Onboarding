@@ -13,13 +13,13 @@ Usado em 1 telas, 1 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | BIO-03 | 2 | `<LoadingState title="Aguarde!" description="Estamos validando sua foto." />` | contêiner height: proto 120px · DS 184px |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 186×120 | 186×184 |
 

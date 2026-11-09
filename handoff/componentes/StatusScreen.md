@@ -15,14 +15,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-08 | 1 | `<StatusScreen title="Recebemos seus dados cadastrais!" tone="success" badge="success" />` | contêiner height: proto 768px · DS 224px |
 | BIO-07 | 1 | `<StatusScreen title="Recebemos seus dados cadastrais!" tone="success" badge="success" />` | contêiner height: proto 768px · DS 224px |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 375×768 | 375×224 |
 | status-screen-head | 327×160 | 327×160 |

@@ -13,14 +13,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-08 | 2 | `<JourneyStepper steps={[{ label: "Cadastro", state: "done" }, { label: "Captura de documentos", state: "current" }, { label: "Biometria facial", state: "upcoming" }, { label: "Validação de benefícios", state: "upcoming" }]} />` | ícone (check) tamanho: proto 26×26 · DS 24×24 |
 | BIO-07 | 2 | `<JourneyStepper steps={[{ label: "Cadastro", state: "done" }, { label: "Captura de documentos", state: "done" }, { label: "Biometria facial", state: "done" }, { label: "Validação de benefícios", state: "current" }]} />` | ícone (check) tamanho: proto 26×26 · DS 24×24 |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×328 | 327×328 |
 | journey-step | 311×68 | 311×68 |

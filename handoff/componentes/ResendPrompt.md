@@ -14,14 +14,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-02 | 5 | `<ResendPrompt question="Não recebeu o código?" actionLabel="Reenviar código" cooldown={30} />` | resend-action tamanho: proto 108×20 · DS 118×20 |
 | CAD-04 | 6 | `<ResendPrompt question="Não recebeu o código?" actionLabel="Reenviar código" cooldown={30} />` | resend-action tamanho: proto 108×20 · DS 118×20 |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 375×20 | 375×20 |
 | resend-action | 108×20 | 118×20 |

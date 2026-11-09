@@ -673,19 +673,19 @@ body { margin: 0; padding: var(--space-200); font-family: var(--font-body); back
 .po-toast-close { margin: calc(var(--space-025) * -1) calc(var(--space-025) * -1) 0 0; }
 .po-camera-spacer { flex: none; width: var(--size-icon); }
 
-/* Campos da versão de protótipo: o bundle v59 usa .po-field-control como moldura; as telas daqui
+/* Campos da versão de implementação atual: o bundle v59 usa .po-field-control como moldura; as telas daqui
    usam input direto com .po-input-md/lg. Estas regras devolvem a borda e o foco a esse markup. */
 .po-input.po-input-sm, .po-input.po-input-md, .po-input.po-input-lg { border: 1px solid var(--border-input); }
 .po-input.po-input-md:focus-visible, .po-input.po-input-lg:focus-visible { border-color: var(--border-focused); box-shadow: 0 0 0 1px var(--border-focused); }
 
-/* OTP: o protótipo monta as células direto em .po-otp-row (linha flex), como no DS antes da v59.
+/* OTP: a implementação atual monta as células direto em .po-otp-row (linha flex), como no DS antes da v59.
    A v59 põe um .po-otp-cells dentro de .po-otp-row; sem isso as seis células empilham. */
 .po-otp-row { display: flex; align-items: center; gap: var(--space-inline-related); }
 
-/* Reenviar código: o protótipo põe o texto e o botão direto em .po-resend (sem .po-resend-line). Layout em linha, centralizado, com a folga do DS. */
+/* Reenviar código: a implementação atual põe o texto e o botão direto em .po-resend (sem .po-resend-line). Layout em linha, centralizado, com a folga do DS. */
 .po-resend { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: var(--space-inline-related); }
 
-/* Select: a marcação do protótipo põe o <select> direto em .po-select (a moldura com borda). O bundle v59 só cobre .po-select .po-input; estas regras vêm da cópia anterior. */
+/* Select: a marcação da implementação atual põe o <select> direto em .po-select (a moldura com borda). O bundle v59 só cobre .po-select .po-input; estas regras vêm da cópia anterior. */
 .po-select { position: relative; display: flex; align-items: center; height: var(--size-input); box-sizing: border-box; border: 1px solid var(--border-input); border-radius: var(--radius-lg); background: var(--bg-page); }
 .po-select select { appearance: none; -webkit-appearance: none; flex: 1 1 auto; min-width: 0; height: 100%; padding: 0 calc(var(--space-150) + 14px) 0 var(--space-150); border: 0; background: transparent; font-family: var(--font-body); font-size: var(--type-body-md-size); line-height: var(--type-body-md-line-height); font-weight: var(--type-body-md-weight); color: var(--text-default); outline: none; cursor: pointer; }
 .po-select-empty select { color: var(--text-subtle); }

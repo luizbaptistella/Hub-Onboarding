@@ -1,13 +1,12 @@
 # FAM-01 · Meus familiares · vazio
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-01` |
-| Id no protótipo | `area-familiares-vazio` (`prototipo.html#area-familiares-vazio`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | `2831:38227` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |

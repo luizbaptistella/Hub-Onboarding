@@ -50,7 +50,7 @@ Alguns têm uso previsto nas lacunas: `UploadArea`, `CameraCapture` e `ScanFrame
 
 ## Peças fora do DS
 
-Feitas com classes locais no protótipo. As que se repetem são candidatas a virar componente.
+Feitas com classes locais na implementação atual. As que se repetem são candidatas a virar componente.
 
 | Peça | Telas | Equivalente ou sugestão |
 |---|---|---|

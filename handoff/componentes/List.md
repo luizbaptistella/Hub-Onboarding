@@ -13,7 +13,7 @@ Usado em 3 telas, 6 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | AREA-02 | 2 | `<List label="Hoje" />` | contêiner height: proto 183px · DS 26px; list tamanho: proto 327×159 · DS 327×2 |
 | AREA-02 | 5 | `<List label="Anteriores" />` | contêiner height: proto 151px · DS 26px; list tamanho: proto 327×127 · DS 327×2 |
@@ -24,7 +24,7 @@ Usado em 3 telas, 6 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×183 | 327×26 |
 | list-label | 327×16 | 327×16 |

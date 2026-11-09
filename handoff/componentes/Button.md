@@ -18,7 +18,7 @@ Usado em 23 telas, 35 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 8 | `<Button variant="primary" fullWidth type="submit">Entrar</Button>` | nenhuma |
 | ENT-01 | 9 | `<Button variant="accent" fullWidth>Criar cadastro</Button>` | nenhuma |
@@ -58,7 +58,7 @@ Usado em 23 telas, 35 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×50 | 327×50 |
 | btn-content | 46×24 | 46×24 |

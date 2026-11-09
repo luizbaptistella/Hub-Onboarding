@@ -1,6 +1,6 @@
 # DOC-31 · RNE · upload da frente e do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -28,7 +28,7 @@ Enviar o PDF ou a imagem da frente e do verso do RNE. O código do verso é lido
 | `UploadArea` | 18 | `<UploadArea id="crnm-frente" label="Frente do RNE" status="idle" hint="PDF ou imagem, até 5 MB." onFile={() => {}} onRemove={() => {}} />` | error, file, hint, id, label, status | — |
 | `Button` | 9 | `<Button variant="primary" iconEnd="arrow_forward" disabled onClick={() => {}}>Enviar documento</Button>` | disabled | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

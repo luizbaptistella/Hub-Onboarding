@@ -1,16 +1,15 @@
 # AJD-02 · Ajuda · chamado aberto
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `AJD-02` |
-| Id no protótipo | `ajuda-enviado` (`prototipo.html#ajuda-enviado`) |
 | Raia | Área logada · Meu cadastro, notificações, ajuda e segurança |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 1 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Fechar" }} title="Ajuda e atendimento" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Fechar" }} title="Ajuda e atendimento" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
 | 2 | `PageHeading` | `<PageHeading title="Chamado aberto" subtitle="Guarde o número de protocolo. Enviamos uma cópia para o seu e-mail." tone="neutral" />` | — | — |
 | 3 | Bloco de protocolo _(fora do DS)_ | label: Número de protocolo; value: PAL-2026-004812 | — | Fora do DS (ajd-proto-*). |
 | 4 | ↳ `Button` | `<Button variant="secondary" fullWidth={false} iconStart="content_copy">Copiar número</Button>` | padrão; "Número copiado" ou "Copie manualmente" | — |

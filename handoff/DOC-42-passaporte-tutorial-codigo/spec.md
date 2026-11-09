@@ -1,6 +1,6 @@
 # DOC-42 · Passaporte · tutorial do código
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar o código (MRZ) do passaporte, com o documento
 |---|---|---|---|---|
 | `Tutorial` | 2 | `<Tutorial label="Como fotografar o código do passaporte" title="Foto do documento" steps={[{ title: "Mantenha seu passaporte aberto", description: "Mantenha o passaporte na mesma posição …` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

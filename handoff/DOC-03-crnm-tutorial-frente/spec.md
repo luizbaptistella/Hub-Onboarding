@@ -1,6 +1,6 @@
 # DOC-03 · CRNM · tutorial da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-08.** Segunda tela da reconstrução do fluxo de documento de estrangeiro.
 
 ## Índice da tela
@@ -26,7 +26,7 @@ Preparar a pessoa para fotografar a frente do CRNM: documento válido e legível
 |---|---|---|---|---|
 | `Tutorial` | 3 | `<Tutorial label="Como fotografar a frente do CRNM" title="Foto do documento" steps={[{ title: "Vamos capturar a frente do CRNM", description: "É importante que o documento esteja dentro d…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

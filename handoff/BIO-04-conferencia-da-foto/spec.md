@@ -1,13 +1,12 @@
 # BIO-04 · Conferência da foto
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `BIO-04` |
-| Id no protótipo | `liv-review` (`prototipo.html#liv-review`) |
 | Raia | Biometria facial · Etapa 3 de 4 · Figma `1774:46029` |
 | Figma | [`1774:46253`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1774-46253) (seção `1774:46029`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `liv-face`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `liv-face`. |
 | 2 | `Image` | `<Image alt="Foto capturada do rosto" rounded height={320} src={fotoCapturada} />` | — | — |
 | 3 | `PageHeading` | `<PageHeading title="Confira se sua foto está legível." subtitle="Confira se sua foto está nítida para agilizar a análise." tone="neutral" spaced />` | — | — |
 | 4 | `Button` | `<Button variant="primary" fullWidth iconEnd="arrow_forward">Salvar e continuar</Button>` | — | Navega para `liv-done`. |

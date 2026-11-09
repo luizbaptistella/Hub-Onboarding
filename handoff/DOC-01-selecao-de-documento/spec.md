@@ -1,13 +1,12 @@
 # DOC-01 · Seleção de documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `DOC-01` |
-| Id no protótipo | `documento` (`prototipo.html#documento`) |
 | Raia | Documento e biometria · Etapas 2 e 3 de 4 · documento e validação facial |
 | Figma | `1928:61728` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Captura de documentos" progress={{ current: 2, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `status`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Captura de documentos" progress={{ current: 2, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `status`. |
 | 2 | `PageHeading` | `<PageHeading title="Escolha um documento" subtitle="Selecione um dos documentos listados abaixo para continuar com a validação." tone="neutral" />` | — | — |
 | 3 | `DocumentOption` | `<DocumentOption title="CIN" badge="<Badge tone=\"success\">Aprovação mais rápida</Badge>" description="Carteira de Identidade Nacional" value="cin" name="documento" />` | não escolhido; escolhido e aberto (mostra as ActionRow) | Dentro de um RadioGroup (name="documento"). |
 | 4 | `DocumentOption` | `<DocumentOption title="CNH" badge="<Badge tone=\"success\">Aprovação mais rápida</Badge>" description="Carteira Nacional de Habilitação" value="cnh" name="documento" />` | não escolhido; escolhido e aberto (mostra as ActionRow) | Dentro de um RadioGroup (name="documento"). |

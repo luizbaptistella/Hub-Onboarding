@@ -1,6 +1,6 @@
 # DOC-33 · Cédula · tutorial da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar a frente da Cédula de identidade.
 |---|---|---|---|---|
 | `Tutorial` | 3 | `<Tutorial label="Como fotografar a frente da Cédula" title="Foto do documento" steps={[{ title: "Vamos capturar a frente do seu documento", description: "Use o mesmo documento que você in…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

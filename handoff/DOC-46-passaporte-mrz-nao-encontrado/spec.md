@@ -1,6 +1,6 @@
 # DOC-46 · Passaporte · código não encontrado
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Avisar, na câmera, que o código do passaporte não foi encontrado e orientar o
 |---|---|---|---|---|
 | `CameraCapture` | 1 | `<CameraCapture state="aligning" frame="card" instruction="Não encontramos o código. Enquadre a faixa de letras e números." successMessage="Enquadramento perfeito!" autoCapture onBack={() …` | — | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

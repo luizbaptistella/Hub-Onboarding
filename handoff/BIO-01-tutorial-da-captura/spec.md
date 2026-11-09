@@ -1,13 +1,12 @@
 # BIO-01 · Tutorial da captura
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `BIO-01` |
-| Id no protótipo | `liv-tutorial` (`prototipo.html#liv-tutorial`) |
 | Raia | Biometria facial · Etapa 3 de 4 · Figma `1774:46029` |
 | Figma | [`1774:46320`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1774-46320) (seção `1774:46029`) |
 | Status | Desenhada no Figma |
@@ -39,8 +38,8 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). |
-| 2 | `Tutorial` _(no protótipo, classes locais)_ | `<Tutorial label="Tutorial da captura" steps={[{ title: "Ache um lugar bem claro e com fundo simples.", description: "Fique de frente para a luz e sem coisas ou pessoas atrás de você. Assim, sua foto fica boa e ajuda a aprovar mais rápido." }, { title: "Tire óculos, boné ou o que cobrir seu rosto.", description: "Deixe seu rosto e olhos bem à mostra e sem reflexos. Assim, fica mais fácil reconhecer você e sua foto é aceita de primeira." }, { title: "Vista uma roupa apropriada.", description: "Não tire a foto sem camisa, com roupas de banho ou íntimas. Estar bem vestido faz com que sua selfie seja aprovada rápido." }]} continueLabel="Continuar" />` | passo 1; passo 2; passo 3 | Protótipo monta o tutorial com classes locais lv-tut-* + PageHeading; no DS é Tutorial (passos com TutorialSlide e CarouselDots). |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). |
+| 2 | `Tutorial` _(na implementação atual, classes locais)_ | `<Tutorial label="Tutorial da captura" steps={[{ title: "Ache um lugar bem claro e com fundo simples.", description: "Fique de frente para a luz e sem coisas ou pessoas atrás de você. Assim, sua foto fica boa e ajuda a aprovar mais rápido." }, { title: "Tire óculos, boné ou o que cobrir seu rosto.", description: "Deixe seu rosto e olhos bem à mostra e sem reflexos. Assim, fica mais fácil reconhecer você e sua foto é aceita de primeira." }, { title: "Vista uma roupa apropriada.", description: "Não tire a foto sem camisa, com roupas de banho ou íntimas. Estar bem vestido faz com que sua selfie seja aprovada rápido." }]} continueLabel="Continuar" />` | passo 1; passo 2; passo 3 | Implementação atual monta o tutorial com classes locais lv-tut-* + PageHeading; no DS é Tutorial (passos com TutorialSlide e CarouselDots). |
 | 3 | `Button` | `<Button variant="primary" fullWidth disabled iconEnd="arrow_forward">Continuar</Button>` | desativado por 3 s (`disabled` / aria-disabled); liberado | Barra de 3 s enchendo o botão (classe local lv-fill) antes de liberar. |
 
 Classes locais usadas na tela (fora do DS): `.lv-fill*`, `.lv-tut*`.

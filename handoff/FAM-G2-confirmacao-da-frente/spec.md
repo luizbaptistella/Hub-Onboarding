@@ -1,6 +1,6 @@
 # FAM-G2 · Confirmação da frente do documento do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Proposta, ainda não validada.** Passo 3 do fluxo FAM-G2. Estrutura de BIO-04 (conferência da foto), com o texto da frente do documento do familiar. Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` (passo 3 do fluxo) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: BIO-04, [`1774:46253`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1774-46253). Telas próprias do FAM-G2: não desenhadas |
 | Status | Proposta, a validar |

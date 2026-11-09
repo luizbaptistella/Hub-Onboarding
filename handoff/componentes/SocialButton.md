@@ -18,7 +18,7 @@ Usado em 1 telas, 3 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 11 | `<SocialButton provider="google" layout="icon" intent="signin" />` | contêiner font-size: proto 13.3333px · DS 16px; contêiner line-height: proto normal · DS 24px; contêiner font-weight: proto 400 · DS 600 |
 | ENT-01 | 12 | `<SocialButton provider="apple" layout="icon" intent="signin" />` | contêiner font-size: proto 13.3333px · DS 16px; contêiner line-height: proto normal · DS 24px; contêiner font-weight: proto 400 · DS 600 |
@@ -26,7 +26,7 @@ Usado em 1 telas, 3 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 64×64 | 64×64 |
 | imagem | 32×32 | — |

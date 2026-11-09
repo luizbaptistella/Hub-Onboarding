@@ -1,6 +1,6 @@
 # FAM-18 · Convite indisponível
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Tela criada como estado de erro da entrada pelo link (FAM-16). Premissas que precisam de validação estão na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-18` (código novo, para não misturar com FAM-16) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | — |
 | Status | Aprovada |
@@ -30,7 +29,7 @@ Lista para máquina: a gerar após validação. Docs de cada componente no artef
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Convite de familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `login`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Convite de familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `login`. |
 | 2 | `Hero` (variante danger) | `<Hero tone="danger" icon="link_off" title="Este convite não está mais disponível" description="Ele expirou ou foi cancelado. Se você já aceitou, entre na sua conta. Se não, peça um novo convite a quem convidou você." />` | — | Selo do DS: disco vermelho-claro com miolo vermelho e ícone `link_off`. Título e texto centralizados. Usa `po-hero` (marcação de referência). |
 | 3 | `Button` | `<Button variant="primary" fullWidth>Entrar na minha conta</Button>` | — | Navega para `login`. |
 | 4 | `LegalFooter` | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |

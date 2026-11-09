@@ -1,6 +1,6 @@
 # DOC-14 · Erro inesperado ao enviar o documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Terceira das telas de erro de sistema do CRNM. Sem desenho no Figma (proposta do hub).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Avisar que algo deu errado, sem uma causa conhecida, e oferecer tentar de novo o
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="error" title="Algo deu errado" description="Ocorreu um erro inesperado. Tente novamente." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 2 | `<Button variant="primary" iconEnd="refresh" onClick={() => {}}>Tentar novamente</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

@@ -1,13 +1,12 @@
 # AREA-01 · Meu cadastro
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `AREA-01` |
-| Id no protótipo | `area-cadastro-detalhe` (`prototipo.html#area-cadastro-detalhe`) |
 | Raia | Área logada · Meu cadastro, notificações, ajuda e segurança |
 | Figma | `2831:36859` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -121,7 +120,7 @@ Cenário do titular (um por variante; os demais acordeões seguem o cenário com
 | Benefício · em análise | Cadastro completo | Benefício: Em análise | [screen--beneficio-analise.html](screen--beneficio-analise.html) |
 | Benefício · aguardando | Cadastro completo | Benefício: Aguardando (liberação em breve, sem eyebrow) | [screen--beneficio-aguardando.html](screen--beneficio-aguardando.html) |
 
-Estados por acordeão: Concluído, Validado, Ação necessária, Reprovado, Em análise, Bloqueado e Aguardando. Os dados dos cenários estão em `CENARIOS`, `DESCRICAO`, `DETALHE` e `CABECALHO` em [area.js](../../area.js); o seletor de cenários fica no menu de telas do protótipo.
+Estados por acordeão: Concluído, Validado, Ação necessária, Reprovado, Em análise, Bloqueado e Aguardando. Os dados dos cenários estão em `CENARIOS`, `DESCRICAO`, `DETALHE` e `CABECALHO` em [area.js](../../area.js); o seletor de cenários fica no menu de telas da implementação atual.
 
 ## 6. Comportamento
 
@@ -163,7 +162,7 @@ Estados por acordeão: Concluído, Validado, Ação necessária, Reprovado, Em a
 
 - Nome, CPF, e-mail, telefone e endereço do titular.
 - Cenário de validação do titular.
-- Foto de perfil (no protótipo, salva no navegador).
+- Foto de perfil (na implementação atual, salva no navegador).
 
 Visão geral: [dados.md](../dados.md).
 

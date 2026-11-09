@@ -1,6 +1,6 @@
 # DOC-26 · RNE · tutorial da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Primeira tela do RNE. Segue o tutorial da frente do CRNM e do DPRNM, com o texto do Figma no primeiro passo.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar a frente do RNE (Registro Nacional de Estrange
 |---|---|---|---|---|
 | `Tutorial` | 3 | `<Tutorial label="Como fotografar a frente do RNE" title="Foto do documento" steps={[{ title: "Vamos capturar a frente do RNE", description: "É importante que o documento esteja atualizado…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

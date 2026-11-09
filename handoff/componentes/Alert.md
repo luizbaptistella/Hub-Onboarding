@@ -15,7 +15,7 @@ Usado em 5 telas, 5 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 4 | `<Alert tone="info" title="Sua conta foi encerrada.">O cadastro ficou inativo. Para voltar, fale com o atendimento.</Alert>` | nenhuma |
 | CAD-06 | 3 | `<Alert tone="success" title="E-mail verificado">Validação de e-mail concluída com sucesso.</Alert>` | contêiner height: proto 78px · DS 90px |
@@ -25,7 +25,7 @@ Usado em 5 telas, 5 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×78 | 327×90 |
 | status-icon | 20×20 | — |

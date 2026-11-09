@@ -1,16 +1,15 @@
 # FAM-16 · Convite · entrada pelo link (sem conta)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-16` |
-| Id no protótipo | `convite-link` (`prototipo.html#convite-link`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 2 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Convite de familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `login`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Convite de familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `login`. |
 | 2 | `PageHeading` | `<PageHeading title="Roberto Silva convidou você" tone="neutral" spaced />` | — | — |
 | 3 | `TextField` | `<TextField label="CPF" name="cpf" placeholder="000.000.000-00" autoComplete="off" />` | padrão; preenchido | — |
 | 4 | `Button` | `<Button variant="primary" fullWidth type="submit">Continuar</Button>` | — | — |
@@ -88,7 +87,7 @@ Visão geral: [dados.md](../dados.md).
 ## 10. Lacunas e perguntas
 
 - Link expirado ou já usado: tela em FAM-18 (aprovada).
-- A entrada pelo link ainda não está no protótipo; a tela aparece só pelo menu de cenários.
+- A entrada pelo link ainda não está na implementação atual; a tela aparece só pelo menu de cenários.
 
 ## 11. Critérios de aceite
 

@@ -1,13 +1,12 @@
 # BIO-03 · Validando a foto
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `BIO-03` |
-| Id no protótipo | `liv-validating` (`prototipo.html#liv-validating`) |
 | Raia | Biometria facial · Etapa 3 de 4 · Figma `1774:46029` |
 | Figma | [`1774:46292`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1774-46292) (seção `1774:46029`) |
 | Status | Desenhada no Figma |
@@ -28,8 +27,8 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={false} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). |
-| 2 | `LoadingState` _(no protótipo, classes locais)_ | `<LoadingState title="Aguarde!" description="Estamos validando sua foto." />` | — | Protótipo usa classes locais lv-*; implementar com o LoadingState do DS. |
+| 1 | `AppHeader` | `<AppHeader back={false} title="Biometria facial" progress={{ current: 3, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). |
+| 2 | `LoadingState` _(na implementação atual, classes locais)_ | `<LoadingState title="Aguarde!" description="Estamos validando sua foto." />` | — | Implementação atual usa classes locais lv-*; implementar com o LoadingState do DS. |
 
 **Aparecem por condição** (não estão na marcação padrão):
 

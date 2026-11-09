@@ -1,16 +1,15 @@
 # FAM-09 · Buscar familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-09` |
-| Id no protótipo | `familiar-busca` (`prototipo.html#familiar-busca`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 3 / 3 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `area-familiares-vazio`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `area-familiares-vazio`. |
 | 2 | `PageHeading` | `<PageHeading title="Buscar familiar" tone="neutral" spaced />` | — | — |
 | 3 | `TextField` | `<TextField label="CPF ou e-mail" name="valor" placeholder="CPF ou e-mail" required autoComplete="off" />` | padrão; preenchido | — |
 | 4 | `Button` | `<Button variant="primary" fullWidth type="submit">Buscar</Button>` | — | — |
@@ -99,7 +98,7 @@ Visão geral: [dados.md](../dados.md).
 
 - Limite de consultas definido (P1, decisão 1): após a segunda espera de 30 min, a busca bloqueia e o usuário abre chamado no atendimento.
 - Mascaramento de nome e CPF (P2, decisão 2), padrão de mercado: CPF `***.456.789-**`; nome com o primeiro nome completo e, nos demais, a inicial seguida de `*`. Validar com produto.
-- SELF_LINK (422): o protótipo não trata esse caso. Decidido: aviso no campo de busca. Confirmar com o backend se a busca devolve SELF_LINK ou se a checagem é feita no front.
+- SELF_LINK (422): a implementação atual não trata esse caso. Decidido: aviso no campo de busca. Confirmar com o backend se a busca devolve SELF_LINK ou se a checagem é feita no front.
 
 ## 11. Critérios de aceite
 

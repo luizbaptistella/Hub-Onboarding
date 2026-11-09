@@ -116,7 +116,7 @@
       device.appendChild(toast);
     }
     toast.hidden = false;
-    toast.textContent = "Esta tela ainda não está no protótipo.";
+    toast.textContent = "Esta tela ainda não está na implementação atual.";
     clearTimeout(timer);
     timer = setTimeout(function () { toast.hidden = true; }, 2500);
   });
@@ -190,7 +190,7 @@
   });
 })();
 
-// Segurança (List do DS): Conectar / Desconectar alterna o login social na própria tela (protótipo, só em memória).
+// Segurança (List do DS): Conectar / Desconectar alterna o login social na própria tela (implementação atual, só em memória).
 (function () {
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-toggle]");
@@ -221,7 +221,7 @@
 })();
 
 // Cadastro do titular em cenários (Completo / Pendente / Reprovado): status, detalhe ao abrir com CTA,
-// timeline vertical à esquerda e progresso. Protótipo: o seletor fica no menu de telas.
+// timeline vertical à esquerda e progresso. Implementação atual: o seletor fica no menu de telas.
 (function () {
   var tpl = document.getElementById("tpl-detalhe");
   var slots = [].slice.call(document.querySelectorAll("[data-detalhe]"));
@@ -449,7 +449,7 @@
 })();
 
 // Encerrar conta (Figma 3142:61697): botão sempre ativo, valida a senha ao enviar; depois de 1,2 s de loading
-// a conta fica inativa e o protótipo volta ao Login com um Alert informativo (tela de resultado ainda não desenhada).
+// a conta fica inativa e a implementação atual volta ao Login com um Alert informativo (tela de resultado ainda não desenhada).
 (function () {
   var form = document.getElementById("encerrar-form");
   if (!form) return;

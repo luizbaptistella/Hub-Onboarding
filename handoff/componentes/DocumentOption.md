@@ -15,7 +15,7 @@ Usado em 1 telas, 4 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | DOC-01 | 3 | `<DocumentOption title="CIN" badge="<Badge tone=\"success\">Aprovação mais rápida</Badge>" description="Carteira de Identidade Nacional" value="cin" name="documento" />` | nenhuma |
 | DOC-01 | 4 | `<DocumentOption title="CNH" badge="<Badge tone=\"success\">Aprovação mais rápida</Badge>" description="Carteira Nacional de Habilitação" value="cnh" name="documento" />` | nenhuma |
@@ -24,7 +24,7 @@ Usado em 1 telas, 4 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×81 | 327×81 |
 | docopt-head | 327×80 | 327×80 |

@@ -1,13 +1,12 @@
 # CAD-08 · Status · dados recebidos
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-08` |
-| Id no protótipo | `status` (`prototipo.html#status`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `2198:23407` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |

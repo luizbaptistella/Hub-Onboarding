@@ -1,6 +1,6 @@
 # FAM-G2 · Captura do verso do documento do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Proposta, ainda não validada.** Passo 4 do fluxo FAM-G2. É a parte do verso da lacuna DOC-G1. Usa a mesma câmera da frente ([FAM-G2 · Captura da frente](../FAM-G2-captura-do-documento/spec.md)), com a instrução do verso.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` (passo 4 do fluxo; verso do documento) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | — (mesma câmera de DOC-04, sem tela própria do verso) |
 | Status | Proposta, a validar |

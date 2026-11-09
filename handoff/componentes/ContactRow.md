@@ -14,14 +14,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-02 | 3 | `<ContactRow channel="sms" value={maskPhone(celular)} editLabel="Editar Celular" />` | contêiner height: proto 44px · DS 20px |
 | CAD-04 | 4 | `<ContactRow channel="email" value={maskEmail(email)} editLabel="Editar Email" />` | contêiner height: proto 44px · DS 20px |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×44 | 327×20 |
 | contact-value | 134×20 | 134×20 |

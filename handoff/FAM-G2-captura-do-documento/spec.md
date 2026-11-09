@@ -1,6 +1,6 @@
 # FAM-G2 · Captura da frente do documento do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Passo 2 do fluxo FAM-G2 (preenchimento e capturas no celular do titular, em nome do familiar). É a versão familiar da lacuna DOC-G1 (captura do documento). Usa a estrutura de DOC-04 (câmera da frente), com o `CameraCapture` do DS. Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` (passo 2 do fluxo; variante familiar de DOC-G1) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-04, [`2788:34617`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34617). Telas próprias do FAM-G2: não desenhadas |
 | Status | Aprovada |

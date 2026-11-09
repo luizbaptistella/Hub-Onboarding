@@ -1,13 +1,12 @@
 # ENT-01 · Login
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `ENT-01` |
-| Id no protótipo | `login` (`prototipo.html#login`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `1620:26870` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,13 +27,13 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={false} title="Login" language help={false} />` | — | Forma no protótipo: Cadastro/Login (classe po-header-entry). |
+| 1 | `AppHeader` | `<AppHeader back={false} title="Login" language help={false} />` | — | Forma atual: Cadastro/Login (classe po-header-entry). |
 | 2 | Logo Palmeiras _(fora do DS)_ | asset: logo-palmeiras.png + logo-palmeiras-bg-ellipse.svg | — | Asset do DS (grupo Logos). |
 | 3 | `PageHeading` | `<PageHeading title="Faça seu login" subtitle="Faça seu login para começar ou cadastre-se." tone="brand" />` | — | — |
 | 4 | `Alert` | `<Alert tone="info" title="Sua conta foi encerrada.">O cadastro ficou inativo. Para voltar, fale com o atendimento.</Alert>` | oculto; visível | Oculto no layout padrão; aparece por condição (ver Estados). |
 | 5 | `TextField` | `<TextField label="Número do seu CPF" preset="cpf" name="cpf" placeholder="000.000.000-00" autoComplete="username" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
 | 6 | `TextField` | `<TextField label="Senha" preset="password" name="senha" placeholder="Digite sua senha" autoComplete="current-password" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage); senha visível ou oculta | — |
-| 7 | `TextLink` | `<TextLink variant="standalone" href="#">Esqueceu sua senha?</TextLink>` | — | No protótipo é um botão sem destino; no DS o TextLink exige href. |
+| 7 | `TextLink` | `<TextLink variant="standalone" href="#">Esqueceu sua senha?</TextLink>` | — | Na implementação atual é um botão sem destino; no DS o TextLink exige href. |
 | 8 | `Button` | `<Button variant="primary" fullWidth type="submit">Entrar</Button>` | — | — |
 | 9 | `Button` | `<Button variant="accent" fullWidth>Criar cadastro</Button>` | — | Navega para `cadastro`. |
 | 10 | `DividerText` | `<DividerText>ou entrar com:</DividerText>` | — | — |
@@ -85,7 +84,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 ## 6. Comportamento
 
 - O botão Entrar fica sempre ativo e valida ao enviar (regra do DS). O foco vai para o primeiro campo com erro.
-- No protótipo qualquer senha é aceita; com CPF válido, vai para a área logada (AREA-01).
+- Na implementação atual qualquer senha é aceita; com CPF válido, vai para a área logada (AREA-01).
 - Quando a pessoa vem de Encerrar conta (AREA-04), aparece o aviso informativo "Sua conta foi encerrada." Ele some ao digitar ou ao trocar de tela.
 - "Esqueceu sua senha?" e os botões Google, Apple e Microsoft ainda não têm fluxo.
 
@@ -117,7 +116,7 @@ Visão geral: [dados.md](../dados.md).
 
 - Recuperação de senha.
 - Login social (Google, Apple, Microsoft).
-- Erro de credenciais incorretas: o protótipo não simula.
+- Erro de credenciais incorretas: a implementação atual não simula.
 - Os textos de erro de CPF são provisórios (DESIGN-SYSTEM.md).
 
 ## 11. Critérios de aceite

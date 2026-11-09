@@ -1,6 +1,6 @@
 # DOC-45 · Passaporte · página errada
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Avisar que a foto não é da página de dados do passaporte e pedir uma nova fot
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="menu_book" title="Esta não é a página com sua foto" description="Abra o passaporte na página de dados, onde estão sua foto e seus dados pessoais." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" iconEnd="arrow_forward" onClick={() => {}}>Tirar outra foto</Button>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

@@ -1,6 +1,6 @@
 # DOC-17 · DPRNM · câmera da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Segunda tela do DPRNM. Segue a câmera da frente do CRNM (DOC-04), com o título do DPRNM.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Fotografar a frente do DPRNM. A foto é tirada sozinha quando o documento está 
 |---|---|---|---|---|
 | `CameraCapture` | 5 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre a frente do documento na moldura" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />` | state | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

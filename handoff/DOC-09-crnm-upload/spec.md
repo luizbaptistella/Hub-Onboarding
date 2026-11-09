@@ -1,6 +1,6 @@
 # DOC-09 · CRNM · upload da frente e do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Versão do CRNM por upload. Uma só tela, com frente e verso.
 
 ## Índice da tela
@@ -28,7 +28,7 @@ A pessoa envia o PDF oficial da frente e do verso do CRNM. O código (MRZ) é li
 | `UploadArea` | 18 | `<UploadArea id="crnm-frente" label="Frente do CRNM" status="idle" hint="PDF ou imagem, até 5 MB." onFile={() => {}} onRemove={() => {}} />` | error, file, hint, id, label, status | — |
 | `Button` | 9 | `<Button variant="primary" iconEnd="arrow_forward" disabled onClick={() => {}}>Enviar documento</Button>` | disabled | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

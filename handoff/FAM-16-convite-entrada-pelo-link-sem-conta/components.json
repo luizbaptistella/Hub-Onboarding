@@ -9,7 +9,7 @@
    "ds": true,
    "local": false,
    "selector": "#convite-link > header:nth-of-type(1)",
-   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "note": "Forma atual: Edição (classe po-header-task).",
    "dsProps": {
     "back": {
      "label": "Voltar"

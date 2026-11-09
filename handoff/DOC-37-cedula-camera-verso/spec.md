@@ -1,6 +1,6 @@
 # DOC-37 · Cédula · câmera do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Fotografar o verso inteiro da Cédula. A foto é tirada sozinha quando o documen
 |---|---|---|---|---|
 | `CameraCapture` | 5 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre o verso do documento no centro da moldura" autoCapture onBack={() => {}} onCapture={() => {}} onOpenSettings={() => {}} />` | state | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|
@@ -74,7 +74,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 ## Pendências
 
-- Se houver linhas de código (sinais <<<), elas precisam aparecer nítidas; não há detecção específica no protótipo.
+- Se houver linhas de código (sinais <<<), elas precisam aparecer nítidas; não há detecção específica na implementação atual.
 - O botão "Tirar foto" ainda aparece mesmo com a captura automática.
 - A imagem de simulação é provisória.
 - Textos novos precisam ir para o Figma, se aprovados.

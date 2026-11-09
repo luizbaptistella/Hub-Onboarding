@@ -1,6 +1,6 @@
 # FAM-G2 · CIN · captura da frente do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Versão da CIN da captura da frente da FAM-G2, com o mesmo padrão: câmera `CameraCapture` com moldura de cartão, sem upload. Comportamento igual ao da captura genérica, validada na FAM-G2.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` · CIN · captura da frente |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-04, [`2788:34617`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34617) |
 | Status | Aprovada |

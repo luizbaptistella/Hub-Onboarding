@@ -1,6 +1,6 @@
 # DOC-21 · DPRNM · upload da frente e do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Mesmo layout do upload do CRNM (DOC-09): uma tela com frente e verso, e o código do verso lido por OCR.
 
 ## Índice da tela
@@ -28,7 +28,7 @@ Enviar o PDF oficial da frente e do verso do DPRNM. O código do verso é lido p
 | `UploadArea` | 18 | `<UploadArea id="crnm-frente" label="Frente do DPRNM" status="idle" hint="PDF ou imagem, até 5 MB." onFile={() => {}} onRemove={() => {}} />` | error, file, hint, id, label, status | — |
 | `Button` | 9 | `<Button variant="primary" iconEnd="arrow_forward" disabled onClick={() => {}}>Enviar documento</Button>` | disabled | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

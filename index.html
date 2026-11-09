@@ -103,7 +103,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
 
 .node { position: absolute; width: 150px; cursor: pointer; transition: opacity .15s; }
 .thumb { position: relative; width: 150px; height: 325px; border-radius: 10px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); outline: 1px solid var(--line); }
-/* O iframe tem 800px de largura para ficar acima do ponto de quebra de 720px do protótipo;
+/* O iframe tem 800px de largura para ficar acima do ponto de quebra de 720px da implementação atual;
    a moldura 375×812 fica no canto superior esquerdo e o resto é recortado. */
 .thumb iframe { position: absolute; left: 0; top: 0; width: 800px; height: 812px; border: 0; transform: scale(.4); transform-origin: 0 0; pointer-events: none; background: #f8f9fa; }
 .thumb .ph { position: absolute; inset: 0; display: grid; place-items: center; font: 12px var(--mono); color: var(--fg-3); }
@@ -318,7 +318,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
     <div class="viewer">
       <div class="v-tools" id="v-tools"></div>
       <p class="v-note" id="v-note"></p>
-      <div class="v-frame" id="v-frame"><div class="v-device" id="v-device"><iframe id="v-iframe" title="Tela do protótipo"></iframe></div></div>
+      <div class="v-frame" id="v-frame"><div class="v-device" id="v-device"><iframe id="v-iframe" title="Tela da implementação atual"></iframe></div></div>
     </div>
   </section>
   <section class="p-body" data-pane="comp" hidden>
@@ -840,9 +840,9 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       "<h2 class='ft-h'>" + esc(i.component) + " · instância " + i.id + "</h2>" +
       "<p class='cmp-sum'><code>" + esc(i.jsx || "") + "</code></p>" +
       "<h3 class='cmp-h'>Anatomia (medidas em px)</h3>" +
-      fichaRows(f.anatomia || [], [["Parte", function (r) { return r.parte; }], ["Protótipo", function (r) { return r.protótipo; }], ["DS", function (r) { return r.DS; }]]) +
-      "<h3 class='cmp-h'>Diferenças protótipo × DS</h3>" +
-      ((f.diferencas || []).length ? fichaRows(f.diferencas, [["Onde", function (r) { return r.onde; }], ["Prop", function (r) { return r.prop; }], ["Protótipo", function (r) { return r.protótipo; }], ["DS", function (r) { return r.DS; }]]) : "<p class='cmp-sum'>Nenhuma: as medidas batem com o DS.</p>") +
+      fichaRows(f.anatomia || [], [["Parte", function (r) { return r.parte; }], ["Implementação atual", function (r) { return r.implementacao; }], ["DS", function (r) { return r.DS; }]]) +
+      "<h3 class='cmp-h'>Diferenças implementação atual × DS</h3>" +
+      ((f.diferencas || []).length ? fichaRows(f.diferencas, [["Onde", function (r) { return r.onde; }], ["Prop", function (r) { return r.prop; }], ["Implementação atual", function (r) { return r.implementacao; }], ["DS", function (r) { return r.DS; }]]) : "<p class='cmp-sum'>Nenhuma: as medidas batem com o DS.</p>") +
       "<h3 class='cmp-h'>Tokens aplicados</h3>" +
       fichaRows(f.tokens || [], [["Parte", function (r) { return r.parte; }], ["Propriedade", function (r) { return r.propriedade; }], ["Token", function (r) { return r.token; }], ["Valor", function (r) { return r.valor; }]]) +
       ((f.valoresFixos || []).length ? "<p class='cmp-sum'>Valores fixos sem token: " + f.valoresFixos.map(function (v) { return esc(v.propriedade + " " + v.valor); }).join(" · ") + "</p>" : "") +
@@ -885,7 +885,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
     var row = $('.ci[data-id="' + i.id + '"]', $("#cmp-list")); if (row) row.scrollIntoView({ block: "nearest", behavior: "smooth" });
   });
 
-  // Aba Tela: protótipo navegável (sincroniza com o mapa) ou marcação estática de handoff
+  // Aba Tela: implementação atual navegável (sincroniza com o mapa) ou marcação estática de handoff
   function renderTela(keep) {
     var n = sel, tools = $("#v-tools");
     mode = "static";
@@ -937,7 +937,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       liveProto = n.proto;
       fr.onload = onLiveLoad;
       fr.src = flow.prototype + "#" + n.proto;
-    } else if (keep) { /* a navegação veio de dentro do protótipo: não recarrega */ }
+    } else if (keep) { /* a navegação veio de dentro da implementação atual: não recarrega */ }
     sizeDevice();
   }
   function figmaUrl(id) { return "https://www.figma.com/design/" + flow.figmaFile + "/?node-id=" + String(id).replace(":", "-"); }
@@ -1080,7 +1080,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       .concat([{ p: "handoff/INDEX.md", d: "Índice geral e fluxo completo" }, { p: "handoff/componentes.md", d: "Inventário: componente × telas, variantes e estados" }, { p: "handoff/dados.md", d: "Dados que atravessam telas" },
                { p: "handoff/flow.json", d: "Mapa do fluxo em JSON (nós e ligações)" }, { p: "handoff/README.md", d: "Como ler o handoff" }]);
     var prompt = "Implemente a tela " + n.code + " (" + n.name + ") do Palmeiras · Onboarding.\nLeia só: " + n.spec + ", " + n.components + " e " + n.variants[0].file +
-      "\nArtefato: " + flow.artifact + "\nComponentes e tokens: DS Palmeiras · Onboarding (precedência: DS > spec > protótipo).";
+      "\nArtefato: " + flow.artifact + "\nComponentes e tokens: DS Palmeiras · Onboarding (precedência: DS > spec).";
     $("#files").innerHTML = '<div class="prompt"><p><b>Pedido pronto para um dev ou agente</b></p><code id="prompt-text">' + esc(prompt) +
       '</code><p style="margin:8px 0 0"><button class="chip" id="copy-prompt">Copiar pedido</button></p></div>' +
       files.map(function (f) { return '<div class="file"><div><code>' + esc(f.p) + "</code><small>" + esc(f.d) + '</small></div><button data-copy="' + esc(f.p) + '">Copiar caminho</button></div>'; }).join("");
@@ -1101,7 +1101,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
     var ins2 = []; flow.edges.forEach(function (e) { if (e.dst === n.code) ins2.push({ e: e, other: e.src }); });
     var text = n.type === "gap" ? n.note : flow.decisions[n.code];
     $("#info").innerHTML = "<p>" + esc(text) + "</p>" +
-      (n.type === "gap" ? "<p>Esta tela ainda não existe no Figma nem no protótipo. Ela aparece no mapa para o time ver o que falta desenhar.</p>" : "") +
+      (n.type === "gap" ? "<p>Esta tela ainda não existe no Figma nem na implementação atual. Ela aparece no mapa para o time ver o que falta desenhar.</p>" : "") +
       '<div class="links" style="padding:0"><section><h3>Chega de</h3>' + ins2.map(linkRow).join("") + "</section><section><h3>Leva a</h3>" + outs.map(linkRow).join("") + "</section></div>";
     $$("[data-go]", $("#info")).forEach(function (b) { b.onclick = function () { select(byCode[b.dataset.go], { center: true }); }; });
   }

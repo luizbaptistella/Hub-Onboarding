@@ -9,7 +9,7 @@
    "ds": true,
    "local": false,
    "selector": "#encerrar-conta > header:nth-of-type(1)",
-   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "note": "Forma atual: Edição (classe po-header-task).",
    "dsProps": {
     "back": {
      "label": "Voltar"
@@ -66,42 +66,42 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×56",
+      "implementacao": "375×56",
       "DS": "375×40"
      },
      {
       "parte": "header-slot",
-      "protótipo": "48×48",
+      "implementacao": "48×48",
       "DS": "—"
      },
      {
       "parte": "btn",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "btn-content",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "ícone (chevron_left)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "header-center",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "—"
      },
      {
       "parte": "header-title",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "263×20"
      },
      {
       "parte": "ícone (help)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      }
     ],
@@ -252,13 +252,13 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "56px",
+      "implementacao": "56px",
       "DS": "40px"
      },
      {
       "onde": "header-title",
       "prop": "tamanho",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "263×20"
      }
     ],
@@ -267,7 +267,7 @@
      "h": 56,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -329,17 +329,17 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×100",
+      "implementacao": "327×100",
       "DS": "327×100"
      },
      {
       "parte": "heading-title",
-      "protótipo": "327×32",
+      "implementacao": "327×32",
       "DS": "327×32"
      },
      {
       "parte": "heading-sub",
-      "protótipo": "327×60",
+      "implementacao": "327×60",
       "DS": "327×60"
      }
     ],
@@ -432,7 +432,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -461,62 +461,62 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×253",
+      "implementacao": "327×253",
       "DS": "327×26"
      },
      {
       "parte": "list-label",
-      "protótipo": "327×16",
+      "implementacao": "327×16",
       "DS": "327×16"
      },
      {
       "parte": "list",
-      "protótipo": "327×229",
+      "implementacao": "327×229",
       "DS": "327×2"
      },
      {
       "parte": "list-li",
-      "protótipo": "325×64",
+      "implementacao": "325×64",
       "DS": "—"
      },
      {
       "parte": "list-item",
-      "protótipo": "325×64",
+      "implementacao": "325×64",
       "DS": "—"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (cancel)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "—"
      },
      {
       "parte": "list-title",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "—"
      },
      {
       "parte": "ícone (shield)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (folder)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (chat)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      }
     ],
@@ -702,18 +702,18 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "253px",
+      "implementacao": "253px",
       "DS": "26px"
      },
      {
       "onde": "list",
       "prop": "tamanho",
-      "protótipo": "327×229",
+      "implementacao": "327×229",
       "DS": "327×2"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -760,27 +760,27 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×64",
+      "implementacao": "325×64",
       "DS": "325×64"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (cancel)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "261×40"
      },
      {
       "parte": "list-title",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "261×40"
      }
     ],
@@ -873,7 +873,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -920,27 +920,27 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×48",
+      "implementacao": "325×48",
       "DS": "325×48"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (shield)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "261×20",
+      "implementacao": "261×20",
       "DS": "261×20"
      },
      {
       "parte": "list-title",
-      "protótipo": "261×20",
+      "implementacao": "261×20",
       "DS": "261×20"
      }
     ],
@@ -1033,7 +1033,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1080,27 +1080,27 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×64",
+      "implementacao": "325×64",
       "DS": "325×64"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (folder)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "261×40"
      },
      {
       "parte": "list-title",
-      "protótipo": "261×40",
+      "implementacao": "261×40",
       "DS": "261×40"
      }
     ],
@@ -1193,7 +1193,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1240,27 +1240,27 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×48",
+      "implementacao": "325×48",
       "DS": "325×48"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (chat)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "261×20",
+      "implementacao": "261×20",
       "DS": "261×20"
      },
      {
       "parte": "list-title",
-      "protótipo": "261×20",
+      "implementacao": "261×20",
       "DS": "261×20"
      }
     ],
@@ -1353,7 +1353,7 @@
     "valoresFixos": [],
     "diferencas": [],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1482,32 +1482,32 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×72",
+      "implementacao": "327×72",
       "DS": "327×72"
      },
      {
       "parte": "field-label",
-      "protótipo": "327×20",
+      "implementacao": "327×20",
       "DS": "327×20"
      },
      {
       "parte": "input",
-      "protótipo": "327×44",
+      "implementacao": "327×44",
       "DS": "283×42"
      },
      {
       "parte": "btn",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "btn-content",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "20×20"
      },
      {
       "parte": "ícone (visibility)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "20×20"
      }
     ],
@@ -1721,19 +1721,19 @@
      {
       "onde": "input",
       "prop": "tamanho",
-      "protótipo": "327×44",
+      "implementacao": "327×44",
       "DS": "283×42"
      },
      {
       "onde": "btn-content",
       "prop": "tamanho",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "20×20"
      },
      {
       "onde": "ícone (visibility)",
       "prop": "tamanho",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "20×20"
      }
     ],
@@ -1742,7 +1742,7 @@
      "h": 72,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1828,12 +1828,12 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×50",
+      "implementacao": "327×50",
       "DS": "327×50"
      },
      {
       "parte": "btn-content",
-      "protótipo": "113×24",
+      "implementacao": "113×24",
       "DS": "113×24"
      }
     ],
@@ -1916,7 +1916,7 @@
      "h": 50,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1991,12 +1991,12 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×50",
+      "implementacao": "327×50",
       "DS": "327×50"
      },
      {
       "parte": "btn-content",
-      "protótipo": "68×24",
+      "implementacao": "68×24",
       "DS": "68×24"
      }
     ],
@@ -2086,7 +2086,7 @@
      "h": 50,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -2115,7 +2115,7 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×48",
+      "implementacao": "375×48",
       "DS": "375×77"
      }
     ],
@@ -2175,12 +2175,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "48px",
+      "implementacao": "48px",
       "DS": "77px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   }
  ],

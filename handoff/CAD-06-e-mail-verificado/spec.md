@@ -1,16 +1,15 @@
 # CAD-06 · E-mail verificado
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-06` |
-| Id no protótipo | `email-atualizado` (`prototipo.html#email-atualizado`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 2 / 2 |
 
@@ -28,9 +27,9 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma no protótipo: Verificação (classe po-header-module). Navega para `otp-email`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language={false} help />` | — | Forma atual: Verificação (classe po-header-module). Navega para `otp-email`. |
 | 2 | `ResultHero` | `<ResultHero title="E-mail verificado com sucesso!" description="Agora vamos completar o seu cadastro com o seu endereço." tone="success" icon="mail" />` | — | — |
-| 3 | `Alert` | `<Alert tone="success" title="E-mail verificado">Validação de e-mail concluída com sucesso.</Alert>` | — | No protótipo usa a classe po-status (StatusCard, depreciado no DS): implementar como Alert tone="success". |
+| 3 | `Alert` | `<Alert tone="success" title="E-mail verificado">Validação de e-mail concluída com sucesso.</Alert>` | — | Na implementação atual usa a classe po-status (StatusCard, depreciado no DS): implementar como Alert tone="success". |
 | 4 | `Button` | `<Button variant="primary" fullWidth>Continuar</Button>` | — | Navega para `endereco`. |
 | 5 | `LegalFooter` | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
 

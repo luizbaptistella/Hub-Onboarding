@@ -1,6 +1,6 @@
 # DOC-15 · Sessão expirada
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Quarta e última das telas de erro de sistema do CRNM. Sem desenho no Figma (proposta do hub).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Avisar que a sessão acabou e levar a pessoa para entrar de novo, sem perder a e
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="lock_clock" title="Sua sessão expirou" description="Entre novamente para continuar de onde parou." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" iconEnd="login" onClick={() => {}}>Entrar</Button>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

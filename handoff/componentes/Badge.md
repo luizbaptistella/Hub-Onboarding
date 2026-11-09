@@ -14,7 +14,7 @@ Usado em 3 telas, 20 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | AREA-01 | 2 | `<Badge tone="success">Cadastro completo</Badge>` | nenhuma |
 | AREA-01 | 15 | `<Badge tone="success">Ativo</Badge>` | nenhuma |
@@ -39,7 +39,7 @@ Usado em 3 telas, 20 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 116×20 | 116×20 |
 

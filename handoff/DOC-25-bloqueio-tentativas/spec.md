@@ -1,6 +1,6 @@
 # DOC-25 · Bloqueio por tentativas no documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de bloqueio para o CRNM e o DPRNM. Regra decidida pelo time (3 tentativas, 5 minutos). Sem desenho no Figma para documento (a biometria tem o BIO-05).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Avisar que o limite de validações foi atingido, quanto tempo falta, e deixar a
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="lock_clock" title="Excesso de tentativas" description="Você atingiu o limite de tentativas de validação do documento. Tente novamente em 5:00. Você pode sa…` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" iconEnd="logout" onClick={() => {}}>Sair e continuar depois</Button>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

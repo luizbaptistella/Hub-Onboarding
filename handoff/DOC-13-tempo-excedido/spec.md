@@ -1,6 +1,6 @@
 # DOC-13 · Tempo excedido ao enviar o documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Segunda das telas de erro de sistema do CRNM. Sem desenho no Figma (proposta do hub).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Avisar que o envio demorou mais de 20 segundos e deixar a pessoa tentar de novo.
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="schedule" title="Está demorando mais que o normal" description="Não conseguimos concluir o envio agora. Tente de novo em instantes." />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" iconEnd="refresh" onClick={() => {}}>Tentar novamente</Button>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

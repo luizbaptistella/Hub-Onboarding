@@ -1,6 +1,6 @@
 # FAM-19 · Cancelar convite (modal)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Modal de confirmação do botão Cancelar convite, em convite enviado (FAM-17). Premissas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-19` (código novo, modal de FAM-17) |
-| Id no protótipo | — (não implementado; o modal de cancelar foi removido da tela de convites) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | — |
 | Status | Aprovada |

@@ -1,6 +1,6 @@
 # DOC-24 · Conclusão do fluxo de documento
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de conclusão do fluxo de documento, com o conteúdo do Figma `2283:34738` (tela de status).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Confirmar que o fluxo de documento foi concluído e levar a pessoa para a próxi
 | `JourneyStepper` | 1 | `<JourneyStepper steps={[{ label: "Cadastro", state: "done" }, { label: "Captura de documentos", state: "done", icon: "document" }, { label: "Biometria facial", state: "current", icon: "fa…` | — | — |
 | `RedirectCountdown` | 1 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" onComplete={() => {}}>Redirecionando para a captura de documentos de identidade...</RedirectCountdown>` | — | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

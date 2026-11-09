@@ -1,6 +1,6 @@
 # FAM-G2 · Tutorial da captura do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada.** Primeira tela do fluxo FAM-G2 (preenchimento e capturas no celular do titular, em nome do familiar). Estrutura de DOC-03 (CRNM · tutorial da frente), com conteúdo e número de passos do contexto do rosto do familiar. As telas seguintes (documento, captura facial, senha) ainda não foram desenhadas.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-G2` (passo 1 do fluxo; código da lacuna no índice) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-03, [`2788:34545`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34545). Telas próprias do FAM-G2: não desenhadas |
 | Status | Aprovada (passo 1) |
@@ -35,7 +34,7 @@ Estrutura de DOC-03 montada com componentes do DS: header do tutorial, carrossel
 | 4 | `ScanFrame` | `<ScanFrame ratio={3 / 4} />` | só no passo 3 | Moldura do rosto, por cima da imagem. |
 | 5 | `CarouselDots` | `<CarouselDots count={3} active={n} />` | passo 1; passo 2; passo 3 | Pontos dentro da imagem. |
 | 6 | `StepNumber` | `<StepNumber value={n} total={3} noun="Etapa" decorative />` | — | Número do passo sobre a imagem. |
-| 7 | `Button` (passo), variante de preenchimento | `<Button size="sm" fullWidth iconEnd="arrow_forward" disabled className="lv-fill is-filling">Continuar</Button>` | desabilitado com barra primária enchendo o fundo (3 s); habilitado em 100% | Classe `lv-fill` do protótipo (`proto-ds.css`, de BIO-01). `is-filling` entra a cada passo e sai ao completar. No último passo: `iconStart="photo_camera"` e texto "Abrir câmera". |
+| 7 | `Button` (passo), variante de preenchimento | `<Button size="sm" fullWidth iconEnd="arrow_forward" disabled className="lv-fill is-filling">Continuar</Button>` | desabilitado com barra primária enchendo o fundo (3 s); habilitado em 100% | Classe `lv-fill` da implementação atual (`ajustes-ds.css`, de BIO-01). `is-filling` entra a cada passo e sai ao completar. No último passo: `iconStart="photo_camera"` e texto "Abrir câmera". |
 
 O carrossel segue o padrão WAI-ARIA do DS: região "carrossel" com nome, slide "Etapa N de 3" e anúncio de troca de passo.
 
@@ -104,7 +103,7 @@ Visão geral: [dados.md](../dados.md).
 - **Textos em terceira pessoa:** adaptados de BIO-01 para o titular falar do familiar.
 - **Três passos:** o passo de roupa saiu, e o enquadramento do rosto entrou no lugar. Se o produto quiser o passo de roupa de volta, a tela passa a ter 4 passos e precisa de ajuste de altura.
 - **Moldura do rosto:** `ScanFrame` com proporção 3:4. O DS não define moldura para rosto; a proporção é minha.
-- **Botão de preenchimento de 3 s:** igual a BIO-01 (`lv-fill`). A variante está no protótipo (`proto-ds.css`), não no componente `Button` do DS, então a implementação precisa dela.
+- **Botão de preenchimento de 3 s:** igual a BIO-01 (`lv-fill`). A variante está na implementação atual (`ajustes-ds.css`), não no componente `Button` do DS, então a implementação precisa dela.
 - **Imagens:** placeholder. O mascote do Figma não está no projeto.
 - **Sem barra de progresso no cabeçalho:** o cadastro do familiar tem outro total de etapas.
 - **Botão "Abrir câmera" no passo 3:** texto de DOC-03. O próximo passo ainda não foi desenhado.

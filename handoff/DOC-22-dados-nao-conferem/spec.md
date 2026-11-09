@@ -1,6 +1,6 @@
 # DOC-22 · Os dados do documento não conferem
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Tela de resultado para o CRNM e o DPRNM. Sem desenho no Figma para estes documentos (o Figma tem a versão da Cédula, em 2802:36765).
 
 ## Índice da tela
@@ -27,7 +27,7 @@ Mostrar que os dados lidos do documento não batem com os informados, dizer quai
 | `ResultHero` | 1 | `<ResultHero tone="danger" icon="edit_note" title="Os dados do documento não conferem" description="Os dados lidos no documento são diferentes dos que você informou. Confira o que está dif…` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 2 | `<Button variant="primary" iconEnd="edit" onClick={() => {}}>Revisar dados informados</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

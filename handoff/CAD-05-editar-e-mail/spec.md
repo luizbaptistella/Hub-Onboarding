@@ -1,16 +1,15 @@
 # CAD-05 · Editar e-mail
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-05` |
-| Id no protótipo | `editar-email` (`prototipo.html#editar-email`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 1 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Editar e-mail" language={false} help />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `otp-email`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Editar e-mail" language={false} help />` | — | Forma atual: Edição (classe po-header-task). Navega para `otp-email`. |
 | 2 | `PageHeading` | `<PageHeading title="Atualize seu e-mail" subtitle="Informe o novo e-mail para receber um novo código de verificação." tone="neutral" spaced />` | — | — |
 | 3 | `TextField` | `<TextField label="E-mail" preset="email" name="valor" placeholder="seuemail@exemplo.com" autoComplete="email" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
 | 4 | `TextField` | `<TextField label="Confirmar E-mail" preset="email" name="confirmacao" placeholder="seuemail@exemplo.com" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |

@@ -1,6 +1,6 @@
 # DOC-06 · CRNM · tutorial do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-08.** Quinta tela da reconstrução do fluxo de documento de estrangeiro.
 
 ## Índice da tela
@@ -26,7 +26,7 @@ Explicar que agora a foto é do verso e que o que importa é o código (MRZ): as
 |---|---|---|---|---|
 | `Tutorial` | 2 | `<Tutorial label="Como fotografar o código do verso do CRNM" title="Foto do documento" steps={[{ title: "Vire o documento", description: "Agora vamos fotografar o código: as três linhas de…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

@@ -1,6 +1,6 @@
 # FAM-15 · Código do contato do familiar
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
 > **Aprovada pelo titular** no comportamento do código. Os estados de erro, expirado, bloqueado e sucesso ainda não estão na marcação. Premissas listadas na seção 10.
 
@@ -9,7 +9,6 @@
 | Campo | Valor |
 |---|---|
 | Código | `FAM-15` (código livre no índice; antes não havia FAM-15) |
-| Id no protótipo | — (não implementada) |
 | Raia | Familiares · Cadastro do familiar sem conta (Caminho B) |
 | Figma | — |
 | Status | Aprovada; estados pendentes na marcação |
@@ -86,7 +85,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 - Reenviar gera um código novo, espera 30 s ("Reenviar código em 0:ss") e mantém as tentativas.
 - Trocar o contato (Voltar para FAM-12 e corrigir o e-mail ou celular) zera tentativas, bloqueio e validade.
 - O contato aparece mascarado, como em CAD-04: `ma****@email.com`.
-- No protótipo, o código de demonstração é `123456`, como nas telas de CAD.
+- Na implementação atual, o código de demonstração é `123456`, como nas telas de CAD.
 
 ## 7. Entradas (de onde se chega)
 

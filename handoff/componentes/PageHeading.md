@@ -17,7 +17,7 @@ Usado em 20 telas, 20 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 3 | `<PageHeading title="Faça seu login" subtitle="Faça seu login para começar ou cadastre-se." tone="brand" />` | nenhuma |
 | CAD-01 | 2 | `<PageHeading title="Bem-vindo(a) ao Palmeiras" subtitle="Crie o seu cadastro em poucos passos" tone="brand" />` | nenhuma |
@@ -42,7 +42,7 @@ Usado em 20 telas, 20 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×60 | 327×60 |
 | heading-title | 327×32 | 327×32 |

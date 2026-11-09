@@ -21,7 +21,7 @@ Usado em 10 telas, 22 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | ENT-01 | 5 | `<TextField label="Número do seu CPF" preset="cpf" name="cpf" placeholder="000.000.000-00" autoComplete="username" />` | input tamanho: proto 327×44 · DS 325×42 |
 | ENT-01 | 6 | `<TextField label="Senha" preset="password" name="senha" placeholder="Digite sua senha" autoComplete="current-password" />` | input tamanho: proto 327×44 · DS 283×42 |
@@ -48,7 +48,7 @@ Usado em 10 telas, 22 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×72 | 327×72 |
 | field-label | 327×20 | 327×20 |

@@ -1,6 +1,6 @@
 # DOC-07 · CRNM · leitura do código MRZ (verso)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-08.** Esta é a última captura do CRNM. Não há captura nem confirmação do verso (decisão de 2026-11-08): a câmera lê só o MRZ.
 
 ## Índice da tela
@@ -36,7 +36,7 @@ Ler o código MRZ do verso do CRNM (as três linhas de letras e números) por vi
 |---|---|---|---|---|
 | `CameraCapture` | 6 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre o código MRZ no verso do documento" successMessage="Enquadramento perfeito!" autoCapture onBack={() => {}} onCapture={()…` | state, successMessage | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|
@@ -64,7 +64,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 | Enquadrando | Instrução e faixa branca | `2788:34736` |
 | Enquadrado (lendo o MRZ) | "Enquadramento perfeito!" | `2788:34767` |
 | Código capturado | Faixa verde, notificação e redirecionamento | `2788:34767` |
-| Tirando a foto | Só em protótipo; a leitura é automática | sem Figma |
+| Tirando a foto | Só implementada; a leitura é automática | sem Figma |
 | Sem acesso à câmera | Texto do DS + "Voltar para a seleção" | sem Figma |
 | Câmera indisponível | Texto do DS + "Voltar para a seleção" | sem Figma |
 
@@ -78,7 +78,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 ## Comportamento
 
-- Não há botão de disparo na tela de leitura: a leitura acontece sozinha. Em protótipo, tocar no visor simula o enquadramento.
+- Não há botão de disparo na tela de leitura: a leitura acontece sozinha. Em implementação atual, tocar no visor simula o enquadramento.
 - Depois da leitura, a câmera para e a faixa do topo fica verde. A navegação para a validação facial acontece no app.
 - "Voltar para a seleção" (sem acesso ou câmera indisponível) leva à DOC-02.
 - Voltar leva ao tutorial do verso (DOC-06).

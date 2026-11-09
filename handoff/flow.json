@@ -52,7 +52,6 @@
  "nodes": [
   {
    "code": "ENT-01",
-   "proto": "login",
    "name": "Login",
    "lane": "cadastro",
    "col": 0,
@@ -75,7 +74,6 @@
   },
   {
    "code": "CAD-01",
-   "proto": "cadastro",
    "name": "Cadastro · Dados pessoais",
    "lane": "cadastro",
    "col": 1,
@@ -98,7 +96,6 @@
   },
   {
    "code": "CAD-02",
-   "proto": "otp-sms",
    "name": "Código por SMS",
    "lane": "cadastro",
    "col": 2,
@@ -121,7 +118,6 @@
   },
   {
    "code": "CAD-03",
-   "proto": "editar-celular",
    "name": "Editar celular",
    "lane": "cadastro",
    "col": 2,
@@ -155,7 +151,6 @@
   },
   {
    "code": "CAD-04",
-   "proto": "otp-email",
    "name": "Código por e-mail",
    "lane": "cadastro",
    "col": 4,
@@ -178,7 +173,6 @@
   },
   {
    "code": "CAD-05",
-   "proto": "editar-email",
    "name": "Editar e-mail",
    "lane": "cadastro",
    "col": 4,
@@ -212,7 +206,6 @@
   },
   {
    "code": "CAD-06",
-   "proto": "email-atualizado",
    "name": "E-mail verificado",
    "lane": "cadastro",
    "col": 6,
@@ -234,7 +227,6 @@
   },
   {
    "code": "CAD-07",
-   "proto": "endereco",
    "name": "Endereço",
    "lane": "cadastro",
    "col": 7,
@@ -257,7 +249,6 @@
   },
   {
    "code": "CAD-08",
-   "proto": "status",
    "name": "Status · dados recebidos",
    "lane": "cadastro",
    "col": 8,
@@ -280,7 +271,6 @@
   },
   {
    "code": "DOC-01",
-   "proto": "documento",
    "name": "Seleção de documento",
    "lane": "documento",
    "col": 0,
@@ -1853,7 +1843,6 @@
   },
   {
    "code": "BIO-01",
-   "proto": "liv-tutorial",
    "name": "Tutorial da captura",
    "lane": "biometria",
    "col": 0,
@@ -1895,7 +1884,6 @@
   },
   {
    "code": "BIO-02",
-   "proto": "liv-face",
    "name": "Captura facial",
    "lane": "biometria",
    "col": 1,
@@ -2003,7 +1991,6 @@
   },
   {
    "code": "BIO-03",
-   "proto": "liv-validating",
    "name": "Validando a foto",
    "lane": "biometria",
    "col": 3,
@@ -2026,7 +2013,6 @@
   },
   {
    "code": "BIO-04",
-   "proto": "liv-review",
    "name": "Conferência da foto",
    "lane": "biometria",
    "col": 4,
@@ -2049,7 +2035,6 @@
   },
   {
    "code": "BIO-07",
-   "proto": "liv-done",
    "name": "Status · identidade enviada",
    "lane": "biometria",
    "col": 5,
@@ -2077,13 +2062,12 @@
    "lane": "biometria",
    "col": 6,
    "row": 0,
-   "note": "Etapa 4 de 4. A próxima etapa vem do backend; no protótipo o fluxo cai na área logada.",
+   "note": "Etapa 4 de 4. A próxima etapa vem do backend; na implementação atual o fluxo cai na área logada.",
    "status": "lacuna",
    "folder": null
   },
   {
    "code": "BIO-05",
-   "proto": "liv-lock",
    "name": "Bloqueio · 3 tentativas",
    "lane": "biometria",
    "col": 2,
@@ -2105,7 +2089,6 @@
   },
   {
    "code": "BIO-06",
-   "proto": "liv-error",
    "name": "Erro com suporte",
    "lane": "biometria",
    "col": 3,
@@ -2127,7 +2110,6 @@
   },
   {
    "code": "AREA-01",
-   "proto": "area-cadastro-detalhe",
    "name": "Meu cadastro",
    "lane": "area",
    "col": 0,
@@ -2169,7 +2151,6 @@
   },
   {
    "code": "AREA-02",
-   "proto": "notificacoes",
    "name": "Notificações",
    "lane": "area",
    "col": 1,
@@ -2191,7 +2172,6 @@
   },
   {
    "code": "AJD-01",
-   "proto": "ajuda-form",
    "name": "Ajuda · abrir chamado",
    "lane": "area",
    "col": 2,
@@ -2213,7 +2193,6 @@
   },
   {
    "code": "AJD-02",
-   "proto": "ajuda-enviado",
    "name": "Ajuda · chamado aberto",
    "lane": "area",
    "col": 3,
@@ -2235,7 +2214,6 @@
   },
   {
    "code": "AREA-03",
-   "proto": "seguranca",
    "name": "Segurança",
    "lane": "area",
    "col": 4,
@@ -2258,7 +2236,6 @@
   },
   {
    "code": "AREA-04",
-   "proto": "encerrar-conta",
    "name": "Encerrar conta",
    "lane": "area",
    "col": 5,
@@ -2281,7 +2258,6 @@
   },
   {
    "code": "FAM-01",
-   "proto": "area-familiares-vazio",
    "name": "Meus familiares · vazio",
    "lane": "familiares",
    "col": 0,
@@ -2304,7 +2280,6 @@
   },
   {
    "code": "FAM-03",
-   "proto": "familiar-intro",
    "name": "Adicionar familiar · introdução",
    "lane": "familiares",
    "col": 1,
@@ -2327,7 +2302,6 @@
   },
   {
    "code": "FAM-09",
-   "proto": "familiar-busca",
    "name": "Buscar familiar",
    "lane": "familiares",
    "col": 2,
@@ -2349,7 +2323,6 @@
   },
   {
    "code": "FAM-10",
-   "proto": "familiar-vinculo",
    "name": "Card e tipo de vínculo",
    "lane": "familiares",
    "col": 3,
@@ -2371,7 +2344,6 @@
   },
   {
    "code": "FAM-11",
-   "proto": "familiar-contatos",
    "name": "Confirmação de contatos e convite",
    "lane": "familiares",
    "col": 4,
@@ -2393,7 +2365,6 @@
   },
   {
    "code": "FAM-12",
-   "proto": "familiar-cadastro",
    "name": "Cadastro do familiar (sem conta)",
    "lane": "familiares",
    "col": 2,
@@ -2415,7 +2386,6 @@
   },
   {
    "code": "FAM-13",
-   "proto": "familiar-termo",
    "name": "Termo de responsabilidade · menor",
    "lane": "familiares",
    "col": 3,
@@ -2437,7 +2407,6 @@
   },
   {
    "code": "FAM-14",
-   "proto": "familiar-decisao",
    "name": "Decisão do titular · maior de idade",
    "lane": "familiares",
    "col": 2,
@@ -2459,13 +2428,12 @@
   },
   {
    "code": "FAM-16",
-   "proto": "convite-link",
    "name": "Convite · entrada pelo link (sem conta)",
    "lane": "familiares",
    "col": 4,
    "row": 1,
    "status": "sem-figma",
-   "note": "Entrada pelo link enviado em FAM-11. No protótipo a tela só aparece pelo menu de cenários: o caminho pelo link ainda não está desenhado.",
+   "note": "Entrada pelo link enviado em FAM-11. Na implementação atual a tela só aparece pelo menu de cenários: o caminho pelo link ainda não está desenhado.",
    "type": "screen",
    "folder": "FAM-16-convite-entrada-pelo-link-sem-conta",
    "variants": [
@@ -2482,13 +2450,12 @@
   },
   {
    "code": "FAM-17",
-   "proto": "familiar-recebidos",
    "name": "Área do convidado · Meus familiares e Sou familiar de",
    "lane": "familiares",
    "col": 5,
    "row": 0,
    "status": "sem-figma",
-   "note": "Lista de Meus familiares com atividade (cadastro, recebimento ou envio de convite), com as abas Meus familiares e Sou familiar de. Substitui as telas de lista e de convites pendentes. No protótipo, a aba Meus familiares da área logada ainda não troca para esta tela.",
+   "note": "Lista de Meus familiares com atividade (cadastro, recebimento ou envio de convite), com as abas Meus familiares e Sou familiar de. Substitui as telas de lista e de convites pendentes. Na implementação atual, a aba Meus familiares da área logada ainda não troca para esta tela.",
    "type": "screen",
    "folder": "FAM-17-area-do-convidado-meus-familiares-e-sou-familiar-de",
    "variants": [

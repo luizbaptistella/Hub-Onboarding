@@ -15,7 +15,7 @@ Usado em 3 telas, 14 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | AREA-02 | 3 | `<ListItem title="Ingresso confirmado" description="Palmeiras x Corinthians · 12/11, setor Norte" icon="confirmation_number" />` | contêiner height: proto 78px · DS 62px; list-text tamanho: proto 205×54 · DS 261×38; list-title tamanho: proto 205×20 · DS 261×20; list-desc tamanho: proto 205×32 · DS 261×16 |
 | AREA-02 | 4 | `<ListItem title="Cadastro atualizado" description="Seu e-mail foi alterado. Se não foi você, fale com a gente." icon="mail" />` | list-text tamanho: proto 205×54 · DS 261×54; list-title tamanho: proto 205×20 · DS 261×20; list-desc tamanho: proto 205×32 · DS 261×32 |
@@ -34,7 +34,7 @@ Usado em 3 telas, 14 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 325×78 | 325×62 |
 | list-icon | 20×20 | 20×20 |

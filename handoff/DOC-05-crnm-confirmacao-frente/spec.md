@@ -1,6 +1,6 @@
 # DOC-05 · CRNM · confirmação da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-08.** Quarta tela da reconstrução do fluxo de documento de estrangeiro.
 
 ## Índice da tela
@@ -29,7 +29,7 @@ Depois da foto, a pessoa confere se a frente do CRNM ficou legível antes de seg
 | `Image` | 1 | `<Image src="handoff/DOC-05-crnm-confirmacao-frente/img/frente.jpg" alt="Foto da frente do CRNM" fit="contain" rounded loading="eager" height="100%" />` | — | — |
 | `Button` | 2 | `<Button variant="primary" iconEnd="arrow_forward" onClick={() => {}}>Continuar</Button>` | children, iconEnd, variant | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

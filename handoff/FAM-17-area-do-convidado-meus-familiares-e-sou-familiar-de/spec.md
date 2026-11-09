@@ -1,16 +1,15 @@
 # FAM-17 · Área do convidado · Meus familiares e Sou familiar de
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-17` |
-| Id no protótipo | `familiar-recebidos` (`prototipo.html#familiar-recebidos`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 3 / 3 |
 
@@ -193,8 +192,8 @@ Visão geral: [dados.md](../dados.md).
 
 - Convite expirado mantém o vínculo em PENDENTE_CONVITE até reenvio ou cancelamento (P8). O cancelamento existe, com botão dedicado (decisão 8).
 - Convite expirado, cancelado ou já usado: tela em FAM-18 (aprovada).
-- No protótipo, a aba Meus familiares da área logada só abre FAM-01: a troca para esta lista quando há atividade não está desenhada.
-- Cancelar convite: modal em FAM-19 (aprovado). Falta ligar no protótipo.
+- Na implementação atual, a aba Meus familiares da área logada só abre FAM-01: a troca para esta lista quando há atividade não está desenhada.
+- Cancelar convite: modal em FAM-19 (aprovado). Falta ligar na implementação atual.
 - Convidado com validação de identidade pendente pode aceitar o convite.
 - Convites de vários titulares: a seção funciona como lista e o ponto conta todos (assumido; confirmar).
 

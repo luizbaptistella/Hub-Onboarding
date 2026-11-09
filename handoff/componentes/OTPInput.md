@@ -16,14 +16,14 @@ Usado em 2 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-02 | 4 | `<OTPInput length={6} state="default" />` | nenhuma |
 | CAD-04 | 5 | `<OTPInput length={6} state="default" />` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×48 | 327×48 |
 | otp-cell | 45×48 | 45×48 |

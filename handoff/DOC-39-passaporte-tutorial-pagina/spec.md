@@ -1,6 +1,6 @@
 # DOC-39 · Passaporte · tutorial da página
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar a página de dados do passaporte.
 |---|---|---|---|---|
 | `Tutorial` | 3 | `<Tutorial label="Como fotografar a página do passaporte" title="Foto do documento" steps={[{ title: "Abra o passaporte na página com sua foto", description: "Mantenha o documento aberto n…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

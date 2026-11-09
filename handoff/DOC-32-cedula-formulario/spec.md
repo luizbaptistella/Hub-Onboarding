@@ -1,6 +1,6 @@
 # DOC-32 · Cédula · formulário
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Em revisão.** Tela gerada a partir da tela aprovada de referência; validar em conjunto com as demais telas do fluxo de estrangeiro.
 
 ## Índice da tela
@@ -29,7 +29,7 @@ Informar o país e o número da Cédula de identidade (Mercosul) antes de fotogr
 | `TextField` | 4 | `<TextField label="Número do documento" value="" onChange={() => {}} />` | error, value | — |
 | `Button` | 4 | `<Button variant="primary" iconEnd="arrow_forward" disabled onClick={() => {}}>Continuar</Button>` | disabled | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

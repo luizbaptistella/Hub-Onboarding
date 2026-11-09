@@ -1,6 +1,6 @@
 # DOC-16 · DPRNM · tutorial da frente
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Primeira tela do DPRNM. Segue o tutorial da frente do CRNM (DOC-03), com o texto do Figma no primeiro passo.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Preparar a pessoa para fotografar a frente do DPRNM (Documento Provisório de Re
 |---|---|---|---|---|
 | `Tutorial` | 3 | `<Tutorial label="Como fotografar a frente do DPRNM" title="Foto do documento" steps={[{ title: "Vamos capturar a frente do DPRNM", description: "É importante que o documento esteja em bom…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

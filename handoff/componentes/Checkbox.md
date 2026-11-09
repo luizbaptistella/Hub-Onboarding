@@ -16,7 +16,7 @@ Usado em 4 telas, 5 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | CAD-01 | 8 | `<Checkbox name="termos">Li e concordo com os Termos de Uso.</Checkbox>` | nenhuma |
 | CAD-01 | 10 | `<Checkbox name="marketing">Quero receber novidades e ofertas do Palmeiras.</Checkbox>` | contêiner height: proto 21px · DS 40px |
@@ -26,7 +26,7 @@ Usado em 4 telas, 5 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 327×21 | 327×20 |
 | check-input | 20×20 | — |

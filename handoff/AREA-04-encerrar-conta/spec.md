@@ -1,13 +1,12 @@
 # AREA-04 · Encerrar conta
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `AREA-04` |
-| Id no protótipo | `encerrar-conta` (`prototipo.html#encerrar-conta`) |
 | Raia | Área logada · Meu cadastro, notificações, ajuda e segurança |
 | Figma | `3142:61697` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Encerrar conta" language={false} help />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `seguranca`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Encerrar conta" language={false} help />` | — | Forma atual: Edição (classe po-header-task). Navega para `seguranca`. |
 | 2 | `PageHeading` | `<PageHeading title="Encerrar sua conta" subtitle="Por exigência legal e pela segurança do estádio, seu cadastro não é apagado: ele fica inativo e bloqueado para uso." tone="neutral" />` | — | — |
 | 3 | `List` | `<List label="O que acontece" />` | — | — |
 | 4 | ↳ `ListItem` | `<ListItem title="Você perde o acesso a ingressos e benefícios" icon="cancel" />` | — | — |

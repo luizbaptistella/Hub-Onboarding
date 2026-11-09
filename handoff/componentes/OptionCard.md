@@ -16,14 +16,14 @@ Usado em 1 telas, 2 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | FAM-14 | 3 | `<OptionCard icon="person_add" title="Cadastrar agora" description="Preencha os dados e tire as fotos do documento e do rosto do familiar no seu celular." layout="stacked" />` | nenhuma |
 | FAM-14 | 4 | `<OptionCard icon="send" title="Enviar convite" description="O familiar recebe o convite por e-mail ou SMS e confirma os próprios dados." layout="stacked" />` | nenhuma |
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 
 ## Tokens (primeira instância)

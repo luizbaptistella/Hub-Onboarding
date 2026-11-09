@@ -1,13 +1,12 @@
 # CAD-01 · Cadastro · Dados pessoais
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-01` |
-| Id no protótipo | `cadastro` (`prototipo.html#cadastro`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | `1619:11919` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language help={false} />` | — | Forma no protótipo: Cadastro/Login (classe po-header-entry). Navega para `login`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Cadastro" progress={{ current: 1, total: 4 }} language help={false} />` | — | Forma atual: Cadastro/Login (classe po-header-entry). Navega para `login`. |
 | 2 | `PageHeading` | `<PageHeading title="Bem-vindo(a) ao Palmeiras" subtitle="Crie o seu cadastro em poucos passos" tone="brand" />` | — | — |
 | 3 | `Tabs` | `<Tabs label="Nacionalidade" items={[{ value: "Brasileiro", label: "Brasileiro" }, { value: "Estrangeiro", label: "Estrangeiro" }]} value="Brasileiro" />` | aba ativa: Brasileiro | — |
 | 4 | `TextField` | `<TextField label="Número do seu CPF" preset="cpf" name="cpf" placeholder="000.000.000-00" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
@@ -36,7 +35,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 | 6 | `TextField` | `<TextField label="Número do seu celular" preset="phone" name="celular" placeholder="(00) 00000-0000" autoComplete="tel-national" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
 | 7 | `TextField` | `<TextField label="Seu e-mail" preset="email" name="email" placeholder="seuemail@exemplo.com" autoComplete="email" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
 | 8 | `Checkbox` | `<Checkbox name="termos">Li e concordo com os Termos de Uso.</Checkbox>` | desmarcado; marcado; erro ("Para continuar, aceite os Termos de Uso.") | — |
-| 9 | ↳ `TextLink` | `<TextLink variant="inline" href="#">Termos de Uso</TextLink>` | — | No protótipo é um botão sem destino; no DS o TextLink exige href. |
+| 9 | ↳ `TextLink` | `<TextLink variant="inline" href="#">Termos de Uso</TextLink>` | — | Na implementação atual é um botão sem destino; no DS o TextLink exige href. |
 | 10 | `Checkbox` | `<Checkbox name="marketing">Quero receber novidades e ofertas do Palmeiras.</Checkbox>` | desmarcado; marcado | — |
 | 11 | `Button` | `<Button variant="primary" fullWidth type="submit">Iniciar validação</Button>` | — | — |
 | 12 | `LegalFooter` | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |

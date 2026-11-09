@@ -28,7 +28,7 @@ Origem dos dados: captura da renderização real com o bundle do DS, cruzada com
 
 ## Peças fora do DS
 
-Só existem no protótipo ou são propostas para o DS.
+Só existem na implementação atual ou são propostas para o DS.
 
 | Peça | Telas | Telas que usam |
 |---|---|---|

@@ -1,13 +1,12 @@
 # AREA-03 · Segurança
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `AREA-03` |
-| Id no protótipo | `seguranca` (`prototipo.html#seguranca`) |
 | Raia | Área logada · Meu cadastro, notificações, ajuda e segurança |
 | Figma | `3142:61656` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
 | Status | Desenhada no Figma |
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Segurança" language={false} help />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Segurança" language={false} help />` | — | Forma atual: Edição (classe po-header-task). Navega para `area-cadastro-detalhe`. |
 | 2 | `List` | `<List label="Acesso" />` | — | — |
 | 3 | ↳ `ListItem` | `<ListItem title="Senha" description="Alterada há 3 meses" icon="password" action={{ label: "Alterar" }} />` | Conectado (Desconectar); Não conectado (Conectar) | — |
 | 4 | ↳ `ListItem` | `<ListItem title="Verificação em duas etapas" description="Código por SMS ao entrar e ao alterar dados" icon="password" />` | — | — |

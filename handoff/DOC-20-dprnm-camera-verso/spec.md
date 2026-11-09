@@ -1,6 +1,6 @@
 # DOC-20 · DPRNM · captura do código do verso
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Mesmo layout da captura do código do CRNM (DOC-07). Não há captura de câmera do verso: a foto do verso já capturada é lida por OCR (decisão de 2026-11-09).
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Enquadrar o código do verso do DPRNM na câmera. A foto do verso é lida por OC
 |---|---|---|---|---|
 | `CameraCapture` | 6 | `<CameraCapture state="aligning" frame="card" instruction="Enquadre o código MRZ no verso do documento" successMessage="Enquadramento perfeito!" autoCapture onBack={() => {}} onCapture={()…` | state, successMessage | No app, autoCapture={true} (captura automática decidida). No hub, a captura automática só liga depois do primeiro toque no visor. |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|
@@ -55,7 +55,7 @@ Idêntico à DOC-07 (CRNM): barra de status escura, faixa com Voltar e instruç�
 | Enquadrando | "Enquadre o código MRZ no verso do documento" | `2794:35630` |
 | Enquadrado | "Enquadramento perfeito!" | `2794:35661` |
 | Código capturado | Faixa verde, "Código capturado com sucesso!" | `2794:35661` |
-| Tirando a foto | Protótipo | sem Figma |
+| Tirando a foto | Implementação atual | sem Figma |
 | Sem acesso à câmera | Texto do DS + "Voltar para a seleção" | sem Figma |
 | Câmera indisponível | Texto do DS + "Voltar para a seleção" | sem Figma |
 

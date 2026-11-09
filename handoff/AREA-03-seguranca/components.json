@@ -9,7 +9,7 @@
    "ds": true,
    "local": false,
    "selector": "#seguranca > header:nth-of-type(1)",
-   "note": "Forma no protótipo: Edição (classe po-header-task).",
+   "note": "Forma atual: Edição (classe po-header-task).",
    "dsProps": {
     "back": {
      "label": "Voltar"
@@ -66,42 +66,42 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×56",
+      "implementacao": "375×56",
       "DS": "375×40"
      },
      {
       "parte": "header-slot",
-      "protótipo": "48×48",
+      "implementacao": "48×48",
       "DS": "—"
      },
      {
       "parte": "btn",
-      "protótipo": "40×40",
+      "implementacao": "40×40",
       "DS": "40×40"
      },
      {
       "parte": "btn-content",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "ícone (chevron_left)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      },
      {
       "parte": "header-center",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "—"
      },
      {
       "parte": "header-title",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "263×20"
      },
      {
       "parte": "ícone (help)",
-      "protótipo": "24×24",
+      "implementacao": "24×24",
       "DS": "24×24"
      }
     ],
@@ -252,13 +252,13 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "56px",
+      "implementacao": "56px",
       "DS": "40px"
      },
      {
       "onde": "header-title",
       "prop": "tamanho",
-      "protótipo": "247×16",
+      "implementacao": "247×16",
       "DS": "263×20"
      }
     ],
@@ -267,7 +267,7 @@
      "h": 56,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -296,67 +296,67 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×187",
+      "implementacao": "327×187",
       "DS": "327×26"
      },
      {
       "parte": "list-label",
-      "protótipo": "327×16",
+      "implementacao": "327×16",
       "DS": "327×16"
      },
      {
       "parte": "list",
-      "protótipo": "327×163",
+      "implementacao": "327×163",
       "DS": "327×2"
      },
      {
       "parte": "list-li",
-      "protótipo": "325×62",
+      "implementacao": "325×62",
       "DS": "—"
      },
      {
       "parte": "list-item",
-      "protótipo": "325×62",
+      "implementacao": "325×62",
       "DS": "—"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (password)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "203×38",
+      "implementacao": "203×38",
       "DS": "—"
      },
      {
       "parte": "list-title",
-      "protótipo": "203×20",
+      "implementacao": "203×20",
       "DS": "—"
      },
      {
       "parte": "list-desc",
-      "protótipo": "203×16",
+      "implementacao": "203×16",
       "DS": "—"
      },
      {
       "parte": "list-action",
-      "protótipo": "46×28",
+      "implementacao": "46×28",
       "DS": "—"
      },
      {
       "parte": "list-trailing",
-      "protótipo": "68×20",
+      "implementacao": "68×20",
       "DS": "—"
      },
      {
       "parte": "badge",
-      "protótipo": "68×20",
+      "implementacao": "68×20",
       "DS": "—"
      }
     ],
@@ -647,13 +647,13 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "187px",
+      "implementacao": "187px",
       "DS": "26px"
      },
      {
       "onde": "list",
       "prop": "tamanho",
-      "protótipo": "327×163",
+      "implementacao": "327×163",
       "DS": "327×2"
      }
     ],
@@ -662,7 +662,7 @@
      "h": 187,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -720,37 +720,37 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×62",
+      "implementacao": "325×62",
       "DS": "325×62"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (password)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "203×38",
+      "implementacao": "203×38",
       "DS": "203×38"
      },
      {
       "parte": "list-title",
-      "protótipo": "203×20",
+      "implementacao": "203×20",
       "DS": "203×20"
      },
      {
       "parte": "list-desc",
-      "protótipo": "203×16",
+      "implementacao": "203×16",
       "DS": "203×16"
      },
      {
       "parte": "list-action",
-      "protótipo": "46×28",
+      "implementacao": "46×28",
       "DS": "46×28"
      }
     ],
@@ -924,7 +924,7 @@
      "h": 62,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -977,52 +977,52 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×98",
+      "implementacao": "325×98",
       "DS": "325×62"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (password)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "149×74",
+      "implementacao": "149×74",
       "DS": "261×38"
      },
      {
       "parte": "list-title",
-      "protótipo": "149×40",
+      "implementacao": "149×40",
       "DS": "261×20"
      },
      {
       "parte": "list-desc",
-      "protótipo": "149×32",
+      "implementacao": "149×32",
       "DS": "261×16"
      },
      {
       "parte": "list-trailing",
-      "protótipo": "68×20",
+      "implementacao": "68×20",
       "DS": "—"
      },
      {
       "parte": "badge",
-      "protótipo": "68×20",
+      "implementacao": "68×20",
       "DS": "—"
      },
      {
       "parte": "list-chevron",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (chevron_right)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      }
     ],
@@ -1222,25 +1222,25 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "98px",
+      "implementacao": "98px",
       "DS": "62px"
      },
      {
       "onde": "list-text",
       "prop": "tamanho",
-      "protótipo": "149×74",
+      "implementacao": "149×74",
       "DS": "261×38"
      },
      {
       "onde": "list-title",
       "prop": "tamanho",
-      "protótipo": "149×40",
+      "implementacao": "149×40",
       "DS": "261×20"
      },
      {
       "onde": "list-desc",
       "prop": "tamanho",
-      "protótipo": "149×32",
+      "implementacao": "149×32",
       "DS": "261×16"
      }
     ],
@@ -1249,7 +1249,7 @@
      "h": 98,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1278,57 +1278,57 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×230",
+      "implementacao": "327×230",
       "DS": "327×26"
      },
      {
       "parte": "list-label",
-      "protótipo": "327×16",
+      "implementacao": "327×16",
       "DS": "327×16"
      },
      {
       "parte": "list",
-      "protótipo": "327×206",
+      "implementacao": "327×206",
       "DS": "327×2"
      },
      {
       "parte": "list-li",
-      "protótipo": "325×78",
+      "implementacao": "325×78",
       "DS": "—"
      },
      {
       "parte": "list-item",
-      "protótipo": "325×78",
+      "implementacao": "325×78",
       "DS": "—"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "imagem",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "163×54",
+      "implementacao": "163×54",
       "DS": "—"
      },
      {
       "parte": "list-title",
-      "protótipo": "163×20",
+      "implementacao": "163×20",
       "DS": "—"
      },
      {
       "parte": "list-desc",
-      "protótipo": "163×32",
+      "implementacao": "163×32",
       "DS": "—"
      },
      {
       "parte": "list-action",
-      "protótipo": "86×28",
+      "implementacao": "86×28",
       "DS": "—"
      }
     ],
@@ -1556,13 +1556,13 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "230px",
+      "implementacao": "230px",
       "DS": "26px"
      },
      {
       "onde": "list",
       "prop": "tamanho",
-      "protótipo": "327×206",
+      "implementacao": "327×206",
       "DS": "327×2"
      }
     ],
@@ -1571,7 +1571,7 @@
      "h": 230,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1631,37 +1631,37 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×78",
+      "implementacao": "325×78",
       "DS": "325×78"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "imagem",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "163×54",
+      "implementacao": "163×54",
       "DS": "163×54"
      },
      {
       "parte": "list-title",
-      "protótipo": "163×20",
+      "implementacao": "163×20",
       "DS": "163×20"
      },
      {
       "parte": "list-desc",
-      "protótipo": "163×32",
+      "implementacao": "163×32",
       "DS": "163×32"
      },
      {
       "parte": "list-action",
-      "protótipo": "86×28",
+      "implementacao": "86×28",
       "DS": "86×28"
      }
     ],
@@ -1828,7 +1828,7 @@
      "h": 78,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -1886,37 +1886,37 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×62",
+      "implementacao": "325×62",
       "DS": "325×62"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "imagem",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "187×38",
+      "implementacao": "187×38",
       "DS": "187×38"
      },
      {
       "parte": "list-title",
-      "protótipo": "187×20",
+      "implementacao": "187×20",
       "DS": "187×20"
      },
      {
       "parte": "list-desc",
-      "protótipo": "187×16",
+      "implementacao": "187×16",
       "DS": "187×16"
      },
      {
       "parte": "list-action",
-      "protótipo": "62×28",
+      "implementacao": "62×28",
       "DS": "62×28"
      }
     ],
@@ -2083,7 +2083,7 @@
      "h": 62,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -2141,32 +2141,32 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×62",
+      "implementacao": "325×62",
       "DS": "325×62"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "187×38",
+      "implementacao": "187×38",
       "DS": "187×38"
      },
      {
       "parte": "list-title",
-      "protótipo": "187×20",
+      "implementacao": "187×20",
       "DS": "187×20"
      },
      {
       "parte": "list-desc",
-      "protótipo": "187×16",
+      "implementacao": "187×16",
       "DS": "187×16"
      },
      {
       "parte": "list-action",
-      "protótipo": "62×28",
+      "implementacao": "62×28",
       "DS": "62×28"
      }
     ],
@@ -2333,7 +2333,7 @@
      "h": 62,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -2362,47 +2362,47 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "327×47",
+      "implementacao": "327×47",
       "DS": "327×2"
      },
      {
       "parte": "list-li",
-      "protótipo": "325×48",
+      "implementacao": "325×48",
       "DS": "—"
      },
      {
       "parte": "list-item",
-      "protótipo": "325×48",
+      "implementacao": "325×48",
       "DS": "—"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (person_remove)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "list-text",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "—"
      },
      {
       "parte": "list-title",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "—"
      },
      {
       "parte": "list-chevron",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (chevron_right)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      }
     ],
@@ -2532,7 +2532,7 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "47px",
+      "implementacao": "47px",
       "DS": "2px"
      }
     ],
@@ -2541,7 +2541,7 @@
      "h": 47,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -2595,37 +2595,37 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "325×48",
+      "implementacao": "325×48",
       "DS": "325×48"
      },
      {
       "parte": "list-icon",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "ícone (person_remove)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "20×20"
      },
      {
       "parte": "list-text",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "261×20"
      },
      {
       "parte": "list-title",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "261×20"
      },
      {
       "parte": "list-chevron",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      },
      {
       "parte": "ícone (chevron_right)",
-      "protótipo": "20×20",
+      "implementacao": "20×20",
       "DS": "—"
      }
     ],
@@ -2734,13 +2734,13 @@
      {
       "onde": "list-text",
       "prop": "tamanho",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "261×20"
      },
      {
       "onde": "list-title",
       "prop": "tamanho",
-      "protótipo": "229×20",
+      "implementacao": "229×20",
       "DS": "261×20"
      }
     ],
@@ -2749,7 +2749,7 @@
      "h": 48,
      "ok": true
     },
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   },
   {
@@ -2778,7 +2778,7 @@
     "anatomia": [
      {
       "parte": "contêiner",
-      "protótipo": "375×48",
+      "implementacao": "375×48",
       "DS": "375×77"
      }
     ],
@@ -2838,12 +2838,12 @@
      {
       "onde": "contêiner",
       "prop": "height",
-      "protótipo": "48px",
+      "implementacao": "48px",
       "DS": "77px"
      }
     ],
     "toque": null,
-    "medidoEm": "protótipo (tela real) e DS (componente renderizado com as mesmas props)"
+    "medidoEm": "implementação atual (tela real) e DS (componente renderizado com as mesmas props)"
    }
   }
  ],

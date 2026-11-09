@@ -1,6 +1,6 @@
 # DOC-19 · DPRNM · tutorial do verso (QR Code)
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 > **Aprovada em 2026-11-09.** Quarta tela do DPRNM. Segue o tutorial do verso do CRNM (DOC-06), com o QR Code no lugar do código MRZ.
 
 ## Índice da tela
@@ -25,7 +25,7 @@ Explicar que a foto agora é do verso e que o que importa é o QR Code, no canto
 |---|---|---|---|---|
 | `Tutorial` | 2 | `<Tutorial label="Como fotografar o QR Code do verso do DPRNM" title="Foto do documento" steps={[{ title: "Vire o documento", description: "Agora vamos fotografar o QR Code: ele fica no ca…` | defaultStep | — |
 
-Peças fora do DS (só no protótipo ou propostas para o DS):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
 | Peça | Observação |
 |---|---|

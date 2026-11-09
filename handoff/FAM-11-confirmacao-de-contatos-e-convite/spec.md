@@ -1,16 +1,15 @@
 # FAM-11 · Confirmação de contatos e convite
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `FAM-11` |
-| Id no protótipo | `familiar-contatos` (`prototipo.html#familiar-contatos`) |
 | Raia | Familiares · Inclusão e gestão de vínculos |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 2 / 3 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `familiar-vinculo`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Vincular familiar" language={false} help={false} />` | — | Forma atual: Edição (classe po-header-task). Navega para `familiar-vinculo`. |
 | 2 | `PageHeading` | `<PageHeading title="Enviar convite ao familiar" tone="neutral" spaced />` | — | — |
 | 3 | `Button` | `<Button variant="primary" fullWidth type="submit" iconEnd="send">Enviar link</Button>` | — | — |
 | 4 | `Button` | `<Button variant="secondary" fullWidth iconEnd="link">Copiar link</Button>` | — | — |

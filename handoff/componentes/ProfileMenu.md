@@ -15,7 +15,7 @@ Usado em 3 telas, 3 instâncias.
 
 ## Instâncias no fluxo
 
-| Tela | Instância | JSX | Diferenças protótipo × DS |
+| Tela | Instância | JSX | Diferenças implementação atual × DS |
 |---|---|---|---|
 | AREA-01 | 5 | `<ProfileMenu items={[{ id: "modo-escuro", label: "Modo escuro", icon: "dark_mode" }, { id: "privacidade", label: "Privacidade", icon: "lock" }, { id: "seguran-a", label: "Segurança", icon: "shield" }, { id: "senha", label: "Senha", icon: "password" }, { id: "sair", label: "Sair", icon: "logout", tone: "danger" }]} language divider />` | contêiner width: proto 40px · DS 140px; contêiner height: proto 40px · DS 44px |
 | FAM-01 | 5 | `<ProfileMenu items={[{ id: "modo-escuro", label: "Modo escuro", icon: "dark_mode" }, { id: "privacidade", label: "Privacidade", icon: "lock" }, { id: "seguran-a", label: "Segurança", icon: "shield" }, { id: "senha", label: "Senha", icon: "password" }, { id: "sair", label: "Sair", icon: "logout", tone: "danger" }]} language divider />` | contêiner width: proto 40px · DS 140px; contêiner height: proto 40px · DS 44px |
@@ -23,7 +23,7 @@ Usado em 3 telas, 3 instâncias.
 
 ## Anatomia (medidas do DS, primeira instância)
 
-| Parte | Protótipo | DS |
+| Parte | Implementação atual | DS |
 |---|---|---|
 | contêiner | 40×40 | 140×44 |
 | ícone (menu) | 24×24 | — |

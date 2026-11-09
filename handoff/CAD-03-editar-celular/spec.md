@@ -1,16 +1,15 @@
 # CAD-03 · Editar celular
 
-> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec > protótipo.
+> Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `CAD-03` |
-| Id no protótipo | `editar-celular` (`prototipo.html#editar-celular`) |
 | Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
 | Figma | sem node no Figma |
-| Status | Só no protótipo (sem node no Figma) |
+| Status | Só implementada (sem node no Figma) |
 | Marcação | [screen.html](screen.html) (Padrão) |
 | Entradas / saídas | 1 / 1 |
 
@@ -28,7 +27,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 
 | # | Componente | JSX nesta tela | Estados nesta tela | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Editar celular" language={false} help />` | — | Forma no protótipo: Edição (classe po-header-task). Navega para `otp-sms`. |
+| 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Editar celular" language={false} help />` | — | Forma atual: Edição (classe po-header-task). Navega para `otp-sms`. |
 | 2 | `PageHeading` | `<PageHeading title="Atualize seu celular" subtitle="Informe o novo número para receber um novo código de verificação." tone="neutral" spaced />` | — | — |
 | 3 | `TextField` | `<TextField label="Celular" preset="phone" name="valor" placeholder="(00) 00000-0000" autoComplete="tel-national" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
 | 4 | `TextField` | `<TextField label="Confirmar Celular" preset="phone" name="confirmacao" placeholder="(00) 00000-0000" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
