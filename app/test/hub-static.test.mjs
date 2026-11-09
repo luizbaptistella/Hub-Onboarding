@@ -31,7 +31,7 @@ test('/hub serve o fluxograma e o protótipo com sessão', async () => {
   assert.equal(index.status, 200);
   assert.match(index.headers.get('content-type'), /text\/html/);
   assert.match(index.headers.get('content-security-policy'), /script-src 'self' 'unsafe-inline'/);
-  assert.equal((await authed('/hub/prototipo.html')).status, 200);
+  assert.equal((await authed('/hub/prototipo.html')).status, 404);
   assert.equal((await authed('/hub/handoff/flow.json')).status, 200);
   assert.equal((await authed('/hub/handoff/CAD-02-codigo-por-sms/spec.md')).status, 200);
   assert.equal((await authed('/hub')).status, 303);

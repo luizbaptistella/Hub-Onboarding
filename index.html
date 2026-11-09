@@ -671,7 +671,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
     $("#tabs").hidden = !isScreen;
     if (isScreen) {
       $("#c-links").textContent = (n.inputs + n.outputs);
-      if (!opt.keepFrame) { variant = 0; mode = n.proto ? "live" : "static"; }
+      if (!opt.keepFrame) { variant = 0; mode = "static"; }
       renderTela(opt.keepFrame); renderLinks(); renderFiles(); loadSpec(); loadComponents();
       showTab(opt.tab || (tab === "info" || tab === "doc" ? "tela" : tab));
     } else { renderInfo(n); showTab("info"); }
@@ -888,10 +888,9 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
   // Aba Tela: protótipo navegável (sincroniza com o mapa) ou marcação estática de handoff
   function renderTela(keep) {
     var n = sel, tools = $("#v-tools");
-    if (!n.proto) mode = "static";
+    mode = "static";
     var h = '<span class="lbl">Modo</span>' +
-      (n.proto ? '<button class="chip" data-mode="live" aria-pressed="' + (mode === "live") + '">Navegável</button>' : "") +
-      '<button class="chip" data-mode="static" aria-pressed="' + (mode === "static") + '">Estática (handoff)</button>';
+            '<button class="chip" data-mode="static" aria-pressed="' + (mode === "static") + '">Estática (handoff)</button>';
     if (n.variants.length > 8) {
       // Muitas variantes (ex.: DOC-02): lista suspensa agrupada pelo prefixo do rótulo ("Grupo · nome").
       var groups = [], gi = {};
