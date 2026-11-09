@@ -47,6 +47,13 @@ export async function handleApi(handoff, pathname, searchParams) {
     return r ? json(200, r) : notFound(`Tela ${rest[0]}`);
   }
 
+  if (head === 'docs' && !rest.length) {
+    return json(200, {
+      general: ['index', 'readme', 'dados', 'componentes', 'componentes-estrangeiro'],
+      components: handoff.componentDocs.slice().sort(),
+    });
+  }
+
   if (head === 'decisions') {
     const r = hub.getDecision(handoff, rest[0]);
     return r ? json(200, r) : notFound(`Decisão ${rest[0]}`);

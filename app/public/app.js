@@ -115,10 +115,44 @@ async function markupView(code) {
   return el('div', {}, data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite.') : null, frame);
 }
 
+const GENERAL_DOC_LABELS = {
+  index: 'Índice de telas',
+  readme: 'Como ler o handoff',
+  dados: 'Dados compartilhados',
+  componentes: 'Inventário de componentes × telas',
+  'componentes-estrangeiro': 'Componentes do fluxo de estrangeiro',
+};
+
+async function renderDocs() {
+  const { general, components } = await api('/api/docs');
+  const docBox = el('pre', { class: 'docbox' }, 'Escolha um documento acima.');
+  const load = async (name, label) => {
+    docBox.textContent = `Carregando ${label}…`;
+    try {
+      const doc = await api(`/api/docs/${encodeURIComponent(name)}`);
+      docBox.textContent = doc.text;
+    } catch (err) {
+      docBox.textContent = err.message;
+    }
+  };
+  const btn = (name, label) => el('button', { type: 'button', class: 'docbtn', onclick: () => load(name, label) }, label);
+  view.replaceChildren(
+    el('a', { class: 'back', href: '#/' }, '← Todas as telas'),
+    el('h1', {}, 'Documentação do handoff'),
+    el('p', { class: 'sub' }, 'Documentos gerais e documentação de cada componente. Para ver a documentação completa de uma tela, abra a tela pela lista.'),
+    el('div', { class: 'lane' }, 'Documentos gerais'),
+    el('div', { class: 'docbtns' }, general.map((n) => btn(n, GENERAL_DOC_LABELS[n] ?? n))),
+    el('div', { class: 'lane' }, `Componentes (${components.length})`),
+    el('div', { class: 'docbtns' }, components.map((c) => btn(`componente:${c}`, c))),
+    docBox,
+  );
+}
+
 function route() {
   const hash = decodeURIComponent(location.hash.slice(1));
   const m = hash.match(/^\/tela\/(.+)$/);
   if (m) return renderScreen(m[1]);
+  if (hash === '/docs') return renderDocs();
   return renderList();
 }
 

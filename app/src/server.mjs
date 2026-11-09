@@ -14,6 +14,19 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 // Assets sem dados do handoff ficam públicos para a tela de login carregar.
 const PUBLIC_ASSETS = new Set(['/styles.css', '/app.js', '/login.js']);
 const LOOPBACK = new Set(['127.0.0.1', 'localhost', '::1']);
+// Raiz do hub (palmeiras-hub/) servida em /hub/. Pastas internas e do servidor ficam fora.
+const hubRoot = path.resolve(here, '../..');
+const DENIED_HUB_DIRS = new Set(['app', 'mcp-server', 'node_modules']);
+const HUB_TYPES = {
+  '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
+  '.json': 'application/json; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.txt': 'text/plain; charset=utf-8',
+  '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif', '.ico': 'image/x-icon',
+};
+// As páginas do protótipo usam scripts e estilos inline. Por isso /hub/ tem política própria, mais aberta que a da app,
+// mas ainda restrita a origem própria e bloqueia objetos, iframes externos e envio de dados para outros domínios.
+const HUB_HEADERS = {
+  'content-security-policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'self'",
+};
 
 const SECURITY_HEADERS = {
   'x-content-type-options': 'nosniff',
@@ -62,12 +75,29 @@ export async function createApp({ password = process.env.APP_PASSWORD, secure = 
         return send(res, await handleApi(handoff, p, url.searchParams));
       }
 
+      if (p === '/hub') return redirect(res, '/hub/');
+      if (p.startsWith('/hub/')) return sendHubFile(res, decodeURIComponent(p.slice('/hub/'.length)) || 'index.html');
+
       return sendFile(res, p === '/' ? 'index.html' : p.slice(1));
     } catch (err) {
       if (err.status === 413) return send(res, { status: 413, type: 'text/plain', body: 'payload grande' });
       return send(res, { status: 500, type: 'application/json', body: JSON.stringify({ error: 'erro interno' }) });
     }
   });
+
+  // Páginas do hub (fluxograma em /hub/, protótipo, handoff). Só autenticado; a pasta da app e o código do servidor ficam de fora.
+  async function sendHubFile(res, rel) {
+    const clean = path.posix.normalize(rel).replace(/^\/+/, '');
+    const segments = clean.split('/');
+    const denied = segments.some((s) => s.startsWith('.') || DENIED_HUB_DIRS.has(s));
+    const ext = path.posix.extname(clean).toLowerCase();
+    if (denied || clean.startsWith('..') || !HUB_TYPES[ext]) return send(res, { status: 404, type: 'text/plain', body: 'not found' });
+    const file = path.resolve(hubRoot, clean);
+    if (!file.startsWith(hubRoot + path.sep)) return send(res, { status: 404, type: 'text/plain', body: 'not found' });
+    const body = await readFile(file).catch(() => null);
+    if (!body) return send(res, { status: 404, type: 'text/plain', body: 'not found' });
+    return send(res, { status: 200, type: HUB_TYPES[ext], body, headers: HUB_HEADERS });
+  }
 
   async function sendFile(res, rel) {
     const file = path.resolve(publicDir, rel);
