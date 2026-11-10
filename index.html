@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <title>Palmeiras Onboarding</title>
+<script>try { var hubTema = localStorage.getItem("hub-tema"); if (hubTema === "light" || hubTema === "dark") document.documentElement.setAttribute("data-theme", hubTema); } catch (e) {}</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
@@ -57,6 +58,14 @@ button { cursor: pointer; }
 .brand h1 { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
 .brand p { margin: 0; font-size: 12px; color: var(--fg-2); font-variant-numeric: tabular-nums; }
 .search { position: relative; }
+/* Switch claro/escuro no topo */
+.theme-switch { display: flex; align-items: center; gap: 6px; color: var(--fg-3); }
+.theme-switch svg { width: 15px; height: 15px; flex: none; }
+.theme-switch button { position: relative; flex: none; width: 36px; height: 20px; padding: 0; border: 0; border-radius: 999px; background: var(--line); cursor: pointer; transition: background .15s; }
+.theme-switch button::after { content: ""; position: absolute; left: 2px; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 2px rgba(0, 0, 0, .3); transition: transform .15s; }
+.theme-switch button[aria-checked="true"] { background: var(--accent); }
+.theme-switch button[aria-checked="true"]::after { transform: translateX(16px); }
+.theme-switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .search input { width: 220px; max-width: 100%; height: 32px; padding: 0 10px 0 30px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); }
 .search svg { position: absolute; left: 9px; top: 9px; width: 14px; height: 14px; color: var(--fg-3); }
 .group { display: flex; align-items: center; gap: 4px; }
@@ -153,7 +162,7 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
   display: flex; flex-direction: column; background: var(--surface); border-left: 1px solid var(--line); box-shadow: -8px 0 30px rgba(0,0,0,.08);
   transform: translateX(102%); transition: transform .22s ease; padding-right: env(safe-area-inset-right, 0px); }
 .panel.open { transform: none; }
-@media (prefers-reduced-motion: reduce) { .panel, .edge, .node, .elabel, .lg-switch button, .lg-switch button::after { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .panel, .edge, .node, .elabel, .lg-switch button, .lg-switch button::after, .theme-switch button, .theme-switch button::after { transition: none; } }
 .p-head { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
 .p-title { flex: 1; min-width: 0; }
 .p-title .code { font-size: 12.5px; }
@@ -291,6 +300,11 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>
       <input id="q" type="search" placeholder="Buscar tela ou código" autocomplete="off" aria-label="Buscar tela ou código">
     </label>
+    <div class="theme-switch">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1"/></svg>
+      <button type="button" role="switch" id="t-theme" aria-checked="false" aria-label="Modo escuro" title="Alternar entre modo claro e escuro"></button>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13.5 9.6A5.6 5.6 0 0 1 6.4 2.5a5.6 5.6 0 1 0 7.1 7.1Z"/></svg>
+    </div>
     <div class="group" id="lanes" role="group" aria-label="Ir para a raia"></div>
     <div class="group" role="group" aria-label="Exibição">
       <button class="chip" id="t-back" aria-pressed="false">Voltar e saídas</button>
@@ -368,6 +382,21 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
   var flow, byCode = {}, byProto = {}, byFolder = {}, screens = [], laneBox = {};
   var view = { x: 40, y: 30, k: 1 }, world = $("#world"), stage = $("#stage");
   var sel = null, edgeEls = [];
+  // Tema: claro ou escuro, escolhido no switch do topo e salvo neste navegador; sem escolha, segue o sistema.
+  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  function isDark() {
+    var t = document.documentElement.getAttribute("data-theme");
+    return t ? t === "dark" : Boolean(darkQuery && darkQuery.matches);
+  }
+  function syncThemeSwitch() { $("#t-theme").setAttribute("aria-checked", String(isDark())); }
+  $("#t-theme").onclick = function () {
+    var next = isDark() ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("hub-tema", next); } catch (e) {}
+    syncThemeSwitch();
+  };
+  if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener("change", syncThemeSwitch);
+  syncThemeSwitch();
   var edgeStyle = "retas";
   try { if (localStorage.getItem("hub-estilo-linhas") === "curvas") edgeStyle = "curvas"; } catch (e) {}
 
