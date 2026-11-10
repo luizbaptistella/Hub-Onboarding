@@ -1,129 +1,113 @@
 # ENT-01 · Login
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
+> **Em revisão (2026-11-09).** Login com CPF ou e-mail e senha. Inclui os estados de erro nos campos, credenciais inválidas e conta encerrada. Desenhada no Figma; DS aplicado.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
 | Código | `ENT-01` |
-| Raia | Entrada e cadastro · Etapa 1 de 4 · dados pessoais, contatos e endereço |
-| Figma | `1620:26870` (arquivo `apbNVzymCikALAJtrz0Zjp`) |
-| Status | Desenhada no Figma |
-| Marcação | [screen.html](screen.html) (Padrão) |
-| Entradas / saídas | 6 / 2 |
+| Raia | Acesso e recuperação de senha |
+| Figma | [`1620:26870`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1620-26870) (arquivo `apbNVzymCikALAJtrz0Zjp`) |
+| Status | Desenhada no Figma, com o DS aplicado |
+| Marcação | 5 variantes em [telas/](telas/) ([tela.js](tela.js)) · gerador `build-tools/acesso/gen-ENT-01.html` |
 
-**Seções:** 1. Objetivo · 2. Componentes · 3. Campos e validações · 4. Ações · 5. Estados · 6. Comportamento · 7. Entradas · 8. Saídas · 9. Dados · 10. Lacunas · 11. Critérios de aceite
+## Objetivo
 
-## 1. Objetivo
+Entrar com CPF ou e-mail e senha, recuperar a senha ou começar um cadastro novo.
 
-Entrar com CPF e senha, ou começar um cadastro novo.
+## Componentes
 
-## 2. Componentes
+9 componentes do DS, 38 instâncias, mais 2 peças fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
-14 peças nesta tela: **13 instâncias de 9 componentes do DS** (`Alert`, `AppHeader`, `Button`, `DividerText`, `LegalFooter`, `PageHeading`, `SocialButton`, `TextField`, `TextLink`) e **1 peças fora do DS**.
-
-Lista para máquina: [components.json](components.json). Docs de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`. Hover, pressionado e foco vêm prontos do DS; a coluna Estados lista só o que esta tela precisa mostrar.
-
-| # | Componente | JSX nesta tela | Estados nesta tela | Observação |
+| Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
-| 1 | `AppHeader` | `<AppHeader back={false} title="Login" language help={false} />` | — | Forma atual: Cadastro/Login (classe po-header-entry). |
-| 2 | Logo Palmeiras _(fora do DS)_ | asset: logo-palmeiras.png + logo-palmeiras-bg-ellipse.svg | — | Asset do DS (grupo Logos). |
-| 3 | `PageHeading` | `<PageHeading title="Faça seu login" subtitle="Faça seu login para começar ou cadastre-se." tone="brand" />` | — | — |
-| 4 | `Alert` | `<Alert tone="info" title="Sua conta foi encerrada.">O cadastro ficou inativo. Para voltar, fale com o atendimento.</Alert>` | oculto; visível | Oculto no layout padrão; aparece por condição (ver Estados). |
-| 5 | `TextField` | `<TextField label="Número do seu CPF" preset="cpf" name="cpf" placeholder="000.000.000-00" autoComplete="username" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage) | — |
-| 6 | `TextField` | `<TextField label="Senha" preset="password" name="senha" placeholder="Digite sua senha" autoComplete="current-password" />` | padrão; preenchido; erro (prop `error`, mostra FormMessage); senha visível ou oculta | — |
-| 7 | `TextLink` | `<TextLink variant="standalone" href="#">Esqueceu sua senha?</TextLink>` | — | Na implementação atual é um botão sem destino; no DS o TextLink exige href. |
-| 8 | `Button` | `<Button variant="primary" fullWidth type="submit">Entrar</Button>` | — | — |
-| 9 | `Button` | `<Button variant="accent" fullWidth>Criar cadastro</Button>` | — | Navega para `cadastro`. |
-| 10 | `DividerText` | `<DividerText>ou entrar com:</DividerText>` | — | — |
-| 11 | `SocialButton` | `<SocialButton provider="google" layout="icon" intent="signin" />` | — | — |
-| 12 | `SocialButton` | `<SocialButton provider="apple" layout="icon" intent="signin" />` | — | — |
-| 13 | `SocialButton` | `<SocialButton provider="microsoft" layout="icon" intent="signin" />` | — | — |
-| 14 | `LegalFooter` | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
+| `AppHeader` | 1 | `<AppHeader back={false} title="Login" language={{ defaultValue: "pt-BR" }} help={false} />` | — | — |
+| `PageHeading` | 1 | `<PageHeading title="Faça seu login" subtitle="Faça seu login para começar ou cadastre-se." tone="brand" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
+| `TextLink` | 1 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html">Esqueceu sua sen…` | — | — |
+| `Button` | 2 | `<Button variant="primary" type="submit">Entrar</Button>` | children, type, variant | — |
+| `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
+| `TextField` | 10 | `<TextField label="Número do seu CPF ou E-Mail" name="identificador" placeholder="000.000.000-00" autoComplete="username" inputMode="text" value="" onChange={() => {}} />` | autoComplete, className, error, inputMode, label, name, placeholder, preset, value | — |
+| `DividerText` | 5 | `<DividerText>ou entrar com:</DividerText>` | — | — |
+| `SocialButton` | 15 | `<SocialButton provider="google" layout="icon" intent="signin" type="button" />` | provider | — |
+| `Alert` | 2 | `<Alert tone="danger" title="Credenciais inválidas">Confira seu CPF, e-mail ou senha e tente novamente.</Alert>` | children, title, tone | — |
 
-**Aparecem por condição** (não estão na marcação padrão):
+Peças fora do DS (só implementadas ou propostas para o DS):
 
-| Componente | Como | Quando |
-|---|---|---|
-| `Alert` | tone="info" title="Sua conta foi encerrada." | Depois de encerrar a conta (AREA-04). Some ao digitar ou trocar de tela. |
-| `FormMessage` | via `error` do TextField | CPF inválido ou senha vazia, ao enviar. |
+| Peça | Observação |
+|---|---|
+| Barra de status do celular | Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar. |
+| Marca do Palmeiras | Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca. |
 
-## 3. Campos e validações
+## Variantes
 
-| Campo | id | Controle |
-|---|---|---|
-| Número do seu CPF | `login-cpf` | `text` · name=`cpf` · inputmode=`numeric` · autocomplete=`username` · data-mask=`cpf` · placeholder "000.000.000-00" |
-| Senha | `login-senha` | `password` · name=`senha` · autocomplete=`current-password` · placeholder "Digite sua senha" |
+Gerado do mapa do hub (`handoff/flow.json`).
 
-| Campo | Regra | Mensagem de erro |
-|---|---|---|
-| CPF | 11 dígitos com dígitos verificadores válidos; rejeita todos iguais. Máscara 000.000.000-00. | CPF inválido. Use o formato 000.000.000-00. |
-| Senha | Obrigatória. | Informe sua senha. |
-
-## 4. Ações na tela
-
-| Ação | Vai para | Observação |
-|---|---|---|
-| PT | — |  |
-| Esqueceu sua senha? | — | Sem fluxo ainda |
-| Entrar | — |  |
-| Criar cadastro | [CAD-01 · Cadastro · Dados pessoais](../CAD-01-cadastro-dados-pessoais/spec.md) |  |
-| Entrar com Google | — |  |
-| Entrar com Apple | — |  |
-| Entrar com Microsoft | — |  |
-
-As ações sem destino que dependem de script (envio de formulário, timers) estão em **Saídas**.
-
-## 5. Estados
-
-- Padrão
-- Erro por campo (FormMessage abaixo do campo)
-- Aviso de conta encerrada
-
-## 6. Comportamento
-
-- O botão Entrar fica sempre ativo e valida ao enviar (regra do DS). O foco vai para o primeiro campo com erro.
-- Na implementação atual qualquer senha é aceita; com CPF válido, vai para a área logada (AREA-01).
-- Quando a pessoa vem de Encerrar conta (AREA-04), aparece o aviso informativo "Sua conta foi encerrada." Ele some ao digitar ou ao trocar de tela.
-- "Esqueceu sua senha?" e os botões Google, Apple e Microsoft ainda não têm fluxo.
-
-## 7. Entradas (de onde se chega)
-
-| Tela | Gatilho | Condição | Tipo |
+| # | Variante | Figma | Arquivo |
 |---|---|---|---|
-| [CAD-01 · Cadastro · Dados pessoais](../CAD-01-cadastro-dados-pessoais/spec.md) | Voltar | — | Voltar |
-| [BIO-05 · Bloqueio · 3 tentativas](../BIO-05-bloqueio-3-tentativas/spec.md) | Sair e continuar depois | — | Sair do fluxo |
-| [BIO-06 · Erro com suporte](../BIO-06-erro-com-suporte/spec.md) | Sair e continuar depois | — | Sair do fluxo |
-| [AREA-01 · Meu cadastro](../AREA-01-meu-cadastro/spec.md) | Menu › Sair | — | Sair do fluxo |
-| [FAM-16 · Convite · entrada pelo link (sem conta)](../FAM-16-convite-entrada-pelo-link-sem-conta/spec.md) | Já tenho conta | — | Caminho alternativo |
-| [AREA-04 · Encerrar conta](../AREA-04-encerrar-conta/spec.md) | Encerrar conta | Senha preenchida; o login mostra o aviso de conta encerrada | Caminho principal |
+| 1 | Padrão | [`1620:26870`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1620-26870) | [telas/padrao](telas/padrao/screen.html) |
+| 2 | Preenchido | [`1620:26928`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1620-26928) | [telas/preenchido](telas/preenchido/screen.html) |
+| 3 | Erro nos campos (sem Figma) | sem Figma | [telas/erro-campos](telas/erro-campos/screen.html) |
+| 4 | Credenciais inválidas | [`1845:54220`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=1845-54220) | [telas/credenciais-invalidas](telas/credenciais-invalidas/screen.html) |
+| 5 | Conta encerrada (sem Figma) | sem Figma | [telas/conta-encerrada](telas/conta-encerrada/screen.html) |
 
-## 8. Saídas (para onde se vai)
+## Comportamento
 
-| Tela | Gatilho | Condição | Tipo |
-|---|---|---|---|
-| [AREA-01 · Meu cadastro](../AREA-01-meu-cadastro/spec.md) | Entrar | CPF válido e senha preenchida | Caminho principal |
-| [CAD-01 · Cadastro · Dados pessoais](../CAD-01-cadastro-dados-pessoais/spec.md) | Criar cadastro | — | Caminho principal |
+- O campo de acesso detecta o tipo: enquanto houver só dígitos e pontuação de CPF, aplica a máscara 000.000.000-00 e valida os dígitos verificadores; com "@" ou letras, vira e-mail, sem máscara, validado pelo formato.
+- Entrar fica sempre ativo e valida ao enviar (regra do DS). O foco vai para o primeiro campo com erro e nada é enviado. Erros: CPF ou e-mail inválido (texto do DS) e "Informe sua senha.".
+- Campos válidos: abre o carregamento (ENT-02). Se o servidor rejeitar, o login volta com o aviso "Credenciais inválidas" no topo, os dois campos em vermelho e o texto do erro só no aviso (o texto do campo fica oculto na tela e disponível ao leitor de tela). No protótipo, a senha `errada` simula a rejeição.
+- Conta encerrada: quando se chega de AREA-04, aparece o aviso informativo "Sua conta foi encerrada." (`?encerrada=1`). Ele some ao digitar.
+- Esqueceu sua senha? abre REC-01. Criar cadastro abre CAD-01.
+- Os botões Google, Apple e Microsoft ainda não têm fluxo (lacuna ENT-G1).
+- O seletor de idioma do cabeçalho (PT-BR, ES, EN) vem do DS; a troca de textos entre idiomas não está definida para esta tela.
 
-## 9. Dados
+## Entradas e saídas
 
-_Nenhum dado compartilhado._
+Gerado do mapa do hub (`handoff/flow.json`). Decisões (DEC-…) são avaliações da própria tela, sem tela própria.
 
-Visão geral: [dados.md](../dados.md).
+**Entradas (de onde se chega)**
 
-## 10. Lacunas e perguntas
+| De | Tela | Gatilho | Tipo | Condição |
+|---|---|---|---|---|
+| CAD-01 | Cadastro · Dados pessoais | Voltar | Voltar | — |
+| BIO-05 | Bloqueio · 3 tentativas | Sair e continuar depois | Sair do fluxo | — |
+| BIO-06 | Erro com suporte | Sair e continuar depois | Sair do fluxo | — |
+| AREA-01 | Meu cadastro | Menu › Sair | Sair do fluxo | — |
+| FAM-16 | Convite · entrada pelo link (sem conta) | Já tenho conta | Caminho alternativo | — |
+| AREA-04 | Encerrar conta | Encerrar conta | Caminho principal | Senha preenchida; o login mostra o aviso de conta encerrada |
+| DOC-15 | Sessão expirada no documento | Entrar | Sair do fluxo | Volta para esta etapa depois do login |
+| DOC-25 | Bloqueio por tentativas no documento | Sair e continuar depois | Sair do fluxo | Dados e documentos enviados ficam salvos |
+| FAM-18 | Convite indisponível (expirado, cancelado ou já usado) | Entrar na minha conta | Caminho principal | — |
+| ENT-00 | Splash | Cerca de 2 s | Automática (timer) | Ao abrir o app |
+| DEC-04 | Preencheu corretamente? | Não · erro no campo | Erro ou nova tentativa | CPF ou e-mail malformado, ou senha vazia |
+| DEC-05 | Credenciais aceitas? | Não · credenciais inválidas | Erro ou nova tentativa | Aviso no topo e campos em vermelho |
+| REC-01 | Recuperar senha | Voltar | Voltar | — |
+| REC-02 | Código por SMS (recuperação) | Voltar ao login | Sair do fluxo | Só no bloqueio por tentativas |
+| REC-04 | Código por e-mail (recuperação) | Voltar ao login | Sair do fluxo | Só no bloqueio por tentativas |
+| REC-06 | Nova senha | Voltar | Voltar | O código já foi usado: não volta a REC-04 |
+| REC-07 | Senha alterada com sucesso | Ir para o login | Caminho principal | Sem login automático |
 
-- Recuperação de senha.
-- Login social (Google, Apple, Microsoft).
-- Erro de credenciais incorretas: a implementação atual não simula.
-- Os textos de erro de CPF são provisórios (DESIGN-SYSTEM.md).
+**Saídas (para onde se vai)**
 
-## 11. Critérios de aceite
+| Para | Tela | Gatilho | Tipo | Condição |
+|---|---|---|---|---|
+| DEC-04 | Preencheu corretamente? | Entrar | Caminho principal | — |
+| CAD-01 | Cadastro · Dados pessoais | Criar cadastro | Caminho principal | — |
+| REC-01 | Recuperar senha | Esqueceu sua senha? | Caminho alternativo | — |
+| ENT-G1 | Login social | Entrar com Google, Apple ou Microsoft | Lacuna (a desenhar) | Sem fluxo desenhado |
 
-- [ ] Com CPF inválido, mostra o erro no campo e não navega.
-- [ ] Com CPF válido e senha preenchida, abre AREA-01.
-- [ ] Criar cadastro abre CAD-01.
+## Pendências
 
----
-[Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)
+- **Login social:** sem fluxo desenhado (consentimento, conta não encontrada, erro do provedor).
+- **Conta não encontrada, bloqueio por tentativas e senha expirada:** o Figma só desenha "Credenciais inválidas". Definir se há limite de tentativas e o que acontece depois dele.
+- Os textos de erro de CPF e e-mail são os do DS (provisórios, ver DESIGN-SYSTEM.md).
+- O Figma usa o título "Login" pequeno no cabeçalho, sem seta de voltar; o DS aplica `AppHeader` com `back={false}`.
+- O botão do Google, Apple e Microsoft usa o layout só com ícone (`layout="icon"`), marcado como depreciado no DS. O padrão do DS é largura total com texto.
+
+## Critérios de aceite
+
+- Com CPF ou e-mail inválido, ou senha vazia, mostra o erro no campo e não navega.
+- Com campos válidos, abre ENT-02; com senha `errada`, volta com "Credenciais inválidas".
+- Esqueceu sua senha? abre REC-01; Criar cadastro abre CAD-01.
+- O aviso de credenciais inválidas e o de conta encerrada nunca aparecem juntos.

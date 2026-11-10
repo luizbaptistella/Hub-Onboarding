@@ -1,0 +1,240 @@
+{
+ "screen": "REC-07",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/REC-07-senha-alterada/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": false,
+    "title": "Recuperar Senha",
+    "language": false,
+    "help": false
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={false} title=\"Recuperar Senha\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": false,
+      "title": "Recuperar Senha",
+      "language": false,
+      "help": false
+     }
+    }
+   ]
+  },
+  {
+   "component": "ResultHero",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResultHero/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "success",
+    "title": "Senha alterada com sucesso!",
+    "description": "Sua senha foi redefinida. Faça login com sua nova senha."
+   },
+   "behavior": null,
+   "jsx": "<ResultHero tone=\"success\" title=\"Senha alterada com sucesso!\" description=\"Sua senha foi redefinida. Faça login com sua nova senha.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info",
+      "warning",
+      "danger"
+     ],
+     "used": "success"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "success",
+      "title": "Senha alterada com sucesso!",
+      "description": "Sua senha foi redefinida. Faça login com sua nova senha."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "variant": "primary",
+    "children": "Ir para o login"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" onClick={() => {}}>Ir para o login</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "children": "Ir para o login",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > footer:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "unknownProps": null,
+   "id": 4,
+   "dsProps": {
+    "className": "est-legal",
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "behavior": null,
+   "jsx": "<LegalFooter className=\"est-legal\">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "className": "est-legal",
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 5
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

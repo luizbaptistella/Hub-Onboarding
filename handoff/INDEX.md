@@ -4,13 +4,31 @@ Uma pasta por tela, com `spec.md` (regras, ligações e critérios) e `screen.ht
 
 Precedência: **DS Palmeiras · Onboarding > spec.md > implementação atual**. Dados compartilhados: [dados.md](dados.md). Componentes por tela e inventário: [componentes.md](componentes.md). Fonte do mapa: [flow.json](flow.json). Componentes do fluxo de estrangeiro: [componentes-estrangeiro.md](componentes-estrangeiro.md).
 
+## Acesso e recuperação de senha
+
+Splash, login, carregamento e recuperação de senha · Figma 1620:31761 e 1620:29414
+
+| Código | Tela | Status | Figma | Pasta |
+|---|---|---|---|---|
+| ENT-00 | Splash | Desenhada | 1620:26697 | [ENT-00-splash/](ENT-00-splash/spec.md) |
+| ENT-01 | Login | Desenhada | 1620:26870 | [ENT-01-login/](ENT-01-login/spec.md) · 5 telas |
+| ENT-02 | Carregando login | Desenhada | 1620:27173 | [ENT-02-carregando-login/](ENT-02-carregando-login/spec.md) |
+| REC-01 | Recuperar senha | Desenhada | 1741:42053 | [REC-01-recuperar-senha/](REC-01-recuperar-senha/spec.md) · 6 telas |
+| REC-02 | Código por SMS (recuperação) | Desenhada | 1914:60064 | [REC-02-codigo-sms/](REC-02-codigo-sms/spec.md) · 5 telas |
+| REC-03 | SMS recebido (apoio do protótipo) | Desenhada | 1914:60087 | [REC-03-sms-recebido/](REC-03-sms-recebido/spec.md) |
+| REC-04 | Código por e-mail (recuperação) | Desenhada | 1914:58806 | [REC-04-codigo-email/](REC-04-codigo-email/spec.md) · 5 telas |
+| REC-05 | E-mail recebido (apoio do protótipo) | Desenhada | 1914:58829 | [REC-05-email-recebido/](REC-05-email-recebido/spec.md) |
+| REC-06 | Nova senha | Desenhada | 1741:41956 | [REC-06-nova-senha/](REC-06-nova-senha/spec.md) · 4 telas |
+| REC-07 | Senha alterada com sucesso | Desenhada | 1741:42025 | [REC-07-senha-alterada/](REC-07-senha-alterada/spec.md) |
+| ENT-G1 | Login social | Lacuna, a desenhar | — | Google, Apple e Microsoft aparecem no Figma, mas não há fluxo desenhado (consentimento, conta não encontrada, erro do provedor). No protótipo os botões não têm destino. |
+| REC-G1 | Solicitar recuperação da conta | Lacuna, a desenhar | — | Link de ajuda para quem perdeu o acesso ao e-mail ou celular, ou acha que a conta foi comprometida. O Figma não desenha o destino. |
+
 ## Entrada e cadastro
 
 Etapa 1 de 4 · dados pessoais, contatos e endereço
 
 | Código | Tela | Status | Figma | Pasta |
 |---|---|---|---|---|
-| ENT-01 | Login | Desenhada | 1620:26870 | [ENT-01-login/](ENT-01-login/spec.md) |
 | CAD-01 | Cadastro · Dados pessoais | Desenhada | 1619:11919 | [CAD-01-cadastro-dados-pessoais/](CAD-01-cadastro-dados-pessoais/spec.md) |
 | CAD-02 | Código por SMS | Desenhada | 1620:29884 | [CAD-02-codigo-por-sms/](CAD-02-codigo-por-sms/spec.md) |
 | CAD-03 | Editar celular | Sem Figma | — | [CAD-03-editar-celular/](CAD-03-editar-celular/spec.md) |
@@ -126,6 +144,7 @@ Inclusão e gestão de vínculos
 | FAM-G2 | Captura da frente do documento do familiar | Aprovada (passo 2 · câmera de DOC-04) | — | [FAM-G2-captura-do-documento/](FAM-G2-captura-do-documento/spec.md) · Variante familiar de DOC-G1. |
 | FAM-G2 | Confirmação da frente do documento do familiar | Proposta, a validar (passo 3 · conferência de BIO-04) | — | [FAM-G2-confirmacao-da-frente/](FAM-G2-confirmacao-da-frente/spec.md) |
 | FAM-G2 | Captura do verso do documento do familiar | Proposta, a validar (passo 4 · câmera da frente) | — | [FAM-G2-captura-do-verso/](FAM-G2-captura-do-verso/spec.md) |
+| FAM-G2 | Confirmação do verso do documento do familiar | Proposta, a validar (passo 5 · conferência de BIO-04, igual à da frente) | — | [FAM-G2-confirmacao-do-verso/](FAM-G2-confirmacao-do-verso/spec.md) |
 | FAM-G2 | Seleção do documento do familiar (CIN, CNH e RG; menor só CIN e RG) | Aprovada (passo 0 · antes do tutorial) | — | [FAM-G2-selecao-do-documento/](FAM-G2-selecao-do-documento/spec.md) · 2 telas |
 | FAM-G2 | CIN · tutorial da frente do familiar | Aprovada (versão CIN · passo 1) | — | [FAM-G2-cin-tutorial-frente/](FAM-G2-cin-tutorial-frente/spec.md) |
 | FAM-G2 | CIN · captura da frente do familiar | Aprovada (versão CIN · passo 2) | — | [FAM-G2-cin-captura-frente/](FAM-G2-cin-captura-frente/spec.md) |
@@ -142,13 +161,34 @@ Inclusão e gestão de vínculos
 - **DEC-01 · Código SMS correto?** Avaliada em CAD-02 quando o 6º dígito é digitado. Sim: sucesso e CAD-04. Não: erro com tentativas restantes; no 3º erro, bloqueio.
 - **DEC-02 · Código e-mail correto?** Avaliada em CAD-04 quando o 6º dígito é digitado. Sim: sucesso e CAD-06. Não: erro; no 3º, bloqueio.
 - **DEC-03 · Rosto aprovado?** Avaliada em BIO-02 com o rosto na moldura. Aprovado: contagem e BIO-03. Reprovado: avisos e nova tentativa; na 3ª reprovação, BIO-05.
+- **DEC-04 · Preencheu corretamente?** Avaliada em ENT-01 ao tocar em Entrar. Sim: abre ENT-02. Não: erro em cada campo inválido (CPF ou e-mail malformado, senha vazia), sem enviar nada.
+- **DEC-05 · Credenciais aceitas?** Resposta do servidor depois de ENT-02. Sim: abre AREA-01. Não: volta a ENT-01 com o aviso "Credenciais inválidas" e os dois campos em vermelho. No protótipo, a senha "errada" simula a rejeição.
+- **DEC-06 · Código SMS correto?** Avaliada em REC-02 quando o 6º dígito é digitado. Sim (847291): abre REC-06. Não: erro com as tentativas; código 000000 simula expirado; no 3º erro, bloqueio por 30 minutos.
+- **DEC-07 · Código e-mail correto?** Avaliada em REC-04 quando o 6º dígito é digitado. Mesmas regras de DEC-06: Sim (847291) abre REC-06; Não mostra o erro; no 3º erro, bloqueio por 30 minutos.
 
 ## Fluxo completo
 
 ```mermaid
 flowchart LR
-  subgraph cadastro["Entrada e cadastro"]
+  subgraph acesso["Acesso e recuperação de senha"]
+    ENT_00["ENT-00<br/>Splash"]
     ENT_01["ENT-01<br/>Login"]
+    ENT_02["ENT-02<br/>Carregando login"]
+    REC_01["REC-01<br/>Recuperar senha"]
+    REC_02["REC-02<br/>Código por SMS (recuperação)"]
+    REC_03["REC-03<br/>SMS recebido (apoio do protótipo)"]
+    REC_04["REC-04<br/>Código por e-mail (recuperação)"]
+    REC_05["REC-05<br/>E-mail recebido (apoio do protótipo)"]
+    REC_06["REC-06<br/>Nova senha"]
+    REC_07["REC-07<br/>Senha alterada com sucesso"]
+    DEC_04{"DEC-04<br/>Preencheu corretamente?"}
+    DEC_05{"DEC-05<br/>Credenciais aceitas?"}
+    DEC_06{"DEC-06<br/>Código SMS correto?"}
+    DEC_07{"DEC-07<br/>Código e-mail correto?"}
+    ENT_G1["ENT-G1<br/>Login social"]:::gap
+    REC_G1["REC-G1<br/>Solicitar recuperação da conta"]:::gap
+  end
+  subgraph cadastro["Entrada e cadastro"]
     CAD_01["CAD-01<br/>Cadastro · Dados pessoais"]
     CAD_02["CAD-02<br/>Código por SMS"]
     CAD_03["CAD-03<br/>Editar celular"]
@@ -247,15 +287,13 @@ flowchart LR
     FAM_G2_2["FAM-G2-2<br/>FAM-G2 · Captura da frente do documento do familiar"]
     FAM_G2_3["FAM-G2-3<br/>FAM-G2 · Confirmação da frente do documento"]
     FAM_G2_4["FAM-G2-4<br/>FAM-G2 · Captura do verso do documento do familiar"]
-    FAM_G2_5["FAM-G2-5<br/>FAM-G2 · Confirmação do verso (a desenhar)"]:::gap
+    FAM_G2_5["FAM-G2-5<br/>FAM-G2 · Confirmação do verso"]
     FAM_G2_0["FAM-G2-0<br/>FAM-G2 · Seleção do documento do familiar"]
     FAM_G2_CIN_1["FAM-G2-CIN-1<br/>FAM-G2 · CIN · tutorial da frente do familiar"]
     FAM_G2_CIN_2["FAM-G2-CIN-2<br/>FAM-G2 · CIN · captura da frente do familiar"]
     FAM_G2_CIN_3["FAM-G2-CIN-3<br/>FAM-G2 · CIN · captura do verso do familiar"]
     FAM_20["FAM-20<br/>Meus familiares · erro ao carregar"]
   end
-  ENT_01 -->|"Entrar"| AREA_01
-  ENT_01 -->|"Criar cadastro"| CAD_01
   CAD_01 -->|"Iniciar validação"| CAD_02
   CAD_02 -->|"6º dígito digitado"| DEC_01
   DEC_01 -->|"Sim · após 1,8 s"| CAD_04
@@ -432,6 +470,37 @@ flowchart LR
   AREA_02 -->|"Notificação de convite recebido"| FAM_17
   FAM_17 -.->|"Falha ao carregar a lista"| FAM_20
   FAM_20 -->|"Tentar novamente"| FAM_17
+  ENT_00 ==>|"Cerca de 2 s"| ENT_01
+  ENT_01 -->|"Entrar"| DEC_04
+  DEC_04 -->|"Sim"| ENT_02
+  DEC_04 -.->|"Não · erro no campo"| ENT_01
+  ENT_02 ==>|"Resposta do servidor"| DEC_05
+  DEC_05 -->|"Sim"| AREA_01
+  DEC_05 -.->|"Não · credenciais inválidas"| ENT_01
+  ENT_01 -->|"Criar cadastro"| CAD_01
+  ENT_01 -->|"Esqueceu sua senha?"| REC_01
+  ENT_01 -.->|"Entrar com Google, Apple ou Microsoft"| ENT_G1
+  REC_01 -->|"Continuar"| REC_02
+  REC_01 -->|"Continuar"| REC_04
+  REC_01 -.->|"Solicitar recuperação da conta"| REC_G1
+  REC_02 ==>|"SMS enviado"| REC_03
+  REC_02 -->|"6º dígito digitado"| DEC_06
+  DEC_06 -->|"Sim"| REC_06
+  DEC_06 -.->|"Não · código incorreto"| REC_02
+  DEC_06 -.->|"Não · o código expirou"| REC_02
+  DEC_06 -.->|"Não · excesso de tentativas"| REC_02
+  REC_02 -->|"Editar celular ou Voltar"| REC_01
+  REC_02 -.->|"Voltar ao login"| ENT_01
+  REC_04 ==>|"E-mail enviado"| REC_05
+  REC_04 -->|"6º dígito digitado"| DEC_07
+  DEC_07 -->|"Sim"| REC_06
+  DEC_07 -.->|"Não · código incorreto"| REC_04
+  DEC_07 -.->|"Não · o código expirou"| REC_04
+  DEC_07 -.->|"Não · excesso de tentativas"| REC_04
+  REC_04 -->|"Editar e-mail ou Voltar"| REC_01
+  REC_04 -.->|"Voltar ao login"| ENT_01
+  REC_06 -->|"Salvar senha"| REC_07
+  REC_07 -->|"Ir para o login"| ENT_01
   classDef gap stroke-dasharray: 5 5
 ```
 
@@ -441,8 +510,6 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 
 | Id | De | Para | Gatilho | Condição | Tipo |
 |---|---|---|---|---|---|
-| E01 | ENT-01 | AREA-01 | Entrar | CPF válido e senha preenchida | Caminho principal |
-| E02 | ENT-01 | CAD-01 | Criar cadastro | — | Caminho principal |
 | E03 | CAD-01 | ENT-01 | Voltar | — | Voltar |
 | E04 | CAD-01 | CAD-02 | Iniciar validação | CPF, data, celular e e-mail válidos e Termos aceitos | Caminho principal |
 | E05 | CAD-02 | DEC-01 | 6º dígito digitado | — | Caminho principal |
@@ -664,7 +731,7 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E604 | FAM-15 | FAM-12 | Voltar | Trocar o contato zera tentativas e bloqueio | Voltar |
 | E605 | FAM-G2-0 | FAM-G2-CIN-1 | Tirar foto ou Fazer upload | CIN escolhida | Caminho principal |
 | E606 | FAM-G2-CIN-3 | FAM-G2-3 | Voltar | — | Voltar |
-| E607 | FAM-G2-CIN-3 | FAM-G2-5 | Foto tirada | Confirmação do verso (a desenhar) | Caminho principal |
+| E607 | FAM-G2-CIN-3 | FAM-G2-5 | Foto tirada | Confirmação do verso | Caminho principal |
 | E608 | FAM-G2-0 | FAM-13 | Voltar | Se veio de FAM-13 | Voltar |
 | E609 | FAM-G2-0 | FAM-14 | Voltar | Se veio de FAM-14 | Voltar |
 | E610 | FAM-18 | ENT-01 | Entrar na minha conta | — | Caminho principal |
@@ -672,3 +739,38 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E612 | AREA-02 | FAM-17 | Notificação de convite recebido | Abre direto em Sou familiar de, com a seção expandida | Caminho alternativo |
 | E613 | FAM-17 | FAM-20 | Falha ao carregar a lista | Rede, 5xx ou timeout | Erro ou nova tentativa |
 | E614 | FAM-20 | FAM-17 | Tentar novamente | — | Caminho alternativo |
+| E700 | ENT-00 | ENT-01 | Cerca de 2 s | Ao abrir o app | Automática (timer) |
+| E701 | ENT-01 | DEC-04 | Entrar | — | Caminho principal |
+| E702 | DEC-04 | ENT-02 | Sim | CPF ou e-mail válido e senha preenchida | Caminho principal |
+| E703 | DEC-04 | ENT-01 | Não · erro no campo | CPF ou e-mail malformado, ou senha vazia | Erro ou nova tentativa |
+| E704 | ENT-02 | DEC-05 | Resposta do servidor | — | Automática (timer) |
+| E705 | DEC-05 | AREA-01 | Sim | Credenciais aceitas | Caminho principal |
+| E706 | DEC-05 | ENT-01 | Não · credenciais inválidas | Aviso no topo e campos em vermelho | Erro ou nova tentativa |
+| E02 | ENT-01 | CAD-01 | Criar cadastro | — | Caminho principal |
+| E707 | ENT-01 | REC-01 | Esqueceu sua senha? | — | Caminho alternativo |
+| E708 | ENT-01 | ENT-G1 | Entrar com Google, Apple ou Microsoft | Sem fluxo desenhado | Lacuna (a desenhar) |
+| E710 | REC-01 | ENT-01 | Voltar | — | Voltar |
+| E711 | REC-01 | REC-02 | Continuar | Aba Celular; celular e data válidos | Caminho principal |
+| E712 | REC-01 | REC-04 | Continuar | Aba E-mail; e-mail e data válidos | Caminho principal |
+| E713 | REC-01 | REC-G1 | Solicitar recuperação da conta | Sem fluxo desenhado | Lacuna (a desenhar) |
+| E720 | REC-02 | REC-03 | SMS enviado | Apoio do protótipo: mostra a mensagem recebida | Automática (timer) |
+| E721 | REC-03 | REC-02 | Voltar ao app | — | Voltar |
+| E722 | REC-02 | DEC-06 | 6º dígito digitado | — | Caminho principal |
+| E723 | DEC-06 | REC-06 | Sim | Código correto e dentro da validade | Caminho principal |
+| E724 | DEC-06 | REC-02 | Não · código incorreto | Mostra tentativas; digitar de novo limpa o erro | Erro ou nova tentativa |
+| E725 | DEC-06 | REC-02 | Não · o código expirou | Pede novo código em Reenviar código | Erro ou nova tentativa |
+| E726 | DEC-06 | REC-02 | Não · excesso de tentativas | 3º erro: campos desativados por 30 minutos | Erro ou nova tentativa |
+| E727 | REC-02 | REC-01 | Editar celular ou Voltar | — | Caminho alternativo |
+| E728 | REC-02 | ENT-01 | Voltar ao login | Só no bloqueio por tentativas | Sair do fluxo |
+| E730 | REC-04 | REC-05 | E-mail enviado | Apoio do protótipo: mostra a mensagem recebida | Automática (timer) |
+| E731 | REC-05 | REC-04 | Acessar minha conta | Volta ao app; o código é digitado, não preenche sozinho | Voltar |
+| E732 | REC-04 | DEC-07 | 6º dígito digitado | — | Caminho principal |
+| E733 | DEC-07 | REC-06 | Sim | Código correto e dentro da validade | Caminho principal |
+| E734 | DEC-07 | REC-04 | Não · código incorreto | Mostra tentativas; digitar de novo limpa o erro | Erro ou nova tentativa |
+| E735 | DEC-07 | REC-04 | Não · o código expirou | Pede novo código em Reenviar código | Erro ou nova tentativa |
+| E736 | DEC-07 | REC-04 | Não · excesso de tentativas | 3º erro: campos desativados por 30 minutos | Erro ou nova tentativa |
+| E737 | REC-04 | REC-01 | Editar e-mail ou Voltar | — | Caminho alternativo |
+| E738 | REC-04 | ENT-01 | Voltar ao login | Só no bloqueio por tentativas | Sair do fluxo |
+| E740 | REC-06 | REC-07 | Salvar senha | Os 4 requisitos cumpridos e senhas iguais | Caminho principal |
+| E741 | REC-06 | ENT-01 | Voltar | O código já foi usado: não volta a REC-04 | Voltar |
+| E742 | REC-07 | ENT-01 | Ir para o login | Sem login automático | Caminho principal |

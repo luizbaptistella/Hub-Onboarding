@@ -11,8 +11,8 @@ const handoffDir = path.join(root, 'handoff');
 
 test('carrega o flow e indexa telas, ligações e decisões', async () => {
   const h = await hub.loadHub(handoffDir);
-  assert.equal(h.nodes.length, 95);
-  assert.equal(h.edges.length, 231);
+  assert.equal(h.nodes.length, 110);
+  assert.equal(h.edges.length, 264);
   assert.ok(h.componentDocs.length >= 30);
 });
 

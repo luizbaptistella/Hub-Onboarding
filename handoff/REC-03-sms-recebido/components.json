@@ -1,0 +1,72 @@
+{
+ "screen": "REC-03",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/REC-03-sms-recebido/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  },
+  {
+   "component": "Marca do Palmeiras",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-logo",
+   "parent": null,
+   "hidden": false,
+   "note": "Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  },
+  {
+   "component": "SMS recebido (mock do sistema)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-sms-bubble",
+   "parent": null,
+   "hidden": false,
+   "note": "Conversa do app de mensagens com o SMS do código. Mock do sistema operacional, não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 3
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar",
+  "est-logo",
+  "est-sms-bubble"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

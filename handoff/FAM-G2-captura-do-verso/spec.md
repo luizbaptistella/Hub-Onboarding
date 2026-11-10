@@ -37,13 +37,13 @@ Os mesmos da captura da frente: `aligning` (enquadrando), `aligned` (enquadrado)
 | Ação | Vai para | Observação |
 |---|---|---|
 | Voltar | [FAM-G2 · Confirmação da frente](../FAM-G2-confirmacao-da-frente/spec.md) | Volta à conferência da frente. |
-| Tirar foto | Confirmação do verso (a desenhar) | Dispara a captura. |
+| Tirar foto | [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md) | Dispara a captura. |
 | Abrir configurações | — | Só no estado `denied`. |
 
 ## 5. Comportamento
 
 - Abre em "enquadrando". Quando o detector encontra o documento na moldura, vai para "enquadrado" e tira a foto sozinha em cerca de 1 s. "Tirar foto" dispara na hora.
-- Depois da foto, segue para a confirmação do verso (próxima tela, a desenhar).
+- Depois da foto, segue para a confirmação do verso ([FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md)).
 - Sem "Enviar arquivo" na câmera, como na frente.
 - LGPD: parar a câmera ao sair da tela, não salvar a foto na galeria, enviar só o recorte da moldura, não registrar imagem em logs.
 
@@ -58,7 +58,7 @@ Os mesmos da captura da frente: `aligning` (enquadrando), `aligned` (enquadrado)
 | Para | Gatilho |
 |---|---|
 | [FAM-G2 · Confirmação da frente](../FAM-G2-confirmacao-da-frente/spec.md) | Voltar |
-| Confirmação do verso (a desenhar) | Foto tirada |
+| [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md) | Foto tirada |
 
 ## 8. Dados
 

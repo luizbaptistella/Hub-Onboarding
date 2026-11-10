@@ -30,7 +30,7 @@ Deixar o titular conferir a foto da frente do documento do familiar antes de seg
 | 1 | `AppHeader` | `<AppHeader back={{ label: "Voltar" }} title="Captura do documento" language={false} help />` | — | Sem barra de progresso, como no restante do FAM-G2. |
 | 2 | `Image` | `<Image alt="Foto da frente do documento de Ana Paula" rounded height={320} src={fotoFrente} />` | placeholder (sem foto) | Foto da frente capturada. |
 | 3 | `PageHeading` | `<PageHeading title="Confira se a frente do documento está legível." subtitle="Veja se as informações estão nítidas e se o documento aparece inteiro na foto." tone="neutral" spaced />` | — | — |
-| 4 | `Button` | `<Button variant="primary" fullWidth iconEnd="arrow_forward">Salvar e continuar</Button>` | — | Vai para o verso (a desenhar). |
+| 4 | `Button` | `<Button variant="primary" fullWidth iconEnd="arrow_forward">Salvar e continuar</Button>` | — | Vai para a captura do verso (CIN: ver [FAM-G2 · CIN · captura do verso](../FAM-G2-cin-captura-verso/spec.md)). |
 | 5 | `Button` | `<Button variant="secondary" fullWidth iconEnd="photo_camera">Tirar outra foto</Button>` | — | Volta para a captura da frente. |
 
 ## 3. Campos e validações
@@ -89,7 +89,7 @@ Visão geral: [dados.md](../dados.md).
 
 **Em aberto:**
 
-- **Verso:** ainda não desenhado (parte de DOC-G1).
+- **Verso:** desenhado como [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md), por analogia com esta tela.
 - **Conferência dos dados:** DOC-G1 prevê conferência. Ainda não definida: se a leitura do documento deve mostrar os dados lidos antes do envio.
 
 ## 11. Critérios de aceite

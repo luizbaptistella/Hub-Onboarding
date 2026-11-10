@@ -1,0 +1,52 @@
+{
+ "screen": "ENT-02",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/ENT-02-carregando-login/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "Marca do Palmeiras",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-logo",
+   "parent": null,
+   "hidden": false,
+   "note": "Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  },
+  {
+   "component": "Barra de carregamento",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-loadbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Faixa de 6 px com preenchimento animado e role=progressbar, sem valor (espera sem duração conhecida). O ProgressBar do DS é de etapas. Proposta para o DS.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-logo",
+  "est-loadbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -1,0 +1,32 @@
+{
+ "screen": "ENT-00",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/ENT-00-splash/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "Marca do Palmeiras",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-logo",
+   "parent": null,
+   "hidden": false,
+   "note": "Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-logo"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

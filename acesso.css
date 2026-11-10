@@ -1,0 +1,114 @@
+/* Telas de acesso do hub: splash, login, carregamento e recuperação de senha (ENT-00 a ENT-02, REC-01 a REC-07).
+   Só layout das páginas e das peças fora do DS (marca, barra de carregamento, medidor de força, mensagens de apoio).
+   Os componentes do DS vêm de ds/bundle.css e não são alterados aqui. */
+html, body { margin: 0; padding: 0; background: var(--bg-surface); }
+
+/* Moldura do celular */
+.est-device { width: 375px; min-height: 812px; display: flex; flex-direction: column; background: var(--bg-surface); }
+.est-body { flex: 1; display: flex; flex-direction: column; gap: var(--space-stack-loose); padding: var(--space-300) var(--space-page-inline) 0; }
+.est-body-fill { padding-bottom: var(--space-300); }
+.est-device:has(.est-body-fill) { height: 812px; min-height: 0; }
+.est-actions { display: flex; flex-direction: column; gap: var(--space-stack-related); margin-top: auto; }
+.est-legal { margin-top: auto; padding-bottom: var(--space-300); }
+.est-actions + .est-legal { margin-top: var(--space-stack-section); }
+.est-form { display: flex; flex-direction: column; gap: var(--space-stack-section); }
+.est-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Barra de status do celular: mock do sistema, não implementar. */
+.est-statusbar { flex: none; height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-300) 0 var(--space-400); background: var(--bg-surface); color: var(--text-default); font: 600 15px/1 var(--font-body); }
+.est-statusbar-icons { display: flex; align-items: center; gap: 6px; fill: currentColor; color: inherit; }
+
+/* Marca do Palmeiras (asset do DS): círculo branco atrás do escudo com a estrela. */
+.est-logo { position: relative; display: flex; align-items: center; justify-content: center; align-self: center; flex: none; }
+.est-logo-bg { position: absolute; }
+.est-logo-mark { position: relative; width: auto; }
+.est-logo-xs { height: 34px; } .est-logo-xs .est-logo-mark { height: 34px; } .est-logo-xs .est-logo-bg { width: 27px; height: 27px; }
+.est-logo-sm { height: 75px; } .est-logo-sm .est-logo-mark { height: 75px; } .est-logo-sm .est-logo-bg { width: 60.667px; height: 60.667px; }
+.est-logo-md { height: 75px; } .est-logo-md .est-logo-mark { height: 75px; } .est-logo-md .est-logo-bg { width: 60.667px; height: 60.667px; }
+.est-logo-lg { height: 101px; } .est-logo-lg .est-logo-mark { height: 101px; } .est-logo-lg .est-logo-bg { width: 81.426px; height: 81.426px; }
+.est-logo-xl { height: 153px; } .est-logo-xl .est-logo-mark { height: 153px; } .est-logo-xl .est-logo-bg { width: 123.259px; height: 123.259px; }
+
+/* ENT-00 · Splash */
+.est-splash { height: 812px; min-height: 0; background: var(--bg-page); }
+.est-splash-main { flex: 1; display: flex; align-items: center; justify-content: center; }
+
+/* ENT-01 · Login */
+.est-login-form { gap: var(--space-stack-loose); }
+.est-login-pw { display: flex; flex-direction: column; gap: var(--space-stack-related); align-items: flex-start; }
+.est-login-actions { margin-top: 0; }
+.est-others { display: flex; flex-direction: column; gap: var(--space-stack-group); }
+.est-social { display: flex; justify-content: center; gap: 12px; }
+.est-social .po-social { flex: none; }
+/* Credenciais inválidas: os campos ficam vermelhos e o texto do erro fica só no aviso do topo (visível para leitor de tela). */
+.est-field-quiet .po-msg { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ENT-02 · Carregando login */
+.est-load { height: 812px; min-height: 0; background: var(--bg-surface); }
+.est-load-main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-stack-section); padding: 0 48px; }
+.est-load-card { width: 100%; display: flex; flex-direction: column; gap: var(--space-stack-group); padding: 0 var(--space-200); align-items: center; }
+.est-loadbar { position: relative; width: 100%; height: 6px; border-radius: var(--radius-full); background: var(--border-default); overflow: hidden; }
+.est-loadbar-fill { position: absolute; inset: 0 auto 0 0; width: 25%; border-radius: inherit; background: var(--bg-success-bold); animation: est-load 1.6s ease-in-out infinite alternate; }
+@keyframes est-load { from { width: 18%; } to { width: 88%; } }
+@media (prefers-reduced-motion: reduce) { .est-loadbar-fill { animation: none; width: 25%; } }
+.est-load-text { margin: 0; font: var(--type-body-md-weight) var(--type-body-md-size)/var(--type-body-md-line-height) var(--font-body); color: var(--text-default); text-align: center; }
+
+/* REC-01 · Recuperar senha: bloco de ajuda no pé */
+.est-support { display: flex; flex-direction: column; gap: var(--space-stack-tight); margin-top: auto; }
+.est-support + .est-actions { margin-top: 0; }
+.est-support-title { margin: 0; font: var(--type-label-md-strong-weight) var(--type-label-md-strong-size)/var(--type-label-md-strong-line-height) var(--font-body); color: var(--text-default); }
+.est-support-text { margin: 0; font: var(--type-body-sm-weight) var(--type-body-sm-size)/var(--type-body-sm-line-height) var(--font-body); color: var(--text-subtle); }
+
+/* REC-06 · Nova senha: medidor de força e requisitos */
+.est-strength { display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.est-strength-head { display: flex; justify-content: space-between; font: var(--type-label-sm-strong-weight) var(--type-label-sm-strong-size)/var(--type-label-sm-strong-line-height) var(--font-body); color: var(--text-subtle); }
+.est-strength-bars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.est-strength-bar { height: 4px; border-radius: var(--radius-full); background: var(--border-subtle); }
+.est-strength-bar.est-on.est-tone-weak { background: var(--bg-danger-bold); }
+.est-strength-bar.est-on.est-tone-mid { background: var(--bg-warning-bold); }
+.est-strength-bar.est-on.est-tone-good, .est-strength-bar.est-on.est-tone-strong { background: var(--bg-success-bold); }
+.est-strength-level.est-tone-weak { color: var(--text-danger); }
+.est-strength-level.est-tone-mid { color: var(--text-warning); }
+.est-strength-level.est-tone-good, .est-strength-level.est-tone-strong { color: var(--text-success); }
+.est-rules { display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.est-rules-title { margin: 0; font: var(--type-label-md-strong-weight) var(--type-label-md-strong-size)/var(--type-label-md-strong-line-height) var(--font-body); color: var(--text-default); }
+.est-rules-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-stack-tight); }
+.est-rule { display: flex; align-items: center; gap: var(--space-inline-related); font: var(--type-body-sm-weight) var(--type-body-sm-size)/var(--type-body-sm-line-height) var(--font-body); color: var(--text-subtle); }
+.est-rule-icon { font-size: 20px; color: var(--border-default); }
+.est-rule-ok { color: var(--text-default); }
+.est-rule-ok .est-rule-icon { color: var(--bg-success-bold); font-variation-settings: "FILL" 1; }
+
+/* REC-03 · SMS recebido (mock do sistema, não implementar) */
+.est-sms { height: 812px; min-height: 0; background: #ffffff; }
+.est-sms-head { display: flex; align-items: center; justify-content: space-between; padding: 4px 16px 8px; border-bottom: 1px solid var(--border-subtle); }
+.est-sms-back, .est-sms-help { color: var(--text-brand); display: inline-flex; width: 32px; }
+.est-sms-help { font-size: 28px; justify-content: flex-end; }
+.est-sms-contact { display: flex; flex-direction: column; align-items: center; }
+.est-sms-name { margin: 0; font: 500 13px/16px var(--font-body); color: var(--text-default); display: flex; align-items: center; }
+.est-sms-name .po-icon { font-size: 14px; color: var(--text-subtle); }
+.est-sms-thread { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 20px 16px; }
+.est-sms-when { margin: 0; text-align: center; font: 600 11px/14px var(--font-body); letter-spacing: .04em; color: var(--text-subtle); }
+.est-sms-bubble { align-self: flex-start; max-width: 280px; padding: 12px 16px; border-radius: 20px; background: var(--bg-page); color: var(--text-default); font: 400 15px/24px var(--font-body); }
+.est-sms-bubble p { margin: 0; } .est-sms-bubble strong { color: var(--text-brand); font-weight: 700; }
+.est-sms-time { display: block; margin: 6px 0 -4px; font: 400 11px/14px var(--font-body); color: var(--text-subtle); }
+.est-sms-compose { display: flex; align-items: center; gap: 12px; padding: 8px 12px 24px; color: var(--text-subtle); }
+.est-sms-input { flex: 1; display: flex; align-items: center; justify-content: space-between; height: 36px; padding: 0 6px 0 14px; border: 1px solid var(--border-default); border-radius: 18px; font: 400 15px/20px var(--font-body); }
+.est-sms-send { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--bg-brand-bold); color: #fff; }
+.est-sms-send .po-icon { font-size: 16px; }
+
+/* REC-05 · E-mail recebido (template de e-mail de 600 px, mock do sistema, não implementar) */
+.est-mail { width: 600px; min-height: 974px; display: flex; flex-direction: column; background: #f4f4f4; font-family: var(--font-body); color: var(--text-default); }
+.est-mail-top { display: flex; justify-content: center; align-items: center; height: 140px; background: var(--bg-brand-bold); }
+.est-mail-body { flex: 1; padding: 40px; }
+.est-mail-card { background: #fff; border-radius: 8px; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: left; }
+.est-mail-title { margin: 0; align-self: flex-start; font: 700 24px/32px var(--font-body); }
+.est-mail-text { margin: 0; font: 400 16px/26px var(--font-body); color: var(--text-subtle); }
+.est-mail-code { margin: 4px 0; padding: 20px 40px; border: 2px solid var(--border-warning, #8c6d1f); border-radius: 8px; font: 700 36px/44px "IBM Plex Mono", ui-monospace, Menlo, monospace; letter-spacing: .18em; }
+.est-mail-expira, .est-mail-aviso { margin: 0; display: flex; align-items: center; gap: 8px; font: 400 14px/20px var(--font-body); color: var(--text-subtle); }
+.est-mail-expira .po-icon { font-size: 18px; }
+.est-mail-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 32px; border-radius: 8px; background: var(--bg-brand-bold); color: #fff; font: 600 16px/24px var(--font-body); text-decoration: none; }
+.est-mail-hr { align-self: stretch; border: 0; border-top: 1px solid var(--border-subtle); margin: 4px 0; }
+.est-mail-aviso { align-self: flex-start; } .est-mail-aviso .po-icon { padding: 8px; border-radius: 8px; background: var(--bg-page); font-size: 18px; }
+.est-mail-foot { padding: 40px; background: var(--bg-brand-bold); color: #fff; text-align: center; display: flex; flex-direction: column; gap: 12px; }
+.est-mail-foot p { margin: 0; font: 400 14px/20px var(--font-body); } .est-mail-foot a { color: #d9b95c; font-weight: 600; text-decoration: none; }
+.est-mail-foot-hr { width: 100%; border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 4px 0; }
+.est-mail-copy, .est-mail-addr { font-size: 12px !important; line-height: 18px !important; } .est-mail-addr { opacity: .6; }

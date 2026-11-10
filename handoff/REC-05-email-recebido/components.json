@@ -1,0 +1,52 @@
+{
+ "screen": "REC-05",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/REC-05-email-recebido/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "Marca do Palmeiras",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-logo",
+   "parent": null,
+   "hidden": false,
+   "note": "Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  },
+  {
+   "component": "E-mail recebido (template)",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-mail-card",
+   "parent": null,
+   "hidden": false,
+   "note": "Template do e-mail transacional (600 px) com saudação, código, validade e aviso de segurança. É o conteúdo do e-mail enviado pelo servidor, não uma tela do app.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-logo",
+  "est-mail-card"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

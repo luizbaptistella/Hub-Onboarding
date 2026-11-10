@@ -35,7 +35,7 @@ Os mesmos da captura genérica: `aligning`, `aligned`, `capturing`, `denied` e `
 | Ação | Vai para | Observação |
 |---|---|---|
 | Voltar | [FAM-G2 · Confirmação da frente](../FAM-G2-confirmacao-da-frente/spec.md) | Volta à conferência da frente. |
-| Tirar foto | Confirmação do verso da CIN (a desenhar) | Dispara a captura. |
+| Tirar foto | [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md) | Dispara a captura. |
 | Abrir configurações | — | Só no estado `denied`. |
 
 ## 5. Comportamento

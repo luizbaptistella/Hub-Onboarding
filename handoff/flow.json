@@ -4,6 +4,12 @@
  "figmaFile": "apbNVzymCikALAJtrz0Zjp",
  "lanes": [
   {
+   "id": "acesso",
+   "title": "Acesso e recuperação de senha",
+   "sub": "Splash, login, carregamento e recuperação de senha · Figma 1620:31761 e 1620:29414",
+   "rows": 3
+  },
+  {
    "id": "cadastro",
    "title": "Entrada e cadastro",
    "sub": "Etapa 1 de 4 · dados pessoais, contatos e endereço",
@@ -51,32 +57,429 @@
  },
  "nodes": [
   {
+   "code": "ENT-00",
+   "name": "Splash",
+   "lane": "acesso",
+   "col": 0,
+   "row": 0,
+   "figma": "1620:26697",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "ENT-00-splash",
+   "components": "handoff/ENT-00-splash/components.json",
+   "spec": "handoff/ENT-00-splash/spec.md",
+   "variants": [
+    {
+     "id": "ent-00--padrao",
+     "label": "Padrão",
+     "file": "handoff/ENT-00-splash/telas/padrao/screen.html",
+     "figma": "1620:26697"
+    }
+   ],
+   "inputs": 0,
+   "outputs": 1
+  },
+  {
    "code": "ENT-01",
    "name": "Login",
-   "lane": "cadastro",
-   "col": 0,
+   "lane": "acesso",
+   "col": 1,
    "row": 0,
    "figma": "1620:26870",
    "type": "screen",
    "status": "desenhada",
    "folder": "ENT-01-login",
-   "variants": [
-    {
-     "id": "login",
-     "label": "Padrão",
-     "file": "handoff/ENT-01-login/screen.html"
-    }
-   ],
    "components": "handoff/ENT-01-login/components.json",
    "spec": "handoff/ENT-01-login/spec.md",
-   "inputs": 9,
+   "variants": [
+    {
+     "id": "ent-01--padrao",
+     "label": "Padrão",
+     "file": "handoff/ENT-01-login/telas/padrao/screen.html",
+     "figma": "1620:26870"
+    },
+    {
+     "id": "ent-01--preenchido",
+     "label": "Preenchido",
+     "file": "handoff/ENT-01-login/telas/preenchido/screen.html",
+     "figma": "1620:26928"
+    },
+    {
+     "id": "ent-01--erro-campos",
+     "label": "Erro nos campos (sem Figma)",
+     "file": "handoff/ENT-01-login/telas/erro-campos/screen.html"
+    },
+    {
+     "id": "ent-01--credenciais-invalidas",
+     "label": "Credenciais inválidas",
+     "file": "handoff/ENT-01-login/telas/credenciais-invalidas/screen.html",
+     "figma": "1845:54220"
+    },
+    {
+     "id": "ent-01--conta-encerrada",
+     "label": "Conta encerrada (sem Figma)",
+     "file": "handoff/ENT-01-login/telas/conta-encerrada/screen.html"
+    }
+   ],
+   "inputs": 17,
+   "outputs": 4
+  },
+  {
+   "code": "ENT-02",
+   "name": "Carregando login",
+   "lane": "acesso",
+   "col": 3,
+   "row": 0,
+   "figma": "1620:27173",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "ENT-02-carregando-login",
+   "components": "handoff/ENT-02-carregando-login/components.json",
+   "spec": "handoff/ENT-02-carregando-login/spec.md",
+   "variants": [
+    {
+     "id": "ent-02--padrao",
+     "label": "Padrão",
+     "file": "handoff/ENT-02-carregando-login/telas/padrao/screen.html",
+     "figma": "1620:27173"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "REC-01",
+   "name": "Recuperar senha",
+   "lane": "acesso",
+   "col": 1,
+   "row": 1,
+   "figma": "1741:42053",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-01-recuperar-senha",
+   "components": "handoff/REC-01-recuperar-senha/components.json",
+   "spec": "handoff/REC-01-recuperar-senha/spec.md",
+   "variants": [
+    {
+     "id": "rec-01--celular-vazio",
+     "label": "Celular · vazio",
+     "file": "handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html",
+     "figma": "1741:42100"
+    },
+    {
+     "id": "rec-01--celular-preenchido",
+     "label": "Celular · preenchido",
+     "file": "handoff/REC-01-recuperar-senha/telas/celular-preenchido/screen.html",
+     "figma": "1741:42142"
+    },
+    {
+     "id": "rec-01--celular-erro",
+     "label": "Celular · campo vazio (sem Figma)",
+     "file": "handoff/REC-01-recuperar-senha/telas/celular-erro/screen.html"
+    },
+    {
+     "id": "rec-01--email-vazio",
+     "label": "E-mail · vazio",
+     "file": "handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html",
+     "figma": "1741:42053"
+    },
+    {
+     "id": "rec-01--email-preenchido",
+     "label": "E-mail · preenchido",
+     "file": "handoff/REC-01-recuperar-senha/telas/email-preenchido/screen.html",
+     "figma": "1741:42184"
+    },
+    {
+     "id": "rec-01--email-erro",
+     "label": "E-mail · campo vazio",
+     "file": "handoff/REC-01-recuperar-senha/telas/email-erro/screen.html",
+     "figma": "1741:42342"
+    }
+   ],
+   "inputs": 3,
+   "outputs": 4
+  },
+  {
+   "code": "REC-02",
+   "name": "Código por SMS (recuperação)",
+   "lane": "acesso",
+   "col": 2,
+   "row": 2,
+   "figma": "1914:60064",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-02-codigo-sms",
+   "components": "handoff/REC-02-codigo-sms/components.json",
+   "spec": "handoff/REC-02-codigo-sms/spec.md",
+   "variants": [
+    {
+     "id": "rec-02--vazio",
+     "label": "Vazio",
+     "file": "handoff/REC-02-codigo-sms/telas/vazio/screen.html",
+     "figma": "1914:60064"
+    },
+    {
+     "id": "rec-02--validado",
+     "label": "Código validado",
+     "file": "handoff/REC-02-codigo-sms/telas/validado/screen.html",
+     "figma": "1914:60041"
+    },
+    {
+     "id": "rec-02--incorreto",
+     "label": "Código incorreto (1/3)",
+     "file": "handoff/REC-02-codigo-sms/telas/incorreto/screen.html",
+     "figma": "1914:60147"
+    },
+    {
+     "id": "rec-02--expirado",
+     "label": "Código expirado",
+     "file": "handoff/REC-02-codigo-sms/telas/expirado/screen.html",
+     "figma": "1914:60180"
+    },
+    {
+     "id": "rec-02--bloqueado",
+     "label": "Excesso de tentativas",
+     "file": "handoff/REC-02-codigo-sms/telas/bloqueado/screen.html",
+     "figma": "1914:60213"
+    }
+   ],
+   "inputs": 5,
+   "outputs": 4
+  },
+  {
+   "code": "REC-03",
+   "name": "SMS recebido (apoio do protótipo)",
+   "lane": "acesso",
+   "col": 3,
+   "row": 2,
+   "figma": "1914:60087",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-03-sms-recebido",
+   "components": "handoff/REC-03-sms-recebido/components.json",
+   "spec": "handoff/REC-03-sms-recebido/spec.md",
+   "variants": [
+    {
+     "id": "rec-03--padrao",
+     "label": "Padrão",
+     "file": "handoff/REC-03-sms-recebido/telas/padrao/screen.html",
+     "figma": "1914:60087"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "REC-04",
+   "name": "Código por e-mail (recuperação)",
+   "lane": "acesso",
+   "col": 2,
+   "row": 1,
+   "figma": "1914:58806",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-04-codigo-email",
+   "components": "handoff/REC-04-codigo-email/components.json",
+   "spec": "handoff/REC-04-codigo-email/spec.md",
+   "variants": [
+    {
+     "id": "rec-04--vazio",
+     "label": "Vazio",
+     "file": "handoff/REC-04-codigo-email/telas/vazio/screen.html",
+     "figma": "1914:58806"
+    },
+    {
+     "id": "rec-04--validado",
+     "label": "Código validado",
+     "file": "handoff/REC-04-codigo-email/telas/validado/screen.html",
+     "figma": "1914:58783"
+    },
+    {
+     "id": "rec-04--incorreto",
+     "label": "Código incorreto (1/3)",
+     "file": "handoff/REC-04-codigo-email/telas/incorreto/screen.html",
+     "figma": "1914:59007"
+    },
+    {
+     "id": "rec-04--expirado",
+     "label": "Código expirado",
+     "file": "handoff/REC-04-codigo-email/telas/expirado/screen.html",
+     "figma": "1914:59073"
+    },
+    {
+     "id": "rec-04--bloqueado",
+     "label": "Excesso de tentativas",
+     "file": "handoff/REC-04-codigo-email/telas/bloqueado/screen.html",
+     "figma": "1914:59139"
+    }
+   ],
+   "inputs": 5,
+   "outputs": 4
+  },
+  {
+   "code": "REC-05",
+   "name": "E-mail recebido (apoio do protótipo)",
+   "lane": "acesso",
+   "col": 3,
+   "row": 1,
+   "figma": "1914:58829",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-05-email-recebido",
+   "components": "handoff/REC-05-email-recebido/components.json",
+   "spec": "handoff/REC-05-email-recebido/spec.md",
+   "variants": [
+    {
+     "id": "rec-05--padrao",
+     "label": "Padrão",
+     "file": "handoff/REC-05-email-recebido/telas/padrao/screen.html",
+     "figma": "1914:58829"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "REC-06",
+   "name": "Nova senha",
+   "lane": "acesso",
+   "col": 5,
+   "row": 1,
+   "figma": "1741:41956",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-06-nova-senha",
+   "components": "handoff/REC-06-nova-senha/components.json",
+   "spec": "handoff/REC-06-nova-senha/spec.md",
+   "variants": [
+    {
+     "id": "rec-06--vazia",
+     "label": "Vazia (sem Figma)",
+     "file": "handoff/REC-06-nova-senha/telas/vazia/screen.html"
+    },
+    {
+     "id": "rec-06--fraca",
+     "label": "Senha fraca",
+     "file": "handoff/REC-06-nova-senha/telas/fraca/screen.html",
+     "figma": "1741:42276"
+    },
+    {
+     "id": "rec-06--forte",
+     "label": "Senha forte",
+     "file": "handoff/REC-06-nova-senha/telas/forte/screen.html",
+     "figma": "1741:41956"
+    },
+    {
+     "id": "rec-06--erro-confirmacao",
+     "label": "Senhas diferentes (sem Figma)",
+     "file": "handoff/REC-06-nova-senha/telas/erro-confirmacao/screen.html"
+    }
+   ],
+   "inputs": 2,
    "outputs": 2
+  },
+  {
+   "code": "REC-07",
+   "name": "Senha alterada com sucesso",
+   "lane": "acesso",
+   "col": 6,
+   "row": 1,
+   "figma": "1741:42025",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "REC-07-senha-alterada",
+   "components": "handoff/REC-07-senha-alterada/components.json",
+   "spec": "handoff/REC-07-senha-alterada/spec.md",
+   "variants": [
+    {
+     "id": "rec-07--padrao",
+     "label": "Padrão",
+     "file": "handoff/REC-07-senha-alterada/telas/padrao/screen.html",
+     "figma": "1741:42025"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "DEC-04",
+   "type": "decision",
+   "name": "Preencheu corretamente?",
+   "lane": "acesso",
+   "col": 2,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DEC-05",
+   "type": "decision",
+   "name": "Credenciais aceitas?",
+   "lane": "acesso",
+   "col": 4,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DEC-06",
+   "type": "decision",
+   "name": "Código SMS correto?",
+   "lane": "acesso",
+   "col": 4,
+   "row": 2,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 4
+  },
+  {
+   "code": "DEC-07",
+   "type": "decision",
+   "name": "Código e-mail correto?",
+   "lane": "acesso",
+   "col": 4,
+   "row": 1,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 4
+  },
+  {
+   "code": "ENT-G1",
+   "type": "gap",
+   "name": "Login social",
+   "lane": "acesso",
+   "col": 5,
+   "row": 0,
+   "note": "Google, Apple e Microsoft aparecem no Figma, mas não há fluxo desenhado (consentimento, conta não encontrada, erro do provedor). No protótipo os botões não têm destino.",
+   "status": "lacuna",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 0
+  },
+  {
+   "code": "REC-G1",
+   "type": "gap",
+   "name": "Solicitar recuperação da conta",
+   "lane": "acesso",
+   "col": 1,
+   "row": 2,
+   "note": "Link de ajuda para quem perdeu o acesso ao e-mail ou celular, ou acha que a conta foi comprometida. O Figma não desenha o destino.",
+   "status": "lacuna",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 0
   },
   {
    "code": "CAD-01",
    "name": "Cadastro · Dados pessoais",
    "lane": "cadastro",
-   "col": 1,
+   "col": 0,
    "row": 0,
    "figma": "1619:11919",
    "type": "screen",
@@ -98,7 +501,7 @@
    "code": "CAD-02",
    "name": "Código por SMS",
    "lane": "cadastro",
-   "col": 2,
+   "col": 1,
    "row": 0,
    "figma": "1620:29884",
    "type": "screen",
@@ -120,7 +523,7 @@
    "code": "CAD-03",
    "name": "Editar celular",
    "lane": "cadastro",
-   "col": 2,
+   "col": 1,
    "row": 1,
    "type": "screen",
    "status": "sem-figma",
@@ -142,7 +545,7 @@
    "type": "decision",
    "name": "Código SMS correto?",
    "lane": "cadastro",
-   "col": 3,
+   "col": 2,
    "row": 0,
    "status": "decisao",
    "folder": null,
@@ -153,7 +556,7 @@
    "code": "CAD-04",
    "name": "Código por e-mail",
    "lane": "cadastro",
-   "col": 4,
+   "col": 3,
    "row": 0,
    "figma": "1619:11471",
    "type": "screen",
@@ -175,7 +578,7 @@
    "code": "CAD-05",
    "name": "Editar e-mail",
    "lane": "cadastro",
-   "col": 4,
+   "col": 3,
    "row": 1,
    "type": "screen",
    "status": "sem-figma",
@@ -197,7 +600,7 @@
    "type": "decision",
    "name": "Código e-mail correto?",
    "lane": "cadastro",
-   "col": 5,
+   "col": 4,
    "row": 0,
    "status": "decisao",
    "folder": null,
@@ -208,7 +611,7 @@
    "code": "CAD-06",
    "name": "E-mail verificado",
    "lane": "cadastro",
-   "col": 6,
+   "col": 5,
    "row": 0,
    "type": "screen",
    "status": "sem-figma",
@@ -229,7 +632,7 @@
    "code": "CAD-07",
    "name": "Endereço",
    "lane": "cadastro",
-   "col": 7,
+   "col": 6,
    "row": 0,
    "figma": "1619:11471",
    "type": "screen",
@@ -251,7 +654,7 @@
    "code": "CAD-08",
    "name": "Status · dados recebidos",
    "lane": "cadastro",
-   "col": 8,
+   "col": 7,
    "row": 0,
    "figma": "2198:23407",
    "type": "screen",
@@ -305,7 +708,9 @@
    "row": 0,
    "note": "Foto ou upload da frente e do verso e conferência. Hoje os dois botões pulam direto para a biometria.",
    "status": "lacuna",
-   "folder": null
+   "folder": null,
+   "inputs": 1,
+   "outputs": 1
   },
   {
    "code": "DOC-02",
@@ -2064,7 +2469,9 @@
    "row": 0,
    "note": "Etapa 4 de 4. A próxima etapa vem do backend; na implementação atual o fluxo cai na área logada.",
    "status": "lacuna",
-   "folder": null
+   "folder": null,
+   "inputs": 1,
+   "outputs": 0
   },
   {
    "code": "BIO-05",
@@ -2612,14 +3019,23 @@
   },
   {
    "code": "FAM-G2-5",
-   "type": "gap",
-   "name": "FAM-G2 · Confirmação do verso (a desenhar)",
+   "name": "FAM-G2 · Confirmação do verso",
    "lane": "familiares",
    "col": 10,
    "row": 2,
-   "note": "Conferência da foto do verso do documento do familiar. Parte da lacuna DOC-G1. Não desenhado.",
-   "status": "lacuna",
-   "folder": null
+   "status": "proposta",
+   "type": "screen",
+   "folder": "FAM-G2-confirmacao-do-verso",
+   "variants": [
+    {
+     "id": "fam-g2-5",
+     "label": "Padrão",
+     "file": "handoff/FAM-G2-confirmacao-do-verso/screen.html"
+    }
+   ],
+   "spec": "handoff/FAM-G2-confirmacao-do-verso/spec.md",
+   "inputs": 2,
+   "outputs": 0
   },
   {
    "code": "FAM-G2-0",
@@ -2728,22 +3144,6 @@
   }
  ],
  "edges": [
-  {
-   "src": "ENT-01",
-   "dst": "AREA-01",
-   "kind": "principal",
-   "trigger": "Entrar",
-   "cond": "CPF válido e senha preenchida",
-   "id": "E01"
-  },
-  {
-   "src": "ENT-01",
-   "dst": "CAD-01",
-   "kind": "principal",
-   "trigger": "Criar cadastro",
-   "cond": "",
-   "id": "E02"
-  },
   {
    "src": "CAD-01",
    "dst": "ENT-01",
@@ -4517,7 +4917,7 @@
    "dst": "FAM-G2-5",
    "kind": "principal",
    "trigger": "Foto tirada",
-   "cond": "Confirmação do verso (a desenhar)",
+   "cond": "Confirmação do verso",
    "id": "E607"
   },
   {
@@ -4575,11 +4975,295 @@
    "trigger": "Tentar novamente",
    "cond": "",
    "id": "E614"
+  },
+  {
+   "id": "E700",
+   "src": "ENT-00",
+   "dst": "ENT-01",
+   "kind": "automatica",
+   "trigger": "Cerca de 2 s",
+   "cond": "Ao abrir o app"
+  },
+  {
+   "id": "E701",
+   "src": "ENT-01",
+   "dst": "DEC-04",
+   "kind": "principal",
+   "trigger": "Entrar",
+   "cond": ""
+  },
+  {
+   "id": "E702",
+   "src": "DEC-04",
+   "dst": "ENT-02",
+   "kind": "principal",
+   "trigger": "Sim",
+   "cond": "CPF ou e-mail válido e senha preenchida"
+  },
+  {
+   "id": "E703",
+   "src": "DEC-04",
+   "dst": "ENT-01",
+   "kind": "erro",
+   "trigger": "Não · erro no campo",
+   "cond": "CPF ou e-mail malformado, ou senha vazia"
+  },
+  {
+   "id": "E704",
+   "src": "ENT-02",
+   "dst": "DEC-05",
+   "kind": "automatica",
+   "trigger": "Resposta do servidor",
+   "cond": ""
+  },
+  {
+   "id": "E705",
+   "src": "DEC-05",
+   "dst": "AREA-01",
+   "kind": "principal",
+   "trigger": "Sim",
+   "cond": "Credenciais aceitas"
+  },
+  {
+   "id": "E706",
+   "src": "DEC-05",
+   "dst": "ENT-01",
+   "kind": "erro",
+   "trigger": "Não · credenciais inválidas",
+   "cond": "Aviso no topo e campos em vermelho"
+  },
+  {
+   "id": "E02",
+   "src": "ENT-01",
+   "dst": "CAD-01",
+   "kind": "principal",
+   "trigger": "Criar cadastro",
+   "cond": ""
+  },
+  {
+   "id": "E707",
+   "src": "ENT-01",
+   "dst": "REC-01",
+   "kind": "alternativa",
+   "trigger": "Esqueceu sua senha?",
+   "cond": ""
+  },
+  {
+   "id": "E708",
+   "src": "ENT-01",
+   "dst": "ENT-G1",
+   "kind": "lacuna",
+   "trigger": "Entrar com Google, Apple ou Microsoft",
+   "cond": "Sem fluxo desenhado"
+  },
+  {
+   "id": "E710",
+   "src": "REC-01",
+   "dst": "ENT-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E711",
+   "src": "REC-01",
+   "dst": "REC-02",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Aba Celular; celular e data válidos"
+  },
+  {
+   "id": "E712",
+   "src": "REC-01",
+   "dst": "REC-04",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Aba E-mail; e-mail e data válidos"
+  },
+  {
+   "id": "E713",
+   "src": "REC-01",
+   "dst": "REC-G1",
+   "kind": "lacuna",
+   "trigger": "Solicitar recuperação da conta",
+   "cond": "Sem fluxo desenhado"
+  },
+  {
+   "id": "E720",
+   "src": "REC-02",
+   "dst": "REC-03",
+   "kind": "automatica",
+   "trigger": "SMS enviado",
+   "cond": "Apoio do protótipo: mostra a mensagem recebida"
+  },
+  {
+   "id": "E721",
+   "src": "REC-03",
+   "dst": "REC-02",
+   "kind": "voltar",
+   "trigger": "Voltar ao app",
+   "cond": ""
+  },
+  {
+   "id": "E722",
+   "src": "REC-02",
+   "dst": "DEC-06",
+   "kind": "principal",
+   "trigger": "6º dígito digitado",
+   "cond": ""
+  },
+  {
+   "id": "E723",
+   "src": "DEC-06",
+   "dst": "REC-06",
+   "kind": "principal",
+   "trigger": "Sim",
+   "cond": "Código correto e dentro da validade"
+  },
+  {
+   "id": "E724",
+   "src": "DEC-06",
+   "dst": "REC-02",
+   "kind": "erro",
+   "trigger": "Não · código incorreto",
+   "cond": "Mostra tentativas; digitar de novo limpa o erro"
+  },
+  {
+   "id": "E725",
+   "src": "DEC-06",
+   "dst": "REC-02",
+   "kind": "erro",
+   "trigger": "Não · o código expirou",
+   "cond": "Pede novo código em Reenviar código"
+  },
+  {
+   "id": "E726",
+   "src": "DEC-06",
+   "dst": "REC-02",
+   "kind": "erro",
+   "trigger": "Não · excesso de tentativas",
+   "cond": "3º erro: campos desativados por 30 minutos"
+  },
+  {
+   "id": "E727",
+   "src": "REC-02",
+   "dst": "REC-01",
+   "kind": "alternativa",
+   "trigger": "Editar celular ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E728",
+   "src": "REC-02",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Voltar ao login",
+   "cond": "Só no bloqueio por tentativas"
+  },
+  {
+   "id": "E730",
+   "src": "REC-04",
+   "dst": "REC-05",
+   "kind": "automatica",
+   "trigger": "E-mail enviado",
+   "cond": "Apoio do protótipo: mostra a mensagem recebida"
+  },
+  {
+   "id": "E731",
+   "src": "REC-05",
+   "dst": "REC-04",
+   "kind": "voltar",
+   "trigger": "Acessar minha conta",
+   "cond": "Volta ao app; o código é digitado, não preenche sozinho"
+  },
+  {
+   "id": "E732",
+   "src": "REC-04",
+   "dst": "DEC-07",
+   "kind": "principal",
+   "trigger": "6º dígito digitado",
+   "cond": ""
+  },
+  {
+   "id": "E733",
+   "src": "DEC-07",
+   "dst": "REC-06",
+   "kind": "principal",
+   "trigger": "Sim",
+   "cond": "Código correto e dentro da validade"
+  },
+  {
+   "id": "E734",
+   "src": "DEC-07",
+   "dst": "REC-04",
+   "kind": "erro",
+   "trigger": "Não · código incorreto",
+   "cond": "Mostra tentativas; digitar de novo limpa o erro"
+  },
+  {
+   "id": "E735",
+   "src": "DEC-07",
+   "dst": "REC-04",
+   "kind": "erro",
+   "trigger": "Não · o código expirou",
+   "cond": "Pede novo código em Reenviar código"
+  },
+  {
+   "id": "E736",
+   "src": "DEC-07",
+   "dst": "REC-04",
+   "kind": "erro",
+   "trigger": "Não · excesso de tentativas",
+   "cond": "3º erro: campos desativados por 30 minutos"
+  },
+  {
+   "id": "E737",
+   "src": "REC-04",
+   "dst": "REC-01",
+   "kind": "alternativa",
+   "trigger": "Editar e-mail ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E738",
+   "src": "REC-04",
+   "dst": "ENT-01",
+   "kind": "saida",
+   "trigger": "Voltar ao login",
+   "cond": "Só no bloqueio por tentativas"
+  },
+  {
+   "id": "E740",
+   "src": "REC-06",
+   "dst": "REC-07",
+   "kind": "principal",
+   "trigger": "Salvar senha",
+   "cond": "Os 4 requisitos cumpridos e senhas iguais"
+  },
+  {
+   "id": "E741",
+   "src": "REC-06",
+   "dst": "ENT-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "O código já foi usado: não volta a REC-04"
+  },
+  {
+   "id": "E742",
+   "src": "REC-07",
+   "dst": "ENT-01",
+   "kind": "principal",
+   "trigger": "Ir para o login",
+   "cond": "Sem login automático"
   }
  ],
  "decisions": {
   "DEC-01": "Avaliada em CAD-02 quando o 6º dígito é digitado. Sim: sucesso e CAD-04. Não: erro com tentativas restantes; no 3º erro, bloqueio.",
   "DEC-02": "Avaliada em CAD-04 quando o 6º dígito é digitado. Sim: sucesso e CAD-06. Não: erro; no 3º, bloqueio.",
-  "DEC-03": "Avaliada em BIO-02 com o rosto na moldura. Aprovado: contagem e BIO-03. Reprovado: avisos e nova tentativa; na 3ª reprovação, BIO-05."
+  "DEC-03": "Avaliada em BIO-02 com o rosto na moldura. Aprovado: contagem e BIO-03. Reprovado: avisos e nova tentativa; na 3ª reprovação, BIO-05.",
+  "DEC-04": "Avaliada em ENT-01 ao tocar em Entrar. Sim: abre ENT-02. Não: erro em cada campo inválido (CPF ou e-mail malformado, senha vazia), sem enviar nada.",
+  "DEC-05": "Resposta do servidor depois de ENT-02. Sim: abre AREA-01. Não: volta a ENT-01 com o aviso \"Credenciais inválidas\" e os dois campos em vermelho. No protótipo, a senha \"errada\" simula a rejeição.",
+  "DEC-06": "Avaliada em REC-02 quando o 6º dígito é digitado. Sim (847291): abre REC-06. Não: erro com as tentativas; código 000000 simula expirado; no 3º erro, bloqueio por 30 minutos.",
+  "DEC-07": "Avaliada em REC-04 quando o 6º dígito é digitado. Mesmas regras de DEC-06: Sim (847291) abre REC-06; Não mostra o erro; no 3º erro, bloqueio por 30 minutos."
  }
 }
