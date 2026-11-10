@@ -287,6 +287,10 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       <button class="chip" id="t-labels" aria-pressed="true">Rótulos</button>
       <button class="chip" id="t-gaps" aria-pressed="true">Lacunas</button>
     </div>
+    <div class="group" role="group" aria-label="Estilo das linhas">
+      <button class="chip" id="t-ortho" aria-pressed="true" title="Ângulos retos pelos corredores, sem sobreposição">Linhas retas</button>
+      <button class="chip" id="t-curve" aria-pressed="false" title="Traçado antigo, em curvas">Linhas curvas</button>
+    </div>
     <div class="zoom" aria-label="Zoom">
       <button id="z-out" aria-label="Diminuir zoom">−</button><span id="z-val">100%</span><button id="z-in" aria-label="Aumentar zoom">+</button>
     </div>
@@ -352,12 +356,14 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
 
   // Medidas do canvas
-  var CARD_W = 150, THUMB_H = 325, COL_W = 250, ROW_H = 445, LANE_PAD_TOP = 74, LANE_PAD_BOTTOM = 40, LANE_GAP = 60, X0 = 70;
+  var CARD_W = 150, THUMB_H = 325, COL_W = 280, ROW_H = 520, LANE_PAD_TOP = 74, LANE_PAD_BOTTOM = 40, LANE_GAP = 60, X0 = 150;
   var KIND_COLOR = { principal: "--accent", alternativa: "--alt", erro: "--err", automatica: "--auto", voltar: "--back", saida: "--exit", lacuna: "--gap" };
 
   var flow, byCode = {}, byProto = {}, byFolder = {}, screens = [], laneBox = {};
   var view = { x: 40, y: 30, k: 1 }, world = $("#world"), stage = $("#stage");
   var sel = null, edgeEls = [];
+  var edgeStyle = "retas";
+  try { if (localStorage.getItem("hub-estilo-linhas") === "curvas") edgeStyle = "curvas"; } catch (e) {}
 
   fetch("handoff/flow.json").then(function (r) { return r.json(); }).then(init).catch(function () {
     world.innerHTML = '<p style="padding:40px">Não foi possível carregar handoff/flow.json.</p>';
@@ -441,6 +447,10 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
 
   // ── Ligações ───────────────────────────────────
   function drawEdges() {
+    // Redesenho (troca de estilo): tira as linhas e rótulos atuais
+    $$("svg.edges", world).forEach(function (x) { world.removeChild(x); });
+    edgeEls.forEach(function (e) { if (e.label && e.label.parentNode) e.label.parentNode.removeChild(e.label); });
+    edgeEls = [];
     var svgNS = "http://www.w3.org/2000/svg";
     var svg = document.createElementNS(svgNS, "svg");
     svg.setAttribute("class", "edges");
@@ -454,14 +464,15 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
       m.appendChild(p); defs.appendChild(m);
     });
     svg.appendChild(defs);
-    // Separa ligações paralelas entre o mesmo par
-    var pairCount = {};
-    flow.edges.forEach(function (e) {
-      var key = [e.src, e.dst].sort().join("|");
-      e.lane = pairCount[key] = (pairCount[key] || 0) + 1;
-    });
-    flow.edges.forEach(function (e) {
-      var a = byCode[e.src], b = byCode[e.dst], g = route(a.box, b.box, e);
+    var routed;
+    if (edgeStyle === "curvas") {
+      // Traçado antigo: curvas, com ligações paralelas entre o mesmo par afastadas
+      var pairCount = {};
+      flow.edges.forEach(function (e) { var key = [e.src, e.dst].sort().join("|"); e.lane = pairCount[key] = (pairCount[key] || 0) + 1; });
+      routed = flow.edges.map(function (e) { return route(byCode[e.src].box, byCode[e.dst].box, e); });
+    } else routed = routeAll();
+    flow.edges.forEach(function (e, i) {
+      var g = routed[i];
       var path = document.createElementNS(svgNS, "path");
       path.setAttribute("d", g.d);
       path.setAttribute("class", "edge k-" + e.kind);
@@ -510,6 +521,221 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
     var mx = mt * mt * mt * ax + 3 * mt * mt * t * c1x + 3 * mt * t * t * c2x + t * t * t * bx;
     var my = mt * mt * mt * ay + 3 * mt * mt * t * c1y + 3 * mt * t * t * c2y + t * t * t * by;
     return { d: "M" + ax + " " + ay + " C" + c1x + " " + c1y + " " + c2x + " " + c2y + " " + bx + " " + by, mx: mx, my: my };
+  }
+
+  // ── Roteamento ortogonal ───────────────────────
+  // As linhas só andam pelos corredores: verticais nos vãos entre colunas, horizontais nas faixas entre linhas de cards.
+  // Cada corredor divide as linhas em trilhas paralelas, para que duas ligações nunca fiquem uma sobre a outra.
+  var META_H = 70, CORNER = 12;
+  function routeAll() {
+    // Linhas de cards em ordem vertical e as faixas livres entre elas (faixa k fica logo acima da linha k).
+    var rows = [];
+    flow.lanes.forEach(function (l) {
+      for (var r = 0; r < l.rows; r++) { var top = laneBox[l.id].y + LANE_PAD_TOP + r * ROW_H; rows.push({ key: l.id + ":" + r, top: top, bottom: top + THUMB_H + META_H }); }
+    });
+    // A legenda do card cresce com nomes longos e etiquetas: a base real da linha vem do DOM.
+    var bottomOf = function (n) { return n.y + Math.max(n.el && n.el.offsetHeight || 0, n.type === "decision" ? 175 : THUMB_H + META_H); };
+    var rowByKey = {}; rows.forEach(function (r) { rowByKey[r.key] = r; });
+    flow.nodes.forEach(function (n) { var r = rowByKey[n.lane + ":" + n.row]; if (r) r.bottom = Math.max(r.bottom, bottomOf(n)); });
+    rows.sort(function (a, b) { return a.top - b.top; });
+    var rowIdx = {}; rows.forEach(function (r, i) { rowIdx[r.key] = i; });
+    var bands = [];
+    for (var k = 0; k <= rows.length; k++) {
+      var top = k === 0 ? rows[0].top - 28 : rows[k - 1].bottom + 4;
+      var bottom = k === rows.length ? rows[k - 1].bottom + LANE_PAD_BOTTOM : k === 0 ? rows[0].top - 6 : rows[k].top - (rows[k].top - rows[k - 1].bottom > 120 ? 46 : 6);
+      bands.push({ lo: top, hi: bottom });
+    }
+    var maxCol = 0; flow.nodes.forEach(function (n) { maxCol = Math.max(maxCol, n.col); });
+    function gapRange(g) {   // vão à direita da coluna g (g = -1 é a margem esquerda)
+      if (g < 0) return { lo: 14, hi: X0 - 6 };
+      var lo = X0 + g * COL_W + CARD_W + 6;
+      return { lo: lo, hi: g >= maxCol ? lo + X0 - 20 : X0 + (g + 1) * COL_W - 6 };
+    }
+    var chans = {};
+    function chan(key) {
+      if (!chans[key]) { var r = key.charAt(0) === "v" ? gapRange(+key.slice(1)) : bands[+key.slice(1)]; chans[key] = { lo: r.lo, hi: r.hi, segs: [] }; }
+      return chans[key];
+    }
+    function ref(key) { return { key: key, c: chan(key), v: null }; }
+    function mid(key) { var c = chan(key); return (c.lo + c.hi) / 2; }
+    var rowOf = function (n) { return rowIdx[n.lane + ":" + n.row]; };
+    // Obstáculos: card + legenda, ou o losango da decisão
+    var obst = flow.nodes.map(function (n) { return { n: n, x1: n.x - 4, x2: n.x + CARD_W + 4, y1: n.box.y - 4, y2: bottomOf(n) + 4 }; });
+    function clearH(y, x1, x2, A, B) {
+      var lo = Math.min(x1, x2), hi = Math.max(x1, x2);
+      return !obst.some(function (o) { return o.n !== A && o.n !== B && y > o.y1 && y < o.y2 && o.x2 > lo && o.x1 < hi; });
+    }
+
+    // 1) Rota abstrata de cada ligação
+    var out = {}, inn = {};
+    var plans = flow.edges.map(function (e) {
+      var A = byCode[e.src], B = byCode[e.dst], rA = rowOf(A), rB = rowOf(B);
+      var isDec = A.type === "decision";
+      var p = { e: e, A: A, B: B, rA: rA, rB: rB };
+      var forward = B.col > A.col;
+      p.tip = isDec && (rB !== rA || !forward) ? (rB < rA ? "top" : "bottom") : null;
+      if (!p.tip) (out[A.code] = out[A.code] || []).push(p);
+      (inn[B.code] = inn[B.code] || []).push(p);
+      return p;
+    });
+    // Portas: várias ligações saindo (ou chegando) pelo mesmo lado ganham alturas diferentes, ordenadas pela outra ponta.
+    // Saídas ficam em cy - 4 + k·18 e entradas em cy + 5 + k·18: uma saída e uma entrada nunca caem na mesma altura.
+    function spread(list, n, other, shift) {
+      list.sort(function (a, b) { var oa = other(a), ob = other(b); return (oa.y - ob.y) || (oa.x - ob.x); });
+      var cy = n.box.y + n.box.h / 2, cnt = list.length, first = Math.floor((cnt - 1) / 2);
+      if (n.type === "decision") return list.map(function (p, i) { return cy + shift / 2 + (i - first) * 10; });   // sob o losango; paridade diferente das telas
+      return list.map(function (p, i) { return cy + shift + (i - first) * 18; });
+    }
+    Object.keys(out).forEach(function (c) { var l = out[c], ys = spread(l, byCode[c], function (p) { return p.B; }, -4); l.forEach(function (p, i) { p.pa = ys[i]; }); });
+    Object.keys(inn).forEach(function (c) { var l = inn[c], ys = spread(l, byCode[c], function (p) { return p.A; }, 5); l.forEach(function (p, i) { p.pb = ys[i]; }); });
+    // Saídas pela ponta de cima ou de baixo do losango: lado a lado, ordenadas pelo destino
+    var tips = {};
+    plans.forEach(function (p) { if (p.tip) (tips[p.A.code + p.tip] = tips[p.A.code + p.tip] || []).push(p); });
+    Object.keys(tips).forEach(function (k) {
+      var l = tips[k].sort(function (a, b) { return a.B.x - b.B.x || a.B.y - b.B.y; });
+      // Ponta de baixo um pouco à direita e de cima um pouco à esquerda: losangos empilhados não dividem o mesmo x.
+      l.forEach(function (p, i) { p.tx = (i - (l.length - 1) / 2) * 12 + (p.tip === "bottom" ? 5 : -5); });
+    });
+
+    var bandUse = {};
+    plans.forEach(function (p) {
+      var A = p.A, B = p.B, e = p.e;
+      var ax = A.box.x + A.box.w, bx = B.box.x, pa = p.pa, pb = p.pb;
+      var vin = "v" + (B.col - 1), vout = "v" + A.col;
+      // Faixa horizontal: qualquer uma entre a origem e o destino serve; fica a menos ocupada nesse trecho.
+      var bandFor = function () {
+        var cands;
+        if (p.rB > p.rA) { cands = []; for (var k = p.rB; k > p.rA; k--) cands.push(k); }
+        else if (p.rB < p.rA) { cands = []; for (var k2 = p.rB + 1; k2 <= p.rA; k2++) cands.push(k2); }
+        else cands = e.kind === "erro" || e.kind === "voltar" ? [p.rA + 1, p.rA] : [p.rA, p.rA + 1];
+        var x1 = Math.min(mid(vout), mid(vin)), x2 = Math.max(mid(vout), mid(vin)), best = cands[0], bestCost = Infinity;
+        cands.forEach(function (k, i) {
+          var used = (bandUse[k] || []).filter(function (s) { return s[1] > x1 - 8 && s[0] < x2 + 8; }).length;
+          var room = Math.max(bands[k].hi - bands[k].lo, 1);
+          var cost = (used + 1) * 9 / room + i * 0.08;
+          if (cost < bestCost) { bestCost = cost; best = k; }
+        });
+        (bandUse[best] = bandUse[best] || []).push([x1, x2]);
+        return "b" + best;
+      };
+      if (p.tip) {
+        var cx = A.box.x + A.box.w / 2 + p.tx, ty = p.tip === "top" ? A.box.y : A.box.y + A.box.h;
+        var band = "b" + (p.tip === "top" ? p.rA : p.rA + 1);
+        if (p.rB !== p.rA && Math.abs(p.rB - p.rA) > 1) band = bandFor();
+        var bR = ref(band), vR = ref(vin);
+        if (Math.abs(p.rB - p.rA) > 1) {           // desce/sobe até a faixa do destino pelo vão da coluna
+          var vo = ref("v" + A.col), b0 = ref("b" + (p.tip === "top" ? p.rA : p.rA + 1));
+          p.pts = [[cx, ty], [cx, b0], [vo, b0], [vo, bR], [vR, bR], [vR, pb], [bx, pb]];
+        } else p.pts = [[cx, ty], [cx, bR], [vR, bR], [vR, pb], [bx, pb]];
+        return;
+      }
+      if (B.col > A.col) {
+        if (Math.abs(pa - pb) < 1 && clearH(pa, ax, bx, A, B)) { p.pts = [[ax, pa], [bx, pb]]; return; }
+        if (clearH(pa, ax, mid(vin), A, B)) { var r1 = ref(vin); p.pts = [[ax, pa], [r1, pa], [r1, pb], [bx, pb]]; return; }
+        if (clearH(pb, mid(vout), bx, A, B)) { var r2 = ref(vout); p.pts = [[ax, pa], [r2, pa], [r2, pb], [bx, pb]]; return; }
+      }
+      var o = ref(vout), b = ref(bandFor()), i = ref(vin);
+      p.pts = [[ax, pa], [o, pa], [o, b], [i, b], [i, pb], [bx, pb]];
+    });
+
+    // 2) Trilhas: em cada corredor, segmentos que se sobrepõem ficam em trilhas paralelas diferentes
+    // A extensão de cada segmento conta a faixa inteira das pontas que ainda não têm trilha: nada se sobrepõe depois.
+    var lo = function (v) { return typeof v === "number" ? v : v.c.lo; };
+    var hi = function (v) { return typeof v === "number" ? v : v.c.hi; };
+    // Valor já resolvido (número ou trilha escolhida) ou, se ainda não, o centro do corredor
+    var ap = function (v) { return typeof v === "number" ? v : v.v !== null ? v.v : (v.c.lo + v.c.hi) / 2; };
+    lo = function (v) { return typeof v === "number" ? v : v.v !== null ? v.v : v.c.lo; };
+    hi = function (v) { return typeof v === "number" ? v : v.v !== null ? v.v : v.c.hi; };
+    plans.forEach(function (p) {
+      var P = p.pts;
+      for (var j = 0; j < P.length - 1; j++) {
+        var a = P[j], b = P[j + 1], ax = typeof a[0] === "object" && a[0] === b[0], ay = !ax && typeof a[1] === "object" && a[1] === b[1];
+        if (!ax && !ay) continue;
+        var along = ax ? 1 : 0, across = 1 - along, r = ax ? a[0] : a[1], mid0 = (r.c.lo + r.c.hi) / 2;
+        // Pontas: onde a linha entra e sai do corredor, e para que lado (−1 esquerda/cima, +1 direita/baixo)
+        r.c.segs.push({ r: r, P: P, j: j, along: along, across: across, mid0: mid0 });
+      }
+    });
+    // Cruzamentos causados se s ficar antes (à esquerda/acima) de t no corredor
+    function pairCost(s, t) {
+      var c = 0;
+      s.stubs.forEach(function (st) { if (st.side > 0 && st.at > t.mlo && st.at < t.mhi) c++; });
+      t.stubs.forEach(function (st) { if (st.side < 0 && st.at > s.mlo && st.at < s.mhi) c++; });
+      return c;
+    }
+    // Medidas do segmento no corredor, recalculadas na hora: as faixas horizontais já resolvidas entram com o valor exato.
+    function measure(sg) {
+      var P = sg.P, j = sg.j, a = P[j][sg.along], b = P[j + 1][sg.along];
+      sg.lo = Math.min(lo(a), lo(b)); sg.hi = Math.max(hi(a), hi(b));
+      sg.mlo = Math.min(ap(a), ap(b)); sg.mhi = Math.max(ap(a), ap(b));
+      sg.stubs = [];
+      if (j > 0) sg.stubs.push({ at: ap(a), side: Math.sign(ap(P[j - 1][sg.across]) - sg.mid0) });
+      if (j + 2 < P.length) sg.stubs.push({ at: ap(b), side: Math.sign(ap(P[j + 2][sg.across]) - sg.mid0) });
+    }
+    // Primeiro as faixas horizontais, depois os vãos verticais
+    Object.keys(chans).sort(function (a, b) { return (a.charAt(0) === "b" ? 0 : 1) - (b.charAt(0) === "b" ? 0 : 1); }).forEach(function (k) {
+      chans[k].segs.forEach(measure);
+      var c = chans[k], segs = c.segs.slice().sort(function (a, b) { return (a.lo - b.lo) || (b.hi - a.hi); });
+      // 1) Mínimo de trilhas: quem se sobrepõe nunca divide trilha (o total é o máximo de linhas lado a lado)
+      var ends = [], groups = [];
+      segs.forEach(function (sg) {
+        var t = 0; while (t < ends.length && ends[t] > sg.lo - 6) t++;
+        ends[t] = sg.hi; (groups[t] = groups[t] || []).push(sg); sg.g = t;
+      });
+      // 2) Ordem das trilhas com menos cruzamentos: trocas entre vizinhas enquanto houver ganho
+      var G = groups.length, cost = [];
+      for (var x = 0; x < G; x++) { cost[x] = []; for (var y = 0; y < G; y++) cost[x][y] = 0; }
+      for (var i = 0; i < segs.length; i++) for (var j = 0; j < segs.length; j++) {
+        var s1 = segs[i], s2 = segs[j];
+        if (s1.g !== s2.g && s1.hi > s2.lo && s1.lo < s2.hi) cost[s1.g][s2.g] += pairCost(s1, s2);
+      }
+      var order = groups.map(function (_, idx) { return idx; });
+      order.sort(function (x, y) { return (cost[x][y] - cost[y][x]); });
+      for (var pass = 0, changed = true; changed && pass < 80; pass++) {
+        changed = false;
+        for (var q = 0; q < G - 1; q++) {
+          var u = order[q], v = order[q + 1];
+          if (cost[v][u] < cost[u][v]) { order[q] = v; order[q + 1] = u; changed = true; }
+        }
+      }
+      var rank = []; order.forEach(function (g, pos) { rank[g] = pos; });
+      segs.forEach(function (sg) { sg.t = rank[sg.g]; });
+      var n = Math.max(G, 1);
+      var w = c.hi - c.lo, sp = Math.min(k.charAt(0) === "v" ? 9 : 7, w / (n + 1));
+      var center = (c.lo + c.hi) / 2;
+      c.segs.forEach(function (s) { s.r.v = center + (s.t - (n - 1) / 2) * sp; });
+    });
+
+    // 3) Coordenadas finais, cantos arredondados e posição do rótulo
+    return plans.map(function (p) {
+      var pts = p.pts.map(function (q) { return [typeof q[0] === "number" ? q[0] : q[0].v, typeof q[1] === "number" ? q[1] : q[1].v]; });
+      var clean = [];
+      pts.forEach(function (q) {
+        var l = clean[clean.length - 1];
+        if (l && Math.abs(l[0] - q[0]) < 0.5 && Math.abs(l[1] - q[1]) < 0.5) return;
+        var l2 = clean[clean.length - 2];
+        if (l && l2 && ((Math.abs(l2[0] - l[0]) < 0.5 && Math.abs(l[0] - q[0]) < 0.5) || (Math.abs(l2[1] - l[1]) < 0.5 && Math.abs(l[1] - q[1]) < 0.5))) clean.pop();
+        clean.push(q);
+      });
+      var d = "M" + clean[0][0] + " " + clean[0][1];
+      for (var j = 1; j < clean.length; j++) {
+        var c = clean[j];
+        if (j === clean.length - 1) { d += " L" + c[0] + " " + c[1]; break; }
+        var a = clean[j - 1], b = clean[j + 1];
+        var r = Math.min(CORNER, Math.hypot(c[0] - a[0], c[1] - a[1]) / 2, Math.hypot(b[0] - c[0], b[1] - c[1]) / 2);
+        var ux = Math.sign(c[0] - a[0]), uy = Math.sign(c[1] - a[1]), vx = Math.sign(b[0] - c[0]), vy = Math.sign(b[1] - c[1]);
+        d += " L" + (c[0] - ux * r) + " " + (c[1] - uy * r) + " Q" + c[0] + " " + c[1] + " " + (c[0] + vx * r) + " " + (c[1] + vy * r);
+      }
+      // Rótulo no maior trecho horizontal (ou no maior trecho, se não houver)
+      var best = null, bestLen = -1, bestH = null, bestHLen = -1;
+      for (var s = 0; s < clean.length - 1; s++) {
+        var q1 = clean[s], q2 = clean[s + 1], len = Math.hypot(q2[0] - q1[0], q2[1] - q1[1]);
+        if (len > bestLen) { bestLen = len; best = s; }
+        if (Math.abs(q1[1] - q2[1]) < 0.5 && len > bestHLen) { bestHLen = len; bestH = s; }
+      }
+      var si = bestHLen >= 70 ? bestH : best, m1 = clean[si], m2 = clean[si + 1];
+      return { d: d, mx: (m1[0] + m2[0]) / 2, my: (m1[1] + m2[1]) / 2 };
+    });
   }
 
   function highlight(n) {
@@ -632,6 +858,17 @@ svg.edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-even
   toggle("#t-back", "hide-back", true);
   toggle("#t-labels", "hide-labels", true);
   toggle("#t-gaps", "hide-gaps", true);
+  // Estilo das linhas: retas (padrão) ou curvas (traçado antigo). A escolha fica salva neste navegador.
+  function setEdgeStyle(style, redraw) {
+    edgeStyle = style;
+    $("#t-ortho").setAttribute("aria-pressed", String(style !== "curvas"));
+    $("#t-curve").setAttribute("aria-pressed", String(style === "curvas"));
+    try { localStorage.setItem("hub-estilo-linhas", style); } catch (e) {}
+    if (redraw && flow) { drawEdges(); highlight(sel); }
+  }
+  $("#t-ortho").onclick = function () { setEdgeStyle("retas", true); };
+  $("#t-curve").onclick = function () { setEdgeStyle("curvas", true); };
+  setEdgeStyle(edgeStyle, false);
 
   var q = $("#q");
   function norm(s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
