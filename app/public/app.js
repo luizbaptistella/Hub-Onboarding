@@ -165,6 +165,23 @@ function filterItems(root, q, groupSelector) {
   }
 }
 
+// Monta o ds-render.html (React + bundle do DS) num iframe. Resolve com a altura do conteúdo.
+function mountRender(frame, items, opts) {
+  return new Promise((resolve, reject) => {
+    frame.addEventListener('load', async () => {
+      const w = frame.contentWindow;
+      for (let t = 0; t < 50 && !(w && w.dsReady); t++) await new Promise((r) => setTimeout(r, 100));
+      if (!w || !w.dsReady) return reject(new Error('DS não carregou'));
+      const h = await w.dsRender(items, opts);
+      frame.style.height = `${h + 4}px`;
+      resolve(h);
+    }, { once: true });
+    frame.src = '/hub/ds-render.html';
+  });
+}
+
+const noPreview = () => el('span', { class: 'sb-nopreview' }, 'sem prévia');
+
 function swatchGrid(items) {
   return el('div', { class: 'swatches' }, items.map((t) => {
     const chip = el('span', { class: 'swatch', 'aria-hidden': 'true' });
@@ -194,35 +211,80 @@ function tokensView(tokens) {
     g.items.every((t) => t.isColor) ? swatchGrid(g.items) : tokenTable(g.items))));
 }
 
-function propsTable({ columns, rows }) {
-  return el('div', { class: 'tbl-wrap' }, el('table', { class: 'ds-table' },
-    el('thead', {}, el('tr', {}, columns.map((c) => el('th', {}, c)))),
-    el('tbody', {}, rows.map((r) => el('tr', {}, columns.map((_, i) => el('td', {}, r[i] || '—')))))));
+// ── Componentes: barra lateral com miniaturas + canvas/documentação (estilo Storybook) ──
+
+const usageOf = (c) => (c.instances == null ? 'sem uso mapeado' : `${c.screens} tela(s) · ${c.instances} instância(s)`);
+
+// Miniatura: primeiro exemplo do componente, reduzido por CSS. Carrega só quando entra na tela.
+function thumb(c) {
+  const ex = c.examples[0];
+  if (!c.inBundle || !ex) return el('span', { class: 'sb-thumb' }, noPreview());
+  const frame = el('iframe', { class: 'sb-frame', title: `Miniatura de ${c.name}`, tabindex: '-1', 'aria-hidden': 'true', loading: 'lazy' });
+  mountRender(frame, [{ key: 0, label: '', component: c.name, props: ex.props, width: 300 }], { captions: false })
+    .catch(() => frame.replaceWith(noPreview()));
+  return el('span', { class: 'sb-thumb' }, frame);
 }
 
-function componentCard(c) {
-  const usage = c.instances == null ? 'sem uso mapeado' : `${c.screens} tela(s) · ${c.instances} instância(s)`;
-  const fullText = el('pre', {}, 'Carregando…');
-  let loaded = false;
-  const full = el('details', { class: 'ds-full' }, el('summary', {}, 'Ficha completa'), fullText);
-  full.addEventListener('toggle', async () => {
-    if (!full.open || loaded) return;
-    loaded = true;
-    try {
-      fullText.textContent = (await api(`/api/docs/${encodeURIComponent(`componente:${c.name}`)}`)).text;
-    } catch (err) {
-      fullText.textContent = err.message;
-    }
-  });
-  return el('details', { class: 'ds-cmp', 'data-search': c.name.toLowerCase() },
-    el('summary', {}, el('code', { class: 'code' }, c.name), el('span', { class: 'badge' }, usage)),
-    c.props.rows.length ? propsTable(c.props) : el('p', { class: 'muted' }, 'Esta ficha não tem tabela de props. Veja a ficha completa abaixo.'),
-    full);
+function sidebar(components, selected, mode) {
+  const suffix = mode === 'docs' ? '/docs' : '';
+  const search = el('input', { type: 'search', class: 'sb-search', placeholder: 'Buscar componente', 'aria-label': 'Buscar componente' });
+  const list = el('nav', { class: 'sb-list', 'aria-label': 'Componentes do DS' });
+  for (const cat of components.categories) {
+    const items = components.items.filter((c) => c.category === cat);
+    if (!items.length) continue;
+    list.append(el('div', { class: 'sb-group' }, el('div', { class: 'sb-cat' }, cat),
+      items.map((c) => el('a', {
+        class: 'sb-item',
+        href: `#/ds/componentes/${encodeURIComponent(c.name)}${suffix}`,
+        'data-search': c.name.toLowerCase(),
+        'aria-current': c.name === selected.name ? 'page' : null,
+      }, thumb(c), el('span', { class: 'sb-name' }, c.name)))));
+  }
+  search.addEventListener('input', () => filterItems(list, search.value.trim().toLowerCase(), '.sb-group'));
+  return el('aside', { class: 'sb-side' }, search, list);
 }
 
-function componentsView(components) {
-  return el('div', { class: 'ds-body' }, components.items.map(componentCard));
+function canvasView(c) {
+  if (!c.inBundle) return el('p', { class: 'muted' }, 'Este componente não está no bundle do DS. Veja a documentação.');
+  if (!c.examples.length) return el('p', { class: 'muted' }, 'Sem exemplos renderizáveis. Veja a documentação.');
+  const width = Math.max(260, Math.min(343, (view.clientWidth || 375) - 48));
+  const frame = el('iframe', { class: 'ds-frame', title: `Canvas de ${c.name}` });
+  mountRender(frame, c.examples.map((ex, i) => ({ key: i, label: ex.label, component: c.name, props: ex.props, width })), { captions: true })
+    .catch(() => frame.replaceWith(el('p', { class: 'muted' }, 'Prévia indisponível: o React ou o bundle do DS não carregou.')));
+  return el('div', { class: 'sb-canvas' }, frame);
 }
+
+function docBlock(b) {
+  if (b.type === 'table') {
+    return el('div', { class: 'tbl-wrap' }, el('table', { class: 'ds-table' },
+      el('thead', {}, el('tr', {}, b.columns.map((c) => el('th', {}, c)))),
+      el('tbody', {}, b.rows.map((r) => el('tr', {}, b.columns.map((_, i) => el('td', {}, r[i] || '—')))))));
+  }
+  if (b.type === 'list') return el('ul', { class: 'plain' }, b.items.map((t) => el('li', {}, t)));
+  return el('p', { class: 'muted' }, b.text);
+}
+
+function docsView(c) {
+  return el('div', { class: 'sb-docs' },
+    c.intro.map(docBlock),
+    c.sections.map((s) => rulesSection(s.title, s.blocks.map(docBlock))));
+}
+
+function componentsStory(components, name, mode) {
+  const selected = components.items.find((c) => c.name === name) ?? components.items[0];
+  const head = el('header', { class: 'sb-head' },
+    el('div', {}, el('h2', { class: 'sb-title' }, selected.name), el('p', { class: 'sub' }, `${selected.category} · ${usageOf(selected)}`)),
+    selected.jsx ? el('code', { class: 'sb-jsx' }, selected.jsx) : null);
+  const modes = el('nav', { class: 'tabs' }, [['Canvas', ''], ['Documentação', '/docs']].map(([label, suffix]) => el('a', {
+    href: `#/ds/componentes/${encodeURIComponent(selected.name)}${suffix}`,
+    'aria-current': (suffix === '/docs') === (mode === 'docs') ? 'page' : null,
+  }, label)));
+  return el('div', { class: 'sb' },
+    sidebar(components, selected, mode),
+    el('section', { class: 'sb-main' }, head, modes, mode === 'docs' ? docsView(selected) : canvasView(selected)));
+}
+
+// ── Regras ─────────────────────────────────────────────────────────────
 
 function rulesSection(title, content) {
   return el('section', { class: 'ds-section' }, el('h2', { class: 'lane' }, title), content);
@@ -245,7 +307,7 @@ function rulesView(rules) {
       : none));
 }
 
-async function renderDesignSystem(tab) {
+async function renderDesignSystem(tab, componentName, mode) {
   view.replaceChildren(el('p', { class: 'muted' }, 'Carregando…'));
   let ds;
   try {
@@ -261,18 +323,19 @@ async function renderDesignSystem(tab) {
   };
   const current = DS_TABS.some(([key]) => key === tab) ? tab : 'tokens';
   const body = el('div', {});
-  const filterable = current !== 'regras';
-  const filter = el('input', { type: 'search', class: 'ds-filter', placeholder: current === 'tokens' ? 'Filtrar tokens por nome ou valor' : 'Filtrar componentes por nome', 'aria-label': 'Filtrar' });
-  filter.addEventListener('input', () => filterItems(body, filter.value.trim().toLowerCase(), current === 'tokens' ? '.ds-group' : null));
+  const filter = el('input', { type: 'search', class: 'ds-filter', placeholder: 'Filtrar tokens por nome ou valor', 'aria-label': 'Filtrar tokens' });
+  filter.addEventListener('input', () => filterItems(body, filter.value.trim().toLowerCase(), '.ds-group'));
 
-  const content = { tokens: () => tokensView(ds.tokens), componentes: () => componentsView(ds.components), regras: () => rulesView(ds.rules) }[current]();
-  body.append(content);
+  if (current === 'componentes') body.append(componentsStory(ds.components, componentName, mode === 'docs' ? 'docs' : 'canvas'));
+  else if (current === 'regras') body.append(rulesView(ds.rules));
+  else body.append(tokensView(ds.tokens));
+
   view.replaceChildren(...[
     el('h1', {}, 'Design System'),
     el('p', { class: 'sub' }, `Palmeiras · Onboarding${ds.tokens.version ? ` · DS publicado ${ds.tokens.version}` : ''}`),
     el('nav', { class: 'tabs' }, DS_TABS.map(([key, label]) => el('a', { href: `#/ds/${key}`, 'aria-current': key === current ? 'page' : null },
       label, el('span', { class: 'count' }, String(counts[key]))))),
-    filterable ? filter : null,
+    current === 'tokens' ? filter : null,
     body,
   ].filter(Boolean));
 }
@@ -282,8 +345,8 @@ function route() {
   const m = hash.match(/^\/tela\/(.+)$/);
   if (m) return renderScreen(m[1]);
   if (hash === '/docs') return renderDocs();
-  const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras))?$/);
-  if (ds) return renderDesignSystem(ds[1] ?? 'tokens');
+  const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras))?(?:\/([^/]+))?(?:\/(docs))?$/);
+  if (ds) return renderDesignSystem(ds[1] ?? 'tokens', ds[2], ds[3]);
   return renderList();
 }
 
