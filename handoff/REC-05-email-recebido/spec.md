@@ -29,9 +29,9 @@ Peças fora do DS (só implementadas ou propostas para o DS):
 | Peça | Observação |
 |---|---|
 | Marca do Palmeiras | Escudo com a estrela sobre um círculo branco (assets logo-palmeiras.png e logo-palmeiras-bg-ellipse.svg do DS, grupo Logos). O DS não tem um componente de marca. |
-| E-mail recebido (template) | Template do e-mail transacional (600 px) com saudação, código, validade e aviso de segurança. É o conteúdo do e-mail enviado pelo servidor, não uma tela do app. |
+| E-mail recebido (template) | Template do e-mail transacional (adaptado a 375 px, o padrão mobile do hub) com saudação, código, validade e aviso de segurança. É o conteúdo do e-mail enviado pelo servidor, não uma tela do app. |
 
-Sem componente do DS: é o template do e-mail transacional (600 px), fora do app. Serve de referência de conteúdo para quem monta o e-mail.
+Sem componente do DS: é o template do e-mail transacional, adaptado a 375 px (largura padrão mobile do hub). No Figma tem 600 px; a adaptação mantém o conteúdo e a ordem. Serve de referência de conteúdo para quem monta o e-mail.
 
 ## Variantes
 

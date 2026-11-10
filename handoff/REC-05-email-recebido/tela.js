@@ -1,6 +1,6 @@
 // REC-05 · E-mail recebido (apoio do protótipo).
 // Mostra o e-mail transacional com o código de recuperação. Não é tela do app: é o template de e-mail do Figma
-// (largura de 600 px), com saudação, código em destaque, validade e aviso de segurança. Sem componente do DS.
+// (adaptado a 375 px, a largura padrão das telas do hub), com saudação, código em destaque, validade e aviso de segurança. Sem componente do DS.
 // "Acessar minha conta" só volta ao app (REC-04): a pessoa digita o código; ele não preenche nem valida sozinho.
 (function () {
   "use strict";

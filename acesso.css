@@ -95,20 +95,21 @@ html, body { margin: 0; padding: 0; background: var(--bg-surface); }
 .est-sms-send { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--bg-brand-bold); color: #fff; }
 .est-sms-send .po-icon { font-size: 16px; }
 
-/* REC-05 · E-mail recebido (template de e-mail de 600 px, mock do sistema, não implementar) */
-.est-mail { width: 600px; min-height: 974px; display: flex; flex-direction: column; background: #f4f4f4; font-family: var(--font-body); color: var(--text-default); }
-.est-mail-top { display: flex; justify-content: center; align-items: center; height: 140px; background: var(--bg-brand-bold); }
-.est-mail-body { flex: 1; padding: 40px; }
-.est-mail-card { background: #fff; border-radius: 8px; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: left; }
-.est-mail-title { margin: 0; align-self: flex-start; font: 700 24px/32px var(--font-body); }
-.est-mail-text { margin: 0; font: 400 16px/26px var(--font-body); color: var(--text-subtle); }
-.est-mail-code { margin: 4px 0; padding: 20px 40px; border: 2px solid var(--border-warning, #8c6d1f); border-radius: 8px; font: 700 36px/44px "IBM Plex Mono", ui-monospace, Menlo, monospace; letter-spacing: .18em; }
+/* REC-05 · E-mail recebido (mock do sistema, não implementar). Adaptado ao celular: 375 px, a largura padrão das telas do hub. */
+.est-mail { width: 375px; min-height: 812px; display: flex; flex-direction: column; background: #f4f4f4; font-family: var(--font-body); color: var(--text-default); }
+.est-mail-top { display: flex; justify-content: center; align-items: center; height: 112px; background: var(--bg-brand-bold); }
+.est-mail-top .est-logo-md { height: 60px; } .est-mail-top .est-logo-md .est-logo-mark { height: 60px; } .est-mail-top .est-logo-md .est-logo-bg { width: 48.5px; height: 48.5px; }
+.est-mail-body { flex: 1; padding: 16px; }
+.est-mail-card { background: #fff; border-radius: 8px; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: left; }
+.est-mail-title { margin: 0; align-self: flex-start; font: 700 20px/28px var(--font-body); }
+.est-mail-text { margin: 0; font: 400 15px/24px var(--font-body); color: var(--text-subtle); }
+.est-mail-code { margin: 4px 0; padding: 12px 16px; border: 2px solid var(--border-warning, #8c6d1f); border-radius: 8px; font: 700 28px/36px "IBM Plex Mono", ui-monospace, Menlo, monospace; letter-spacing: .12em; }
 .est-mail-expira, .est-mail-aviso { margin: 0; display: flex; align-items: center; gap: 8px; font: 400 14px/20px var(--font-body); color: var(--text-subtle); }
 .est-mail-expira .po-icon { font-size: 18px; }
 .est-mail-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 32px; border-radius: 8px; background: var(--bg-brand-bold); color: #fff; font: 600 16px/24px var(--font-body); text-decoration: none; }
 .est-mail-hr { align-self: stretch; border: 0; border-top: 1px solid var(--border-subtle); margin: 4px 0; }
 .est-mail-aviso { align-self: flex-start; } .est-mail-aviso .po-icon { padding: 8px; border-radius: 8px; background: var(--bg-page); font-size: 18px; }
-.est-mail-foot { padding: 40px; background: var(--bg-brand-bold); color: #fff; text-align: center; display: flex; flex-direction: column; gap: 12px; }
+.est-mail-foot { padding: 24px 16px; background: var(--bg-brand-bold); color: #fff; text-align: center; display: flex; flex-direction: column; gap: 12px; }
 .est-mail-foot p { margin: 0; font: 400 14px/20px var(--font-body); } .est-mail-foot a { color: #d9b95c; font-weight: 600; text-decoration: none; }
 .est-mail-foot-hr { width: 100%; border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 4px 0; }
 .est-mail-copy, .est-mail-addr { font-size: 12px !important; line-height: 18px !important; } .est-mail-addr { opacity: .6; }

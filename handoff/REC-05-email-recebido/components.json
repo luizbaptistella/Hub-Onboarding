@@ -30,7 +30,7 @@
    "selector": "#est-root .est-mail-card",
    "parent": null,
    "hidden": false,
-   "note": "Template do e-mail transacional (600 px) com saudação, código, validade e aviso de segurança. É o conteúdo do e-mail enviado pelo servidor, não uma tela do app.",
+   "note": "Template do e-mail transacional (adaptado a 375 px, o padrão mobile do hub) com saudação, código, validade e aviso de segurança. É o conteúdo do e-mail enviado pelo servidor, não uma tela do app.",
    "readme": null,
    "dsProps": {},
    "behavior": null,
