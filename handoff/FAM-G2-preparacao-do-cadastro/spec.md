@@ -2,13 +2,13 @@
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
-> **Aprovada.** Primeira tela do fluxo FAM-G2 (preenchimento e capturas no celular do titular, em nome do familiar). Estrutura de DOC-03 (CRNM · tutorial da frente), com conteúdo e número de passos do contexto do rosto do familiar. As telas seguintes (documento, captura facial, senha) ainda não foram desenhadas.
+> **Substituída por BIO-01.** Esta versão (3 passos, texto em terceira pessoa) não é mais usada. O tutorial da captura facial do familiar é a [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md), sem mudanças. Mantida só como histórico.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
-| Código | `FAM-G2` (passo 1 do fluxo; código da lacuna no índice) |
+| Código | `FAM-G2` (etapa da captura facial, depois do documento) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-03, [`2788:34545`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34545). Telas próprias do FAM-G2: não desenhadas |
 | Status | Aprovada (passo 1) |
@@ -52,11 +52,11 @@ Os textos vêm de BIO-01, em terceira pessoa, com o nome do familiar. O passo de
 
 | Ação | Vai para | Observação |
 |---|---|---|
-| Voltar no 1º passo | [FAM-13 · Termo de responsabilidade · menor](../FAM-13-termo-de-responsabilidade-menor/spec.md) ou [FAM-14 · Decisão do titular · maior de idade](../FAM-14-decisao-do-titular-maior-de-idade/spec.md) | Conforme o caminho de origem. |
+| Voltar no 1º passo | [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md) | Volta à conferência do documento. |
 | Voltar nos passos 2 e 3 | Passo anterior | Mesma tela. |
-| Pular | Próximo passo do FAM-G2 (captura, a desenhar) | Sai do tutorial sem ver os passos restantes. |
+| Pular | [BIO-02 · Captura facial](../BIO-02-captura-facial/spec.md) | Sai do tutorial sem ver os passos restantes. |
 | Continuar (passos 1 e 2) | Próximo passo | Só depois do loading de 3 s. |
-| Abrir câmera (passo 3) | Próximo passo do FAM-G2 (captura, a desenhar) | Só depois do loading de 3 s. |
+| Abrir câmera (passo 3) | [BIO-02 · Captura facial](../BIO-02-captura-facial/spec.md) | Só depois do loading de 3 s. |
 
 As ações sem destino que dependem de script (envio de formulário, timers) estão em **Saídas**.
 
@@ -71,7 +71,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 - Passos: 1. lugar claro e fundo simples; 2. sem óculos ou boné; 3. enquadrar o rosto na moldura.
 - Ao abrir cada passo, o botão do passo fica desabilitado (`aria-disabled`) e uma barra de cor primária enche o fundo em 3 s. Em 100%, o botão é habilitado. Vale para os três passos, inclusive o último.
-- Continuar avança; o Voltar do header recua um passo. No 1º passo, Voltar volta para a etapa de origem.
+- Continuar avança; o Voltar do header recua um passo. No 1º passo, Voltar volta para a confirmação do verso do documento.
 - Pular e Abrir câmera seguem para o próximo passo do FAM-G2.
 - Na troca de passo, o leitor de tela anuncia "Etapa n de 3, <título>".
 - O nome do familiar aparece nos títulos e textos dos passos.
@@ -87,8 +87,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
-| Próximo passo do FAM-G2 (captura, a desenhar) | Abrir câmera ou Pular | — | Caminho principal |
-| [FAM-G2 · Seleção do documento do familiar](../FAM-G2-selecao-do-documento/spec.md) | Voltar no 1º passo | — | Voltar |
+| [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md) | Salvar e continuar | — | Caminho principal |
 
 ## 9. Dados
 
@@ -120,7 +119,7 @@ Visão geral: [dados.md](../dados.md).
 - [ ] O botão do passo fica desabilitado com a barra enchendo por 3 s em cada passo, e habilita em 100%.
 - [ ] Continuar avança um passo; no passo 3, o botão diz "Abrir câmera" e a moldura aparece.
 - [ ] Pular e Abrir câmera seguem para o próximo passo do FAM-G2.
-- [ ] Voltar no 1º passo leva à etapa de origem (FAM-13 ou FAM-14).
+- [ ] Voltar no 1º passo leva à confirmação do verso do documento.
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)

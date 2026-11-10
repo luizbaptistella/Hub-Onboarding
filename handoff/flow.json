@@ -3134,23 +3134,45 @@
   },
   {
    "code": "FAM-G2-1",
-   "name": "FAM-G2 · Tutorial da captura do familiar",
+   "name": "FAM-G2 · Captura facial do familiar (BIO-01)",
    "lane": "familiares",
    "col": 6,
    "row": 4,
-   "status": "sem-figma",
    "type": "screen",
-   "folder": "FAM-G2-preparacao-do-cadastro",
+   "status": "desenhada",
+   "folder": "BIO-01-tutorial-da-captura",
    "variants": [
     {
-     "id": "fam-g2-1",
-     "label": "Padrão",
-     "file": "handoff/FAM-G2-preparacao-do-cadastro/screen.html"
+     "id": "liv-tutorial--permissao",
+     "label": "Permissão · câmera e localização",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--permissao.html",
+     "figma": "1774:46339"
+    },
+    {
+     "id": "liv-tutorial",
+     "label": "Passo 1 · lugar claro",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen.html",
+     "figma": "1774:46320"
+    },
+    {
+     "id": "liv-tutorial--passo-2",
+     "label": "Passo 2 · óculos e boné",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--passo-2.html",
+     "figma": "1774:46300"
+    },
+    {
+     "id": "liv-tutorial--passo-3",
+     "label": "Passo 3 · roupa",
+     "file": "handoff/BIO-01-tutorial-da-captura/screen--passo-3.html",
+     "figma": "1774:46375"
     }
    ],
-   "spec": "handoff/FAM-G2-preparacao-do-cadastro/spec.md",
-   "inputs": 0,
-   "outputs": 0
+   "components": "handoff/BIO-01-tutorial-da-captura/components.json",
+   "spec": "handoff/BIO-01-tutorial-da-captura/spec.md",
+   "inputs": 1,
+   "outputs": 1,
+   "figma": "1774:46320",
+   "reuso_de": "BIO-01"
   },
   {
    "code": "FAM-G2-2",
@@ -5562,6 +5584,14 @@
    "trigger": "Voltar",
    "cond": "",
    "id": "E854"
+  },
+  {
+   "id": "E800",
+   "src": "FAM-G2-5",
+   "dst": "FAM-G2-1",
+   "kind": "principal",
+   "trigger": "Salvar e continuar",
+   "cond": "Documento antes da facial; reutiliza BIO-01 sem mudanças"
   }
  ],
  "decisions": {

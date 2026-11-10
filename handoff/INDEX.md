@@ -144,7 +144,7 @@ Inclusão e gestão de vínculos
 | FAM-12 | Cadastro do familiar (sem conta) | Sem Figma | — | [FAM-12-cadastro-do-familiar-sem-conta/](FAM-12-cadastro-do-familiar-sem-conta/spec.md) |
 | FAM-13 | Termo de responsabilidade · menor | Sem Figma | — | [FAM-13-termo-de-responsabilidade-menor/](FAM-13-termo-de-responsabilidade-menor/spec.md) |
 | FAM-15 | Código do contato do familiar | Aprovada; estados pendentes | — | [FAM-15-codigo-do-contato-do-familiar/](FAM-15-codigo-do-contato-do-familiar/spec.md) |
-| FAM-G2 | Preenchimento e capturas no celular do titular | Aprovada (passo 1 · tutorial DOC-03, botão lv-fill) | — | [FAM-G2-preparacao-do-cadastro/](FAM-G2-preparacao-do-cadastro/spec.md) · Documento, liveness e criação de senha feitos no celular do titular, em nome do familiar (spec §6.2 e §6.5). Não desenhado: na implementação atual o fluxo não passa daqui. |
+| FAM-G2 | Tutorial da captura facial do familiar | Substituída pela BIO-01 (sem mudanças) | — | [FAM-G2-preparacao-do-cadastro/](FAM-G2-preparacao-do-cadastro/spec.md) · Documento, liveness e criação de senha feitos no celular do titular, em nome do familiar (spec §6.2 e §6.5). Não desenhado: na implementação atual o fluxo não passa daqui. |
 | FAM-G2 | Captura da frente do documento do familiar | Aprovada (passo 2 · câmera de DOC-04) | — | [FAM-G2-captura-do-documento/](FAM-G2-captura-do-documento/spec.md) · Variante familiar de DOC-G1. |
 | FAM-G2 | Confirmação da frente do documento do familiar | Proposta, a validar (passo 3 · conferência de BIO-04) | — | [FAM-G2-confirmacao-da-frente/](FAM-G2-confirmacao-da-frente/spec.md) |
 | FAM-G2 | Captura do verso do documento do familiar | Proposta, a validar (passo 4 · câmera da frente) | — | [FAM-G2-captura-do-verso/](FAM-G2-captura-do-verso/spec.md) |
@@ -293,11 +293,12 @@ flowchart LR
     FAM_15["FAM-15<br/>Código do contato do familiar"]
     FAM_18["FAM-18<br/>Convite indisponível (expirado, cancelado ou já usado)"]
     FAM_19["FAM-19<br/>Cancelar convite (modal)"]
-    FAM_G2_1["FAM-G2-1<br/>FAM-G2 · Tutorial da captura do familiar"]
+    FAM_G2_1["FAM-G2-1<br/>FAM-G2 · Captura facial do familiar (BIO-01)"]
     FAM_G2_2["FAM-G2-2<br/>FAM-G2 · Captura da frente do documento do familiar"]
     FAM_G2_3["FAM-G2-3<br/>FAM-G2 · Confirmação da frente do documento"]
     FAM_G2_4["FAM-G2-4<br/>FAM-G2 · Captura do verso do documento do familiar"]
     FAM_G2_5["FAM-G2-5<br/>FAM-G2 · Confirmação do verso"]
+    FAM_G2_5 -->|"Salvar e continuar"| FAM_G2_1
     FAM_G2_0["FAM-G2-0<br/>FAM-G2 · Seleção do documento do familiar"]
     FAM_G2_CIN_1["FAM-G2-CIN-1<br/>FAM-G2 · CIN · tutorial da frente do familiar"]
     FAM_G2_CIN_2["FAM-G2-CIN-2<br/>FAM-G2 · CIN · captura da frente do familiar"]
@@ -752,6 +753,7 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E605 | FAM-G2-0 | FAM-G2-CIN-1 | Tirar foto ou Fazer upload | CIN escolhida | Caminho principal |
 | E606 | FAM-G2-CIN-3 | FAM-G2-3 | Voltar | — | Voltar |
 | E607 | FAM-G2-CIN-3 | FAM-G2-5 | Foto tirada | Confirmação do verso | Caminho principal |
+| E800 | FAM-G2-5 | FAM-G2-1 | Salvar e continuar | Documento antes da facial; reutiliza BIO-01 sem mudanças | Caminho principal |
 | E608 | FAM-G2-0 | FAM-13 | Voltar | Se veio de FAM-13 | Voltar |
 | E609 | FAM-G2-0 | FAM-14 | Voltar | Se veio de FAM-14 | Voltar |
 | E610 | FAM-18 | ENT-01 | Entrar na minha conta | — | Caminho principal |
