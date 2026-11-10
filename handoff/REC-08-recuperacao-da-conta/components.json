@@ -1,0 +1,1402 @@
+{
+ "screen": "REC-08",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar",
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+    },
+    "title": "Recuperar conta",
+    "language": false,
+    "help": false
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Recuperar conta\" language={false} help={false} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+      },
+      "title": "Recuperar conta",
+      "language": false,
+      "help": false
+     }
+    }
+   ]
+  },
+  {
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "title": "Recuperação da conta",
+    "subtitle": "Conte o que aconteceu. Nossa equipe confere sua identidade e responde no contato que você informar.",
+    "tone": "brand"
+   },
+   "behavior": null,
+   "jsx": "<PageHeading title=\"Recuperação da conta\" subtitle=\"Conte o que aconteceu. Nossa equipe confere sua identidade e responde no contato que você informar.\" tone=\"brand\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "brand"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "title": "Recuperação da conta",
+      "subtitle": "Conte o que aconteceu. Nossa equipe confere sua identidade e responde no contato que você informar.",
+      "tone": "brand"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "variant": "primary",
+    "children": "Enviar solicitação"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" onClick={() => {}}>Enviar solicitação</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "children": "Enviar solicitação",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > footer:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "unknownProps": null,
+   "id": 4,
+   "dsProps": {
+    "className": "est-legal",
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "behavior": null,
+   "jsx": "<LegalFooter className=\"est-legal\">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "className": "est-legal",
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 5
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Vazio (sem Figma)",
+   "dsProps": {
+    "label": "CPF da conta",
+    "preset": "cpf",
+    "name": "cpf",
+    "placeholder": "000.000.000-00",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"CPF da conta\" preset=\"cpf\" name=\"cpf\" placeholder=\"000.000.000-00\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "cpf"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456.789-09",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456",
+      "error": "Digite os 11 números do CPF",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Preenchido (sem Figma)",
+   "dsProps": {
+    "label": "CPF da conta",
+    "preset": "cpf",
+    "name": "cpf",
+    "placeholder": "000.000.000-00",
+    "value": "123.456.789-09"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"CPF da conta\" preset=\"cpf\" name=\"cpf\" placeholder=\"000.000.000-00\" value=\"123.456.789-09\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "cpf"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456.789-09",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456",
+      "error": "Digite os 11 números do CPF",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "label": "CPF da conta",
+    "preset": "cpf",
+    "name": "cpf",
+    "placeholder": "000.000.000-00",
+    "value": "123.456",
+    "error": "Digite os 11 números do CPF"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"CPF da conta\" preset=\"cpf\" name=\"cpf\" placeholder=\"000.000.000-00\" value=\"123.456\" error=\"Digite os 11 números do CPF\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "cpf"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456.789-09",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "CPF da conta",
+      "preset": "cpf",
+      "name": "cpf",
+      "placeholder": "000.000.000-00",
+      "value": "123.456",
+      "error": "Digite os 11 números do CPF",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "Vazio (sem Figma)",
+   "dsProps": {
+    "label": "O que aconteceu",
+    "options": [
+     "Perdi o acesso ao e-mail e ao celular cadastrados",
+     "Acho que minha conta foi comprometida",
+     "Outro motivo"
+    ],
+    "placeholder": "Selecione",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"O que aconteceu\" options={[\"Perdi o acesso ao e-mail e ao celular cadastrados\", \"Acho que minha conta foi comprometida\", \"Outro motivo\"]} placeholder=\"Selecione\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "Perdi o acesso ao e-mail e ao celular cadastrados",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "error": "Escolha o que aconteceu.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Preenchido (sem Figma)",
+   "dsProps": {
+    "label": "O que aconteceu",
+    "options": [
+     "Perdi o acesso ao e-mail e ao celular cadastrados",
+     "Acho que minha conta foi comprometida",
+     "Outro motivo"
+    ],
+    "placeholder": "Selecione",
+    "value": "Perdi o acesso ao e-mail e ao celular cadastrados"
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"O que aconteceu\" options={[\"Perdi o acesso ao e-mail e ao celular cadastrados\", \"Acho que minha conta foi comprometida\", \"Outro motivo\"]} placeholder=\"Selecione\" value=\"Perdi o acesso ao e-mail e ao celular cadastrados\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "Perdi o acesso ao e-mail e ao celular cadastrados",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "error": "Escolha o que aconteceu.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Select",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Select/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "label": "O que aconteceu",
+    "options": [
+     "Perdi o acesso ao e-mail e ao celular cadastrados",
+     "Acho que minha conta foi comprometida",
+     "Outro motivo"
+    ],
+    "placeholder": "Selecione",
+    "value": "",
+    "error": "Escolha o que aconteceu."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<Select label=\"O que aconteceu\" options={[\"Perdi o acesso ao e-mail e ao celular cadastrados\", \"Acho que minha conta foi comprometida\", \"Outro motivo\"]} placeholder=\"Selecione\" value=\"\" error=\"Escolha o que aconteceu.\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "Perdi o acesso ao e-mail e ao celular cadastrados",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "O que aconteceu",
+      "options": [
+       "Perdi o acesso ao e-mail e ao celular cadastrados",
+       "Acho que minha conta foi comprometida",
+       "Outro motivo"
+      ],
+      "placeholder": "Selecione",
+      "value": "",
+      "error": "Escolha o que aconteceu.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1007,
+   "variant": "Vazio (sem Figma)",
+   "dsProps": {
+    "label": "E-mail ou celular para contato",
+    "name": "contato",
+    "placeholder": "seu@email.com ou (00) 00000-0000",
+    "autoComplete": "email",
+    "value": "",
+    "hint": "Use um contato que você acessa agora."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"E-mail ou celular para contato\" name=\"contato\" placeholder=\"seu@email.com ou (00) 00000-0000\" autoComplete=\"email\" value=\"\" hint=\"Use um contato que você acessa agora.\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "novo@email.com",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "error": "Informe um e-mail ou celular para contato.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1008,
+   "variant": "Preenchido (sem Figma)",
+   "dsProps": {
+    "label": "E-mail ou celular para contato",
+    "name": "contato",
+    "placeholder": "seu@email.com ou (00) 00000-0000",
+    "autoComplete": "email",
+    "value": "novo@email.com",
+    "hint": "Use um contato que você acessa agora."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"E-mail ou celular para contato\" name=\"contato\" placeholder=\"seu@email.com ou (00) 00000-0000\" autoComplete=\"email\" value=\"novo@email.com\" hint=\"Use um contato que você acessa agora.\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "novo@email.com",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "error": "Informe um e-mail ou celular para contato.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1009,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "label": "E-mail ou celular para contato",
+    "name": "contato",
+    "placeholder": "seu@email.com ou (00) 00000-0000",
+    "autoComplete": "email",
+    "value": "",
+    "hint": "Use um contato que você acessa agora.",
+    "error": "Informe um e-mail ou celular para contato."
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"E-mail ou celular para contato\" name=\"contato\" placeholder=\"seu@email.com ou (00) 00000-0000\" autoComplete=\"email\" value=\"\" hint=\"Use um contato que você acessa agora.\" error=\"Informe um e-mail ou celular para contato.\" onChange={() => {}} />",
+   "states": [
+    "Vazio (sem Figma)",
+    "Preenchido (sem Figma)",
+    "Erro nos campos (sem Figma)"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "novo@email.com",
+      "hint": "Use um contato que você acessa agora.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "E-mail ou celular para contato",
+      "name": "contato",
+      "placeholder": "seu@email.com ou (00) 00000-0000",
+      "autoComplete": "email",
+      "value": "",
+      "hint": "Use um contato que você acessa agora.",
+      "error": "Informe um e-mail ou celular para contato.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

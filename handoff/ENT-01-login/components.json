@@ -1140,13 +1140,162 @@
    "ds": true,
    "local": false,
    "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(1)",
    "parent": null,
    "hidden": false,
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
    "unknownProps": null,
    "id": 1006,
+   "variant": "Abrindo o login do Google (sem Figma)",
+   "dsProps": {
+    "label": "Número do seu CPF ou E-Mail",
+    "name": "identificador",
+    "placeholder": "000.000.000-00",
+    "autoComplete": "username",
+    "inputMode": "text",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Número do seu CPF ou E-Mail\" name=\"identificador\" placeholder=\"000.000.000-00\" autoComplete=\"username\" inputMode=\"text\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Padrão",
+    "Preenchido",
+    "Erro nos campos (sem Figma)",
+    "Credenciais inválidas"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": null
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "label": "Número do seu CPF ou E-Mail",
+      "name": "identificador",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "username",
+      "inputMode": "text",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Número do seu CPF ou E-Mail",
+      "name": "identificador",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "username",
+      "inputMode": "text",
+      "value": "123.456.789-09",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "Número do seu CPF ou E-Mail",
+      "name": "identificador",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "username",
+      "inputMode": "text",
+      "value": "123.456",
+      "error": "Digite os 11 números do CPF",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Credenciais inválidas",
+     "props": {
+      "label": "Número do seu CPF ou E-Mail",
+      "name": "identificador",
+      "placeholder": "000.000.000-00",
+      "autoComplete": "username",
+      "inputMode": "text",
+      "value": "123.456.789-09",
+      "className": "est-field-quiet",
+      "error": "Confira seu CPF, e-mail ou senha e tente novamente.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1007,
    "variant": "Padrão",
    "dsProps": {
     "label": "Senha",
@@ -1295,7 +1444,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
    "unknownProps": null,
-   "id": 1007,
+   "id": 1008,
    "variant": "Preenchido",
    "dsProps": {
     "label": "Senha",
@@ -1444,7 +1593,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
    "unknownProps": null,
-   "id": 1008,
+   "id": 1009,
    "variant": "Erro nos campos (sem Figma)",
    "dsProps": {
     "label": "Senha",
@@ -1594,7 +1743,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
    "unknownProps": null,
-   "id": 1009,
+   "id": 1010,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "label": "Senha",
@@ -1745,8 +1894,157 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
    "unknownProps": null,
-   "id": 1010,
+   "id": 1011,
    "variant": "Conta encerrada (sem Figma)",
+   "dsProps": {
+    "label": "Senha",
+    "preset": "password",
+    "name": "senha",
+    "placeholder": "Insira sua senha",
+    "autoComplete": "current-password",
+    "value": ""
+   },
+   "behavior": {
+    "eventos": "onChange"
+   },
+   "jsx": "<TextField label=\"Senha\" preset=\"password\" name=\"senha\" placeholder=\"Insira sua senha\" autoComplete=\"current-password\" value=\"\" onChange={() => {}} />",
+   "states": [
+    "Padrão",
+    "Preenchido",
+    "Erro nos campos (sem Figma)",
+    "Credenciais inválidas"
+   ],
+   "propOptions": {
+    "preset": {
+     "options": [
+      "cpf",
+      "phone",
+      "cep",
+      "date",
+      "email",
+      "name",
+      "password"
+     ],
+     "used": "password"
+    },
+    "clearable": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "hideLabel": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "optional": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "width": {
+     "options": [
+      "full",
+      "half",
+      "short"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "readOnly": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "label": "Senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Insira sua senha",
+      "autoComplete": "current-password",
+      "value": "",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Preenchido",
+     "props": {
+      "label": "Senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Insira sua senha",
+      "autoComplete": "current-password",
+      "value": "Senha@2026",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Erro nos campos (sem Figma)",
+     "props": {
+      "label": "Senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Insira sua senha",
+      "autoComplete": "current-password",
+      "value": "",
+      "error": "Informe sua senha.",
+      "onChange": "(fn)"
+     }
+    },
+    {
+     "label": "Credenciais inválidas",
+     "props": {
+      "label": "Senha",
+      "preset": "password",
+      "name": "senha",
+      "placeholder": "Insira sua senha",
+      "autoComplete": "current-password",
+      "value": "errada",
+      "className": "est-field-quiet",
+      "error": "Confira seu CPF, e-mail ou senha e tente novamente.",
+      "onChange": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "TextField",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > form:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/TextField/README.md",
+   "unknownProps": null,
+   "id": 1012,
+   "variant": "Abrindo o login do Google (sem Figma)",
    "dsProps": {
     "label": "Senha",
     "preset": "password",
@@ -1894,7 +2192,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
    "unknownProps": null,
-   "id": 1011,
+   "id": 1013,
    "variant": "Padrão",
    "dsProps": {
     "children": "ou entrar com:"
@@ -1922,196 +2220,79 @@
    "hidden": false,
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
-   "unknownProps": null,
-   "id": 1012,
-   "variant": "Preenchido",
-   "dsProps": {
-    "children": "ou entrar com:"
-   },
-   "behavior": null,
-   "jsx": "<DividerText>ou entrar com:</DividerText>",
-   "states": [],
-   "propOptions": {},
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "children": "ou entrar com:"
-     }
-    }
-   ]
-  },
-  {
-   "component": "DividerText",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
-   "unknownProps": null,
-   "id": 1013,
-   "variant": "Erro nos campos (sem Figma)",
-   "dsProps": {
-    "children": "ou entrar com:"
-   },
-   "behavior": null,
-   "jsx": "<DividerText>ou entrar com:</DividerText>",
-   "states": [],
-   "propOptions": {},
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "children": "ou entrar com:"
-     }
-    }
-   ]
-  },
-  {
-   "component": "SocialButton",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
    "id": 1014,
-   "variant": "Padrão",
-   "dsProps": {
-    "provider": "google",
-    "layout": "icon",
-    "intent": "signin",
-    "type": "button"
-   },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
-   "propOptions": {
-    "provider": {
-     "options": [
-      "google",
-      "apple",
-      "microsoft"
-     ],
-     "used": "google"
-    },
-    "intent": {
-     "options": [
-      "continue",
-      "signin",
-      "signup"
-     ],
-     "used": "signin"
-    },
-    "loading": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "disabled": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "layout": {
-     "options": [
-      "full",
-      "icon"
-     ],
-     "used": "icon"
-    }
-   },
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "provider": "google",
-      "layout": "icon",
-      "intent": "signin",
-      "type": "button"
-     }
-    }
-   ]
-  },
-  {
-   "component": "SocialButton",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
-   "unknownProps": null,
-   "id": 1015,
    "variant": "Preenchido",
    "dsProps": {
-    "provider": "google",
-    "layout": "icon",
-    "intent": "signin",
-    "type": "button"
+    "children": "ou entrar com:"
    },
    "behavior": null,
-   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "jsx": "<DividerText>ou entrar com:</DividerText>",
    "states": [],
-   "propOptions": {
-    "provider": {
-     "options": [
-      "google",
-      "apple",
-      "microsoft"
-     ],
-     "used": "google"
-    },
-    "intent": {
-     "options": [
-      "continue",
-      "signin",
-      "signup"
-     ],
-     "used": "signin"
-    },
-    "loading": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "disabled": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "layout": {
-     "options": [
-      "full",
-      "icon"
-     ],
-     "used": "icon"
-    }
-   },
+   "propOptions": {},
    "renderStates": [
     {
      "label": "Padrão",
      "props": {
-      "provider": "google",
-      "layout": "icon",
-      "intent": "signin",
-      "type": "button"
+      "children": "ou entrar com:"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DividerText",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
+   "unknownProps": null,
+   "id": 1015,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "children": "ou entrar com:"
+   },
+   "behavior": null,
+   "jsx": "<DividerText>ou entrar com:</DividerText>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "children": "ou entrar com:"
+     }
+    }
+   ]
+  },
+  {
+   "component": "DividerText",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
+   "unknownProps": null,
+   "id": 1016,
+   "variant": "Abrindo o login do Google (sem Figma)",
+   "dsProps": {
+    "children": "ou entrar com:"
+   },
+   "behavior": null,
+   "jsx": "<DividerText>ou entrar com:</DividerText>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "children": "ou entrar com:"
      }
     }
    ]
@@ -2122,79 +2303,6 @@
    "local": false,
    "inDs": true,
    "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
-   "unknownProps": null,
-   "id": 1016,
-   "variant": "Erro nos campos (sem Figma)",
-   "dsProps": {
-    "provider": "google",
-    "layout": "icon",
-    "intent": "signin",
-    "type": "button"
-   },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
-   "propOptions": {
-    "provider": {
-     "options": [
-      "google",
-      "apple",
-      "microsoft"
-     ],
-     "used": "google"
-    },
-    "intent": {
-     "options": [
-      "continue",
-      "signin",
-      "signup"
-     ],
-     "used": "signin"
-    },
-    "loading": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "disabled": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "layout": {
-     "options": [
-      "full",
-      "icon"
-     ],
-     "used": "icon"
-    }
-   },
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "provider": "google",
-      "layout": "icon",
-      "intent": "signin",
-      "type": "button"
-     }
-    }
-   ]
-  },
-  {
-   "component": "SocialButton",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
    "parent": null,
    "hidden": false,
    "note": "Componente real do DS, com as props usadas nesta tela.",
@@ -2203,14 +2311,20 @@
    "id": 1017,
    "variant": "Padrão",
    "dsProps": {
-    "provider": "apple",
+    "provider": "google",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [
+    "Padrão",
+    "Abrindo o login do Google (sem Figma)"
+   ],
    "propOptions": {
     "provider": {
      "options": [
@@ -2218,7 +2332,7 @@
       "apple",
       "microsoft"
      ],
-     "used": "apple"
+     "used": "google"
     },
     "intent": {
      "options": [
@@ -2233,7 +2347,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2254,10 +2368,23 @@
     {
      "label": "Padrão",
      "props": {
-      "provider": "apple",
+      "provider": "google",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Abrindo o login do Google (sem Figma)",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": true,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2267,7 +2394,7 @@
    "ds": true,
    "local": false,
    "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
    "parent": null,
    "hidden": false,
    "note": "Componente real do DS, com as props usadas nesta tela.",
@@ -2276,14 +2403,20 @@
    "id": 1018,
    "variant": "Preenchido",
    "dsProps": {
-    "provider": "apple",
+    "provider": "google",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [
+    "Padrão",
+    "Abrindo o login do Google (sem Figma)"
+   ],
    "propOptions": {
     "provider": {
      "options": [
@@ -2291,7 +2424,7 @@
       "apple",
       "microsoft"
      ],
-     "used": "apple"
+     "used": "google"
     },
     "intent": {
      "options": [
@@ -2306,7 +2439,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2327,10 +2460,207 @@
     {
      "label": "Padrão",
      "props": {
-      "provider": "apple",
+      "provider": "google",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Abrindo o login do Google (sem Figma)",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": true,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1019,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "provider": "google",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [
+    "Padrão",
+    "Abrindo o login do Google (sem Figma)"
+   ],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "google"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Abrindo o login do Google (sem Figma)",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": true,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1020,
+   "variant": "Abrindo o login do Google (sem Figma)",
+   "dsProps": {
+    "provider": "google",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": true
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading onClick={() => {}} />",
+   "states": [
+    "Padrão",
+    "Abrindo o login do Google (sem Figma)"
+   ],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "google"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Abrindo o login do Google (sem Figma)",
+     "props": {
+      "provider": "google",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": true,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2346,16 +2676,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1019,
-   "variant": "Erro nos campos (sem Figma)",
+   "id": 1021,
+   "variant": "Padrão",
    "dsProps": {
     "provider": "apple",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -2379,7 +2712,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2403,7 +2736,9 @@
       "provider": "apple",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2413,168 +2748,259 @@
    "ds": true,
    "local": false,
    "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
-   "unknownProps": null,
-   "id": 1020,
-   "variant": "Padrão",
-   "dsProps": {
-    "provider": "microsoft",
-    "layout": "icon",
-    "intent": "signin",
-    "type": "button"
-   },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
-   "propOptions": {
-    "provider": {
-     "options": [
-      "google",
-      "apple",
-      "microsoft"
-     ],
-     "used": "microsoft"
-    },
-    "intent": {
-     "options": [
-      "continue",
-      "signin",
-      "signup"
-     ],
-     "used": "signin"
-    },
-    "loading": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "disabled": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "layout": {
-     "options": [
-      "full",
-      "icon"
-     ],
-     "used": "icon"
-    }
-   },
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "provider": "microsoft",
-      "layout": "icon",
-      "intent": "signin",
-      "type": "button"
-     }
-    }
-   ]
-  },
-  {
-   "component": "SocialButton",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
-   "parent": null,
-   "hidden": false,
-   "note": "Componente real do DS, com as props usadas nesta tela.",
-   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
-   "unknownProps": null,
-   "id": 1021,
-   "variant": "Preenchido",
-   "dsProps": {
-    "provider": "microsoft",
-    "layout": "icon",
-    "intent": "signin",
-    "type": "button"
-   },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
-   "states": [],
-   "propOptions": {
-    "provider": {
-     "options": [
-      "google",
-      "apple",
-      "microsoft"
-     ],
-     "used": "microsoft"
-    },
-    "intent": {
-     "options": [
-      "continue",
-      "signin",
-      "signup"
-     ],
-     "used": "signin"
-    },
-    "loading": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "disabled": {
-     "options": [
-      "true",
-      "false"
-     ],
-     "used": null
-    },
-    "layout": {
-     "options": [
-      "full",
-      "icon"
-     ],
-     "used": "icon"
-    }
-   },
-   "renderStates": [
-    {
-     "label": "Padrão",
-     "props": {
-      "provider": "microsoft",
-      "layout": "icon",
-      "intent": "signin",
-      "type": "button"
-     }
-    }
-   ]
-  },
-  {
-   "component": "SocialButton",
-   "ds": true,
-   "local": false,
-   "inDs": true,
-   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
    "parent": null,
    "hidden": false,
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
    "id": 1022,
+   "variant": "Preenchido",
+   "dsProps": {
+    "provider": "apple",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "apple"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "apple",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1023,
    "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "provider": "apple",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "apple"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "apple",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1024,
+   "variant": "Abrindo o login do Google (sem Figma)",
+   "dsProps": {
+    "provider": "apple",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "apple"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "apple",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1025,
+   "variant": "Padrão",
    "dsProps": {
     "provider": "microsoft",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -2598,7 +3024,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2622,7 +3048,243 @@
       "provider": "microsoft",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1026,
+   "variant": "Preenchido",
+   "dsProps": {
+    "provider": "microsoft",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "microsoft"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "microsoft",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1027,
+   "variant": "Erro nos campos (sem Figma)",
+   "dsProps": {
+    "provider": "microsoft",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "microsoft"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "microsoft",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "SocialButton",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > button:nth-of-type(3)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
+   "unknownProps": null,
+   "id": 1028,
+   "variant": "Abrindo o login do Google (sem Figma)",
+   "dsProps": {
+    "provider": "microsoft",
+    "layout": "icon",
+    "intent": "signin",
+    "type": "button",
+    "loading": false
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
+   "states": [],
+   "propOptions": {
+    "provider": {
+     "options": [
+      "google",
+      "apple",
+      "microsoft"
+     ],
+     "used": "microsoft"
+    },
+    "intent": {
+     "options": [
+      "continue",
+      "signin",
+      "signup"
+     ],
+     "used": "signin"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "layout": {
+     "options": [
+      "full",
+      "icon"
+     ],
+     "used": "icon"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Padrão",
+     "props": {
+      "provider": "microsoft",
+      "layout": "icon",
+      "intent": "signin",
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2638,7 +3300,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Alert/README.md",
    "unknownProps": null,
-   "id": 1023,
+   "id": 1029,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "tone": "danger",
@@ -2701,7 +3363,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Alert/README.md",
    "unknownProps": null,
-   "id": 1024,
+   "id": 1030,
    "variant": "Conta encerrada (sem Figma)",
    "dsProps": {
     "tone": "info",
@@ -2764,7 +3426,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
    "unknownProps": null,
-   "id": 1025,
+   "id": 1031,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "children": "ou entrar com:"
@@ -2793,7 +3455,7 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/DividerText/README.md",
    "unknownProps": null,
-   "id": 1026,
+   "id": 1032,
    "variant": "Conta encerrada (sem Figma)",
    "dsProps": {
     "children": "ou entrar com:"
@@ -2822,16 +3484,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1027,
+   "id": 1033,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "provider": "google",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -2855,7 +3520,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2879,7 +3544,9 @@
       "provider": "google",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2895,16 +3562,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1028,
+   "id": 1034,
    "variant": "Conta encerrada (sem Figma)",
    "dsProps": {
     "provider": "google",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"google\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -2928,7 +3598,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -2952,7 +3622,9 @@
       "provider": "google",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -2968,16 +3640,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1029,
+   "id": 1035,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "provider": "apple",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -3001,7 +3676,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -3025,7 +3700,9 @@
       "provider": "apple",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -3041,16 +3718,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1030,
+   "id": 1036,
    "variant": "Conta encerrada (sem Figma)",
    "dsProps": {
     "provider": "apple",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"apple\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -3074,7 +3754,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -3098,7 +3778,9 @@
       "provider": "apple",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -3114,16 +3796,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1031,
+   "id": 1037,
    "variant": "Credenciais inválidas",
    "dsProps": {
     "provider": "microsoft",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -3147,7 +3832,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -3171,7 +3856,9 @@
       "provider": "microsoft",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]
@@ -3187,16 +3874,19 @@
    "note": "Componente real do DS, com as props usadas nesta tela.",
    "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/SocialButton/README.md",
    "unknownProps": null,
-   "id": 1032,
+   "id": 1038,
    "variant": "Conta encerrada (sem Figma)",
    "dsProps": {
     "provider": "microsoft",
     "layout": "icon",
     "intent": "signin",
-    "type": "button"
+    "type": "button",
+    "loading": false
    },
-   "behavior": null,
-   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" />",
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<SocialButton provider=\"microsoft\" layout=\"icon\" intent=\"signin\" type=\"button\" loading={false} onClick={() => {}} />",
    "states": [],
    "propOptions": {
     "provider": {
@@ -3220,7 +3910,7 @@
       "true",
       "false"
      ],
-     "used": null
+     "used": "false"
     },
     "disabled": {
      "options": [
@@ -3244,7 +3934,9 @@
       "provider": "microsoft",
       "layout": "icon",
       "intent": "signin",
-      "type": "button"
+      "type": "button",
+      "loading": false,
+      "onClick": "(fn)"
      }
     }
    ]

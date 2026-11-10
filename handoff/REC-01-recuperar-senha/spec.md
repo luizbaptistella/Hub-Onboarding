@@ -29,7 +29,7 @@ Pedir o contato (celular ou e-mail) e a data de nascimento de quem esqueceu a se
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
 | `Tabs` | 6 | `<Tabs label="Forma de recuperação" value="celular" items={[{ value: "celular", label: "Celular" }, { value: "email", label: "E-mail" }]} onChange={() => {}} />` | value | — |
 | `TextField` | 12 | `<TextField label="Número do celular" preset="phone" name="celular" placeholder="(00) 00000-0000" autoComplete="tel" value="" onChange={() => {}} />` | autoComplete, error, label, name, placeholder, preset, value | — |
-| `TextLink` | 4 | `<TextLink variant="standalone" href="#recuperacao-da-conta">Solicitar recuperação da conta</TextLink>` | — | — |
+| `TextLink` | 4 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html">Solicitar recuperaç…` | — | — |
 
 Peças fora do DS (só implementadas ou propostas para o DS):
 
@@ -58,7 +58,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 - Dados válidos: aba Celular abre REC-02 (SMS); aba E-mail abre REC-04 (e-mail). O contato mascarado é guardado só na sessão (não vai na URL).
 - O servidor não confirma se a conta existe: no protótipo qualquer contato válido segue para o código.
 - Com erro na tela, o bloco "Não consegue acessar seu e-mail?" some, como no Figma.
-- Voltar leva ao login. "Solicitar recuperação da conta" não tem destino (lacuna REC-G1).
+- Voltar leva ao login. "Solicitar recuperação da conta" abre o pedido ao suporte (REC-08, proposta sem Figma).
 
 ## Entradas e saídas
 
@@ -69,6 +69,7 @@ Gerado do mapa do hub (`handoff/flow.json`). Decisões (DEC-…) são avaliaçõ
 | De | Tela | Gatilho | Tipo | Condição |
 |---|---|---|---|---|
 | ENT-01 | Login | Esqueceu sua senha? | Caminho alternativo | — |
+| REC-08 | Recuperação da conta (pedido ao suporte) | Voltar | Voltar | — |
 | REC-02 | Código por SMS (recuperação) | Editar celular ou Voltar | Caminho alternativo | — |
 | REC-04 | Código por e-mail (recuperação) | Editar e-mail ou Voltar | Caminho alternativo | — |
 
@@ -79,13 +80,13 @@ Gerado do mapa do hub (`handoff/flow.json`). Decisões (DEC-…) são avaliaçõ
 | ENT-01 | Login | Voltar | Voltar | — |
 | REC-02 | Código por SMS (recuperação) | Continuar | Caminho principal | Aba Celular; celular e data válidos |
 | REC-04 | Código por e-mail (recuperação) | Continuar | Caminho principal | Aba E-mail; e-mail e data válidos |
-| REC-G1 | Solicitar recuperação da conta | Solicitar recuperação da conta | Lacuna (a desenhar) | Sem fluxo desenhado |
+| REC-08 | Recuperação da conta (pedido ao suporte) | Solicitar recuperação da conta | Caminho alternativo | Para quem perdeu o acesso ao e-mail e ao celular |
 
 ## Pendências
 
 - O bloco "Não consegue acessar seu e-mail?" aparece também na aba Celular, com o texto do e-mail. No Figma é assim; o texto deveria falar de celular nessa aba.
 - No Figma, o campo da aba Celular de "Data de nascimento" mostra o placeholder de CPF (`000.000.000-00`). Tratado como erro de cópia: aqui usa DD/MM/AAAA.
-- **Solicitar recuperação da conta:** sem fluxo (suporte, comprovação de identidade).
+- **Solicitar recuperação da conta:** REC-08 e REC-09 são propostas sem Figma. Falta definir a comprovação de identidade (documento, selfie) e o canal de resposta.
 - Não há limite de pedidos de código por pessoa nem mensagem de conta inexistente.
 - A variante de erro da aba Celular não existe no Figma (o Figma repete a do e-mail).
 

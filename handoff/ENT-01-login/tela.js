@@ -3,6 +3,7 @@
 // TextLink, Button, DividerText, SocialButton e LegalFooter.
 // O botão Entrar fica sempre ativo e valida ao enviar. Campos inválidos: erro em cada campo (nada é enviado).
 // Campos válidos: abre o carregamento (ENT-02); se o servidor rejeitar, volta aqui com o aviso "Credenciais inválidas".
+// Google, Apple e Microsoft abrem o login do provedor: entra (ENT-02), conta sem cadastro (ENT-03) ou erro do provedor (ENT-04).
 (function () {
   "use strict";
   var P = window.PalmeirasOnboarding, h = React.createElement, A = window.Acesso;
@@ -24,7 +25,17 @@
     var s3 = React.useState(function () { return props.erro === "campos" ? validar(props.identificador || "", props.senha || "") : {}; }), errs = s3[0], setErrs = s3[1];
     var s4 = React.useState(props.erro === "credenciais" || A.query("erro") === "credenciais"), cred = s4[0], setCred = s4[1];
     var s5 = React.useState(Boolean(props.encerrada) || A.query("encerrada") === "1"), encerrada = s5[0], setEncerrada = s5[1];
+    var s6 = React.useState(props.social || null), social = s6[0], setSocial = s6[1];   // provedor com o login aberto
     var ref = React.useRef(null);
+
+    // Login social: abre o provedor (tela externa, fora do hub) e volta com o resultado. No protótipo: Google entra,
+    // Apple não tem cadastro (ENT-03) e Microsoft falha (ENT-04).
+    var DESTINO = { google: A.screenPath("ENT-02-carregando-login", "padrao") + "?r=ok", apple: A.screenPath("ENT-03-conta-social-sem-cadastro", "apple"), microsoft: A.screenPath("ENT-04-erro-login-social", "microsoft") };
+    function entrarCom(provedor) {
+      if (social) return;
+      setSocial(provedor);
+      setTimeout(function () { A.go(DESTINO[provedor]); }, 1200);
+    }
 
     function digitou() { setEncerrada(false); }   // o aviso de conta encerrada some ao digitar
     function enviar(e) {
@@ -65,9 +76,9 @@
         h("div", { className: "est-others" },
           h(P.DividerText, null, "ou entrar com:"),
           h("div", { className: "est-social" },
-            h(P.SocialButton, { provider: "google", layout: "icon", intent: "signin", type: "button" }),
-            h(P.SocialButton, { provider: "apple", layout: "icon", intent: "signin", type: "button" }),
-            h(P.SocialButton, { provider: "microsoft", layout: "icon", intent: "signin", type: "button" }))),
+            h(P.SocialButton, { provider: "google", layout: "icon", intent: "signin", type: "button", loading: social === "google", onClick: function () { entrarCom("google"); } }),
+            h(P.SocialButton, { provider: "apple", layout: "icon", intent: "signin", type: "button", loading: social === "apple", onClick: function () { entrarCom("apple"); } }),
+            h(P.SocialButton, { provider: "microsoft", layout: "icon", intent: "signin", type: "button", loading: social === "microsoft", onClick: function () { entrarCom("microsoft"); } }))),
         h(P.LegalFooter, { links: [], className: "est-legal" }, "© 2026 Ellena. Todos os direitos reservados.")));
   }
 

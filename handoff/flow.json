@@ -7,7 +7,7 @@
    "id": "acesso",
    "title": "Acesso e recuperação de senha",
    "sub": "Splash, login, carregamento e recuperação de senha · Figma 1620:31761 e 1620:29414",
-   "rows": 3
+   "rows": 4
   },
   {
    "id": "cadastro",
@@ -119,9 +119,14 @@
      "id": "ent-01--conta-encerrada",
      "label": "Conta encerrada (sem Figma)",
      "file": "handoff/ENT-01-login/telas/conta-encerrada/screen.html"
+    },
+    {
+     "id": "ent-01--social-abrindo",
+     "label": "Abrindo o login do Google (sem Figma)",
+     "file": "handoff/ENT-01-login/telas/social-abrindo/screen.html"
     }
    ],
-   "inputs": 17,
+   "inputs": 20,
    "outputs": 4
   },
   {
@@ -144,7 +149,7 @@
      "figma": "1620:27173"
     }
    ],
-   "inputs": 1,
+   "inputs": 2,
    "outputs": 1
   },
   {
@@ -196,7 +201,7 @@
      "figma": "1741:42342"
     }
    ],
-   "inputs": 3,
+   "inputs": 4,
    "outputs": 4
   },
   {
@@ -402,6 +407,124 @@
    "outputs": 1
   },
   {
+   "code": "ENT-03",
+   "name": "Login social · conta sem cadastro",
+   "lane": "acesso",
+   "col": 6,
+   "row": 0,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "ENT-03-conta-social-sem-cadastro",
+   "components": "handoff/ENT-03-conta-social-sem-cadastro/components.json",
+   "spec": "handoff/ENT-03-conta-social-sem-cadastro/spec.md",
+   "variants": [
+    {
+     "id": "ent-03--google",
+     "label": "Google (sem Figma)",
+     "file": "handoff/ENT-03-conta-social-sem-cadastro/telas/google/screen.html"
+    },
+    {
+     "id": "ent-03--apple",
+     "label": "Apple (sem Figma)",
+     "file": "handoff/ENT-03-conta-social-sem-cadastro/telas/apple/screen.html"
+    },
+    {
+     "id": "ent-03--microsoft",
+     "label": "Microsoft (sem Figma)",
+     "file": "handoff/ENT-03-conta-social-sem-cadastro/telas/microsoft/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "ENT-04",
+   "name": "Login social · erro do provedor",
+   "lane": "acesso",
+   "col": 7,
+   "row": 0,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "ENT-04-erro-login-social",
+   "components": "handoff/ENT-04-erro-login-social/components.json",
+   "spec": "handoff/ENT-04-erro-login-social/spec.md",
+   "variants": [
+    {
+     "id": "ent-04--google",
+     "label": "Google (sem Figma)",
+     "file": "handoff/ENT-04-erro-login-social/telas/google/screen.html"
+    },
+    {
+     "id": "ent-04--apple",
+     "label": "Apple (sem Figma)",
+     "file": "handoff/ENT-04-erro-login-social/telas/apple/screen.html"
+    },
+    {
+     "id": "ent-04--microsoft",
+     "label": "Microsoft (sem Figma)",
+     "file": "handoff/ENT-04-erro-login-social/telas/microsoft/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "REC-08",
+   "name": "Recuperação da conta (pedido ao suporte)",
+   "lane": "acesso",
+   "col": 1,
+   "row": 3,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "REC-08-recuperacao-da-conta",
+   "components": "handoff/REC-08-recuperacao-da-conta/components.json",
+   "spec": "handoff/REC-08-recuperacao-da-conta/spec.md",
+   "variants": [
+    {
+     "id": "rec-08--vazio",
+     "label": "Vazio (sem Figma)",
+     "file": "handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html"
+    },
+    {
+     "id": "rec-08--preenchido",
+     "label": "Preenchido (sem Figma)",
+     "file": "handoff/REC-08-recuperacao-da-conta/telas/preenchido/screen.html"
+    },
+    {
+     "id": "rec-08--erro",
+     "label": "Erro nos campos (sem Figma)",
+     "file": "handoff/REC-08-recuperacao-da-conta/telas/erro/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "REC-09",
+   "name": "Solicitação enviada",
+   "lane": "acesso",
+   "col": 2,
+   "row": 3,
+   "figma": null,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "REC-09-solicitacao-enviada",
+   "components": "handoff/REC-09-solicitacao-enviada/components.json",
+   "spec": "handoff/REC-09-solicitacao-enviada/spec.md",
+   "variants": [
+    {
+     "id": "rec-09--padrao",
+     "label": "Padrão (sem Figma)",
+     "file": "handoff/REC-09-solicitacao-enviada/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
    "code": "DEC-04",
    "type": "decision",
    "name": "Preencheu corretamente?",
@@ -424,6 +547,18 @@
    "folder": null,
    "inputs": 1,
    "outputs": 2
+  },
+  {
+   "code": "DEC-08",
+   "type": "decision",
+   "name": "Login social concluído?",
+   "lane": "acesso",
+   "col": 5,
+   "row": 0,
+   "status": "decisao",
+   "folder": null,
+   "inputs": 1,
+   "outputs": 3
   },
   {
    "code": "DEC-06",
@@ -450,32 +585,6 @@
    "outputs": 4
   },
   {
-   "code": "ENT-G1",
-   "type": "gap",
-   "name": "Login social",
-   "lane": "acesso",
-   "col": 5,
-   "row": 0,
-   "note": "Google, Apple e Microsoft aparecem no Figma, mas não há fluxo desenhado (consentimento, conta não encontrada, erro do provedor). No protótipo os botões não têm destino.",
-   "status": "lacuna",
-   "folder": null,
-   "inputs": 1,
-   "outputs": 0
-  },
-  {
-   "code": "REC-G1",
-   "type": "gap",
-   "name": "Solicitar recuperação da conta",
-   "lane": "acesso",
-   "col": 1,
-   "row": 2,
-   "note": "Link de ajuda para quem perdeu o acesso ao e-mail ou celular, ou acha que a conta foi comprometida. O Figma não desenha o destino.",
-   "status": "lacuna",
-   "folder": null,
-   "inputs": 1,
-   "outputs": 0
-  },
-  {
    "code": "CAD-01",
    "name": "Cadastro · Dados pessoais",
    "lane": "cadastro",
@@ -494,7 +603,7 @@
    ],
    "components": "handoff/CAD-01-cadastro-dados-pessoais/components.json",
    "spec": "handoff/CAD-01-cadastro-dados-pessoais/spec.md",
-   "inputs": 3,
+   "inputs": 4,
    "outputs": 2
   },
   {
@@ -5051,10 +5160,58 @@
   {
    "id": "E708",
    "src": "ENT-01",
-   "dst": "ENT-G1",
-   "kind": "lacuna",
+   "dst": "DEC-08",
+   "kind": "alternativa",
    "trigger": "Entrar com Google, Apple ou Microsoft",
-   "cond": "Sem fluxo desenhado"
+   "cond": "Abre o login do provedor (tela externa)"
+  },
+  {
+   "id": "E709",
+   "src": "DEC-08",
+   "dst": "ENT-02",
+   "kind": "principal",
+   "trigger": "Sim",
+   "cond": "Provedor autenticou e a conta tem cadastro"
+  },
+  {
+   "id": "E714",
+   "src": "DEC-08",
+   "dst": "ENT-03",
+   "kind": "alternativa",
+   "trigger": "Não · conta sem cadastro",
+   "cond": "Autenticou, mas não há cadastro ligado a essa conta"
+  },
+  {
+   "id": "E715",
+   "src": "DEC-08",
+   "dst": "ENT-04",
+   "kind": "erro",
+   "trigger": "Não · cancelado ou erro do provedor",
+   "cond": "Pessoa cancelou ou o serviço não respondeu"
+  },
+  {
+   "id": "E716",
+   "src": "ENT-03",
+   "dst": "CAD-01",
+   "kind": "principal",
+   "trigger": "Criar cadastro",
+   "cond": ""
+  },
+  {
+   "id": "E717",
+   "src": "ENT-03",
+   "dst": "ENT-01",
+   "kind": "alternativa",
+   "trigger": "Entrar com CPF ou e-mail, ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E718",
+   "src": "ENT-04",
+   "dst": "ENT-01",
+   "kind": "erro",
+   "trigger": "Tentar novamente ou Voltar",
+   "cond": ""
   },
   {
    "id": "E710",
@@ -5083,10 +5240,34 @@
   {
    "id": "E713",
    "src": "REC-01",
-   "dst": "REC-G1",
-   "kind": "lacuna",
+   "dst": "REC-08",
+   "kind": "alternativa",
    "trigger": "Solicitar recuperação da conta",
-   "cond": "Sem fluxo desenhado"
+   "cond": "Para quem perdeu o acesso ao e-mail e ao celular"
+  },
+  {
+   "id": "E719",
+   "src": "REC-08",
+   "dst": "REC-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E743",
+   "src": "REC-08",
+   "dst": "REC-09",
+   "kind": "principal",
+   "trigger": "Enviar solicitação",
+   "cond": "CPF, motivo e contato válidos"
+  },
+  {
+   "id": "E744",
+   "src": "REC-09",
+   "dst": "ENT-01",
+   "kind": "principal",
+   "trigger": "Voltar ao login",
+   "cond": ""
   },
   {
    "id": "E720",
@@ -5264,6 +5445,7 @@
   "DEC-04": "Avaliada em ENT-01 ao tocar em Entrar. Sim: abre ENT-02. Não: erro em cada campo inválido (CPF ou e-mail malformado, senha vazia), sem enviar nada.",
   "DEC-05": "Resposta do servidor depois de ENT-02. Sim: abre AREA-01. Não: volta a ENT-01 com o aviso \"Credenciais inválidas\" e os dois campos em vermelho. No protótipo, a senha \"errada\" simula a rejeição.",
   "DEC-06": "Avaliada em REC-02 quando o 6º dígito é digitado. Sim (847291): abre REC-06. Não: erro com as tentativas; código 000000 simula expirado; no 3º erro, bloqueio por 30 minutos.",
-  "DEC-07": "Avaliada em REC-04 quando o 6º dígito é digitado. Mesmas regras de DEC-06: Sim (847291) abre REC-06; Não mostra o erro; no 3º erro, bloqueio por 30 minutos."
+  "DEC-07": "Avaliada em REC-04 quando o 6º dígito é digitado. Mesmas regras de DEC-06: Sim (847291) abre REC-06; Não mostra o erro; no 3º erro, bloqueio por 30 minutos.",
+  "DEC-08": "Resposta do provedor (Google, Apple ou Microsoft) depois do login na tela dele, que fica fora do app. Sim, com cadastro: abre ENT-02. Sem cadastro: ENT-03. Cancelado ou erro: ENT-04. No protótipo: Google entra, Apple não tem cadastro e Microsoft falha."
  }
 }

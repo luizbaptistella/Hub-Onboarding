@@ -57,6 +57,7 @@ Gerado do mapa do hub (`handoff/flow.json`). Decisões (DEC-…) são avaliaçõ
 | De | Tela | Gatilho | Tipo | Condição |
 |---|---|---|---|---|
 | DEC-04 | Preencheu corretamente? | Sim | Caminho principal | CPF ou e-mail válido e senha preenchida |
+| DEC-08 | Login social concluído? | Sim | Caminho principal | Provedor autenticou e a conta tem cadastro |
 
 **Saídas (para onde se vai)**
 

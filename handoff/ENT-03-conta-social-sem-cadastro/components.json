@@ -1,0 +1,723 @@
+{
+ "screen": "ENT-03",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/ENT-03-conta-social-sem-cadastro/telas/google/screen.html",
+ "instances": [
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "variant": "primary",
+    "children": "Criar cadastro"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" onClick={() => {}}>Criar cadastro</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "children": "Criar cadastro",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "variant": "secondary",
+    "children": "Entrar com CPF ou e-mail"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"secondary\" onClick={() => {}}>Entrar com CPF ou e-mail</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "children": "Entrar com CPF ou e-mail",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "LegalFooter",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > footer:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/LegalFooter/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "className": "est-legal",
+    "children": "© 2026 Ellena. Todos os direitos reservados."
+   },
+   "behavior": null,
+   "jsx": "<LegalFooter className=\"est-legal\">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>",
+   "states": [],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "className": "est-legal",
+      "children": "© 2026 Ellena. Todos os direitos reservados."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 4
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Google (sem Figma)",
+   "dsProps": {
+    "back": {
+     "label": "Voltar",
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+    },
+    "title": "Entrar com Google",
+    "language": false,
+    "help": false
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Entrar com Google\" language={false} help={false} />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Google",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Apple",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Microsoft",
+      "language": false,
+      "help": false
+     }
+    }
+   ]
+  },
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Apple (sem Figma)",
+   "dsProps": {
+    "back": {
+     "label": "Voltar",
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+    },
+    "title": "Entrar com Apple",
+    "language": false,
+    "help": false
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Entrar com Apple\" language={false} help={false} />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Google",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Apple",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Microsoft",
+      "language": false,
+      "help": false
+     }
+    }
+   ]
+  },
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Microsoft (sem Figma)",
+   "dsProps": {
+    "back": {
+     "label": "Voltar",
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+    },
+    "title": "Entrar com Microsoft",
+    "language": false,
+    "help": false
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Entrar com Microsoft\" language={false} help={false} />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Google",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Apple",
+      "language": false,
+      "help": false
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "back": {
+       "label": "Voltar",
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+      },
+      "title": "Entrar com Microsoft",
+      "language": false,
+      "help": false
+     }
+    }
+   ]
+  },
+  {
+   "component": "ResultHero",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResultHero/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "Google (sem Figma)",
+   "dsProps": {
+    "tone": "warning",
+    "icon": "person_search",
+    "title": "Não encontramos seu cadastro",
+    "description": "Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com seu CPF ou e-mail."
+   },
+   "behavior": null,
+   "jsx": "<ResultHero tone=\"warning\" icon=\"person_search\" title=\"Não encontramos seu cadastro\" description=\"Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com seu CPF ou e-mail.\" />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info",
+      "warning",
+      "danger"
+     ],
+     "used": "warning"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Apple. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Microsoft. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    }
+   ]
+  },
+  {
+   "component": "ResultHero",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResultHero/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Apple (sem Figma)",
+   "dsProps": {
+    "tone": "warning",
+    "icon": "person_search",
+    "title": "Não encontramos seu cadastro",
+    "description": "Não há cadastro do Palmeiras ligado a esta conta da Apple. Crie um cadastro ou entre com seu CPF ou e-mail."
+   },
+   "behavior": null,
+   "jsx": "<ResultHero tone=\"warning\" icon=\"person_search\" title=\"Não encontramos seu cadastro\" description=\"Não há cadastro do Palmeiras ligado a esta conta da Apple. Crie um cadastro ou entre com seu CPF ou e-mail.\" />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info",
+      "warning",
+      "danger"
+     ],
+     "used": "warning"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Apple. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Microsoft. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    }
+   ]
+  },
+  {
+   "component": "ResultHero",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/ResultHero/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Microsoft (sem Figma)",
+   "dsProps": {
+    "tone": "warning",
+    "icon": "person_search",
+    "title": "Não encontramos seu cadastro",
+    "description": "Não há cadastro do Palmeiras ligado a esta conta da Microsoft. Crie um cadastro ou entre com seu CPF ou e-mail."
+   },
+   "behavior": null,
+   "jsx": "<ResultHero tone=\"warning\" icon=\"person_search\" title=\"Não encontramos seu cadastro\" description=\"Não há cadastro do Palmeiras ligado a esta conta da Microsoft. Crie um cadastro ou entre com seu CPF ou e-mail.\" />",
+   "states": [
+    "Google (sem Figma)",
+    "Apple (sem Figma)",
+    "Microsoft (sem Figma)"
+   ],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "success",
+      "info",
+      "warning",
+      "danger"
+     ],
+     "used": "warning"
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Google (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Apple (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Apple. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    },
+    {
+     "label": "Microsoft (sem Figma)",
+     "props": {
+      "tone": "warning",
+      "icon": "person_search",
+      "title": "Não encontramos seu cadastro",
+      "focusOnMount": false,
+      "documentTitle": false,
+      "description": "Não há cadastro do Palmeiras ligado a esta conta da Microsoft. Crie um cadastro ou entre com seu CPF ou e-mail."
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

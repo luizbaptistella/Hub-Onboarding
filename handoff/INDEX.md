@@ -11,7 +11,7 @@ Splash, login, carregamento e recuperação de senha · Figma 1620:31761 e 1620:
 | Código | Tela | Status | Figma | Pasta |
 |---|---|---|---|---|
 | ENT-00 | Splash | Desenhada | 1620:26697 | [ENT-00-splash/](ENT-00-splash/spec.md) |
-| ENT-01 | Login | Desenhada | 1620:26870 | [ENT-01-login/](ENT-01-login/spec.md) · 5 telas |
+| ENT-01 | Login | Desenhada | 1620:26870 | [ENT-01-login/](ENT-01-login/spec.md) · 6 telas |
 | ENT-02 | Carregando login | Desenhada | 1620:27173 | [ENT-02-carregando-login/](ENT-02-carregando-login/spec.md) |
 | REC-01 | Recuperar senha | Desenhada | 1741:42053 | [REC-01-recuperar-senha/](REC-01-recuperar-senha/spec.md) · 6 telas |
 | REC-02 | Código por SMS (recuperação) | Desenhada | 1914:60064 | [REC-02-codigo-sms/](REC-02-codigo-sms/spec.md) · 5 telas |
@@ -20,8 +20,10 @@ Splash, login, carregamento e recuperação de senha · Figma 1620:31761 e 1620:
 | REC-05 | E-mail recebido (apoio do protótipo) | Desenhada | 1914:58829 | [REC-05-email-recebido/](REC-05-email-recebido/spec.md) |
 | REC-06 | Nova senha | Desenhada | 1741:41956 | [REC-06-nova-senha/](REC-06-nova-senha/spec.md) · 4 telas |
 | REC-07 | Senha alterada com sucesso | Desenhada | 1741:42025 | [REC-07-senha-alterada/](REC-07-senha-alterada/spec.md) |
-| ENT-G1 | Login social | Lacuna, a desenhar | — | Google, Apple e Microsoft aparecem no Figma, mas não há fluxo desenhado (consentimento, conta não encontrada, erro do provedor). No protótipo os botões não têm destino. |
-| REC-G1 | Solicitar recuperação da conta | Lacuna, a desenhar | — | Link de ajuda para quem perdeu o acesso ao e-mail ou celular, ou acha que a conta foi comprometida. O Figma não desenha o destino. |
+| ENT-03 | Login social · conta sem cadastro | Proposta (sem Figma) | None | [ENT-03-conta-social-sem-cadastro/](ENT-03-conta-social-sem-cadastro/spec.md) · 3 telas |
+| ENT-04 | Login social · erro do provedor | Proposta (sem Figma) | None | [ENT-04-erro-login-social/](ENT-04-erro-login-social/spec.md) · 3 telas |
+| REC-08 | Recuperação da conta (pedido ao suporte) | Proposta (sem Figma) | None | [REC-08-recuperacao-da-conta/](REC-08-recuperacao-da-conta/spec.md) · 3 telas |
+| REC-09 | Solicitação enviada | Proposta (sem Figma) | None | [REC-09-solicitacao-enviada/](REC-09-solicitacao-enviada/spec.md) |
 
 ## Entrada e cadastro
 
@@ -165,6 +167,7 @@ Inclusão e gestão de vínculos
 - **DEC-05 · Credenciais aceitas?** Resposta do servidor depois de ENT-02. Sim: abre AREA-01. Não: volta a ENT-01 com o aviso "Credenciais inválidas" e os dois campos em vermelho. No protótipo, a senha "errada" simula a rejeição.
 - **DEC-06 · Código SMS correto?** Avaliada em REC-02 quando o 6º dígito é digitado. Sim (847291): abre REC-06. Não: erro com as tentativas; código 000000 simula expirado; no 3º erro, bloqueio por 30 minutos.
 - **DEC-07 · Código e-mail correto?** Avaliada em REC-04 quando o 6º dígito é digitado. Mesmas regras de DEC-06: Sim (847291) abre REC-06; Não mostra o erro; no 3º erro, bloqueio por 30 minutos.
+- **DEC-08 · Login social concluído?** Resposta do provedor (Google, Apple ou Microsoft) depois do login na tela dele, que fica fora do app. Sim, com cadastro: abre ENT-02. Sem cadastro: ENT-03. Cancelado ou erro: ENT-04. No protótipo: Google entra, Apple não tem cadastro e Microsoft falha.
 
 ## Fluxo completo
 
@@ -181,12 +184,15 @@ flowchart LR
     REC_05["REC-05<br/>E-mail recebido (apoio do protótipo)"]
     REC_06["REC-06<br/>Nova senha"]
     REC_07["REC-07<br/>Senha alterada com sucesso"]
+    ENT_03["ENT-03<br/>Login social · conta sem cadastro"]
+    ENT_04["ENT-04<br/>Login social · erro do provedor"]
+    REC_08["REC-08<br/>Recuperação da conta (pedido ao suporte)"]
+    REC_09["REC-09<br/>Solicitação enviada"]
     DEC_04{"DEC-04<br/>Preencheu corretamente?"}
     DEC_05{"DEC-05<br/>Credenciais aceitas?"}
+    DEC_08{"DEC-08<br/>Login social concluído?"}
     DEC_06{"DEC-06<br/>Código SMS correto?"}
     DEC_07{"DEC-07<br/>Código e-mail correto?"}
-    ENT_G1["ENT-G1<br/>Login social"]:::gap
-    REC_G1["REC-G1<br/>Solicitar recuperação da conta"]:::gap
   end
   subgraph cadastro["Entrada e cadastro"]
     CAD_01["CAD-01<br/>Cadastro · Dados pessoais"]
@@ -479,10 +485,18 @@ flowchart LR
   DEC_05 -.->|"Não · credenciais inválidas"| ENT_01
   ENT_01 -->|"Criar cadastro"| CAD_01
   ENT_01 -->|"Esqueceu sua senha?"| REC_01
-  ENT_01 -.->|"Entrar com Google, Apple ou Microsoft"| ENT_G1
+  ENT_01 -->|"Entrar com Google, Apple ou Microsoft"| DEC_08
+  DEC_08 -->|"Sim"| ENT_02
+  DEC_08 -->|"Não · conta sem cadastro"| ENT_03
+  DEC_08 -.->|"Não · cancelado ou erro do provedor"| ENT_04
+  ENT_03 -->|"Criar cadastro"| CAD_01
+  ENT_03 -->|"Entrar com CPF ou e-mail, ou Voltar"| ENT_01
+  ENT_04 -.->|"Tentar novamente ou Voltar"| ENT_01
   REC_01 -->|"Continuar"| REC_02
   REC_01 -->|"Continuar"| REC_04
-  REC_01 -.->|"Solicitar recuperação da conta"| REC_G1
+  REC_01 -->|"Solicitar recuperação da conta"| REC_08
+  REC_08 -->|"Enviar solicitação"| REC_09
+  REC_09 -->|"Voltar ao login"| ENT_01
   REC_02 ==>|"SMS enviado"| REC_03
   REC_02 -->|"6º dígito digitado"| DEC_06
   DEC_06 -->|"Sim"| REC_06
@@ -748,11 +762,20 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E706 | DEC-05 | ENT-01 | Não · credenciais inválidas | Aviso no topo e campos em vermelho | Erro ou nova tentativa |
 | E02 | ENT-01 | CAD-01 | Criar cadastro | — | Caminho principal |
 | E707 | ENT-01 | REC-01 | Esqueceu sua senha? | — | Caminho alternativo |
-| E708 | ENT-01 | ENT-G1 | Entrar com Google, Apple ou Microsoft | Sem fluxo desenhado | Lacuna (a desenhar) |
+| E708 | ENT-01 | DEC-08 | Entrar com Google, Apple ou Microsoft | Abre o login do provedor (tela externa) | Caminho alternativo |
+| E709 | DEC-08 | ENT-02 | Sim | Provedor autenticou e a conta tem cadastro | Caminho principal |
+| E714 | DEC-08 | ENT-03 | Não · conta sem cadastro | Autenticou, mas não há cadastro ligado a essa conta | Caminho alternativo |
+| E715 | DEC-08 | ENT-04 | Não · cancelado ou erro do provedor | Pessoa cancelou ou o serviço não respondeu | Erro ou nova tentativa |
+| E716 | ENT-03 | CAD-01 | Criar cadastro | — | Caminho principal |
+| E717 | ENT-03 | ENT-01 | Entrar com CPF ou e-mail, ou Voltar | — | Caminho alternativo |
+| E718 | ENT-04 | ENT-01 | Tentar novamente ou Voltar | — | Erro ou nova tentativa |
 | E710 | REC-01 | ENT-01 | Voltar | — | Voltar |
 | E711 | REC-01 | REC-02 | Continuar | Aba Celular; celular e data válidos | Caminho principal |
 | E712 | REC-01 | REC-04 | Continuar | Aba E-mail; e-mail e data válidos | Caminho principal |
-| E713 | REC-01 | REC-G1 | Solicitar recuperação da conta | Sem fluxo desenhado | Lacuna (a desenhar) |
+| E713 | REC-01 | REC-08 | Solicitar recuperação da conta | Para quem perdeu o acesso ao e-mail e ao celular | Caminho alternativo |
+| E719 | REC-08 | REC-01 | Voltar | — | Voltar |
+| E743 | REC-08 | REC-09 | Enviar solicitação | CPF, motivo e contato válidos | Caminho principal |
+| E744 | REC-09 | ENT-01 | Voltar ao login | — | Caminho principal |
 | E720 | REC-02 | REC-03 | SMS enviado | Apoio do protótipo: mostra a mensagem recebida | Automática (timer) |
 | E721 | REC-03 | REC-02 | Voltar ao app | — | Voltar |
 | E722 | REC-02 | DEC-06 | 6º dígito digitado | — | Caminho principal |

@@ -57,7 +57,7 @@
         comErro ? null : h("section", { className: "est-support", "aria-labelledby": "est-support-title" },
           h("h2", { className: "est-support-title", id: "est-support-title" }, "Não consegue acessar seu e-mail?"),
           h("p", { className: "est-support-text" }, "Se você perdeu o acesso à conta ou acredita que ela foi comprometida, solicite ajuda ao suporte."),
-          h(P.TextLink, { variant: "standalone", href: "#recuperacao-da-conta" }, "Solicitar recuperação da conta")),
+          h(P.TextLink, { variant: "standalone", href: A.url(A.screenPath("REC-08-recuperacao-da-conta", "vazio")) }, "Solicitar recuperação da conta")),
         h("div", { className: "est-actions" }, h(P.Button, { variant: "primary", onClick: continuar }, "Continuar")),
         h(P.LegalFooter, { links: [], className: "est-legal" }, "© 2026 Ellena. Todos os direitos reservados.")));
   }
