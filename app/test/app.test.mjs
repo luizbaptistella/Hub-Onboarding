@@ -20,7 +20,7 @@ test('página inicial e assets', async () => {
 
 test('API: info, telas, detalhe, componentes, marcação, fluxo', async () => {
   const info = await (await fetch(base + '/api/info')).json();
-  assert.equal(info.screens, 115);
+  assert.equal(info.screens, 123);
   const list = await (await fetch(base + '/api/screens?lane=cadastro')).json();
   assert.ok(list.total > 0);
   const screen = await (await fetch(base + '/api/screens/CAD-02')).json();

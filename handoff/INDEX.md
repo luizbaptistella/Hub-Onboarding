@@ -49,7 +49,15 @@ Etapa 2 de 4 · CIN, CNH e RG
 | Código | Tela | Status | Figma | Pasta |
 |---|---|---|---|---|
 | DOC-01 | Seleção de documento | Desenhada | 1928:61728 | [DOC-01-selecao-de-documento/](DOC-01-selecao-de-documento/spec.md) · 2 telas |
-| DOC-G1 | Captura do documento | Lacuna, a desenhar | — | Foto ou upload da frente e do verso e conferência. Hoje os dois botões pulam direto para a biometria. |
+| DOC-47 | CIN · tutorial da frente | Proposta, provisória (RNE) | 3080:59953 | [DOC-47-cin-tutorial-frente/](DOC-47-cin-tutorial-frente/spec.md) · 3 telas |
+| DOC-48 | CIN · câmera da frente | Proposta, provisória (RNE) | — | [DOC-48-cin-camera-frente/](DOC-48-cin-camera-frente/spec.md) · 5 telas |
+| DOC-49 | CIN · confirmação da frente | Proposta, provisória (RNE) | — | [DOC-49-cin-confirmacao-frente/](DOC-49-cin-confirmacao-frente/spec.md) |
+| DOC-50 | CNH · tutorial da frente | Proposta, provisória (RNE) | 1752:45123 | [DOC-50-cnh-tutorial-frente/](DOC-50-cnh-tutorial-frente/spec.md) · 3 telas |
+| DOC-51 | CNH · câmera da frente | Proposta, provisória (RNE) | — | [DOC-51-cnh-camera-frente/](DOC-51-cnh-camera-frente/spec.md) · 5 telas |
+| DOC-52 | CNH · confirmação da frente | Proposta, provisória (RNE) | — | [DOC-52-cnh-confirmacao-frente/](DOC-52-cnh-confirmacao-frente/spec.md) |
+| DOC-53 | RG · tutorial da frente | Proposta, provisória (RNE) | 1620:13669 | [DOC-53-rg-tutorial-frente/](DOC-53-rg-tutorial-frente/spec.md) · 3 telas |
+| DOC-54 | RG · câmera da frente | Proposta, provisória (RNE) | — | [DOC-54-rg-camera-frente/](DOC-54-rg-camera-frente/spec.md) · 5 telas |
+| DOC-55 | RG · confirmação da frente | Proposta, provisória (RNE) | — | [DOC-55-rg-confirmacao-frente/](DOC-55-rg-confirmacao-frente/spec.md) |
 
 ## Documento de identidade · estrangeiro
 
@@ -145,7 +153,7 @@ Inclusão e gestão de vínculos
 | FAM-13 | Termo de responsabilidade · menor | Sem Figma | — | [FAM-13-termo-de-responsabilidade-menor/](FAM-13-termo-de-responsabilidade-menor/spec.md) |
 | FAM-15 | Código do contato do familiar | Aprovada; estados pendentes | — | [FAM-15-codigo-do-contato-do-familiar/](FAM-15-codigo-do-contato-do-familiar/spec.md) |
 | FAM-G2 | Tutorial da captura facial do familiar | Substituída pela BIO-01 (sem mudanças) | — | [FAM-G2-preparacao-do-cadastro/](FAM-G2-preparacao-do-cadastro/spec.md) · Documento, liveness e criação de senha feitos no celular do titular, em nome do familiar (spec §6.2 e §6.5). Não desenhado: na implementação atual o fluxo não passa daqui. |
-| FAM-G2 | Captura da frente do documento do familiar | Aprovada (passo 2 · câmera de DOC-04) | — | [FAM-G2-captura-do-documento/](FAM-G2-captura-do-documento/spec.md) · Variante familiar de DOC-G1. |
+| FAM-G2 | Captura da frente do documento do familiar | Aprovada (passo 2 · câmera de DOC-04) | — | [FAM-G2-captura-do-documento/](FAM-G2-captura-do-documento/spec.md) · Variante familiar da captura do documento (DOC-47 a DOC-55). |
 | FAM-G2 | Confirmação da frente do documento do familiar | Proposta, a validar (passo 3 · conferência de BIO-04) | — | [FAM-G2-confirmacao-da-frente/](FAM-G2-confirmacao-da-frente/spec.md) |
 | FAM-G2 | Captura do verso do documento do familiar | Proposta, a validar (passo 4 · câmera da frente) | — | [FAM-G2-captura-do-verso/](FAM-G2-captura-do-verso/spec.md) |
 | FAM-G2 | Confirmação do verso do documento do familiar | Proposta, a validar (passo 5 · conferência de BIO-04, igual à da frente) | — | [FAM-G2-confirmacao-do-verso/](FAM-G2-confirmacao-do-verso/spec.md) |
@@ -212,7 +220,15 @@ flowchart LR
   end
   subgraph documento["Documento de identidade · brasileiro"]
     DOC_01["DOC-01<br/>Seleção de documento"]
-    DOC_G1["DOC-G1<br/>Captura do documento"]:::gap
+    DOC_47["DOC-47<br/>CIN · tutorial da frente"]
+    DOC_48["DOC-48<br/>CIN · câmera da frente"]
+    DOC_49["DOC-49<br/>CIN · confirmação da frente"]
+    DOC_50["DOC-50<br/>CNH · tutorial da frente"]
+    DOC_51["DOC-51<br/>CNH · câmera da frente"]
+    DOC_52["DOC-52<br/>CNH · confirmação da frente"]
+    DOC_53["DOC-53<br/>RG · tutorial da frente"]
+    DOC_54["DOC-54<br/>RG · câmera da frente"]
+    DOC_55["DOC-55<br/>RG · confirmação da frente"]
   end
   subgraph estrangeiro["Documento de identidade · estrangeiro"]
     DOC_02["DOC-02<br/>Seleção do documento · estrangeiro"]
@@ -321,9 +337,18 @@ flowchart LR
   CAD_08 ==>|"10 s ou Continuar agora"| CAD_09
   CAD_09 -->|"Continuar"| CAD_10
   CAD_10 -->|"Confirmar"| DOC_01
-  DOC_01 -->|"Tirar foto ou Fazer upload"| BIO_01
-  DOC_01 -.->|"Tirar foto ou Fazer upload"| DOC_G1
-  DOC_G1 -.->|"Documento aprovado"| BIO_01
+  DOC_01 -->|"CIN · Tirar foto do documento"| DOC_47
+  DOC_47 -->|"Abrir câmera ou Pular"| DOC_48
+  DOC_48 -->|"Foto tirada"| DOC_49
+  DOC_49 -->|"Continuar"| BIO_01
+  DOC_01 -->|"CNH · Tirar foto do documento"| DOC_50
+  DOC_50 -->|"Abrir câmera ou Pular"| DOC_51
+  DOC_51 -->|"Foto tirada"| DOC_52
+  DOC_52 -->|"Continuar"| BIO_01
+  DOC_01 -->|"RG · Tirar foto do documento"| DOC_53
+  DOC_53 -->|"Abrir câmera ou Pular"| DOC_54
+  DOC_54 -->|"Foto tirada"| DOC_55
+  DOC_55 -->|"Continuar"| BIO_01
   BIO_01 -->|"Continuar no 3º passo"| BIO_02
   BIO_02 -->|"Rosto enquadrado na moldura"| DEC_03
   DEC_03 -->|"Aprovado · contagem 3, 2, 1"| BIO_03
@@ -551,9 +576,6 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E20 | CAD-07 | CAD-06 | Voltar | — | Voltar |
 | E21 | CAD-08 | CAD-09 | 10 s ou Continuar agora | — | Automática (timer) |
 | E22 | DOC-01 | CAD-10 | Voltar | — | Voltar |
-| E23 | DOC-01 | BIO-01 | Tirar foto ou Fazer upload | Provisório: pula a captura do documento | Caminho principal |
-| E24 | DOC-01 | DOC-G1 | Tirar foto ou Fazer upload | — | Lacuna (a desenhar) |
-| E25 | DOC-G1 | BIO-01 | Documento aprovado | — | Lacuna (a desenhar) |
 | E26 | BIO-01 | BIO-02 | Continuar no 3º passo | O botão libera 3 s depois de cada passo | Caminho principal |
 | E27 | BIO-01 | DOC-01 | Voltar no 1º passo | — | Voltar |
 | E28 | BIO-02 | DEC-03 | Rosto enquadrado na moldura | — | Caminho principal |
@@ -805,3 +827,27 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E740 | REC-06 | REC-07 | Salvar senha | Os 4 requisitos cumpridos e senhas iguais | Caminho principal |
 | E741 | REC-06 | ENT-01 | Voltar | O código já foi usado: não volta a REC-04 | Voltar |
 | E742 | REC-07 | ENT-01 | Ir para o login | Sem login automático | Caminho principal |
+| E855 | DOC-01 | DOC-47 | CIN · Tirar foto do documento | CIN escolhido | Caminho principal |
+| E856 | DOC-47 | DOC-01 | Voltar no passo 1 | — | Voltar |
+| E857 | DOC-47 | DOC-48 | Abrir câmera ou Pular | — | Caminho principal |
+| E858 | DOC-48 | DOC-47 | Voltar | — | Voltar |
+| E859 | DOC-48 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
+| E860 | DOC-48 | DOC-49 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
+| E861 | DOC-49 | DOC-48 | Tirar outra foto ou Voltar | — | Caminho alternativo |
+| E862 | DOC-49 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| E863 | DOC-01 | DOC-50 | CNH · Tirar foto do documento | CNH escolhido | Caminho principal |
+| E864 | DOC-50 | DOC-01 | Voltar no passo 1 | — | Voltar |
+| E865 | DOC-50 | DOC-51 | Abrir câmera ou Pular | — | Caminho principal |
+| E866 | DOC-51 | DOC-50 | Voltar | — | Voltar |
+| E867 | DOC-51 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
+| E868 | DOC-51 | DOC-52 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
+| E869 | DOC-52 | DOC-51 | Tirar outra foto ou Voltar | — | Caminho alternativo |
+| E870 | DOC-52 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| E871 | DOC-01 | DOC-53 | RG · Tirar foto do documento | RG escolhido | Caminho principal |
+| E872 | DOC-53 | DOC-01 | Voltar no passo 1 | — | Voltar |
+| E873 | DOC-53 | DOC-54 | Abrir câmera ou Pular | — | Caminho principal |
+| E874 | DOC-54 | DOC-53 | Voltar | — | Voltar |
+| E875 | DOC-54 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
+| E876 | DOC-54 | DOC-55 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
+| E877 | DOC-55 | DOC-54 | Tirar outra foto ou Voltar | — | Caminho alternativo |
+| E878 | DOC-55 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |

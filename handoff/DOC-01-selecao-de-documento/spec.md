@@ -52,8 +52,8 @@ _Sem campos._
 |---|---|---|
 | Voltar | [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) |  |
 | Ajuda | — |  |
-| Tirar foto do documento | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) |  |
-| Fazer upload do documento | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) |  |
+| Tirar foto do documento | CIN, CNH ou RG: tutorial da foto ([DOC-47](../DOC-47-cin-tutorial-frente/spec.md), [DOC-50](../DOC-50-cnh-tutorial-frente/spec.md), [DOC-53](../DOC-53-rg-tutorial-frente/spec.md)) | Documento escolhido |
+| Fazer upload do documento | Lacuna: tela de upload (a desenhar) |  |
 
 As ações sem destino que dependem de script (envio de formulário, timers) estão em **Saídas**.
 
@@ -66,7 +66,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 - Grupo de rádio com CIN e CNH (badge "Aprovação mais rápida") e RG (badge "Aprovação pode demorar mais").
 - A opção escolhida abre um painel com duas ações: Tirar foto do documento e Fazer upload do documento.
-- Provisório: as duas ações vão direto para BIO-01.
+- Cada documento leva ao seu tutorial da foto (DOC-47, DOC-50 ou DOC-53), que segue para câmera e confirmação (DOC-48/49, 51/52, 54/55). O tutorial e as telas de captura são provisórios (marcação do RNE).
 
 ## 7. Entradas (de onde se chega)
 
@@ -81,8 +81,8 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
 | [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) | Voltar | — | Voltar |
-| [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) | Tirar foto ou Fazer upload | Provisório: pula a captura do documento | Caminho principal |
-| DOC-G1 · Captura do documento | Tirar foto ou Fazer upload | — | Lacuna (a desenhar) |
+| [DOC-47](../DOC-47-cin-tutorial-frente/spec.md) · [DOC-50](../DOC-50-cnh-tutorial-frente/spec.md) · [DOC-53](../DOC-53-rg-tutorial-frente/spec.md) | Tirar foto do documento | CIN, CNH ou RG escolhido | Caminho principal |
+| Upload do documento | Fazer upload do documento | — | Lacuna (a desenhar) |
 
 ## 9. Dados
 
@@ -92,13 +92,13 @@ Visão geral: [dados.md](../dados.md).
 
 ## 10. Lacunas e perguntas
 
-- Telas de captura e upload do documento (DOC-G1).
+- Tela de upload do documento (CIN, CNH e RG). Verso do documento não desenhado nesta etapa.
 - Regras de formato e tamanho do upload.
 
 ## 11. Critérios de aceite
 
 - [ ] Escolher uma opção abre o painel só dela.
-- [ ] As ações levam à próxima etapa definida (hoje BIO-01).
+- [ ] As ações levam ao tutorial do documento escolhido (DOC-47, DOC-50 ou DOC-53).
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)

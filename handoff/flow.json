@@ -19,7 +19,7 @@
    "id": "documento",
    "title": "Documento de identidade · brasileiro",
    "sub": "Etapa 2 de 4 · CIN, CNH e RG",
-   "rows": 1
+   "rows": 3
   },
   {
    "id": "estrangeiro",
@@ -891,21 +891,8 @@
    "folder": "DOC-01-selecao-de-documento",
    "components": "handoff/DOC-01-selecao-de-documento/components.json",
    "spec": "handoff/DOC-01-selecao-de-documento/spec.md",
-   "inputs": 3,
-   "outputs": 3
-  },
-  {
-   "code": "DOC-G1",
-   "type": "gap",
-   "name": "Captura do documento",
-   "lane": "documento",
-   "col": 1,
-   "row": 0,
-   "note": "Foto ou upload da frente e do verso e conferência. Hoje os dois botões pulam direto para a biometria.",
-   "status": "lacuna",
-   "folder": null,
-   "inputs": 1,
-   "outputs": 1
+   "inputs": 9,
+   "outputs": 4
   },
   {
    "code": "DOC-02",
@@ -2478,7 +2465,7 @@
    ],
    "components": "handoff/BIO-01-tutorial-da-captura/components.json",
    "spec": "handoff/BIO-01-tutorial-da-captura/spec.md",
-   "inputs": 8,
+   "inputs": 9,
    "outputs": 2,
    "figma": "1774:46320"
   },
@@ -3358,6 +3345,295 @@
    "spec": "handoff/FAM-20-erro-ao-carregar-familiares/spec.md",
    "inputs": 1,
    "outputs": 1
+  },
+  {
+   "code": "DOC-47",
+   "name": "CIN · tutorial da frente",
+   "lane": "documento",
+   "col": 1,
+   "row": 0,
+   "figma": "3080:59953",
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-47-cin-tutorial-frente",
+   "components": "handoff/DOC-47-cin-tutorial-frente/components.json",
+   "spec": "handoff/DOC-47-cin-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-47--passo-1",
+     "label": "Passo 1 · frente do CIN",
+     "file": "handoff/DOC-47-cin-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "3080:59953"
+    },
+    {
+     "id": "doc-47--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-47-cin-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "1817:51160"
+    },
+    {
+     "id": "doc-47--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-47-cin-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "1817:51067"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-48",
+   "name": "CIN · câmera da frente",
+   "lane": "documento",
+   "col": 2,
+   "row": 0,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-48-cin-camera-frente",
+   "components": "handoff/DOC-48-cin-camera-frente/components.json",
+   "spec": "handoff/DOC-48-cin-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-48--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-48-cin-camera-frente/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-48--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-48-cin-camera-frente/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-48--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-48-cin-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-48--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-48-cin-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-48--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-48-cin-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-49",
+   "name": "CIN · confirmação da frente",
+   "lane": "documento",
+   "col": 3,
+   "row": 0,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-49-cin-confirmacao-frente",
+   "components": "handoff/DOC-49-cin-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-49-cin-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-49--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-49-cin-confirmacao-frente/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-50",
+   "name": "CNH · tutorial da frente",
+   "lane": "documento",
+   "col": 1,
+   "row": 1,
+   "figma": "1752:45123",
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-50-cnh-tutorial-frente",
+   "components": "handoff/DOC-50-cnh-tutorial-frente/components.json",
+   "spec": "handoff/DOC-50-cnh-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-50--passo-1",
+     "label": "Passo 1 · frente do CNH",
+     "file": "handoff/DOC-50-cnh-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "1752:45123"
+    },
+    {
+     "id": "doc-50--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-50-cnh-tutorial-frente/telas/passo-2/screen.html",
+     "figma": "1620:13444"
+    },
+    {
+     "id": "doc-50--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-50-cnh-tutorial-frente/telas/passo-3/screen.html",
+     "figma": "1817:51230"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-51",
+   "name": "CNH · câmera da frente",
+   "lane": "documento",
+   "col": 2,
+   "row": 1,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-51-cnh-camera-frente",
+   "components": "handoff/DOC-51-cnh-camera-frente/components.json",
+   "spec": "handoff/DOC-51-cnh-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-51--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-51-cnh-camera-frente/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-51--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-51-cnh-camera-frente/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-51--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-51-cnh-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-51--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-51-cnh-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-51--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-51-cnh-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-52",
+   "name": "CNH · confirmação da frente",
+   "lane": "documento",
+   "col": 3,
+   "row": 1,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-52-cnh-confirmacao-frente",
+   "components": "handoff/DOC-52-cnh-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-52-cnh-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-52--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-52-cnh-confirmacao-frente/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-53",
+   "name": "RG · tutorial da frente",
+   "lane": "documento",
+   "col": 1,
+   "row": 2,
+   "figma": "1620:13669",
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-53-rg-tutorial-frente",
+   "components": "handoff/DOC-53-rg-tutorial-frente/components.json",
+   "spec": "handoff/DOC-53-rg-tutorial-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-53--passo-1",
+     "label": "Passo 1 · frente do RG",
+     "file": "handoff/DOC-53-rg-tutorial-frente/telas/passo-1/screen.html",
+     "figma": "1620:13669"
+    },
+    {
+     "id": "doc-53--passo-2",
+     "label": "Passo 2 · superfície plana",
+     "file": "handoff/DOC-53-rg-tutorial-frente/telas/passo-2/screen.html"
+    },
+    {
+     "id": "doc-53--passo-3",
+     "label": "Passo 3 · enquadrar",
+     "file": "handoff/DOC-53-rg-tutorial-frente/telas/passo-3/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-54",
+   "name": "RG · câmera da frente",
+   "lane": "documento",
+   "col": 2,
+   "row": 2,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-54-rg-camera-frente",
+   "components": "handoff/DOC-54-rg-camera-frente/components.json",
+   "spec": "handoff/DOC-54-rg-camera-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-54--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-54-rg-camera-frente/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-54--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-54-rg-camera-frente/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-54--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-54-rg-camera-frente/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-54--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-54-rg-camera-frente/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-54--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-54-rg-camera-frente/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-55",
+   "name": "RG · confirmação da frente",
+   "lane": "documento",
+   "col": 3,
+   "row": 2,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-55-rg-confirmacao-frente",
+   "components": "handoff/DOC-55-rg-confirmacao-frente/components.json",
+   "spec": "handoff/DOC-55-rg-confirmacao-frente/spec.md",
+   "variants": [
+    {
+     "id": "doc-55--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-55-rg-confirmacao-frente/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 2
   }
  ],
  "edges": [
@@ -3520,30 +3796,6 @@
    "trigger": "Voltar",
    "cond": "",
    "id": "E22"
-  },
-  {
-   "src": "DOC-01",
-   "dst": "BIO-01",
-   "kind": "principal",
-   "trigger": "Tirar foto ou Fazer upload",
-   "cond": "Provisório: pula a captura do documento",
-   "id": "E23"
-  },
-  {
-   "src": "DOC-01",
-   "dst": "DOC-G1",
-   "kind": "lacuna",
-   "trigger": "Tirar foto ou Fazer upload",
-   "cond": "",
-   "id": "E24"
-  },
-  {
-   "src": "DOC-G1",
-   "dst": "BIO-01",
-   "kind": "lacuna",
-   "trigger": "Documento aprovado",
-   "cond": "",
-   "id": "E25"
   },
   {
    "src": "BIO-01",
@@ -5592,6 +5844,198 @@
    "kind": "principal",
    "trigger": "Salvar e continuar",
    "cond": "Documento antes da facial; reutiliza BIO-01 sem mudanças"
+  },
+  {
+   "id": "E855",
+   "src": "DOC-01",
+   "dst": "DOC-47",
+   "kind": "principal",
+   "trigger": "CIN · Tirar foto do documento",
+   "cond": "CIN escolhido"
+  },
+  {
+   "id": "E856",
+   "src": "DOC-47",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E857",
+   "src": "DOC-47",
+   "dst": "DOC-48",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E858",
+   "src": "DOC-48",
+   "dst": "DOC-47",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E859",
+   "src": "DOC-48",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E860",
+   "src": "DOC-48",
+   "dst": "DOC-49",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E861",
+   "src": "DOC-49",
+   "dst": "DOC-48",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E862",
+   "src": "DOC-49",
+   "dst": "BIO-01",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Provisório: pula o verso e a conferência"
+  },
+  {
+   "id": "E863",
+   "src": "DOC-01",
+   "dst": "DOC-50",
+   "kind": "principal",
+   "trigger": "CNH · Tirar foto do documento",
+   "cond": "CNH escolhido"
+  },
+  {
+   "id": "E864",
+   "src": "DOC-50",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E865",
+   "src": "DOC-50",
+   "dst": "DOC-51",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E866",
+   "src": "DOC-51",
+   "dst": "DOC-50",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E867",
+   "src": "DOC-51",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E868",
+   "src": "DOC-51",
+   "dst": "DOC-52",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E869",
+   "src": "DOC-52",
+   "dst": "DOC-51",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E870",
+   "src": "DOC-52",
+   "dst": "BIO-01",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Provisório: pula o verso e a conferência"
+  },
+  {
+   "id": "E871",
+   "src": "DOC-01",
+   "dst": "DOC-53",
+   "kind": "principal",
+   "trigger": "RG · Tirar foto do documento",
+   "cond": "RG escolhido"
+  },
+  {
+   "id": "E872",
+   "src": "DOC-53",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E873",
+   "src": "DOC-53",
+   "dst": "DOC-54",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E874",
+   "src": "DOC-54",
+   "dst": "DOC-53",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E875",
+   "src": "DOC-54",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E876",
+   "src": "DOC-54",
+   "dst": "DOC-55",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E877",
+   "src": "DOC-55",
+   "dst": "DOC-54",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E878",
+   "src": "DOC-55",
+   "dst": "BIO-01",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Provisório: pula o verso e a conferência"
   }
  ],
  "decisions": {
