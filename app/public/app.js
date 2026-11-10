@@ -140,8 +140,8 @@ function flowView(flow) {
 async function markupView(code) {
   const data = await api(`/api/screens/${encodeURIComponent(code)}/markup`);
   // sandbox sem permissões: a marcação de referência não executa script nem acessa a origem.
-  const frame = el('iframe', { class: 'preview', sandbox: '', title: `Marcação de ${code}` });
-  frame.srcdoc = data.html;
+  // O documento vem de uma rota própria, com o CSS embutido e CSP que permite os estilos.
+  const frame = el('iframe', { class: 'preview', sandbox: '', title: `Marcação de ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
   return el('div', {}, data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite.') : null, frame);
 }
 

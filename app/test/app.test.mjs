@@ -29,6 +29,12 @@ test('API: info, telas, detalhe, componentes, marcação, fluxo', async () => {
   assert.equal(comps.screen, 'AJD-02');
   const markup = await (await fetch(base + '/api/screens/AJD-02/markup')).json();
   assert.ok(markup.html.length > 0);
+  const doc = await fetch(base + '/api/screens/REC-07/documento');
+  const docHtml = await doc.text();
+  assert.equal(doc.status, 200);
+  assert.match(doc.headers.get('content-security-policy'), /style-src 'unsafe-inline'/);
+  assert.match(docHtml, /<style>/);
+  assert.doesNotMatch(docHtml, /href="\.\.\/\.\.\//);
   const flow = await (await fetch(base + '/api/flow/CAD-02')).json();
   assert.ok(flow.outgoing.length > 0);
 });
