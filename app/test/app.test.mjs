@@ -39,6 +39,18 @@ test('API: info, telas, detalhe, componentes, marcação, fluxo', async () => {
   assert.ok(flow.outgoing.length > 0);
 });
 
+test('API: histórico por tela e em validação', async () => {
+  const h = await (await fetch(base + '/api/screens/CAD-02/historico')).json();
+  assert.equal(h.code, 'CAD-02');
+  assert.ok(Array.isArray(h.commits));
+  assert.equal((await fetch(base + '/api/screens/NAO-EXISTE/historico')).status, 404);
+  const p = await (await fetch(base + '/api/validacao')).json();
+  assert.ok(Array.isArray(p.items));
+  assert.ok(Array.isArray(p.merged));
+  assert.equal(typeof p.byCode, 'object');
+  assert.doesNotMatch(JSON.stringify(p), /Bearer|gh[pousr]_|github_pat_/);
+});
+
 test('API: busca, decisão e documento', async () => {
   const s = await (await fetch(base + '/api/search?q=endereco')).json();
   assert.ok(s.total > 0);

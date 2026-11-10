@@ -20,3 +20,7 @@ services:
         sync: false   # você define a senha no painel do Render; ela não vai para o repositório
       - key: MCP_TOKEN
         sync: false   # token do MCP para o time; sem ele, /mcp fica desligado (404)
+      - key: GITHUB_TOKEN
+        sync: false   # fine-grained, só leitura (Contents + Pull requests); liga a aba Em validação com PRs. Ver VERSIONAMENTO.md
+      - key: GITHUB_REPO
+        value: luizbaptistella/Hub-Onboarding

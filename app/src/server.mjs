@@ -9,6 +9,7 @@ import { handleApi } from './api.mjs';
 import { createAuth } from './auth.mjs';
 import { createMcpEndpoint } from '../../mcp-server/src/endpoint.mjs';
 import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.mjs';
+import { createVersioning } from './versioning.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(here, '../public');
@@ -40,12 +41,14 @@ export async function createApp({
   password = process.env.APP_PASSWORD,
   secure = process.env.COOKIE_SECURE === '1',
   mcpToken = process.env.MCP_TOKEN ?? '',
+  versioning: versioningOptions = {},
 } = {}) {
   const handoff = await loadHub(handoffDir);
   const ds = await loadDesignSystem({ hubRoot, handoffDir: handoff.dir, decisions: handoff.decisions });
   const designSystem = buildDesignSystemPayload(ds, await getComponents(ds, handoff.componentDocs));
   const auth = createAuth({ password });
   const handleMcp = createMcpEndpoint(handoff, { token: mcpToken });
+  const versioning = createVersioning({ repoDir: hubRoot, handoff, ...versioningOptions });
 
   return createServer(async (req, res) => {
     try {
@@ -84,7 +87,7 @@ export async function createApp({
       }
 
       if (p.startsWith('/api')) {
-        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem }));
+        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem, versioning }));
       }
 
       if (p === '/hub') return redirect(res, '/hub/');
