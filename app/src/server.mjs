@@ -12,9 +12,9 @@ import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(here, '../public');
-const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png' };
 // Assets sem dados do handoff ficam públicos para a tela de login carregar.
-const PUBLIC_ASSETS = new Set(['/styles.css', '/app.js', '/login.js']);
+const PUBLIC_ASSETS = new Set(['/styles.css', '/app.js', '/login.js', '/logo-palmeiras.png']);
 const LOOPBACK = new Set(['127.0.0.1', 'localhost', '::1']);
 // Raiz do hub (palmeiras-hub/) servida em /hub/. Pastas internas e do servidor ficam fora.
 const hubRoot = path.resolve(here, '../..');

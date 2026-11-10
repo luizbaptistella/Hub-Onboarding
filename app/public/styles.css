@@ -44,11 +44,22 @@ iframe.preview { width: 100%; height: 70vh; border: 1px solid var(--line); borde
 .docbtn { padding: 6px 10px; font: inherit; font-size: 13px; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
 .docbtn:hover { border-color: var(--accent); }
 .docbox { min-height: 120px; }
-.login { max-width: 360px; margin: 12vh auto 0; padding: 0 max(16px, env(safe-area-inset-left, 0px)); }
-.login form { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
-.login label { font-weight: 500; }
-.login input { padding: 10px 12px; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
-.login button { padding: 10px 12px; font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 8px; cursor: pointer; }
+/* Tela de login */
+.login-page { min-height: 100vh; display: grid; place-items: center; padding: 24px max(16px, env(safe-area-inset-left, 0px)); background: radial-gradient(900px 500px at 50% -10%, rgba(0, 82, 46, .18), transparent 70%), var(--bg); }
+.login-card { width: 100%; max-width: 380px; padding: 32px 28px 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 40px rgba(0, 0, 0, .12); text-align: center; }
+.login-head { display: flex; flex-direction: column; align-items: center; }
+.login-logo { display: block; width: 84px; height: 84px; margin: 0 0 14px; padding: 10px; object-fit: contain; background: #fff; border-radius: 50%; box-shadow: 0 6px 18px rgba(0, 0, 0, .18); }
+.login-eyebrow { margin: 0 0 4px; font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-2); }
+.login-title { margin: 0; font-size: 24px; font-weight: 700; color: var(--fg); }
+.login-sub { margin: 6px 0 0; font-size: 14px; color: var(--fg-2); }
+.login-form { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; text-align: left; }
+.login-form label { font-size: 13px; font-weight: 500; color: var(--fg-2); }
+.login-form input { width: 100%; padding: 12px 14px; font: inherit; font-size: 15px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; transition: border-color .15s, box-shadow .15s; }
+.login-form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.login-form button { margin-top: 6px; padding: 12px 14px; font: inherit; font-size: 15px; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 10px; cursor: pointer; transition: filter .15s; }
+.login-form button:hover { filter: brightness(1.08); }
+.login-error { margin: 16px 0 0; padding: 10px 12px; font-size: 13px; text-align: left; color: var(--warn); background: var(--accent-soft); border: 1px solid var(--warn); border-radius: 10px; }
+.login-error[hidden] { display: none; }
 
 /* Design System */
 .tabs a { padding: 8px 12px; color: var(--fg-2); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }

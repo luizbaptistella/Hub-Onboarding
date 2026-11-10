@@ -7,16 +7,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<main class="login">
-  <h1>Palmeiras Hub</h1>
-  <p class="sub">Acesso do time. Use a senha compartilhada.</p>
-  <form method="post" action="/login">
+<body class="login-page">
+<main class="login-card">
+  <header class="login-head">
+    <img class="login-logo" src="logo-palmeiras.png" alt="Escudo do Palmeiras" width="64" height="84">
+    <p class="login-eyebrow">Acesso restrito ao time</p>
+    <h1 class="login-title">Palmeiras Hub</h1>
+    <p class="login-sub">Use a senha compartilhada para entrar no handoff de onboarding.</p>
+  </header>
+  <form method="post" action="/login" class="login-form">
     <label for="password">Senha</label>
     <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
     <button type="submit">Entrar</button>
   </form>
-  <p id="erro" class="error" hidden></p>
+  <p id="erro" class="login-error" role="alert" hidden></p>
 </main>
 <script src="login.js"></script>
 </body>
