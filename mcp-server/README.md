@@ -48,33 +48,41 @@ Para o Claude Desktop, adicione no `claude_desktop_config.json`:
 }
 ```
 
-## Rodar como serviço para o time (HTTP)
+## Servidor para o time (HTTP, no Render)
 
-Um host do time roda o servidor e as pessoas conectam por URL. Fora de `localhost`, o servidor exige um token.
+A app web do hub (Render) serve o MCP em **`https://<url-do-hub>/mcp`**, no mesmo processo da app. Ela é a forma recomendada: uma URL só, sem rodar nada na máquina de ninguém.
+
+Autenticação: header `Authorization: Bearer <MCP_TOKEN>`. É um token de máquina, separado da senha de login da app. Sem `MCP_TOKEN` configurado, `/mcp` responde 404 e fica desligado.
+
+Para ligar no Render: no painel do serviço `palmeiras-hub`, em **Environment**, defina `MCP_TOKEN` com um valor longo (ex.: `openssl rand -hex 32`). O `render.yaml` já declara a variável como segredo, sem valor no repositório.
+
+Cada pessoa conecta com:
+
+```bash
+claude mcp add --transport http palmeiras-hub https://<url-do-hub>/mcp --header "Authorization: Bearer <token>"
+```
+
+O token é compartilhado pelo canal de segredos do time, não pelo repositório. Trocar o token: altere `MCP_TOKEN` no Render; quem usa precisa atualizar o header.
+
+### Modo HTTP standalone (opcional)
+
+Para rodar só o endpoint MCP fora da app (por exemplo, em outro host, atrás de um proxy com TLS):
 
 ```bash
 cd palmeiras-hub/mcp-server
 MCP_TOKEN="$(openssl rand -hex 32)" HOST=0.0.0.0 PORT=8790 npm run start:http
 ```
 
-Health check: `GET /health`. Endpoint MCP: `POST /mcp` com `Authorization: Bearer <token>`.
-
-Cada pessoa conecta com:
-
-```bash
-claude mcp add --transport http palmeiras-hub http://HOST:8790/mcp --header "Authorization: Bearer <token>"
-```
-
-O token é compartilhado pelo canal de segredos do time, não pelo repositório. Para servir por HTTPS, coloque o servidor atrás de um proxy reverso (nginx, Caddy ou similar) com TLS.
+Health check: `GET /health`. Endpoint MCP: `POST /mcp` com `Authorization: Bearer <token>`. Fora de `localhost`, o servidor exige `MCP_TOKEN`.
 
 ## Configuração
 
-| Variável | Padrão | Uso |
-|---|---|---|
-| `HUB_HANDOFF_DIR` | `../handoff` | Pasta do handoff a servir |
-| `HOST` | `127.0.0.1` | Interface do modo HTTP |
-| `PORT` | `8790` | Porta do modo HTTP |
-| `MCP_TOKEN` | (vazio) | Token do modo HTTP; obrigatório se `HOST` não for local |
+| Variável | Onde | Padrão | Uso |
+|---|---|---|---|
+| `MCP_TOKEN` | app (Render) e standalone | (vazio) | Token Bearer do `/mcp`; sem ele, o endpoint fica desligado (app) ou o servidor não sobe fora de localhost (standalone) |
+| `HUB_HANDOFF_DIR` | standalone | `../handoff` | Pasta do handoff a servir |
+| `HOST` | standalone | `127.0.0.1` | Interface do modo HTTP |
+| `PORT` | standalone | `8790` | Porta do modo HTTP |
 
 ## Testes
 
@@ -88,4 +96,5 @@ node test/http-smoke.mjs # sobe o modo HTTP com token e chama uma ferramenta
 - `src/hub.mjs`: leitura e consulta do handoff (sem MCP).
 - `src/server.mjs`: registro das ferramentas MCP.
 - `src/stdio.mjs`: transporte local.
-- `src/http.mjs`: transporte HTTP com autenticação por token.
+- `src/endpoint.mjs`: endpoint Streamable HTTP com autenticação por token (usado pela app e pelo modo standalone).
+- `src/http.mjs`: modo HTTP standalone (`/health` e `/mcp`).

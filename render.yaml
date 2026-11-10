@@ -6,7 +6,7 @@ services:
     runtime: node
     plan: free
     rootDir: .
-    buildCommand: "echo sem dependências para instalar"
+    buildCommand: "npm --prefix mcp-server ci --omit=dev"   # o endpoint /mcp usa o SDK do mcp-server
     startCommand: "node app/src/server.mjs"
     healthCheckPath: /healthz
     envVars:
@@ -18,3 +18,5 @@ services:
         value: "1"
       - key: APP_PASSWORD
         sync: false   # você define a senha no painel do Render; ela não vai para o repositório
+      - key: MCP_TOKEN
+        sync: false   # token do MCP para o time; sem ele, /mcp fica desligado (404)

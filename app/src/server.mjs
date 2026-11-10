@@ -7,6 +7,7 @@ import { loadHub } from '../../mcp-server/src/hub.mjs';
 import { handoffDir } from '../../mcp-server/src/handoff-path.mjs';
 import { handleApi } from './api.mjs';
 import { createAuth } from './auth.mjs';
+import { createMcpEndpoint } from '../../mcp-server/src/endpoint.mjs';
 import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -35,16 +36,24 @@ const SECURITY_HEADERS = {
   'content-security-policy': "default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
 };
 
-export async function createApp({ password = process.env.APP_PASSWORD, secure = process.env.COOKIE_SECURE === '1' } = {}) {
+export async function createApp({
+  password = process.env.APP_PASSWORD,
+  secure = process.env.COOKIE_SECURE === '1',
+  mcpToken = process.env.MCP_TOKEN ?? '',
+} = {}) {
   const handoff = await loadHub(handoffDir);
   const ds = await loadDesignSystem({ hubRoot, handoffDir: handoff.dir, decisions: handoff.decisions });
   const designSystem = buildDesignSystemPayload(ds, await getComponents(ds, handoff.componentDocs));
   const auth = createAuth({ password });
+  const handleMcp = createMcpEndpoint(handoff, { token: mcpToken });
 
   return createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');
       const p = url.pathname;
+
+      // MCP para o time: autenticado por MCP_TOKEN (Bearer), não pelo cookie de login.
+      if (p === '/mcp') return handleMcp(req, res);
 
       if (p === '/login' && req.method === 'GET') return sendFile(res, 'login.html');
 
