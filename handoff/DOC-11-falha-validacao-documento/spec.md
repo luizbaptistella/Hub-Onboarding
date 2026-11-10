@@ -90,3 +90,13 @@ Gerado do mapa do hub (`handoff/flow.json`).
 - O título é o único `h1` da tela.
 - Os motivos aparecem como lista, na ordem do Figma.
 - "Tentar novamente" volta ao envio do documento.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG). Figma `1620:13639` (seção `1620:12039`). Marcação em [telas/brasileiro](telas/brasileiro/screen.html).
+
+**Entradas:** confirmação da frente do CIN, do CNH e do RG, pelos erros de envio.
+
+**Retorno:** Tentar novamente volta à confirmação do documento (DOC-11 volta ao tutorial da frente).
+
+**Pendência:** Copy igual à do hub. A lista do Figma inclui "QR Code identificado", que não se aplica ao CIN, CNH e RG. Confirmar com o design.

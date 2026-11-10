@@ -45,7 +45,7 @@ Mesmos componentes da tela RNE de origem, copiados. Lista para máquina: [compon
 | Para | Gatilho | Condição | Tipo |
 |---|---|---|---|
 | [DOC-54 · câmera da frente](../DOC-54-rg-camera-frente/spec.md) | Tirar outra foto ou Voltar | — | Caminho alternativo |
-| [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| [DOC-24 · Conclusão do fluxo de documento](../DOC-24-documento-em-analise/spec.md) | Continuar | Documento brasileiro aprovado | Caminho principal |
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)

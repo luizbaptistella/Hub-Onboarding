@@ -68,3 +68,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 - O título é o único `h1`.
 - As etapas aparecem na ordem do Figma, com Biometria facial como atual.
 - A contagem pausa com a aba oculta e vai para a biometria facial.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG). Figma `2201:23602` (seção `1620:12039`): mesma tela, com "Recebemos seus dados cadastrais!" e a trilha de etapas. Marcação em [telas/brasileiro](telas/brasileiro/screen.html), copiada da padrão. Entrada: confirmação da frente (DOC-49, DOC-52 e DOC-55) com "Continuar" e documento aprovado. Saída: BIO-01 em 10 s ou Continuar agora.

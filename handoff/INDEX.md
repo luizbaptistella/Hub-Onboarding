@@ -73,10 +73,10 @@ Etapa 2 de 4 · uma linha por documento: CRNM, DPRNM, RNE, Cédula, Passaporte e
 | DOC-07 | CRNM · câmera do verso (código) | Desenhada | 2788:34736 | [DOC-07-crnm-camera-verso/](DOC-07-crnm-camera-verso/spec.md) · 6 telas |
 | DOC-09 | CRNM · upload da frente e do verso | Desenhada | 2788:37354 | [DOC-09-crnm-upload/](DOC-09-crnm-upload/spec.md) · 9 telas |
 | DOC-10 | Status · documento recebido | Desenhada | 2283:34738 | [DOC-10-status-documento-recebido/](DOC-10-status-documento-recebido/spec.md) |
-| DOC-11 | Falha na validação do documento | Desenhada | 2283:34313 | [DOC-11-falha-validacao-documento/](DOC-11-falha-validacao-documento/spec.md) · 3 telas |
-| DOC-12 | Sem conexão ao enviar o documento | Proposta (sem Figma) | None | [DOC-12-sem-conexao/](DOC-12-sem-conexao/spec.md) · 3 telas |
-| DOC-13 | Tempo excedido ao enviar o documento | Proposta (sem Figma) | None | [DOC-13-tempo-excedido/](DOC-13-tempo-excedido/spec.md) · 3 telas |
-| DOC-14 | Erro inesperado ao enviar o documento | Proposta (sem Figma) | None | [DOC-14-erro-inesperado/](DOC-14-erro-inesperado/spec.md) · 3 telas |
+| DOC-11 | Falha na validação do documento | Desenhada | 2283:34313 · brasileiro 1620:13639 | [DOC-11-falha-validacao-documento/](DOC-11-falha-validacao-documento/spec.md) · 3 telas |
+| DOC-12 | Sem conexão ao enviar o documento | Proposta · brasileiro com Figma | 1620:13651 | [DOC-12-sem-conexao/](DOC-12-sem-conexao/spec.md) · 3 telas |
+| DOC-13 | Tempo excedido ao enviar o documento | Proposta · brasileiro sem Figma | None | [DOC-13-tempo-excedido/](DOC-13-tempo-excedido/spec.md) · 3 telas |
+| DOC-14 | Erro inesperado ao enviar o documento | Proposta · brasileiro com Figma | 1620:13621 | [DOC-14-erro-inesperado/](DOC-14-erro-inesperado/spec.md) · 3 telas |
 | DOC-15 | Sessão expirada no documento | Proposta (sem Figma) | None | [DOC-15-sessao-expirada/](DOC-15-sessao-expirada/spec.md) |
 | DOC-16 | DPRNM · tutorial da frente | Desenhada | 2794:35439 | [DOC-16-dprnm-tutorial-frente/](DOC-16-dprnm-tutorial-frente/spec.md) · 3 telas |
 | DOC-17 | DPRNM · câmera da frente | Desenhada | 2794:35511 | [DOC-17-dprnm-camera-frente/](DOC-17-dprnm-camera-frente/spec.md) · 5 telas |
@@ -86,7 +86,7 @@ Etapa 2 de 4 · uma linha por documento: CRNM, DPRNM, RNE, Cédula, Passaporte e
 | DOC-21 | DPRNM · upload da frente e do verso | Desenhada | 2794:35764 | [DOC-21-dprnm-upload/](DOC-21-dprnm-upload/spec.md) · 9 telas |
 | DOC-22 | Os dados do documento não conferem | Proposta (sem Figma) | None | [DOC-22-dados-nao-conferem/](DOC-22-dados-nao-conferem/spec.md) · 3 telas |
 | DOC-23 | Documento vencido | Proposta (sem Figma) | None | [DOC-23-documento-vencido/](DOC-23-documento-vencido/spec.md) |
-| DOC-24 | Conclusão do fluxo de documento | Desenhada | 2283:34738 | [DOC-24-documento-em-analise/](DOC-24-documento-em-analise/spec.md) |
+| DOC-24 | Conclusão do fluxo de documento | Desenhada | 2283:34738 · brasileiro 2201:23602 | [DOC-24-documento-em-analise/](DOC-24-documento-em-analise/spec.md) |
 | DOC-25 | Bloqueio por tentativas no documento | Proposta (sem Figma) | None | [DOC-25-bloqueio-tentativas/](DOC-25-bloqueio-tentativas/spec.md) |
 | DOC-26 | RNE · tutorial da frente | Desenhada | 1817:51415 | [DOC-26-rne-tutorial-frente/](DOC-26-rne-tutorial-frente/spec.md) · 3 telas |
 | DOC-27 | RNE · câmera da frente | Desenhada | 1620:12173 | [DOC-27-rne-camera-frente/](DOC-27-rne-camera-frente/spec.md) · 5 telas |
@@ -340,15 +340,27 @@ flowchart LR
   DOC_01 -->|"CIN · Tirar foto do documento"| DOC_47
   DOC_47 -->|"Abrir câmera ou Pular"| DOC_48
   DOC_48 -->|"Foto tirada"| DOC_49
-  DOC_49 -->|"Continuar"| BIO_01
+  DOC_49 -->|"Continuar"| DOC_24
   DOC_01 -->|"CNH · Tirar foto do documento"| DOC_50
   DOC_50 -->|"Abrir câmera ou Pular"| DOC_51
   DOC_51 -->|"Foto tirada"| DOC_52
-  DOC_52 -->|"Continuar"| BIO_01
+  DOC_52 -->|"Continuar"| DOC_24
   DOC_01 -->|"RG · Tirar foto do documento"| DOC_53
   DOC_53 -->|"Abrir câmera ou Pular"| DOC_54
   DOC_54 -->|"Foto tirada"| DOC_55
-  DOC_55 -->|"Continuar"| BIO_01
+  DOC_55 -->|"Continuar"| DOC_24
+  DOC_49 -.->|"Validação reprovada"| DOC_11
+  DOC_49 -.->|"Sem conexão"| DOC_12
+  DOC_49 -.->|"Demorou mais de 20 s"| DOC_13
+  DOC_49 -.->|"Erro inesperado"| DOC_14
+  DOC_52 -.->|"Validação reprovada"| DOC_11
+  DOC_52 -.->|"Sem conexão"| DOC_12
+  DOC_52 -.->|"Demorou mais de 20 s"| DOC_13
+  DOC_52 -.->|"Erro inesperado"| DOC_14
+  DOC_55 -.->|"Validação reprovada"| DOC_11
+  DOC_55 -.->|"Sem conexão"| DOC_12
+  DOC_55 -.->|"Demorou mais de 20 s"| DOC_13
+  DOC_55 -.->|"Erro inesperado"| DOC_14
   BIO_01 -->|"Continuar no 3º passo"| BIO_02
   BIO_02 -->|"Rosto enquadrado na moldura"| DEC_03
   DEC_03 -->|"Aprovado · contagem 3, 2, 1"| BIO_03
@@ -834,7 +846,7 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E859 | DOC-48 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
 | E860 | DOC-48 | DOC-49 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
 | E861 | DOC-49 | DOC-48 | Tirar outra foto ou Voltar | — | Caminho alternativo |
-| E862 | DOC-49 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| E862 | DOC-49 | DOC-24 | Continuar | Documento brasileiro aprovado | Caminho principal |
 | E863 | DOC-01 | DOC-50 | CNH · Tirar foto do documento | CNH escolhido | Caminho principal |
 | E864 | DOC-50 | DOC-01 | Voltar no passo 1 | — | Voltar |
 | E865 | DOC-50 | DOC-51 | Abrir câmera ou Pular | — | Caminho principal |
@@ -842,7 +854,7 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E867 | DOC-51 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
 | E868 | DOC-51 | DOC-52 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
 | E869 | DOC-52 | DOC-51 | Tirar outra foto ou Voltar | — | Caminho alternativo |
-| E870 | DOC-52 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| E870 | DOC-52 | DOC-24 | Continuar | Documento brasileiro aprovado | Caminho principal |
 | E871 | DOC-01 | DOC-53 | RG · Tirar foto do documento | RG escolhido | Caminho principal |
 | E872 | DOC-53 | DOC-01 | Voltar no passo 1 | — | Voltar |
 | E873 | DOC-53 | DOC-54 | Abrir câmera ou Pular | — | Caminho principal |
@@ -850,4 +862,28 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E875 | DOC-54 | DOC-01 | Voltar para a seleção | Sem acesso à câmera ou câmera indisponível | Caminho alternativo |
 | E876 | DOC-54 | DOC-55 | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
 | E877 | DOC-55 | DOC-54 | Tirar outra foto ou Voltar | — | Caminho alternativo |
-| E878 | DOC-55 | BIO-01 | Continuar | Provisório: pula o verso e a conferência | Caminho principal |
+| E878 | DOC-55 | DOC-24 | Continuar | Documento brasileiro aprovado | Caminho principal |
+| E879 | DOC-49 | DOC-11 | Validação do documento reprovada | CIN · documento não validado | Erro ou nova tentativa |
+| E880 | DOC-49 | DOC-12 | Sem conexão ao enviar o documento | Erro de conexão no envio | Erro ou nova tentativa |
+| E881 | DOC-49 | DOC-13 | Envio acima de 20 s | Sem resposta do servidor | Erro ou nova tentativa |
+| E882 | DOC-49 | DOC-14 | Erro inesperado no envio | Falha de sistema não identificada | Erro ou nova tentativa |
+| E883 | DOC-11 | DOC-47 | Tentar novamente | CIN | Caminho alternativo |
+| E884 | DOC-12 | DOC-49 | Tentar novamente | CIN | Caminho alternativo |
+| E885 | DOC-13 | DOC-49 | Tentar novamente | CIN | Caminho alternativo |
+| E886 | DOC-14 | DOC-49 | Tentar novamente | CIN | Caminho alternativo |
+| E887 | DOC-52 | DOC-11 | Validação do documento reprovada | CNH · documento não validado | Erro ou nova tentativa |
+| E888 | DOC-52 | DOC-12 | Sem conexão ao enviar o documento | Erro de conexão no envio | Erro ou nova tentativa |
+| E889 | DOC-52 | DOC-13 | Envio acima de 20 s | Sem resposta do servidor | Erro ou nova tentativa |
+| E890 | DOC-52 | DOC-14 | Erro inesperado no envio | Falha de sistema não identificada | Erro ou nova tentativa |
+| E891 | DOC-11 | DOC-50 | Tentar novamente | CNH | Caminho alternativo |
+| E892 | DOC-12 | DOC-52 | Tentar novamente | CNH | Caminho alternativo |
+| E893 | DOC-13 | DOC-52 | Tentar novamente | CNH | Caminho alternativo |
+| E894 | DOC-14 | DOC-52 | Tentar novamente | CNH | Caminho alternativo |
+| E895 | DOC-55 | DOC-11 | Validação do documento reprovada | RG · documento não validado | Erro ou nova tentativa |
+| E896 | DOC-55 | DOC-12 | Sem conexão ao enviar o documento | Erro de conexão no envio | Erro ou nova tentativa |
+| E897 | DOC-55 | DOC-13 | Envio acima de 20 s | Sem resposta do servidor | Erro ou nova tentativa |
+| E898 | DOC-55 | DOC-14 | Erro inesperado no envio | Falha de sistema não identificada | Erro ou nova tentativa |
+| E899 | DOC-11 | DOC-53 | Tentar novamente | RG | Caminho alternativo |
+| E900 | DOC-12 | DOC-55 | Tentar novamente | RG | Caminho alternativo |
+| E901 | DOC-13 | DOC-55 | Tentar novamente | RG | Caminho alternativo |
+| E902 | DOC-14 | DOC-55 | Tentar novamente | RG | Caminho alternativo |

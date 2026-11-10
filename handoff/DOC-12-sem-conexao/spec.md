@@ -79,3 +79,13 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 - O título é o único `h1`.
 - "Tentar novamente" leva de volta ao envio, com os arquivos mantidos.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG). Figma `1620:13651` (seção `1620:12039`). Marcação em [telas/brasileiro](telas/brasileiro/screen.html).
+
+**Entradas:** confirmação da frente do CIN, do CNH e do RG, pelos erros de envio.
+
+**Retorno:** Tentar novamente volta à confirmação do documento da frente.
+
+**Pendência:** Copy do Figma: "Erro de conexão". O texto do Figma diz "sua validação foi reprovada", o que contradiz um erro de conexão. Ajustar o texto antes de aprovar.

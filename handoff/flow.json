@@ -1244,10 +1244,16 @@
      "label": "Volta ao upload do RNE",
      "file": "handoff/DOC-11-falha-validacao-documento/telas/rne/screen.html",
      "figma": "2283:34313"
+    },
+    {
+     "id": "doc-11--brasileiro",
+     "label": "Brasileiro (Figma 1620:13639)",
+     "file": "handoff/DOC-11-falha-validacao-documento/telas/brasileiro/screen.html",
+     "figma": "1620:13639"
     }
    ],
-   "inputs": 1,
-   "outputs": 4
+   "inputs": 4,
+   "outputs": 7
   },
   {
    "code": "DOC-12",
@@ -1276,10 +1282,16 @@
      "id": "doc-12--rne",
      "label": "Volta ao upload do RNE",
      "file": "handoff/DOC-12-sem-conexao/telas/rne/screen.html"
+    },
+    {
+     "id": "doc-12--brasileiro",
+     "label": "Brasileiro (Figma 1620:13651)",
+     "file": "handoff/DOC-12-sem-conexao/telas/brasileiro/screen.html",
+     "figma": "1620:13651"
     }
    ],
-   "inputs": 3,
-   "outputs": 3
+   "inputs": 6,
+   "outputs": 6
   },
   {
    "code": "DOC-13",
@@ -1308,10 +1320,15 @@
      "id": "doc-13--rne",
      "label": "Volta ao upload do RNE",
      "file": "handoff/DOC-13-tempo-excedido/telas/rne/screen.html"
+    },
+    {
+     "id": "doc-13--brasileiro",
+     "label": "Brasileiro (sem Figma; copy do hub)",
+     "file": "handoff/DOC-13-tempo-excedido/telas/brasileiro/screen.html"
     }
    ],
-   "inputs": 3,
-   "outputs": 3
+   "inputs": 6,
+   "outputs": 6
   },
   {
    "code": "DOC-14",
@@ -1340,10 +1357,16 @@
      "id": "doc-14--rne",
      "label": "Volta ao upload do RNE",
      "file": "handoff/DOC-14-erro-inesperado/telas/rne/screen.html"
+    },
+    {
+     "id": "doc-14--brasileiro",
+     "label": "Brasileiro (Figma 1620:13621)",
+     "file": "handoff/DOC-14-erro-inesperado/telas/brasileiro/screen.html",
+     "figma": "1620:13621"
     }
    ],
-   "inputs": 3,
-   "outputs": 4
+   "inputs": 6,
+   "outputs": 7
   },
   {
    "code": "DOC-15",
@@ -1684,9 +1707,15 @@
      "label": "Padrão",
      "file": "handoff/DOC-24-documento-em-analise/telas/padrao/screen.html",
      "figma": "2283:34738"
+    },
+    {
+     "id": "doc-24--brasileiro",
+     "label": "Brasileiro (sem Figma próprio na seção)",
+     "file": "handoff/DOC-24-documento-em-analise/telas/brasileiro/screen.html",
+     "figma": "2201:23602"
     }
    ],
-   "inputs": 1,
+   "inputs": 4,
    "outputs": 1
   },
   {
@@ -2465,7 +2494,7 @@
    ],
    "components": "handoff/BIO-01-tutorial-da-captura/components.json",
    "spec": "handoff/BIO-01-tutorial-da-captura/spec.md",
-   "inputs": 9,
+   "inputs": 6,
    "outputs": 2,
    "figma": "1774:46320"
   },
@@ -3378,7 +3407,7 @@
      "figma": "1817:51067"
     }
    ],
-   "inputs": 2,
+   "inputs": 3,
    "outputs": 2
   },
   {
@@ -3440,8 +3469,8 @@
      "file": "handoff/DOC-49-cin-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 1,
-   "outputs": 2
+   "inputs": 4,
+   "outputs": 6
   },
   {
    "code": "DOC-50",
@@ -3475,7 +3504,7 @@
      "figma": "1817:51230"
     }
    ],
-   "inputs": 2,
+   "inputs": 3,
    "outputs": 2
   },
   {
@@ -3537,8 +3566,8 @@
      "file": "handoff/DOC-52-cnh-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 1,
-   "outputs": 2
+   "inputs": 4,
+   "outputs": 6
   },
   {
    "code": "DOC-53",
@@ -3570,7 +3599,7 @@
      "file": "handoff/DOC-53-rg-tutorial-frente/telas/passo-3/screen.html"
     }
    ],
-   "inputs": 2,
+   "inputs": 3,
    "outputs": 2
   },
   {
@@ -3632,8 +3661,8 @@
      "file": "handoff/DOC-55-rg-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 1,
-   "outputs": 2
+   "inputs": 4,
+   "outputs": 6
   }
  ],
  "edges": [
@@ -5904,10 +5933,10 @@
   {
    "id": "E862",
    "src": "DOC-49",
-   "dst": "BIO-01",
+   "dst": "DOC-24",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Provisório: pula o verso e a conferência"
+   "cond": "Documento brasileiro aprovado"
   },
   {
    "id": "E863",
@@ -5968,10 +5997,10 @@
   {
    "id": "E870",
    "src": "DOC-52",
-   "dst": "BIO-01",
+   "dst": "DOC-24",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Provisório: pula o verso e a conferência"
+   "cond": "Documento brasileiro aprovado"
   },
   {
    "id": "E871",
@@ -6032,10 +6061,202 @@
   {
    "id": "E878",
    "src": "DOC-55",
-   "dst": "BIO-01",
+   "dst": "DOC-24",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Provisório: pula o verso e a conferência"
+   "cond": "Documento brasileiro aprovado"
+  },
+  {
+   "id": "E879",
+   "src": "DOC-49",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "CIN · documento não validado"
+  },
+  {
+   "id": "E880",
+   "src": "DOC-49",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E881",
+   "src": "DOC-49",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E882",
+   "src": "DOC-49",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E883",
+   "src": "DOC-11",
+   "dst": "DOC-47",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CIN"
+  },
+  {
+   "id": "E884",
+   "src": "DOC-12",
+   "dst": "DOC-49",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CIN"
+  },
+  {
+   "id": "E885",
+   "src": "DOC-13",
+   "dst": "DOC-49",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CIN"
+  },
+  {
+   "id": "E886",
+   "src": "DOC-14",
+   "dst": "DOC-49",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CIN"
+  },
+  {
+   "id": "E887",
+   "src": "DOC-52",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "CNH · documento não validado"
+  },
+  {
+   "id": "E888",
+   "src": "DOC-52",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E889",
+   "src": "DOC-52",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E890",
+   "src": "DOC-52",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E891",
+   "src": "DOC-11",
+   "dst": "DOC-50",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CNH"
+  },
+  {
+   "id": "E892",
+   "src": "DOC-12",
+   "dst": "DOC-52",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CNH"
+  },
+  {
+   "id": "E893",
+   "src": "DOC-13",
+   "dst": "DOC-52",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CNH"
+  },
+  {
+   "id": "E894",
+   "src": "DOC-14",
+   "dst": "DOC-52",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "CNH"
+  },
+  {
+   "id": "E895",
+   "src": "DOC-55",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "RG · documento não validado"
+  },
+  {
+   "id": "E896",
+   "src": "DOC-55",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E897",
+   "src": "DOC-55",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E898",
+   "src": "DOC-55",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E899",
+   "src": "DOC-11",
+   "dst": "DOC-53",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "RG"
+  },
+  {
+   "id": "E900",
+   "src": "DOC-12",
+   "dst": "DOC-55",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "RG"
+  },
+  {
+   "id": "E901",
+   "src": "DOC-13",
+   "dst": "DOC-55",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "RG"
+  },
+  {
+   "id": "E902",
+   "src": "DOC-14",
+   "dst": "DOC-55",
+   "kind": "alternativa",
+   "trigger": "Tentar novamente",
+   "cond": "RG"
   }
  ],
  "decisions": {

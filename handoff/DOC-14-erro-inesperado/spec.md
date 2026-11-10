@@ -81,3 +81,13 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 - O título é o único `h1`.
 - "Tentar novamente" e "Voltar" ficam no rodapé.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG). Figma `1620:13621` (seção `1620:12039`). Marcação em [telas/brasileiro](telas/brasileiro/screen.html).
+
+**Entradas:** confirmação da frente do CIN, do CNH e do RG, pelos erros de envio.
+
+**Retorno:** Tentar novamente volta à confirmação do documento da frente.
+
+**Pendência:** Copy e botões do Figma ("Reportar problema" e "Tentar novamente"). Sem "Voltar".

@@ -79,3 +79,13 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 - O título é o único `h1`.
 - "Tentar novamente" leva de volta ao envio, com os arquivos mantidos.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG). sem Figma. Marcação em [telas/brasileiro](telas/brasileiro/screen.html).
+
+**Entradas:** confirmação da frente do CIN, do CNH e do RG, pelos erros de envio.
+
+**Retorno:** Tentar novamente volta à confirmação do documento da frente.
+
+**Pendência:** Sem frame no Figma. A decisão "demorou mais de 20 segundos" do fluxo brasileiro chega aqui. Copy do hub, a desenhar.
