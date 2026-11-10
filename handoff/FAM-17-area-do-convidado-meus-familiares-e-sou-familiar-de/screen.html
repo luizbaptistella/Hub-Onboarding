@@ -695,5 +695,22 @@
     </section>
 
 </div>
+<script>
+// Cards expansíveis desta tela: Convites enviados, familiar (lista) e seções de Meu cadastro.
+// Alterna aria-expanded (o CSS gira a seta) e mostra/esconde o painel. O painel é o controlado por aria-controls,
+// ou o irmão seguinte do cabeçalho.
+(function () {
+  document.addEventListener('click', function (e) {
+    var head = e.target.closest('.hub-card-head, .area-family-head, .area-acc-head');
+    if (!head) return;
+    var id = head.getAttribute('aria-controls');
+    var panel = id ? document.getElementById(id) : head.nextElementSibling;
+    if (!panel) return;
+    var abrir = head.getAttribute('aria-expanded') !== 'true';
+    head.setAttribute('aria-expanded', abrir ? 'true' : 'false');
+    if (abrir) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+  });
+})();
+</script>
 </body>
 </html>
