@@ -32,6 +32,27 @@ async function inlineLocalStyles(html, markupFile) {
   return out;
 }
 
+// Imagens relativas (logo, bandeira, miniaturas) também não resolvem no documento. Embutimos como data: URI,
+// porque o iframe não envia cookies e o CSP só libera data: para imagens.
+const MIME = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
+const MAX_INLINE_IMAGE_BYTES = 400_000;
+async function inlineLocalImages(html, markupFile) {
+  let out = html;
+  for (const tag of html.match(/<img\b[^>]*>/g) ?? []) {
+    const src = tag.match(/\bsrc="([^"]+)"/)?.[1];
+    if (!src || /^(https?:|\/\/|data:)/.test(src)) continue;
+    const file = path.resolve(path.dirname(markupFile), src.split('?')[0]);
+    const segments = path.relative(hubRoot, file).split(path.sep);
+    if (!file.startsWith(hubRoot + path.sep) || !MIME[path.extname(file).toLowerCase()]) continue;
+    if (segments.some((s) => s.startsWith('.') || DENIED_DIRS.has(s))) continue;
+    const bytes = await readFile(file).catch(() => null);
+    if (bytes === null || bytes.length > MAX_INLINE_IMAGE_BYTES) continue;
+    const uri = `data:${MIME[path.extname(file).toLowerCase()]};base64,${bytes.toString('base64')}`;
+    out = out.replace(tag, () => tag.replace(`src="${src}"`, `src="${uri}"`));
+  }
+  return out;
+}
+
 export async function handleApi(handoff, pathname, searchParams, { designSystem } = {}) {
   const parts = pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
   const [head, ...rest] = parts;
@@ -74,7 +95,7 @@ export async function handleApi(handoff, pathname, searchParams, { designSystem 
       if (!r) return notFound(`Tela ${code}`);
       if (r.error) return json(404, { error: r.error, variants: r.variants });
       const file = path.join(handoff.dir, r.variant.file.replace(/^handoff\//, ''));
-      const body = await inlineLocalStyles(r.html, file);
+      const body = await inlineLocalImages(await inlineLocalStyles(r.html, file), file);
       return { status: 200, type: 'text/html; charset=utf-8', body, headers: MARKUP_HEADERS };
     }
     return notFound(`Recurso ${sub}`);

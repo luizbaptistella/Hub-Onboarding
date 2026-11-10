@@ -100,12 +100,12 @@ async function renderScreen(code) {
   }
   const { node, spec } = data;
   const tabs = {
+    telas: async () => markupView(code),
     spec: () => el('pre', {}, spec ?? 'Esta tela não tem spec.md.'),
     componentes: async () => el('pre', {}, JSON.stringify(await api(`/api/screens/${encodeURIComponent(code)}/components`), null, 2)),
     fluxo: async () => flowView(await api(`/api/flow/${encodeURIComponent(code)}`)),
-    marcacao: async () => markupView(code),
   };
-  const labels = { spec: 'Spec', componentes: 'Componentes', fluxo: 'Fluxo', marcacao: 'Marcação' };
+  const labels = { telas: 'Telas', spec: 'Spec', componentes: 'Componentes', fluxo: 'Fluxo' };
   const content = el('div', {});
   const buttons = Object.keys(tabs).map((key) => el('button', { role: 'tab', 'aria-selected': 'false', 'data-tab': key }, labels[key]));
   const select = async (key) => {
@@ -141,7 +141,7 @@ async function markupView(code) {
   const data = await api(`/api/screens/${encodeURIComponent(code)}/markup`);
   // sandbox sem permissões: a marcação de referência não executa script nem acessa a origem.
   // O documento vem de uma rota própria, com o CSS embutido e CSP que permite os estilos.
-  const frame = el('iframe', { class: 'preview', sandbox: '', title: `Marcação de ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
+  const frame = el('iframe', { class: 'preview telas', sandbox: '', title: `Tela ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
   return el('div', {}, data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite.') : null, frame);
 }
 
