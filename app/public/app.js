@@ -23,9 +23,33 @@ const el = (tag, props = {}, ...children) => {
 
 const statusBadge = (s) => el('span', { class: /lacuna|proposta|sem-figma/.test(s) ? 'badge warn' : 'badge' }, s);
 
+let hubInfo = null;
+const laneTitles = new Map();
+
 async function loadLanes() {
-  const info = await api('/api/info');
-  for (const l of info.lanes) laneSelect.append(el('option', { value: l.id }, l.title));
+  hubInfo = await api('/api/info');
+  for (const l of hubInfo.lanes) {
+    laneTitles.set(l.id, l.title);
+    laneSelect.append(el('option', { value: l.id }, l.title));
+  }
+}
+
+const stat = (value, label) => el('div', { class: 'stat' }, el('div', { class: 'stat-value' }, String(value)), el('div', { class: 'stat-label' }, label));
+
+function heroView(info) {
+  return el('section', { class: 'hero' },
+    el('p', { class: 'eyebrow' }, 'Handoff · Onboarding'),
+    el('h1', { class: 'hero-title' }, 'Palmeiras Hub'),
+    el('p', { class: 'hero-sub' }, 'Telas, decisões, componentes e ligações do fluxo de onboarding, em um só lugar.'),
+    el('div', { class: 'stats' },
+      stat(info.screens, 'telas'),
+      stat(info.edges, 'ligações'),
+      stat(info.decisions, 'decisões'),
+      stat(info.componentDocs, 'componentes')),
+    el('nav', { class: 'tiles', 'aria-label': 'Atalhos' },
+      el('a', { class: 'tile', href: '/hub/' }, 'Fluxograma'),
+      el('a', { class: 'tile', href: '#/ds' }, 'Design System'),
+      el('a', { class: 'tile', href: '#/docs' }, 'Documentação')));
 }
 
 async function renderList() {
@@ -34,21 +58,27 @@ async function renderList() {
   const params = new URLSearchParams();
   if (query) params.set('query', query);
   if (lane) params.set('lane', lane);
-  const { total, screens } = await api(`/api/screens?${params}`);
+  const [{ total, screens }, info] = await Promise.all([api(`/api/screens?${params}`), hubInfo ?? api('/api/info')]);
+  hubInfo = info;
   const groups = new Map();
   for (const s of screens) {
     if (!groups.has(s.lane)) groups.set(s.lane, []);
     groups.get(s.lane).push(s);
   }
-  const children = [
-    el('h1', {}, 'Telas do fluxo'),
-    el('p', { class: 'sub' }, `${total} itens · telas, decisões e lacunas`),
-  ];
+  const children = [heroView(info)];
+  const filtered = query || lane;
+  children.push(el('p', { class: 'list-meta' }, filtered ? `${total} resultado(s) no filtro atual` : `${total} itens no fluxo`));
   if (query.length >= 2) children.push(await searchBlock(query));
   for (const [laneId, items] of groups) {
-    children.push(el('div', { class: 'lane' }, laneId));
-    children.push(el('div', { class: 'cards' }, items.map((s) => el('a', { class: 'card', href: `#/tela/${encodeURIComponent(s.code)}` },
-      el('div', { class: 'code' }, s.code), el('div', { class: 'name' }, s.name), statusBadge(s.status)))));
+    children.push(el('div', { class: 'lane-head' },
+      el('h2', {}, laneTitles.get(laneId) ?? laneId),
+      el('span', { class: 'lane-count' }, String(items.length))));
+    children.push(el('div', { class: 'cards' }, items.map((s) => {
+      const warn = /lacuna|proposta|sem-figma/.test(s.status);
+      return el('a', { class: warn ? 'card card-warn' : 'card', href: `#/tela/${encodeURIComponent(s.code)}` },
+        el('div', { class: 'card-top' }, el('span', { class: 'code' }, s.code), statusBadge(s.status)),
+        el('div', { class: 'name' }, s.name));
+    })));
   }
   view.replaceChildren(...children);
 }
