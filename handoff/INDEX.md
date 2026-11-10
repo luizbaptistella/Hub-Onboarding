@@ -39,6 +39,8 @@ Etapa 1 de 4 · dados pessoais, contatos e endereço
 | CAD-06 | E-mail verificado | Sem Figma | — | [CAD-06-e-mail-verificado/](CAD-06-e-mail-verificado/spec.md) |
 | CAD-07 | Endereço | Desenhada | 1619:11471 | [CAD-07-endereco/](CAD-07-endereco/spec.md) |
 | CAD-08 | Status · dados recebidos | Desenhada | 2198:23407 | [CAD-08-status-dados-recebidos/](CAD-08-status-dados-recebidos/spec.md) |
+| CAD-09 | Primeiro acesso · criar senha | Desenhada | 1676:35028 | [CAD-09-primeiro-acesso-criar-senha/](CAD-09-primeiro-acesso-criar-senha/spec.md) |
+| CAD-10 | Criação de senha | Desenhada | 1676:35055 | [CAD-10-criacao-de-senha/](CAD-10-criacao-de-senha/spec.md) |
 
 ## Documento de identidade · brasileiro
 
@@ -205,6 +207,8 @@ flowchart LR
     CAD_06["CAD-06<br/>E-mail verificado"]
     CAD_07["CAD-07<br/>Endereço"]
     CAD_08["CAD-08<br/>Status · dados recebidos"]
+    CAD_09["CAD-09<br/>Primeiro acesso · criar senha"]
+    CAD_10["CAD-10<br/>Criação de senha"]
   end
   subgraph documento["Documento de identidade · brasileiro"]
     DOC_01["DOC-01<br/>Seleção de documento"]
@@ -313,7 +317,9 @@ flowchart LR
   CAD_05 -->|"Confirmar e enviar código"| CAD_04
   CAD_06 -->|"Continuar"| CAD_07
   CAD_07 -->|"Continuar"| CAD_08
-  CAD_08 ==>|"10 s ou Continuar agora"| DOC_01
+  CAD_08 ==>|"10 s ou Continuar agora"| CAD_09
+  CAD_09 -->|"Continuar"| CAD_10
+  CAD_10 -->|"Confirmar"| DOC_01
   DOC_01 -->|"Tirar foto ou Fazer upload"| BIO_01
   DOC_01 -.->|"Tirar foto ou Fazer upload"| DOC_G1
   DOC_G1 -.->|"Documento aprovado"| BIO_01
@@ -365,7 +371,7 @@ flowchart LR
   FAM_G2_CIN_1 -->|"Abrir câmera ou Pular"| FAM_G2_CIN_2
   FAM_G2_CIN_2 -->|"Foto tirada"| FAM_G2_3
   FAM_G2_3 -->|"Salvar e continuar"| FAM_G2_CIN_3
-  CAD_08 ==>|"10 s ou Continuar agora"| DOC_02
+  CAD_10 -->|"Confirmar"| DOC_02
   DOC_02 -->|"CRNM · Tirar foto do documento"| DOC_03
   DOC_03 -->|"Abrir câmera ou Pular"| DOC_04
   DOC_04 -->|"Voltar para a seleção"| DOC_02
@@ -542,8 +548,8 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E18 | CAD-06 | CAD-04 | Voltar | — | Voltar |
 | E19 | CAD-07 | CAD-08 | Continuar | CEP, rua, número, estado e cidade preenchidos | Caminho principal |
 | E20 | CAD-07 | CAD-06 | Voltar | — | Voltar |
-| E21 | CAD-08 | DOC-01 | 10 s ou Continuar agora | — | Automática (timer) |
-| E22 | DOC-01 | CAD-08 | Voltar | — | Voltar |
+| E21 | CAD-08 | CAD-09 | 10 s ou Continuar agora | — | Automática (timer) |
+| E22 | DOC-01 | CAD-10 | Voltar | — | Voltar |
 | E23 | DOC-01 | BIO-01 | Tirar foto ou Fazer upload | Provisório: pula a captura do documento | Caminho principal |
 | E24 | DOC-01 | DOC-G1 | Tirar foto ou Fazer upload | — | Lacuna (a desenhar) |
 | E25 | DOC-G1 | BIO-01 | Documento aprovado | — | Lacuna (a desenhar) |
@@ -612,8 +618,8 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E237 | FAM-G2-CIN-2 | FAM-G2-CIN-1 | Voltar | — | Voltar |
 | E238 | FAM-G2-CIN-2 | FAM-G2-3 | Foto tirada | Confirmação da frente | Caminho principal |
 | E239 | FAM-G2-3 | FAM-G2-CIN-3 | Salvar e continuar | CIN: captura do verso | Caminho principal |
-| E81 | CAD-08 | DOC-02 | 10 s ou Continuar agora | Usuário estrangeiro (aba Estrangeiro no cadastro) | Automática (timer) |
-| E82 | DOC-02 | CAD-08 | Voltar | — | Voltar |
+| E81 | CAD-08 | CAD-09 | 10 s ou Continuar agora | Usuário estrangeiro (aba Estrangeiro no cadastro) | Automática (timer) |
+| E82 | DOC-02 | CAD-10 | Voltar | — | Voltar |
 | E201 | DOC-02 | DOC-03 | CRNM · Tirar foto do documento | — | Caminho principal |
 | E202 | DOC-03 | DOC-02 | Voltar no passo 1 | — | Voltar |
 | E203 | DOC-03 | DOC-04 | Abrir câmera ou Pular | — | Caminho principal |

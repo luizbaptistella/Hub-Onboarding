@@ -782,6 +782,50 @@
    "outputs": 2
   },
   {
+   "code": "CAD-09",
+   "name": "Primeiro acesso · criar senha",
+   "lane": "cadastro",
+   "col": 9,
+   "row": 0,
+   "figma": "1676:35028",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-09-primeiro-acesso-criar-senha",
+   "variants": [
+    {
+     "id": "primeiro-acesso",
+     "label": "Padrão",
+     "file": "handoff/CAD-09-primeiro-acesso-criar-senha/screen.html"
+    }
+   ],
+   "components": null,
+   "spec": "handoff/CAD-09-primeiro-acesso-criar-senha/spec.md",
+   "inputs": 1,
+   "outputs": 1
+  },
+  {
+   "code": "CAD-10",
+   "name": "Criação de senha",
+   "lane": "cadastro",
+   "col": 10,
+   "row": 0,
+   "figma": "1676:35055",
+   "type": "screen",
+   "status": "desenhada",
+   "folder": "CAD-10-criacao-de-senha",
+   "variants": [
+    {
+     "id": "criacao-de-senha",
+     "label": "Padrão",
+     "file": "handoff/CAD-10-criacao-de-senha/screen.html"
+    }
+   ],
+   "components": null,
+   "spec": "handoff/CAD-10-criacao-de-senha/spec.md",
+   "inputs": 1,
+   "outputs": 2
+  },
+  {
    "code": "DOC-01",
    "name": "Seleção de documento",
    "lane": "documento",
@@ -3399,7 +3443,7 @@
   },
   {
    "src": "CAD-08",
-   "dst": "DOC-01",
+   "dst": "CAD-09",
    "kind": "automatica",
    "trigger": "10 s ou Continuar agora",
    "cond": "",
@@ -3407,7 +3451,7 @@
   },
   {
    "src": "DOC-01",
-   "dst": "CAD-08",
+   "dst": "CAD-10",
    "kind": "voltar",
    "trigger": "Voltar",
    "cond": "",
@@ -3960,7 +4004,7 @@
   {
    "id": "E81",
    "src": "CAD-08",
-   "dst": "DOC-02",
+   "dst": "CAD-09",
    "kind": "automatica",
    "trigger": "10 s ou Continuar agora",
    "cond": "Usuário estrangeiro (aba Estrangeiro no cadastro)"
@@ -3968,7 +4012,7 @@
   {
    "id": "E82",
    "src": "DOC-02",
-   "dst": "CAD-08",
+   "dst": "CAD-10",
    "kind": "voltar",
    "trigger": "Voltar",
    "cond": ""
@@ -5436,6 +5480,46 @@
    "kind": "principal",
    "trigger": "Ir para o login",
    "cond": "Sem login automático"
+  },
+  {
+   "src": "CAD-09",
+   "dst": "CAD-10",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "",
+   "id": "E850"
+  },
+  {
+   "src": "CAD-09",
+   "dst": "CAD-08",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E851"
+  },
+  {
+   "src": "CAD-10",
+   "dst": "DOC-01",
+   "kind": "principal",
+   "trigger": "Confirmar (carregando concluído)",
+   "cond": "Usuário brasileiro · 4 requisitos, confirmação igual e sem bloqueio",
+   "id": "E852"
+  },
+  {
+   "src": "CAD-10",
+   "dst": "DOC-02",
+   "kind": "principal",
+   "trigger": "Confirmar (carregando concluído)",
+   "cond": "Usuário estrangeiro · 4 requisitos, confirmação igual e sem bloqueio",
+   "id": "E853"
+  },
+  {
+   "src": "CAD-10",
+   "dst": "CAD-09",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": "",
+   "id": "E854"
   }
  ],
  "decisions": {

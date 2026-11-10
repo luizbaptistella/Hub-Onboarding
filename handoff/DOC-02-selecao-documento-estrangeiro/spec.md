@@ -97,7 +97,7 @@ Linhas de apoio das ações:
 - Uma opção aberta por vez. Escolher outra fecha a anterior.
 - **Clicar de novo no card aberto recolhe o card e volta ao estado inicial**: nenhum documento escolhido, todos fechados. No teclado, Espaço no rádio já escolhido faz o mesmo e o foco continua no rádio. Clicar numa ação dentro do card não recolhe. O rádio nativo não desmarca sozinho; a tela trata o clique no cabeçalho do card já escolhido ([tela.js](tela.js)). Proposta para o DS: levar esse comportamento ao `DocumentOption`.
 - A linha inteira da opção é clicável; a linha inteira da ação é o botão.
-- Voltar leva ao CAD-08. Ajuda abre a ajuda do módulo.
+- Voltar leva ao CAD-10 (criação de senha). Ajuda abre a ajuda do módulo.
 
 ## Entradas e saídas
 
@@ -107,7 +107,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 | De | Tela | Gatilho | Tipo | Condição |
 |---|---|---|---|---|
-| CAD-08 | Status · dados recebidos | 10 s ou Continuar agora | Automática (timer) | Usuário estrangeiro (aba Estrangeiro no cadastro) |
+| CAD-10 | Criação de senha | Confirmar (criação de senha) | Caminho principal | Usuário estrangeiro · senha válida |
 | DOC-03 | CRNM · tutorial da frente | Voltar no passo 1 | Voltar | — |
 | DOC-04 | CRNM · câmera da frente | Voltar para a seleção | Caminho alternativo | Sem acesso à câmera ou câmera indisponível |
 | DOC-07 | CRNM · câmera do verso (código) | Voltar para a seleção | Caminho alternativo | Sem acesso à câmera ou câmera indisponível |
@@ -135,7 +135,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 | Para | Tela | Gatilho | Tipo | Condição |
 |---|---|---|---|---|
-| CAD-08 | Status · dados recebidos | Voltar | Voltar | — |
+| CAD-10 | Criação de senha | Voltar | Voltar | — |
 | DOC-03 | CRNM · tutorial da frente | CRNM · Tirar foto do documento | Caminho principal | — |
 | DOC-09 | CRNM · upload da frente e do verso | CRNM · Fazer upload do documento | Caminho principal | — |
 | DOC-16 | DPRNM · tutorial da frente | DPRNM · Tirar foto do documento | Caminho principal | — |

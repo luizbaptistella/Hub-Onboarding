@@ -50,7 +50,7 @@ _Sem campos._
 
 | Ação | Vai para | Observação |
 |---|---|---|
-| Voltar | [CAD-08 · Status · dados recebidos](../CAD-08-status-dados-recebidos/spec.md) |  |
+| Voltar | [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) |  |
 | Ajuda | — |  |
 | Tirar foto do documento | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) |  |
 | Fazer upload do documento | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) |  |
@@ -72,7 +72,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
-| [CAD-08 · Status · dados recebidos](../CAD-08-status-dados-recebidos/spec.md) | 10 s ou Continuar agora | — | Automática (timer) |
+| [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) | Confirmar (criação de senha) | Senha válida · usuário brasileiro | Caminho principal |
 | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) | Voltar no 1º passo | — | Voltar |
 | [AREA-01 · Meu cadastro](../AREA-01-meu-cadastro/spec.md) | Concluir validação ou Tentar novamente | Cenário pendente ou reprovado | Caminho alternativo |
 
@@ -80,7 +80,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
-| [CAD-08 · Status · dados recebidos](../CAD-08-status-dados-recebidos/spec.md) | Voltar | — | Voltar |
+| [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) | Voltar | — | Voltar |
 | [BIO-01 · Tutorial da captura](../BIO-01-tutorial-da-captura/spec.md) | Tirar foto ou Fazer upload | Provisório: pula a captura do documento | Caminho principal |
 | DOC-G1 · Captura do documento | Tirar foto ou Fazer upload | — | Lacuna (a desenhar) |
 

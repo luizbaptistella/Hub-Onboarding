@@ -53,8 +53,8 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 ## 6. Comportamento
 
 - StatusScreen com a jornada: Cadastro (feito), Captura de documentos (atual), Biometria facial e Validação de benefícios (próximas).
-- Contagem de 10 s e depois abre DOC-01. "Continuar agora" adianta. A contagem pausa com a aba oculta.
-- Leitor de tela: anuncia "Redirecionando para a captura de documentos em 10 segundos."
+- Contagem de 10 s e depois abre CAD-09 (criação de senha). "Continuar agora" adianta. A contagem pausa com a aba oculta.
+- Leitor de tela: anuncia "Redirecionando para a criação de senha em 10 segundos."
 
 ## 7. Entradas (de onde se chega)
 
@@ -67,7 +67,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
-| [DOC-01 · Seleção de documento](../DOC-01-selecao-de-documento/spec.md) | 10 s ou Continuar agora | — | Automática (timer) |
+| [CAD-09 · Primeiro acesso · criar senha](../CAD-09-primeiro-acesso-criar-senha/spec.md) | 10 s ou Continuar agora | — | Automática (timer) |
 
 ## 9. Dados
 
@@ -81,8 +81,8 @@ _Nenhuma._
 
 ## 11. Critérios de aceite
 
-- [ ] Sem interação, abre DOC-01 depois de 10 s.
-- [ ] Continuar agora abre DOC-01 na hora.
+- [ ] Sem interação, abre CAD-09 depois de 10 s.
+- [ ] Continuar agora abre CAD-09 na hora.
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)
