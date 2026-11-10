@@ -32,6 +32,8 @@ ul.edges { list-style: none; padding: 0; margin: 0; }
 ul.edges li { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .muted { color: var(--fg-2); }
 iframe.preview { width: 100%; height: 70vh; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+/* Telas são desenhadas em 375 px (padrão mobile do hub): sem área vazia ao lado. */
+iframe.preview.telas { width: 375px; max-width: 100%; height: 812px; }
 .hit { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .error { padding: 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--warn); }
 .wide { grid-column: 1 / -1; }
