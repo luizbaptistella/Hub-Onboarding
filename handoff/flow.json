@@ -2932,6 +2932,18 @@
      "id": "familiar-busca",
      "label": "Padrão",
      "file": "handoff/FAM-09-buscar-familiar/screen.html"
+    },
+    {
+     "id": "fam-09--nao-encontrado",
+     "label": "Não encontrado",
+     "file": "handoff/FAM-09-buscar-familiar/telas/nao-encontrado/screen.html",
+     "figma": "3417:9630"
+    },
+    {
+     "id": "fam-09--limite-consultas",
+     "label": "Limite de consultas atingido",
+     "file": "handoff/FAM-09-buscar-familiar/telas/limite-consultas/screen.html",
+     "figma": "3417:9653"
     }
    ],
    "components": "handoff/FAM-09-buscar-familiar/components.json",

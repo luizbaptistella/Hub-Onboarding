@@ -139,9 +139,11 @@ function flowView(flow) {
 
 async function markupView(code) {
   const data = await api(`/api/screens/${encodeURIComponent(code)}/markup`);
-  // sandbox sem permissões: a marcação de referência não executa script nem acessa a origem.
+  // sandbox com allow-same-origin, sem allow-scripts: a marcação não executa script (a CSP do documento também bloqueia).
+  // Sem allow-same-origin, a origem vira opaca e o navegador não envia o cookie de login (SameSite=Strict),
+  // então a rota /documento responde 401 e o iframe fica em branco.
   // O documento vem de uma rota própria, com o CSS embutido e CSP que permite os estilos.
-  const frame = el('iframe', { class: 'preview telas', sandbox: '', title: `Tela ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
+  const frame = el('iframe', { class: 'preview telas', sandbox: 'allow-same-origin', title: `Tela ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
   return el('div', {}, data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite.') : null, frame);
 }
 

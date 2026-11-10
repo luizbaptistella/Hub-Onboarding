@@ -146,7 +146,7 @@ Inclusão e gestão de vínculos
 |---|---|---|---|---|
 | FAM-01 | Meus familiares · vazio | Desenhada | 2831:38227 | [FAM-01-meus-familiares-vazio/](FAM-01-meus-familiares-vazio/spec.md) |
 | FAM-03 | Adicionar familiar · introdução | Desenhada | 3057:44465 | [FAM-03-adicionar-familiar-introducao/](FAM-03-adicionar-familiar-introducao/spec.md) |
-| FAM-09 | Buscar familiar | Sem Figma | — | [FAM-09-buscar-familiar/](FAM-09-buscar-familiar/spec.md) |
+| FAM-09 | Buscar familiar | Sem Figma (3 telas; 2 estados com Figma) | — | [FAM-09-buscar-familiar/](FAM-09-buscar-familiar/spec.md) · 3 telas |
 | FAM-10 | Card e tipo de vínculo | Sem Figma | — | [FAM-10-card-e-tipo-de-vinculo/](FAM-10-card-e-tipo-de-vinculo/spec.md) |
 | FAM-11 | Confirmação de contatos e convite | Sem Figma | — | [FAM-11-confirmacao-de-contatos-e-convite/](FAM-11-confirmacao-de-contatos-e-convite/spec.md) |
 | FAM-12 | Cadastro do familiar (sem conta) | Sem Figma | — | [FAM-12-cadastro-do-familiar-sem-conta/](FAM-12-cadastro-do-familiar-sem-conta/spec.md) |

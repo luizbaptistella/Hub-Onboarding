@@ -21,7 +21,7 @@ Confirmar os canais de contato do familiar e enviar o convite (Caminho A e maior
 
 ## 2. Componentes
 
-5 peças nesta tela: **5 instâncias de 4 componentes do DS** (`AppHeader`, `Button`, `LegalFooter`, `PageHeading`).
+6 peças nesta tela: **6 instâncias de 5 componentes do DS** (`AppHeader`, `Button`, `LegalFooter`, `PageHeading`, `Toast`).
 
 Lista para máquina: [components.json](components.json). Docs de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`. Hover, pressionado e foco vêm prontos do DS; a coluna Estados lista só o que esta tela precisa mostrar.
 
@@ -32,6 +32,7 @@ Lista para máquina: [components.json](components.json). Docs de cada componente
 | 3 | `Button` | `<Button variant="primary" fullWidth type="submit" iconEnd="send">Enviar link</Button>` | — | — |
 | 4 | `Button` | `<Button variant="secondary" fullWidth iconEnd="link">Copiar link</Button>` | — | — |
 | 5 | `LegalFooter` | `<LegalFooter>© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
+| 6 | `Toast` | `<Toast tone="success" title="Convite enviado." />` | visível na marcação (estado "Convite enviado"); some em 4 s | Vai dentro da ToastRegion, logo abaixo do AppHeader. Mesmo padrão de FAM-17. |
 
 Classes locais usadas na tela (fora do DS): `.area-form*`.
 
@@ -56,6 +57,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 - Padrão
 - Erro sem canal marcado
+- Convite enviado: toast de sucesso "Convite enviado." por 4 s, antes de abrir FAM-17 (a marcação mostra o toast visível)
 
 ## 6. Comportamento
 
@@ -63,7 +65,8 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 - Checkboxes de canal (e-mail e SMS): pelo menos um precisa estar marcado.
 - Titular pode trocar o e-mail e o celular do convidado. A troca vale só para o envio deste convite (P7); não atualiza o cadastro do familiar.
 - Se o contato do convidado mudar depois do convite, o convite usa o contato atual. A atualização do contato é automática.
-- Enviar convite cria o convite com validade de 7 dias e dispara as notificações. Abre FAM-17.
+- Enviar convite cria o convite com validade de 7 dias e dispara as notificações.
+- Depois do envio, aparece o toast de sucesso "Convite enviado." por 4 s. Em seguida, abre FAM-17.
 
 ## 7. Entradas (de onde se chega)
 
@@ -94,7 +97,7 @@ Visão geral: [dados.md](../dados.md).
 ## 11. Critérios de aceite
 
 - [ ] Sem canal marcado, mostra o erro e não envia.
-- [ ] Enviar convite abre FAM-17 com o convite pendente.
+- [ ] Enviar convite mostra o toast "Convite enviado." por 4 s e depois abre FAM-17 com o convite pendente.
 - [ ] Após 3 reenvios, o convite não aparece mais para reenvio em FAM-17.
 
 ---

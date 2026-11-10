@@ -167,3 +167,8 @@
 #familiar-termo .termo-box { flex: 1 1 auto; min-height: 0; max-height: none; }
 #familiar-termo .termo-check { flex: none; }
 #familiar-termo .termo-page { padding-bottom: var(--space-stack-related); }
+
+/* Convite enviado (FAM-11): toast de sucesso com o mesmo visual do de FAM-17 (familiar-pendentes.css). */
+#familiar-contatos .toast-slot .po-toast { display: flex; align-items: flex-start; gap: var(--space-inline-related); width: 100%; max-width: none; box-sizing: border-box; padding: var(--space-inset-sm) var(--space-inset-md); background: var(--bg-surface); border: 1px solid var(--border-success); border-radius: var(--radius-lg); }
+#familiar-contatos .toast-slot .po-toast-title { font-size: var(--type-label-md-size); line-height: var(--type-label-md-line-height); font-weight: var(--type-label-md-strong-weight); color: var(--text-default); }
+#familiar-contatos .toast-slot .po-toast-icon { color: var(--icon-success); }

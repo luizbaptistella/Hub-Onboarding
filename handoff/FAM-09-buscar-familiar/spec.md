@@ -8,9 +8,9 @@
 |---|---|
 | Código | `FAM-09` |
 | Raia | Familiares · Inclusão e gestão de vínculos |
-| Figma | sem node no Figma |
-| Status | Só implementada (sem node no Figma) |
-| Marcação | [screen.html](screen.html) (Padrão) |
+| Figma | Estados "Não encontrado" (`3417:9630`) e "Limite de consultas atingido" (`3417:9653`). Padrão sem node no Figma |
+| Status | Estados com Figma; Padrão só implementada |
+| Marcação | [screen.html](screen.html) (Padrão) · [Não encontrado](telas/nao-encontrado/screen.html) · [Limite de consultas atingido](telas/limite-consultas/screen.html) |
 | Entradas / saídas | 3 / 3 |
 
 **Seções:** 1. Objetivo · 2. Componentes · 3. Campos e validações · 4. Ações · 5. Estados · 6. Comportamento · 7. Entradas · 8. Saídas · 9. Dados · 10. Lacunas · 11. Critérios de aceite
@@ -57,9 +57,9 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 
 ## 5. Estados
 
-- Inicial (botão Buscar desabilitado)
-- Não encontrado
-- Limite de consultas atingido
+- Inicial (botão Buscar desabilitado). Padrão
+- Não encontrado. Aviso informativo (azul) "Não encontramos essa conta", com o botão "Cadastrar novo familiar". Figma `3417:9630`
+- Limite de consultas atingido. Aviso de erro (vermelho) "Limite de consultas atingido"; campo desabilitado. Figma `3417:9653`
 
 ## 6. Comportamento
 
@@ -98,6 +98,7 @@ Visão geral: [dados.md](../dados.md).
 
 - Limite de consultas definido (P1, decisão 1): após a segunda espera de 30 min, a busca bloqueia e o usuário abre chamado no atendimento.
 - Mascaramento de nome e CPF (P2, decisão 2), padrão de mercado: CPF `***.456.789-**`; nome com o primeiro nome completo e, nos demais, a inicial seguida de `*`. Validar com produto.
+- Textos do aviso de limite: o Figma diz "Tente novamente mais tarde." e não mostra o tempo de espera. Esta tela segue o Figma. O §6 fala em mostrar o tempo de espera (retry_after). Escolher um dos dois.
 - SELF_LINK (422): a implementação atual não trata esse caso. Decidido: aviso no campo de busca. Confirmar com o backend se a busca devolve SELF_LINK ou se a checagem é feita no front.
 
 ## 11. Critérios de aceite
@@ -108,6 +109,8 @@ Visão geral: [dados.md](../dados.md).
 - [ ] Conta ativa encontrada abre FAM-10.
 - [ ] Sem conta ativa mostra o aviso com Cadastrar novo familiar, que abre FAM-12.
 - [ ] Resposta igual para inexistente e para conta inativa.
+- [ ] Sem conta ativa, o aviso informativo mostra o botão Cadastrar novo familiar.
+- [ ] No limite de consultas, o campo fica desabilitado e o aviso de erro aparece.
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)
