@@ -818,6 +818,48 @@
      "id": "criacao-de-senha",
      "label": "Padrão",
      "file": "handoff/CAD-10-criacao-de-senha/screen.html"
+    },
+    {
+     "id": "criacao-de-senha--preenchido",
+     "label": "Preenchido",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/preenchido/screen.html",
+     "figma": "1676:35111"
+    },
+    {
+     "id": "criacao-de-senha--campos-obrigatorios",
+     "label": "Campos obrigatórios",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/campos-obrigatorios/screen.html",
+     "figma": "1845:55587"
+    },
+    {
+     "id": "criacao-de-senha--requisitos-pendentes",
+     "label": "Requisitos pendentes",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/requisitos-pendentes/screen.html",
+     "figma": "1845:55507"
+    },
+    {
+     "id": "criacao-de-senha--senhas-diferentes",
+     "label": "Senhas diferentes",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/senhas-diferentes/screen.html",
+     "figma": "1845:55547"
+    },
+    {
+     "id": "criacao-de-senha--senha-usada",
+     "label": "Senha já utilizada",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/senha-usada/screen.html",
+     "figma": "2070:19955"
+    },
+    {
+     "id": "criacao-de-senha--senha-palmeiras",
+     "label": "Senha relacionada ao Palmeiras",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/senha-palmeiras/screen.html",
+     "figma": "2104:20483"
+    },
+    {
+     "id": "criacao-de-senha--carregando",
+     "label": "Carregando",
+     "file": "handoff/CAD-10-criacao-de-senha/telas/carregando/screen.html",
+     "figma": "1676:35023"
     }
    ],
    "components": null,
