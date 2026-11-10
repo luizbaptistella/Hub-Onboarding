@@ -7,6 +7,7 @@ import { loadHub } from '../../mcp-server/src/hub.mjs';
 import { handoffDir } from '../../mcp-server/src/handoff-path.mjs';
 import { handleApi } from './api.mjs';
 import { createAuth } from './auth.mjs';
+import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(here, '../public');
@@ -36,6 +37,8 @@ const SECURITY_HEADERS = {
 
 export async function createApp({ password = process.env.APP_PASSWORD, secure = process.env.COOKIE_SECURE === '1' } = {}) {
   const handoff = await loadHub(handoffDir);
+  const ds = await loadDesignSystem({ hubRoot, handoffDir: handoff.dir, decisions: handoff.decisions });
+  const designSystem = buildDesignSystemPayload(ds, await getComponents(ds, handoff.componentDocs));
   const auth = createAuth({ password });
 
   return createServer(async (req, res) => {
@@ -72,7 +75,7 @@ export async function createApp({ password = process.env.APP_PASSWORD, secure = 
       }
 
       if (p.startsWith('/api')) {
-        return send(res, await handleApi(handoff, p, url.searchParams));
+        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem }));
       }
 
       if (p === '/hub') return redirect(res, '/hub/');

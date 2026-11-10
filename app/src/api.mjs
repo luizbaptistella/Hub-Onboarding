@@ -4,11 +4,13 @@ import * as hub from '../../mcp-server/src/hub.mjs';
 const json = (status, body) => ({ status, type: 'application/json; charset=utf-8', body: JSON.stringify(body) });
 const notFound = (what) => json(404, { error: `${what} não encontrado` });
 
-export async function handleApi(handoff, pathname, searchParams) {
+export async function handleApi(handoff, pathname, searchParams, { designSystem } = {}) {
   const parts = pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
   const [head, ...rest] = parts;
 
   if (head === 'info' && !rest.length) return json(200, await hub.hubStats(handoff));
+
+  if (head === 'design-system' && !rest.length) return json(200, designSystem);
 
   if (head === 'screens' && !rest.length) {
     const rows = hub.listScreens(handoff, {

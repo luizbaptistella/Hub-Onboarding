@@ -148,17 +148,150 @@ async function renderDocs() {
   );
 }
 
+// ── Design System: tokens, componentes e regras (dados de /api/design-system) ──
+
+let dsData = null;
+const loadDs = async () => (dsData ??= await api('/api/design-system'));
+const DS_TABS = [['tokens', 'Tokens'], ['componentes', 'Componentes'], ['regras', 'Regras']];
+// Cor só vai para o estilo se for um valor de cor válido; o resto do texto nunca vira HTML.
+const COLOR_VALUE = /^(#[0-9a-f]{3,8}|rgba?\(|hsla?\()/i;
+
+// Esconde os itens que não contêm o texto (e os grupos que ficam vazios).
+function filterItems(root, q, groupSelector) {
+  const items = root.querySelectorAll('[data-search]');
+  for (const item of items) item.hidden = Boolean(q) && !item.dataset.search.includes(q);
+  if (groupSelector) {
+    for (const g of root.querySelectorAll(groupSelector)) g.hidden = Boolean(q) && !g.querySelector('[data-search]:not([hidden])');
+  }
+}
+
+function swatchGrid(items) {
+  return el('div', { class: 'swatches' }, items.map((t) => {
+    const chip = el('span', { class: 'swatch', 'aria-hidden': 'true' });
+    if (COLOR_VALUE.test(t.resolved)) chip.style.background = t.resolved;
+    return el('div', { class: 'swatch-item', 'data-search': `${t.name} ${t.value} ${t.resolved}`.toLowerCase() },
+      chip,
+      el('div', { class: 'swatch-text' }, el('code', {}, t.name), el('div', { class: 'muted small' }, t.alias ? `→ ${t.alias}` : t.value)));
+  }));
+}
+
+function tokenTable(items) {
+  return el('div', { class: 'tbl-wrap' }, el('table', { class: 'ds-table' },
+    el('thead', {}, el('tr', {}, el('th', {}, 'Token'), el('th', {}, 'Valor'), el('th', {}, 'Resolvido'))),
+    el('tbody', {}, items.map((t) => {
+      const chip = el('span', { class: 'chip-sm', 'aria-hidden': 'true' });
+      if (t.isColor && COLOR_VALUE.test(t.resolved)) chip.style.background = t.resolved;
+      return el('tr', { 'data-search': `${t.name} ${t.value} ${t.resolved}`.toLowerCase() },
+        el('td', {}, t.isColor ? chip : null, el('code', {}, t.name)),
+        el('td', {}, el('code', {}, t.value)),
+        el('td', {}, t.resolved !== t.value ? el('code', {}, t.resolved) : el('span', { class: 'muted' }, '—')));
+    }))));
+}
+
+function tokensView(tokens) {
+  return el('div', { class: 'ds-body' }, tokens.groups.map((g) => el('details', { class: 'ds-group', open: true },
+    el('summary', {}, el('span', {}, g.title), el('span', { class: 'count' }, String(g.items.length))),
+    g.items.every((t) => t.isColor) ? swatchGrid(g.items) : tokenTable(g.items))));
+}
+
+function propsTable({ columns, rows }) {
+  return el('div', { class: 'tbl-wrap' }, el('table', { class: 'ds-table' },
+    el('thead', {}, el('tr', {}, columns.map((c) => el('th', {}, c)))),
+    el('tbody', {}, rows.map((r) => el('tr', {}, columns.map((_, i) => el('td', {}, r[i] || '—')))))));
+}
+
+function componentCard(c) {
+  const usage = c.instances == null ? 'sem uso mapeado' : `${c.screens} tela(s) · ${c.instances} instância(s)`;
+  const fullText = el('pre', {}, 'Carregando…');
+  let loaded = false;
+  const full = el('details', { class: 'ds-full' }, el('summary', {}, 'Ficha completa'), fullText);
+  full.addEventListener('toggle', async () => {
+    if (!full.open || loaded) return;
+    loaded = true;
+    try {
+      fullText.textContent = (await api(`/api/docs/${encodeURIComponent(`componente:${c.name}`)}`)).text;
+    } catch (err) {
+      fullText.textContent = err.message;
+    }
+  });
+  return el('details', { class: 'ds-cmp', 'data-search': c.name.toLowerCase() },
+    el('summary', {}, el('code', { class: 'code' }, c.name), el('span', { class: 'badge' }, usage)),
+    c.props.rows.length ? propsTable(c.props) : el('p', { class: 'muted' }, 'Esta ficha não tem tabela de props. Veja a ficha completa abaixo.'),
+    full);
+}
+
+function componentsView(components) {
+  return el('div', { class: 'ds-body' }, components.items.map(componentCard));
+}
+
+function rulesSection(title, content) {
+  return el('section', { class: 'ds-section' }, el('h2', { class: 'lane' }, title), content);
+}
+
+function rulesView(rules) {
+  const none = el('p', { class: 'muted' }, 'Nenhuma.');
+  return el('div', { class: 'ds-body' },
+    rulesSection('Convenções do handoff', rules.conventions.length
+      ? el('ul', { class: 'plain' }, rules.conventions.map((t) => el('li', { 'data-search': t.toLowerCase() }, t)))
+      : none),
+    rulesSection('Pontos de atenção do DS', rules.attention.length
+      ? rules.attention.map((a) => el('div', { class: 'rule', 'data-search': `${a.title} ${a.body}`.toLowerCase() },
+        el('span', { class: 'rule-n' }, String(a.n)),
+        el('div', {}, a.title ? el('strong', {}, a.title) : null, el('div', { class: 'muted' }, a.body))))
+      : none),
+    rulesSection('Decisões do fluxo', rules.decisions.length
+      ? rules.decisions.map((d) => el('div', { class: 'rule', 'data-search': `${d.id} ${d.text}`.toLowerCase() },
+        el('code', { class: 'rule-n code' }, d.id), el('div', {}, d.text)))
+      : none));
+}
+
+async function renderDesignSystem(tab) {
+  view.replaceChildren(el('p', { class: 'muted' }, 'Carregando…'));
+  let ds;
+  try {
+    ds = await loadDs();
+  } catch (err) {
+    view.replaceChildren(el('p', { class: 'error' }, err.message));
+    return;
+  }
+  const counts = {
+    tokens: ds.tokens.total,
+    componentes: ds.components.total,
+    regras: ds.rules.conventions.length + ds.rules.attention.length + ds.rules.decisions.length,
+  };
+  const current = DS_TABS.some(([key]) => key === tab) ? tab : 'tokens';
+  const body = el('div', {});
+  const filterable = current !== 'regras';
+  const filter = el('input', { type: 'search', class: 'ds-filter', placeholder: current === 'tokens' ? 'Filtrar tokens por nome ou valor' : 'Filtrar componentes por nome', 'aria-label': 'Filtrar' });
+  filter.addEventListener('input', () => filterItems(body, filter.value.trim().toLowerCase(), current === 'tokens' ? '.ds-group' : null));
+
+  const content = { tokens: () => tokensView(ds.tokens), componentes: () => componentsView(ds.components), regras: () => rulesView(ds.rules) }[current]();
+  body.append(content);
+  view.replaceChildren(...[
+    el('h1', {}, 'Design System'),
+    el('p', { class: 'sub' }, `Palmeiras · Onboarding${ds.tokens.version ? ` · DS publicado ${ds.tokens.version}` : ''}`),
+    el('nav', { class: 'tabs' }, DS_TABS.map(([key, label]) => el('a', { href: `#/ds/${key}`, 'aria-current': key === current ? 'page' : null },
+      label, el('span', { class: 'count' }, String(counts[key]))))),
+    filterable ? filter : null,
+    body,
+  ].filter(Boolean));
+}
+
 function route() {
   const hash = decodeURIComponent(location.hash.slice(1));
   const m = hash.match(/^\/tela\/(.+)$/);
   if (m) return renderScreen(m[1]);
   if (hash === '/docs') return renderDocs();
+  const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras))?$/);
+  if (ds) return renderDesignSystem(ds[1] ?? 'tokens');
   return renderList();
 }
 
+// A busca e o filtro de raia só redesenham a lista de telas; em qualquer outra página não mexem na tela.
+const onList = () => ['', '#', '#/'].includes(location.hash);
 let timer;
-qInput.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => { if (!location.hash.startsWith('#/tela')) renderList(); }, 250); });
-laneSelect.addEventListener('change', () => { if (!location.hash.startsWith('#/tela')) renderList(); });
+qInput.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => { if (onList()) renderList(); }, 250); });
+laneSelect.addEventListener('change', () => { if (onList()) renderList(); });
 window.addEventListener('hashchange', route);
 
 loadLanes().then(route).catch((err) => { view.replaceChildren(el('p', { class: 'error' }, `Não foi possível carregar o hub: ${err.message}`)); });
