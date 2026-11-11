@@ -1,0 +1,11 @@
+
+# Título: o que mudou, no imperativo (ex.: "Troca o texto do SMS na CAD-02")
+#
+# Corpo livre, se precisar.
+#
+# Trailers lidos pelo hub (aba Histórico de cada tela):
+# Tela: CAD-02, CAD-03
+# Motivo: por que a mudança foi feita
+# Ref: Figma 1620:29884, ticket, link
+#
+# Para usar este modelo: git config commit.template .gitmessage

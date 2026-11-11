@@ -25,6 +25,33 @@ const el = (tag, props = {}, ...children) => {
 const statusBadge = (s) => el('span', { class: /lacuna|proposta|sem-figma/.test(s) ? 'badge warn' : 'badge' }, s);
 
 let hubInfo = null;
+
+// Versionamento: o que está em validação (PRs e branches fora da main). Recarrega a cada minuto no servidor.
+let pendingPromise = null;
+const loadPending = (force = false) => {
+  if (force || !pendingPromise) {
+    pendingPromise = api('/api/validacao').catch((err) => ({ items: [], merged: [], byCode: {}, error: err.message }));
+    pendingPromise.then((p) => {
+      const badge = document.getElementById('pending-count');
+      if (!badge) return;
+      badge.textContent = String(p.items.length);
+      badge.hidden = !p.items.length;
+    });
+  }
+  return pendingPromise;
+};
+
+const dateFmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+const fmtDate = (iso) => (iso ? dateFmt.format(new Date(iso)) : '');
+const daysAgo = (iso) => (iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000) : null);
+const ageLabel = (iso) => {
+  const d = daysAgo(iso);
+  if (d === null) return '';
+  return d === 0 ? 'hoje' : d === 1 ? 'há 1 dia' : `há ${d} dias`;
+};
+const extLink = (href, text) => (href ? el('a', { href, target: '_blank', rel: 'noopener noreferrer' }, text) : el('span', {}, text));
+const pendingLabel = (p) => (p.kind === 'pr' ? `PR #${p.number}` : `branch ${p.branch}`);
+const reviewBadge = (refs) => el('span', { class: 'badge review', title: refs.map(pendingLabel).join(', ') }, 'Em validação');
 const laneTitles = new Map();
 
 async function loadLanes() {
@@ -49,6 +76,7 @@ function heroView(info) {
       stat(info.componentDocs, 'componentes')),
     el('nav', { class: 'tiles', 'aria-label': 'Atalhos' },
       el('a', { class: 'tile', href: '/hub/' }, 'Fluxograma'),
+      el('a', { class: 'tile', href: '#/validacao' }, 'Em validação'),
       el('a', { class: 'tile', href: '#/ds' }, 'Design System'),
       el('a', { class: 'tile', href: '#/docs' }, 'Documentação')));
 }
@@ -59,7 +87,7 @@ async function renderList() {
   const params = new URLSearchParams();
   if (query) params.set('query', query);
   if (lane) params.set('lane', lane);
-  const [{ total, screens }, info] = await Promise.all([api(`/api/screens?${params}`), hubInfo ?? api('/api/info')]);
+  const [{ total, screens }, info, pending] = await Promise.all([api(`/api/screens?${params}`), hubInfo ?? api('/api/info'), loadPending()]);
   hubInfo = info;
   const groups = new Map();
   for (const s of screens) {
@@ -76,8 +104,10 @@ async function renderList() {
       el('span', { class: 'lane-count' }, String(items.length))));
     children.push(el('div', { class: 'cards' }, items.map((s) => {
       const warn = /lacuna|proposta|sem-figma/.test(s.status);
-      return el('a', { class: warn ? 'card card-warn' : 'card', href: `#/tela/${encodeURIComponent(s.code)}` },
-        el('div', { class: 'card-top' }, el('span', { class: 'code' }, s.code), statusBadge(s.status)),
+      const refs = pending.byCode?.[s.code];
+      return el('a', { class: refs ? 'card card-review' : warn ? 'card card-warn' : 'card', href: `#/tela/${encodeURIComponent(s.code)}` },
+        el('div', { class: 'card-top' }, el('span', { class: 'code' }, s.code),
+          el('span', { class: 'card-badges' }, refs ? reviewBadge(refs) : null, statusBadge(s.status))),
         el('div', { class: 'name' }, s.name));
     })));
   }
@@ -100,13 +130,15 @@ async function renderScreen(code) {
     return;
   }
   const { node, spec } = data;
+  const refs = (await loadPending()).byCode?.[node.code] ?? null;
   const tabs = {
     telas: async () => markupView(code),
     spec: () => el('pre', {}, spec ?? 'Esta tela não tem spec.md.'),
     componentes: async () => el('pre', {}, JSON.stringify(await api(`/api/screens/${encodeURIComponent(code)}/components`), null, 2)),
     fluxo: async () => flowView(await api(`/api/flow/${encodeURIComponent(code)}`)),
+    historico: async () => historyView(await api(`/api/screens/${encodeURIComponent(code)}/historico`), refs),
   };
-  const labels = { telas: 'Telas', spec: 'Spec', componentes: 'Componentes', fluxo: 'Fluxo' };
+  const labels = { telas: 'Telas', spec: 'Spec', componentes: 'Componentes', fluxo: 'Fluxo', historico: 'Histórico' };
   const content = el('div', {});
   const buttons = Object.keys(tabs).map((key) => el('button', { role: 'tab', 'aria-selected': 'false', 'data-tab': key }, labels[key]));
   const select = async (key) => {
@@ -125,15 +157,17 @@ async function renderScreen(code) {
     content.firstChild?.startEdit?.();
   };
   const canEdit = (node.variants ?? []).length > 0;
-  view.replaceChildren(
+  view.replaceChildren(...[
     el('a', { class: 'back', href: '#/' }, '← Todas as telas'),
     el('div', { class: 'screen-head' },
       el('h1', {}, `${node.code} · ${node.name}`),
       canEdit ? el('button', { type: 'button', class: 'btn primary', onclick: startEdit }, '✎ Editar tela') : null),
-    el('p', { class: 'sub' }, statusBadge(node.status), ' ', node.lane, node.figma ? ` · Figma ${node.figma}` : ''),
+    el('p', { class: 'sub status-line' }, statusBadge(node.status), refs ? reviewBadge(refs) : null, ` ${node.lane}${node.figma ? ` · Figma ${node.figma}` : ''}`),
+    refs ? el('p', { class: 'pending-note' }, 'Esta tela tem mudanças fora da main, aguardando validação: ',
+      refs.flatMap((r, i) => [i ? ', ' : null, extLink(r.url, pendingLabel(r))]), '.') : null,
     el('div', { class: 'tabs', role: 'tablist' }, buttons),
     content,
-  );
+  ].filter(Boolean));
   select(node.spec ? 'spec' : 'fluxo');
 }
 
@@ -144,6 +178,66 @@ function flowView(flow) {
     el('section', {}, el('h2', { class: 'lane' }, 'Saídas'), list(flow.outgoing, (e) => el('li', {}, el('strong', {}, `${e.to} · ${e.toName}`), el('div', { class: 'muted' }, `${e.trigger ?? ''}${e.cond ? ` — ${e.cond}` : ''}`)))),
     flow.decisions.length ? el('section', { class: 'wide' }, el('h2', { class: 'lane' }, 'Decisões'), flow.decisions.map((d) => el('p', {}, el('strong', {}, d.id), ` ${d.text}`))) : null,
   );
+}
+
+function whyBlock(c) {
+  if (!c.why) return el('div', { class: 'tl-why empty' }, 'Sem motivo registrado. Use o trailer “Motivo:” no commit ou no PR.');
+  return el('div', { class: 'tl-why' }, el('strong', {}, 'Por quê'), c.why, c.details ? `\n\n${c.details}` : null);
+}
+
+function historyView(h, refs) {
+  const intro = el('p', { class: 'muted' },
+    h.source === 'github' ? 'Commits da main, lidos do GitHub.' : h.source === 'git' ? 'Commits da main, lidos do git.' : '',
+    ' ● alterou a pasta da tela · ○ citou a tela na mensagem.');
+  const pendingBox = refs ? el('p', { class: 'pending-note' }, 'Ainda não aparece aqui o que está em validação: ',
+    refs.flatMap((r, i) => [i ? ', ' : null, extLink(r.url, pendingLabel(r))]), '.') : null;
+  if (h.source === 'indisponivel') return el('div', {}, el('p', { class: 'error' }, h.note));
+  if (!h.commits.length) return el('div', {}, pendingBox, el('p', { class: 'muted' }, 'Nenhuma mudança registrada para esta tela.'));
+  return el('div', {}, pendingBox, intro, el('ol', { class: 'timeline' }, h.commits.map((c) => el('li', { class: c.touched ? '' : 'mention' },
+    el('div', { class: 'tl-date' }, fmtDate(c.date)),
+    el('p', { class: 'tl-title' }, c.title),
+    whyBlock(c),
+    el('div', { class: 'tl-meta' },
+      el('span', {}, c.author),
+      extLink(c.url, c.short),
+      c.pr ? extLink(c.prUrl, `PR #${c.pr}`) : null,
+      c.ref ? el('span', {}, `Ref: ${c.ref}`) : null)))));
+}
+
+async function renderPending() {
+  view.replaceChildren(el('p', { class: 'muted' }, 'Carregando…'));
+  const p = await loadPending(true);
+  const head = [
+    el('a', { class: 'back', href: '#/' }, '← Todas as telas'),
+    el('h1', {}, 'Em validação'),
+    el('p', { class: 'sub' }, `Telas e fluxos com mudanças que ainda não estão na ${p.main ?? 'main'}.`),
+  ];
+  if (p.error) return view.replaceChildren(...head, el('p', { class: 'error' }, p.error));
+  const notes = [p.warning, p.note].filter(Boolean).map((t) => el('p', { class: 'pending-note' }, t));
+  const chip = (code, soft) => el('a', { class: soft ? 'chip soft' : 'chip', href: `#/tela/${encodeURIComponent(code)}`, title: soft ? 'Citada no texto, sem arquivo alterado' : null }, code);
+  const card = (it) => {
+    const age = daysAgo(it.createdAt);
+    return el('article', { class: 'pr-card' },
+      el('div', { class: 'pr-head' },
+        el('h2', { class: 'pr-title' }, extLink(it.url, it.title || it.branch)),
+        el('span', { class: age !== null && age >= 7 ? 'pr-age stale' : 'pr-age', title: it.createdAt ? `Aberto em ${fmtDate(it.createdAt)}` : null }, ageLabel(it.createdAt))),
+      el('div', { class: 'tl-meta' },
+        el('span', { class: 'status-line' }, el('span', { class: 'badge review' }, it.kind === 'pr' ? (it.draft ? `Rascunho · PR #${it.number}` : `PR #${it.number}`) : 'Branch sem PR')),
+        el('span', {}, it.author),
+        el('span', {}, `branch ${it.branch}`),
+        it.localOnly ? el('span', {}, 'só nesta máquina (não enviada)') : null,
+        it.updatedAt ? el('span', {}, `atualizado ${ageLabel(it.updatedAt)}`) : null),
+      whyBlock(it),
+      it.codes.length || it.mentioned?.length || it.flowChanged
+        ? el('div', { class: 'chips' }, it.codes.map((c) => chip(c)), (it.mentioned ?? []).map((c) => chip(c, true)), it.flowChanged ? el('span', { class: 'chip soft' }, 'altera o fluxo (flow.json)') : null)
+        : el('p', { class: 'muted' }, 'Não altera telas do handoff.'));
+  };
+  view.replaceChildren(...[...head, ...notes,
+    p.items.length ? el('div', { class: 'pr-list' }, p.items.map(card)) : el('p', { class: 'pending-note' }, 'Nada aguardando validação. Tudo o que existe está na main.'),
+    p.merged?.length ? el('section', {},
+      el('h2', { class: 'lane' }, 'Branches já mescladas · podem ser apagadas'),
+      el('ul', { class: 'merged-list' }, p.merged.map((m) => el('li', {}, extLink(m.url, m.branch), m.pr ? ` · entrou pelo PR #${m.pr}` : ' · conteúdo já está na main', m.localOnly ? ' · só nesta máquina' : null)))) : null,
+    el('p', { class: 'muted' }, `Verificado em ${fmtDate(p.checkedAt)}.`)].filter(Boolean));
 }
 
 // Rola até o elemento descontando o cabeçalho fixo (que fica alto em janelas estreitas).
@@ -481,6 +575,7 @@ function route() {
   const m = hash.match(/^\/tela\/(.+)$/);
   if (m) return renderScreen(m[1]);
   if (hash === '/docs') return renderDocs();
+  if (hash === '/validacao') return renderPending();
   const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras))?(?:\/([^/]+))?(?:\/(docs))?$/);
   if (ds) return renderDesignSystem(ds[1] ?? 'tokens', ds[2], ds[3]);
   return renderList();

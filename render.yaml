@@ -21,6 +21,6 @@ services:
       - key: MCP_TOKEN
         sync: false   # token do MCP para o time; sem ele, /mcp fica desligado (404)
       - key: GITHUB_REPO
-        value: luizbaptistella/Hub-Onboarding   # onde as propostas do modo de edição viram PR
+        value: luizbaptistella/Hub-Onboarding   # propostas do modo de edição (PR) e aba Em validação
       - key: GITHUB_TOKEN
-        sync: false   # token fine-grained só deste repo (Contents e Pull requests: escrita); sem ele, salvar propostas fica desligado
+        sync: false   # fine-grained só deste repo, Contents e Pull requests com escrita: abre os PRs das propostas e lê os PRs da aba Em validação. Sem ele, os dois ficam desligados. Ver PROPOSTAS.md e VERSIONAMENTO.md

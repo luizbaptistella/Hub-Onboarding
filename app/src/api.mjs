@@ -54,7 +54,7 @@ async function inlineLocalImages(html, markupFile) {
   return out;
 }
 
-export async function handleApi(handoff, pathname, searchParams, { designSystem, proposalMode = null } = {}) {
+export async function handleApi(handoff, pathname, searchParams, { designSystem, versioning, proposalMode = null } = {}) {
   const parts = pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
   const [head, ...rest] = parts;
 
@@ -63,6 +63,11 @@ export async function handleApi(handoff, pathname, searchParams, { designSystem,
   if (head === 'info' && !rest.length) return json(200, await hub.hubStats(handoff));
 
   if (head === 'design-system' && !rest.length) return json(200, designSystem);
+
+  if (head === 'validacao' && !rest.length) {
+    if (!versioning) return notFound('Versionamento');
+    return json(200, await versioning.pending());
+  }
 
   if (head === 'screens' && !rest.length) {
     const rows = hub.listScreens(handoff, {
@@ -80,6 +85,11 @@ export async function handleApi(handoff, pathname, searchParams, { designSystem,
       const r = await hub.getScreenSpec(handoff, code);
       if (!r) return notFound(`Tela ${code}`);
       return json(200, { node: r.node, spec: r.spec, variants: r.node.variants ?? [] });
+    }
+    if (sub === 'historico') {
+      if (!versioning) return notFound('Versionamento');
+      const r = await versioning.history(code);
+      return r ? json(200, r) : notFound(`Tela ${code}`);
     }
     if (sub === 'components') {
       const r = await hub.getScreenComponents(handoff, code);
