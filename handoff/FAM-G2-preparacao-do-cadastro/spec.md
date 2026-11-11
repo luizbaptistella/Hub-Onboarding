@@ -111,7 +111,7 @@ Visão geral: [dados.md](../dados.md).
 
 - **Senha:** FAM-G2 diz que a senha é criada no celular do titular (spec §6.5). FAM-14 diz que o familiar cria a senha no fim do cadastro (PENDENTE_SENHA). Qual vale?
 - **Documentos aceitos do familiar:** a mesma lista de DOC-01 ou uma lista própria?
-- **Captura do documento:** DOC-G1, que também precisa ser desenhada.
+- **Captura do documento:** DOC-47 a DOC-55, que também precisa ser desenhada.
 
 ## 11. Critérios de aceite
 

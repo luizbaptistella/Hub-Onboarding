@@ -53,7 +53,7 @@ _Sem campos._
 | Voltar | [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) |  |
 | Ajuda | — |  |
 | Tirar foto do documento | CIN, CNH ou RG: tutorial da foto ([DOC-47](../DOC-47-cin-tutorial-frente/spec.md), [DOC-50](../DOC-50-cnh-tutorial-frente/spec.md), [DOC-53](../DOC-53-rg-tutorial-frente/spec.md)) | Documento escolhido |
-| Fazer upload do documento | Lacuna: tela de upload (a desenhar) |  |
+| Fazer upload do documento | CIN, CNH ou RG: upload ([DOC-65](../DOC-65-cin-upload/spec.md), [DOC-66](../DOC-66-cnh-upload/spec.md), [DOC-67](../DOC-67-rg-upload/spec.md)) | Documento escolhido |
 
 As ações sem destino que dependem de script (envio de formulário, timers) estão em **Saídas**.
 
@@ -82,7 +82,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 |---|---|---|---|
 | [CAD-10 · Criação de senha](../CAD-10-criacao-de-senha/spec.md) | Voltar | — | Voltar |
 | [DOC-47](../DOC-47-cin-tutorial-frente/spec.md) · [DOC-50](../DOC-50-cnh-tutorial-frente/spec.md) · [DOC-53](../DOC-53-rg-tutorial-frente/spec.md) | Tirar foto do documento | CIN, CNH ou RG escolhido | Caminho principal |
-| Upload do documento | Fazer upload do documento | — | Lacuna (a desenhar) |
+| [DOC-65](../DOC-65-cin-upload/spec.md) · [DOC-66](../DOC-66-cnh-upload/spec.md) · [DOC-67](../DOC-67-rg-upload/spec.md) | Fazer upload do documento | CIN, CNH ou RG escolhido | Caminho principal |
 
 ## 9. Dados
 
@@ -92,7 +92,7 @@ Visão geral: [dados.md](../dados.md).
 
 ## 10. Lacunas e perguntas
 
-- Tela de upload do documento (CIN, CNH e RG). Verso do documento não desenhado nesta etapa.
+- Upload e verso: desenhados no hub (DOC-56 a DOC-67).
 - Regras de formato e tamanho do upload.
 
 ## 11. Critérios de aceite

@@ -1,7 +1,7 @@
 # DOC-52 · CNH · confirmação da frente
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
-> **Provisório.** Marcação copiada do RNE (DOC-26 a DOC-28), com nome e textos do CNH. Trocar pelo desenho do CNH no Figma antes de aprovar.
+> **Status:** Desenhada no hub, base do RNE (Figma pode estar defasado).
 
 ## Índice da tela
 
@@ -9,43 +9,44 @@
 |---|---|
 | Código | `DOC-52` |
 | Raia | Documento de identidade · brasileiro · Etapa 2 de 4 |
-| Figma | sem node próprio · seção `1620:12039` |
-| Status | Proposta, marcação provisória |
-| Marcação | 1 variantes em [telas/](telas/) · imagens em [img/](img/) · componentes em [components.json](components.json) |
-| Entradas / saídas | 1 / 2 |
+| Figma | sem Figma · seção `1620:12039` |
+| Status | Desenhada no hub, base do RNE (Figma pode estar defasado) |
+| Marcação | 1 variantes em [telas/](telas/) · componentes em [components.json](components.json) |
+| Entradas / saídas | 2 / 7 |
 
 ## 1. Objetivo
 
-Mostrar a foto capturada da frente e permitir confirmar ou tirar outra foto. Documento: Carteira Nacional de Habilitação (CNH).
+Mostrar a foto da frente e permitir confirmar ou tirar outra. Confirmar segue para o verso. Documento: Carteira Nacional de Habilitação (CNH).
 
-## 2. Componentes
-
-Mesmos componentes da tela RNE de origem, copiados. Lista para máquina: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding).
-
-## 3. Variantes
+## 2. Variantes
 
 | # | Variante | Figma | Arquivo |
 |---|---|---|---|
-| 1 | Padrão | sem Figma | [padrao](telas/padrao/screen.html) |
+| 1 | Padrão | sem Figma | [telas/padrao/screen.html](telas/padrao/screen.html) |
 
-## 4. Pendências
+## 3. Pendências
 
-- **Provisório:** marcação copiada do RNE (DOC-26 a DOC-28). Textos e imagens ainda são do RNE, a trocar pelos do CNH no Figma (seção `1620:12039`).
-- **Figma:** não foi identificado o frame da confirmação da frente do CNH no Figma. Sem desenho próprio ainda.
-- **Verso e upload:** fora desta tela. Ver lacunas em DOC-01.
+- **Figma:** o desenho do Figma pode estar defasado. Este spec segue o hub.
+- **Imagens e textos de tutorial:** do RNE, adaptados ao documento. Trocar pelas do Figma quando conveniente.
 
-## 5. Entradas (de onde se chega)
+## 4. Entradas (de onde se chega)
 
 | De | Gatilho | Condição | Tipo |
 |---|---|---|---|
 | [DOC-51 · câmera da frente](../DOC-51-cnh-camera-frente/spec.md) | Foto tirada | Captura automática ou Tirar foto | Caminho principal |
+| [DOC-59 · tutorial do verso](../DOC-59-cnh-tutorial-verso/spec.md) | Voltar no passo 1 | — | Voltar |
 
-## 6. Saídas (para onde se vai)
+## 5. Saídas (para onde se vai)
 
 | Para | Gatilho | Condição | Tipo |
 |---|---|---|---|
 | [DOC-51 · câmera da frente](../DOC-51-cnh-camera-frente/spec.md) | Tirar outra foto ou Voltar | — | Caminho alternativo |
-| [DOC-24 · Conclusão do fluxo de documento](../DOC-24-documento-em-analise/spec.md) | Continuar | Documento brasileiro aprovado | Caminho principal |
+| [DOC-59 · tutorial do verso](../DOC-59-cnh-tutorial-verso/spec.md) | Continuar | Frente aprovada, segue para o verso | Caminho principal |
+| [DOC-11 · Falha na validação do documento](../DOC-11-falha-validacao-documento/spec.md) | Validação do documento reprovada | CNH · documento não validado | Erro ou nova tentativa |
+| [DOC-12 · Sem conexão ao enviar o documento](../DOC-12-sem-conexao/spec.md) | Sem conexão ao enviar o documento | Erro de conexão no envio | Erro ou nova tentativa |
+| [DOC-13 · Tempo excedido ao enviar o documento](../DOC-13-tempo-excedido/spec.md) | Envio acima de 20 s | Sem resposta do servidor | Erro ou nova tentativa |
+| [DOC-14 · Erro inesperado ao enviar o documento](../DOC-14-erro-inesperado/spec.md) | Erro inesperado no envio | Falha de sistema não identificada | Erro ou nova tentativa |
+| [DOC-15 · Sessão expirada no documento](../DOC-15-sessao-expirada/spec.md) | Sessão expirada no envio | Token de sessão inválido (CNH) | Erro ou nova tentativa |
 
 ---
 [Índice geral](../INDEX.md) · [Fluxo completo](../INDEX.md#fluxo-completo) · [flow.json](../flow.json)

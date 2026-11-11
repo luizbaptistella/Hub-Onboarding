@@ -78,7 +78,7 @@ As ações sem destino que dependem de script (envio de formulário, timers) est
 | Tela | Gatilho | Condição | Tipo |
 |---|---|---|---|
 | [DOC-01 · Seleção de documento](../DOC-01-selecao-de-documento/spec.md) | Tirar foto ou Fazer upload | Provisório: pula a captura do documento | Caminho principal |
-| DOC-G1 · Captura do documento | Documento aprovado | — | Lacuna (a desenhar) |
+| [DOC-24 · Conclusão do fluxo de documento](../DOC-24-documento-em-analise/spec.md) | Documento brasileiro aprovado | CIN, CNH ou RG | Caminho principal |
 | [BIO-02 · Captura facial](../BIO-02-captura-facial/spec.md) | Voltar | — | Voltar |
 
 ## 8. Saídas (para onde se vai)

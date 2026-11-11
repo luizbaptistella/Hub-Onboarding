@@ -2,7 +2,7 @@
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
-> **Proposta, ainda não validada.** Passo 5 do fluxo FAM-G2. Fecha a lacuna "Confirmação do verso" (FAM-G2-5 em [flow.json](../flow.json)), que era a parte de conferência da lacuna DOC-G1 para o verso. Estrutura igual à da frente ([FAM-G2 · Confirmação da frente](../FAM-G2-confirmacao-da-frente/spec.md)). Premissas na seção 10.
+> **Proposta, ainda não validada.** Passo 5 do fluxo FAM-G2. Fecha a lacuna "Confirmação do verso" (FAM-G2-5 em [flow.json](../flow.json)), que era a parte de conferência do fluxo de captura (DOC-47 a DOC-55) para o verso. Estrutura igual à da frente ([FAM-G2 · Confirmação da frente](../FAM-G2-confirmacao-da-frente/spec.md)). Premissas na seção 10.
 
 ## Índice da tela
 
@@ -93,7 +93,7 @@ Visão geral: [dados.md](../dados.md).
 
 **Em aberto:**
 
-- **Conferência dos dados:** DOC-G1 prevê conferência. Ainda não definida: se a leitura do documento deve mostrar os dados lidos antes do envio. Mesma pendência da frente.
+- **Conferência dos dados:** DOC-47 a DOC-55 prevê conferência. Ainda não definida: se a leitura do documento deve mostrar os dados lidos antes do envio. Mesma pendência da frente.
 - **Verso de RG e CNH:** a instrução e a moldura do verso ainda são premissas ([FAM-G2 · Captura do verso](../FAM-G2-captura-do-verso/spec.md)).
 
 ## 11. Critérios de aceite

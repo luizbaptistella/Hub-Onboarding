@@ -1,0 +1,374 @@
+{
+ "screen": "DOC-58",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-58-cin-confirmacao-verso/telas/padrao/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Captura de documentos",
+    "progress": {
+     "current": 2,
+     "total": 4
+    },
+    "language": false,
+    "help": {
+     "label": "Ajuda"
+    }
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Captura de documentos\" progress={{ current: 2, total: 4 }} language={false} help={{ label: \"Ajuda\" }} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Captura de documentos",
+      "progress": {
+       "current": 2,
+       "total": 4
+      },
+      "language": false,
+      "help": {
+       "label": "Ajuda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "neutral",
+    "title": "Confira a foto do verso",
+    "subtitle": "Todos os dados precisam estar nítidos, sem reflexo e sem partes cortadas."
+   },
+   "behavior": null,
+   "jsx": "<PageHeading tone=\"neutral\" title=\"Confira a foto do verso\" subtitle=\"Todos os dados precisam estar nítidos, sem reflexo e sem partes cortadas.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "neutral",
+      "title": "Confira a foto do verso",
+      "subtitle": "Todos os dados precisam estar nítidos, sem reflexo e sem partes cortadas."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Image",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Image/README.md",
+   "unknownProps": null,
+   "id": 3,
+   "dsProps": {
+    "src": "handoff/DOC-58-cin-confirmacao-verso/img/verso.jpg",
+    "alt": "Foto do verso da CIN",
+    "fit": "contain",
+    "rounded": true,
+    "loading": "eager",
+    "height": "100%"
+   },
+   "behavior": null,
+   "jsx": "<Image src=\"handoff/DOC-58-cin-confirmacao-verso/img/verso.jpg\" alt=\"Foto do verso da CIN\" fit=\"contain\" rounded loading=\"eager\" height=\"100%\" />",
+   "states": [],
+   "propOptions": {
+    "fit": {
+     "options": [
+      "cover",
+      "contain"
+     ],
+     "used": "contain"
+    },
+    "rounded": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "loading": {
+     "options": [
+      "lazy",
+      "eager"
+     ],
+     "used": "eager"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "src": "handoff/DOC-58-cin-confirmacao-verso/img/verso.jpg",
+      "alt": "Foto do verso da CIN",
+      "fit": "contain",
+      "rounded": true,
+      "loading": "eager",
+      "height": "100%"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 4,
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "children": "Continuar"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" onClick={() => {}}>Continuar</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "children": "Continuar",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(2)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 5,
+   "dsProps": {
+    "variant": "secondary",
+    "iconEnd": "photo_camera",
+    "children": "Tirar outra foto"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"secondary\" iconEnd=\"photo_camera\" onClick={() => {}}>Tirar outra foto</Button>",
+   "states": [],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "secondary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "variant": "secondary",
+      "iconEnd": "photo_camera",
+      "children": "Tirar outra foto",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 6
+  }
+ ],
+ "onlyInVariants": [],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

@@ -19,7 +19,7 @@
    "id": "documento",
    "title": "Documento de identidade · brasileiro",
    "sub": "Etapa 2 de 4 · CIN, CNH e RG",
-   "rows": 3
+   "rows": 6
   },
   {
    "id": "estrangeiro",
@@ -891,8 +891,8 @@
    "folder": "DOC-01-selecao-de-documento",
    "components": "handoff/DOC-01-selecao-de-documento/components.json",
    "spec": "handoff/DOC-01-selecao-de-documento/spec.md",
-   "inputs": 9,
-   "outputs": 4
+   "inputs": 19,
+   "outputs": 7
   },
   {
    "code": "DOC-02",
@@ -1211,7 +1211,7 @@
      "figma": "2283:34738"
     }
    ],
-   "inputs": 5,
+   "inputs": 8,
    "outputs": 5
   },
   {
@@ -1252,8 +1252,8 @@
      "figma": "1620:13639"
     }
    ],
-   "inputs": 4,
-   "outputs": 7
+   "inputs": 7,
+   "outputs": 5
   },
   {
    "code": "DOC-12",
@@ -1290,8 +1290,8 @@
      "figma": "1620:13651"
     }
    ],
-   "inputs": 6,
-   "outputs": 6
+   "inputs": 12,
+   "outputs": 4
   },
   {
    "code": "DOC-13",
@@ -1327,8 +1327,8 @@
      "file": "handoff/DOC-13-tempo-excedido/telas/brasileiro/screen.html"
     }
    ],
-   "inputs": 6,
-   "outputs": 6
+   "inputs": 12,
+   "outputs": 4
   },
   {
    "code": "DOC-14",
@@ -1365,8 +1365,8 @@
      "figma": "1620:13621"
     }
    ],
-   "inputs": 6,
-   "outputs": 7
+   "inputs": 12,
+   "outputs": 5
   },
   {
    "code": "DOC-15",
@@ -1385,9 +1385,14 @@
      "id": "doc-15--padrao",
      "label": "Padrão (sem Figma)",
      "file": "handoff/DOC-15-sessao-expirada/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-15--brasileiro",
+     "label": "Brasileiro (sem Figma; copy do hub)",
+     "file": "handoff/DOC-15-sessao-expirada/telas/brasileiro/screen.html"
     }
    ],
-   "inputs": 3,
+   "inputs": 12,
    "outputs": 1
   },
   {
@@ -3419,7 +3424,7 @@
      "figma": "1817:51067"
     }
    ],
-   "inputs": 3,
+   "inputs": 2,
    "outputs": 2
   },
   {
@@ -3481,8 +3486,8 @@
      "file": "handoff/DOC-49-cin-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 4,
-   "outputs": 6
+   "inputs": 2,
+   "outputs": 7
   },
   {
    "code": "DOC-50",
@@ -3516,7 +3521,7 @@
      "figma": "1817:51230"
     }
    ],
-   "inputs": 3,
+   "inputs": 2,
    "outputs": 2
   },
   {
@@ -3578,8 +3583,8 @@
      "file": "handoff/DOC-52-cnh-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 4,
-   "outputs": 6
+   "inputs": 2,
+   "outputs": 7
   },
   {
    "code": "DOC-53",
@@ -3611,7 +3616,7 @@
      "file": "handoff/DOC-53-rg-tutorial-frente/telas/passo-3/screen.html"
     }
    ],
-   "inputs": 3,
+   "inputs": 2,
    "outputs": 2
   },
   {
@@ -3673,7 +3678,454 @@
      "file": "handoff/DOC-55-rg-confirmacao-frente/telas/padrao/screen.html"
     }
    ],
-   "inputs": 4,
+   "inputs": 2,
+   "outputs": 7
+  },
+  {
+   "code": "DOC-56",
+   "name": "CIN · tutorial do verso",
+   "lane": "documento",
+   "col": 4,
+   "row": 0,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-56-cin-tutorial-verso",
+   "components": "handoff/DOC-56-cin-tutorial-verso/components.json",
+   "spec": "handoff/DOC-56-cin-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-56--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-56-cin-tutorial-verso/telas/passo-1/screen.html"
+    },
+    {
+     "id": "doc-56--passo-2",
+     "label": "Passo 2 · enquadrar o verso",
+     "file": "handoff/DOC-56-cin-tutorial-verso/telas/passo-2/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-57",
+   "name": "CIN · câmera do verso",
+   "lane": "documento",
+   "col": 5,
+   "row": 0,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-57-cin-camera-verso",
+   "components": "handoff/DOC-57-cin-camera-verso/components.json",
+   "spec": "handoff/DOC-57-cin-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-57--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-57-cin-camera-verso/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-57--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-57-cin-camera-verso/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-57--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-57-cin-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-57--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-57-cin-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-57--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-57-cin-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-58",
+   "name": "CIN · confirmação do verso",
+   "lane": "documento",
+   "col": 6,
+   "row": 0,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-58-cin-confirmacao-verso",
+   "components": "handoff/DOC-58-cin-confirmacao-verso/components.json",
+   "spec": "handoff/DOC-58-cin-confirmacao-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-58--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-58-cin-confirmacao-verso/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 7
+  },
+  {
+   "code": "DOC-65",
+   "name": "CIN · upload da frente e do verso",
+   "lane": "documento",
+   "col": 1,
+   "row": 3,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-65-cin-upload",
+   "components": "handoff/DOC-65-cin-upload/components.json",
+   "spec": "handoff/DOC-65-cin-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-65--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-65-cin-upload/telas/vazio/screen.html"
+    },
+    {
+     "id": "doc-65--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-65-cin-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-65--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-65-cin-upload/telas/completo/screen.html"
+    },
+    {
+     "id": "doc-65--erro-mrz-verso",
+     "label": "Erro: verso não identificado (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-65--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-65--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-65--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-65--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-65--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-65-cin-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 6
+  },
+  {
+   "code": "DOC-59",
+   "name": "CNH · tutorial do verso",
+   "lane": "documento",
+   "col": 4,
+   "row": 1,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-59-cnh-tutorial-verso",
+   "components": "handoff/DOC-59-cnh-tutorial-verso/components.json",
+   "spec": "handoff/DOC-59-cnh-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-59--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-59-cnh-tutorial-verso/telas/passo-1/screen.html"
+    },
+    {
+     "id": "doc-59--passo-2",
+     "label": "Passo 2 · enquadrar o verso",
+     "file": "handoff/DOC-59-cnh-tutorial-verso/telas/passo-2/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-60",
+   "name": "CNH · câmera do verso",
+   "lane": "documento",
+   "col": 5,
+   "row": 1,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-60-cnh-camera-verso",
+   "components": "handoff/DOC-60-cnh-camera-verso/components.json",
+   "spec": "handoff/DOC-60-cnh-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-60--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-60-cnh-camera-verso/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-60--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-60-cnh-camera-verso/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-60--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-60-cnh-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-60--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-60-cnh-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-60--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-60-cnh-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-61",
+   "name": "CNH · confirmação do verso",
+   "lane": "documento",
+   "col": 6,
+   "row": 1,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-61-cnh-confirmacao-verso",
+   "components": "handoff/DOC-61-cnh-confirmacao-verso/components.json",
+   "spec": "handoff/DOC-61-cnh-confirmacao-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-61--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-61-cnh-confirmacao-verso/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 7
+  },
+  {
+   "code": "DOC-66",
+   "name": "CNH · upload da frente e do verso",
+   "lane": "documento",
+   "col": 1,
+   "row": 4,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-66-cnh-upload",
+   "components": "handoff/DOC-66-cnh-upload/components.json",
+   "spec": "handoff/DOC-66-cnh-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-66--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-66-cnh-upload/telas/vazio/screen.html"
+    },
+    {
+     "id": "doc-66--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-66-cnh-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-66--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-66-cnh-upload/telas/completo/screen.html"
+    },
+    {
+     "id": "doc-66--erro-mrz-verso",
+     "label": "Erro: verso não identificado (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-66--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-66--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-66--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-66--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-66--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-66-cnh-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 6
+  },
+  {
+   "code": "DOC-62",
+   "name": "RG · tutorial do verso",
+   "lane": "documento",
+   "col": 4,
+   "row": 2,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-62-rg-tutorial-verso",
+   "components": "handoff/DOC-62-rg-tutorial-verso/components.json",
+   "spec": "handoff/DOC-62-rg-tutorial-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-62--passo-1",
+     "label": "Passo 1 · virar o documento",
+     "file": "handoff/DOC-62-rg-tutorial-verso/telas/passo-1/screen.html"
+    },
+    {
+     "id": "doc-62--passo-2",
+     "label": "Passo 2 · enquadrar o verso",
+     "file": "handoff/DOC-62-rg-tutorial-verso/telas/passo-2/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 2
+  },
+  {
+   "code": "DOC-63",
+   "name": "RG · câmera do verso",
+   "lane": "documento",
+   "col": 5,
+   "row": 2,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-63-rg-camera-verso",
+   "components": "handoff/DOC-63-rg-camera-verso/components.json",
+   "spec": "handoff/DOC-63-rg-camera-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-63--enquadrando",
+     "label": "Enquadrando",
+     "file": "handoff/DOC-63-rg-camera-verso/telas/enquadrando/screen.html"
+    },
+    {
+     "id": "doc-63--enquadrado",
+     "label": "Enquadrado",
+     "file": "handoff/DOC-63-rg-camera-verso/telas/enquadrado/screen.html"
+    },
+    {
+     "id": "doc-63--tirando-foto",
+     "label": "Tirando a foto (sem Figma)",
+     "file": "handoff/DOC-63-rg-camera-verso/telas/tirando-foto/screen.html"
+    },
+    {
+     "id": "doc-63--sem-permissao",
+     "label": "Sem acesso à câmera (sem Figma)",
+     "file": "handoff/DOC-63-rg-camera-verso/telas/sem-permissao/screen.html"
+    },
+    {
+     "id": "doc-63--camera-indisponivel",
+     "label": "Câmera indisponível (sem Figma)",
+     "file": "handoff/DOC-63-rg-camera-verso/telas/camera-indisponivel/screen.html"
+    }
+   ],
+   "inputs": 2,
+   "outputs": 3
+  },
+  {
+   "code": "DOC-64",
+   "name": "RG · confirmação do verso",
+   "lane": "documento",
+   "col": 6,
+   "row": 2,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-64-rg-confirmacao-verso",
+   "components": "handoff/DOC-64-rg-confirmacao-verso/components.json",
+   "spec": "handoff/DOC-64-rg-confirmacao-verso/spec.md",
+   "variants": [
+    {
+     "id": "doc-64--padrao",
+     "label": "Padrão",
+     "file": "handoff/DOC-64-rg-confirmacao-verso/telas/padrao/screen.html"
+    }
+   ],
+   "inputs": 1,
+   "outputs": 7
+  },
+  {
+   "code": "DOC-67",
+   "name": "RG · upload da frente e do verso",
+   "lane": "documento",
+   "col": 1,
+   "row": 5,
+   "type": "screen",
+   "status": "proposta",
+   "folder": "DOC-67-rg-upload",
+   "components": "handoff/DOC-67-rg-upload/components.json",
+   "spec": "handoff/DOC-67-rg-upload/spec.md",
+   "variants": [
+    {
+     "id": "doc-67--vazio",
+     "label": "Vazio",
+     "file": "handoff/DOC-67-rg-upload/telas/vazio/screen.html"
+    },
+    {
+     "id": "doc-67--frente-escolhida",
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "file": "handoff/DOC-67-rg-upload/telas/frente-escolhida/screen.html"
+    },
+    {
+     "id": "doc-67--completo",
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "file": "handoff/DOC-67-rg-upload/telas/completo/screen.html"
+    },
+    {
+     "id": "doc-67--erro-mrz-verso",
+     "label": "Erro: verso não identificado (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-mrz-verso/screen.html"
+    },
+    {
+     "id": "doc-67--erro-formato",
+     "label": "Erro: formato não aceito (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-formato/screen.html"
+    },
+    {
+     "id": "doc-67--erro-tamanho",
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-tamanho/screen.html"
+    },
+    {
+     "id": "doc-67--erro-senha",
+     "label": "Erro: PDF com senha (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-senha/screen.html"
+    },
+    {
+     "id": "doc-67--erro-corrompido",
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-corrompido/screen.html"
+    },
+    {
+     "id": "doc-67--erro-envio",
+     "label": "Erro: falha no envio (sem Figma)",
+     "file": "handoff/DOC-67-rg-upload/telas/erro-envio/screen.html"
+    }
+   ],
+   "inputs": 1,
    "outputs": 6
   }
  ],
@@ -5945,10 +6397,10 @@
   {
    "id": "E862",
    "src": "DOC-49",
-   "dst": "DOC-24",
+   "dst": "DOC-56",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Documento brasileiro aprovado"
+   "cond": "Frente aprovada, segue para o verso"
   },
   {
    "id": "E863",
@@ -6009,10 +6461,10 @@
   {
    "id": "E870",
    "src": "DOC-52",
-   "dst": "DOC-24",
+   "dst": "DOC-59",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Documento brasileiro aprovado"
+   "cond": "Frente aprovada, segue para o verso"
   },
   {
    "id": "E871",
@@ -6073,10 +6525,10 @@
   {
    "id": "E878",
    "src": "DOC-55",
-   "dst": "DOC-24",
+   "dst": "DOC-62",
    "kind": "principal",
    "trigger": "Continuar",
-   "cond": "Documento brasileiro aprovado"
+   "cond": "Frente aprovada, segue para o verso"
   },
   {
    "id": "E879",
@@ -6111,38 +6563,6 @@
    "cond": "Falha de sistema não identificada"
   },
   {
-   "id": "E883",
-   "src": "DOC-11",
-   "dst": "DOC-47",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CIN"
-  },
-  {
-   "id": "E884",
-   "src": "DOC-12",
-   "dst": "DOC-49",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CIN"
-  },
-  {
-   "id": "E885",
-   "src": "DOC-13",
-   "dst": "DOC-49",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CIN"
-  },
-  {
-   "id": "E886",
-   "src": "DOC-14",
-   "dst": "DOC-49",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CIN"
-  },
-  {
    "id": "E887",
    "src": "DOC-52",
    "dst": "DOC-11",
@@ -6173,38 +6593,6 @@
    "kind": "erro",
    "trigger": "Erro inesperado no envio",
    "cond": "Falha de sistema não identificada"
-  },
-  {
-   "id": "E891",
-   "src": "DOC-11",
-   "dst": "DOC-50",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CNH"
-  },
-  {
-   "id": "E892",
-   "src": "DOC-12",
-   "dst": "DOC-52",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CNH"
-  },
-  {
-   "id": "E893",
-   "src": "DOC-13",
-   "dst": "DOC-52",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CNH"
-  },
-  {
-   "id": "E894",
-   "src": "DOC-14",
-   "dst": "DOC-52",
-   "kind": "alternativa",
-   "trigger": "Tentar novamente",
-   "cond": "CNH"
   },
   {
    "id": "E895",
@@ -6239,36 +6627,516 @@
    "cond": "Falha de sistema não identificada"
   },
   {
-   "id": "E899",
+   "id": "E903",
+   "src": "DOC-49",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (CIN)"
+  },
+  {
+   "id": "E904",
+   "src": "DOC-52",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (CNH)"
+  },
+  {
+   "id": "E905",
+   "src": "DOC-55",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (RG)"
+  },
+  {
+   "id": "E906",
+   "src": "DOC-56",
+   "dst": "DOC-49",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E907",
+   "src": "DOC-56",
+   "dst": "DOC-57",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E908",
+   "src": "DOC-57",
+   "dst": "DOC-56",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E909",
+   "src": "DOC-57",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E910",
+   "src": "DOC-57",
+   "dst": "DOC-58",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E911",
+   "src": "DOC-58",
+   "dst": "DOC-57",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E912",
+   "src": "DOC-58",
+   "dst": "DOC-24",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Documento brasileiro aprovado"
+  },
+  {
+   "id": "E913",
+   "src": "DOC-58",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "CIN · verso não validado"
+  },
+  {
+   "id": "E914",
+   "src": "DOC-58",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E915",
+   "src": "DOC-58",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E916",
+   "src": "DOC-58",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E917",
+   "src": "DOC-58",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E918",
+   "src": "DOC-01",
+   "dst": "DOC-65",
+   "kind": "principal",
+   "trigger": "Fazer upload do documento",
+   "cond": "CIN escolhido"
+  },
+  {
+   "id": "E919",
+   "src": "DOC-65",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E920",
+   "src": "DOC-65",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos"
+  },
+  {
+   "id": "E921",
+   "src": "DOC-65",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E922",
+   "src": "DOC-65",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E923",
+   "src": "DOC-65",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E924",
+   "src": "DOC-65",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E925",
+   "src": "DOC-59",
+   "dst": "DOC-52",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E926",
+   "src": "DOC-59",
+   "dst": "DOC-60",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E927",
+   "src": "DOC-60",
+   "dst": "DOC-59",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E928",
+   "src": "DOC-60",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E929",
+   "src": "DOC-60",
+   "dst": "DOC-61",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E930",
+   "src": "DOC-61",
+   "dst": "DOC-60",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E931",
+   "src": "DOC-61",
+   "dst": "DOC-24",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Documento brasileiro aprovado"
+  },
+  {
+   "id": "E932",
+   "src": "DOC-61",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "CNH · verso não validado"
+  },
+  {
+   "id": "E933",
+   "src": "DOC-61",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E934",
+   "src": "DOC-61",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E935",
+   "src": "DOC-61",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E936",
+   "src": "DOC-61",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E937",
+   "src": "DOC-01",
+   "dst": "DOC-66",
+   "kind": "principal",
+   "trigger": "Fazer upload do documento",
+   "cond": "CNH escolhido"
+  },
+  {
+   "id": "E938",
+   "src": "DOC-66",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E939",
+   "src": "DOC-66",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos"
+  },
+  {
+   "id": "E940",
+   "src": "DOC-66",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E941",
+   "src": "DOC-66",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E942",
+   "src": "DOC-66",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E943",
+   "src": "DOC-66",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E944",
+   "src": "DOC-62",
+   "dst": "DOC-55",
+   "kind": "voltar",
+   "trigger": "Voltar no passo 1",
+   "cond": ""
+  },
+  {
+   "id": "E945",
+   "src": "DOC-62",
+   "dst": "DOC-63",
+   "kind": "principal",
+   "trigger": "Abrir câmera ou Pular",
+   "cond": ""
+  },
+  {
+   "id": "E946",
+   "src": "DOC-63",
+   "dst": "DOC-62",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E947",
+   "src": "DOC-63",
+   "dst": "DOC-01",
+   "kind": "alternativa",
+   "trigger": "Voltar para a seleção",
+   "cond": "Sem acesso à câmera ou câmera indisponível"
+  },
+  {
+   "id": "E948",
+   "src": "DOC-63",
+   "dst": "DOC-64",
+   "kind": "principal",
+   "trigger": "Foto tirada",
+   "cond": "Captura automática ou Tirar foto"
+  },
+  {
+   "id": "E949",
+   "src": "DOC-64",
+   "dst": "DOC-63",
+   "kind": "alternativa",
+   "trigger": "Tirar outra foto ou Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E950",
+   "src": "DOC-64",
+   "dst": "DOC-24",
+   "kind": "principal",
+   "trigger": "Continuar",
+   "cond": "Documento brasileiro aprovado"
+  },
+  {
+   "id": "E951",
+   "src": "DOC-64",
+   "dst": "DOC-11",
+   "kind": "erro",
+   "trigger": "Validação do documento reprovada",
+   "cond": "RG · verso não validado"
+  },
+  {
+   "id": "E952",
+   "src": "DOC-64",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E953",
+   "src": "DOC-64",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E954",
+   "src": "DOC-64",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E955",
+   "src": "DOC-64",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E956",
+   "src": "DOC-01",
+   "dst": "DOC-67",
+   "kind": "principal",
+   "trigger": "Fazer upload do documento",
+   "cond": "RG escolhido"
+  },
+  {
+   "id": "E957",
+   "src": "DOC-67",
+   "dst": "DOC-01",
+   "kind": "voltar",
+   "trigger": "Voltar",
+   "cond": ""
+  },
+  {
+   "id": "E958",
+   "src": "DOC-67",
+   "dst": "DOC-10",
+   "kind": "principal",
+   "trigger": "Enviar documento",
+   "cond": "Frente e verso escolhidos"
+  },
+  {
+   "id": "E959",
+   "src": "DOC-67",
+   "dst": "DOC-12",
+   "kind": "erro",
+   "trigger": "Sem conexão ao enviar o documento",
+   "cond": "Erro de conexão no envio"
+  },
+  {
+   "id": "E960",
+   "src": "DOC-67",
+   "dst": "DOC-13",
+   "kind": "erro",
+   "trigger": "Envio acima de 20 s",
+   "cond": "Sem resposta do servidor"
+  },
+  {
+   "id": "E961",
+   "src": "DOC-67",
+   "dst": "DOC-14",
+   "kind": "erro",
+   "trigger": "Erro inesperado no envio",
+   "cond": "Falha de sistema não identificada"
+  },
+  {
+   "id": "E962",
+   "src": "DOC-67",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido"
+  },
+  {
+   "id": "E963",
    "src": "DOC-11",
-   "dst": "DOC-53",
+   "dst": "DOC-01",
    "kind": "alternativa",
    "trigger": "Tentar novamente",
-   "cond": "RG"
+   "cond": "Brasileiro"
   },
   {
-   "id": "E900",
+   "id": "E964",
    "src": "DOC-12",
-   "dst": "DOC-55",
+   "dst": "DOC-01",
    "kind": "alternativa",
    "trigger": "Tentar novamente",
-   "cond": "RG"
+   "cond": "Brasileiro"
   },
   {
-   "id": "E901",
+   "id": "E965",
    "src": "DOC-13",
-   "dst": "DOC-55",
+   "dst": "DOC-01",
    "kind": "alternativa",
    "trigger": "Tentar novamente",
-   "cond": "RG"
+   "cond": "Brasileiro"
   },
   {
-   "id": "E902",
+   "id": "E966",
    "src": "DOC-14",
-   "dst": "DOC-55",
+   "dst": "DOC-01",
    "kind": "alternativa",
    "trigger": "Tentar novamente",
-   "cond": "RG"
+   "cond": "Brasileiro"
   }
  ],
  "decisions": {

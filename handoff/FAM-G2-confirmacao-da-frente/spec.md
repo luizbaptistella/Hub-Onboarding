@@ -90,7 +90,7 @@ Visão geral: [dados.md](../dados.md).
 **Em aberto:**
 
 - **Verso:** desenhado como [FAM-G2 · Confirmação do verso](../FAM-G2-confirmacao-do-verso/spec.md), por analogia com esta tela.
-- **Conferência dos dados:** DOC-G1 prevê conferência. Ainda não definida: se a leitura do documento deve mostrar os dados lidos antes do envio.
+- **Conferência dos dados:** DOC-47 a DOC-55 prevê conferência. Ainda não definida: se a leitura do documento deve mostrar os dados lidos antes do envio.
 
 ## 11. Critérios de aceite
 

@@ -1,0 +1,3541 @@
+{
+ "screen": "DOC-67",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-67-rg-upload/telas/vazio/screen.html",
+ "instances": [
+  {
+   "component": "AppHeader",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > header:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/AppHeader/README.md",
+   "unknownProps": null,
+   "id": 1,
+   "dsProps": {
+    "back": {
+     "label": "Voltar"
+    },
+    "title": "Captura de documentos",
+    "progress": {
+     "current": 2,
+     "total": 4
+    },
+    "language": false,
+    "help": {
+     "label": "Ajuda"
+    }
+   },
+   "behavior": null,
+   "jsx": "<AppHeader back={{ label: \"Voltar\" }} title=\"Captura de documentos\" progress={{ current: 2, total: 4 }} language={false} help={{ label: \"Ajuda\" }} />",
+   "states": [],
+   "propOptions": {
+    "language": {
+     "options": [
+      "pt-BR",
+      "es",
+      "en"
+     ],
+     "used": "false"
+    },
+    "showBack": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "showHelp": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "back": {
+       "label": "Voltar"
+      },
+      "title": "Captura de documentos",
+      "progress": {
+       "current": 2,
+       "total": 4
+      },
+      "language": false,
+      "help": {
+       "label": "Ajuda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "component": "PageHeading",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela. No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/PageHeading/README.md",
+   "unknownProps": null,
+   "id": 2,
+   "dsProps": {
+    "tone": "neutral",
+    "title": "Envie a frente e o verso do RG",
+    "subtitle": "O verso é conferido automaticamente. Use o PDF oficial, com todas as informações legíveis."
+   },
+   "behavior": null,
+   "jsx": "<PageHeading tone=\"neutral\" title=\"Envie a frente e o verso do RG\" subtitle=\"O verso é conferido automaticamente. Use o PDF oficial, com todas as informações legíveis.\" />",
+   "states": [],
+   "propOptions": {
+    "tone": {
+     "options": [
+      "brand",
+      "neutral"
+     ],
+     "used": "neutral"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "focusOnMount": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "spaced": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Nesta tela",
+     "props": {
+      "tone": "neutral",
+      "title": "Envie a frente e o verso do RG",
+      "subtitle": "O verso é conferido automaticamente. Use o PDF oficial, com todas as informações legíveis."
+     }
+    }
+   ]
+  },
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 3
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Vazio",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Frente escolhida (imagem, com miniatura)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1003,
+   "variant": "Frente e verso escolhidos (miniaturas)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1004,
+   "variant": "Erro: verso não identificado (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1005,
+   "variant": "Erro: formato não aceito (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1006,
+   "variant": "Erro: acima de 5 MB (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1007,
+   "variant": "Erro: PDF com senha (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1008,
+   "variant": "Erro: PDF corrompido (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1009,
+   "variant": "Erro: falha no envio (sem Figma)",
+   "dsProps": {
+    "id": "rg-frente",
+    "label": "Frente do RG",
+    "file": {
+     "name": "rg-frente.jpg",
+     "size": 1258291,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-frente\" label=\"Frente do RG\" file={{ name: \"rg-frente.jpg\", size: 1258291, url: \"handoff/DOC-67-rg-upload/img/exemplo-frente.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente escolhida (imagem, com miniatura)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente escolhida (imagem, com miniatura)",
+     "props": {
+      "id": "rg-frente",
+      "label": "Frente do RG",
+      "file": {
+       "name": "rg-frente.jpg",
+       "size": 1258291,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-frente.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1010,
+   "variant": "Vazio",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" status=\"idle\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1011,
+   "variant": "Frente escolhida (imagem, com miniatura)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" status=\"idle\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1012,
+   "variant": "Frente e verso escolhidos (miniaturas)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "idle",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"idle\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "idle"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1013,
+   "variant": "Erro: verso não identificado (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1014,
+   "variant": "Erro: formato não aceito (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "O arquivo deve ser PDF, JPG ou PNG.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"O arquivo deve ser PDF, JPG ou PNG.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1015,
+   "variant": "Erro: acima de 5 MB (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "O arquivo deve ter menos de 5 MB.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"O arquivo deve ter menos de 5 MB.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1016,
+   "variant": "Erro: PDF com senha (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "Este PDF tem senha. Envie uma versão sem senha.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"Este PDF tem senha. Envie uma versão sem senha.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1017,
+   "variant": "Erro: PDF corrompido (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"Não conseguimos abrir este arquivo. Envie o PDF de novo.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "UploadArea",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/UploadArea/README.md",
+   "unknownProps": null,
+   "id": 1018,
+   "variant": "Erro: falha no envio (sem Figma)",
+   "dsProps": {
+    "id": "rg-verso",
+    "label": "Verso do RG",
+    "file": {
+     "name": "rg-verso.jpg",
+     "size": 1363148,
+     "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+    },
+    "status": "error",
+    "error": "Não foi possível enviar o arquivo. Tente de novo.",
+    "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem."
+   },
+   "behavior": {
+    "eventos": "onFile, onRemove"
+   },
+   "jsx": "<UploadArea id=\"rg-verso\" label=\"Verso do RG\" file={{ name: \"rg-verso.jpg\", size: 1363148, url: \"handoff/DOC-67-rg-upload/img/exemplo-verso.jpg\" }} status=\"error\" error=\"Não foi possível enviar o arquivo. Tente de novo.\" hint=\"PDF ou imagem, até 5 MB. O verso é lido desta imagem.\" onFile={() => {}} onRemove={() => {}} />",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)",
+    "Erro: verso não identificado (sem Figma)",
+    "Erro: formato não aceito (sem Figma)",
+    "Erro: acima de 5 MB (sem Figma)",
+    "Erro: PDF com senha (sem Figma)",
+    "Erro: PDF corrompido (sem Figma)",
+    "Erro: falha no envio (sem Figma)"
+   ],
+   "propOptions": {
+    "labelHidden": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "status": {
+     "options": [
+      "idle",
+      "uploading",
+      "done",
+      "error"
+     ],
+     "used": "error"
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "idle",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: verso não identificado (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos ler o verso do documento. Envie uma imagem nítida do verso, com o documento inteiro.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: formato não aceito (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ser PDF, JPG ou PNG.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: acima de 5 MB (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "O arquivo deve ter menos de 5 MB.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF com senha (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Este PDF tem senha. Envie uma versão sem senha.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: PDF corrompido (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não conseguimos abrir este arquivo. Envie o PDF de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    },
+    {
+     "label": "Erro: falha no envio (sem Figma)",
+     "props": {
+      "id": "rg-verso",
+      "label": "Verso do RG",
+      "file": {
+       "name": "rg-verso.jpg",
+       "size": 1363148,
+       "url": "handoff/DOC-67-rg-upload/img/exemplo-verso.jpg"
+      },
+      "status": "error",
+      "error": "Não foi possível enviar o arquivo. Tente de novo.",
+      "hint": "PDF ou imagem, até 5 MB. O verso é lido desta imagem.",
+      "onFile": "(fn)",
+      "onRemove": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1019,
+   "variant": "Vazio",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": true,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1020,
+   "variant": "Frente escolhida (imagem, com miniatura)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": true,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "true"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1021,
+   "variant": "Frente e verso escolhidos (miniaturas)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1022,
+   "variant": "Erro: verso não identificado (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1023,
+   "variant": "Erro: formato não aceito (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1024,
+   "variant": "Erro: acima de 5 MB (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1025,
+   "variant": "Erro: PDF com senha (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1026,
+   "variant": "Erro: PDF corrompido (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Button",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > button:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Button/README.md",
+   "unknownProps": null,
+   "id": 1027,
+   "variant": "Erro: falha no envio (sem Figma)",
+   "dsProps": {
+    "variant": "primary",
+    "iconEnd": "arrow_forward",
+    "disabled": false,
+    "children": "Enviar documento"
+   },
+   "behavior": {
+    "eventos": "onClick"
+   },
+   "jsx": "<Button variant=\"primary\" iconEnd=\"arrow_forward\" disabled={false} onClick={() => {}}>Enviar documento</Button>",
+   "states": [
+    "Vazio",
+    "Frente e verso escolhidos (miniaturas)"
+   ],
+   "propOptions": {
+    "variant": {
+     "options": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "accent",
+      "danger"
+     ],
+     "used": "primary"
+    },
+    "size": {
+     "options": [
+      "md",
+      "sm"
+     ],
+     "used": null
+    },
+    "fullWidth": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    },
+    "disabled": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": "false"
+    },
+    "loading": {
+     "options": [
+      "true",
+      "false"
+     ],
+     "used": null
+    }
+   },
+   "renderStates": [
+    {
+     "label": "Vazio",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": true,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    },
+    {
+     "label": "Frente e verso escolhidos (miniaturas)",
+     "props": {
+      "variant": "primary",
+      "iconEnd": "arrow_forward",
+      "disabled": false,
+      "children": "Enviar documento",
+      "onClick": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1028,
+   "variant": "Frente escolhida (imagem, com miniatura)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1029,
+   "variant": "Frente e verso escolhidos (miniaturas)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1030,
+   "variant": "Erro: verso não identificado (sem Figma)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1031,
+   "variant": "Erro: formato não aceito (sem Figma)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1032,
+   "variant": "Erro: acima de 5 MB (sem Figma)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1033,
+   "variant": "Erro: PDF com senha (sem Figma)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1034,
+   "variant": "Erro: PDF corrompido (sem Figma)"
+  },
+  {
+   "component": "Miniatura do arquivo",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-thumb",
+   "parent": null,
+   "hidden": false,
+   "note": "Imagem escolhida no lugar do ícone do UploadArea. O DS não tem miniatura; proposta para o UploadArea.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1035,
+   "variant": "Erro: falha no envio (sem Figma)"
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar",
+  "est-thumb"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}

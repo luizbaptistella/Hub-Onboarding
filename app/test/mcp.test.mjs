@@ -50,7 +50,7 @@ test('/mcp responde initialize, lista ferramentas e chama hub_info com o token',
 
   const call = await rpc({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'hub_info', arguments: {} } });
   assert.equal(call.json.result.isError, undefined);
-  assert.match(call.json.result.content[0].text, /123/);
+  assert.match(call.json.result.content[0].text, /135/);
 });
 
 test('/mcp rejeita método não suportado sem derrubar o servidor', async () => {
