@@ -19,7 +19,7 @@
       h(window.Est.StatusBar, { tone: "light" }),
       h(P.StatusScreen, { title: "Recebemos seus dados cadastrais!", tone: "success", focusOnMount: false, documentTitle: false,
         footer: h(P.RedirectCountdown, { seconds: 10, onComplete: goBiometria, continueLabel: "Continuar agora" },
-          "Redirecionando para a captura de documentos de identidade...") },
+          "Redirecionando para a biometria facial...") },
         h(P.JourneyStepper, { steps: [
           { label: "Cadastro", state: "done" },
           { label: "Captura de documentos", state: "done", icon: "document" },

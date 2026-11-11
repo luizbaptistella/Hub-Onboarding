@@ -25,7 +25,7 @@ Confirmar que o fluxo de documento foi concluído e levar a pessoa para a próxi
 |---|---|---|---|---|
 | `StatusScreen` | 1 | `<StatusScreen title="Recebemos seus dados cadastrais!" tone="success" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `JourneyStepper` | 1 | `<JourneyStepper steps={[{ label: "Cadastro", state: "done" }, { label: "Captura de documentos", state: "done", icon: "document" }, { label: "Biometria facial", state: "current", icon: "fa…` | — | — |
-| `RedirectCountdown` | 1 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" onComplete={() => {}}>Redirecionando para a captura de documentos de identidade...</RedirectCountdown>` | — | — |
+| `RedirectCountdown` | 1 | `<RedirectCountdown seconds={10} continueLabel="Continuar agora" onComplete={() => {}}>Redirecionando para a biometria facial...</RedirectCountdown>` | — | — |
 
 Peças fora do DS (só implementadas ou propostas para o DS):
 
@@ -43,7 +43,7 @@ Gerado do mapa do hub (`handoff/flow.json`).
 
 ## Pendências
 
-- **Texto do redirecionamento:** o Figma diz "Redirecionando para a captura de documentos de identidade...", mas a etapa seguinte é a biometria facial. Confirmar o texto.
+- **Texto do redirecionamento:** o Figma diz "Redirecionando para a biometria facial...", mas a etapa seguinte é a biometria facial. Confirmar o texto.
 - **Diferença para a DOC-10:** a DOC-10 e esta tela têm o mesmo conteúdo do Figma. A DOC-10 é a confirmação logo após o envio; esta é a conclusão do fluxo, depois da aprovação. Confirmar se as duas são necessárias.
 - Os textos precisam estar no Figma, se aprovados.
 

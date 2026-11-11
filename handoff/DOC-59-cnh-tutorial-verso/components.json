@@ -1,0 +1,247 @@
+{
+ "screen": "DOC-59",
+ "ds": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU",
+ "markup": "handoff/DOC-59-cnh-tutorial-verso/telas/passo-1/screen.html",
+ "instances": [
+  {
+   "component": "Barra de status do celular",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-statusbar",
+   "parent": null,
+   "hidden": false,
+   "note": "Mock do sistema operacional (hora, sinal, Wi-Fi, bateria). Não implementar.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 1
+  },
+  {
+   "component": "Número do 2.º tutorial",
+   "ds": false,
+   "local": true,
+   "inDs": false,
+   "selector": "#est-root .est-tutorial-2",
+   "parent": null,
+   "hidden": false,
+   "note": "O número visível do passo é trocado por 2 (sequência de tutoriais do fluxo). Proposta para o Tutorial: prop de número inicial.",
+   "readme": null,
+   "dsProps": {},
+   "behavior": null,
+   "unknownProps": null,
+   "jsx": null,
+   "states": [],
+   "propOptions": {},
+   "renderStates": [],
+   "id": 2
+  }
+ ],
+ "onlyInVariants": [
+  {
+   "component": "Tutorial",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tutorial/README.md",
+   "unknownProps": null,
+   "id": 1001,
+   "variant": "Passo 1 · virar o documento",
+   "dsProps": {
+    "label": "Como fotografar o verso da CNH",
+    "title": "Foto do documento",
+    "steps": [
+     {
+      "title": "Agora, vamos capturar o verso.",
+      "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+      "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Enquadre o verso do documento na moldura.",
+      "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+      "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+      "imageAlt": "",
+      "frame": true
+     }
+    ],
+    "defaultStep": 1
+   },
+   "behavior": {
+    "eventos": "onExit, onSkip, onFinish"
+   },
+   "jsx": "<Tutorial label=\"Como fotografar o verso da CNH\" title=\"Foto do documento\" steps={[{ title: \"Agora, vamos capturar o verso.\", description: \"Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.\", image: \"handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg\", imageAlt: \"\" }, { title: \"Enquadre o verso do documento na moldura.\", description: \"Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.\", image: \"handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg\", imageAlt: \"\", frame: true }]} defaultStep={1} onExit={() => {}} onSkip={() => {}} onFinish={() => {}} />",
+   "states": [
+    "Passo 1 · virar o documento",
+    "Passo 2 · enquadrar o verso"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Passo 1 · virar o documento",
+     "props": {
+      "label": "Como fotografar o verso da CNH",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Agora, vamos capturar o verso.",
+        "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre o verso do documento na moldura.",
+        "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 1,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 2 · enquadrar o verso",
+     "props": {
+      "label": "Como fotografar o verso da CNH",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Agora, vamos capturar o verso.",
+        "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre o verso do documento na moldura.",
+        "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 2,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    }
+   ]
+  },
+  {
+   "component": "Tutorial",
+   "ds": true,
+   "local": false,
+   "inDs": true,
+   "selector": "#est-root > div:nth-of-type(1) > section:nth-of-type(1)",
+   "parent": null,
+   "hidden": false,
+   "note": "Componente real do DS, com as props usadas nesta tela.",
+   "readme": "https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU · project/components/Tutorial/README.md",
+   "unknownProps": null,
+   "id": 1002,
+   "variant": "Passo 2 · enquadrar o verso",
+   "dsProps": {
+    "label": "Como fotografar o verso da CNH",
+    "title": "Foto do documento",
+    "steps": [
+     {
+      "title": "Agora, vamos capturar o verso.",
+      "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+      "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+      "imageAlt": ""
+     },
+     {
+      "title": "Enquadre o verso do documento na moldura.",
+      "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+      "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+      "imageAlt": "",
+      "frame": true
+     }
+    ],
+    "defaultStep": 2
+   },
+   "behavior": {
+    "eventos": "onExit, onSkip, onFinish"
+   },
+   "jsx": "<Tutorial label=\"Como fotografar o verso da CNH\" title=\"Foto do documento\" steps={[{ title: \"Agora, vamos capturar o verso.\", description: \"Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.\", image: \"handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg\", imageAlt: \"\" }, { title: \"Enquadre o verso do documento na moldura.\", description: \"Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.\", image: \"handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg\", imageAlt: \"\", frame: true }]} defaultStep={2} onExit={() => {}} onSkip={() => {}} onFinish={() => {}} />",
+   "states": [
+    "Passo 1 · virar o documento",
+    "Passo 2 · enquadrar o verso"
+   ],
+   "propOptions": {},
+   "renderStates": [
+    {
+     "label": "Passo 1 · virar o documento",
+     "props": {
+      "label": "Como fotografar o verso da CNH",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Agora, vamos capturar o verso.",
+        "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre o verso do documento na moldura.",
+        "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 1,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    },
+    {
+     "label": "Passo 2 · enquadrar o verso",
+     "props": {
+      "label": "Como fotografar o verso da CNH",
+      "title": "Foto do documento",
+      "steps": [
+       {
+        "title": "Agora, vamos capturar o verso.",
+        "description": "Vire o documento e capture o verso inteiro. O QR Code precisa aparecer nítido.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-1.jpg",
+        "imageAlt": ""
+       },
+       {
+        "title": "Enquadre o verso do documento na moldura.",
+        "description": "Posicione o documento inteiro dentro da moldura. Certifique-se de que a imagem está nítida e todas as informações legíveis.",
+        "image": "handoff/DOC-59-cnh-tutorial-verso/img/passo-2.jpg",
+        "imageAlt": "",
+        "frame": true
+       }
+      ],
+      "defaultStep": 2,
+      "onExit": "(fn)",
+      "onSkip": "(fn)",
+      "onFinish": "(fn)"
+     }
+    }
+   ]
+  }
+ ],
+ "conditional": [],
+ "localClasses": [
+  "est-statusbar",
+  "est-tutorial-2"
+ ],
+ "source": "Captura da renderização real (build-tools/estrangeiro/capture.js) cruzada com ds-index.d.ts."
+}
