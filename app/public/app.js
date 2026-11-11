@@ -1,4 +1,5 @@
 // Interface do hub. Conteúdo sempre via textContent (nada de innerHTML com dados do handoff).
+import { mountEditor } from './editor.js';
 const view = document.getElementById('view');
 const qInput = document.getElementById('q');
 const laneSelect = document.getElementById('lane');
@@ -39,7 +40,7 @@ const stat = (value, label) => el('div', { class: 'stat' }, el('div', { class: '
 function heroView(info) {
   return el('section', { class: 'hero' },
     el('p', { class: 'eyebrow' }, 'Handoff · Onboarding'),
-    el('h1', { class: 'hero-title' }, 'Palmeiras Hub'),
+    el('h1', { class: 'hero-title' }, 'Ellena Hub'),
     el('p', { class: 'hero-sub' }, 'Telas, decisões, componentes e ligações do fluxo de onboarding, em um só lugar.'),
     el('div', { class: 'stats' },
       stat(info.screens, 'telas'),
@@ -118,9 +119,17 @@ async function renderScreen(code) {
     }
   };
   buttons.forEach((b) => b.addEventListener('click', () => select(b.dataset.tab)));
+  // Atalho para o modo de edição a partir de qualquer aba: abre a aba Telas e liga a edição.
+  const startEdit = async () => {
+    if (!content.firstChild?.startEdit) await select('telas');
+    content.firstChild?.startEdit?.();
+  };
+  const canEdit = (node.variants ?? []).length > 0;
   view.replaceChildren(
     el('a', { class: 'back', href: '#/' }, '← Todas as telas'),
-    el('h1', {}, `${node.code} · ${node.name}`),
+    el('div', { class: 'screen-head' },
+      el('h1', {}, `${node.code} · ${node.name}`),
+      canEdit ? el('button', { type: 'button', class: 'btn primary', onclick: startEdit }, '✎ Editar tela') : null),
     el('p', { class: 'sub' }, statusBadge(node.status), ' ', node.lane, node.figma ? ` · Figma ${node.figma}` : ''),
     el('div', { class: 'tabs', role: 'tablist' }, buttons),
     content,
@@ -137,14 +146,88 @@ function flowView(flow) {
   );
 }
 
-async function markupView(code) {
-  const data = await api(`/api/screens/${encodeURIComponent(code)}/markup`);
+// Rola até o elemento descontando o cabeçalho fixo (que fica alto em janelas estreitas).
+const reveal = (node) => {
+  const top = node.getBoundingClientRect().top + scrollY - (document.querySelector('.top')?.offsetHeight ?? 0) - 12;
+  window.scrollTo({ top, behavior: 'smooth' });
+};
+
+async function markupView(code, variantId) {
+  const enc = encodeURIComponent(code);
+  const q = variantId ? `?variant=${encodeURIComponent(variantId)}` : '';
+  const data = await api(`/api/screens/${enc}/markup${q}`);
   // sandbox com allow-same-origin, sem allow-scripts: a marcação não executa script (a CSP do documento também bloqueia).
   // Sem allow-same-origin, a origem vira opaca e o navegador não envia o cookie de login (SameSite=Strict),
   // então a rota /documento responde 401 e o iframe fica em branco.
   // O documento vem de uma rota própria, com o CSS embutido e CSP que permite os estilos.
-  const frame = el('iframe', { class: 'preview telas', sandbox: 'allow-same-origin', title: `Tela ${code}`, src: `/api/screens/${encodeURIComponent(code)}/documento` });
-  return el('div', {}, data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite.') : null, frame);
+  // A mesma origem também deixa o modo de edição (editor.js) ler e alterar a prévia sem rodar script dentro dela.
+  const frame = el('iframe', { class: 'preview telas', sandbox: 'allow-same-origin', title: `Tela ${code}`, src: `/api/screens/${enc}/documento?variant=${encodeURIComponent(data.variant.id)}` });
+  const loaded = new Promise((resolve) => frame.addEventListener('load', resolve, { once: true }));
+  const stage = el('div', { class: 'stage' }, frame);
+  const layout = el('div', { class: 'editor-layout' }, stage);
+  const notice = el('div', { role: 'status' });
+  const root = el('div', {});
+
+  const variantSelect = data.variants.length > 1
+    ? el('select', { 'aria-label': 'Variante da tela', onchange: (e) => swap(e.target.value) }, data.variants.map((v) => el('option', { value: v.id }, v.label)))
+    : null;
+  if (variantSelect) variantSelect.value = data.variant.id;
+  let editor = null;
+  const editBtn = el('button', { type: 'button', class: 'btn', onclick: toggleEdit }, 'Editar tela');
+
+  async function swap(id) {
+    if (editor?.dirty && !confirm('Trocar de variante descarta as alterações não salvas. Continuar?')) { variantSelect.value = data.variant.id; return; }
+    editor?.destroy();
+    root.replaceWith(await markupView(code, id));
+  }
+
+  async function toggleEdit() {
+    if (editor) {
+      if (editor.dirty && !confirm('Sair do modo de edição descarta as alterações não salvas. Continuar?')) return;
+      editor.destroy();
+      editor = null;
+      layout.classList.remove('editing');
+      editBtn.textContent = 'Editar tela';
+      return;
+    }
+    editBtn.disabled = true;
+    try {
+      await loaded;
+      const [components, config] = await Promise.all([
+        api(`/api/screens/${enc}/components`).catch(() => null),
+        api('/api/propostas/config').catch(() => ({ enabled: false })),
+      ]);
+      notice.replaceChildren(el('p', { class: 'ed-banner' },
+        el('strong', {}, 'Modo de edição ativo. '),
+        'Clique num elemento da prévia para editar. O painel de edição fica ao lado da tela (abaixo dela em janelas estreitas). Nada muda no código até a proposta ser salva e incorporada.'));
+      editor = mountEditor({ frame, stage, markup: data, code, components, config, el, onSaved: (r) => {
+        editor.destroy();
+        editor = null;
+        layout.classList.remove('editing');
+        editBtn.textContent = 'Editar tela';
+        frame.contentWindow.location.reload();
+        notice.replaceChildren(el('p', { class: 'ok' }, 'Proposta enviada. ',
+          r.url ? el('a', { href: r.url, target: '_blank', rel: 'noopener' }, `Ver PR #${r.number} no GitHub`) : `Arquivo salvo em ${r.path}.`));
+        notice.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      } });
+      layout.append(editor.panel);
+      layout.classList.add('editing');
+      editBtn.textContent = 'Sair da edição';
+      reveal(notice);
+    } catch (err) {
+      notice.replaceChildren(el('p', { class: 'error' }, `Não foi possível abrir o modo de edição: ${err.message}`));
+    } finally {
+      editBtn.disabled = false;
+    }
+  }
+
+  root.append(...[
+    el('div', { class: 'preview-bar' }, variantSelect, data.truncated ? null : editBtn),
+    data.truncated ? el('p', { class: 'muted' }, 'Marcação cortada: arquivo maior que o limite. A edição fica desligada para esta tela.') : null,
+    notice,
+    layout].filter(Boolean));
+  root.startEdit = () => (editor ? reveal(notice) : data.truncated ? null : toggleEdit());
+  return root;
 }
 
 const GENERAL_DOC_LABELS = {
@@ -188,6 +271,26 @@ const DS_TABS = [['tokens', 'Tokens'], ['componentes', 'Componentes'], ['regras'
 // Cor só vai para o estilo se for um valor de cor válido; o resto do texto nunca vira HTML.
 const COLOR_VALUE = /^(#[0-9a-f]{3,8}|rgba?\(|hsla?\()/i;
 
+// Tema de cor do DS (Palmeiras ou Flamengo, claro ou escuro): vale para os tokens e para as prévias. Fica no navegador.
+const DS_THEME_KEY = 'ds-tema';
+let dsTheme = (() => { try { return localStorage.getItem(DS_THEME_KEY) || 'palmeiras'; } catch { return 'palmeiras'; } })();
+function setDsTheme(id) {
+  dsTheme = id;
+  try { localStorage.setItem(DS_THEME_KEY, id); } catch { /* sem armazenamento: a escolha vale só nesta página */ }
+}
+// Cópia dos tokens com o valor resolvido do tema escolhido.
+function tokensForTheme(tokens) {
+  const values = tokens.themes?.find((t) => t.id === dsTheme)?.values ?? {};
+  return { ...tokens, groups: tokens.groups.map((g) => ({ ...g, items: g.items.map((t) => {
+    const v = values[t.name.slice(2)];
+    return v && v !== t.resolved ? { ...t, resolved: v } : t;
+  }) })) };
+}
+function themeBar(tokens, onPick) {
+  return el('div', { class: 'ds-themes', role: 'group', 'aria-label': 'Tema de cor do design system' },
+    (tokens.themes ?? []).map((t) => el('button', { type: 'button', 'aria-pressed': String(t.id === dsTheme), onclick: () => onPick(t.id) }, t.name)));
+}
+
 // Esconde os itens que não contêm o texto (e os grupos que ficam vazios).
 function filterItems(root, q, groupSelector) {
   const items = root.querySelectorAll('[data-search]');
@@ -204,7 +307,7 @@ function mountRender(frame, items, opts) {
       const w = frame.contentWindow;
       for (let t = 0; t < 50 && !(w && w.dsReady); t++) await new Promise((r) => setTimeout(r, 100));
       if (!w || !w.dsReady) return reject(new Error('DS não carregou'));
-      const h = await w.dsRender(items, opts);
+      const h = await w.dsRender(items, { ...opts, theme: dsTheme });
       frame.style.height = `${h + 4}px`;
       resolve(h);
     }, { once: true });
@@ -360,13 +463,14 @@ async function renderDesignSystem(tab, componentName, mode) {
 
   if (current === 'componentes') body.append(componentsStory(ds.components, componentName, mode === 'docs' ? 'docs' : 'canvas'));
   else if (current === 'regras') body.append(rulesView(ds.rules));
-  else body.append(tokensView(ds.tokens));
+  else body.append(tokensView(tokensForTheme(ds.tokens)));
 
   view.replaceChildren(...[
     el('h1', {}, 'Design System'),
     el('p', { class: 'sub' }, `Palmeiras · Onboarding${ds.tokens.version ? ` · DS publicado ${ds.tokens.version}` : ''}`),
     el('nav', { class: 'tabs' }, DS_TABS.map(([key, label]) => el('a', { href: `#/ds/${key}`, 'aria-current': key === current ? 'page' : null },
       label, el('span', { class: 'count' }, String(counts[key]))))),
+    themeBar(ds.tokens, (id) => { setDsTheme(id); renderDesignSystem(tab, componentName, mode); }),
     current === 'tokens' ? filter : null,
     body,
   ].filter(Boolean));

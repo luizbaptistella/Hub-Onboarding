@@ -3,11 +3,12 @@ import path from 'node:path';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import * as hub from '../../mcp-server/src/hub.mjs';
+import { markupHash } from './propostas.mjs';
 
 const json = (status, body) => ({ status, type: 'application/json; charset=utf-8', body: JSON.stringify(body) });
 const notFound = (what) => json(404, { error: `${what} não encontrado` });
 
-// Raiz do hub (palmeiras-hub/), onde moram os CSS do DS e do protótipo referenciados pela marcação.
+// Raiz do hub (ellena-hub/), onde moram os CSS do DS e do protótipo referenciados pela marcação.
 const hubRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DENIED_DIRS = new Set(['app', 'mcp-server', 'node_modules']);
 // A marcação é um documento próprio (aberto como iframe). Sem script, e com estilos inline e fontes do Google.
@@ -53,9 +54,11 @@ async function inlineLocalImages(html, markupFile) {
   return out;
 }
 
-export async function handleApi(handoff, pathname, searchParams, { designSystem } = {}) {
+export async function handleApi(handoff, pathname, searchParams, { designSystem, proposalMode = null } = {}) {
   const parts = pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
   const [head, ...rest] = parts;
+
+  if (head === 'propostas' && rest[0] === 'config' && rest.length === 1) return json(200, { enabled: Boolean(proposalMode), mode: proposalMode });
 
   if (head === 'info' && !rest.length) return json(200, await hub.hubStats(handoff));
 
@@ -88,7 +91,9 @@ export async function handleApi(handoff, pathname, searchParams, { designSystem 
       const r = await hub.getScreenMarkup(handoff, code, searchParams.get('variant') || undefined);
       if (!r) return notFound(`Tela ${code}`);
       if (r.error) return json(404, { error: r.error, variants: r.variants });
-      return json(200, { variant: r.variant, html: r.html, truncated: r.truncated });
+      // sha256 identifica a versão da marcação aberta no modo de edição; a proposta é recusada se a tela mudar depois.
+      const variants = (r.node.variants ?? []).map((v) => ({ id: v.id, label: v.label }));
+      return json(200, { variant: r.variant, variants, html: r.html, truncated: r.truncated, sha256: markupHash(r.html) });
     }
     if (sub === 'documento') {
       const r = await hub.getScreenMarkup(handoff, code, searchParams.get('variant') || undefined);

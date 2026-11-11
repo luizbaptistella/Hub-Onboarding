@@ -9,6 +9,7 @@ import { handleApi } from './api.mjs';
 import { createAuth } from './auth.mjs';
 import { createMcpEndpoint } from '../../mcp-server/src/endpoint.mjs';
 import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.mjs';
+import { buildProposal, storeFromEnv } from './propostas.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(here, '../public');
@@ -16,7 +17,7 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 // Assets sem dados do handoff ficam públicos para a tela de login carregar.
 const PUBLIC_ASSETS = new Set(['/styles.css', '/app.js', '/login.js', '/logo-palmeiras.png']);
 const LOOPBACK = new Set(['127.0.0.1', 'localhost', '::1']);
-// Raiz do hub (palmeiras-hub/) servida em /hub/. Pastas internas e do servidor ficam fora.
+// Raiz do hub (ellena-hub/) servida em /hub/. Pastas internas e do servidor ficam fora.
 const hubRoot = path.resolve(here, '../..');
 const DENIED_HUB_DIRS = new Set(['app', 'mcp-server', 'node_modules']);
 const HUB_TYPES = {
@@ -40,6 +41,7 @@ export async function createApp({
   password = process.env.APP_PASSWORD,
   secure = process.env.COOKIE_SECURE === '1',
   mcpToken = process.env.MCP_TOKEN ?? '',
+  proposalStore = storeFromEnv({ hubRoot, passwordSet: Boolean(password) }),
 } = {}) {
   const handoff = await loadHub(handoffDir);
   const ds = await loadDesignSystem({ hubRoot, handoffDir: handoff.dir, decisions: handoff.decisions });
@@ -72,6 +74,27 @@ export async function createApp({
         return redirect(res, '/login');
       }
 
+      // Única escrita da app: salvar uma proposta de alteração feita no modo de edição.
+      if (p === '/api/propostas' && req.method === 'POST') {
+        if (auth.enabled && !auth.hasSession(req)) return sendJson(res, 401, { error: 'não autenticado' });
+        if (!sameOrigin(req)) return sendJson(res, 403, { error: 'origem não permitida' });
+        if (!proposalStore) return sendJson(res, 503, { error: 'Salvar propostas não está configurado neste servidor (defina GITHUB_TOKEN e GITHUB_REPO).' });
+        let input;
+        try {
+          input = JSON.parse(await readBody(req, 64 * 1024));
+        } catch (err) {
+          if (err.status === 413) throw err;
+          return sendJson(res, 400, { error: 'JSON inválido' });
+        }
+        try {
+          const proposal = await buildProposal(handoff, input);
+          return sendJson(res, 201, await proposalStore.save(proposal));
+        } catch (err) {
+          if (err.publicMessage) return sendJson(res, err.status, { error: err.publicMessage });
+          throw err;
+        }
+      }
+
       if (req.method !== 'GET') return send(res, { status: 405, type: 'text/plain', body: 'method not allowed' });
 
       if (p === '/healthz') return send(res, { status: 200, type: 'application/json', body: JSON.stringify({ ok: true }) });
@@ -84,7 +107,7 @@ export async function createApp({
       }
 
       if (p.startsWith('/api')) {
-        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem }));
+        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem, proposalMode: proposalStore?.mode ?? null }));
       }
 
       if (p === '/hub') return redirect(res, '/hub/');
@@ -147,13 +170,28 @@ function clientIp(req) {
   return req.socket.remoteAddress ?? 'desconhecido';
 }
 
+// Escrita só a partir das páginas do próprio hub: o navegador manda Origin em todo POST de fetch.
+function sameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return false;
+  try {
+    return new URL(origin).host === req.headers.host;
+  } catch {
+    return false;
+  }
+}
+
+function sendJson(res, status, body) {
+  return send(res, { status, type: 'application/json; charset=utf-8', body: JSON.stringify(body) });
+}
+
 function redirect(res, location) {
   res.writeHead(303, { location, ...SECURITY_HEADERS });
   res.end();
 }
 
 function send(res, { status, type, body, headers = {} }) {
-  res.writeHead(status, { 'content-type': type, ...SECURITY_HEADERS, 'cache-control': type.startsWith('text/html') || type.startsWith('application/json') ? 'no-store' : 'public, max-age=300', ...headers });
+  res.writeHead(status, { 'content-type': type, ...SECURITY_HEADERS, 'cache-control': type.startsWith('text/html') || type.startsWith('application/json') ? 'no-store' : /^text\/(javascript|css)/.test(type) ? 'no-cache' : 'public, max-age=300', ...headers });
   res.end(body);
 }
 
@@ -165,5 +203,5 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     process.exit(1);
   }
   const app = await createApp();
-  app.listen(PORT, HOST, () => console.log(`Palmeiras Hub em http://${HOST}:${PORT} · login ${process.env.APP_PASSWORD ? 'ativo' : 'desligado (local)'}`));
+  app.listen(PORT, HOST, () => console.log(`Ellena Hub em http://${HOST}:${PORT} · login ${process.env.APP_PASSWORD ? 'ativo' : 'desligado (local)'}`));
 }
