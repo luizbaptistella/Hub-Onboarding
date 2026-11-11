@@ -1,4 +1,4 @@
-# Palmeiras Hub · servidor MCP
+# Ellena Hub · servidor MCP
 
 Expõe o handoff do Palmeiras · Onboarding (`../handoff/`) como ferramentas MCP. Quem está no time consome as telas, specs, componentes e fluxo direto no Claude, sem abrir pastas.
 
@@ -25,14 +25,14 @@ Exemplo de uso no Claude: "Me passa o spec do CAD-02 e os componentes que ele us
 Pré-requisito: Node 20+.
 
 ```bash
-cd palmeiras-hub/mcp-server
+cd ellena-hub/mcp-server
 npm install
 ```
 
 Adicione ao Claude Code:
 
 ```bash
-claude mcp add palmeiras-hub -- node /caminho/absoluto/para/palmeiras-hub/mcp-server/src/stdio.mjs
+claude mcp add ellena-hub -- node /caminho/absoluto/para/ellena-hub/mcp-server/src/stdio.mjs
 ```
 
 Para o Claude Desktop, adicione no `claude_desktop_config.json`:
@@ -40,9 +40,9 @@ Para o Claude Desktop, adicione no `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "palmeiras-hub": {
+    "ellena-hub": {
       "command": "node",
-      "args": ["/caminho/absoluto/para/palmeiras-hub/mcp-server/src/stdio.mjs"]
+      "args": ["/caminho/absoluto/para/ellena-hub/mcp-server/src/stdio.mjs"]
     }
   }
 }
@@ -54,12 +54,12 @@ A app web do hub (Render) serve o MCP em **`https://<url-do-hub>/mcp`**, no mesm
 
 Autenticação: header `Authorization: Bearer <MCP_TOKEN>`. É um token de máquina, separado da senha de login da app. Sem `MCP_TOKEN` configurado, `/mcp` responde 404 e fica desligado.
 
-Para ligar no Render: no painel do serviço `palmeiras-hub`, em **Environment**, defina `MCP_TOKEN` com um valor longo (ex.: `openssl rand -hex 32`). O `render.yaml` já declara a variável como segredo, sem valor no repositório.
+Para ligar no Render: no painel do serviço `ellena-hub`, em **Environment**, defina `MCP_TOKEN` com um valor longo (ex.: `openssl rand -hex 32`). O `render.yaml` já declara a variável como segredo, sem valor no repositório.
 
 Cada pessoa conecta com:
 
 ```bash
-claude mcp add --transport http palmeiras-hub https://<url-do-hub>/mcp --header "Authorization: Bearer <token>"
+claude mcp add --transport http ellena-hub https://<url-do-hub>/mcp --header "Authorization: Bearer <token>"
 ```
 
 O token é compartilhado pelo canal de segredos do time, não pelo repositório. Trocar o token: altere `MCP_TOKEN` no Render; quem usa precisa atualizar o header.
@@ -69,7 +69,7 @@ O token é compartilhado pelo canal de segredos do time, não pelo repositório.
 Para rodar só o endpoint MCP fora da app (por exemplo, em outro host, atrás de um proxy com TLS):
 
 ```bash
-cd palmeiras-hub/mcp-server
+cd ellena-hub/mcp-server
 MCP_TOKEN="$(openssl rand -hex 32)" HOST=0.0.0.0 PORT=8790 npm run start:http
 ```
 

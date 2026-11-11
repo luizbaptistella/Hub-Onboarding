@@ -7,4 +7,4 @@ import { handoffDir } from './handoff-path.mjs';
 const handoff = await loadHub(handoffDir);
 const server = createHubServer(handoff);
 await server.connect(new StdioServerTransport());
-console.error(`[palmeiras-hub] stdio pronto · ${handoff.nodes.length} nós · ${handoffDir}`);
+console.error(`[ellena-hub] stdio pronto · ${handoff.nodes.length} nós · ${handoffDir}`);

@@ -42,7 +42,7 @@ test('/mcp responde initialize, lista ferramentas e chama hub_info com o token',
     params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'teste', version: '0.0.0' } },
   });
   assert.equal(init.status, 200);
-  assert.equal(init.json.result.serverInfo.name, 'palmeiras-hub');
+  assert.equal(init.json.result.serverInfo.name, 'ellena-hub');
 
   const tools = await rpc({ jsonrpc: '2.0', id: 2, method: 'tools/list' });
   const names = tools.json.result.tools.map((t) => t.name);

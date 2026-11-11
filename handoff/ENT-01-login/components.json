@@ -139,11 +139,11 @@
    "id": 3,
    "dsProps": {
     "variant": "standalone",
-    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html",
+    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html",
     "children": "Esqueceu sua senha?"
    },
    "behavior": null,
-   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\">Esqueceu sua senha?</TextLink>",
+   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\">Esqueceu sua senha?</TextLink>",
    "states": [],
    "propOptions": {
     "variant": {
@@ -166,7 +166,7 @@
      "label": "Nesta tela",
      "props": {
       "variant": "standalone",
-      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html",
+      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html",
       "children": "Esqueceu sua senha?"
      }
     }

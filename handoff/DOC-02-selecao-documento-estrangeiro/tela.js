@@ -1,5 +1,5 @@
 // DOC-02 · Seleção do documento · estrangeiro.
-// Tela montada com os componentes reais do DS (window.PalmeirasOnboarding, de palmeiras-hub/ds/bundle.js).
+// Tela montada com os componentes reais do DS (window.PalmeirasOnboarding, de ellena-hub/ds/bundle.js).
 // Cada screen.html traz a marcação já renderizada (para leitura e inspeção) e este script a torna interativa:
 // <div id="est-root" data-props='{"open":"crnm"}'> abre a tela com o CRNM escolhido; {"open":""} abre com a lista fechada.
 (function () {

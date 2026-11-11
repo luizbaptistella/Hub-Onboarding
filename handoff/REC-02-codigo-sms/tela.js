@@ -1,5 +1,5 @@
 // REC-02 · Código por SMS (recuperação de senha).
-// Código de 6 dígitos enviado ao celular informado em REC-01. A lógica vive em window.Acesso.CodeScreen (palmeiras-hub/acesso.js),
+// Código de 6 dígitos enviado ao celular informado em REC-01. A lógica vive em window.Acesso.CodeScreen (ellena-hub/acesso.js),
 // compartilhada com REC-04 (e-mail). Componentes do DS: AppHeader, PageHeading, ContactRow, OTPInput, Alert, ResendPrompt e Button.
 (function () {
   "use strict";

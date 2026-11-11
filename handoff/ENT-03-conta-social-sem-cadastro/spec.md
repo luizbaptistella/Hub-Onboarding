@@ -19,13 +19,13 @@ Avisar que o provedor (Google, Apple ou Microsoft) autenticou a pessoa, mas não
 
 ## Componentes
 
-4 componentes do DS, 9 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+4 componentes do DS, 9 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
 | `Button` | 2 | `<Button variant="primary" onClick={() => {}}>Criar cadastro</Button>` | children, variant | — |
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
-| `AppHeader` | 3 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Entrar com Google…` | title | — |
+| `AppHeader` | 3 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Entrar com Google…` | title | — |
 | `ResultHero` | 3 | `<ResultHero tone="warning" icon="person_search" title="Não encontramos seu cadastro" description="Não há cadastro do Palmeiras ligado a esta conta do Google. Crie um cadastro ou entre com…` | description | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 
 Peças fora do DS (só implementadas ou propostas para o DS):

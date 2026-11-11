@@ -19,17 +19,17 @@ Pedir o contato (celular ou e-mail) e a data de nascimento de quem esqueceu a se
 
 ## Componentes
 
-7 componentes do DS, 26 instâncias, mais 2 peças fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+7 componentes do DS, 26 instâncias, mais 2 peças fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
-| `AppHeader` | 1 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Recuperar Senha" …` | — | — |
+| `AppHeader` | 1 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Recuperar Senha" …` | — | — |
 | `PageHeading` | 1 | `<PageHeading title="Recuperação" subtitle="Como você deseja recuperar sua senha?" tone="brand" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" onClick={() => {}}>Continuar</Button>` | — | — |
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
 | `Tabs` | 6 | `<Tabs label="Forma de recuperação" value="celular" items={[{ value: "celular", label: "Celular" }, { value: "email", label: "E-mail" }]} onChange={() => {}} />` | value | — |
 | `TextField` | 12 | `<TextField label="Número do celular" preset="phone" name="celular" placeholder="(00) 00000-0000" autoComplete="tel" value="" onChange={() => {}} />` | autoComplete, error, label, name, placeholder, preset, value | — |
-| `TextLink` | 4 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html">Solicitar recuperaç…` | — | — |
+| `TextLink` | 4 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html">Solicitar recuperaç…` | — | — |
 
 Peças fora do DS (só implementadas ou propostas para o DS):
 

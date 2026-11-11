@@ -19,7 +19,7 @@ Avisar que o envio demorou mais de 20 segundos e deixar a pessoa tentar de novo.
 
 ## Componentes
 
-3 componentes do DS, 3 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+3 componentes do DS, 3 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|

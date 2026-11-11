@@ -18,14 +18,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
     },
     "title": "Recuperar Senha",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Recuperar Senha\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Recuperar Senha\" language={false} help={false} />",
    "states": [],
    "propOptions": {
     "language": {
@@ -57,7 +57,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Recuperar Senha",
       "language": false,
@@ -2416,11 +2416,11 @@
    "variant": "Celular · vazio",
    "dsProps": {
     "variant": "standalone",
-    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
     "children": "Solicitar recuperação da conta"
    },
    "behavior": null,
-   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
+   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
    "states": [],
    "propOptions": {
     "variant": {
@@ -2443,7 +2443,7 @@
      "label": "Celular · vazio",
      "props": {
       "variant": "standalone",
-      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
       "children": "Solicitar recuperação da conta"
      }
     }
@@ -2464,11 +2464,11 @@
    "variant": "Celular · preenchido",
    "dsProps": {
     "variant": "standalone",
-    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
     "children": "Solicitar recuperação da conta"
    },
    "behavior": null,
-   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
+   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
    "states": [],
    "propOptions": {
     "variant": {
@@ -2491,7 +2491,7 @@
      "label": "Celular · vazio",
      "props": {
       "variant": "standalone",
-      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
       "children": "Solicitar recuperação da conta"
      }
     }
@@ -2512,11 +2512,11 @@
    "variant": "E-mail · vazio",
    "dsProps": {
     "variant": "standalone",
-    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
     "children": "Solicitar recuperação da conta"
    },
    "behavior": null,
-   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
+   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
    "states": [],
    "propOptions": {
     "variant": {
@@ -2539,7 +2539,7 @@
      "label": "Celular · vazio",
      "props": {
       "variant": "standalone",
-      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
       "children": "Solicitar recuperação da conta"
      }
     }
@@ -2560,11 +2560,11 @@
    "variant": "E-mail · preenchido",
    "dsProps": {
     "variant": "standalone",
-    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+    "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
     "children": "Solicitar recuperação da conta"
    },
    "behavior": null,
-   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
+   "jsx": "<TextLink variant=\"standalone\" href=\"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html\">Solicitar recuperação da conta</TextLink>",
    "states": [],
    "propOptions": {
     "variant": {
@@ -2587,7 +2587,7 @@
      "label": "Celular · vazio",
      "props": {
       "variant": "standalone",
-      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
+      "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-08-recuperacao-da-conta/telas/vazio/screen.html",
       "children": "Solicitar recuperação da conta"
      }
     }

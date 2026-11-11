@@ -19,11 +19,11 @@ Criar a nova senha depois do código validado, com os requisitos visíveis e a c
 
 ## Componentes
 
-5 componentes do DS, 12 instâncias, mais 4 peças fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+5 componentes do DS, 12 instâncias, mais 4 peças fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
-| `AppHeader` | 1 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Nova Senha" langu…` | — | — |
+| `AppHeader` | 1 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Nova Senha" langu…` | — | — |
 | `PageHeading` | 1 | `<PageHeading title="Crie sua nova senha" subtitle="Sua nova senha deve ter pelo menos 8 caracteres." tone="neutral" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 | `Button` | 1 | `<Button variant="primary" onClick={() => {}}>Salvar senha</Button>` | — | — |
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |

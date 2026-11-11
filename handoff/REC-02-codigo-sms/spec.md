@@ -19,12 +19,12 @@ Receber o código de 6 dígitos enviado por SMS ao celular informado e validá-l
 
 ## Componentes
 
-6 componentes do DS, 20 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+6 componentes do DS, 20 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
 | `PageHeading` | 1 | `<PageHeading title="Insira o seu código" subtitle="Enviamos um código de verificação via SMS para o seu celular. Pode levar alguns segundos." tone="neutral" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
-| `AppHeader` | 5 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html" }} title="…` | back | — |
+| `AppHeader` | 5 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html" }} title="…` | back | — |
 | `OTPInput` | 5 | `<OTPInput value="" disabled={false} state="default" onChange={() => {}} onComplete={() => {}} />` | disabled, error, state, value | — |
 | `ResendPrompt` | 5 | `<ResendPrompt cooldown={0} disabled={false} onResend={() => {}} />` | disabled | — |
 | `Alert` | 3 | `<Alert tone="danger" title="Código incorreto">O código que você inseriu está incorreto, verifique e tente novamente.</Alert>` | children, title | — |

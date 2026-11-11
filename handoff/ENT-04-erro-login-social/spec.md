@@ -19,13 +19,13 @@ Avisar que o login com o provedor foi cancelado ou falhou e deixar tentar de nov
 
 ## Componentes
 
-4 componentes do DS, 8 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+4 componentes do DS, 8 instâncias, mais 1 peça fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
 | `Button` | 1 | `<Button variant="primary" onClick={() => {}}>Tentar novamente</Button>` | — | — |
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
-| `AppHeader` | 3 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Entrar com Google…` | title | — |
+| `AppHeader` | 3 | `<AppHeader back={{ label: "Voltar", href: "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html" }} title="Entrar com Google…` | title | — |
 | `ResultHero` | 3 | `<ResultHero tone="danger" title="Não foi possível entrar com o Google" description="O login foi cancelado ou o serviço não respondeu. Tente de novo ou entre com seu CPF ou e-mail." />` | title | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
 
 Peças fora do DS (só implementadas ou propostas para o DS):

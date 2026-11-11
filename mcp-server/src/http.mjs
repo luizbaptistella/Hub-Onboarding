@@ -31,5 +31,5 @@ const httpServer = createServer((req, res) => {
 });
 
 httpServer.listen(PORT, HOST, () => {
-  console.error(`[palmeiras-hub] http em http://${HOST}:${PORT}/mcp · auth ${TOKEN ? 'ativa' : 'desligada (local)'} · ${handoff.nodes.length} nós`);
+  console.error(`[ellena-hub] http em http://${HOST}:${PORT}/mcp · auth ${TOKEN ? 'ativa' : 'desligada (local)'} · ${handoff.nodes.length} nós`);
 });

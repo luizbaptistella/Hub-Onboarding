@@ -19,13 +19,13 @@ Entrar com CPF ou e-mail e senha, recuperar a senha ou começar um cadastro novo
 
 ## Componentes
 
-9 componentes do DS, 44 instâncias, mais 2 peças fora do DS. Todos são renderizados pelo bundle real do DS (`palmeiras-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
+9 componentes do DS, 44 instâncias, mais 2 peças fora do DS. Todos são renderizados pelo bundle real do DS (`ellena-hub/ds/bundle.js`). Lista para máquina, com props, opções e estados: [components.json](components.json). Documentação de cada componente no artefato do DS (Palmeiras · Onboarding), em `project/components/<Nome>/README.md`.
 
 | Componente | Instâncias | JSX (exemplo) | Varia entre variantes | Observação |
 |---|---|---|---|---|
 | `AppHeader` | 1 | `<AppHeader back={false} title="Login" language={{ defaultValue: "pt-BR" }} help={false} />` | — | — |
 | `PageHeading` | 1 | `<PageHeading title="Faça seu login" subtitle="Faça seu login para começar ou cadastre-se." tone="brand" />` | — | No app, use o padrão de focusOnMount e documentTitle. No hub ficam desligados para não roubar o foco do iframe. |
-| `TextLink` | 1 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html">Esqueceu sua sen…` | — | — |
+| `TextLink` | 1 | `<TextLink variant="standalone" href="file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html">Esqueceu sua sen…` | — | — |
 | `Button` | 2 | `<Button variant="primary" type="submit">Entrar</Button>` | children, type, variant | — |
 | `LegalFooter` | 1 | `<LegalFooter className="est-legal">© 2026 Ellena. Todos os direitos reservados.</LegalFooter>` | — | — |
 | `TextField` | 12 | `<TextField label="Número do seu CPF ou E-Mail" name="identificador" placeholder="000.000.000-00" autoComplete="username" inputMode="text" value="" onChange={() => {}} />` | autoComplete, className, error, inputMode, label, name, placeholder, preset, value | — |

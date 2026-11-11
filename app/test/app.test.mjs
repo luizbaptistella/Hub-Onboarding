@@ -12,7 +12,7 @@ after(() => server.close());
 
 test('página inicial e assets', async () => {
   const html = await (await fetch(base + '/')).text();
-  assert.match(html, /Palmeiras Hub/);
+  assert.match(html, /Ellena Hub/);
   const js = await fetch(base + '/app.js');
   assert.equal(js.status, 200);
   assert.match(js.headers.get('content-security-policy'), /script-src 'self'/);

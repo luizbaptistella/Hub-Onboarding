@@ -101,7 +101,7 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
     },
     "title": "Validação de celular",
     "language": false,
@@ -110,7 +110,7 @@
     }
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -145,7 +145,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -159,7 +159,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -186,7 +186,7 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
     },
     "title": "Validação de celular",
     "language": false,
@@ -195,7 +195,7 @@
     }
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -230,7 +230,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -244,7 +244,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -271,7 +271,7 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
     },
     "title": "Validação de celular",
     "language": false,
@@ -280,7 +280,7 @@
     }
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -315,7 +315,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -329,7 +329,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -356,7 +356,7 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
     },
     "title": "Validação de celular",
     "language": false,
@@ -365,7 +365,7 @@
     }
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -400,7 +400,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -414,7 +414,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -441,7 +441,7 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
     },
     "title": "Validação de celular",
     "language": false,
@@ -450,7 +450,7 @@
     }
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Validação de celular\" language={false} help={{ label: \"Ajuda\" }} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -485,7 +485,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/celular-vazio/screen.html"
       },
       "title": "Validação de celular",
       "language": false,
@@ -499,7 +499,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de celular",
       "language": false,

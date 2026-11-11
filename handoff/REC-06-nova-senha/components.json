@@ -18,14 +18,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
     },
     "title": "Nova Senha",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Nova Senha\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Nova Senha\" language={false} help={false} />",
    "states": [],
    "propOptions": {
     "language": {
@@ -57,7 +57,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Nova Senha",
       "language": false,

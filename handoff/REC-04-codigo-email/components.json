@@ -101,14 +101,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
     },
     "title": "Validação de contato",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -143,7 +143,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -155,7 +155,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -180,14 +180,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
     },
     "title": "Validação de contato",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -222,7 +222,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -234,7 +234,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -259,14 +259,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
     },
     "title": "Validação de contato",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -301,7 +301,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -313,7 +313,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -338,14 +338,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
     },
     "title": "Validação de contato",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -380,7 +380,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -392,7 +392,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -417,14 +417,14 @@
    "dsProps": {
     "back": {
      "label": "Voltar",
-     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+     "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
     },
     "title": "Validação de contato",
     "language": false,
     "help": false
    },
    "behavior": null,
-   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
+   "jsx": "<AppHeader back={{ label: \"Voltar\", href: \"file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html\" }} title=\"Validação de contato\" language={false} help={false} />",
    "states": [
     "Vazio",
     "Excesso de tentativas"
@@ -459,7 +459,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/REC-01-recuperar-senha/telas/email-vazio/screen.html"
       },
       "title": "Validação de contato",
       "language": false,
@@ -471,7 +471,7 @@
      "props": {
       "back": {
        "label": "Voltar",
-       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/palmeiras-hub/handoff/ENT-01-login/telas/padrao/screen.html"
+       "href": "file:///Users/baptistella/Projetos/Onboarding-Palmeiras/ellena-hub/handoff/ENT-01-login/telas/padrao/screen.html"
       },
       "title": "Validação de contato",
       "language": false,

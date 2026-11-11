@@ -21,7 +21,7 @@ const INSTRUCTIONS = [
 
 export function createHubServer(handoff) {
   const server = new McpServer(
-    { name: 'palmeiras-hub', version: '0.1.0' },
+    { name: 'ellena-hub', version: '0.1.0' },
     { instructions: INSTRUCTIONS },
   );
 

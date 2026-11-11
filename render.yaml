@@ -1,8 +1,8 @@
-# Deploy no Render (plano gratuito). O serviço usa a pasta palmeiras-hub inteira,
+# Deploy no Render (plano gratuito). O serviço usa a pasta ellena-hub inteira,
 # porque a API lê handoff/ e mcp-server/src/hub.mjs ao lado de app/.
 services:
   - type: web
-    name: palmeiras-hub
+    name: ellena-hub
     runtime: node
     plan: free
     rootDir: .
@@ -20,3 +20,7 @@ services:
         sync: false   # você define a senha no painel do Render; ela não vai para o repositório
       - key: MCP_TOKEN
         sync: false   # token do MCP para o time; sem ele, /mcp fica desligado (404)
+      - key: GITHUB_REPO
+        value: luizbaptistella/Hub-Onboarding   # onde as propostas do modo de edição viram PR
+      - key: GITHUB_TOKEN
+        sync: false   # token fine-grained só deste repo (Contents e Pull requests: escrita); sem ele, salvar propostas fica desligado
