@@ -49,7 +49,7 @@ const COMPONENT_CATEGORIES = [
 ];
 const CATEGORY_INDEX = new Map(COMPONENT_CATEGORIES.flatMap(([cat, names], i) => names.map((n) => [n, { cat, i }])));
 
-// hubRoot = palmeiras-hub/ (dono de design-system/ e ds/); handoffDir = pasta handoff/.
+// hubRoot = ellena-hub/ (dono de design-system/ e ds/); handoffDir = pasta handoff/.
 export async function loadDesignSystem({ hubRoot, handoffDir, decisions }) {
   const [tokensCss, rulesMd, readme, bundleJs] = await Promise.all([
     readText(path.join(hubRoot, TOKENS_FILE)),
@@ -113,16 +113,35 @@ const plain = (s) => s.replace(/`/g, '').replace(/\*\*/g, '').trim();
 
 // ── Tokens ─────────────────────────────────────────────────────────────
 
+// Temas de cor: o :root é Palmeiras · Claro; cada [data-theme] traz só as cores que mudam em relação a ele.
+export const THEME_LABELS = {
+  palmeiras: 'Palmeiras · Claro',
+  'palmeiras-dark': 'Palmeiras · Escuro',
+  flamengo: 'Flamengo · Claro',
+  'flamengo-dark': 'Flamengo · Escuro',
+  gremio: 'Grêmio · Claro',
+  'gremio-dark': 'Grêmio · Escuro',
+  corinthians: 'Corinthians · Claro',
+  'corinthians-dark': 'Corinthians · Escuro',
+  fluminense: 'Fluminense · Claro',
+  'fluminense-dark': 'Fluminense · Escuro',
+  botafogo: 'Botafogo · Claro',
+  'botafogo-dark': 'Botafogo · Escuro',
+};
+
+const declarations = (body) => new Map([...body.matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)].map((m) => [m[1], m[2].trim()]));
+
 export function parseTokens(css) {
   const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
-  const raw = new Map();
-  for (const m of clean.matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)) raw.set(m[1], m[2].trim());
+  // Só o :root define a lista de tokens; os blocos de tema repetem os mesmos nomes com outros valores.
+  const raw = declarations(clean.match(/:root\s*\{([^}]*)\}/)?.[1] ?? '');
 
-  const resolve = (value, depth = 0) => {
+  const resolveIn = (map, value, depth = 0) => {
     const ref = value.match(/^var\(--([a-z0-9-]+)\)$/i);
-    if (ref && raw.has(ref[1]) && depth < 8) return resolve(raw.get(ref[1]), depth + 1);
+    if (ref && map.has(ref[1]) && depth < 8) return resolveIn(map, map.get(ref[1]), depth + 1);
     return value;
   };
+  const resolve = (value) => resolveIn(raw, value);
 
   const groups = new Map(TOKEN_GROUPS.map(([id]) => [id, []]));
   const other = [];
@@ -145,7 +164,14 @@ export function parseTokens(css) {
   }
   if (other.length) out.push({ id: 'outros', title: 'Outros', items: other });
   const version = css.match(/DS publicado (v\d+ \([^)]*\))/)?.[1] ?? null;
-  return { total: raw.size, version, groups: out };
+
+  // Valores resolvidos por tema (nome sem "--" → valor), para trocar o tema sem recarregar a lista.
+  const themes = [{ id: 'palmeiras', name: THEME_LABELS.palmeiras, values: Object.fromEntries([...raw].map(([k, v]) => [k, resolve(v)])) }];
+  for (const m of clean.matchAll(/\[data-theme="([a-z-]+)"\]\s*\{([^}]*)\}/g)) {
+    const merged = new Map([...raw, ...declarations(m[2])]);
+    themes.push({ id: m[1], name: THEME_LABELS[m[1]] ?? m[1], values: Object.fromEntries([...merged].map(([k, v]) => [k, resolveIn(merged, v)])) });
+  }
+  return { total: raw.size, version, groups: out, themes };
 }
 
 // ── Componentes ────────────────────────────────────────────────────────
