@@ -1385,9 +1385,14 @@
      "id": "doc-15--padrao",
      "label": "Padrão (sem Figma)",
      "file": "handoff/DOC-15-sessao-expirada/telas/padrao/screen.html"
+    },
+    {
+     "id": "doc-15--brasileiro",
+     "label": "Brasileiro (sem Figma; copy do hub)",
+     "file": "handoff/DOC-15-sessao-expirada/telas/brasileiro/screen.html"
     }
    ],
-   "inputs": 3,
+   "inputs": 6,
    "outputs": 1
   },
   {
@@ -3482,7 +3487,7 @@
     }
    ],
    "inputs": 4,
-   "outputs": 6
+   "outputs": 7
   },
   {
    "code": "DOC-50",
@@ -3579,7 +3584,7 @@
     }
    ],
    "inputs": 4,
-   "outputs": 6
+   "outputs": 7
   },
   {
    "code": "DOC-53",
@@ -3674,7 +3679,7 @@
     }
    ],
    "inputs": 4,
-   "outputs": 6
+   "outputs": 7
   }
  ],
  "edges": [
@@ -6269,6 +6274,30 @@
    "kind": "alternativa",
    "trigger": "Tentar novamente",
    "cond": "RG"
+  },
+  {
+   "id": "E903",
+   "src": "DOC-49",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (CIN)"
+  },
+  {
+   "id": "E904",
+   "src": "DOC-52",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (CNH)"
+  },
+  {
+   "id": "E905",
+   "src": "DOC-55",
+   "dst": "DOC-15",
+   "kind": "erro",
+   "trigger": "Sessão expirada no envio",
+   "cond": "Token de sessão inválido (RG)"
   }
  ],
  "decisions": {

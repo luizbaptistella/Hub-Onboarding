@@ -2,13 +2,13 @@
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
-> **Aprovada.** Passo 2 do fluxo FAM-G2 (preenchimento e capturas no celular do titular, em nome do familiar). É a versão familiar da lacuna DOC-G1 (captura do documento). Usa a estrutura de DOC-04 (câmera da frente), com o `CameraCapture` do DS. Premissas na seção 10.
+> **Aprovada.** Passo 2 do fluxo FAM-G2 (preenchimento e capturas no celular do titular, em nome do familiar). É a versão familiar do fluxo de captura (DOC-47 a DOC-55) (captura do documento). Usa a estrutura de DOC-04 (câmera da frente), com o `CameraCapture` do DS. Premissas na seção 10.
 
 ## Índice da tela
 
 | Campo | Valor |
 |---|---|
-| Código | `FAM-G2` (passo 2 do fluxo; variante familiar de DOC-G1) |
+| Código | `FAM-G2` (passo 2 do fluxo; variante familiar de DOC-47 a DOC-55) |
 | Raia | Familiares · Cadastro do familiar no celular do titular |
 | Figma | Estrutura de referência: DOC-04, [`2788:34617`](https://www.figma.com/design/apbNVzymCikALAJtrz0Zjp/?node-id=2788-34617). Telas próprias do FAM-G2: não desenhadas |
 | Status | Aprovada |
@@ -82,9 +82,9 @@ Visão geral: [dados.md](../dados.md).
 **Em aberto:**
 
 - **Tipo de documento:** a moldura é de cartão ID-1 (RG e CNH). O titular precisa escolher o tipo antes da câmera? A seleção é DOC-01 do titular, ou uma lista própria para o familiar?
-- **Upload:** segue a decisão de 2026-11-08 (sem "Enviar arquivo" na câmera). A lacuna DOC-G1 original previa foto ou upload. Confirmar se na família também não há upload.
+- **Upload:** segue a decisão de 2026-11-08 (sem "Enviar arquivo" na câmera). O fluxo de captura (DOC-47 a DOC-55) original previa foto ou upload. Confirmar se na família também não há upload.
 - **Textos dos estados de erro:** os textos fixos do DS em `denied` e `unavailable` falam em enviar arquivo. Sem o upload, esses textos ficam sem ação. Mesma pendência de DOC-04.
-- **Verso e conferência:** DOC-G1 também cobre o verso e a conferência. Ainda não desenhados.
+- **Verso e conferência:** DOC-47 a DOC-55 também cobre o verso e a conferência. Ainda não desenhados.
 
 ## 10. Premissas e critérios
 

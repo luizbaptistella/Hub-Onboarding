@@ -8,7 +8,7 @@
 
 | Campo | Valor |
 |---|---|
-| Código | `DOC-02` (nova numeração; `DOC-G1` continua como lacuna da captura de CIN, CNH e RG) |
+| Código | `DOC-02` (nova numeração; as telas de CIN, CNH e RG estão em DOC-47 a DOC-55, provisórias (marcação do RNE)) |
 | Raia | Documento e biometria · Etapa 2 de 4 · documento |
 | Figma | `2283:33539` (seção "Onboarding / Documento de identidade"). Frames por fluxo: CRNM `2788:34526` a `2788:37492`, DPRNM `2794:35275` a `2794:35902`, Cédula `2799:36027` a `2799:36727`, conferência `2802:36833`. Passaporte: seleção `3080:59740`; intros e câmera no print do time, sem node próprio |
 | Status | Desenhada no Figma para CRNM, DPRNM, RNE e Cédula. Passaporte com seleção no Figma e intros no print. Telas de erro desenhadas com os componentes do DS, sem desenho final no Figma. |
@@ -25,7 +25,7 @@ Documentos cobertos: **CRNM**, **DPRNM**, **RNE**, **Passaporte** e **Cédula de
 
 ## 2. Componentes
 
-Componentes previstos (de `componentes.md`, para DOC-G1): `UploadArea`, `CameraCapture`, `ScanFrame`. Demais peças vêm do DS:
+Componentes previstos (de `componentes.md`, para DOC-47 a DOC-55): `UploadArea`, `CameraCapture`, `ScanFrame`. Demais peças vêm do DS:
 
 | Componente | Uso no módulo |
 |---|---|

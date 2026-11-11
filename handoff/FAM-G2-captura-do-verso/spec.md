@@ -2,7 +2,7 @@
 
 > Handoff Palmeiras · Onboarding. Fonte de verdade de componentes e tokens: artefato **Palmeiras · Onboarding** (Design System). Em caso de conflito: DS > este spec.
 >
-> **Proposta, ainda não validada.** Passo 4 do fluxo FAM-G2. É a parte do verso da lacuna DOC-G1. Usa a mesma câmera da frente ([FAM-G2 · Captura da frente](../FAM-G2-captura-do-documento/spec.md)), com a instrução do verso.
+> **Proposta, ainda não validada.** Passo 4 do fluxo FAM-G2. É a parte do verso do fluxo de captura (DOC-47 a DOC-55). Usa a mesma câmera da frente ([FAM-G2 · Captura da frente](../FAM-G2-captura-do-documento/spec.md)), com a instrução do verso.
 
 ## Índice da tela
 

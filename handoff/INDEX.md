@@ -77,7 +77,7 @@ Etapa 2 de 4 · uma linha por documento: CRNM, DPRNM, RNE, Cédula, Passaporte e
 | DOC-12 | Sem conexão ao enviar o documento | Proposta · brasileiro com Figma | 1620:13651 | [DOC-12-sem-conexao/](DOC-12-sem-conexao/spec.md) · 3 telas |
 | DOC-13 | Tempo excedido ao enviar o documento | Proposta · brasileiro sem Figma | None | [DOC-13-tempo-excedido/](DOC-13-tempo-excedido/spec.md) · 3 telas |
 | DOC-14 | Erro inesperado ao enviar o documento | Proposta · brasileiro com Figma | 1620:13621 | [DOC-14-erro-inesperado/](DOC-14-erro-inesperado/spec.md) · 3 telas |
-| DOC-15 | Sessão expirada no documento | Proposta (sem Figma) | None | [DOC-15-sessao-expirada/](DOC-15-sessao-expirada/spec.md) |
+| DOC-15 | Sessão expirada no documento | Proposta · brasileiro sem Figma | None | [DOC-15-sessao-expirada/](DOC-15-sessao-expirada/spec.md) |
 | DOC-16 | DPRNM · tutorial da frente | Desenhada | 2794:35439 | [DOC-16-dprnm-tutorial-frente/](DOC-16-dprnm-tutorial-frente/spec.md) · 3 telas |
 | DOC-17 | DPRNM · câmera da frente | Desenhada | 2794:35511 | [DOC-17-dprnm-camera-frente/](DOC-17-dprnm-camera-frente/spec.md) · 5 telas |
 | DOC-18 | DPRNM · confirmação da frente | Desenhada | 2794:35552 | [DOC-18-dprnm-confirmacao-frente/](DOC-18-dprnm-confirmacao-frente/spec.md) |
@@ -349,6 +349,9 @@ flowchart LR
   DOC_53 -->|"Abrir câmera ou Pular"| DOC_54
   DOC_54 -->|"Foto tirada"| DOC_55
   DOC_55 -->|"Continuar"| DOC_24
+  DOC_49 -.->|"Sessão expirada"| DOC_15
+  DOC_52 -.->|"Sessão expirada"| DOC_15
+  DOC_55 -.->|"Sessão expirada"| DOC_15
   DOC_49 -.->|"Validação reprovada"| DOC_11
   DOC_49 -.->|"Sem conexão"| DOC_12
   DOC_49 -.->|"Demorou mais de 20 s"| DOC_13
@@ -887,3 +890,6 @@ _O diagrama omite as ligações de Voltar; elas estão na tabela abaixo._
 | E900 | DOC-12 | DOC-55 | Tentar novamente | RG | Caminho alternativo |
 | E901 | DOC-13 | DOC-55 | Tentar novamente | RG | Caminho alternativo |
 | E902 | DOC-14 | DOC-55 | Tentar novamente | RG | Caminho alternativo |
+| E903 | DOC-49 | DOC-15 | Sessão expirada no envio | Token de sessão inválido (CIN) | Erro ou nova tentativa |
+| E904 | DOC-52 | DOC-15 | Sessão expirada no envio | Token de sessão inválido (CNH) | Erro ou nova tentativa |
+| E905 | DOC-55 | DOC-15 | Sessão expirada no envio | Token de sessão inválido (RG) | Erro ou nova tentativa |

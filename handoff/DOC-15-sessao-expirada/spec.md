@@ -75,3 +75,11 @@ Gerado do mapa do hub (`handoff/flow.json`).
 - O título é o único `h1`.
 - Não há Voltar no cabeçalho.
 - "Entrar" leva ao login.
+
+## Variante brasileira
+
+Usada pelo fluxo de documento brasileiro (CIN, CNH e RG), na confirmação de cada documento. Sem frame no Figma: copy do hub. Marcação em [telas/brasileiro](telas/brasileiro/screen.html).
+
+**Entradas:** confirmação da frente do CIN (DOC-49), do CNH (DOC-52) e do RG (DOC-55), com "Sessão expirada no envio".
+
+**Saída:** Entrar volta à etapa depois do login (como no estrangeiro).

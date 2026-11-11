@@ -46,7 +46,7 @@ DS: https://claude.ai/artifact/SK7jtbwnYjaiwT9tKd3ynU (Palmeiras · Onboarding),
 
 `CameraCapture`, `CarouselDots`, `CheckboxGroup`, `ErrorSummary`, `IconButton`, `LanguageSelector`, `ProgressBar`, `Radio`, `RadioGroup`, `ScanFrame`, `SegmentedControl`, `StatusCard`, `StepNumber`, `ToastRegion`, `TutorialSlide`, `UploadArea`.
 
-Alguns têm uso previsto nas lacunas: `UploadArea`, `CameraCapture` e `ScanFrame` na captura do documento (DOC-G1); `ErrorSummary` nos formulários longos; `SegmentedControl` como alternativa às abas Brasileiro/Estrangeiro.
+Alguns têm uso previsto nas lacunas: `UploadArea`, `CameraCapture` e `ScanFrame` na captura do documento (DOC-47 a DOC-55); `ErrorSummary` nos formulários longos; `SegmentedControl` como alternativa às abas Brasileiro/Estrangeiro.
 
 ## Peças fora do DS
 

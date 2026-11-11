@@ -17,12 +17,13 @@
   function Screen(props) {
     return h("div", { className: "est-device" },
       h(window.Est.StatusBar),
-      h(P.AppHeader, { back: { label: "Voltar" }, title: "Captura de documentos", progress: { current: 2, total: 4 }, language: false, help: { label: "Ajuda" } }),
+      h(P.AppHeader, { back: { label: "Voltar" }, title: props.header || "Captura de documentos", progress: { current: 2, total: 4 }, language: false, help: { label: "Ajuda" } }),
       h("main", { className: "est-body est-body-fill" },
-        h(P.ResultHero, { tone: "danger", icon: "wifi_off", title: "Sem conexão", focusOnMount: false, documentTitle: false,
-          description: "Verifique sua internet e tente de novo. Suas fotos foram mantidas." }),
+        h(P.ResultHero, { tone: "danger", icon: "wifi_off", title: props.title || "Sem conexão", focusOnMount: false, documentTitle: false,
+          description: props.description || "Verifique sua internet e tente de novo. Suas fotos foram mantidas." }),
         h("div", { className: "est-actions" },
-          h(P.Button, { variant: "primary", iconEnd: "refresh", onClick: function () { location.assign(BASE + voltaDoUpload(props)); } }, "Tentar novamente"))));
+          h(P.Button, { variant: "primary", iconEnd: "refresh", onClick: function () { location.assign(BASE + voltaDoUpload(props)); } }, "Tentar novamente"),
+          props.reportar ? h(P.Button, { variant: "secondary", iconEnd: "report" }, "Reportar problema") : null)));
   }
 
   window.EstDOC12 = { Screen: Screen };

@@ -17,12 +17,13 @@
   function Screen(props) {
     return h("div", { className: "est-device" },
       h(window.Est.StatusBar),
-      h(P.AppHeader, { back: { label: "Voltar" }, title: "Captura de documentos", progress: { current: 2, total: 4 }, language: false, help: { label: "Ajuda" } }),
+      h(P.AppHeader, { back: { label: "Voltar" }, title: props.header || "Captura de documentos", progress: { current: 2, total: 4 }, language: false, help: { label: "Ajuda" } }),
       h("main", { className: "est-body est-body-fill" },
-        h(P.ResultHero, { tone: "danger", icon: "error", title: "Algo deu errado", focusOnMount: false, documentTitle: false,
-          description: "Ocorreu um erro inesperado. Tente novamente." }),
+        h(P.ResultHero, { tone: "danger", icon: "error", title: props.title || "Algo deu errado", focusOnMount: false, documentTitle: false,
+          description: props.description || "Ocorreu um erro inesperado. Tente novamente." }),
         h("div", { className: "est-actions" },
           h(P.Button, { variant: "primary", iconEnd: "refresh", onClick: function () { location.assign(BASE + voltaDoUpload(props)); } }, "Tentar novamente"),
+          props.reportar ? h(P.Button, { variant: "secondary", iconEnd: "report" }, "Reportar problema") :
           h(P.Button, { variant: "secondary", onClick: function () { location.assign(BASE + "../DOC-02-selecao-documento-estrangeiro/telas/fechada/screen.html"); } }, "Voltar"))));
   }
 
