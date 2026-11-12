@@ -1,0 +1,6 @@
+/* Ellena — Webfonts. The source projects load Inter from Google Fonts (no font binaries
+   are committed upstream), so this design system does the same. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+/* Brand layer (tokens/brand.css): the marketing site's faces — Quicksand for headings, Manrope for text. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap');

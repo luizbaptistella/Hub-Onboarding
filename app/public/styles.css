@@ -28,6 +28,9 @@ h1 { font-size: 22px; margin: 0 0 4px; }
 .ds-themes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
 .ds-themes button { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--fg-2); font: inherit; font-size: 13px; cursor: pointer; }
 .ds-themes button[aria-pressed="true"] { color: var(--fg); border-color: var(--accent); background: var(--accent-soft); }
+.bo-comps { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.bo-comp { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+.bo-comp[hidden] { display: none; }
 pre { margin: 0; padding: 16px; overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font: 13px/1.55 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }

@@ -1,0 +1,291 @@
+/* Ellena — colour tokens.
+   TRUTH: the production Vue app (onboard-admin-client, src/assets/styles/_ds-tokens.scss).
+   The system is DARK-FIRST: `:root` is the dark theme, `[data-theme="light"]` is the light theme.
+   Values are HSL triplets (no hsl() wrapper) so they compose with alpha: hsl(var(--primary) / 0.9).
+   Hex equivalents are in the trailing comments, and the native --ds-* names live in ds-tokens.css. */
+:root,.dark,[data-theme="dark"]{
+--background: 0 0% 12.5%; /* @kind color */
+--foreground: 0 0% 87.8%; /* @kind color */
+--card: 0 0% 20%; /* @kind color */
+--card-foreground: 0 0% 87.8%; /* @kind color */
+--popover: 0 0% 20%; /* @kind color */
+--popover-foreground: 0 0% 87.8%; /* @kind color */
+--primary: 198.6 38.9% 37.3%; /* @kind color */
+--primary-foreground: 0 0% 100%; /* @kind color */
+--secondary: 0 0% 20.8%; /* @kind color */
+--secondary-foreground: 0 0% 87.8%; /* @kind color */
+--muted: 0 0% 20.8%; /* @kind color */
+--muted-foreground: 0 0% 60%; /* @kind color */
+--accent: 200 14.3% 16.5%; /* @kind color */
+--accent-foreground: 0 0% 96.1%; /* @kind color */
+--destructive: 0 70.5% 53.5%; /* @kind color */
+--destructive-foreground: 0 0% 100%; /* @kind color */
+--border: 0 0% 25.1%; /* @kind color */
+--input: 0 0% 29%; /* @kind color */
+--ring: 200.3 30.4% 60%; /* @kind color */
+--success: 142.1 70.6% 45.3%; /* @kind color */
+--success-foreground: 0 0% 100%; /* @kind color */
+--warning: 41.5 95.1% 51.8%; /* @kind color */
+--warning-foreground: 0 0% 12.5%; /* @kind color */
+--info: 198.6 38.9% 37.3%; /* @kind color */
+--info-foreground: 0 0% 100%; /* @kind color */
+--primary-50: 200.8 54.2% 9.4%; /* @kind color */
+--primary-100: 197.1 53.8% 15.3%; /* @kind color */
+--primary-200: 196.2 52.1% 23.7%; /* @kind color */
+--primary-300: 198.3 46.2% 30.6%; /* @kind color */
+--primary-400: 198.6 42% 34.5%; /* @kind color */
+--primary-500: 198.6 38.9% 37.3%; /* @kind color */
+--primary-600: 195.5 31.7% 40.8%; /* @kind color */
+--primary-700: 195.9 25.8% 48.6%; /* @kind color */
+--primary-800: 200.3 30.4% 60%; /* @kind color */
+--primary-900: 199.5 31.9% 73.5%; /* @kind color */
+--primary-950: 200 31.3% 86.9%; /* @kind color */
+--success-50: 144.9 80.4% 10%; /* @kind color */
+--success-100: 150.8 85.7% 16.5%; /* @kind color */
+--success-200: 152.4 88.1% 19.8%; /* @kind color */
+--success-300: 153.6 93.5% 24.3%; /* @kind color */
+--success-400: 153.6 93.5% 30%; /* @kind color */
+--success-500: 142.1 70.6% 45.3%; /* @kind color */
+--success-600: 141.9 69.2% 58%; /* @kind color */
+--success-700: 141.7 76.6% 73.1%; /* @kind color */
+--success-800: 141 78.9% 85.1%; /* @kind color */
+--success-900: 140.6 84.2% 92.5%; /* @kind color */
+--success-950: 138.5 76.5% 96.7%; /* @kind color */
+--warning-50: 20.9 91.7% 14.1%; /* @kind color */
+--warning-100: 21.7 77.8% 26.5%; /* @kind color */
+--warning-200: 22.7 82.5% 31.4%; /* @kind color */
+--warning-300: 26 90.5% 37.1%; /* @kind color */
+--warning-400: 32.1 94.6% 43.7%; /* @kind color */
+--warning-500: 41.5 95.1% 51.8%; /* @kind color */
+--warning-600: 43.3 96.4% 56.3%; /* @kind color */
+--warning-700: 45.9 96.7% 64.5%; /* @kind color */
+--warning-800: 48 96.6% 76.7%; /* @kind color */
+--warning-900: 48 96.5% 88.8%; /* @kind color */
+--warning-950: 48 100% 96.1%; /* @kind color */
+--destructive-50: 0 74.7% 15.5%; /* @kind color */
+--destructive-100: 0 62.8% 30.6%; /* @kind color */
+--destructive-200: 0 70% 35.3%; /* @kind color */
+--destructive-300: 0 73.7% 41.8%; /* @kind color */
+--destructive-400: 0 61% 47.3%; /* @kind color */
+--destructive-500: 0 70.5% 53.5%; /* @kind color */
+--destructive-600: 0 84.2% 60.2%; /* @kind color */
+--destructive-700: 0 90.6% 70.8%; /* @kind color */
+--destructive-800: 0 93.5% 81.8%; /* @kind color */
+--destructive-900: 0 96.3% 89.4%; /* @kind color */
+--destructive-950: 0 85.7% 97.3%; /* @kind color */
+--info-50: 191.3 75% 12.5%; /* @kind color */
+--info-100: 192.6 68.9% 17.6%; /* @kind color */
+--info-200: 193.1 65% 23.5%; /* @kind color */
+--info-300: 193 62.2% 29%; /* @kind color */
+--info-400: 193.4 55.1% 36.7%; /* @kind color */
+--info-500: 198.6 38.9% 37.3%; /* @kind color */
+--info-600: 196.6 30.4% 51%; /* @kind color */
+--info-700: 200.3 30.4% 60%; /* @kind color */
+--info-800: 199.5 31.9% 73.5%; /* @kind color */
+--info-900: 199.2 35.2% 86.1%; /* @kind color */
+--info-950: 198 41.7% 95.3%; /* @kind color */
+--neutral-50: 0 0% 10.2%; /* @kind color */
+--neutral-100: 0 0% 12.5%; /* @kind color */
+--neutral-200: 0 0% 14.1%; /* @kind color */
+--neutral-300: 0 0% 16.5%; /* @kind color */
+--neutral-400: 0 0% 20%; /* @kind color */
+--neutral-500: 0 0% 25.1%; /* @kind color */
+--neutral-600: 0 0% 29%; /* @kind color */
+--neutral-700: 0 0% 40%; /* @kind color */
+--neutral-800: 0 0% 60%; /* @kind color */
+--neutral-900: 0 0% 70.2%; /* @kind color */
+--neutral-950: 0 0% 87.8%; /* @kind color */
+--indigo-50: 243.8 47.1% 20%; /* @kind color */
+--indigo-100: 242.2 47.4% 34.3%; /* @kind color */
+--indigo-200: 243.7 54.5% 41.4%; /* @kind color */
+--indigo-300: 244.5 57.9% 50.6%; /* @kind color */
+--indigo-400: 243.4 75.4% 58.6%; /* @kind color */
+--indigo-500: 238.7 83.5% 66.7%; /* @kind color */
+--indigo-600: 234.5 89.5% 73.9%; /* @kind color */
+--indigo-700: 229.7 93.5% 81.8%; /* @kind color */
+--indigo-800: 228 96.5% 88.8%; /* @kind color */
+--indigo-900: 226.5 100% 93.9%; /* @kind color */
+--indigo-950: 225.9 100% 96.7%; /* @kind color */
+--purple-50: 273.5 86.9% 21%; /* @kind color */
+--purple-100: 273.6 65.6% 32%; /* @kind color */
+--purple-200: 272.9 67.2% 39.4%; /* @kind color */
+--purple-300: 272.1 71.7% 47.1%; /* @kind color */
+--purple-400: 271.5 81.3% 55.9%; /* @kind color */
+--purple-500: 270.7 91% 65.1%; /* @kind color */
+--purple-600: 270 95.2% 75.3%; /* @kind color */
+--purple-700: 269.2 97.4% 85.1%; /* @kind color */
+--purple-800: 268.6 100% 91.8%; /* @kind color */
+--purple-900: 268.7 100% 95.5%; /* @kind color */
+--purple-950: 270 100% 98%; /* @kind color */
+--pink-50: 336.2 83.9% 17.1%; /* @kind color */
+--pink-100: 335.9 69% 30.4%; /* @kind color */
+--pink-200: 335.8 74.4% 35.3%; /* @kind color */
+--pink-300: 335.1 77.6% 42%; /* @kind color */
+--pink-400: 333.3 71.4% 50.6%; /* @kind color */
+--pink-500: 330.4 81.2% 60.4%; /* @kind color */
+--pink-600: 328.6 85.5% 70.2%; /* @kind color */
+--pink-700: 327.4 87.1% 81.8%; /* @kind color */
+--pink-800: 325.9 84.6% 89.8%; /* @kind color */
+--pink-900: 325.7 77.8% 94.7%; /* @kind color */
+--pink-950: 327.3 73.3% 97.1%; /* @kind color */
+--chart-1: 198.6 38.9% 37.3%; /* @kind color */
+--chart-2: 142.1 70.6% 45.3%; /* @kind color */
+--chart-3: 0 84.2% 60.2%; /* @kind color */
+--chart-4: 37.7 92.1% 50.2%; /* @kind color */
+--chart-5: 220 8.9% 46.1%; /* @kind color */
+--radius: 0.5rem; /* @kind radius */
+/* Resolved aliases for plain CSS */
+--color-background: hsl(var(--background)); /* @kind color */
+--color-foreground: hsl(var(--foreground)); /* @kind color */
+--color-card: hsl(var(--card)); /* @kind color */
+--color-card-foreground: hsl(var(--card-foreground)); /* @kind color */
+--color-popover: hsl(var(--popover)); /* @kind color */
+--color-popover-foreground: hsl(var(--popover-foreground)); /* @kind color */
+--color-primary: hsl(var(--primary)); /* @kind color */
+--color-primary-foreground: hsl(var(--primary-foreground)); /* @kind color */
+--color-secondary: hsl(var(--secondary)); /* @kind color */
+--color-secondary-foreground: hsl(var(--secondary-foreground)); /* @kind color */
+--color-muted: hsl(var(--muted)); /* @kind color */
+--color-muted-foreground: hsl(var(--muted-foreground)); /* @kind color */
+--color-accent: hsl(var(--accent)); /* @kind color */
+--color-accent-foreground: hsl(var(--accent-foreground)); /* @kind color */
+--color-destructive: hsl(var(--destructive)); /* @kind color */
+--color-destructive-foreground: hsl(var(--destructive-foreground)); /* @kind color */
+--color-success: hsl(var(--success)); /* @kind color */
+--color-warning: hsl(var(--warning)); /* @kind color */
+--color-info: hsl(var(--info)); /* @kind color */
+--color-border: hsl(var(--border)); /* @kind color */
+--color-input: hsl(var(--input)); /* @kind color */
+--color-ring: hsl(var(--ring)); /* @kind color */
+}
+[data-theme="light"],.light{
+--background: 210 36.4% 95.7%; /* @kind color */
+--foreground: 202.5 38.1% 16.5%; /* @kind color */
+--card: 0 0% 100%; /* @kind color */
+--card-foreground: 202.5 38.1% 16.5%; /* @kind color */
+--popover: 0 0% 100%; /* @kind color */
+--popover-foreground: 202.5 38.1% 16.5%; /* @kind color */
+--primary: 200.8 54.2% 9.4%; /* @kind color */
+--primary-foreground: 0 0% 100%; /* @kind color */
+--secondary: 207.3 31.4% 93.1%; /* @kind color */
+--secondary-foreground: 202.5 38.1% 16.5%; /* @kind color */
+--muted: 207.3 31.4% 93.1%; /* @kind color */
+--muted-foreground: 204 16.3% 42.2%; /* @kind color */
+--accent: 204 40% 90.2%; /* @kind color */
+--accent-foreground: 203.1 30.2% 25.3%; /* @kind color */
+--destructive: 0 70.5% 53.5%; /* @kind color */
+--destructive-foreground: 0 0% 100%; /* @kind color */
+--border: 208.6 26.6% 84.5%; /* @kind color */
+--input: 205.7 24.6% 77.6%; /* @kind color */
+--ring: 198.6 38.9% 37.3%; /* @kind color */
+--success: 142.1 70.6% 45.3%; /* @kind color */
+--success-foreground: 0 0% 100%; /* @kind color */
+--warning: 41.5 95.1% 51.8%; /* @kind color */
+--warning-foreground: 0 0% 12.5%; /* @kind color */
+--info: 198.6 38.9% 37.3%; /* @kind color */
+--info-foreground: 0 0% 100%; /* @kind color */
+--primary-50: 200 31.3% 86.9%; /* @kind color */
+--primary-100: 199.5 31.9% 73.5%; /* @kind color */
+--primary-200: 200.3 30.4% 60%; /* @kind color */
+--primary-300: 195.9 25.8% 48.6%; /* @kind color */
+--primary-400: 195.5 31.7% 40.8%; /* @kind color */
+--primary-500: 198.6 38.9% 37.3%; /* @kind color */
+--primary-600: 198.6 42% 34.5%; /* @kind color */
+--primary-700: 198.3 46.2% 30.6%; /* @kind color */
+--primary-800: 196.2 52.1% 23.7%; /* @kind color */
+--primary-900: 197.1 53.8% 15.3%; /* @kind color */
+--primary-950: 200.8 54.2% 9.4%; /* @kind color */
+--success-50: 138.5 76.5% 96.7%; /* @kind color */
+--success-100: 140.6 84.2% 92.5%; /* @kind color */
+--success-200: 141 78.9% 85.1%; /* @kind color */
+--success-300: 141.7 76.6% 73.1%; /* @kind color */
+--success-400: 141.9 69.2% 58%; /* @kind color */
+--success-500: 142.1 70.6% 45.3%; /* @kind color */
+--success-600: 153.6 93.5% 30%; /* @kind color */
+--success-700: 153.6 93.5% 24.3%; /* @kind color */
+--success-800: 152.4 88.1% 19.8%; /* @kind color */
+--success-900: 150.8 85.7% 16.5%; /* @kind color */
+--success-950: 144.9 80.4% 10%; /* @kind color */
+--warning-50: 48 100% 96.1%; /* @kind color */
+--warning-100: 48 96.5% 88.8%; /* @kind color */
+--warning-200: 48 96.6% 76.7%; /* @kind color */
+--warning-300: 45.9 96.7% 64.5%; /* @kind color */
+--warning-400: 43.3 96.4% 56.3%; /* @kind color */
+--warning-500: 41.5 95.1% 51.8%; /* @kind color */
+--warning-600: 32.1 94.6% 43.7%; /* @kind color */
+--warning-700: 26 90.5% 37.1%; /* @kind color */
+--warning-800: 22.7 82.5% 31.4%; /* @kind color */
+--warning-900: 21.7 77.8% 26.5%; /* @kind color */
+--warning-950: 20.9 91.7% 14.1%; /* @kind color */
+--destructive-50: 0 85.7% 97.3%; /* @kind color */
+--destructive-100: 0 96.3% 89.4%; /* @kind color */
+--destructive-200: 0 93.5% 81.8%; /* @kind color */
+--destructive-300: 0 90.6% 70.8%; /* @kind color */
+--destructive-400: 0 84.2% 60.2%; /* @kind color */
+--destructive-500: 0 70.5% 53.5%; /* @kind color */
+--destructive-600: 0 61% 47.3%; /* @kind color */
+--destructive-700: 0 73.7% 41.8%; /* @kind color */
+--destructive-800: 0 70% 35.3%; /* @kind color */
+--destructive-900: 0 62.8% 30.6%; /* @kind color */
+--destructive-950: 0 74.7% 15.5%; /* @kind color */
+--info-50: 198 41.7% 95.3%; /* @kind color */
+--info-100: 199.2 35.2% 86.1%; /* @kind color */
+--info-200: 199.5 31.9% 73.5%; /* @kind color */
+--info-300: 200.3 30.4% 60%; /* @kind color */
+--info-400: 196.6 30.4% 51%; /* @kind color */
+--info-500: 198.6 38.9% 37.3%; /* @kind color */
+--info-600: 193.4 55.1% 36.7%; /* @kind color */
+--info-700: 193 62.2% 29%; /* @kind color */
+--info-800: 193.1 65% 23.5%; /* @kind color */
+--info-900: 192.6 68.9% 17.6%; /* @kind color */
+--info-950: 191.3 75% 12.5%; /* @kind color */
+--neutral-50: 0 0% 87.8%; /* @kind color */
+--neutral-100: 0 0% 70.2%; /* @kind color */
+--neutral-200: 0 0% 60%; /* @kind color */
+--neutral-300: 0 0% 40%; /* @kind color */
+--neutral-400: 0 0% 29%; /* @kind color */
+--neutral-500: 0 0% 25.1%; /* @kind color */
+--neutral-600: 0 0% 20%; /* @kind color */
+--neutral-700: 0 0% 16.5%; /* @kind color */
+--neutral-800: 0 0% 14.1%; /* @kind color */
+--neutral-900: 0 0% 12.5%; /* @kind color */
+--neutral-950: 0 0% 10.2%; /* @kind color */
+--indigo-50: 225.9 100% 96.7%; /* @kind color */
+--indigo-100: 226.5 100% 93.9%; /* @kind color */
+--indigo-200: 228 96.5% 88.8%; /* @kind color */
+--indigo-300: 229.7 93.5% 81.8%; /* @kind color */
+--indigo-400: 234.5 89.5% 73.9%; /* @kind color */
+--indigo-500: 238.7 83.5% 66.7%; /* @kind color */
+--indigo-600: 243.4 75.4% 58.6%; /* @kind color */
+--indigo-700: 244.5 57.9% 50.6%; /* @kind color */
+--indigo-800: 243.7 54.5% 41.4%; /* @kind color */
+--indigo-900: 242.2 47.4% 34.3%; /* @kind color */
+--indigo-950: 243.8 47.1% 20%; /* @kind color */
+--purple-50: 270 100% 98%; /* @kind color */
+--purple-100: 268.7 100% 95.5%; /* @kind color */
+--purple-200: 268.6 100% 91.8%; /* @kind color */
+--purple-300: 269.2 97.4% 85.1%; /* @kind color */
+--purple-400: 270 95.2% 75.3%; /* @kind color */
+--purple-500: 270.7 91% 65.1%; /* @kind color */
+--purple-600: 271.5 81.3% 55.9%; /* @kind color */
+--purple-700: 272.1 71.7% 47.1%; /* @kind color */
+--purple-800: 272.9 67.2% 39.4%; /* @kind color */
+--purple-900: 273.6 65.6% 32%; /* @kind color */
+--purple-950: 273.5 86.9% 21%; /* @kind color */
+--pink-50: 327.3 73.3% 97.1%; /* @kind color */
+--pink-100: 325.7 77.8% 94.7%; /* @kind color */
+--pink-200: 325.9 84.6% 89.8%; /* @kind color */
+--pink-300: 327.4 87.1% 81.8%; /* @kind color */
+--pink-400: 328.6 85.5% 70.2%; /* @kind color */
+--pink-500: 330.4 81.2% 60.4%; /* @kind color */
+--pink-600: 333.3 71.4% 50.6%; /* @kind color */
+--pink-700: 335.1 77.6% 42%; /* @kind color */
+--pink-800: 335.8 74.4% 35.3%; /* @kind color */
+--pink-900: 335.9 69% 30.4%; /* @kind color */
+--pink-950: 336.2 83.9% 17.1%; /* @kind color */
+--chart-1: 198.6 38.9% 37.3%; /* @kind color */
+--chart-2: 142.1 76.2% 36.3%; /* @kind color */
+--chart-3: 0 84.2% 60.2%; /* @kind color */
+--chart-4: 37.7 92.1% 50.2%; /* @kind color */
+--chart-5: 220 8.9% 46.1%; /* @kind color */
+}
