@@ -15,10 +15,12 @@
 // Seletor de idioma (LanguageSelector do DS v50): botão de menu com três itens menuitemradio.
 // Nomes no próprio idioma, códigos PT/ES/EN, bandeiras do Brasil, da Espanha e dos EUA.
 (function () {
+  // Caminhos relativos à pasta deste script, para funcionar também nas telas de handoff/ (que ficam em subpastas).
+  var BASE = document.currentScript && document.currentScript.src ? document.currentScript.src.replace(/[^\/]*$/, "") : "";
   var OPTIONS = [
-    { value: "PT", lang: "pt-BR", label: "Português", flag: "design-system/assets/flag-br.png" },
-    { value: "ES", lang: "es", label: "Español", flag: "design-system/assets/flag-es.svg" },
-    { value: "EN", lang: "en", label: "English", flag: "design-system/assets/flag-us.svg" }
+    { value: "PT", lang: "pt-BR", label: "Português", flag: BASE + "design-system/assets/flag-br.png" },
+    { value: "ES", lang: "es", label: "Español", flag: BASE + "design-system/assets/flag-es.svg" },
+    { value: "EN", lang: "en", label: "English", flag: BASE + "design-system/assets/flag-us.svg" }
   ];
   var current = OPTIONS[0];
   var openMenu = null;
@@ -317,10 +319,13 @@
         var cta = det.cta ? '<button type="button" class="po-btn po-btn-primary po-btn-block tl-cta" data-go="' + det.go + '"><span class="po-btn-content"><span>' + det.cta + '</span><span class="po-icon s18" aria-hidden="true">arrow_forward</span></span></button>' : "";
         corpo.innerHTML = '<div class="tl-detail"><p class="tl-detail-title">' + det.titulo + '</p><p class="tl-detail-text">' + det.texto + "</p>" + cta + "</div>";
       }
-      // Aprovado não leva badge dentro do card: a borda verde já marca o status.
-      // Os demais status saem do cabeçalho e vão para o topo do corpo: somem quando fechado, aparecem ao abrir.
+      // Lista compacta (Figma 3705:56341): aprovado mantém o badge verde no cabeçalho, ao lado do chevron.
+      // Em análise não mostra badge (a faixa do topo já diz). Os demais status saem do cabeçalho e vão para o topo
+      // do corpo: somem quando fechado, aparecem ao abrir.
       var badge = card.querySelector(".area-acc-badge");
-      if (estado === "concluido" || estado === "validado" || estado === "analise") {
+      if (estado === "concluido" || estado === "validado") {
+        // fica onde está
+      } else if (estado === "analise") {
         badge.remove();
       } else {
         var status = document.createElement("div");

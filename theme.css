@@ -103,6 +103,10 @@
 :root[data-theme="dark"] .tl-progress-track { background: #2e3541; }
 :root[data-theme="dark"] .area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-title { color: var(--text-default); }
 :root[data-theme="dark"] .area-acc[data-state="aguardando"]:not(.area-acc-nested) > .area-acc-head .area-acc-title { color: #9aa3b2; }
+/* Lista compacta (area.css): descrição, ícone e borda do concluído/validado no tema escuro */
+:root[data-theme="dark"] .area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-desc { color: var(--text-subtle); }
+:root[data-theme="dark"] .area-acc:not(.area-acc-nested)[data-state="concluido"], :root[data-theme="dark"] .area-acc:not(.area-acc-nested)[data-state="validado"] { border-color: #1f6b47; }
+:root[data-theme="dark"] .area-acc:not(.area-acc-nested)[data-state="concluido"] .area-acc-icon, :root[data-theme="dark"] .area-acc:not(.area-acc-nested)[data-state="validado"] .area-acc-icon { background: #1f3a2c; color: #6fd3a0; }
 /* Cards de cadastro por estado (area.css): fundo de cada estado no tema escuro */
 :root[data-theme="dark"] .area-acc[data-state="pendente"] { background: #2a2310; }
 :root[data-theme="dark"] .area-acc[data-state="pendente"] .area-acc-badge { background: #3a2e10; color: #fcd34d; }
