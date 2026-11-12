@@ -29,9 +29,18 @@
 .area-acc-title { font-size: var(--type-label-sm-strong-size); line-height: var(--type-label-sm-strong-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-default); }
 .area-acc-status { font-size: var(--type-label-sm-strong-size); line-height: var(--type-label-sm-strong-line-height); font-weight: var(--type-label-sm-strong-weight); color: var(--text-success); text-transform: uppercase; }
 .area-acc-status-warning { color: var(--text-warning); }
-/* Card de cadastro (Figma 3240:62722): ícone 40px, título + descrição, badge de status, chevron 20px */
-.area-acc:not(.area-acc-nested) > .area-acc-head { gap: 12px; padding: 12px 16px; }
-.area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-icon { width: 36px; height: 36px; }
+/* Card de cadastro, lista compacta (Figma 3705:56341 "01 · Lista compacta"): raio 6px, padding 12px, ícone 30px,
+   título 14/20 Medium, descrição 12/16, badge sólido de status à direita e chevron 20px */
+.area-acc:not(.area-acc-nested) { border-radius: 6px; }
+.area-acc:not(.area-acc-nested) > .area-acc-head { gap: 8px; padding: 12px; }
+.area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-icon { width: 30px; height: 30px; }
+.area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-desc { font-size: 12px; line-height: 16px; font-weight: 400; color: #55555f; }
+.area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-badge { border-radius: 6px; padding: 4px 8px; font-family: var(--font-body); font-weight: 500; font-size: 10px; line-height: normal; text-transform: none; }
+/* Concluído e validado: borda verde 1px, ícone verde claro, badge verde sólido e sem faixa superior (como no Figma) */
+.area-acc:not(.area-acc-nested)[data-state="concluido"], .area-acc:not(.area-acc-nested)[data-state="validado"] { border: 1px solid #ace3c3; }
+.area-acc:not(.area-acc-nested)[data-state="concluido"] .area-acc-icon, .area-acc:not(.area-acc-nested)[data-state="validado"] .area-acc-icon { background: #d1f0da; color: #0c8556; }
+.area-acc:not(.area-acc-nested)[data-state="concluido"] .area-acc-badge, .area-acc:not(.area-acc-nested)[data-state="validado"] .area-acc-badge { background: #10a066; color: #ffffff; }
+.area-acc:not(.area-acc-nested)[data-state="concluido"] .tl-eyebrow, .area-acc:not(.area-acc-nested)[data-state="validado"] .tl-eyebrow { display: none; }
 .area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-text { flex: 1 1 0; gap: 2px; }
 .tl-status { display: flex; align-items: center; min-height: 24px; }
 .area-acc:not(.area-acc-nested) > .area-acc-head .area-acc-title { font-size: 14px; line-height: 20px; font-weight: 500; color: #141823; }
