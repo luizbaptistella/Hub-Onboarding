@@ -1,0 +1,149 @@
+/* Ellena — native production token names (--ds-*).
+   Mirrors src/assets/styles/_ds-tokens.scss from onboard-admin-client (Vue 3 + Vuetify).
+   Hex, not triplets — use these when porting code from the Vue app; use the semantic
+   HSL layer in colors.css when writing new HTML/React against this design system.
+   Dark is the DEFAULT theme. */
+:root,.dark,[data-theme="dark"]{
+--ds-brand:#0b1c25; /* @kind color */
+--ds-primary:#3a6d84; /* @kind color */
+--ds-primary-hover:#477889; /* @kind color */
+--ds-primary-focus:#7aa3b8; /* @kind color */
+--ds-surface-avatar:#3a6d84; /* @kind color */
+--ds-surface-desktop:#202020; /* @kind color */
+--ds-surface-card:#333333; /* @kind color */
+--ds-surface-application:#202020; /* @kind color */
+--ds-surface-hover:#353535; /* @kind color */
+--ds-surface-active:rgba(58,109,132,0.16); /* @kind color */
+--ds-surface-disabled:rgba(255,255,255,0.06); /* @kind color */
+--ds-surface-error:rgba(220,53,53,0.12); /* @kind color */
+--ds-surface-warning:rgba(128,100,6,0.12); /* @kind color */
+--ds-surface-success:rgba(34,197,94,0.1); /* @kind color */
+--ds-surface-table-header:rgba(255,255,255,0.03); /* @kind color */
+--ds-surface-ficha:#202020; /* @kind color */
+--ds-surface-footer:#242424; /* @kind color */
+--ds-surface-topbar:#242424; /* @kind color */
+--ds-surface-primary-muted:rgba(58,109,132,0.14); /* @kind color */
+--ds-surface-action-secondary:rgba(58,109,132,0.1); /* @kind color */
+--ds-surface-opaque:#ffffff; /* @kind color */
+--ds-text-title:#ffffff; /* @kind color */
+--ds-text-body:#e0e0e0; /* @kind color */
+--ds-text-nav:#b3b3b3; /* @kind color */
+--ds-text-tool:#b3b3b3; /* @kind color */
+--ds-text-label:#999999; /* @kind color */
+--ds-text-active:#f5f5f5; /* @kind color */
+--ds-text-disabled:#666666; /* @kind color */
+--ds-text-link:#7aa3b8; /* @kind color */
+--ds-text-error:#fca5a5; /* @kind color */
+--ds-text-success:#86efac; /* @kind color */
+--ds-text-warning:#fde68a; /* @kind color */
+--ds-text-action:#ffffff; /* @kind color */
+--ds-text-empty:#999999; /* @kind color */
+--ds-text-table-header:#999999; /* @kind color */
+--ds-text-table-cell:#e0e0e0; /* @kind color */
+--ds-text-table-muted:#666666; /* @kind color */
+--ds-text-table-action:#b3b3b3; /* @kind color */
+--ds-border-application:#404040; /* @kind color */
+--ds-border-active:#7aa3b8; /* @kind color */
+--ds-border-active-muted:rgba(58,109,132,0.45); /* @kind color */
+--ds-border-success:rgba(34,197,94,0.3); /* @kind color */
+--ds-border-warning:rgba(254,215,170,0.3); /* @kind color */
+--ds-border-primary-muted:rgba(58,109,132,0.28); /* @kind color */
+--ds-border-footer:rgba(255,255,255,0.08); /* @kind color */
+--ds-form-input:#2a2a2a; /* @kind color */
+--ds-form-inputborder:#4a4a4a; /* @kind color */
+--ds-shadow-primary:0 4px 16px rgba(0,0,0,0.35); /* @kind shadow */
+}
+[data-theme="light"],.light{
+--ds-primary:#0b1c25; /* @kind color */
+--ds-primary-hover:#061018; /* @kind color */
+--ds-primary-focus:#3a6d84; /* @kind color */
+--ds-surface-desktop:#f0f4f8; /* @kind color */
+--ds-surface-card:#ffffff; /* @kind color */
+--ds-surface-application:#f5f8fa; /* @kind color */
+--ds-surface-hover:#e8eef3; /* @kind color */
+--ds-surface-active:#dce8f0; /* @kind color */
+--ds-surface-disabled:#e8eef3; /* @kind color */
+--ds-surface-error:#fff0f0; /* @kind color */
+--ds-surface-warning:#fffaf5; /* @kind color */
+--ds-surface-success:#f0fefa; /* @kind color */
+--ds-surface-table-header:#f0f4f8; /* @kind color */
+--ds-surface-ficha:#eef2f6; /* @kind color */
+--ds-surface-footer:#e4ebf2; /* @kind color */
+--ds-surface-topbar:#ffffff; /* @kind color */
+--ds-surface-primary-muted:rgba(11,28,37,0.1); /* @kind color */
+--ds-surface-action-secondary:rgba(11,28,37,0.06); /* @kind color */
+--ds-text-title:#0b1c25; /* @kind color */
+--ds-text-body:#1a2e3a; /* @kind color */
+--ds-text-nav:#3d5260; /* @kind color */
+--ds-text-tool:#3d5260; /* @kind color */
+--ds-text-label:#5a6f7d; /* @kind color */
+--ds-text-active:#2d4554; /* @kind color */
+--ds-text-disabled:#8a9baa; /* @kind color */
+--ds-text-link:#2d5668; /* @kind color */
+--ds-text-error:#b71c1c; /* @kind color */
+--ds-text-success:#105c21; /* @kind color */
+--ds-text-warning:#806406; /* @kind color */
+--ds-text-empty:#6b7f8c; /* @kind color */
+--ds-text-table-header:#6b7f8c; /* @kind color */
+--ds-text-table-cell:#1a2e3a; /* @kind color */
+--ds-text-table-muted:#8a9baa; /* @kind color */
+--ds-text-table-action:#3d5260; /* @kind color */
+--ds-border-application:#cdd8e2; /* @kind color */
+--ds-border-active:#3a6d84; /* @kind color */
+--ds-border-active-muted:rgba(11,28,37,0.35); /* @kind color */
+--ds-border-success:#bbe5c5; /* @kind color */
+--ds-border-warning:#feeea5; /* @kind color */
+--ds-border-primary-muted:rgba(11,28,37,0.22); /* @kind color */
+--ds-border-footer:#c5d3de; /* @kind color */
+--ds-form-input:#ffffff; /* @kind color */
+--ds-form-inputborder:#b8c8d4; /* @kind color */
+--ds-shadow-primary:0 4px 16px rgba(11,28,37,0.12); /* @kind shadow */
+}
+:root{
+/* Invariant domain actions — identical in both themes. Never re-map these. */
+--ds-surface-action-approve:#22c55e; /* @kind color */
+--ds-surface-action-approve-hover:#16a34a; /* @kind color */
+--ds-surface-action-disapprove:#dc3535; /* @kind color */
+--ds-surface-action-disapprove-hover:#c22f2f; /* @kind color */
+--ds-surface-action-disapprove-pressed:#b91c1c; /* @kind color */
+--ds-color-warning-accent:#ffa726; /* @kind color */
+--ds-color-vuetify-success:#10a066; /* @kind color */
+--ds-color-vuetify-warning:#f9b10f; /* @kind color */
+--ds-color-vuetify-error:#e02424; /* @kind color */
+/* Data-viz — mirrored in src/constants/chartColors.ts */
+--ds-chart-primary:#3a6d84; /* @kind color */
+--ds-chart-success:#22c55e; /* @kind color */
+--ds-chart-success-alt:#16a34a; /* @kind color */
+--ds-chart-error:#ef4444; /* @kind color */
+--ds-chart-error-alt:#dc3535; /* @kind color */
+--ds-chart-warning:#f59e0b; /* @kind color */
+--ds-chart-warning-alt:#f97316; /* @kind color */
+--ds-chart-neutral:#6b7280; /* @kind color */
+--ds-chart-neutral-alt:#64748b; /* @kind color */
+--ds-chart-muted:#9ca3af; /* @kind color */
+/* Decorative badge families — invariant */
+--ds-badge-info-bg:#e4ecf2; /* @kind color */
+--ds-badge-info-fg:#0b1c25; /* @kind color */
+--ds-badge-info-border:#b8c8d4; /* @kind color */
+--ds-badge-indigo-bg:#eef2ff; /* @kind color */
+--ds-badge-indigo-fg:#6366f1; /* @kind color */
+--ds-badge-indigo-border:#c7d2fe; /* @kind color */
+--ds-badge-purple-bg:#faf5ff; /* @kind color */
+--ds-badge-purple-fg:#a855f7; /* @kind color */
+--ds-badge-purple-border:#e9d5ff; /* @kind color */
+--ds-badge-pink-bg:#fdf2f8; /* @kind color */
+--ds-badge-pink-fg:#ec4899; /* @kind color */
+--ds-badge-pink-border:#fbcfe8; /* @kind color */
+/* Shell sizing — the fixed-height backoffice shell */
+--ds-size-topbar:56px; /* @kind spacing */
+--ds-size-sidebar:240px; /* @kind spacing */
+--ds-size-sidebar-collapsed:64px; /* @kind spacing */
+--ds-size-footer:40px; /* @kind spacing */
+--ds-size-docs-aside:400px; /* @kind spacing */
+--ds-size-docs-aside-collapsed:48px; /* @kind spacing */
+--ds-size-button:36px; /* @kind spacing */
+--ds-size-input:36px; /* @kind spacing */
+--ds-size-pagination-btn:28px; /* @kind spacing */
+--ds-size-row-action:32px; /* @kind spacing */
+--ds-z-footer:1004; /* @kind other */
+}

@@ -9,6 +9,7 @@ import { handleApi } from './api.mjs';
 import { createAuth } from './auth.mjs';
 import { createMcpEndpoint } from '../../mcp-server/src/endpoint.mjs';
 import { loadDesignSystem, getComponents, buildDesignSystemPayload } from './ds.mjs';
+import { loadBackofficeDs, buildBackofficePayload } from './ds-backoffice.mjs';
 import { buildProposal, storeFromEnv } from './propostas.mjs';
 import { createVersioning } from './versioning.mjs';
 
@@ -48,6 +49,7 @@ export async function createApp({
   const handoff = await loadHub(handoffDir);
   const ds = await loadDesignSystem({ hubRoot, handoffDir: handoff.dir, decisions: handoff.decisions });
   const designSystem = buildDesignSystemPayload(ds, await getComponents(ds, handoff.componentDocs));
+  const designSystemBackoffice = buildBackofficePayload(await loadBackofficeDs({ hubRoot }));
   const auth = createAuth({ password });
   const handleMcp = createMcpEndpoint(handoff, { token: mcpToken });
   const versioning = createVersioning({ repoDir: hubRoot, handoff, ...versioningOptions });
@@ -110,7 +112,7 @@ export async function createApp({
       }
 
       if (p.startsWith('/api')) {
-        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem, versioning, proposalMode: proposalStore?.mode ?? null }));
+        return send(res, await handleApi(handoff, p, url.searchParams, { designSystem, designSystemBackoffice, versioning, proposalMode: proposalStore?.mode ?? null }));
       }
 
       if (p === '/hub') return redirect(res, '/hub/');

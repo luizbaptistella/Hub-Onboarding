@@ -1,0 +1,149 @@
+/* Ellena — Brand layer.
+   TRUTH: "Ellena — Manual de Marca v1" (Sept 2026) and the marketing site elena-lp.vercel.app
+   (styles.css, --elena-* tokens, captured 2026-10-08) — the two agree on every value below.
+   Additive: nothing here changes the backoffice. The --elena-* tokens are always available; the
+   site's look (navy ground, green signal, Quicksand + Manrope, soft radii) only applies inside an
+   element marked data-surface="brand" (dark, the site's default) or data-surface="brand-light" (Mist). */
+:root{
+--elena-blue-950:#07141b; /* @kind color */
+--elena-blue-900:#0c1c25; /* @kind color */
+--elena-blue-850:#102630; /* @kind color */
+--elena-blue-800:#15323e; /* @kind color */
+--elena-green-500:#69d13c; /* @kind color */
+--elena-green-400:#7ee153; /* @kind color */
+--elena-green-300:#9bed79; /* @kind color */
+--elena-green-text:#316f1c; /* @kind color */
+--elena-yellow-400:#f6ce37; /* @kind color */
+--elena-mist:#eaf0ed; /* @kind color */
+--elena-muted:#a9b7bc; /* @kind color */
+--elena-slate:#485c62; /* @kind color */
+--elena-ink:#0c1c25; /* @kind color */
+--elena-white:#ffffff; /* @kind color */
+--elena-line-dark:rgba(12,28,37,0.14); /* @kind color */
+--elena-line-light:rgba(255,255,255,0.16); /* @kind color */
+--font-heading:"Quicksand","Avenir Next","Helvetica Neue",Arial,sans-serif; /* @kind font */
+--font-brand-body:"Manrope","Avenir Next","Helvetica Neue",Arial,sans-serif; /* @kind font */
+--radius-brand-sm:14px; /* @kind radius */
+--radius-brand-md:24px; /* @kind radius */
+--radius-brand-lg:40px; /* @kind radius */
+--radius-brand-pill:999px; /* @kind radius */
+--shadow-brand-deep:0 28px 90px rgba(2,10,14,0.34); /* @kind shadow */
+--elena-glass-fill:rgba(255,255,255,0.05); /* @kind color */
+--elena-glass-border:rgba(255,255,255,0.12); /* @kind color */
+--icon-brand-stroke:1.5px; /* @kind other */
+}
+
+/* Brand surface, dark — the site's default: navy ground, green actions, yellow focus. */
+[data-surface="brand"]{
+--background:201.6 51% 9.6%;          /* #0C1C25 */
+--foreground:0 0% 100%;
+--card:198.8 50% 12.5%;               /* #102630 */
+--card-foreground:0 0% 100%;
+--popover:198.8 50% 12.5%;
+--popover-foreground:0 0% 100%;
+--primary:101.9 61.8% 52.7%;          /* #69D13C */
+--primary-foreground:201.6 51% 9.6%;  /* navy on green, 8.9:1 */
+--secondary:197.6 49.4% 16.3%;        /* #15323E */
+--secondary-foreground:0 0% 100%;
+--muted:197.6 49.4% 16.3%;
+--muted-foreground:195.8 12.4% 70%;   /* #A9B7BC, 8.4:1 on navy */
+--accent:197.6 49.4% 16.3%;
+--accent-foreground:0 0% 100%;
+--border:197.4 33.3% 22.4%;           /* #26414C */
+--input:197.4 33.3% 22.4%;
+--ring:47.4 91.4% 59%;                /* #F6CE37 */
+--ds-primary:#69d13c;
+--ds-primary-hover:#7ee153;
+--ds-primary-focus:#f6ce37;
+--ds-surface-desktop:#0c1c25;
+--ds-surface-application:#0c1c25;
+--ds-surface-card:#102630;
+--ds-surface-hover:#15323e;
+--ds-surface-active:rgba(105,209,60,0.14);
+--ds-surface-topbar:#07141b;
+--ds-surface-footer:#07141b;
+--ds-text-title:#ffffff;
+--ds-text-body:#eaf0ed;
+--ds-text-nav:#a9b7bc;
+--ds-text-label:#a9b7bc;
+--ds-text-link:#69d13c;
+--ds-border-application:#26414c;
+--ds-border-active:#69d13c;
+--ds-form-input:#102630;
+--ds-form-inputborder:#26414c;
+}
+
+/* Brand surface, light — the site's Mist sections: navy ink, navy actions, green kept for text-safe accents. */
+[data-surface="brand-light"]{
+--background:150 16.7% 92.9%;         /* #EAF0ED */
+--foreground:201.6 51% 9.6%;
+--card:0 0% 100%;
+--card-foreground:201.6 51% 9.6%;
+--popover:0 0% 100%;
+--popover-foreground:201.6 51% 9.6%;
+--primary:201.6 51% 9.6%;             /* navy button, white text */
+--primary-foreground:0 0% 100%;
+--secondary:150 10.9% 82%;            /* #CCD6D1 */
+--secondary-foreground:201.6 51% 9.6%;
+--muted:150 10.9% 82%;
+--muted-foreground:193.8 15.3% 33.3%; /* #485C62, 6.1:1 on Mist */
+--accent:150 10.9% 82%;
+--accent-foreground:104.8 59.7% 27.3%;/* #316F1C, 5.3:1 on Mist */
+--border:150 10.9% 82%;
+--input:150 10.9% 82%;
+--ring:201.6 51% 9.6%;
+--ds-primary:#0c1c25;
+--ds-primary-hover:#15323e;
+--ds-primary-focus:#316f1c;
+--ds-surface-desktop:#eaf0ed;
+--ds-surface-application:#eaf0ed;
+--ds-surface-card:#ffffff;
+--ds-surface-hover:#dde6e1;
+--ds-text-title:#0c1c25;
+--ds-text-body:#0c1c25;
+--ds-text-nav:#485c62;
+--ds-text-label:#485c62;
+--ds-text-link:#316f1c;
+--ds-border-application:#ccd6d1;
+--ds-border-active:#0c1c25;
+--ds-form-input:#ffffff;
+--ds-form-inputborder:#ccd6d1;
+}
+
+/* Shared by both brand surfaces. The --color-* aliases are re-declared because they resolve where defined. */
+[data-surface="brand"],[data-surface="brand-light"]{
+--font-sans:var(--font-brand-body);
+--radius-lg:var(--radius-brand-md);
+--color-background:hsl(var(--background));
+--color-foreground:hsl(var(--foreground));
+--color-card:hsl(var(--card));
+--color-card-foreground:hsl(var(--card-foreground));
+--color-popover:hsl(var(--popover));
+--color-popover-foreground:hsl(var(--popover-foreground));
+--color-primary:hsl(var(--primary));
+--color-primary-foreground:hsl(var(--primary-foreground));
+--color-secondary:hsl(var(--secondary));
+--color-secondary-foreground:hsl(var(--secondary-foreground));
+--color-muted:hsl(var(--muted));
+--color-muted-foreground:hsl(var(--muted-foreground));
+--color-accent:hsl(var(--accent));
+--color-accent-foreground:hsl(var(--accent-foreground));
+--color-border:hsl(var(--border));
+--color-input:hsl(var(--input));
+--color-ring:hsl(var(--ring));
+background-color:hsl(var(--background));
+color:hsl(var(--foreground));
+font-family:var(--font-brand-body);
+}
+[data-surface="brand"] :is(h1,h2,h3),[data-surface="brand-light"] :is(h1,h2,h3),
+[data-surface="brand"] .brand-heading,[data-surface="brand-light"] .brand-heading{font-family:var(--font-heading);letter-spacing:-0.04em}
+[data-surface="brand"] .ds-btn,[data-surface="brand-light"] .ds-btn{border-radius:var(--radius-brand-pill);font-family:var(--font-brand-body);font-weight:800;font-size:15px}
+[data-surface="brand"] .brand-eyebrow{font-family:var(--font-heading);font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--elena-green-500)}
+[data-surface="brand-light"] .brand-eyebrow{font-family:var(--font-heading);font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--elena-green-text)}
+
+/* Manual §06 — glass card: white 5% fill, 12% border, 24px radius, on navy. */
+[data-surface="brand"] .brand-glass{background:var(--elena-glass-fill);border:1px solid var(--elena-glass-border);border-radius:var(--radius-brand-md);padding:28px}
+/* Manual §05 — hierarchy. Title Quicksand Bold 48–64/110% · subtitle Quicksand SemiBold 24–32 · text Manrope 16–18/150% · button Manrope ExtraBold 15–16. */
+.brand-title{font-family:var(--font-heading);font-weight:700;font-size:clamp(48px,5vw,64px);line-height:1.1;letter-spacing:-0.04em}
+.brand-subtitle{font-family:var(--font-heading);font-weight:600;font-size:clamp(24px,2.4vw,32px);line-height:1.2;letter-spacing:-0.03em}
+.brand-text{font-family:var(--font-brand-body);font-weight:400;font-size:clamp(16px,1.2vw,18px);line-height:1.5}

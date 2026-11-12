@@ -361,7 +361,7 @@ async function renderDocs() {
 
 let dsData = null;
 const loadDs = async () => (dsData ??= await api('/api/design-system'));
-const DS_TABS = [['tokens', 'Tokens'], ['componentes', 'Componentes'], ['regras', 'Regras']];
+const DS_TABS = [['tokens', 'Tokens'], ['componentes', 'Componentes'], ['regras', 'Regras'], ['backoffice', 'Backoffice']];
 // Cor só vai para o estilo se for um valor de cor válido; o resto do texto nunca vira HTML.
 const COLOR_VALUE = /^(#[0-9a-f]{3,8}|rgba?\(|hsla?\()/i;
 
@@ -519,25 +519,83 @@ function rulesSection(title, content) {
   return el('section', { class: 'ds-section' }, el('h2', { class: 'lane' }, title), content);
 }
 
-function rulesView(rules) {
+const PALMEIRAS_RULE_LABELS = { conventions: 'Convenções do handoff', attention: 'Pontos de atenção do DS', decisions: 'Decisões do fluxo' };
+
+function rulesView(rules, labels = PALMEIRAS_RULE_LABELS) {
   const none = el('p', { class: 'muted' }, 'Nenhuma.');
   return el('div', { class: 'ds-body' },
-    rulesSection('Convenções do handoff', rules.conventions.length
+    rulesSection(labels.conventions, rules.conventions.length
       ? el('ul', { class: 'plain' }, rules.conventions.map((t) => el('li', { 'data-search': t.toLowerCase() }, t)))
       : none),
-    rulesSection('Pontos de atenção do DS', rules.attention.length
+    rulesSection(labels.attention, rules.attention.length
       ? rules.attention.map((a) => el('div', { class: 'rule', 'data-search': `${a.title} ${a.body}`.toLowerCase() },
         el('span', { class: 'rule-n' }, String(a.n)),
         el('div', {}, a.title ? el('strong', {}, a.title) : null, el('div', { class: 'muted' }, a.body))))
       : none),
-    rulesSection('Decisões do fluxo', rules.decisions.length
+    rulesSection(labels.decisions, rules.decisions.length
       ? rules.decisions.map((d) => el('div', { class: 'rule', 'data-search': `${d.id} ${d.text}`.toLowerCase() },
         el('code', { class: 'rule-n code' }, d.id), el('div', {}, d.text)))
       : none));
 }
 
+// ── Design System do backoffice: snapshot em design-system-backoffice/ (tokens, componentes e regras) ──
+
+let boData = null;
+const loadBackoffice = async () => (boData ??= await api('/api/design-system/backoffice'));
+// Tema de cor do DS do backoffice. Próprio, para não misturar com o tema do DS Palmeiras.
+let boTheme = 'dark';
+const BO_RULE_LABELS = { conventions: 'Fundamentos de conteúdo', attention: 'Ressalvas do DS', decisions: 'Adições e adaptações' };
+
+function tokensForBackofficeTheme(tokens) {
+  const values = tokens.themes?.find((t) => t.id === boTheme)?.values ?? {};
+  return { ...tokens, groups: tokens.groups.map((g) => ({ ...g, items: g.items.map((t) => {
+    const v = values[t.name.slice(2)];
+    return v && v !== t.resolved ? { ...t, resolved: v } : t;
+  }) })) };
+}
+
+// Componentes do bundle, por pasta. Sem prévia: o manifesto não traz as props de uso (o bundle é consultado pelo nome).
+function backofficeComponentsView(components) {
+  return el('div', { class: 'ds-body' }, components.categories.map((cat) => {
+    const items = components.items.filter((i) => i.category === cat);
+    return el('details', { class: 'ds-group', open: true },
+      el('summary', {}, el('span', {}, cat), el('span', { class: 'count' }, String(items.length))),
+      el('div', { class: 'bo-comps' }, items.map((i) => el('div', { class: 'bo-comp', 'data-search': `${i.name} ${i.file ?? ''}`.toLowerCase() },
+        el('code', {}, i.name), el('span', { class: 'muted small' }, i.file ?? '')))));
+  }));
+}
+
+async function renderBackofficeDs() {
+  let bo;
+  try {
+    bo = await loadBackoffice();
+  } catch (err) {
+    view.replaceChildren(el('p', { class: 'error' }, err.message));
+    return;
+  }
+  const filter = el('input', { type: 'search', class: 'ds-filter', placeholder: 'Filtrar tokens, componentes e regras', 'aria-label': 'Filtrar' });
+  const body = el('div', {},
+    el('h2', { class: 'lane' }, `Tokens · ${bo.tokens.total}`),
+    tokensView(tokensForBackofficeTheme(bo.tokens)),
+    el('h2', { class: 'lane' }, `Componentes · ${bo.components.total}`),
+    backofficeComponentsView(bo.components),
+    el('h2', { class: 'lane' }, 'Regras'),
+    rulesView(bo.rules, BO_RULE_LABELS));
+  filter.addEventListener('input', () => filterItems(body, filter.value.trim().toLowerCase(), '.ds-group'));
+  view.replaceChildren(
+    el('h1', {}, 'Design System'),
+    el('p', { class: 'sub' }, `Backoffice · ${bo.title}`),
+    el('nav', { class: 'tabs' }, DS_TABS.map(([key, label]) => el('a', { href: `#/ds/${key}`, 'aria-current': key === 'backoffice' ? 'page' : null }, label))),
+    el('div', { class: 'ds-themes', role: 'group', 'aria-label': 'Tema de cor do design system do backoffice' },
+      (bo.tokens.themes ?? []).map((t) => el('button', { type: 'button', 'aria-pressed': String(t.id === boTheme), onclick: () => { boTheme = t.id; renderBackofficeDs(); } }, t.name))),
+    filter,
+    body,
+  );
+}
+
 async function renderDesignSystem(tab, componentName, mode) {
   view.replaceChildren(el('p', { class: 'muted' }, 'Carregando…'));
+  if (tab === 'backoffice') return renderBackofficeDs();
   let ds;
   try {
     ds = await loadDs();
@@ -563,7 +621,7 @@ async function renderDesignSystem(tab, componentName, mode) {
     el('h1', {}, 'Design System'),
     el('p', { class: 'sub' }, `Palmeiras · Onboarding${ds.tokens.version ? ` · DS publicado ${ds.tokens.version}` : ''}`),
     el('nav', { class: 'tabs' }, DS_TABS.map(([key, label]) => el('a', { href: `#/ds/${key}`, 'aria-current': key === current ? 'page' : null },
-      label, el('span', { class: 'count' }, String(counts[key]))))),
+      label, counts[key] == null ? null : el('span', { class: 'count' }, String(counts[key]))))),
     themeBar(ds.tokens, (id) => { setDsTheme(id); renderDesignSystem(tab, componentName, mode); }),
     current === 'tokens' ? filter : null,
     body,
@@ -576,7 +634,7 @@ function route() {
   if (m) return renderScreen(m[1]);
   if (hash === '/docs') return renderDocs();
   if (hash === '/validacao') return renderPending();
-  const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras))?(?:\/([^/]+))?(?:\/(docs))?$/);
+  const ds = hash.match(/^\/ds(?:\/(tokens|componentes|regras|backoffice))?(?:\/([^/]+))?(?:\/(docs))?$/);
   if (ds) return renderDesignSystem(ds[1] ?? 'tokens', ds[2], ds[3]);
   return renderList();
 }

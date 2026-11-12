@@ -1,0 +1,51 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "images": {
+      "files": {},
+      "name": "images",
+      "order": []
+    },
+    "logos": {
+      "files": {},
+      "name": "logos",
+      "order": []
+    },
+    "notes": {
+      "files": {},
+      "name": "notes",
+      "order": []
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-01T00:57:11.350Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/github.md",
+      "project/ui_kits/admin-ellena/README.md"
+    ]
+  },
+  "editing": "off",
+  "groups": [
+    "images",
+    "logos",
+    "notes"
+  ],
+  "layout": "files",
+  "libraries": [],
+  "namespace": "EllenaDesignSystem_c30665",
+  "sections": {},
+  "source": {
+    "app": "claude-design",
+    "exportedAt": "2026-10-01T00:57:11.350Z",
+    "map": "project/migration-map.json",
+    "projectId": "c30665a6-50a0-4eda-a622-fe64b2462d86",
+    "url": "https://claude.ai/design/p/c30665a6-50a0-4eda-a622-fe64b2462d86",
+    "v": 1
+  },
+  "title": "[P - ELL] Backoffice"
+}

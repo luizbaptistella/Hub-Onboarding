@@ -54,7 +54,7 @@ async function inlineLocalImages(html, markupFile) {
   return out;
 }
 
-export async function handleApi(handoff, pathname, searchParams, { designSystem, versioning, proposalMode = null } = {}) {
+export async function handleApi(handoff, pathname, searchParams, { designSystem, designSystemBackoffice, versioning, proposalMode = null } = {}) {
   const parts = pathname.replace(/^\/api\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
   const [head, ...rest] = parts;
 
@@ -63,6 +63,7 @@ export async function handleApi(handoff, pathname, searchParams, { designSystem,
   if (head === 'info' && !rest.length) return json(200, await hub.hubStats(handoff));
 
   if (head === 'design-system' && !rest.length) return json(200, designSystem);
+  if (head === 'design-system' && rest.length === 1 && rest[0] === 'backoffice') return json(200, designSystemBackoffice);
 
   if (head === 'validacao' && !rest.length) {
     if (!versioning) return notFound('Versionamento');
